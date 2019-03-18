@@ -15,19 +15,19 @@ mechanism used for certificate revocation depends on the Certification Authority
 from the management interface.
 
 Figure 1
-![a]({{site.url}}/assets/a.png)
+![a]({{site.url}}/img/a.png)
 
 <b>Cert Validation with CRL</b>
 
 Revoked certificates are represented in the CRL by their serial numbers. If a network device is attempting to verify the validity of a certificate, it will download and scan the current CRL for the serial number of the presented cert. The CRL is signed by the Certification Authority to ensure the authenticity of the document and may be distributed through a variety of protocols, such as http, ldap, tftp, or other services. CRLs are generally published on a periodic interval, or Certification Authorities may publish a new CRL any time a certificate they are responsible for is revoked. Like most documents created by a PKI, the CRL has an expiration time, date, and all components of a PKI that will verify that certificates should download a new copy of the CRL, when the old CRL expires. Cisco IOS Software based
 devices cache CRLs until they expire, than the router deletes the CRL from cache. A new, “fresh” CRL is downloaded when certificate is presented for verification again and the cached CRL has been deleted. Unfortunately, the router’s cached CRL causes one of the problems for using CRLs. If a newer version of the CRL that lists certificate under examination is present on the server, but the router is still using the CRL in its cache, which does not list the revoked cert, the certificate will pass its revocation check even though it should have been disallowed. The CRL may eventually grow to a cumbersome size in very large PKIs. Prior to its update PKI software, embedded in Cisco IOS Software, allocated roughly 64K of memory space for processing and caching CRLs, which was adequate under most circumstances for maintaining a local copy of the CRL. After the Cisco IOS PKI Software update, the Cisco IOS Software allocates memory until the local available memory is nearly consumed. If a PKI has revoked so many certificates that the CRL exceeds a cumbersome size, it is worthwhile to look into breaking the CRL
 into multiple files. This will save bandwidth and time when cryptography peers download a new copy of the CRL and will ensure that a Cisco IOS Software router will have sufficient buffer space to hold and scan the CRL for revoked certificates. The specific of dividing the CRL into a number of more manageable files is outside of this document’s scope; however, PKI documentation should offer design guidance for deploying the optimal CRL
-distribution scheme. 
+distribution scheme.
 
 CRLs are practical for most PKI applications, but may not be appropriate for some uses. Some instances where CRLs are not adequate include:
 * Large numbers of revoked certificates or multiple CRLs. CRLs in cache on devices can consume a large quantity of memory. Downloading large CRLs over low-speed links may use excessive bandwidth, which causes network congestion.
-* Frequent CRL expiration. If CRLs expire frequently, the Certificate Distribution Point (CDP) will be heavily loaded, and frequent CRL download will burden network devices and bandwidth with non-production traffic. 
-* Immediate notification of cert revocation is required. Some high-security applications require more immediate notification of cert revocation. If CRL has a two day expiration interval, it may be up to 48 hours before a router downloads a new CRL. This leaves a long period of time before a router is notified that a certificate is no longer valid. 
+* Frequent CRL expiration. If CRLs expire frequently, the Certificate Distribution Point (CDP) will be heavily loaded, and frequent CRL download will burden network devices and bandwidth with non-production traffic.
+* Immediate notification of cert revocation is required. Some high-security applications require more immediate notification of cert revocation. If CRL has a two day expiration interval, it may be up to 48 hours before a router downloads a new CRL. This leaves a long period of time before a router is notified that a certificate is no longer valid.
 
 These are circumstances where CRL is an inadequate mechanism for cert revocation notification. In cases where CRLs are inappropriate for checking certificate status OCSP offers a better choice.
 
