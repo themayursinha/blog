@@ -1,6 +1,6 @@
 ---
 title: Projects
-img: /img/path.jpg
+bigimg: /img/path.jpg
 ---
 
 * [Understanding IoT botnets](https://www.researchgate.net/publication/325478001_Understanding_IoT_botnets)
