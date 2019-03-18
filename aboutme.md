@@ -1,16 +1,7 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: Security Engineer by day, Researcher by night
 ---
 
-My name is Inigo Montoya. I have the following qualities:
-
-- I rock a great mustache
-- I'm extremely loyal to my family
-
-What else do you need?
-
-### my history
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+My name is Mayur Sinha. I am an Information Security professional, engineer, and researcher with experience in various aspects of cybersecurity including but not limited to the system, network, application, mobile, and IoT security. My core interest lies in penetration testing, vulnerability research, exploit development, reverse engineering, malware analysis, and threat intelligence. I have found bugs in many commercial software and applications. I have also been invited to speak at various security conferences. I also have an interest in understanding the security aspects of emerging technologies like IoT, blockchain, containers, machine learning. I'm currently working as a Sr. Security Engineer at Instart India Pvt limited where I'm responsible for cutting-edge security defenses against internet threats.
