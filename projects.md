@@ -1,5 +1,5 @@
 ---
-title: Resources
+title: Projects
 img: /img/path.jpg
 ---
 

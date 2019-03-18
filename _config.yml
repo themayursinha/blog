@@ -24,10 +24,7 @@ description: Mayur
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
-  Projects:
-    - Understanding IoT botnets: "https://www.researchgate.net/publication/325478001_Understanding_IoT_botnets"
-    - Securing the Internet of Things: "https://www.researchgate.net/project/Securing-the-Internet-of-Things-2"
-    - Automated Fuzzing for vulnerability analysis: "https://www.researchgate.net/publication/330684293_Automated_Fuzzing_for_vulnerability_analysis"
+  Projects: "projects"
   Home: "https://themayursinha.com"
 
 # Image to show in the navigation bar - image must be a square (width = height)
