@@ -125,7 +125,7 @@ google_analytics: "UA-136557652-1"
  #disqus: "themayursinha"
 
 # To use Facebook Comments, fill in a Facebook App ID
- fb_comment_id: "408867006597695"
+#fb_comment_id: "408867006597695"
 
 # Staticman support
 staticman:
