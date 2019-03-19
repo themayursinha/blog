@@ -3,6 +3,7 @@ layout: post
 title: IPSec: Site to Site - Grand Task
 categories: [Network Security]
 tags: [netsec]
+description: IPSec Site to Site
 ---
 
 ![ipsec-site-to-site]({{site.url}}/img/ipsec-site-to-site.png)
@@ -92,7 +93,7 @@ Rx(config)# crypto ca authenticate CA_Server  // At this point it will show you 
 
 At this point, we must have the certificates on all the device and ready to configure VPN!
 
-#VPN Configuration R2 and ASA
+# VPN Configuration R2 and ASA
 Interesting Traffic: 1.1.1.1 <---> 2.2.2.2
 
 **On R2: (Regular VPN Config)**
@@ -145,7 +146,7 @@ But since we need to be able to initiate traffic from R1's loopback too, we have
 ASA2(config)#access-list DMZ_IN extended permit udp host 20.1.1.10 eq isakmp host 40.1.1.1 eq isakmp
 {% endhighlight %}
 
-#VPN Configuration R3 and ASA
+# VPN Configuration R3 and ASA
 Interesting Traffic: 1.1.1.1 <---> 3.3.3.3
 
 Router and ASA configurations are the same except for the the different IP Address according to this setup. But in this case if we were to initiate traffic from R3 to R1, we have to create ACL for both ESP and ISAKMP (UDP 500) from OUTSIDE to DMZ. We make use of the same ACL OUT_IN used previously.
@@ -164,7 +165,7 @@ ASA2(config)#access-list DMZ_IN extended permit udp host 20.1.1.10 eq isakmp hos
 
 At this point, the VPN between R2 and R1 and R3 and R1 will be successful!!!
 
-**HairPinning**
+<b>HairPinning</b>
 Hairpinning is the method of using tunnels from R2 to ASA and R3 to ASA, to communicate between R2 and R3 Loopbacks~! We have to add one Crypto ACL's in R2 and R3. We have to add 2 crypto ACL to ASA as mentioned below:
 {% highlight text %}
 R2(config)# access-list 101 permit ip host 2.2.2.2 host 3.3.3.3
