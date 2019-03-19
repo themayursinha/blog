@@ -1,6 +1,6 @@
 ---
 layout: post
-title: IPSec: Site to Site - Grand Task
+title: IPSec - Site to Site - Grand Task
 categories: [Network Security]
 tags: [netsec]
 description: IPSec Site to Site
