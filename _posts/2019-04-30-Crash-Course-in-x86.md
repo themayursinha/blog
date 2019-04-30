@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Memory exploit mitigation techniques
+title: Crash Course in x86
 categories: [Exploits]
-tags: [exploits]
-description: Types of memory exploit mitigation techniques
+tags: [x86]
+description: Crash Course in x86
 ---
 
 Knowledge of x86 is important in security fields like malware analysis, vulnerability research and exploit development. The only prerequisite is to know the basics of C or C based languages like Java.
