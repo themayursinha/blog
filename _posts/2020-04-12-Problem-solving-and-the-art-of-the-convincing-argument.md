@@ -18,11 +18,11 @@ Assumptions were used to solve this problem. We assumed that noone else came in 
 
 Another example is as follows: ‘There are three resistors in series in a circuit, two of the resistors are known to have resistance of 3 and 4 ohm, respectively. The voltage source is a battery of 12 V and the current is measured as 1 A. What is the resistance of the third resistor?’
 
-To help express the problem in a mathematical form we may draw a circuit diagram as in Figure 1
+To help express the problem in a mathematical form we may draw a circuit diagram as in Figure 1:
 
 ![circuit]({{site.url}}/img/circuit.png)
 
-The problem can be expressed mathematically by using Ohm’s law and the fact that an equivalent resistance to resistances in series is given by the sum of the individual resistances. If x is the unknown value of the third resistance and V = RI where R = R1 + R2 + R3, we obtain:
+The problem can be expressed mathematically by using Ohm’s law and the fact that an equivalent resistance to resistances in series is given by the sum of the individual resistances. If x is the unknown value of the third resistance and `V = RI` where `R = R1 + R2 + R3`, we obtain:
 `12 = (3 + 4 + x)1`
 
 The expression of the mathematical problem has taken the form of an equation where we now need to find x, the value of the third resistance. 
