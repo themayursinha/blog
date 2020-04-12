@@ -20,8 +20,8 @@ Another example is as follows: ‘There are three resistors in series in a circu
 
 To help express the problem in a mathematical form we may draw a circuit diagram as in Figure 1
 
-Figure 1
 ![circuit]({{site.url}}/img/circuit.png)
+         Figure 1
 
 The problem can be expressed mathematically by using Ohm’s law and the fact that an equivalent resistance to resistances in series is given by the sum of the individual resistances. If x is the unknown value of the third resistance and V = RI where R = R1 + R2 + R3, we obtain:
 12 = (3 + 4 + x)1
