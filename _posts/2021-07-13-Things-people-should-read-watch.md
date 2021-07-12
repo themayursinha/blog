@@ -12,7 +12,7 @@ description: Things you should watch/read
  * [Einstein for masses](https://www.youtube.com/watch?v=3enwR6e9V9A) Basically this is a course for layman.
  * [Stuff You Should Know](http://www.stuffyoushouldknow.com/) A podcast which will make you smarter everyday.
  * A Brief History of Time book - by Stephen Hawking
- * On the Origin of Species book -  by Charles Darwin - All I can say that this book revolutionized science, philosophy, and theology. Must READ!!!!
+ * <span style="color:blue">On the Origin of Species book by Charles Darwin</span> - All I can say that this book revolutionized science, philosophy, and theology. Must READ!!!!
  * Cosmos: A Spacetime Odyssey - A documentary series that explores how we discovered the laws of nature and found our coordinates in space and time. - MUST WATCH!!!
  * How the Universe Works - is the ultimate cosmos operator's manual, a revealing look at the inner workings of outer space. Computer imagery allows viewers to explore black holes, supernovas, neutron stars, dark energy, and all of the other forces that produce what exists and what people see - Must WATCH!!
  * Into the Universe with Stephen Hawking -  Renowned physicist Stephen Hawking brings his vision of the universe to the screen for the first time, combining cutting-edge effects, digitally enhanced NASA footage and live action to delve into such topics as how the universe began, whether life exists on other planets, and whether our galaxy has a life expectancy. The professor also theorizes what the Big Bang can tell us about the eventual end of the universe.
