@@ -12,5 +12,5 @@ Hey there! 👋 I work in Cybersecurity, and it has taught me not to take things
 
 You can take a look at my projects. Feel free to contact me if you want to discuss & share ideas.
 
-Cheers 🍺
+
 Mayur 
