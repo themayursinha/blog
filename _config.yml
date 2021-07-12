@@ -23,7 +23,7 @@ description: Mayur
 
 # List of links in the navigation bar
 navbar-links:
-  About Me: "aboutme"
+  #About Me: "aboutme"
   Projects: "projects"
   Blogs: "blogs"
   Home: "https://themayursinha.com"
