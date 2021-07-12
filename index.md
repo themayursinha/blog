@@ -1,12 +1,12 @@
 ---
+subtitle: Security Engineer by day, Researcher by night
 ---
 
-Greetings,
+"The unexamined life is not worth living" 
 
-Welcome to my page! The idea of creating a website for myself was always in my mind and when i created this site it is mainly because I wanted to share my learnings and experiences with the world. I work in InfoSec and it has constantly amazed me.
+Hey there :wave: I work in Cybersecurity, and it has taught me not to take things for granted. It has made me more curious about the world. I break software and hardware for pleasure & money. Beyond work, my interest touches on a wide range of topics, including Robotics, Artificial Intelligence, Physics, Astronomy, Aeronautics, Electronics, Philosophy, Psychology, Consciousness, Religion, Politics. I'm an avid reader, and I constantly look for like-minded folks with whom I can share and discuss my ideas about the world. 
 
-You can get started with my blogs or can take a look at my projects. And always feel free to contact me if you have any questions.
+You can take a look at my projects. Feel free to contact me if you want to discuss & share ideas.
 
-Live free or Die Hard!!
 
 Mayur
