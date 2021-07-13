@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Who am I
+title: Mayur Sinha
 subtitle: Security Engineer by day, Researcher by night
 ---
 
