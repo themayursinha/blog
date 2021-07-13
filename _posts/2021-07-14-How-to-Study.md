@@ -6,7 +6,7 @@ tags: [brain]
 description: How to study based on how memory works
 ---
 
-Memory works (to put it simply) in 3 stages: <b>attention</b>, <b>encoding</b> (storing/associating with other info), and <b>retrieval</b>(remembering) 
+Memory works (to put it simply) in 3 stages: <b>attention</b>, <b>encoding</b> (storing/associating with other info), and <b>retrieval</b>(remembering).
 
 To optimize the final stage, you have to optimize the first two stages. i.e., pay attention to the material, and encode it well. (I'll explain below.) Also, if you repeat the process, you reinforce it. By retrieving something, you start to pay attention to it again, & then you are able to re-encode it better than before. 
 
