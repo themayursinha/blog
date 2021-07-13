@@ -26,6 +26,11 @@ reddit:
   baseURL: "https://reddit.com/u/"
   icon: "fa-reddit"
 
+goodreads:
+  name: "Goodreads"
+  baseURL: "https://goodreads.com/"
+  icon: "fa-goodreads"
+
 google-plus:
   name: "Google+"
   baseURL: "https://plus.google.com/"
