@@ -1,0 +1,21 @@
+---
+layout: post
+title: The Science of akashic field
+categories: [philosophy]
+tags: [philosophy, science, spiritualism]
+description: The Science of akashic field
+---
+
+The Sanskrit word _akasha_, translated as both "ether" and "space", refers specifically to the vibratory element that is the subtlest in the material world, the "screen on which the image of the body and all nature is projected."
+
+Ether-permeated space is the boundary line between heaven, or the astral world, and earth. All the finer forces are composed of light, or thought-forms. and are merely hidden behid a particular vibration that manifests as ether. Were this etheric vibration removed, you would see the astral cosmos behind this physical universe. But our sensory perceptions of sight, hearing, smell, taste, and touch are limited to this finite world.
+
+Space is another dimension: the 'gates' of heaven. Through the spiritual eye, which exists within at the point between the eyebrows, you can enter these gates. Your consciousness must pass through the astral star in the spiritual eye to behold that higher realm, the astral world.
+
+Modern Physics has discarded the hypothetical "ether" postulated by 19th century scientists as the medium through which light is transmitted through the emptiness of outer space. "Still", writes Professor Arthur Zajonc in <i>Catching the light: The Entwined History of Light and Mind</i>, "although innumerable experiments have deny the ether, an equal number seem to affirm the wavelike character of light. If we take both seriously and suppose light to be, in some sense, a wave, then what is it that is waving? In the cases of water waves, sound waves, vibrating strings, something is always waving. The figure of sound is borne by air. What bears the fleeting figure we call light? One things has become certain, whatever it is, it is not material."
+
+The problem has convinced some scientists that what is "waving" is space itself — and that the very definition of "space" has to be enlarged. Michio Kaku, in _Hyperspace_, writes of a "scientific revolution created by the theory of hyperspace, which states that dimension exist beyond the commonly accepted four of space and time. There is a growing acknowledgement among physicists worldwide, including several Nobel Laureates, that the universe may actually exist in the higher dimensional space....Light, in fact, can be explained as vibrations in the fifth dimension....Higher dimensional space, instead of being an empty, passive backdrop against which quarks play out their eternal roles, actually becomes the central actor in the drama of nature."
+
+Sensory consciousness perceives the world as existing in four physical dimensions. Yoga science describes ether-permeated space as the barrier between these and higher dimensions of existence. Beyond the subtlest physical vibration (_akasha_, ether) is the superether, "a finer manifestation and therefore not classified as one of the physical vibratory elements (_tattavas_), of which there are only five - earth, water, fire, air, ether. Some yoga treaties define this _tattava_ as mind, or 'non-matter', as opposed to matter or gross vibration."
+
+Is "mind" a "higher dimension" needed to account for scientifically observed nature of physical reality? Many physicists do no consider this question as falling within their domain; certainly no conclusive consensus has yet been reached among them. However, in _Elemental Mind: Human Consciousness and the New Physics_, physicist Nick Herbert, Ph.D., writes: "Far from being a rare occurrence in complex biological or computational systems, mind is a fundamental process in its own right, as widespread and deeply embedded in nature as light or electricity. Along with the more familiar world, mind must be considered an equally basic constituent of the natural world. Mind is, in a word, elemental, and it interacts with matter at an equally elemental level, at the level of the emergence into actuality of individual quantum events." 
