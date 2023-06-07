@@ -5,6 +5,7 @@ categories: [Brahman]
 tags: [Brahman]
 description: A Dive into Advaita Vedanta
 ---
+
 Advaita Vedanta, one of the philosophical schools of Hinduism, presents a profound vision of reality that challenges our everyday perceptions and encourages us to explore the deeper dimensions of existence. At the heart of this vision are two key concepts: Brahman and Atman.
 
 Brahman, in Advaita Vedanta, represents the ultimate reality, the fundamental essence underlying all existence. It is a concept that transcends our usual notions of God as a being or entity separate from us. Brahman is not a deity to be worshipped; rather, it is the very ground of being, the absolute, unchanging reality that pervades the universe. It is described as Sat-Chit-Ananda, or Existence-Consciousness-Bliss.
