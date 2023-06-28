@@ -8,4 +8,5 @@ bigimg: /img/path.jpg
 * [Automated Fuzzing for vulnerability analysis](https://www.researchgate.net/publication/330684293_Automated_Fuzzing_for_vulnerability_analysis)
 * [A Game-Theoretic Approach to Evaluate Security Efficacy of Security Controls Frameworks](https://www.researchgate.net/publication/339129540_A_Game-Theoretic_Approach_to_Evaluate_Security_Efficacy_of_Security_Controls_Frameworks)
 * [Application of Unmanned Aerial Vehicles in Cyber Counterterrorism](https://www.researchgate.net/publication/342397296_Application_of_Unmanned_Aerial_Vehicles_in_Cyber_Counterterrorism)
+* [Predicting terrorism using Deep Neural Networks (DNNs)](https://www.researchgate.net/publication/371076788_Predicting_terrorism_using_Deep_Neural_Networks_DNNs)
 * [Other projects/codes](https://github.com/themayursinha)
