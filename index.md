@@ -10,6 +10,6 @@ My thirst for knowledge extends far beyond my work in technology, as I eagerly d
 
 Join me on my journey of discovery, as we explore the awe-inspiring mysteries of our world and beyond. Let us expand our minds, challenge our assumptions, and embrace the infinite possibilities that await us in this grand adventure we call life. You can find me on various social media platforms, eager to connect with fellow travelers on this incredible journey of discovery.
 
-I read a lot. See my book reviews on [Goodreads](https://www.goodreads.com/themayursinha)
+I read a lot. See my book reviews on [Goodreads](https://www.goodreads.com/themayursinha).
 
 ♡ Mayur
