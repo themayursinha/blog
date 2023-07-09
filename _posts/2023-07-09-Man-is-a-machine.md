@@ -3,7 +3,7 @@ layout: post
 title: The Interplay of Science, Humanity, and the Concept of the Soul — An Essay
 categories: [philosophy]
 tags: [philosophy] [soul]
-description: The Interplay of Science, Humanity, and the Concept of the Soul
+description: The Interplay of Science, Humanity, and the Concept of the Soul — An Essay
 ---
 
 **Introduction**
