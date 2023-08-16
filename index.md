@@ -10,7 +10,7 @@ My quest for knowledge transcends the boundaries of my technological endeavors. 
 
 My life's mission is to uncover the ultimate truth of this universe - the absolute reality. The existential questions that have intrigued humanity for millennia. Why are we here? Why does the universe exist? Is there a God? Are we alone? These are the questions that fuel my voracious reading of Science, Philosophy, and Spirituality. Fortuitously, my work in technology aligns with this quest. I firmly believe that through the power of Artificial Intelligence, I can uncover that <i>ultimate</i> truth.
 
-Join me on this exhilarating journey of discovery, as we traverse the awe-inspiring mysteries of our world and beyond. Let's broaden our horizons, challenge our preconceptions, and embrace the boundless possibilities that lie ahead in this magnificent odyssey we call life. You can find me across various social media platforms, always ready to connect with fellow explorers on this remarkable journey of discovery. You can also join my [discord server](https://discord.gg/Nuvm5qzfmb) to be part of the community of truth seekers.
+Join me on this exhilarating journey of discovery, as we traverse the awe-inspiring mysteries of our world and beyond. Let's broaden our horizons, challenge our preconceptions, and embrace the boundless possibilities that lie ahead in this magnificent odyssey we call life. You can find me across various social media platforms, always ready to connect with fellow explorers on this remarkable journey of discovery.
 
 
 ♡ Mayur
