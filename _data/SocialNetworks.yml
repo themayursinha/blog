@@ -29,7 +29,7 @@ reddit:
 goodreads:
   name: "Goodreads"
   baseURL: "https://goodreads.com/"
-  icon: "fab fa-goodreads"
+  icon: "fa-goodreads-g"
 
 google-plus:
   name: "Google+"
