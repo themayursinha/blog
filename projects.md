@@ -9,4 +9,5 @@ bigimg: /img/path.jpg
 * [A Game-Theoretic Approach to Evaluate Security Efficacy of Security Controls Frameworks](https://www.researchgate.net/publication/339129540_A_Game-Theoretic_Approach_to_Evaluate_Security_Efficacy_of_Security_Controls_Frameworks)
 * [Application of Unmanned Aerial Vehicles in Cyber Counterterrorism](https://www.researchgate.net/publication/342397296_Application_of_Unmanned_Aerial_Vehicles_in_Cyber_Counterterrorism)
 * [Predicting terrorism using Deep Neural Networks (DNNs)](https://www.researchgate.net/publication/371076788_Predicting_terrorism_using_Deep_Neural_Networks_DNNs)
+* [Fine-tuning BERT for HTTP Payload Classification in Network Traffic] (https://www.researchgate.net/publication/376950581_Fine-tuning_BERT_for_HTTP_Payload_Classification_in_Network_Traffic)
 * [Other projects/codes](https://github.com/themayursinha)
