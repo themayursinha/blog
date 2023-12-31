@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Things you should watch/read if you're a nerd (or geek) like me!!
+title: Things you should watch/read
 categories: [science]
 tags: [science]
 description: Things you should watch/read
