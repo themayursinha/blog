@@ -4,13 +4,8 @@ title: Mayur Sinha
 subtitle: Engineer by day, Researcher by night
 ---
 
-Greetings, fellow voyager of the cosmos! 🌟 As a fervent pioneer in the infinite realms of technology, my curiosity is as boundless as the universe itself. Each line of code I craft, every circuit board I assemble, is a step towards deciphering the enigmatic secrets of our world and beyond. My intellectual appetite spans a vast spectrum of subjects, from the fundamental principles of physics to the intricate labyrinth of artificial intelligence. I am equally captivated by the profound depths of philosophy, the elaborate tapestry of psychology, and the mesmerizing enigma of consciousness.
+Hello there, cosmic explorer! 🌟 I'm a tech enthusiast with a passion for unraveling the universe's mysteries. Every code I write and circuit I build is a step closer to understanding our enigmatic world. My interests are vast, covering everything from the basics of physics to the complexities of AI. I'm also fascinated by philosophy, psychology, and the mysteries of consciousness.
 
-My quest for knowledge transcends the boundaries of my technological endeavors. I am a voracious reader, check out my book reviews on [Goodreads](https://www.goodreads.com/themayursinha), and I treasure the chance to engage in profound, thought-provoking dialogues with kindred spirits who share my unquenchable curiosity about the cosmos.
+I love diving into books (check my [Goodreads](https://www.goodreads.com/themayursinha) reviews!) and engaging in deep conversations with others who share my insatiable curiosity. My ultimate goal? To find the absolute truth of the universe. Questions like "Why are we here?" and "Is there a God?" drive my endless reading in Science, Philosophy, and Spirituality. Luckily, my work in technology, especially in AI, aligns perfectly with this quest.
 
-My life's mission is to uncover the ultimate truth of this universe - the absolute reality. The existential questions that have intrigued humanity for millennia. Why are we here? Why does the universe exist? Is there a God? Are we alone? These are the questions that fuel my voracious reading of Science, Philosophy, and Spirituality. Fortuitously, my work in technology aligns with this quest. I firmly believe that through the power of Artificial Intelligence, I can uncover that <i>ultimate</i> truth.
-
-Join me on this exhilarating journey of discovery, as we traverse the awe-inspiring mysteries of our world and beyond. Let's broaden our horizons, challenge our preconceptions, and embrace the boundless possibilities that lie ahead in this magnificent odyssey we call life. You can find me across various social media platforms, always ready to connect with fellow explorers on this remarkable journey of discovery.
-
-
-♡ Mayur
+Join me in this thrilling exploration of our world and beyond. Let's expand our minds, challenge our views, and explore the endless possibilities of this amazing journey called life. Connect with me on social media, and let's continue this remarkable adventure together! 🚀✨
