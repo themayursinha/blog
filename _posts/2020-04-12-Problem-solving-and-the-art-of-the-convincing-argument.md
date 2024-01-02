@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to solve a problem Mathematically?
+title: Problem solving and the art of the convincing argument
 categories: [Maths]
 tags: [maths]
 description: Problem solving and the art of the convincing argument

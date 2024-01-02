@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Crash Course in x86
+title: Crash Course in x86 - Part I
 categories: [Exploits]
 tags: [x86]
 description: Crash Course in x86
@@ -153,3 +153,21 @@ lea eax, dword ptr[ecx+edx] ; This will store ecx+edx in eax
 
 #### Loops – LOOP, REP...
 Although one can create neat loops using jumps, Intel’s x86 assembly also provides instructions specifically tailored to create iterating sequences of code. Like many of the other instructions we looked at, they come with many flavours depending of the size and sign of the variables they work with. For simplicity reasons, I will only show the easiest cases, LOOP first:
+
+```
+mov ecx, 5 ; remember ecx stands for extended counter register
+_proc:
+dec ecx ; decrements ecx
+loop _proc ; loops back to _procs, second row
+```
+
+REP instructions work like LOOP instructions, but are specifically customized to handle
+strings (this is where IA-32 assembly almost becomes a high level language)
+```
+mov esi, str1
+mov edi, str2
+mov, ecx, 10h
+rep cmps
+```
+
+What happens here is that the strings to be compared are loaded into ESI and EDI and then a comparison is performed for 16 bytes (hexadecimal value 0x10 = 16 in decimal notation). If at some point the source and destination are not equal, a flag will be set and the operation will be aborted.
