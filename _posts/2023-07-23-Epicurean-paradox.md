@@ -6,6 +6,8 @@ tags: [God, Brahman, philosophy]
 description: Resolving the Epicurean Paradox
 ---
 
+![epicurean-paradox]({{site.url}}/img/paradox.jpeg)
+
 ### Introduction
 The [Epicurean Paradox](https://en.wikipedia.org/wiki/Epicurus#Epicurean_paradox), a profound philosophical conundrum, has intrigued thinkers for centuries. Named after the ancient Greek philosopher Epicurus, it presents a compelling challenge to the traditional concept of an omnipotent, omniscient, and omnibenevolent God. The paradox grapples with the existence of evil in a world supposedly governed by a benevolent deity, raising questions that have become central to theological and philosophical debates. This paradox, while rooted in Western philosophy, finds intriguing responses in the philosophical traditions of the East, particularly in the [Advaita Vedanta](https://en.wikipedia.org/wiki/Advaita_Vedanta) school of Hindu philosophy. This blog post aims to explore the Epicurean Paradox in detail and delve into how Advaita Vedanta provides a unique perspective to resolve this paradox. Through this exploration, we will journey into the heart of one of philosophy's most enduring questions and discover how ancient wisdom can offer insights into modern dilemmas.
 
