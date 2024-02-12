@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Revisiting the Unabomber's Manifesto - A 2024 Perspective
+title: Revisiting the Unabomber - A 2024 Perspective
 categories: [technology]
 tags: [Unabomber, technology]
-description: Revisiting the Unabomber's Manifesto - A 2024 Perspective
+description: Revisiting the Unabomber
 ---
 
 In the shadows of the late 20th century, [Ted Kaczynski](https://en.wikipedia.org/wiki/Ted_Kaczynski), infamously known as the Unabomber, embarked on a nationwide bombing campaign that terrorized America for nearly two decades. A former mathematics professor turned recluse, Kaczynski's violent legacy culminated in the publication of his manifesto, "Industrial Society and Its Future," in 1995. Through coercion, he compelled major newspapers to publish his work, aiming to ignite a revolution against the technological systems he believed enslaved humanity. This manifesto, while unequivocally mired in the tragedy of his actions, has sparked debates that extend far beyond its original context, touching on the very essence of modernity and our relationship with technology.
