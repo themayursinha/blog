@@ -19,7 +19,7 @@
 
   {% if layout.common-ext-css %}
     {% for css in layout.common-ext-css %}
-      {% include ext-css.html css=css %}
+      <link rel="stylesheet" href="{{ css }}">
     {% endfor %}
   {% endif %}
 
@@ -37,7 +37,7 @@
 
   {% if page.ext-css %}
     {% for css in page.ext-css %}
-      {% include ext-css.html css=css %}
+      <link rel="stylesheet" href="{{ css | prepend: site.baseurl | replace: '//', '/' }}" />
     {% endfor %}
   {% endif %}
 
@@ -53,7 +53,7 @@
     {% endfor %}
   {% endif %}
 
-    <!-- Facebook OpenGraph tags -->
+  <!-- Facebook OpenGraph tags -->
   {% if site.fb_app_id %}
   <meta property="fb:app_id" content="{{ site.fb_app_id }}" />
   {% endif %}
@@ -66,14 +66,13 @@
   <meta property="og:title" content="{{ site.title }}" />
   {% endif %}
 
-   {% if page.meta-description %}
+  {% if page.meta-description %}
   <meta property="og:description" content="{{ page.meta-description }}">
   {% elsif page.subtitle %}
   <meta property="og:description" content="{{ page.subtitle }}">
   {% else %}
   <meta property="og:description" content="{{ page.content | strip_html | xml_escape | truncatewords: 50 }}">
   {% endif %}
-
 
   <meta property="og:type" content="website" />
 
@@ -90,7 +89,6 @@
   {% elsif site.avatar %}
   <meta property="og:image" content="{{ site.url }}{{ site.avatar }}" />
   {% endif %}
-
 
   <!-- Twitter summary cards -->
   <meta name="twitter:card" content="summary" />
