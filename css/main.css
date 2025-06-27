@@ -368,6 +368,10 @@ footer .theme-by {
 }
 .post-preview .post-read-more {
   font-weight: 800;
+  color: #007bff !important;
+}
+.post-preview .post-read-more:hover {
+  color: #0056b3 !important;
 }
 
 @media only screen and (min-width: 768px) {
@@ -456,7 +460,7 @@ footer .theme-by {
 .intro-header.big-img .page-heading,
 .intro-header.big-img .post-heading {
   padding: 100px 0;
-  color: #222;
+  color: var(--text);
   text-shadow: none;
 }
 .intro-header .page-heading h1 {
@@ -747,6 +751,19 @@ td.gutter {
 
 .tag-btn {
   margin: 5px;
+  color: #fff !important;
+  background-color: #337ab7 !important;
+  border: none;
+  border-radius: 8px;
+  display: inline-block;
+  padding: 10px 24px;
+  font-size: 20px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.tag-btn:hover {
+  background-color: #23527c !important;
+  color: #fff !important;
 }
 
 #full-tags-list {
