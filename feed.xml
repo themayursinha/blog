@@ -18,7 +18,7 @@
       </item>
     
       <item>
-        <title>Revisiting the Unabomber - A 2024 Perspective</title>
+        <title>Revisiting the Unabomber</title>
         <description>
           
           In the shadows of the late 20th century, Ted Kaczynski, infamously known as the Unabomber, embarked on a nationwide bombing campaign that terrorized America for nearly two decades. A former mathematics professor turned recluse, Kaczynski’s violent legacy culminated in the publication of his manifesto, “Industrial Society and Its Future,” in...
@@ -114,17 +114,6 @@
         <pubDate>Mon, 27 Feb 2023 00:00:00 -0800</pubDate>
         <link>https://themayursinha.com/2023-02-27-Man's-greatest-achievement/</link>
         <guid isPermaLink="true">https://themayursinha.com/2023-02-27-Man's-greatest-achievement/</guid>
-      </item>
-    
-      <item>
-        <title>Hyprocrisy of startup culture</title>
-        <description>
-          
-          Start-up companies often pride themselves on their unique company cultures, values, and mission statements. They promise their employees a supportive and inclusive work environment, opportunities for growth and development, and the chance to be a part of a team that is changing the world. However, many start-ups fall short when...
-        </description>
-        <pubDate>Sat, 11 Feb 2023 00:00:00 -0800</pubDate>
-        <link>https://themayursinha.com/2023-02-11-hypocrisy-of-startup-culture/</link>
-        <guid isPermaLink="true">https://themayursinha.com/2023-02-11-hypocrisy-of-startup-culture/</guid>
       </item>
     
       <item>
@@ -224,6 +213,17 @@
         <pubDate>Tue, 23 Dec 2014 00:00:00 -0800</pubDate>
         <link>https://themayursinha.com/2014-12-23-CRL-vs-OCSP/</link>
         <guid isPermaLink="true">https://themayursinha.com/2014-12-23-CRL-vs-OCSP/</guid>
+      </item>
+    
+      <item>
+        <title>GRE over IPSec</title>
+        <description>
+          
+          IP Header ESP IP Header GRE IP Header TCP/UDP Data Compared to regular IPSec, we waste 20bytes (IP Header) and 4bytes (GRE) To save 20bytes (IP Header) , we can make use of the Transport Mode which will just COPY the IP header over instead of creating new IP Header...
+        </description>
+        <pubDate>Tue, 15 Apr 2014 00:00:00 -0700</pubDate>
+        <link>https://themayursinha.com/2014-04-15-GRE-over-IPSec/</link>
+        <guid isPermaLink="true">https://themayursinha.com/2014-04-15-GRE-over-IPSec/</guid>
       </item>
     
   </channel>
