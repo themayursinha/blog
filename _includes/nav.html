@@ -16,29 +16,19 @@
 
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav navbar-right">
-      {% for link in site.navbar-links %}
-        {% if link[1].first %}
-          <li class="navlinks-container">
-            <a class="navlinks-parent" href="javascript:void(0)">{{ link[0] }}</a>
-            <div class="navlinks-children">
-              {% for childlink in link[1] %}
-                {% for linkparts in childlink %}
-                  {% include navbarlink.html link=linkparts %}
-                {% endfor %}
-              {% endfor %}
-            </div>
-          </li>
-        {% else %}
-          <li>
-            {% include navbarlink.html link=link %}
-          </li>
-        {% endif %}
-      {% endfor %}
+        {% assign nav_order = "Home,Projects,Blogs,Tags" | split: "," %}
+        {% for nav in nav_order %}
+          {% for link in site.navbar-links %}
+            {% if link[0] == nav %}
+              <li>{% include navbarlink.html link=link %}</li>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
       <!-- Search icon and dropdown -->
       <li class="navbar-search" style="position: relative;">
-        <a href="#" id="search-toggle" style="padding: 10px 15px;">
-          <i class="fa fa-search"></i>
-        </a>
+        <span id="search-toggle" style="padding: 10px 15px; font-size: 1.1em; display: inline-block; cursor: pointer; vertical-align: middle;">
+          <i class="fa fa-search" style="font-size: 1.1em;"></i>
+        </span>
       </li>
       <!-- Theme toggle button -->
       <li class="navbar-theme-toggle" style="position: relative;">
