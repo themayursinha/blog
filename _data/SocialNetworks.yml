@@ -19,7 +19,7 @@ github:
 twitter:
   name: "Twitter"
   baseURL: "https://twitter.com/"
-  icon: "fa-x-twitter"
+  icon: "fa-twitter"
 
 reddit:
   name: "Reddit"
