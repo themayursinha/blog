@@ -70,3 +70,13 @@ use-site-title: true
   {% endif %}
 </ul>
 {% endif %}
+
+<body>
+  <!-- Search box for Lunr.js -->
+  <div id="search-container" style="text-align:center; margin: 2em 0;">
+    <input id="lunr-search-box" type="text" placeholder="Search..." style="width: 300px; padding: 0.5em; font-size: 1.1em;">
+    <div id="lunr-search-results" style="margin-top: 1em;"></div>
+  </div>
+  <script src="https://unpkg.com/lunr/lunr.js"></script>
+  <script src="/js/search.js"></script>
+</body>

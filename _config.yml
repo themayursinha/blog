@@ -251,6 +251,7 @@ prose:
 
 plugins:
   - jekyll-paginate
+  - jekyll-lunr-js-search
   - jekyll-sitemap
 
 # Beautiful Jekyll / Dean Attali
