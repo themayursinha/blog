@@ -2,7 +2,7 @@
 layout: post
 title: Resolving the Epicurean Paradox - A Perspective from Advaita Vedanta
 categories: [God]
-tags: [God, Brahman, philosophy]
+tags: [philosophy]
 description: Resolving the Epicurean Paradox
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: Life is cruel
 categories: [philosophy]
-tags: [philosophy, injustice, cruelty, suffering]
+tags: [philosophy]
 description: Life is cruel
 ---
 

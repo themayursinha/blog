@@ -2,7 +2,7 @@
 layout: post
 title: How to study based on how memory works
 categories: [brain]
-tags: [brain]
+tags: [science]
 description: How to study based on how memory works
 ---
 

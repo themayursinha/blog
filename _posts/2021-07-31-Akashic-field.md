@@ -2,7 +2,7 @@
 layout: post
 title: The Science of akashic field
 categories: [philosophy]
-tags: [philosophy, science, spiritualism]
+tags: [philosophy, sprituality]
 description: The Science of akashic field
 ---
 

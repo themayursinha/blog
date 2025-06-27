@@ -2,7 +2,7 @@
 layout: post
 title: Exploring Philosophical Parallels - Nietzsche and Vedanta
 categories: [philosophy]
-tags: [God, philosophy]
+tags: [philosophy]
 description: Exploring Philosophical Parallels - Nietzsche and Vedanta
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: Why The Batman feels so personal
 categories: [Movies]
-tags: [movies, comic, superhero]
+tags: [movies]
 description: Why The Batman feels so personal
 ---
 

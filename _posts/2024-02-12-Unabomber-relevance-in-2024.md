@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Revisiting the Unabomber - A 2024 Perspective
+title: Revisiting the Unabomber
 categories: [technology]
-tags: [Unabomber, technology]
+tags: [technology]
 description: Revisiting the Unabomber
 ---
 

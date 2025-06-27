@@ -2,7 +2,7 @@
 layout: post
 title: Was Thanos Right?
 categories: [God]
-tags: [God]
+tags: [movies]
 description: Was Thanos Right?
 ---
 

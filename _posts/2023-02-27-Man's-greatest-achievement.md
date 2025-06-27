@@ -2,7 +2,7 @@
 layout: post
 title: Man's greatest achievement
 categories: [Tesla]
-tags: [Tesla]
+tags: [science]
 description: Man's greatest achievement
 ---
 

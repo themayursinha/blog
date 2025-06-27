@@ -2,7 +2,7 @@
 layout: post
 title: Reframing Application Security — A Developer Experience Perspective
 categories: [appsec]
-tags: [appsec]
+tags: [security]
 description: Reframing Application Security
 ---
 

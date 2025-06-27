@@ -2,7 +2,7 @@
 layout: post
 title: CRL vs OCSP
 categories: [Network Security]
-tags: [cert]
+tags: [security]
 description: Public key infrastructure certificate revocation list versus online certificate status protocol
 ---
 

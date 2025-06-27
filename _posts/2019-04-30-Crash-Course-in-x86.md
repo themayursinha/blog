@@ -2,7 +2,7 @@
 layout: post
 title: Crash Course in x86 - Part I
 categories: [Exploits]
-tags: [x86]
+tags: [security]
 description: Crash Course in x86
 ---
 

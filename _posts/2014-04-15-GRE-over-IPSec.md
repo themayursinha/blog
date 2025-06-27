@@ -2,7 +2,7 @@
 layout: post
 title: GRE over IPSec
 categories: [Network Security]
-tags: [netsec]
+tags: [security]
 description: This is a IPSec VPN Tunnel over GRE tunnel
 ---
 
