@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'jekyll', '~> 3.7.4'
+gem 'jekyll', '~> 3.9.0'
 gem 'jekyll-paginate'
 gem 'jekyll-sitemap'
 gem 'rexml'
