@@ -783,3 +783,7 @@ td.gutter {
   font-style: italic;
   font-size: 16px;
 }
+
+.navbar-brand {
+  display: none !important;
+}
