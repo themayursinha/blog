@@ -72,7 +72,7 @@
   
 
   
-  <meta property="og:description" content="Introduction In the grand tapestry of existence, the threads of science, humanity, and the concept of the soul intertwine to create a complex and intricate pattern. This essay delves into the exploration of these interconnected themes, shedding light on their interplay and mutual influence. The relevance of this topic is...">
+  <meta property="og:description" content="Introduction In life, science, humanity, and the idea of the soul are all connected and influence each other in many ways. This essay delves into the exploration of these interconnected themes, shedding light on their interplay and mutual influence. The relevance of this topic is underscored by the ongoing debates...">
   
 
   <meta property="og:type" content="website" />
@@ -96,7 +96,7 @@
   
 
   
-  <meta name="twitter:description" content="Introduction In the grand tapestry of existence, the threads of science, humanity, and the concept of the soul intertwine to create a complex and intricate pattern. This essay delves into the exploration of these interconnected themes, shedding light on their interplay and mutual influence. The relevance of this topic is...">
+  <meta name="twitter:description" content="Introduction In life, science, humanity, and the idea of the soul are all connected and influence each other in many ways. This essay delves into the exploration of these interconnected themes, shedding light on their interplay and mutual influence. The relevance of this topic is underscored by the ongoing debates...">
   
 
   
@@ -235,11 +235,41 @@
 <!-- Fuse.js CDN -->
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
 <script>
+// Ensure theme is set as early as possible on page load
+(function() {
+  const saved = localStorage.getItem('theme');
+  const dark = saved ? saved === 'dark' : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  if (dark) {
+    document.body.classList.add('dark-theme');
+  } else {
+    document.body.classList.remove('dark-theme');
+  }
+})();
+
 // Modal open/close logic
+function updateSearchModalTheme() {
+  const isDark = document.body.classList.contains('dark-theme');
+  const modal = document.getElementById('search-modal');
+  const modalInner = modal.querySelector('div');
+  if (isDark) {
+    modal.style.background = 'rgba(24,26,27,0.98)';
+    if (modalInner) {
+      modalInner.style.background = '#23272a';
+      modalInner.style.color = '#e8e6e3';
+    }
+  } else {
+    modal.style.background = 'rgba(255,255,255,0.98)';
+    if (modalInner) {
+      modalInner.style.background = '#fff';
+      modalInner.style.color = '#222';
+    }
+  }
+}
 function openSearchModal() {
   document.getElementById('search-modal').style.display = 'flex';
   document.getElementById('search-modal-input').focus();
   renderAllPosts();
+  updateSearchModalTheme();
 }
 function closeSearchModal() {
   document.getElementById('search-modal').style.display = 'none';
@@ -281,9 +311,14 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(json => {
       data = json;
       fuse = new Fuse(data, {
-        keys: ['title', 'content'],
+        keys: [
+          { name: 'title', weight: 0.7 },
+          { name: 'content', weight: 0.3 }
+        ],
         includeScore: true,
-        threshold: 0.3,
+        threshold: 0.2,
+        minMatchCharLength: 3,
+        ignoreLocation: true,
       });
     });
   document.getElementById('search-modal-input').addEventListener('input', function(e) {
@@ -293,7 +328,16 @@ document.addEventListener('DOMContentLoaded', function() {
       renderAllPosts();
       return;
     }
-    const results = fuse.search(query, { limit: 10 });
+    const keyword = query.toLowerCase();
+    let results = fuse.search(keyword);
+    // Filter to only include posts where the keyword is actually present
+    results = results.filter(result => {
+      const { title, content } = result.item;
+      return (
+        (title && title.toLowerCase().includes(keyword)) ||
+        (content && content.toLowerCase().includes(keyword))
+      );
+    });
     if (results.length === 0) {
       resultsDiv.innerHTML = '<div style="padding:16px; color:#888;">No results found</div>';
       return;
@@ -305,6 +349,13 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     `).join('');
   });
+  // Update modal theme on theme toggle
+  var toggleBtn = document.getElementById('theme-toggle');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', function() {
+      setTimeout(updateSearchModalTheme, 10);
+    });
+  }
 });
 
 // Theme toggle logic
@@ -352,8 +403,7 @@ body.dark-theme {
   --footer-text: #aaa;
   --border: #333;
 }
-body, .container, .container-fluid, .intro-header, .footer, .footer-minimal, .site-footer, .wrapper, .posts-list, .post-preview, .row,
-footer, .beautiful-jekyll-footer, .footer-links, .copyright, .theme-by, footer div, footer ul, footer li, footer p {
+footer, .footer, .footer-minimal, .site-footer, .beautiful-jekyll-footer, .footer-links, .copyright, .theme-by, footer div, footer ul, footer li, footer p {
   background: var(--footer-bg) !important;
   color: var(--footer-text) !important;
   border-radius: 0 !important;
@@ -452,13 +502,13 @@ body.dark-theme #search-modal-results div[style*='cursor:pointer']:hover {
       <article role="main" class="blog-post">
         <p><strong>Introduction</strong></p>
 
-<p>In the grand tapestry of existence, the threads of science, humanity, and the concept of the soul intertwine to create a complex and intricate pattern. This essay delves into the exploration of these interconnected themes, shedding light on their interplay and mutual influence. The relevance of this topic is underscored by the ongoing debates within scientific and philosophical circles, as well as its profound implications for our understanding of the human condition and the universe at large.</p>
+<p>In life, science, humanity, and the idea of the soul are all connected and influence each other in many ways. This essay delves into the exploration of these interconnected themes, shedding light on their interplay and mutual influence. The relevance of this topic is underscored by the ongoing debates within scientific and philosophical circles, as well as its profound implications for our understanding of the human condition and the universe at large.</p>
 
 <p>The thesis of this essay posits that the exploration of the intersection between science, the concept of the soul, and the human condition provides a unique lens through which we can examine and interpret the world. This perspective challenges traditional dichotomies and invites us to reconsider deeply ingrained beliefs and assumptions.</p>
 
 <p>Science, with its empirical methods and relentless pursuit of knowledge, offers a mechanistic view of the universe. It posits that both the cosmos and humans are akin to intricate machines, governed by laws and influenced by external stimuli. This perspective, while seemingly devoid of spiritual elements, does not necessarily negate the existence of the soul. Instead, it invites a redefinition of the soul within a scientific framework, viewing it as the sum of the body’s functions.</p>
 
-<p>The human condition, characterized by an eternal servitude to feelings, is shaped by desire and pain. These elements, integral to our existence, guide our actions and forge our characters. They are the storm that rages within us, the vessel and compass that navigate the tumultuous seas of life.</p>
+<p>The human experience is shaped by our desires and our pain. These fundamental aspects of our existence shape our character and guide our actions, serving as the driving forces behind our pursuits and endeavors.</p>
 
 <p>Finally, the chessboard analogy presents humanity as pawns guided by an unseen hand, their lives a series of necessary sacrifices for a higher purpose. This perspective raises questions about individual agency, fate, and the eternal struggle between good and evil.</p>
 
@@ -486,7 +536,7 @@ body.dark-theme #search-modal-results div[style*='cursor:pointer']:hover {
 
 <p><strong>The Human Condition: Desire, Pain, and the Quest for Peace</strong></p>
 
-<p>The human condition is a complex tapestry woven from threads of desire and pain. These fundamental aspects of our existence shape our character and guide our actions, serving as the driving forces behind our pursuits and endeavors.</p>
+<p>The human experience is shaped by our desires and our pain. These fundamental aspects of our existence shape our character and guide our actions, serving as the driving forces behind our pursuits and endeavors.</p>
 
 <p>Desire, in its many forms, propels us forward. It is the longing for connection, the pursuit of knowledge, the aspiration for achievement, and the quest for fulfillment. Desire is the compass that guides our journey through life, pointing us towards our goals and dreams. It is an integral part of our humanity, a testament to our capacity for hope and ambition.</p>
 
@@ -634,42 +684,40 @@ body.dark-theme #search-modal-results div[style*='cursor:pointer']:hover {
 </div>
 
 
-    <footer>
-  <div class="container beautiful-jekyll-footer">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <ul class="list-inline text-center footer-links"><li><a href="mailto:themayursinha@gmail.com" title="Email me"><span class="fa-stack fa-lg" aria-hidden="true">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-solid fa-envelope fa-stack-1x fa-inverse"></i>
-                </span>
-                <span class="sr-only">Email me</span>
-              </a>
-            </li><li><a href="https://github.com/themayursinha" title="GitHub"><span class="fa-stack fa-lg" aria-hidden="true">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-brands fa-github fa-stack-1x fa-inverse"></i>
-                </span>
-                <span class="sr-only">GitHub</span>
-              </a>
-            </li><li><a href="https://twitter.com/themayursinha" title="Twitter"><span class="fa-stack fa-lg" aria-hidden="true">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-brands fa-twitter fa-stack-1x fa-inverse"></i>
-                </span>
-                <span class="sr-only">Twitter</span>
-              </a>
-            </li><li><a href="https://goodreads.com/themayursinha" title="Goodreads"><span class="fa-stack fa-lg" aria-hidden="true">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-brands fa-goodreads-g fa-stack-1x fa-inverse"></i>
-                </span>
-                <span class="sr-only">Goodreads</span>
-              </a>
-            </li><li><a href="https://linkedin.com/in/mayursinha" title="LinkedIn"><span class="fa-stack fa-lg" aria-hidden="true">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-brands fa-linkedin fa-stack-1x fa-inverse"></i>
-                </span>
-                <span class="sr-only">LinkedIn</span>
-              </a>
-            </li></ul>
-      <p class="copyright text-muted">
+    <footer class="beautiful-jekyll-footer">
+  <div style="text-align:center;">
+    <ul class="list-inline text-center footer-links"><li><a href="mailto:themayursinha@gmail.com" title="Email me"><span class="fa-stack fa-lg" aria-hidden="true">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-solid fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="sr-only">Email me</span>
+          </a>
+        </li><li><a href="https://github.com/themayursinha" title="GitHub"><span class="fa-stack fa-lg" aria-hidden="true">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-brands fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="sr-only">GitHub</span>
+          </a>
+        </li><li><a href="https://twitter.com/themayursinha" title="Twitter"><span class="fa-stack fa-lg" aria-hidden="true">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-brands fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="sr-only">Twitter</span>
+          </a>
+        </li><li><a href="https://goodreads.com/themayursinha" title="Goodreads"><span class="fa-stack fa-lg" aria-hidden="true">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-brands fa-goodreads-g fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="sr-only">Goodreads</span>
+          </a>
+        </li><li><a href="https://linkedin.com/in/mayursinha" title="LinkedIn"><span class="fa-stack fa-lg" aria-hidden="true">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-brands fa-linkedin fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="sr-only">LinkedIn</span>
+          </a>
+        </li></ul>
+    <p class="copyright text-muted">
       Mayur Sinha
       &nbsp;&bull;&nbsp;
       2025
@@ -677,14 +725,7 @@ body.dark-theme #search-modal-results div[style*='cursor:pointer']:hover {
       
 
       
-      </p>
-          <!-- Please don't remove this, keep my open source work credited :) -->
-    <p class="theme-by text-muted">
-      Made with <span style="color: #e25555;">&hearts;</span> by
-      <a href="https://themayursinha.com/">Mayur Sinha</a>
     </p>
-      </div>
-    </div>
   </div>
 </footer>
 
