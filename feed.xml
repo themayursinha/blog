@@ -193,38 +193,5 @@
         <guid isPermaLink="true">https://themayursinha.com/2018-03-15-exploit-mitigation-techniques/</guid>
       </item>
     
-      <item>
-        <title>GET VPN</title>
-        <description>
-          
-          To provide a true full mesh or even dense partial mesh of connectivity, tunnel-based solutions require the provisioning of a complex connectivity mesh. Such a complex mesh not only has higher processor and memory requirements, but is difficult to provision, troubleshoot, and manage. Cisco‘s Group Encrypted Transport VPN (GETVPN) introduces...
-        </description>
-        <pubDate>Mon, 23 Feb 2015 00:00:00 -0800</pubDate>
-        <link>https://themayursinha.com/2015-02-23-GET-VPN/</link>
-        <guid isPermaLink="true">https://themayursinha.com/2015-02-23-GET-VPN/</guid>
-      </item>
-    
-      <item>
-        <title>CRL vs OCSP</title>
-        <description>
-          
-          CERTIFICATE REVOCATION LISTS A CRL is a list of revoked certificates that have been issued and subsequently revoked by a given Certification Authority. Certificates may be revoked for a number of reasons including failure or compromise of a device that is using a given cert, compromise of the key pair...
-        </description>
-        <pubDate>Tue, 23 Dec 2014 00:00:00 -0800</pubDate>
-        <link>https://themayursinha.com/2014-12-23-CRL-vs-OCSP/</link>
-        <guid isPermaLink="true">https://themayursinha.com/2014-12-23-CRL-vs-OCSP/</guid>
-      </item>
-    
-      <item>
-        <title>GRE over IPSec</title>
-        <description>
-          
-          IP Header ESP IP Header GRE IP Header TCP/UDP Data Compared to regular IPSec, we waste 20bytes (IP Header) and 4bytes (GRE) To save 20bytes (IP Header) , we can make use of the Transport Mode which will just COPY the IP header over instead of creating new IP Header...
-        </description>
-        <pubDate>Tue, 15 Apr 2014 00:00:00 -0700</pubDate>
-        <link>https://themayursinha.com/2014-04-15-GRE-over-IPSec/</link>
-        <guid isPermaLink="true">https://themayursinha.com/2014-04-15-GRE-over-IPSec/</guid>
-      </item>
-    
   </channel>
 </rss>

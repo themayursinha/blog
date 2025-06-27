@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://themayursinha.com/2014-04-11-IPSec-Site-to-Site/</loc>
-<lastmod>2014-04-11T00:00:00-07:00</lastmod>
-</url>
-<url>
-<loc>https://themayursinha.com/2014-04-15-GRE-over-IPSec/</loc>
-<lastmod>2014-04-15T00:00:00-07:00</lastmod>
-</url>
-<url>
-<loc>https://themayursinha.com/2014-12-23-CRL-vs-OCSP/</loc>
-<lastmod>2014-12-23T00:00:00-08:00</lastmod>
-</url>
-<url>
-<loc>https://themayursinha.com/2015-02-23-GET-VPN/</loc>
-<lastmod>2015-02-23T00:00:00-08:00</lastmod>
-</url>
-<url>
 <loc>https://themayursinha.com/2018-03-15-exploit-mitigation-techniques/</loc>
 <lastmod>2018-03-15T00:00:00-07:00</lastmod>
 </url>
@@ -98,8 +82,5 @@
 </url>
 <url>
 <loc>https://themayursinha.com/blogs/page2/</loc>
-</url>
-<url>
-<loc>https://themayursinha.com/blogs/page3/</loc>
 </url>
 </urlset>
