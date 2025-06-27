@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Beautiful Jekyll | MIT license | Copyright Dean Attali 2016 -->
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+
+  <title>IPSec - Site to Site - Grand Task</title>
+
+  <meta name="author" content="Mayur Sinha" />
+
+  
+
+  <link rel="alternate" type="application/rss+xml" title=" - Mayur" href="/feed.xml" />
+
+  
+
+  
+
+  
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-136557652-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+  
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css">
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    
+      <link rel="stylesheet" href="/css/main.css" />
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+    
+  
+
+  
+
+  
+
+  
+
+  <!-- Facebook OpenGraph tags -->
+  
+
+  
+  <meta property="og:title" content="IPSec - Site to Site - Grand Task" />
+  
+
+  
+  <meta property="og:description" content="NTP Configurations Cert_NTP: (We need this router to have the correct time since it is going to be the NTP server) Cert_NTP# clock set 00:01:00 01 March 2013 // with appropriate date and time Cert_NTP(config)# ntp master 1 Cert_NTP(config)# ntp authentication-key 1 md5 cisco123 Cert_NTP(config)# ntp trusted-key 1 Cert_NTP(config)# ntp...">
+  
+
+  <meta property="og:type" content="website" />
+
+  
+  <meta property="og:url" content="https://themayursinha.com/2014-04-11-IPSec-Site-to-Site/" />
+  <link rel="canonical" href="https://themayursinha.com/2014-04-11-IPSec-Site-to-Site/" />
+  
+
+  
+  <meta property="og:image" content="https://themayursinha.com/img/hacker.jpg" />
+  
+
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+  <meta name="twitter:title" content="IPSec - Site to Site - Grand Task" />
+  
+
+  
+  <meta name="twitter:description" content="NTP Configurations Cert_NTP: (We need this router to have the correct time since it is going to be the NTP server) Cert_NTP# clock set 00:01:00 01 March 2013 // with appropriate date and time Cert_NTP(config)# ntp master 1 Cert_NTP(config)# ntp authentication-key 1 md5 cisco123 Cert_NTP(config)# ntp trusted-key 1 Cert_NTP(config)# ntp...">
+  
+
+  
+  <meta name="twitter:image" content="https://themayursinha.com/img/hacker.jpg" />
+  
+
+  
+
+  
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+  <body>
+
+    
+
+  
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+        <a class="navbar-brand" href="https://themayursinha.com"></a>
+      
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+          <li>
+            
+
+
+
+
+
+
+<a href="/projects">Projects</a>
+
+          </li>
+        
+      
+        
+          <li>
+            
+
+
+
+
+
+
+<a href="/blogs">Blogs</a>
+
+          </li>
+        
+      
+        
+          <li>
+            
+
+
+
+
+
+
+<a href="https://themayursinha.com">Home</a>
+
+          </li>
+        
+      
+        
+          <li>
+            
+
+
+
+
+
+
+<a href="https://themayursinha.com/tags/">Tags</a>
+
+          </li>
+        
+      
+      <!-- Search icon and dropdown -->
+      <li class="navbar-search" style="position: relative;">
+        <a href="#" id="search-toggle" style="padding: 10px 15px;">
+          <i class="fa fa-search"></i>
+        </a>
+      </li>
+      <!-- Theme toggle button -->
+      <li class="navbar-theme-toggle" style="position: relative;">
+        <a href="#" id="theme-toggle" style="padding: 10px 15px;" title="Toggle dark/light mode">
+          <i id="theme-toggle-icon" class="fa fa-moon"></i>
+        </a>
+      </li>
+      </ul>
+    </div>
+
+	
+	<div class="avatar-container">
+	  <div class="avatar-img-border">
+	    <a href="https://themayursinha.com">
+	      <img class="avatar-img" src="/img/hacker.jpg" />
+		</a>
+	  </div>
+	</div>
+	
+
+  </div>
+</nav>
+
+<!-- Search Modal Overlay -->
+<div id="search-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(255,255,255,0.98); z-index:2000; align-items:center; justify-content:center;">
+  <div style="max-width:600px; margin:60px auto; background:#fff; border-radius:16px; box-shadow:0 8px 32px rgba(0,0,0,0.18); padding:32px 24px 24px 24px; position:relative;">
+    <button id="search-modal-close" style="position:absolute; top:16px; right:16px; background:none; border:none; font-size:1.5em; cursor:pointer;">&times;</button>
+    <div style="display:flex; align-items:center; gap:8px; margin-bottom:16px;">
+      <i class="fa fa-search" style="font-size:1.2em; color:#888;"></i>
+      <input type="text" id="search-modal-input" placeholder="Type a command or search..." style="flex:1; font-size:1.2em; border:none; outline:none; background:transparent; padding:8px 0;">
+      <span style="font-size:0.9em; color:#bbb; border:1px solid #eee; border-radius:6px; padding:2px 8px; margin-left:8px;">ESC</span>
+    </div>
+    <div id="search-modal-results" style="max-height:340px; overflow-y:auto;"></div>
+  </div>
+</div>
+
+<!-- Fuse.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+<script>
+// Modal open/close logic
+function openSearchModal() {
+  document.getElementById('search-modal').style.display = 'flex';
+  document.getElementById('search-modal-input').focus();
+  renderAllPosts();
+}
+function closeSearchModal() {
+  document.getElementById('search-modal').style.display = 'none';
+  document.getElementById('search-modal-input').value = '';
+  document.getElementById('search-modal-results').innerHTML = '';
+}
+let fuse, data = [];
+function renderAllPosts() {
+  const resultsDiv = document.getElementById('search-modal-results');
+  if (!data.length) {
+    resultsDiv.innerHTML = '<div style="padding:16px; color:#888;">Loading...</div>';
+    return;
+  }
+  resultsDiv.innerHTML = data.map(item => `
+    <div style="padding:12px 0; border-bottom:1px solid #f0f0f0; cursor:pointer;" onclick="window.location='${item.url}'">
+      <div style="font-size:0.95em; color:#888;">${item.date ? new Date(item.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : ''}</div>
+      <div style="font-size:1.1em; color:#1a2; font-weight:500;">${item.title}</div>
+    </div>
+  `).join('');
+}
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('search-toggle').onclick = function(e) {
+    e.preventDefault();
+    openSearchModal();
+  };
+  document.getElementById('search-modal-close').onclick = closeSearchModal;
+  document.getElementById('search-modal-input').addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeSearchModal();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && document.getElementById('search-modal').style.display === 'flex') closeSearchModal();
+  });
+  document.getElementById('search-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeSearchModal();
+  });
+  // Fuse.js search logic
+  fetch('/search.json')
+    .then(res => res.json())
+    .then(json => {
+      data = json;
+      fuse = new Fuse(data, {
+        keys: ['title', 'content'],
+        includeScore: true,
+        threshold: 0.3,
+      });
+    });
+  document.getElementById('search-modal-input').addEventListener('input', function(e) {
+    const query = e.target.value.trim();
+    const resultsDiv = document.getElementById('search-modal-results');
+    if (!query) {
+      renderAllPosts();
+      return;
+    }
+    const results = fuse.search(query, { limit: 10 });
+    if (results.length === 0) {
+      resultsDiv.innerHTML = '<div style="padding:16px; color:#888;">No results found</div>';
+      return;
+    }
+    resultsDiv.innerHTML = results.map(r => `
+      <div style="padding:12px 0; border-bottom:1px solid #f0f0f0; cursor:pointer;" onclick="window.location='${r.item.url}'">
+        <div style="font-size:0.95em; color:#888;">${r.item.date ? new Date(r.item.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : ''}</div>
+        <div style="font-size:1.1em; color:#1a2; font-weight:500;">${r.item.title}</div>
+      </div>
+    `).join('');
+  });
+});
+
+// Theme toggle logic
+function setTheme(dark) {
+  document.body.classList.toggle('dark-theme', dark);
+  var icon = document.getElementById('theme-toggle-icon');
+  if (icon) icon.className = dark ? 'fa fa-sun' : 'fa fa-moon';
+  localStorage.setItem('theme', dark ? 'dark' : 'light');
+}
+function getSystemPrefersDark() {
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+document.addEventListener('DOMContentLoaded', function() {
+  // Initial theme
+  const saved = localStorage.getItem('theme');
+  const dark = saved ? saved === 'dark' : getSystemPrefersDark();
+  setTheme(dark);
+  var toggleBtn = document.getElementById('theme-toggle');
+  if (toggleBtn) {
+    toggleBtn.onclick = function(e) {
+      e.preventDefault();
+      setTheme(!document.body.classList.contains('dark-theme'));
+    };
+  }
+});
+</script>
+<style>
+:root {
+  --bg: #fff;
+  --text: #222;
+  --link: #008AFF;
+  --nav-bg: #f5f5f5;
+  --nav-text: #404040;
+  --footer-bg: #f5f5f5;
+  --footer-text: #777;
+  --border: #e0e0e0;
+}
+body.dark-theme {
+  --bg: #181a1b;
+  --text: #e8e6e3;
+  --link: #4ea1ff;
+  --nav-bg: #23272a;
+  --nav-text: #e8e6e3;
+  --footer-bg: #181a1b;
+  --footer-text: #aaa;
+  --border: #333;
+}
+body, .container, .container-fluid, .intro-header, .footer, .footer-minimal, .site-footer, .wrapper, .posts-list, .post-preview, .row,
+footer, .beautiful-jekyll-footer, .footer-links, .copyright, .theme-by, footer div, footer ul, footer li, footer p {
+  background: var(--footer-bg) !important;
+  color: var(--footer-text) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+body, .container, .container-fluid, .intro-header, .posts-list, .post-preview, .row {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+h2.post-title, h3.post-subtitle {
+  color: var(--text) !important;
+}
+body.dark-theme h2.post-title, body.dark-theme h3.post-subtitle {
+  color: #fff !important;
+}
+a, a:visited {
+  color: var(--link);
+}
+a:hover {
+  color: #ffb347;
+}
+.navbar, .navbar-custom, .navbar-default {
+  background: var(--nav-bg) !important;
+  color: var(--nav-text) !important;
+}
+.navbar a, .navbar-nav > li > a {
+  color: var(--nav-text) !important;
+}
+#search-modal {
+  background: rgba(24,26,27,0.98);
+}
+body.dark-theme #search-modal {
+  background: rgba(24,26,27,0.98);
+}
+body.dark-theme #search-modal .fa-search,
+body.dark-theme #search-modal input#search-modal-input,
+body.dark-theme #search-modal-results {
+  color: #e8e6e3;
+}
+body.dark-theme #search-modal input#search-modal-input {
+  background: transparent;
+}
+body.dark-theme #search-modal-results div[style*='cursor:pointer']:hover {
+  background: #23272a;
+}
+.navbar-theme-toggle {
+  margin-left: 8px;
+}
+#theme-toggle {
+  cursor: pointer;
+}
+#theme-toggle-icon {
+  font-size: 1.3em;
+  vertical-align: middle;
+}
+</style>
+
+
+    <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>IPSec - Site to Site - Grand Task</h1>
+		  
+		  
+		  
+		  <span class="post-meta">Posted on April 11, 2014</span>
+		  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      
+
+      <article role="main" class="blog-post">
+        <p><img src="https://themayursinha.com/img/ipsec-site-to-site.png" alt="ipsec-site-to-site" /></p>
+
+<h1 id="ntp-configurations">NTP Configurations</h1>
+<p><strong>Cert_NTP: (We need this router to have the correct time since it is going to be the NTP server)</strong></p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Cert_NTP# clock set 00:01:00 01 March 2013  // with appropriate date and time
+    Cert_NTP(config)# ntp master 1
+    Cert_NTP(config)# ntp authentication-key 1 md5 cisco123
+    Cert_NTP(config)# ntp trusted-key 1
+    Cert_NTP(config)# ntp authenticate</code></pre></figure>
+
+<p>In this lab, 3 devices will be using RSA-Signatures - R2, R3 and ASA1. All these devices will need to use the NTP Server to set the time.</p>
+
+<p><strong>AT R2 and R3:</strong></p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">RX(config)#ntp server 30.1.1.5
+RX(config)#ntp authentication-key 1 md5 cisco123
+RX(config)#ntp trusted-key 1
+RX(config)#ntp authenticate</code></pre></figure>
+
+<p><strong>AT ASA1:</strong></p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ASA1(config)#ntp server 20.1.1.5
+ASA1(config)#ntp authentication-key 1 md5 cisco123
+ASA1(config)#ntp trusted-key 1
+ASA1(config)#ntp authenticate</code></pre></figure>
+
+<p>At this point, ASA1 and R2 will successfully communicate with NTP Server and will be on the way to synchronizing, but R3 will have trouble communicating with NTP server due it being on the OUTSIDE interface of ASA2. NTP communicated on UDP port 123. We will have to open an ACL for the same.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ASA2(config)#access-list OUT_IN extended permit udp host 50.1.1.1 host 30.1.1.5 eq ntp
+ASA2(config)#access-group OUT_IN in interface OUTSIDE</code></pre></figure>
+
+<p>AT this point, NTP configurations are all over! The clocks may not have yet synchronized because NTP takes a lot of time to synchronize. As a hack use the following command on all the 3 device to set the current time (with appropriate date and time):</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">XXX# clock set 00:01:00 01 March 2013</code></pre></figure>
+
+<h1 id="certificate-configurations">Certificate Configurations:</h1>
+<p>Since we are using RSA-Sig in this lab, we will make a Certificate Authority server to issue new certificates. In this example, Cert_NTP will be configured.</p>
+
+<p><strong>Certificate Server</strong></p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Cert_NTP(config)# ip http server // RSA-Sig certificates will be requested over http
+Cert_NTP(config)# crypto key generate rsa modulous 1024
+Cert_NTP(config)# crypto pki server CA_Server
+    Cert_NTP(cs-server)# issuer-name CN=ca_server OU=cisco C=India S=Karnataka L=Bangalore
+    Cert_NTP(cs-server)# lifetime ca_certificate 3
+    Cert_NTP(cs-server)# lifetime certificate 2
+    Cert_NTP(cs-server)# grant auto
+    Cert_NTP(cs-server)# database level minimum
+    Cert_NTP(cs-server)# no shutdown // Enable the Server</code></pre></figure>
+
+<p>At this point, it will ask for a Password and re confirm the same.</p>
+
+<p><strong>Certificate Client (R2 and R3)</strong></p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Rx(config)# crypto pki trustpoint CA_Server
+    Rx(cs-trustpoint)# enrollment url http://30.1.1.5
+    Rx(cs-trustpoint)# revocation-check none
+Rx(config)# crypto pki authenticate CA_Server  // At this point it will show you the hashes (fingerprints) and ask if you want to accept it! Please accept!
+    Rx(config)# crypto pki enroll CA_Server // At this point, it will ask for a password and then take you through a Yes/No questions. After you answer them, the certificates will be issued</code></pre></figure>
+
+<p>Again we will have trouble with ASA. Since the certificate communication between Client and server happens over http, the http connection initiated from R3 will be blocked by ASA. So please use the following command to open port 80.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ASA(config)#access-list OUT_IN extended permit tcp host 50.1.1.1 host 30.1.1.5 eq www // Since OUT_IN has already been applied the last time, we do not need to use access-group again!</code></pre></figure>
+
+<p><strong>Certificate Client (ASA)</strong></p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ASA1(config)# crypto ca trustpoint CA_Server
+    Rx(cs-trustpoint)# enrollment url http://20.1.1.5
+    Rx(cs-trustpoint)# revocation-check none
+Rx(config)# crypto ca authenticate CA_Server  // At this point it will show you the hashes (fingerprints) and ask if you want to accept it! Please accept!
+    Rx(config)# crypto ca enroll CA_Server // At this point, it will ask for a password and then take you through a Yes/No questions. After you answer them, the certificates will be issued.</code></pre></figure>
+
+<p>At this point, we must have the certificates on all the device and ready to configure VPN!</p>
+
+<h1 id="vpn-configuration-r2-and-asa">VPN Configuration R2 and ASA</h1>
+<p>Interesting Traffic: 1.1.1.1 &lt;—&gt; 2.2.2.2</p>
+
+<p><strong>On R2: (Regular VPN Config)</strong></p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">R2(config)# access-list 101 permit ip host 2.2.2.2 host 1.1.1.1
+R2(config)# crypto isakmp policy 10
+    R2(config-isakmp)# authentication rsa-sig [Default]
+    R2(config-isakmp)# encryption 3DES
+    R2(config-isakmp)# hash sha
+    R2(config-isakmp)# group 1
+R2(config)# crypto ipsec transform-set TSET esp-3des esp-sha-hmac
+R2(config)# crypto map CMAP 10 ipsec-isakmp
+R2(config-crypto-map)# set transform-set TSET
+R2(config-crypto-map)# set peer 20.1.1.10
+R2(config-crypto-map)# match address 101
+R2(config)# int f0/0
+R2(config-if)# crypto map CMAP</code></pre></figure>
+
+<p><strong>On ASA:</strong></p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ASA1(config)# access-list 101 permit ip host 1.1.1.1 host 2.2.2.2
+ASA1(config)# crypto isakmp policy 10
+    ASA1(config-isakmp)# authentication rsa-sig
+    ASA1(config-isakmp)# encryption 3DES
+    ASA1(config-isakmp)# hash sha
+    ASA1(config-isakmp)# group 1
+ASA1(config)# crypto ipsec transform-set TSET esp-3des esp-sha-hmac
+ASA1(config)# tunnel-group 40.1.1.1 type ipsec-l2l
+ASA1(config)# tunnel-group 40.1.1.1 ipsec-attributes
+    ASA1(config-tunnel-ipsec)# peer-id-validate nocheck // Required while creating VPN between Router and ASA using RSA Certificate Authentication
+    ASA1(config-tunnel-ipsec)# trustpoint CA_Server // Required for Certificate Authentication
+ASA1(config)# crypto map CMAP 10 set transform-set TSET
+ASA1(config)# crypto map CMAP 10 set peer 40.1.1.1
+ASA1(config)# crypto map CMAP 10 match address 101
+ASA1(config)# crypto map CMAP 10 set trustpoint CA_Server // Required if you have to initiate traffic from ASA's side
+ASA1(config)# crypto map CMAP interface OUTSIDE
+ASA1(config)# crypto isakmp enable OUTSIDE</code></pre></figure>
+
+<p>Rememeber for VPN the 2 critical protocol/ports are ESP and UDP 500. Now if we initiate traffic from Loopback of R2 to Loopback of R1, UDP is inspected and hence will return back. ESP will go from R2 to ASA1, but will not return back. Hence we have to open an ACL for coming from DMZ to INSIDE.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ASA2(config)#access-list DMZ_IN extended permit esp host 20.1.1.10 host 40.1.1.1
+ASA2(config)#access-group DMZ_IN in interface DMZ</code></pre></figure>
+
+<p>But since we need to be able to initiate traffic from R1’s loopback too, we have to create an ACL for UDP 500</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ASA2(config)#access-list DMZ_IN extended permit udp host 20.1.1.10 eq isakmp host 40.1.1.1 eq isakmp</code></pre></figure>
+
+<h1 id="vpn-configuration-r3-and-asa">VPN Configuration R3 and ASA</h1>
+<p>Interesting Traffic: 1.1.1.1 &lt;—&gt; 3.3.3.3</p>
+
+<p>Router and ASA configurations are the same except for the the different IP Address according to this setup. But in this case if we were to initiate traffic from R3 to R1, we have to create ACL for both ESP and ISAKMP (UDP 500) from OUTSIDE to DMZ. We make use of the same ACL OUT_IN used previously.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ASA2(config)#access-list OUT_IN extended permit esp host 50.1.1.1 host 20.1.1.10
+ASA2(config)#access-list OUT_IN extended permit udp host 50.1.1.1 eq isakmp host 20.1.1.10 eq isakmp</code></pre></figure>
+
+<p>But even from DMZ to OUT will be blocked due to the explicit deny of the ACL ‘DMZ_IN’. So let us add to that ACL</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ASA2(config)#access-list DMZ_IN extended permit esp host 20.1.1.10 host 50.1.1.1
+ASA2(config)#access-list DMZ_IN extended permit udp host 20.1.1.10 eq isakmp host 50.1.1.1 eq isakmp</code></pre></figure>
+
+<p>At this point, the VPN between R2 and R1 and R3 and R1 will be successful!!!</p>
+
+<p><b>HairPinning</b>
+Hairpinning is the method of using tunnels from R2 to ASA and R3 to ASA, to communicate between R2 and R3 Loopbacks~! We have to add one Crypto ACL’s in R2 and R3. We have to add 2 crypto ACL to ASA as mentioned below:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">R2(config)# access-list 101 permit ip host 2.2.2.2 host 3.3.3.3
+R3(config)# access-list 101 permit ip host 3.3.3.3 host 2.2.2.2</code></pre></figure>
+
+<p>In ASA be careful to update the existing ACLs such that the new ASA of the same number has a different source but same destination (as given below)!</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ASA1(config)# access-list 101 permit ip host 1.1.1.1 host 2.2.2.2 [Existing]
+ASA1(config)# access-list 101 permit ip host 3.3.3.3 host 2.2.2.2
+ASA1(config)# access-list 102 permit ip host 1.1.1.1 host 3.3.3.3 [Existing]
+ASA1(config)# access-list 102 permit ip host 2.2.2.2 host 3.3.3.3</code></pre></figure>
+
+<p>At this point if you try pinging from the loopback of R2 to loopback of R3, it will create SAs, but the ping will not happen!!! This is due to the fact that ASA’s will not by default let SAME SECURITY LEVEL TRAFFIC! Use the following command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ASA1(config)# same-security-traffic permit intra-interface
+</code></pre></div></div>
+
+      </article>
+
+      
+        <div class="blog-tags">
+          Tags:
+          
+          
+            <a href="/tags#netsec">netsec</a>
+          
+          
+        </div>
+      
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="sr-only">Share: </span>
+
+  
+  <!--- Share on Twitter -->
+    <a href="https://twitter.com/intent/tweet?text=IPSec+-+Site+to+Site+-+Grand+Task+https://themayursinha.com/2014-04-11-IPSec-Site-to-Site/"
+      class="btn btn-social-icon btn-twitter" title="Share on Twitter">
+      <span class="fa fa-fw fa-twitter" aria-hidden="true"></span>
+      <span class="sr-only">Twitter</span>
+    </a>
+  
+
+  
+  <!--- Share on Facebook -->
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://themayursinha.com/2014-04-11-IPSec-Site-to-Site/"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fa fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="sr-only">Facebook</span>
+    </a>
+  
+
+  
+
+  
+  <!--- Share on LinkedIn -->
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://themayursinha.com/2014-04-11-IPSec-Site-to-Site/"
+      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <span class="fa fa-fw fa-linkedin" aria-hidden="true"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pager blog-pager">
+        
+        
+        <li class="next">
+          <a href="/2014-04-15-GRE-over-IPSec/" data-toggle="tooltip" data-placement="top" title="GRE over IPSec">Next Post &rarr;</a>
+        </li>
+        
+      </ul>
+
+      
+        <div class="disqus-comments">
+          <div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'https-themayursinha-com';
+        /* ensure that pages with query string get the same discussion */
+            var url_parts = window.location.href.split("?");
+            var disqus_url = url_parts[0];
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        </div>
+          
+        <div class="staticman-comments">
+          
+
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+
+    <footer>
+  <div class="container beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links"><li><a href="mailto:themayursinha@gmail.com" title="Email me"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-solid fa-envelope fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">Email me</span>
+              </a>
+            </li><li><a href="https://github.com/themayursinha" title="GitHub"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-brands fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">GitHub</span>
+              </a>
+            </li><li><a href="https://twitter.com/themayursinha" title="Twitter"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-brands fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">Twitter</span>
+              </a>
+            </li><li><a href="https://goodreads.com/themayursinha" title="Goodreads"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-brands fa-goodreads-g fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">Goodreads</span>
+              </a>
+            </li><li><a href="https://linkedin.com/in/mayursinha" title="LinkedIn"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-brands fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">LinkedIn</span>
+              </a>
+            </li></ul>
+      <p class="copyright text-muted">
+      Mayur Sinha
+      &nbsp;&bull;&nbsp;
+      2025
+
+      
+
+      
+      </p>
+          <!-- Please don't remove this, keep my open source work credited :) -->
+    <p class="theme-by text-muted">
+      Made with <span style="color: #e25555;">&hearts;</span> by
+      <a href="https://themayursinha.com/">Mayur Sinha</a>
+    </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+    
+
+
+
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script>
+      	if (typeof jQuery == 'undefined') {
+      	  document.write('<script src="/js/jquery-3.7.0.min.js"></scr' + 'ipt>');
+      	}
+      </script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/bootstrap.min.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/main.js"></script>
+    
+  
+
+
+  
+  </body>
+</html>
