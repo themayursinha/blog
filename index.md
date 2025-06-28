@@ -5,14 +5,18 @@ subtitle: Engineer by day, Researcher by night
 use-site-title: true
 ---
 
-<!-- Personal intro -->
-<div style="text-align: center; font-size: 1.2em; margin-top: 2em;">
-  <p>Hello!</p>
-  <p>I'm passionate about technology and understanding the universe. I enjoy learning about a wide range of topics, from physics and artificial intelligence (AI) to why we think and act the way we do.</p>
-  <p>I love reading and having deep conversations with other curious people. My main goal is to learn the truth about our world by exploring both science and spirituality.</p>
-  <p>By day, I'm a software engineer focused on security. By night, I work with a non-profit organization that researches how to keep us safe from potential AI threats. I hope for a future where humans and AI can exist together safely and ethically.</p>
-  <p>I'm always happy to connect with people who have similar interests. Let's learn from each other and explore all that life has to offer.</p>
-  <p>Feel free to reach out and share your thoughts. Together, we can learn new things and discover more about our world.</p>
+<div class="home-main-content">
+
+I'm passionate about technology and understanding the universe. I enjoy learning about a wide range of topics, from physics and artificial intelligence (AI) to why we think and act the way we do.
+
+I love reading and having deep conversations with other curious people. My main goal is to learn the truth about our world by exploring both science and spirituality.
+
+By day, I'm a software engineer focused on security. By night, I work with a non-profit organization that researches how to keep us safe from potential AI threats. I hope for a future where humans and AI can exist together safely and ethically.
+
+I'm always happy to connect with people who have similar interests. Let's learn from each other and explore all that life has to offer.
+
+Feel free to reach out and share your thoughts. Together, we can learn new things and discover more about our world.
+
 </div>
 
 <!-- Blog listing -->
