@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
 
-  <title>Mayur Sinha</title>
+  <title>Blogs</title>
 
   <meta name="author" content="Mayur Sinha" />
 
@@ -68,11 +68,11 @@
   
 
   
-  <meta property="og:title" content="Mayur Sinha" />
+  <meta property="og:title" content="Blogs" />
   
 
   
-  <meta property="og:description" content="{% for post in paginator.posts %} {{ post.title }} {% if post.subtitle %} {{ post.subtitle }} {% endif %} Posted on {{ post.date | date: &quot;%B %-d, %Y&quot; }} {{ post.content | strip_html | xml_escape | truncatewords: 50 }} [Read&amp;nbsp;More] {% endfor %} {% if paginator.total_pages &gt; 1 %} {%...">
+  <meta property="og:description" content="All Posts Filter by tag: All {% assign tags = site.tags | sort %} {% for tag in tags %} {{ tag[0] }} ({{ tag[1].size }}) {% endfor %} {% for post in site.posts %} {{ post.title }} ({{ post.date | date: '%b %-d, %Y' }}) {% if post.tags.size &gt;...">
   
 
   <meta property="og:type" content="website" />
@@ -92,11 +92,11 @@
   <meta name="twitter:creator" content="@" />
 
   
-  <meta name="twitter:title" content="Mayur Sinha" />
+  <meta name="twitter:title" content="Blogs" />
   
 
   
-  <meta name="twitter:description" content="{% for post in paginator.posts %} {{ post.title }} {% if post.subtitle %} {{ post.subtitle }} {% endif %} Posted on {{ post.date | date: &quot;%B %-d, %Y&quot; }} {{ post.content | strip_html | xml_escape | truncatewords: 50 }} [Read&amp;nbsp;More] {% endfor %} {% if paginator.total_pages &gt; 1 %} {%...">
+  <meta name="twitter:description" content="All Posts Filter by tag: All {% assign tags = site.tags | sort %} {% for tag in tags %} {{ tag[0] }} ({{ tag[1].size }}) {% endfor %} {% for post in site.posts %} {{ post.title }} ({{ post.date | date: '%b %-d, %Y' }}) {% if post.tags.size &gt;...">
   
 
   
@@ -154,8 +154,6 @@
           
             
           
-            
-          
         
           
             
@@ -170,8 +168,6 @@
 
 <a href="/projects">Projects</a>
 </li>
-            
-          
             
           
             
@@ -194,26 +190,12 @@
 </li>
             
           
-            
-          
         
           
             
           
             
           
-            
-          
-            
-              <li>
-
-
-
-
-
-
-<a href="https://themayursinha.com/tags/">Tags</a>
-</li>
             
           
         
@@ -492,197 +474,281 @@ body.dark-theme #search-modal-results div[style*='cursor:pointer']:hover {
     <!-- TODO this file has become a mess, refactor it -->
 
 
-<div class="intro-header"></div>
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-heading">
+          <h1>Blogs</h1>
+		  
+		  
+		  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
 
 
 
 <div class="container" role="main">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <div class="posts-list">
+      <h1>All Posts</h1>
+
+<!-- Tag filter -->
+<div id="tag-filter" style="margin-bottom: 1.5em;">
+  <strong>Filter by tag:</strong>
+  <a href="/blogs/" onclick="filterPosts(''); return false;">All</a>
   
-  <article class="post-preview">
-    <a href="/2024-06-30-Suffering/">
-	  <h2 class="post-title">Life is cruel</h2>
-
-	  
-    </a>
-
-    <p class="post-meta">
-      Posted on June 30, 2024
-    </p>
-
-    <div class="post-entry">
-      The question of why there is injustice, cruelty, and suffering in the world is one of the most profound and challenging issues in philosophy. This question becomes particularly complex when considered from a secular or non-theistic perspective, which does not include an afterlife where these wrongs might be addressed or...
-	  <a href="/2024-06-30-Suffering/" class="post-read-more">[Read&nbsp;More]</a>
-    </div>
-  </article>
   
-  <article class="post-preview">
-    <a href="/2024-02-12-Unabomber-relevance-in-2024/">
-	  <h2 class="post-title">Revisiting the Unabomber</h2>
-
-	  
-    </a>
-
-    <p class="post-meta">
-      Posted on February 12, 2024
-    </p>
-
-    <div class="post-entry">
-      In the shadows of the late 20th century, Ted Kaczynski, infamously known as the Unabomber, embarked on a nationwide bombing campaign that terrorized America for nearly two decades. A former mathematics professor turned recluse, Kaczynski’s violent legacy culminated in the publication of his manifesto, “Industrial Society and Its Future,” in...
-	  <a href="/2024-02-12-Unabomber-relevance-in-2024/" class="post-read-more">[Read&nbsp;More]</a>
-    </div>
-  </article>
+    <a href="#maths" onclick="filterPosts('maths'); return false;">maths (1)</a>
   
-  <article class="post-preview">
-    <a href="/2023-12-31-Nietzsche-and-Vedanta/">
-	  <h2 class="post-title">Exploring Philosophical Parallels - Nietzsche and Vedanta</h2>
-
-	  
-    </a>
-
-    <p class="post-meta">
-      Posted on December 31, 2023
-    </p>
-
-    <div class="post-entry">
-      Introduction Among all world philosophies, few thinkers stand out as much as Friedrich Nietzsche, the German philosopher known for his provocative ideas and aphoristic style, and the ancient, profound Vedanta philosophy, a cornerstone of Hindu thought. At first glance, Nietzsche, a product of the 19th-century European intellectual milieu, and Vedanta,...
-	  <a href="/2023-12-31-Nietzsche-and-Vedanta/" class="post-read-more">[Read&nbsp;More]</a>
-    </div>
-  </article>
+    <a href="#movies" onclick="filterPosts('movies'); return false;">movies (2)</a>
   
-  <article class="post-preview">
-    <a href="/2023-07-23-Epicurean-paradox/">
-	  <h2 class="post-title">Resolving the Epicurean Paradox - A Perspective from Advaita Vedanta</h2>
-
-	  
-    </a>
-
-    <p class="post-meta">
-      Posted on July 23, 2023
-    </p>
-
-    <div class="post-entry">
-      Introduction The Epicurean Paradox, a profound philosophical conundrum, has intrigued thinkers for centuries. Named after the ancient Greek philosopher Epicurus, it presents a compelling challenge to the traditional concept of an omnipotent, omniscient, and omnibenevolent God. The paradox grapples with the existence of evil in a world supposedly governed by...
-	  <a href="/2023-07-23-Epicurean-paradox/" class="post-read-more">[Read&nbsp;More]</a>
-    </div>
-  </article>
+    <a href="#philosophy" onclick="filterPosts('philosophy'); return false;">philosophy (7)</a>
   
-  <article class="post-preview">
-    <a href="/2023-07-17-x-ai/">
-	  <h2 class="post-title">Elon Musk on xAI</h2>
-
-	  
-    </a>
-
-    <p class="post-meta">
-      Posted on July 17, 2023
-    </p>
-
-    <div class="post-entry">
-      Introduction In a recent Twitter Space discussion, Elon Musk, the visionary entrepreneur and CEO of SpaceX and Tesla, introduced his latest venture, xAI. The discussion was a deep dive into the goals, philosophy, and potential of this new project. The founding team of xAI, boasting impressive backgrounds from Deep Mind,...
-	  <a href="/2023-07-17-x-ai/" class="post-read-more">[Read&nbsp;More]</a>
-    </div>
-  </article>
+    <a href="#science" onclick="filterPosts('science'); return false;">science (2)</a>
   
-  <article class="post-preview">
-    <a href="/2023-07-09-Man-is-a-machine/">
-	  <h2 class="post-title">The Interplay of Science, Humanity, and the Concept of the Soul — An Essay</h2>
-
-	  
-    </a>
-
-    <p class="post-meta">
-      Posted on July 9, 2023
-    </p>
-
-    <div class="post-entry">
-      Introduction In life, science, humanity, and the idea of the soul are all connected and influence each other in many ways. This essay delves into the exploration of these interconnected themes, shedding light on their interplay and mutual influence. The relevance of this topic is underscored by the ongoing debates...
-	  <a href="/2023-07-09-Man-is-a-machine/" class="post-read-more">[Read&nbsp;More]</a>
-    </div>
-  </article>
+    <a href="#security" onclick="filterPosts('security'); return false;">security (3)</a>
   
-  <article class="post-preview">
-    <a href="/2023-07-07-Was-Thanos-Right/">
-	  <h2 class="post-title">Was Thanos Right?</h2>
-
-	  
-    </a>
-
-    <p class="post-meta">
-      Posted on July 7, 2023
-    </p>
-
-    <div class="post-entry">
-      Last week I watched The Avengers: Infinity War again after 5 years and it sparked me why Thanos could be right. Thanos, also known as The Mad Titan, is a character from the Marvel Cinematic Universe who is known for his quest to acquire the Infinity Stones, intending to use their limitless...
-	  <a href="/2023-07-07-Was-Thanos-Right/" class="post-read-more">[Read&nbsp;More]</a>
-    </div>
-  </article>
+    <a href="#sprituality" onclick="filterPosts('sprituality'); return false;">sprituality (1)</a>
   
-  <article class="post-preview">
-    <a href="/2023-06-14-Reframing-application-security/">
-	  <h2 class="post-title">Reframing Application Security — A Developer Experience Perspective</h2>
-
-	  
-    </a>
-
-    <p class="post-meta">
-      Posted on June 14, 2023
-    </p>
-
-    <div class="post-entry">
-      In the rapidly evolving digital landscape, most companies are vying for supremacy based on their ability to deliver business value through software and technology. The speed and quality of software production directly correlate with the value delivered. It’s a simple equation, and security teams must adapt to this reality to...
-	  <a href="/2023-06-14-Reframing-application-security/" class="post-read-more">[Read&nbsp;More]</a>
-    </div>
-  </article>
-  
-  <article class="post-preview">
-    <a href="/2023-06-07-A-dive-into-advaita-vedanta/">
-	  <h2 class="post-title">Understanding the Concept of Brahman and Atman — A Dive into Advaita Vedanta</h2>
-
-	  
-    </a>
-
-    <p class="post-meta">
-      Posted on June 7, 2023
-    </p>
-
-    <div class="post-entry">
-      Advaita Vedanta, one of the philosophical schools of Hinduism, presents a profound vision of reality that challenges our everyday perceptions and encourages us to explore the deeper dimensions of existence. At the heart of this vision are two key concepts: Brahman and Atman. Brahman, in Advaita Vedanta, represents the ultimate...
-	  <a href="/2023-06-07-A-dive-into-advaita-vedanta/" class="post-read-more">[Read&nbsp;More]</a>
-    </div>
-  </article>
-  
-  <article class="post-preview">
-    <a href="/2023-02-27-Man's-greatest-achievement/">
-	  <h2 class="post-title">Man's greatest achievement</h2>
-
-	  
-    </a>
-
-    <p class="post-meta">
-      Posted on February 27, 2023
-    </p>
-
-    <div class="post-entry">
-      In the article “Man’s Greatest Achievement” published in the New York American on July 6, 1930, Nikola Tesla outlines his vision for the future of science and technology, specifically regarding the harnessing of energy and its potential for transforming human society.Tesla begins by describing the fundamental principles of energy and...
-	  <a href="/2023-02-27-Man's-greatest-achievement/" class="post-read-more">[Read&nbsp;More]</a>
-    </div>
-  </article>
+    <a href="#technology" onclick="filterPosts('technology'); return false;">technology (2)</a>
   
 </div>
 
-
-<ul class="pager main-pager">
+<!-- Posts list -->
+<ul id="posts-list">
   
+    <li data-tags="philosophy">
+      <a href="/2024-06-30-Suffering/">Life is cruel</a>
+      <span style="color:#888;">(Jun 30, 2024)</span>
+      
+        <span class="post-tags">
+          
+            <span>#philosophy</span>
+          
+        </span>
+      
+    </li>
   
-  <li class="next">
-    <a href="/blogs/page2/">Older Posts &rarr;</a>
-  </li>
+    <li data-tags="technology">
+      <a href="/2024-02-12-Unabomber-relevance-in-2024/">Revisiting the Unabomber</a>
+      <span style="color:#888;">(Feb 12, 2024)</span>
+      
+        <span class="post-tags">
+          
+            <span>#technology</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="philosophy">
+      <a href="/2023-12-31-Nietzsche-and-Vedanta/">Exploring Philosophical Parallels - Nietzsche and Vedanta</a>
+      <span style="color:#888;">(Dec 31, 2023)</span>
+      
+        <span class="post-tags">
+          
+            <span>#philosophy</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="philosophy">
+      <a href="/2023-07-23-Epicurean-paradox/">Resolving the Epicurean Paradox - A Perspective from Advaita Vedanta</a>
+      <span style="color:#888;">(Jul 23, 2023)</span>
+      
+        <span class="post-tags">
+          
+            <span>#philosophy</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="technology">
+      <a href="/2023-07-17-x-ai/">Elon Musk on xAI</a>
+      <span style="color:#888;">(Jul 17, 2023)</span>
+      
+        <span class="post-tags">
+          
+            <span>#technology</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="philosophy">
+      <a href="/2023-07-09-Man-is-a-machine/">The Interplay of Science, Humanity, and the Concept of the Soul — An Essay</a>
+      <span style="color:#888;">(Jul 9, 2023)</span>
+      
+        <span class="post-tags">
+          
+            <span>#philosophy</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="movies">
+      <a href="/2023-07-07-Was-Thanos-Right/">Was Thanos Right?</a>
+      <span style="color:#888;">(Jul 7, 2023)</span>
+      
+        <span class="post-tags">
+          
+            <span>#movies</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="security">
+      <a href="/2023-06-14-Reframing-application-security/">Reframing Application Security — A Developer Experience Perspective</a>
+      <span style="color:#888;">(Jun 14, 2023)</span>
+      
+        <span class="post-tags">
+          
+            <span>#security</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="philosophy">
+      <a href="/2023-06-07-A-dive-into-advaita-vedanta/">Understanding the Concept of Brahman and Atman — A Dive into Advaita Vedanta</a>
+      <span style="color:#888;">(Jun 7, 2023)</span>
+      
+        <span class="post-tags">
+          
+            <span>#philosophy</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="science">
+      <a href="/2023-02-27-Man's-greatest-achievement/">Man's greatest achievement</a>
+      <span style="color:#888;">(Feb 27, 2023)</span>
+      
+        <span class="post-tags">
+          
+            <span>#science</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="movies">
+      <a href="/2022-05-01-The-Batman/">Why The Batman feels so personal</a>
+      <span style="color:#888;">(May 1, 2022)</span>
+      
+        <span class="post-tags">
+          
+            <span>#movies</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="philosophy sprituality">
+      <a href="/2021-07-31-Akashic-field/">The Science of akashic field</a>
+      <span style="color:#888;">(Jul 31, 2021)</span>
+      
+        <span class="post-tags">
+          
+            <span>#philosophy</span>
+          
+            <span>#sprituality</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="science">
+      <a href="/2021-07-14-How-to-Study/">How to study based on how memory works</a>
+      <span style="color:#888;">(Jul 14, 2021)</span>
+      
+        <span class="post-tags">
+          
+            <span>#science</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="philosophy">
+      <a href="/2021-07-12-Socratic-dialogue/">Socratic dialogue</a>
+      <span style="color:#888;">(Jul 12, 2021)</span>
+      
+        <span class="post-tags">
+          
+            <span>#philosophy</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="maths">
+      <a href="/2020-04-12-Problem-solving-and-the-art-of-the-convincing-argument/">Problem solving and the art of the convincing argument</a>
+      <span style="color:#888;">(Apr 12, 2020)</span>
+      
+        <span class="post-tags">
+          
+            <span>#maths</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="security">
+      <a href="/2019-04-30-Crash-Course-in-x86/">Crash Course in x86 - Part I</a>
+      <span style="color:#888;">(Apr 30, 2019)</span>
+      
+        <span class="post-tags">
+          
+            <span>#security</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="security">
+      <a href="/2018-03-15-exploit-mitigation-techniques/">Memory exploit mitigation techniques</a>
+      <span style="color:#888;">(Mar 15, 2018)</span>
+      
+        <span class="post-tags">
+          
+            <span>#security</span>
+          
+        </span>
+      
+    </li>
   
 </ul>
 
+<script>
+function filterPosts(tag) {
+  var posts = document.querySelectorAll('#posts-list li');
+  posts.forEach(function(li) {
+    if (!tag || li.getAttribute('data-tags').includes(tag)) {
+      li.style.display = '';
+    } else {
+      li.style.display = 'none';
+    }
+  });
+}
+</script>
 
 	    
     </div>
