@@ -17,6 +17,4 @@ I believe humanity is on a path to becoming a cybernetic species, a transformati
 
 I'm always happy to connect with people who have similar interests. Let's learn from each other and explore all that life has to offer.
 
-Feel free to reach out and share your thoughts. Together, we can learn new things and discover more about our world.
-
 </div>
