@@ -50,6 +50,6 @@ Imagine our world is a giant chessboard. This powerful analogy suggests that mos
 
 This perspective makes us question our own agency. How much of your life is truly your own choice? This is the classic nature versus nurture debate. Are your successes and failures a result of your decisions, or were they largely determined by the "square" on the board where you began?
 
-The chessboard analogy also forces us to think about sacrifice. In chess, pawns are often sacrificed to protect more valuable pieces or to achieve a strategic goal.8 In life, individuals and groups are sometimes sacrificed for a "greater good."9 This raises difficult ethical questions: Is it ever right to sacrifice the few for the many? And who gets to decide?
+The chessboard analogy also forces us to think about sacrifice. In chess, pawns are often sacrificed to protect more valuable pieces or to achieve a strategic goal. In life, individuals and groups are sometimes sacrificed for a "greater good." This raises difficult ethical questions: Is it ever right to sacrifice the few for the many? And who gets to decide?
 
 Finally, the two opposing sides in chess mirror the timeless struggle between good and evil, order and chaos, light and dark. Life often feels like a battle between competing forces and values. This struggle is not just external, but also internal, a conflict within our own hearts and minds.
