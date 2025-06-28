@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Understanding the Concept of Brahman and Atman — A Dive into Advaita Vedanta
+title: Understanding the Concept of Brahman and Atman
 categories: [Brahman]
 tags: [philosophy]
 description: A Dive into Advaita Vedanta
