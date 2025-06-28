@@ -583,9 +583,6 @@ body.dark-theme #search-modal-results div[style*='cursor:pointer']:hover {
     <div class="col-lg-3 col-md-12">
       <!-- Table of Contents -->
 <div id="toc" class="toc-sidebar">
-  <div class="toc-header">
-    <h4>Table of Contents</h4>
-  </div>
   <div id="toc-content" class="toc-content">
     <!-- TOC will be populated by JavaScript -->
   </div>
@@ -670,20 +667,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
-  // Smooth scrolling for TOC links with proper offset
+  // Improved smooth scrolling for TOC links with perfect heading position
   tocContent.addEventListener('click', function(e) {
     if (e.target.classList.contains('toc-link')) {
       e.preventDefault();
       const targetId = e.target.getAttribute('href').substring(1);
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
-        // Calculate the offset to account for the fixed navbar
-        const navbarHeight = document.querySelector('.navbar-custom').offsetHeight || 80;
-        const targetPosition = targetElement.offsetTop - navbarHeight - 20; // 20px extra padding
-        
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
+        targetElement.scrollIntoView({ behavior: 'instant', block: 'start' });
+        history.replaceState(null, '', '#' + targetId);
+        requestAnimationFrame(() => {
+          const navbar = document.querySelector('.navbar-custom');
+          const navbarHeight = navbar ? navbar.offsetHeight : 0;
+          window.scrollBy({ top: -navbarHeight - 8, left: 0, behavior: 'smooth' });
         });
       }
     }
