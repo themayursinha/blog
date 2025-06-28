@@ -802,3 +802,89 @@ td.gutter {
     margin-right: 5vw;
   }
 }
+
+/* --- Table of Contents --- */
+
+.toc-sidebar {
+  position: sticky;
+  top: 100px;
+  background: #23242a;
+  border: 1px solid #404040;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+
+.toc-header {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #404040;
+  padding-bottom: 10px;
+}
+
+.toc-header h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.toc-content {
+  font-size: 14px;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-list li {
+  margin-bottom: 8px;
+}
+
+.toc-link {
+  color: #ccc;
+  text-decoration: none;
+  display: block;
+  padding: 4px 0;
+  transition: color 0.2s ease;
+  line-height: 1.4;
+}
+
+.toc-link:hover {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.toc-link:focus {
+  color: #007bff;
+  outline: none;
+}
+
+/* Responsive adjustments for TOC */
+@media only screen and (max-width: 991px) {
+  .toc-sidebar {
+    position: static;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    max-height: none;
+  }
+}
+
+/* Dark theme adjustments */
+@media (prefers-color-scheme: dark) {
+  .toc-sidebar {
+    background: #23242a;
+    border-color: #404040;
+  }
+  
+  .toc-link {
+    color: #ccc;
+  }
+  
+  .toc-link:hover {
+    color: #007bff;
+  }
+}

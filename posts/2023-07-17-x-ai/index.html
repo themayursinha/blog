@@ -503,8 +503,8 @@ body.dark-theme #search-modal-results div[style*='cursor:pointer']:hover {
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-
+    <!-- Main content column -->
+    <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1">
       
 
       <article role="main" class="blog-post">
@@ -585,6 +585,77 @@ body.dark-theme #search-modal-results div[style*='cursor:pointer']:hover {
       
         <!-- Comment section removed -->
       
+    </div>
+    
+    <!-- Sidebar column -->
+    <div class="col-lg-3 col-md-12">
+      <!-- Table of Contents -->
+<div id="toc" class="toc-sidebar">
+  <div class="toc-header">
+    <h4>Table of Contents</h4>
+  </div>
+  <div id="toc-content" class="toc-content">
+    <!-- TOC will be populated by JavaScript -->
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const article = document.querySelector('.blog-post');
+  const tocContent = document.getElementById('toc-content');
+  
+  if (!article || !tocContent) return;
+  
+  const headings = article.querySelectorAll('h2, h3, h4');
+  const toc = document.createElement('ul');
+  toc.className = 'toc-list';
+  
+  headings.forEach((heading, index) => {
+    // Add ID to heading if it doesn't have one
+    if (!heading.id) {
+      heading.id = 'heading-' + index;
+    }
+    
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    
+    a.href = '#' + heading.id;
+    a.textContent = heading.textContent;
+    a.className = 'toc-link';
+    
+    // Add indentation based on heading level
+    if (heading.tagName === 'H3') {
+      li.style.paddingLeft = '20px';
+    } else if (heading.tagName === 'H4') {
+      li.style.paddingLeft = '40px';
+    }
+    
+    li.appendChild(a);
+    toc.appendChild(li);
+  });
+  
+  if (toc.children.length > 0) {
+    tocContent.appendChild(toc);
+  } else {
+    document.getElementById('toc').style.display = 'none';
+  }
+  
+  // Smooth scrolling for TOC links
+  tocContent.addEventListener('click', function(e) {
+    if (e.target.classList.contains('toc-link')) {
+      e.preventDefault();
+      const targetId = e.target.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  });
+});
+</script> 
     </div>
   </div>
 </div>
