@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
 
-  <title>Tag Index</title>
+  <title>Posts</title>
 
   <meta name="author" content="Mayur Sinha" />
 
@@ -68,18 +68,18 @@
   
 
   
-  <meta property="og:title" content="Tag Index" />
+  <meta property="og:title" content="Posts" />
   
 
   
-  <meta property="og:description" content="{%- capture site_tags -%} {%- for tag in site.tags -%} {{- tag | first -}}{%- unless forloop.last -%},{%- endunless -%} {%- endfor -%} {%- endcapture -%} {%- assign tags_list = site_tags | split:',' | sort -%} {%- for tag in tags_list -%} &amp;nbsp;{{- tag -}}&amp;nbsp;({{site.tags[tag].size}}) {%- endfor -%} {%- for...">
+  <meta property="og:description" content="All Posts Filter by tag: All {% assign tags = site.tags | sort %} {% for tag in tags %} {{ tag[0] }} ({{ tag[1].size }}) {% endfor %} {% for post in site.posts %} {{ post.title }} ({{ post.date | date: '%b %-d, %Y' }}) {% if post.tags.size &gt;...">
   
 
   <meta property="og:type" content="website" />
 
   
-  <meta property="og:url" content="https://themayursinha.com/tags/" />
-  <link rel="canonical" href="https://themayursinha.com/tags/" />
+  <meta property="og:url" content="https://themayursinha.com/posts/" />
+  <link rel="canonical" href="https://themayursinha.com/posts/" />
   
 
   
@@ -92,11 +92,11 @@
   <meta name="twitter:creator" content="@" />
 
   
-  <meta name="twitter:title" content="Tag Index" />
+  <meta name="twitter:title" content="Posts" />
   
 
   
-  <meta name="twitter:description" content="{%- capture site_tags -%} {%- for tag in site.tags -%} {{- tag | first -}}{%- unless forloop.last -%},{%- endunless -%} {%- endfor -%} {%- endcapture -%} {%- assign tags_list = site_tags | split:',' | sort -%} {%- for tag in tags_list -%} &amp;nbsp;{{- tag -}}&amp;nbsp;({{site.tags[tag].size}}) {%- endfor -%} {%- for...">
+  <meta name="twitter:description" content="All Posts Filter by tag: All {% assign tags = site.tags | sort %} {% for tag in tags %} {{ tag[0] }} ({{ tag[1].size }}) {% endfor %} {% for post in site.posts %} {{ post.title }} ({{ post.date | date: '%b %-d, %Y' }}) {% if post.tags.size &gt;...">
   
 
   
@@ -484,7 +484,7 @@ body.dark-theme #search-modal-results div[style*='cursor:pointer']:hover {
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-heading">
-          <h1>Tag Index</h1>
+          <h1>Posts</h1>
 		  
 		  
 		  
@@ -502,125 +502,253 @@ body.dark-theme #search-modal-results div[style*='cursor:pointer']:hover {
 <div class="container" role="main">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <a href="#maths" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;maths&nbsp;(1)</a><a href="#movies" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;movies&nbsp;(2)</a><a href="#philosophy" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;philosophy&nbsp;(7)</a><a href="#science" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;science&nbsp;(2)</a><a href="#security" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;security&nbsp;(3)</a><a href="#sprituality" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;sprituality&nbsp;(1)</a><a href="#technology" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;technology&nbsp;(2)</a><div id="full-tags-list"><h2 id="maths" class="linked-section">
-        <i class="fa fa-tag" aria-hidden="true"></i>
-        &nbsp;maths&nbsp;(1)
-    </h2>
-    <div class="post-list"><div class="tag-entry">
-                <a href="https://themayursinha.com/posts/2020-04-12-Problem-solving-and-the-art-of-the-convincing-argument/">Problem solving and the art of the convincing argument</a>
-                <div class="entry-date">
-                    <time datetime="2020-04-12T00:00:00-07:00">April 12, 2020</time>
-                </div>
-            </div></div><h2 id="movies" class="linked-section">
-        <i class="fa fa-tag" aria-hidden="true"></i>
-        &nbsp;movies&nbsp;(2)
-    </h2>
-    <div class="post-list"><div class="tag-entry">
-                <a href="https://themayursinha.com/posts/2023-07-07-Was-Thanos-Right/">Was Thanos Right?</a>
-                <div class="entry-date">
-                    <time datetime="2023-07-07T00:00:00-07:00">July 07, 2023</time>
-                </div>
-            </div><div class="tag-entry">
-                <a href="https://themayursinha.com/posts/2022-05-01-The-Batman/">Why The Batman feels so personal</a>
-                <div class="entry-date">
-                    <time datetime="2022-05-01T00:00:00-07:00">May 01, 2022</time>
-                </div>
-            </div></div><h2 id="philosophy" class="linked-section">
-        <i class="fa fa-tag" aria-hidden="true"></i>
-        &nbsp;philosophy&nbsp;(7)
-    </h2>
-    <div class="post-list"><div class="tag-entry">
-                <a href="https://themayursinha.com/posts/2024-06-30-Suffering/">Life is cruel</a>
-                <div class="entry-date">
-                    <time datetime="2024-06-30T00:00:00-07:00">June 30, 2024</time>
-                </div>
-            </div><div class="tag-entry">
-                <a href="https://themayursinha.com/posts/2023-12-31-Nietzsche-and-Vedanta/">Exploring Philosophical Parallels - Nietzsche and Vedanta</a>
-                <div class="entry-date">
-                    <time datetime="2023-12-31T00:00:00-08:00">December 31, 2023</time>
-                </div>
-            </div><div class="tag-entry">
-                <a href="https://themayursinha.com/posts/2023-07-23-Epicurean-paradox/">Resolving the Epicurean Paradox - A Perspective from Advaita Vedanta</a>
-                <div class="entry-date">
-                    <time datetime="2023-07-23T00:00:00-07:00">July 23, 2023</time>
-                </div>
-            </div><div class="tag-entry">
-                <a href="https://themayursinha.com/posts/2023-07-09-Man-is-a-machine/">The Interplay of Science, Humanity, and the Concept of the Soul — An Essay</a>
-                <div class="entry-date">
-                    <time datetime="2023-07-09T00:00:00-07:00">July 09, 2023</time>
-                </div>
-            </div><div class="tag-entry">
-                <a href="https://themayursinha.com/posts/2023-06-07-A-dive-into-advaita-vedanta/">Understanding the Concept of Brahman and Atman — A Dive into Advaita Vedanta</a>
-                <div class="entry-date">
-                    <time datetime="2023-06-07T00:00:00-07:00">June 07, 2023</time>
-                </div>
-            </div><div class="tag-entry">
-                <a href="https://themayursinha.com/posts/2021-07-31-Akashic-field/">The Science of akashic field</a>
-                <div class="entry-date">
-                    <time datetime="2021-07-31T00:00:00-07:00">July 31, 2021</time>
-                </div>
-            </div><div class="tag-entry">
-                <a href="https://themayursinha.com/posts/2021-07-12-Socratic-dialogue/">Socratic dialogue</a>
-                <div class="entry-date">
-                    <time datetime="2021-07-12T00:00:00-07:00">July 12, 2021</time>
-                </div>
-            </div></div><h2 id="science" class="linked-section">
-        <i class="fa fa-tag" aria-hidden="true"></i>
-        &nbsp;science&nbsp;(2)
-    </h2>
-    <div class="post-list"><div class="tag-entry">
-                <a href="https://themayursinha.com/posts/2023-02-27-Man's-greatest-achievement/">Man's greatest achievement</a>
-                <div class="entry-date">
-                    <time datetime="2023-02-27T00:00:00-08:00">February 27, 2023</time>
-                </div>
-            </div><div class="tag-entry">
-                <a href="https://themayursinha.com/posts/2021-07-14-How-to-Study/">How to study based on how memory works</a>
-                <div class="entry-date">
-                    <time datetime="2021-07-14T00:00:00-07:00">July 14, 2021</time>
-                </div>
-            </div></div><h2 id="security" class="linked-section">
-        <i class="fa fa-tag" aria-hidden="true"></i>
-        &nbsp;security&nbsp;(3)
-    </h2>
-    <div class="post-list"><div class="tag-entry">
-                <a href="https://themayursinha.com/posts/2023-06-14-Reframing-application-security/">Reframing Application Security — A Developer Experience Perspective</a>
-                <div class="entry-date">
-                    <time datetime="2023-06-14T00:00:00-07:00">June 14, 2023</time>
-                </div>
-            </div><div class="tag-entry">
-                <a href="https://themayursinha.com/posts/2019-04-30-Crash-Course-in-x86/">Crash Course in x86 - Part I</a>
-                <div class="entry-date">
-                    <time datetime="2019-04-30T00:00:00-07:00">April 30, 2019</time>
-                </div>
-            </div><div class="tag-entry">
-                <a href="https://themayursinha.com/posts/2018-03-15-exploit-mitigation-techniques/">Memory exploit mitigation techniques</a>
-                <div class="entry-date">
-                    <time datetime="2018-03-15T00:00:00-07:00">March 15, 2018</time>
-                </div>
-            </div></div><h2 id="sprituality" class="linked-section">
-        <i class="fa fa-tag" aria-hidden="true"></i>
-        &nbsp;sprituality&nbsp;(1)
-    </h2>
-    <div class="post-list"><div class="tag-entry">
-                <a href="https://themayursinha.com/posts/2021-07-31-Akashic-field/">The Science of akashic field</a>
-                <div class="entry-date">
-                    <time datetime="2021-07-31T00:00:00-07:00">July 31, 2021</time>
-                </div>
-            </div></div><h2 id="technology" class="linked-section">
-        <i class="fa fa-tag" aria-hidden="true"></i>
-        &nbsp;technology&nbsp;(2)
-    </h2>
-    <div class="post-list"><div class="tag-entry">
-                <a href="https://themayursinha.com/posts/2024-02-12-Unabomber-relevance-in-2024/">Revisiting the Unabomber</a>
-                <div class="entry-date">
-                    <time datetime="2024-02-12T00:00:00-08:00">February 12, 2024</time>
-                </div>
-            </div><div class="tag-entry">
-                <a href="https://themayursinha.com/posts/2023-07-17-x-ai/">Elon Musk on xAI</a>
-                <div class="entry-date">
-                    <time datetime="2023-07-17T00:00:00-07:00">July 17, 2023</time>
-                </div>
-            </div></div></div>
+      <h1>All Posts</h1>
+
+<!-- Tag filter -->
+<div id="tag-filter" style="margin-bottom: 1.5em;">
+  <strong>Filter by tag:</strong>
+  <a href="/posts/" onclick="filterPosts(''); return false;">All</a>
+  
+  
+    <a href="#maths" onclick="filterPosts('maths'); return false;">maths (1)</a>
+  
+    <a href="#movies" onclick="filterPosts('movies'); return false;">movies (2)</a>
+  
+    <a href="#philosophy" onclick="filterPosts('philosophy'); return false;">philosophy (7)</a>
+  
+    <a href="#science" onclick="filterPosts('science'); return false;">science (2)</a>
+  
+    <a href="#security" onclick="filterPosts('security'); return false;">security (3)</a>
+  
+    <a href="#sprituality" onclick="filterPosts('sprituality'); return false;">sprituality (1)</a>
+  
+    <a href="#technology" onclick="filterPosts('technology'); return false;">technology (2)</a>
+  
+</div>
+
+<!-- Posts list -->
+<ul id="posts-list">
+  
+    <li data-tags="philosophy">
+      <a href="/posts/2024-06-30-Suffering/">Life is cruel</a>
+      <span style="color:#888;">(Jun 30, 2024)</span>
+      
+        <span class="post-tags">
+          
+            <span>#philosophy</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="technology">
+      <a href="/posts/2024-02-12-Unabomber-relevance-in-2024/">Revisiting the Unabomber</a>
+      <span style="color:#888;">(Feb 12, 2024)</span>
+      
+        <span class="post-tags">
+          
+            <span>#technology</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="philosophy">
+      <a href="/posts/2023-12-31-Nietzsche-and-Vedanta/">Exploring Philosophical Parallels - Nietzsche and Vedanta</a>
+      <span style="color:#888;">(Dec 31, 2023)</span>
+      
+        <span class="post-tags">
+          
+            <span>#philosophy</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="philosophy">
+      <a href="/posts/2023-07-23-Epicurean-paradox/">Resolving the Epicurean Paradox - A Perspective from Advaita Vedanta</a>
+      <span style="color:#888;">(Jul 23, 2023)</span>
+      
+        <span class="post-tags">
+          
+            <span>#philosophy</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="technology">
+      <a href="/posts/2023-07-17-x-ai/">Elon Musk on xAI</a>
+      <span style="color:#888;">(Jul 17, 2023)</span>
+      
+        <span class="post-tags">
+          
+            <span>#technology</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="philosophy">
+      <a href="/posts/2023-07-09-Man-is-a-machine/">The Interplay of Science, Humanity, and the Concept of the Soul — An Essay</a>
+      <span style="color:#888;">(Jul 9, 2023)</span>
+      
+        <span class="post-tags">
+          
+            <span>#philosophy</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="movies">
+      <a href="/posts/2023-07-07-Was-Thanos-Right/">Was Thanos Right?</a>
+      <span style="color:#888;">(Jul 7, 2023)</span>
+      
+        <span class="post-tags">
+          
+            <span>#movies</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="security">
+      <a href="/posts/2023-06-14-Reframing-application-security/">Reframing Application Security — A Developer Experience Perspective</a>
+      <span style="color:#888;">(Jun 14, 2023)</span>
+      
+        <span class="post-tags">
+          
+            <span>#security</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="philosophy">
+      <a href="/posts/2023-06-07-A-dive-into-advaita-vedanta/">Understanding the Concept of Brahman and Atman — A Dive into Advaita Vedanta</a>
+      <span style="color:#888;">(Jun 7, 2023)</span>
+      
+        <span class="post-tags">
+          
+            <span>#philosophy</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="science">
+      <a href="/posts/2023-02-27-Man's-greatest-achievement/">Man's greatest achievement</a>
+      <span style="color:#888;">(Feb 27, 2023)</span>
+      
+        <span class="post-tags">
+          
+            <span>#science</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="movies">
+      <a href="/posts/2022-05-01-The-Batman/">Why The Batman feels so personal</a>
+      <span style="color:#888;">(May 1, 2022)</span>
+      
+        <span class="post-tags">
+          
+            <span>#movies</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="philosophy sprituality">
+      <a href="/posts/2021-07-31-Akashic-field/">The Science of akashic field</a>
+      <span style="color:#888;">(Jul 31, 2021)</span>
+      
+        <span class="post-tags">
+          
+            <span>#philosophy</span>
+          
+            <span>#sprituality</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="science">
+      <a href="/posts/2021-07-14-How-to-Study/">How to study based on how memory works</a>
+      <span style="color:#888;">(Jul 14, 2021)</span>
+      
+        <span class="post-tags">
+          
+            <span>#science</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="philosophy">
+      <a href="/posts/2021-07-12-Socratic-dialogue/">Socratic dialogue</a>
+      <span style="color:#888;">(Jul 12, 2021)</span>
+      
+        <span class="post-tags">
+          
+            <span>#philosophy</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="maths">
+      <a href="/posts/2020-04-12-Problem-solving-and-the-art-of-the-convincing-argument/">Problem solving and the art of the convincing argument</a>
+      <span style="color:#888;">(Apr 12, 2020)</span>
+      
+        <span class="post-tags">
+          
+            <span>#maths</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="security">
+      <a href="/posts/2019-04-30-Crash-Course-in-x86/">Crash Course in x86 - Part I</a>
+      <span style="color:#888;">(Apr 30, 2019)</span>
+      
+        <span class="post-tags">
+          
+            <span>#security</span>
+          
+        </span>
+      
+    </li>
+  
+    <li data-tags="security">
+      <a href="/posts/2018-03-15-exploit-mitigation-techniques/">Memory exploit mitigation techniques</a>
+      <span style="color:#888;">(Mar 15, 2018)</span>
+      
+        <span class="post-tags">
+          
+            <span>#security</span>
+          
+        </span>
+      
+    </li>
+  
+</ul>
+
+<script>
+function filterPosts(tag) {
+  var posts = document.querySelectorAll('#posts-list li');
+  posts.forEach(function(li) {
+    if (!tag || li.getAttribute('data-tags').includes(tag)) {
+      li.style.display = '';
+    } else {
+      li.style.display = 'none';
+    }
+  });
+}
+</script>
 
 	    
     </div>
