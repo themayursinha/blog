@@ -76,25 +76,17 @@ In the end, while the world may not be naturally fair, we have the ability to ma
 ### Further Reading & Sources
 
 1. **On Existentialism:**
-    
-    - _The Myth of Sisyphus_ by Albert Camus.
-        
+    - _The Myth of Sisyphus_ by Albert Camus. 
     - _Existentialism Is a Humanism_ by Jean-Paul Sartre.
         
 2. **On Social & Economic Factors:**
-    
     - _Capital in the Twenty-First Century_ by Thomas Piketty.
-        
     - _The Price of Inequality_ by Joseph E. Stiglitz.
         
 3. **On Evolutionary Perspectives:**
-    
     - _The Selfish Gene_ by Richard Dawkins.
-        
     - _The Better Angels of Our Nature_ by Steven Pinker.
         
 4. **On Humanism:**
-    
     - The [American Humanist Association](https://americanhumanist.org/) website.
-        
     - _Humanism: A Very Short Introduction_ by Stephen Law.
