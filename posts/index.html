@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Blogs
-permalink: /blogs/
+title: Posts
+permalink: /posts/
 ---
 
 <h1>All Posts</h1>
@@ -9,7 +9,7 @@ permalink: /blogs/
 <!-- Tag filter -->
 <div id="tag-filter" style="margin-bottom: 1.5em;">
   <strong>Filter by tag:</strong>
-  <a href="/blogs/" onclick="filterPosts(''); return false;">All</a>
+  <a href="/posts/" onclick="filterPosts(''); return false;">All</a>
   {% assign tags = site.tags | sort %}
   {% for tag in tags %}
     <a href="#{{ tag[0] }}" onclick="filterPosts('{{ tag[0] }}'); return false;">{{ tag[0] }} ({{ tag[1].size }})</a>

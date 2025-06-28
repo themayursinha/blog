@@ -16,7 +16,7 @@
 
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav navbar-right">
-        {% assign nav_order = "Home,Projects,Blogs,Tags" | split: "," %}
+        {% assign nav_order = "Home,Projects,Posts,Tags" | split: "," %}
         {% for nav in nav_order %}
           {% for link in site.navbar-links %}
             {% if link[0] == nav %}
