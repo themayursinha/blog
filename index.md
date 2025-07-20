@@ -15,6 +15,6 @@ By day, I'm a software engineer focused on security. By night, I work with a non
 
 I believe humanity is on a path to becoming a cybernetic species, a transformation in which AI will be a critical component. I intend to be an active participant in what may be the most significant evolutionary leap for Homo sapiens.
 
-I'm always happy to connect with people who have similar interests. Let's learn from each other and explore all that life has to offer..
+I'm always happy to connect with people who have similar interests. Let's learn from each other and explore all that life has to offer.
 
 </div>
