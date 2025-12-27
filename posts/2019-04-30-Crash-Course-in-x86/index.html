@@ -656,7 +656,7 @@ Another instruction that can be used for data moving is the LEA instruction. LEA
 <h4 id="loops--loop-rep">Loops – LOOP, REP…</h4>
 <p>Although one can create neat loops using jumps, Intel’s x86 assembly also provides instructions specifically tailored to create iterating sequences of code. Like many of the other instructions we looked at, they come with many flavours depending of the size and sign of the variables they work with. For simplicity reasons, I will only show the easiest cases, LOOP first:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mov ecx, 5 ; remember ecx stands for extended counter register
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mov ecx, 5 ; remember ecx stands for extended counter register
 _proc:
 dec ecx ; decrements ecx
 loop _proc ; loops back to _procs, second row
@@ -664,7 +664,7 @@ loop _proc ; loops back to _procs, second row
 
 <p>REP instructions work like LOOP instructions, but are specifically customized to handle
 strings (this is where IA-32 assembly almost becomes a high level language)</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mov esi, str1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mov esi, str1
 mov edi, str2
 mov, ecx, 10h
 rep cmps
