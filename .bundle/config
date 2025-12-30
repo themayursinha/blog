@@ -1,2 +1,3 @@
 ---
 BUNDLE_WITH: "jekyll_plugins"
+BUNDLE_PATH: "vendor/bundle"
