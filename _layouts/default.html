@@ -2,14 +2,8 @@
 layout: base
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- ... existing head content ... -->
-</head>
-<body>
-  <input type="text" id="search-input" placeholder="Search..." style="width: 100%; padding: 8px; margin-bottom: 16px;">
-  <div id="results-container"></div>
+<input type="text" id="search-input" placeholder="Search..." style="width: 100%; padding: 8px; margin-bottom: 16px;">
+<div id="results-container"></div>
 
 <div class="intro-header"></div>
 
@@ -17,19 +11,15 @@ layout: base
   {{ content }}
 </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
-  <script>
-    SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('results-container'),
-      json: '/search.json',
-      searchResultTemplate: '<div><a href="{url}">{title}</a></div>',
-      noResultsText: 'No results found',
-      limit: 10,
-      fuzzy: false
-    });
-  </script>
-</body>
-</html>
-
-  
+<script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    searchResultTemplate: '<div><a href="{url}">{title}</a></div>',
+    noResultsText: 'No results found',
+    limit: 10,
+    fuzzy: false
+  });
+</script>

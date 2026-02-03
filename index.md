@@ -11,7 +11,7 @@ I'm a technologist who is trying to understand the universe and the meaning of l
 
 I love reading and having deep conversations with other curious people. My main goal is to learn the truth about our world by exploring both science and spirituality.
 
-By day, I'm a software engineer focused on security. By night, I work with a non-profit organization that researches how to keep us safe from potential AI threats. I hope for a future where humans and AI can exist together safely and ethically.
+By day, I'm a staff engineer focused on security. By night, I work with a non-profit organization that researches how to keep us safe from potential AI threats. I hope for a future where humans and AI can exist together safely and ethically.
 
 I believe humanity is on a path to becoming a cybernetic species, a transformation in which AI will be a critical component. I intend to be an active participant in what may be the most significant evolutionary leap for Homo sapiens.
 

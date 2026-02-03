@@ -12,3 +12,4 @@ bigimg: /img/path.jpg
 * [Fine-tuning BERT for HTTP Payload Classification in Network Traffic](https://www.researchgate.net/publication/376950581_Fine-tuning_BERT_for_HTTP_Payload_Classification_in_Network_Traffic)
 * [BERT-Based RASP: Enhancing Runtime Application Security with Fine-Tuned BERT](https://www.researchgate.net/publication/377119657_BERT-Based_RASP_Enhancing_Runtime_Application_Security_with_Fine-Tuned_BERT1)
 * [Leveraging Large Language Model(LLM) for Natural Language to SQL Query Generation in HR Analytics](https://www.researchgate.net/publication/378125775_Leveraging_Large_Language_Model_LLMfor_Natural_Language_to_SQL_Query_Generation_in_HR_Analytics_A_Case_Study_on_IBM_Attrition_Dataset)
+* [MCP security evaluator](https://github.com/themayursinha/mcp-llm-security-evaluator)
