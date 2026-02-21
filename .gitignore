@@ -3,6 +3,8 @@ _site
 .sass-cache
 .vagrant
 vendor
+.bundle
+.ruby-lsp
 AGENTS.md
 
 # general

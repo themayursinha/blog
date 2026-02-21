@@ -14,12 +14,20 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.7'
+          ruby-version: '3.2'
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
       - name: Install dependencies
         run: |
-          gem install bundler -v 2.4.22
-          bundle _2.4.22_ install
+          gem install bundler -v 2.3.27
+          bundle _2.3.27_ install
+
+      - name: Run JS tests
+        run: node --test tests/*.test.js
 
       - name: Build site
         run: bundle exec jekyll build
