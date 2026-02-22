@@ -7,12 +7,12 @@
     <atom:link href="https://themayursinha.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Why Transformer LLMs Are Better at Finding Code Vulnerabilities Than Classical Neural Networks</title>
+        <title>Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks</title>
         <description>
-          A technical view from shellcode classifiers to semantic code analysis - 
+          
           I have worked with both worlds. Earlier in my career, including work at Trend Micro, I spent time experimenting with ANN pipelines for shellcode detection. Those systems were useful for bounded classification tasks on network payloads. They were not designed for deep reasoning across large codebases. That difference is the...
         </description>
-        <pubDate>Sun, 22 Feb 2026 09:00:00 +0100</pubDate>
+        <pubDate>Sun, 22 Feb 2026 00:00:00 +0100</pubDate>
         <link>https://themayursinha.com/posts/2026-02-22-llms-vs-classical-neural-nets-for-vulnerability-detection/</link>
         <guid isPermaLink="true">https://themayursinha.com/posts/2026-02-22-llms-vs-classical-neural-nets-for-vulnerability-detection/</guid>
       </item>
