@@ -13,3 +13,4 @@ bigimg: /img/path.jpg
 * [BERT-Based RASP: Enhancing Runtime Application Security with Fine-Tuned BERT](https://www.researchgate.net/publication/377119657_BERT-Based_RASP_Enhancing_Runtime_Application_Security_with_Fine-Tuned_BERT1)
 * [Leveraging Large Language Model(LLM) for Natural Language to SQL Query Generation in HR Analytics](https://www.researchgate.net/publication/378125775_Leveraging_Large_Language_Model_LLMfor_Natural_Language_to_SQL_Query_Generation_in_HR_Analytics_A_Case_Study_on_IBM_Attrition_Dataset)
 * [MCP security evaluator](https://github.com/themayursinha/mcp-llm-security-evaluator)
+* [Adversarial ML Security Lab](https://github.com/themayursinha/adversarial-ml-lab)
