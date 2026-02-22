@@ -2,6 +2,7 @@
 layout: page
 title: Mayur Sinha
 subtitle: Engineer by day, Researcher by night
+description: Security engineer and technical philosopher writing about AI security and LLM security.
 use-site-title: true
 ---
 

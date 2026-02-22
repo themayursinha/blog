@@ -17,7 +17,7 @@ baseurl: ""
 title: "Mayur Sinha"
 
 # Short description of your site
-description: Mayur
+description: "Security engineer writing about AI security, LLM security, and philosophy of technology."
 
 # --- Navigation bar options --- #
 
@@ -62,6 +62,7 @@ footer-link-col: "#404040"
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
   name: Mayur Sinha
+  twitter: themayursinha
 
 # Select your active Social Network Links.
 # Uncomment the links you want to show in the footer and add your information to each link.
@@ -158,8 +159,6 @@ timezone: "Europe/Berlin"
 markdown: kramdown
 highlighter: rouge
 permalink: /posts/:year-:month-:day-:title/
-paginate: 10
-paginate_path: "/posts/page:num/"
 
 kramdown:
   input: GFM
