@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mayur Sinha</title>
-    <description>Mayur</description>
+    <description>Security engineer writing about AI security, LLM security, and philosophy of technology.</description>
     <link>https://themayursinha.com</link>
     <atom:link href="https://themayursinha.com/feed.xml" rel="self" type="application/rss+xml" />
     
