@@ -9,9 +9,9 @@
 body {
   font-family: var(--font-body);
   font-size: 16px;
-  color: #fff;
+  color: var(--text, #fff);
   position: relative;
-  background-color: #181A20;
+  background-color: var(--bg, #181A20);
 }
 p {
   line-height: 1.5;
@@ -809,20 +809,16 @@ td.gutter {
 
 /* --- Table of Contents --- */
 :root {
-  --toc-bg: #fff;
-  --toc-border: #f6f6f7;
-  --toc-header: #23242a;
-  --toc-text: #23242a;
-  --toc-link: #222;
-  --toc-link-hover: #000;
+  --toc-bg: var(--vp-c-bg-soft, #fff);
+  --toc-border: var(--vp-c-divider, #f6f6f7);
+  --toc-header: var(--vp-c-text-1, #23242a);
+  --toc-text: var(--vp-c-text-1, #23242a);
+  --toc-link: var(--vp-c-text-1, #222);
+  --toc-link-hover: var(--link, #000);
 }
+:root.theme-tokyo-night,
 body.dark-theme {
-  --toc-bg: #23242a;
-  --toc-border: #33353a;
-  --toc-header: #fff;
-  --toc-text: #fff;
-  --toc-link: #fff;
-  --toc-link-hover: #007bff;
+  --toc-link-hover: var(--link, #7aa2f7);
 }
 .toc-sidebar {
   position: sticky !important;
@@ -862,7 +858,7 @@ body.dark-theme {
   text-decoration: none;
 }
 .toc-link:hover {
-  color: #007bff !important;
+  color: var(--toc-link-hover) !important;
   text-decoration: underline;
 }
 
@@ -879,7 +875,7 @@ body.dark-theme {
     border: 1px solid var(--toc-border);
     border-radius: 16px;
     padding: 16px 14px 16px 16px;
-    color: #222;
+    color: var(--toc-text);
     z-index: 10;
     box-shadow: 0 2px 16px rgba(0,0,0,0.02);
     font-size: 0.92em;
@@ -887,7 +883,7 @@ body.dark-theme {
   .toc-header h4 {
     font-size: 1em;
     font-weight: 600;
-    color: #222;
+    color: var(--toc-header);
     margin-bottom: 10px;
     letter-spacing: 0.01em;
   }
@@ -896,7 +892,7 @@ body.dark-theme {
     margin-top: 0.5em;
   }
   .toc-link {
-    color: #666;
+    color: var(--toc-link);
     font-weight: 400;
     font-size: 0.94em;
     padding: 2px 0;
@@ -904,7 +900,7 @@ body.dark-theme {
     text-decoration: none;
   }
   .toc-link:hover {
-    color: #007bff;
+    color: var(--toc-link-hover);
     text-decoration: underline;
   }
 }
@@ -918,7 +914,7 @@ body.dark-theme {
     box-shadow: none;
     border: 1px solid var(--toc-border);
     background: var(--toc-bg);
-    color: #23242a;
+    color: var(--toc-text);
     font-size: 0.96em;
     padding: 12px 8px 12px 10px;
   }

@@ -2,6 +2,11 @@
   'use strict';
 
   var SEARCH_INDEX_URL = '/search.json';
+  var THEME_STORAGE_KEY = 'theme-preference';
+  var LEGACY_THEME_KEY = 'theme';
+  var THEMES = ['sepia', 'normal', 'tokyo-night'];
+  var THEME_CLASS_PREFIX = 'theme-';
+  var THEME_CLASSES = ['theme-sepia', 'theme-normal', 'theme-tokyo-night', 'dark-theme'];
   var state = {
     posts: [],
     loaded: false,
@@ -33,31 +38,86 @@
     return !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
   }
 
-  function getInitialTheme() {
-    var savedTheme = safeLocalStorageGet('theme');
-    if (savedTheme === 'dark') {
-      return true;
+  function normalizeTheme(theme) {
+    if (!theme) {
+      return null;
     }
-    if (savedTheme === 'light') {
-      return false;
+
+    if (theme === true) {
+      return 'tokyo-night';
     }
-    return prefersDarkTheme();
+    if (theme === false) {
+      return 'normal';
+    }
+
+    var normalized = String(theme).toLowerCase();
+    if (THEMES.indexOf(normalized) !== -1) {
+      return normalized;
+    }
+    if (normalized === 'tokyo') {
+      return 'tokyo-night';
+    }
+    if (normalized === 'dark') {
+      return 'tokyo-night';
+    }
+    if (normalized === 'light') {
+      return 'normal';
+    }
+    return null;
   }
 
-  function setTheme(darkThemeEnabled) {
-    if (!document.body) {
+  function getSavedTheme() {
+    return normalizeTheme(safeLocalStorageGet(THEME_STORAGE_KEY)) ||
+      normalizeTheme(safeLocalStorageGet(LEGACY_THEME_KEY));
+  }
+
+  function getInitialThemeName() {
+    return getSavedTheme() || (prefersDarkTheme() ? 'tokyo-night' : 'sepia');
+  }
+
+  function isDarkTheme(theme) {
+    return normalizeTheme(theme) === 'tokyo-night';
+  }
+
+  function getInitialTheme() {
+    return isDarkTheme(getInitialThemeName());
+  }
+
+  function applyThemeClass(target, theme) {
+    var i;
+
+    if (!target || !target.classList) {
       return;
     }
 
-    document.body.classList.toggle('dark-theme', darkThemeEnabled);
-    document.documentElement.classList.toggle('dark-theme', darkThemeEnabled);
+    for (i = 0; i < THEME_CLASSES.length; i += 1) {
+      target.classList.remove(THEME_CLASSES[i]);
+    }
+    target.classList.add(THEME_CLASS_PREFIX + theme);
 
+    if (theme === 'tokyo-night') {
+      target.classList.add('dark-theme');
+    }
+  }
+
+  function setTheme(theme) {
+    var normalizedTheme = normalizeTheme(theme) || 'sepia';
+    var selector = byId('theme-select');
     var icon = byId('theme-toggle-icon');
+    var darkThemeEnabled = isDarkTheme(normalizedTheme);
+
+    applyThemeClass(document.documentElement, normalizedTheme);
+    applyThemeClass(document.body, normalizedTheme);
+
+    if (selector && selector.value !== normalizedTheme) {
+      selector.value = normalizedTheme;
+    }
     if (icon) {
       icon.className = darkThemeEnabled ? 'fa fa-sun' : 'fa fa-moon';
     }
 
-    safeLocalStorageSet('theme', darkThemeEnabled ? 'dark' : 'light');
+    safeLocalStorageSet(THEME_STORAGE_KEY, normalizedTheme);
+    safeLocalStorageSet(LEGACY_THEME_KEY, darkThemeEnabled ? 'dark' : 'light');
   }
 
   function normalizeText(value) {
@@ -310,19 +370,24 @@
   }
 
   function bindThemeEvents() {
+    var themeSelect = byId('theme-select');
     var themeToggle = byId('theme-toggle');
-    if (!themeToggle) {
-      return;
-    }
 
-    themeToggle.addEventListener('click', function(event) {
-      event.preventDefault();
-      setTheme(!document.body.classList.contains('dark-theme'));
-    });
+    if (themeSelect) {
+      themeSelect.addEventListener('change', function(event) {
+        setTheme(event.target.value);
+      });
+    }
+    if (themeToggle) {
+      themeToggle.addEventListener('click', function(event) {
+        event.preventDefault();
+        setTheme(!document.body.classList.contains('dark-theme'));
+      });
+    }
   }
 
   function init() {
-    setTheme(getInitialTheme());
+    setTheme(getInitialThemeName());
     bindSearchEvents();
     bindThemeEvents();
   }
@@ -331,6 +396,7 @@
     init: init,
     setTheme: setTheme,
     getInitialTheme: getInitialTheme,
+    getInitialThemeName: getInitialThemeName,
     filterPosts: filterPosts,
     _setPostsForTest: function(posts) {
       state.posts = posts || [];
