@@ -30,9 +30,12 @@
           </button>
         </li>
         <li class="navbar-theme-toggle">
-          <a href="#" id="theme-toggle" class="navbar-icon-link" title="Toggle dark/light mode" aria-label="Toggle dark or light mode">
-            <i id="theme-toggle-icon" class="fa fa-moon" aria-hidden="true"></i>
-          </a>
+          <label class="sr-only" for="theme-select">Theme</label>
+          <select id="theme-select" class="navbar-theme-select" aria-label="Select color theme">
+            <option value="sepia">Sepia</option>
+            <option value="normal">Normal</option>
+            <option value="tokyo-night">Tokyo Night</option>
+          </select>
         </li>
       </ul>
     </div>
