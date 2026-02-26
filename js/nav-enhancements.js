@@ -43,6 +43,13 @@
       return null;
     }
 
+    if (theme === true) {
+      return 'tokyo-night';
+    }
+    if (theme === false) {
+      return 'normal';
+    }
+
     var normalized = String(theme).toLowerCase();
     if (THEMES.indexOf(normalized) !== -1) {
       return normalized;
@@ -64,8 +71,16 @@
       normalizeTheme(safeLocalStorageGet(LEGACY_THEME_KEY));
   }
 
-  function getInitialTheme() {
+  function getInitialThemeName() {
     return getSavedTheme() || (prefersDarkTheme() ? 'tokyo-night' : 'sepia');
+  }
+
+  function isDarkTheme(theme) {
+    return normalizeTheme(theme) === 'tokyo-night';
+  }
+
+  function getInitialTheme() {
+    return isDarkTheme(getInitialThemeName());
   }
 
   function applyThemeClass(target, theme) {
@@ -88,6 +103,8 @@
   function setTheme(theme) {
     var normalizedTheme = normalizeTheme(theme) || 'sepia';
     var selector = byId('theme-select');
+    var icon = byId('theme-toggle-icon');
+    var darkThemeEnabled = isDarkTheme(normalizedTheme);
 
     applyThemeClass(document.documentElement, normalizedTheme);
     applyThemeClass(document.body, normalizedTheme);
@@ -95,9 +112,12 @@
     if (selector && selector.value !== normalizedTheme) {
       selector.value = normalizedTheme;
     }
+    if (icon) {
+      icon.className = darkThemeEnabled ? 'fa fa-sun' : 'fa fa-moon';
+    }
 
     safeLocalStorageSet(THEME_STORAGE_KEY, normalizedTheme);
-    safeLocalStorageSet(LEGACY_THEME_KEY, normalizedTheme === 'tokyo-night' ? 'dark' : 'light');
+    safeLocalStorageSet(LEGACY_THEME_KEY, darkThemeEnabled ? 'dark' : 'light');
   }
 
   function normalizeText(value) {
@@ -351,17 +371,23 @@
 
   function bindThemeEvents() {
     var themeSelect = byId('theme-select');
-    if (!themeSelect) {
-      return;
-    }
+    var themeToggle = byId('theme-toggle');
 
-    themeSelect.addEventListener('change', function(event) {
-      setTheme(event.target.value);
-    });
+    if (themeSelect) {
+      themeSelect.addEventListener('change', function(event) {
+        setTheme(event.target.value);
+      });
+    }
+    if (themeToggle) {
+      themeToggle.addEventListener('click', function(event) {
+        event.preventDefault();
+        setTheme(!document.body.classList.contains('dark-theme'));
+      });
+    }
   }
 
   function init() {
-    setTheme(getInitialTheme());
+    setTheme(getInitialThemeName());
     bindSearchEvents();
     bindThemeEvents();
   }
@@ -370,6 +396,7 @@
     init: init,
     setTheme: setTheme,
     getInitialTheme: getInitialTheme,
+    getInitialThemeName: getInitialThemeName,
     filterPosts: filterPosts,
     _setPostsForTest: function(posts) {
       state.posts = posts || [];
