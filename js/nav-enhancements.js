@@ -4,9 +4,9 @@
   var SEARCH_INDEX_URL = '/search.json';
   var THEME_STORAGE_KEY = 'theme-preference';
   var LEGACY_THEME_KEY = 'theme';
-  var THEMES = ['sepia', 'normal', 'tokyo-night'];
+  var THEMES = ['sepia', 'tokyo-night'];
   var THEME_CLASS_PREFIX = 'theme-';
-  var THEME_CLASSES = ['theme-sepia', 'theme-normal', 'theme-tokyo-night', 'dark-theme'];
+  var THEME_CLASSES = ['theme-sepia', 'theme-tokyo-night', 'dark-theme'];
   var state = {
     posts: [],
     loaded: false,
@@ -47,7 +47,7 @@
       return 'tokyo-night';
     }
     if (theme === false) {
-      return 'normal';
+      return 'sepia';
     }
 
     var normalized = String(theme).toLowerCase();
@@ -60,8 +60,8 @@
     if (normalized === 'dark') {
       return 'tokyo-night';
     }
-    if (normalized === 'light') {
-      return 'normal';
+    if (normalized === 'normal' || normalized === 'light') {
+      return 'sepia';
     }
     return null;
   }
@@ -100,21 +100,25 @@
     }
   }
 
+  function updateThemeControls(darkThemeEnabled) {
+    var icon = byId('theme-toggle-icon');
+    var themeToggle = byId('theme-toggle');
+    if (icon) {
+      icon.className = darkThemeEnabled ? 'fa fa-sun' : 'fa fa-moon';
+    }
+    if (themeToggle) {
+      themeToggle.setAttribute('title', darkThemeEnabled ? 'Switch to sepia theme' : 'Switch to Tokyo Night theme');
+      themeToggle.setAttribute('aria-label', darkThemeEnabled ? 'Switch to sepia theme' : 'Switch to Tokyo Night theme');
+    }
+  }
+
   function setTheme(theme) {
     var normalizedTheme = normalizeTheme(theme) || 'sepia';
-    var selector = byId('theme-select');
-    var icon = byId('theme-toggle-icon');
     var darkThemeEnabled = isDarkTheme(normalizedTheme);
 
     applyThemeClass(document.documentElement, normalizedTheme);
     applyThemeClass(document.body, normalizedTheme);
-
-    if (selector && selector.value !== normalizedTheme) {
-      selector.value = normalizedTheme;
-    }
-    if (icon) {
-      icon.className = darkThemeEnabled ? 'fa fa-sun' : 'fa fa-moon';
-    }
+    updateThemeControls(darkThemeEnabled);
 
     safeLocalStorageSet(THEME_STORAGE_KEY, normalizedTheme);
     safeLocalStorageSet(LEGACY_THEME_KEY, darkThemeEnabled ? 'dark' : 'light');
@@ -370,18 +374,11 @@
   }
 
   function bindThemeEvents() {
-    var themeSelect = byId('theme-select');
     var themeToggle = byId('theme-toggle');
-
-    if (themeSelect) {
-      themeSelect.addEventListener('change', function(event) {
-        setTheme(event.target.value);
-      });
-    }
     if (themeToggle) {
       themeToggle.addEventListener('click', function(event) {
         event.preventDefault();
-        setTheme(!document.body.classList.contains('dark-theme'));
+        setTheme(document.body.classList.contains('dark-theme') ? 'sepia' : 'tokyo-night');
       });
     }
   }

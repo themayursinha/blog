@@ -4,7 +4,7 @@
   var THEME_STORAGE_KEY = 'theme-preference';
   var LEGACY_THEME_KEY = 'theme';
   var THEME_CLASS_PREFIX = 'theme-';
-  var THEME_CLASSES = ['theme-sepia', 'theme-normal', 'theme-tokyo-night', 'dark-theme'];
+  var THEME_CLASSES = ['theme-sepia', 'theme-tokyo-night', 'dark-theme'];
 
   function prefersDarkTheme() {
     return !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
@@ -16,7 +16,7 @@
     }
 
     var normalized = String(theme).toLowerCase();
-    if (normalized === 'sepia' || normalized === 'normal' || normalized === 'tokyo-night') {
+    if (normalized === 'sepia' || normalized === 'tokyo-night') {
       return normalized;
     }
     if (normalized === 'tokyo') {
@@ -25,8 +25,8 @@
     if (normalized === 'dark') {
       return 'tokyo-night';
     }
-    if (normalized === 'light') {
-      return 'normal';
+    if (normalized === 'normal' || normalized === 'light') {
+      return 'sepia';
     }
     return null;
   }
