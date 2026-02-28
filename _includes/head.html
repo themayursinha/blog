@@ -35,6 +35,22 @@
     {% assign seo_image = page.share-img | absolute_url %}
   {% elsif page.image %}
     {% assign seo_image = page.image | absolute_url %}
+  {% elsif page.collection == "posts" %}
+    {% if page.tags contains "security" %}
+      {% assign seo_image = "/img/circuit.png" | absolute_url %}
+    {% elsif page.tags contains "ai" or page.tags contains "llms" %}
+      {% assign seo_image = "/img/matrix.png" | absolute_url %}
+    {% elsif page.tags contains "philosophy" or page.tags contains "spirituality" %}
+      {% assign seo_image = "/img/paradox.jpeg" | absolute_url %}
+    {% elsif page.tags contains "science" or page.tags contains "maths" %}
+      {% assign seo_image = "/img/hello_world.jpeg" | absolute_url %}
+    {% elsif page.tags contains "movies" %}
+      {% assign seo_image = "/img/path.jpg" | absolute_url %}
+    {% elsif page.tags contains "technology" %}
+      {% assign seo_image = "/img/reg.png" | absolute_url %}
+    {% elsif site.avatar %}
+      {% assign seo_image = site.avatar | absolute_url %}
+    {% endif %}
   {% elsif site.avatar %}
     {% assign seo_image = site.avatar | absolute_url %}
   {% endif %}
@@ -51,6 +67,8 @@
 
   <link rel="canonical" href="{{ canonical_url }}" />
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }} {{ site.title-separator }} {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }} RSS" href="{{ site.baseurl }}/rss.xml" />
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }} Atom" href="{{ site.baseurl }}/atom.xml" />
 
   {% include gtag.html %}
   {% include gtm_head.html %}

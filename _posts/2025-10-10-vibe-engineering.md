@@ -2,8 +2,13 @@
 layout: post
 title: Vibe Engineering
 categories: [AI]
-tags: [AI]
+tags: [ai]
 description: Vibe Engineering
+share-img: /img/matrix.png
+related_posts:
+  - Designing a living ecosystem of AI agents
+  - Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks
+  - Reframing Application Security — A Developer Experience Perspective
 ---
 
 

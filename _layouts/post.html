@@ -52,6 +52,81 @@ layout: base
       </div>
       {% endif %}
 
+      <section class="author-box" aria-label="About the author">
+        <h3>About the author</h3>
+        <p>Mayur Sinha is a security engineer writing about AI security, LLM security, and philosophy of technology.</p>
+        <p>
+          <a href="{{ site.newsletter.url | default: 'https://substack.com/@mayursinha' }}" target="_blank" rel="noopener">Subscribe on Substack</a> |
+          <a href="https://linkedin.com/in/mayursinha" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
+        {% assign author_essay_titles = "Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks,Reframing Application Security — A Developer Experience Perspective,Vibe Engineering" | split: "," %}
+        {% assign featured_essay_count = 0 %}
+        <ul class="author-box-links">
+          {% for essay_title in author_essay_titles %}
+            {% if featured_essay_count < 3 %}
+              {% assign essay_post = nil %}
+              {% for post in site.posts %}
+                {% if post.title == essay_title and post.url != page.url %}
+                  {% assign essay_post = post %}
+                  {% break %}
+                {% endif %}
+              {% endfor %}
+              {% if essay_post %}
+                <li><a href="{{ essay_post.url | prepend: site.baseurl | replace: '//', '/' }}">{{ essay_post.title }}</a></li>
+                {% assign featured_essay_count = featured_essay_count | plus: 1 %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </section>
+
+      {% if page.substack_url %}
+      <section class="crosspost-link" aria-label="Substack version">
+        <p>This essay is also available on <a href="{{ page.substack_url }}" target="_blank" rel="noopener">Substack</a>.</p>
+      </section>
+      {% endif %}
+
+      {% if page.related_posts and page.related_posts.size > 0 %}
+      <section class="related-posts" aria-label="Related posts">
+        <h3>Related posts</h3>
+        <ul>
+          {% for related_title in page.related_posts %}
+            {% assign related_post = nil %}
+            {% for post in site.posts %}
+              {% if post.title == related_title and post.url != page.url %}
+                {% assign related_post = post %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+            {% if related_post %}
+              <li><a href="{{ related_post.url | prepend: site.baseurl | replace: '//', '/' }}">{{ related_post.title }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </section>
+      {% elsif page.tags and page.tags.size > 0 %}
+      <section class="related-posts" aria-label="Related posts">
+        <h3>Related posts</h3>
+        <ul>
+          {% assign related_count = 0 %}
+          {% for post in site.posts %}
+            {% if related_count < 3 and post.url != page.url %}
+              {% assign shared_tags = 0 %}
+              {% for tag in page.tags %}
+                {% if post.tags contains tag %}
+                  {% assign shared_tags = shared_tags | plus: 1 %}
+                {% endif %}
+              {% endfor %}
+              {% if shared_tags > 0 %}
+                <li><a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{ post.title }}</a></li>
+                {% assign related_count = related_count | plus: 1 %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
       <ul class="pager blog-pager">
         {% if page.previous.url %}
         <li class="previous">

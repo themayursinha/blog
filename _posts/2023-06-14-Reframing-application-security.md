@@ -4,6 +4,11 @@ title: Reframing Application Security — A Developer Experience Perspective
 categories: [appsec]
 tags: [security]
 description: Reframing Application Security
+share-img: /img/circuit.png
+related_posts:
+  - Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks
+  - Vibe Engineering
+  - Crash Course in x86 - Part I
 ---
 
 In the rapidly evolving digital landscape, most companies are vying for supremacy based on their ability to deliver business value through software and technology. The speed and quality of software production directly correlate with the value delivered. It's a simple equation, and security teams must adapt to this reality to succeed and enable business growth. This article explores the concept of application security (AppSec) through the lens of developer experience (DevEx), presenting a fresh perspective on how AppSec must evolve to remain effective and impactful.

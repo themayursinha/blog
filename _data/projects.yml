@@ -1,0 +1,98 @@
+- id: understanding-iot-botnets
+  title: Understanding IoT botnets
+  summary: IoT botnet behavior analysis with practical detection insights.
+  role: Researcher
+  year: 2018
+  links:
+    - label: Publication
+      url: https://www.researchgate.net/publication/325478001_Understanding_IoT_botnets
+
+- id: securing-iot
+  title: Securing the Internet of Things
+  summary: Research program on improving IoT device and deployment resilience.
+  role: Researcher
+  year: 2018
+  links:
+    - label: Project
+      url: https://www.researchgate.net/project/Securing-the-Internet-of-Things-2
+
+- id: automated-fuzzing-vuln-analysis
+  title: Automated Fuzzing for vulnerability analysis
+  summary: Automated fuzzing workflow for memory-safety and validation bug discovery.
+  role: Researcher
+  year: 2019
+  links:
+    - label: Publication
+      url: https://www.researchgate.net/publication/330684293_Automated_Fuzzing_for_vulnerability_analysis
+
+- id: game-theoretic-security-controls
+  title: A game-theoretic approach to evaluate security controls
+  summary: Game-theoretic model for attacker-defender control effectiveness analysis.
+  role: Researcher
+  year: 2020
+  links:
+    - label: Publication
+      url: https://www.researchgate.net/publication/339129540_A_Game-Theoretic_Approach_to_Evaluate_Security_Efficacy_of_Security_Controls_Frameworks
+
+- id: uav-cyber-counterterrorism
+  title: UAVs in cyber counterterrorism
+  summary: UAV-based cyber counterterrorism use-case exploration.
+  role: Researcher
+  year: 2020
+  links:
+    - label: Publication
+      url: https://www.researchgate.net/publication/342397296_Application_of_Unmanned_Aerial_Vehicles_in_Cyber_Counterterrorism
+
+- id: dnn-terrorism-prediction
+  title: Predicting terrorism using DNNs
+  summary: Deep learning approach for forecasting terrorism risk patterns.
+  role: Researcher
+  year: 2023
+  links:
+    - label: Publication
+      url: https://www.researchgate.net/publication/371076788_Predicting_terrorism_using_Deep_Neural_Networks_DNNs
+
+- id: bert-http-payload-classification
+  title: Fine-tuning BERT for HTTP payload classification
+  summary: BERT fine-tuning pipeline for HTTP payload threat classification.
+  role: Researcher
+  year: 2023
+  links:
+    - label: Publication
+      url: https://www.researchgate.net/publication/376950581_Fine-tuning_BERT_for_HTTP_Payload_Classification_in_Network_Traffic
+
+- id: bert-rasp
+  title: BERT-based RASP for runtime security
+  summary: BERT-enhanced runtime application security for in-app threat detection.
+  role: Researcher
+  year: 2023
+  links:
+    - label: Publication
+      url: https://www.researchgate.net/publication/377119657_BERT-Based_RASP_Enhancing_Runtime_Application_Security_with_Fine-Tuned_BERT1
+
+- id: llm-nl2sql-hr-analytics
+  title: LLM NL2SQL for HR analytics
+  summary: LLM-driven natural-language-to-SQL workflow for HR analytics.
+  role: Researcher
+  year: 2024
+  links:
+    - label: Publication
+      url: https://www.researchgate.net/publication/378125775_Leveraging_Large_Language_Model_LLMfor_Natural_Language_to_SQL_Query_Generation_in_HR_Analytics_A_Case_Study_on_IBM_Attrition_Dataset
+
+- id: mcp-security-evaluator
+  title: MCP security evaluator
+  summary: Tooling to evaluate and harden MCP and LLM integrations.
+  role: Builder
+  year: 2025
+  links:
+    - label: GitHub
+      url: https://github.com/themayursinha/mcp-llm-security-evaluator
+
+- id: adversarial-ml-security-lab
+  title: Adversarial ML security lab
+  summary: Hands-on lab for adversarial ML attack and defense experiments.
+  role: Builder
+  year: 2025
+  links:
+    - label: GitHub
+      url: https://github.com/themayursinha/adversarial-ml-lab

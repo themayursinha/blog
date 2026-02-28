@@ -2,7 +2,7 @@
 layout: post
 title: Designing a living ecosystem of AI agents
 categories: [AI]
-tags: [AI]
+tags: [ai]
 description: AI agents ecosystem
 ---
 

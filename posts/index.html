@@ -1,9 +1,11 @@
 ---
 layout: page
+title: Posts
+description: Browse all posts by Mayur Sinha and filter by topic tags.
 permalink: /posts/
 ---
 
-<h1>All Posts</h1>
+<p>Browse all writing and filter by topic.</p>
 
 <!-- Tag filter -->
 <div id="tag-filter" style="margin-bottom: 1.5em;">
@@ -36,7 +38,8 @@ permalink: /posts/
 function filterPosts(tag) {
   var posts = document.querySelectorAll('#posts-list li');
   posts.forEach(function(li) {
-    if (!tag || li.getAttribute('data-tags').includes(tag)) {
+    var tags = (li.getAttribute('data-tags') || '').split(' ');
+    if (!tag || tags.indexOf(tag) !== -1) {
       li.style.display = '';
     } else {
       li.style.display = 'none';
