@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mayur Sinha</title>
+    <description>Security engineer writing about AI security, LLM security, and philosophy of technology.</description>
+    <link>https://themayursinha.com</link>
+    <atom:link href="https://themayursinha.com/rss.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks</title>
+        <description>
+          
+          I have worked with both worlds. Earlier in my career, including work at Trend Micro, I spent time experimenting with ANN pipelines for shellcode detection. Those systems were useful for bounded classification tasks on network payloads. They were not designed for deep reasoning across large codebases. That difference is the...
+        </description>
+        <pubDate>Sun, 22 Feb 2026 00:00:00 +0100</pubDate>
+        <link>https://themayursinha.com/posts/2026-02-22-llms-vs-classical-neural-nets-for-vulnerability-detection/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2026-02-22-llms-vs-classical-neural-nets-for-vulnerability-detection/</guid>
+      </item>
+    
+      <item>
+        <title>Vibe Engineering</title>
+        <description>
+          
+          Stop Vibe coding: Why true engineers are now doing Vibe engineering Everyone is talking about using AI to write software. It’s fast, it’s exciting, and it changes how we work. But how you use AI matters a lot. If you use it the wrong way, you create a huge mess....
+        </description>
+        <pubDate>Fri, 10 Oct 2025 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/posts/2025-10-10-vibe-engineering/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2025-10-10-vibe-engineering/</guid>
+      </item>
+    
+      <item>
+        <title>Designing a living ecosystem of AI agents</title>
+        <description>
+          
+          The world of AI is moving fast. Every day, we see amazing new tools like AutoGen and CrewAI that let us build teams of AI agents to get work done. These tools are powerful, but they share a common limitation: they manage agents like pieces on a chessboard. The agents...
+        </description>
+        <pubDate>Sun, 29 Jun 2025 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/posts/2025-06-29-living-ecosystems-of-agents/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2025-06-29-living-ecosystems-of-agents/</guid>
+      </item>
+    
+      <item>
+        <title>Life is cruel</title>
+        <description>
+          
+          Why do we suffer? A look at injustice without a God Why is there so much unfairness, cruelty, and pain in the world? This is one of the deepest and most difficult questions we can ask. It gets even tougher if you don’t believe in a god or an afterlife...
+        </description>
+        <pubDate>Sun, 30 Jun 2024 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/posts/2024-06-30-Suffering/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2024-06-30-Suffering/</guid>
+      </item>
+    
+      <item>
+        <title>Revisiting the Unabomber</title>
+        <description>
+          
+          In the shadows of the late 20th century, Ted Kaczynski, infamously known as the Unabomber, embarked on a nationwide bombing campaign that terrorized America for nearly two decades. A former mathematics professor turned recluse, Kaczynski’s violent legacy culminated in the publication of his manifesto, “Industrial Society and Its Future,” in...
+        </description>
+        <pubDate>Mon, 12 Feb 2024 00:00:00 +0100</pubDate>
+        <link>https://themayursinha.com/posts/2024-02-12-Unabomber-relevance-in-2024/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2024-02-12-Unabomber-relevance-in-2024/</guid>
+      </item>
+    
+      <item>
+        <title>Exploring Philosophical Parallels - Nietzsche and Vedanta</title>
+        <description>
+          
+          Introduction Among all world philosophies, few thinkers stand out as much as Friedrich Nietzsche, the German philosopher known for his provocative ideas and aphoristic style, and the ancient, profound Vedanta philosophy, a cornerstone of Hindu thought. At first glance, Nietzsche, a product of the 19th-century European intellectual milieu, and Vedanta,...
+        </description>
+        <pubDate>Sun, 31 Dec 2023 00:00:00 +0100</pubDate>
+        <link>https://themayursinha.com/posts/2023-12-31-Nietzsche-and-Vedanta/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2023-12-31-Nietzsche-and-Vedanta/</guid>
+      </item>
+    
+      <item>
+        <title>Resolving the Epicurean Paradox - A Perspective from Advaita Vedanta</title>
+        <description>
+          
+          Introduction The Epicurean Paradox, a profound philosophical conundrum, has intrigued thinkers for centuries. Named after the ancient Greek philosopher Epicurus, it presents a compelling challenge to the traditional concept of an omnipotent, omniscient, and omnibenevolent God. The paradox grapples with the existence of evil in a world supposedly governed by...
+        </description>
+        <pubDate>Sun, 23 Jul 2023 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/posts/2023-07-23-Epicurean-paradox/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2023-07-23-Epicurean-paradox/</guid>
+      </item>
+    
+      <item>
+        <title>Elon Musk on xAI</title>
+        <description>
+          
+          Introduction In a recent Twitter Space discussion, Elon Musk, the visionary entrepreneur and CEO of SpaceX and Tesla, introduced his latest venture, xAI. The discussion was a deep dive into the goals, philosophy, and potential of this new project. The founding team of xAI, boasting impressive backgrounds from Deep Mind,...
+        </description>
+        <pubDate>Mon, 17 Jul 2023 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/posts/2023-07-17-x-ai/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2023-07-17-x-ai/</guid>
+      </item>
+    
+      <item>
+        <title>Man is a machine</title>
+        <description>
+          
+          Are we just machines? Have you ever looked up at the stars and wondered about your place in the vast universe? Have you ever asked yourself, “Am I just a collection of cells and atoms, a biological machine? Or is there something more—a soul, a spirit, a self?” These are...
+        </description>
+        <pubDate>Sun, 09 Jul 2023 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/posts/2023-07-09-Man-is-a-machine/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2023-07-09-Man-is-a-machine/</guid>
+      </item>
+    
+      <item>
+        <title>Was Thanos Right?</title>
+        <description>
+          
+          Last week I watched The Avengers: Infinity War again after 5 years and it sparked me why Thanos could be right. Thanos, also known as The Mad Titan, is a character from the Marvel Cinematic Universe who is known for his quest to acquire the Infinity Stones, intending to use their limitless...
+        </description>
+        <pubDate>Fri, 07 Jul 2023 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/posts/2023-07-07-Was-Thanos-Right/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2023-07-07-Was-Thanos-Right/</guid>
+      </item>
+    
+      <item>
+        <title>Reframing Application Security — A Developer Experience Perspective</title>
+        <description>
+          
+          In the rapidly evolving digital landscape, most companies are vying for supremacy based on their ability to deliver business value through software and technology. The speed and quality of software production directly correlate with the value delivered. It’s a simple equation, and security teams must adapt to this reality to...
+        </description>
+        <pubDate>Wed, 14 Jun 2023 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/posts/2023-06-14-Reframing-application-security/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2023-06-14-Reframing-application-security/</guid>
+      </item>
+    
+      <item>
+        <title>Understanding the Concept of Brahman and Atman</title>
+        <description>
+          
+          Advaita Vedanta, one of the philosophical schools of Hinduism, presents a profound vision of reality that challenges our everyday perceptions and encourages us to explore the deeper dimensions of existence. At the heart of this vision are two key concepts: Brahman and Ātman. Brahman, in Advaita Vedanta, represents the ultimate...
+        </description>
+        <pubDate>Wed, 07 Jun 2023 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/posts/2023-06-07-A-dive-into-advaita-vedanta/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2023-06-07-A-dive-into-advaita-vedanta/</guid>
+      </item>
+    
+      <item>
+        <title>Man&apos;s greatest achievement</title>
+        <description>
+          
+          In the article “Man’s Greatest Achievement” published in the New York American on July 6, 1930, Nikola Tesla outlines his vision for the future of science and technology, specifically regarding the harnessing of energy and its potential for transforming human society.Tesla begins by describing the fundamental principles of energy and...
+        </description>
+        <pubDate>Mon, 27 Feb 2023 00:00:00 +0100</pubDate>
+        <link>https://themayursinha.com/posts/2023-02-27-Man's-greatest-achievement/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2023-02-27-Man's-greatest-achievement/</guid>
+      </item>
+    
+      <item>
+        <title>Why The Batman feels so personal</title>
+        <description>
+          
+          “Thursday, October 31st. The city streets are crowded for the holiday. Even with the rain. Hidden in the chaos is the element, waiting to strike like snakes. And I’m there too. Watching. 2 years of nights have turned me into a nocturnal animal. I must choose my targets carefully. It’s...
+        </description>
+        <pubDate>Sun, 01 May 2022 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/posts/2022-05-01-The-Batman/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2022-05-01-The-Batman/</guid>
+      </item>
+    
+      <item>
+        <title>The Science of akashic field</title>
+        <description>
+          
+          The Sanskrit word akasha, translated as both “ether” and “space”, refers specifically to the vibratory element that is the subtlest in the material world, the “screen on which the image of the body and all nature is projected.” Ether-permeated space is the boundary line between heaven, or the astral world,...
+        </description>
+        <pubDate>Sat, 31 Jul 2021 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/posts/2021-07-31-Akashic-field/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2021-07-31-Akashic-field/</guid>
+      </item>
+    
+      <item>
+        <title>How to study based on how memory works</title>
+        <description>
+          
+          Memory works (to put it simply) in 3 stages: attention, encoding (storing/associating with other info), and retrieval(remembering). To optimize the final stage, you have to optimize the first two stages. i.e., pay attention to the material, and encode it well. (I’ll explain below.) Also, if you repeat the process, you reinforce it. By retrieving...
+        </description>
+        <pubDate>Wed, 14 Jul 2021 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/posts/2021-07-14-How-to-Study/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2021-07-14-How-to-Study/</guid>
+      </item>
+    
+      <item>
+        <title>Socratic dialogue</title>
+        <description>
+          
+          1. What is a Socratic Dialogue? Socratic dialogue is a formal method by which a small group (5-15 people), guided by a facilitator, finds a precise answer to a universal question (e.g. “What is happiness?”, “What is integrity?”, “Can conflict be fruitful?”, etc.). Socratic dialogue is not to be confused...
+        </description>
+        <pubDate>Mon, 12 Jul 2021 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/posts/2021-07-12-Socratic-dialogue/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2021-07-12-Socratic-dialogue/</guid>
+      </item>
+    
+      <item>
+        <title>Problem solving and the art of the convincing argument</title>
+        <description>
+          
+          Introduction Mathematics is used by engineers to solve problems. This usually involves developing a mathematical model. Just as when building a working model aeroplane we would hope to include all the important features, the same thing applies when building a mathematical model. We would also like to indicate the things...
+        </description>
+        <pubDate>Sun, 12 Apr 2020 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/posts/2020-04-12-Problem-solving-and-the-art-of-the-convincing-argument/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2020-04-12-Problem-solving-and-the-art-of-the-convincing-argument/</guid>
+      </item>
+    
+      <item>
+        <title>Crash Course in x86 - Part I</title>
+        <description>
+          
+          Knowledge of x86 is important in security fields like malware analysis, vulnerability research and exploit development. The only prerequisite is to know the basics of C or C based languages like Java. Bits, bytes, words, double words The data “types” in 32 bits assembly are bits, bytes, words, and dwords....
+        </description>
+        <pubDate>Tue, 30 Apr 2019 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/posts/2019-04-30-Crash-Course-in-x86/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2019-04-30-Crash-Course-in-x86/</guid>
+      </item>
+    
+      <item>
+        <title>Memory exploit mitigation techniques</title>
+        <description>
+          
+          MEM uses multiple types of mitigation techniques to handle the exploit, depending on which technique is most appropriate for the type of application. For example, both the StackPvt and RopHeap techniques block the exploits that attack Internet Explorer. MEM uses the following types of mitigation techniques: Force Data Execution Prevention...
+        </description>
+        <pubDate>Thu, 15 Mar 2018 00:00:00 +0100</pubDate>
+        <link>https://themayursinha.com/posts/2018-03-15-exploit-mitigation-techniques/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2018-03-15-exploit-mitigation-techniques/</guid>
+      </item>
+    
+  </channel>
+</rss>

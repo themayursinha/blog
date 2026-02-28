@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Mayur Sinha</title>
+  <subtitle>Security engineer writing about AI security, LLM security, and philosophy of technology.</subtitle>
+  <link href="https://themayursinha.com/atom.xml" rel="self" />
+  <link href="https://themayursinha.com" />
+  <id>https://themayursinha.com/</id>
+  <updated>2026-02-28T20:52:29+01:00</updated>
+  <author>
+    <name>Mayur Sinha</name>
+  </author>
+  
+  <entry>
+    <title>Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks</title>
+    <link href="https://themayursinha.com/posts/2026-02-22-llms-vs-classical-neural-nets-for-vulnerability-detection/" />
+    <id>https://themayursinha.com/posts/2026-02-22-llms-vs-classical-neural-nets-for-vulnerability-detection/</id>
+    <updated>2026-02-22T00:00:00+01:00</updated>
+    <published>2026-02-22T00:00:00+01:00</published>
+    <summary>A technical comparison of classical ANN pipelines and transformer LLMs for vulnerability detection.</summary>
+  </entry>
+  
+  <entry>
+    <title>Vibe Engineering</title>
+    <link href="https://themayursinha.com/posts/2025-10-10-vibe-engineering/" />
+    <id>https://themayursinha.com/posts/2025-10-10-vibe-engineering/</id>
+    <updated>2025-10-10T00:00:00+02:00</updated>
+    <published>2025-10-10T00:00:00+02:00</published>
+    <summary>Vibe Engineering</summary>
+  </entry>
+  
+  <entry>
+    <title>Designing a living ecosystem of AI agents</title>
+    <link href="https://themayursinha.com/posts/2025-06-29-living-ecosystems-of-agents/" />
+    <id>https://themayursinha.com/posts/2025-06-29-living-ecosystems-of-agents/</id>
+    <updated>2025-06-29T00:00:00+02:00</updated>
+    <published>2025-06-29T00:00:00+02:00</published>
+    <summary>AI agents ecosystem</summary>
+  </entry>
+  
+  <entry>
+    <title>Life is cruel</title>
+    <link href="https://themayursinha.com/posts/2024-06-30-Suffering/" />
+    <id>https://themayursinha.com/posts/2024-06-30-Suffering/</id>
+    <updated>2024-06-30T00:00:00+02:00</updated>
+    <published>2024-06-30T00:00:00+02:00</published>
+    <summary>Life is cruel</summary>
+  </entry>
+  
+  <entry>
+    <title>Revisiting the Unabomber</title>
+    <link href="https://themayursinha.com/posts/2024-02-12-Unabomber-relevance-in-2024/" />
+    <id>https://themayursinha.com/posts/2024-02-12-Unabomber-relevance-in-2024/</id>
+    <updated>2024-02-12T00:00:00+01:00</updated>
+    <published>2024-02-12T00:00:00+01:00</published>
+    <summary>Revisiting the Unabomber</summary>
+  </entry>
+  
+  <entry>
+    <title>Exploring Philosophical Parallels - Nietzsche and Vedanta</title>
+    <link href="https://themayursinha.com/posts/2023-12-31-Nietzsche-and-Vedanta/" />
+    <id>https://themayursinha.com/posts/2023-12-31-Nietzsche-and-Vedanta/</id>
+    <updated>2023-12-31T00:00:00+01:00</updated>
+    <published>2023-12-31T00:00:00+01:00</published>
+    <summary>Exploring Philosophical Parallels - Nietzsche and Vedanta</summary>
+  </entry>
+  
+  <entry>
+    <title>Resolving the Epicurean Paradox - A Perspective from Advaita Vedanta</title>
+    <link href="https://themayursinha.com/posts/2023-07-23-Epicurean-paradox/" />
+    <id>https://themayursinha.com/posts/2023-07-23-Epicurean-paradox/</id>
+    <updated>2023-07-23T00:00:00+02:00</updated>
+    <published>2023-07-23T00:00:00+02:00</published>
+    <summary>Resolving the Epicurean Paradox</summary>
+  </entry>
+  
+  <entry>
+    <title>Elon Musk on xAI</title>
+    <link href="https://themayursinha.com/posts/2023-07-17-x-ai/" />
+    <id>https://themayursinha.com/posts/2023-07-17-x-ai/</id>
+    <updated>2023-07-17T00:00:00+02:00</updated>
+    <published>2023-07-17T00:00:00+02:00</published>
+    <summary>Elon Musk on xAI</summary>
+  </entry>
+  
+  <entry>
+    <title>Man is a machine</title>
+    <link href="https://themayursinha.com/posts/2023-07-09-Man-is-a-machine/" />
+    <id>https://themayursinha.com/posts/2023-07-09-Man-is-a-machine/</id>
+    <updated>2023-07-09T00:00:00+02:00</updated>
+    <published>2023-07-09T00:00:00+02:00</published>
+    <summary>Man is a machine</summary>
+  </entry>
+  
+  <entry>
+    <title>Was Thanos Right?</title>
+    <link href="https://themayursinha.com/posts/2023-07-07-Was-Thanos-Right/" />
+    <id>https://themayursinha.com/posts/2023-07-07-Was-Thanos-Right/</id>
+    <updated>2023-07-07T00:00:00+02:00</updated>
+    <published>2023-07-07T00:00:00+02:00</published>
+    <summary>Was Thanos Right?</summary>
+  </entry>
+  
+  <entry>
+    <title>Reframing Application Security — A Developer Experience Perspective</title>
+    <link href="https://themayursinha.com/posts/2023-06-14-Reframing-application-security/" />
+    <id>https://themayursinha.com/posts/2023-06-14-Reframing-application-security/</id>
+    <updated>2023-06-14T00:00:00+02:00</updated>
+    <published>2023-06-14T00:00:00+02:00</published>
+    <summary>Reframing Application Security</summary>
+  </entry>
+  
+  <entry>
+    <title>Understanding the Concept of Brahman and Atman</title>
+    <link href="https://themayursinha.com/posts/2023-06-07-A-dive-into-advaita-vedanta/" />
+    <id>https://themayursinha.com/posts/2023-06-07-A-dive-into-advaita-vedanta/</id>
+    <updated>2023-06-07T00:00:00+02:00</updated>
+    <published>2023-06-07T00:00:00+02:00</published>
+    <summary>A Dive into Advaita Vedanta</summary>
+  </entry>
+  
+  <entry>
+    <title>Man&apos;s greatest achievement</title>
+    <link href="https://themayursinha.com/posts/2023-02-27-Man's-greatest-achievement/" />
+    <id>https://themayursinha.com/posts/2023-02-27-Man's-greatest-achievement/</id>
+    <updated>2023-02-27T00:00:00+01:00</updated>
+    <published>2023-02-27T00:00:00+01:00</published>
+    <summary>Man&apos;s greatest achievement</summary>
+  </entry>
+  
+  <entry>
+    <title>Why The Batman feels so personal</title>
+    <link href="https://themayursinha.com/posts/2022-05-01-The-Batman/" />
+    <id>https://themayursinha.com/posts/2022-05-01-The-Batman/</id>
+    <updated>2022-05-01T00:00:00+02:00</updated>
+    <published>2022-05-01T00:00:00+02:00</published>
+    <summary>Why The Batman feels so personal</summary>
+  </entry>
+  
+  <entry>
+    <title>The Science of akashic field</title>
+    <link href="https://themayursinha.com/posts/2021-07-31-Akashic-field/" />
+    <id>https://themayursinha.com/posts/2021-07-31-Akashic-field/</id>
+    <updated>2021-07-31T00:00:00+02:00</updated>
+    <published>2021-07-31T00:00:00+02:00</published>
+    <summary>The Science of akashic field</summary>
+  </entry>
+  
+  <entry>
+    <title>How to study based on how memory works</title>
+    <link href="https://themayursinha.com/posts/2021-07-14-How-to-Study/" />
+    <id>https://themayursinha.com/posts/2021-07-14-How-to-Study/</id>
+    <updated>2021-07-14T00:00:00+02:00</updated>
+    <published>2021-07-14T00:00:00+02:00</published>
+    <summary>How to study based on how memory works</summary>
+  </entry>
+  
+  <entry>
+    <title>Socratic dialogue</title>
+    <link href="https://themayursinha.com/posts/2021-07-12-Socratic-dialogue/" />
+    <id>https://themayursinha.com/posts/2021-07-12-Socratic-dialogue/</id>
+    <updated>2021-07-12T00:00:00+02:00</updated>
+    <published>2021-07-12T00:00:00+02:00</published>
+    <summary>Socratic dialogue</summary>
+  </entry>
+  
+  <entry>
+    <title>Problem solving and the art of the convincing argument</title>
+    <link href="https://themayursinha.com/posts/2020-04-12-Problem-solving-and-the-art-of-the-convincing-argument/" />
+    <id>https://themayursinha.com/posts/2020-04-12-Problem-solving-and-the-art-of-the-convincing-argument/</id>
+    <updated>2020-04-12T00:00:00+02:00</updated>
+    <published>2020-04-12T00:00:00+02:00</published>
+    <summary>Problem solving and the art of the convincing argument</summary>
+  </entry>
+  
+  <entry>
+    <title>Crash Course in x86 - Part I</title>
+    <link href="https://themayursinha.com/posts/2019-04-30-Crash-Course-in-x86/" />
+    <id>https://themayursinha.com/posts/2019-04-30-Crash-Course-in-x86/</id>
+    <updated>2019-04-30T00:00:00+02:00</updated>
+    <published>2019-04-30T00:00:00+02:00</published>
+    <summary>Crash Course in x86</summary>
+  </entry>
+  
+  <entry>
+    <title>Memory exploit mitigation techniques</title>
+    <link href="https://themayursinha.com/posts/2018-03-15-exploit-mitigation-techniques/" />
+    <id>https://themayursinha.com/posts/2018-03-15-exploit-mitigation-techniques/</id>
+    <updated>2018-03-15T00:00:00+01:00</updated>
+    <published>2018-03-15T00:00:00+01:00</published>
+    <summary>Types of memory exploit mitigation techniques</summary>
+  </entry>
+  
+</feed>
