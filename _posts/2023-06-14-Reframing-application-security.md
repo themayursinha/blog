@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Reframing Application Security — A Developer Experience Perspective
+title: Reframing Application Security
 categories: [appsec]
 tags: [security]
 description: Reframing Application Security
@@ -44,8 +44,6 @@ Build secure by default solutions. As the saying goes, “every decision is the 
 Automate much of the interface between security and engineering teams. While the human touch is nice, ask yourself, does that meeting really need to happen? For regular and recurring interfaces between security and engineer, find ways to create systems and APIs to make the interactions more predictable and actionable.
 
 Prefer asynchronous communication methods. For any required meetings, schedule with plenty of time to plan and have well-documented agendas and outcomes.
-
-**Conclusion and Additional Resources**
 
 Practically, these kinds of changes to your AppSec approach do have some additional requirements. You’ll need to ensure you have engineering talent in your AppSec team, and you’re likely going to need to partner with platform and other central teams to build scalable security solutions for your developers. You also need both a mindset and planning shift - rather than throwing issues and vulnerabilities over the wall to developers you need to think about completing and facilitating the majority of remediation and improvement work within the security team so your developers can benefit from secure by default and intuitive self-service solutions.
 
