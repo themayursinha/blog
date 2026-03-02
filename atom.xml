@@ -5,10 +5,19 @@
   <link href="https://themayursinha.com/atom.xml" rel="self" />
   <link href="https://themayursinha.com" />
   <id>https://themayursinha.com/</id>
-  <updated>2026-03-02T23:58:30+01:00</updated>
+  <updated>2026-03-03T00:13:55+01:00</updated>
   <author>
     <name>Mayur Sinha</name>
   </author>
+  
+  <entry>
+    <title>Traditional manual code review is no longer sustainable</title>
+    <link href="https://themayursinha.com/posts/2026-03-02-manual-code-review-is-unsustainable/" />
+    <id>https://themayursinha.com/posts/2026-03-02-manual-code-review-is-unsustainable/</id>
+    <updated>2026-03-02T00:00:00+01:00</updated>
+    <published>2026-03-02T00:00:00+01:00</published>
+    <summary>Code review is a historical approval gate that simply no longer matches the shape of modern work. Here is why we need to pivot.</summary>
+  </entry>
   
   <entry>
     <title>Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks</title>
@@ -179,15 +188,6 @@
     <updated>2019-04-30T00:00:00+02:00</updated>
     <published>2019-04-30T00:00:00+02:00</published>
     <summary>Crash Course in x86</summary>
-  </entry>
-  
-  <entry>
-    <title>Memory exploit mitigation techniques</title>
-    <link href="https://themayursinha.com/posts/2018-03-15-exploit-mitigation-techniques/" />
-    <id>https://themayursinha.com/posts/2018-03-15-exploit-mitigation-techniques/</id>
-    <updated>2018-03-15T00:00:00+01:00</updated>
-    <published>2018-03-15T00:00:00+01:00</published>
-    <summary>Types of memory exploit mitigation techniques</summary>
   </entry>
   
 </feed>

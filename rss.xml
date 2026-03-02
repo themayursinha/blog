@@ -7,6 +7,17 @@
     <atom:link href="https://themayursinha.com/rss.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Traditional manual code review is no longer sustainable</title>
+        <description>
+          
+          We have officially reached a breaking point in software engineering. Humans already struggled to keep up with code reviews when code was written at human speed, and we’ve all seen pull requests (PRs) sitting idle for days, only to have a reviewer rubber-stamp a 500-line diff just to unblock the...
+        </description>
+        <pubDate>Mon, 02 Mar 2026 00:00:00 +0100</pubDate>
+        <link>https://themayursinha.com/posts/2026-03-02-manual-code-review-is-unsustainable/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2026-03-02-manual-code-review-is-unsustainable/</guid>
+      </item>
+    
+      <item>
         <title>Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks</title>
         <description>
           
@@ -213,17 +224,6 @@
         <pubDate>Tue, 30 Apr 2019 00:00:00 +0200</pubDate>
         <link>https://themayursinha.com/posts/2019-04-30-Crash-Course-in-x86/</link>
         <guid isPermaLink="true">https://themayursinha.com/posts/2019-04-30-Crash-Course-in-x86/</guid>
-      </item>
-    
-      <item>
-        <title>Memory exploit mitigation techniques</title>
-        <description>
-          
-          MEM uses multiple types of mitigation techniques to handle the exploit, depending on which technique is most appropriate for the type of application. For example, both the StackPvt and RopHeap techniques block the exploits that attack Internet Explorer. MEM uses the following types of mitigation techniques: Force Data Execution Prevention...
-        </description>
-        <pubDate>Thu, 15 Mar 2018 00:00:00 +0100</pubDate>
-        <link>https://themayursinha.com/posts/2018-03-15-exploit-mitigation-techniques/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2018-03-15-exploit-mitigation-techniques/</guid>
       </item>
     
   </channel>

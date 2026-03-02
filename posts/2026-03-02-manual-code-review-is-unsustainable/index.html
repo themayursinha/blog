@@ -18,15 +18,15 @@
 
   
 
-  <title>Socratic dialogue</title>
+  <title>Traditional manual code review is no longer sustainable</title>
 
   <meta name="author" content="Mayur Sinha" />
-  <meta name="description" content="Socratic dialogue">
+  <meta name="description" content="Code review is a historical approval gate that simply no longer matches the shape of modern work. Here is why we need to pivot.">
   
   <meta name="robots" content="index, follow, max-image-preview:large">
   
 
-  <link rel="canonical" href="https://themayursinha.com/posts/2021-07-12-Socratic-dialogue/" />
+  <link rel="canonical" href="https://themayursinha.com/posts/2026-03-02-manual-code-review-is-unsustainable/" />
   <link rel="alternate" type="application/rss+xml" title="Mayur Sinha - Security engineer writing about AI security, LLM security, and philosophy of technology." href="/feed.xml" />
   <link rel="alternate" type="application/rss+xml" title="Mayur Sinha RSS" href="/rss.xml" />
   <link rel="alternate" type="application/atom+xml" title="Mayur Sinha Atom" href="/atom.xml" />
@@ -92,23 +92,27 @@
   <!-- Facebook OpenGraph tags -->
   
 
-  <meta property="og:title" content="Socratic dialogue" />
-  <meta property="og:description" content="Socratic dialogue">
+  <meta property="og:title" content="Traditional manual code review is no longer sustainable" />
+  <meta property="og:description" content="Code review is a historical approval gate that simply no longer matches the shape of modern work. Here is why we need to pivot.">
   
   <meta property="og:type" content="article" />
   
-  <meta property="og:url" content="https://themayursinha.com/posts/2021-07-12-Socratic-dialogue/" />
+  <meta property="og:url" content="https://themayursinha.com/posts/2026-03-02-manual-code-review-is-unsustainable/" />
 
   
-  <meta property="og:image" content="https://themayursinha.com/img/paradox.jpeg" />
+  <meta property="og:image" content="https://themayursinha.com/img/circuit.png" />
   
 
   
-  <meta property="article:published_time" content="2021-07-12T00:00:00+02:00" />
+  <meta property="article:published_time" content="2026-03-02T00:00:00+01:00" />
   <meta property="article:author" content="Mayur Sinha" />
     
       
-  <meta property="article:tag" content="philosophy" />
+  <meta property="article:tag" content="ai" />
+      
+  <meta property="article:tag" content="developer-experience" />
+      
+  <meta property="article:tag" content="appsec" />
       
     
   
@@ -119,10 +123,10 @@
   <meta name="twitter:site" content="@themayursinha" />
   <meta name="twitter:creator" content="@themayursinha" />
   
-  <meta name="twitter:title" content="Socratic dialogue" />
-  <meta name="twitter:description" content="Socratic dialogue">
+  <meta name="twitter:title" content="Traditional manual code review is no longer sustainable" />
+  <meta name="twitter:description" content="Code review is a historical approval gate that simply no longer matches the shape of modern work. Here is why we need to pivot.">
   
-  <meta name="twitter:image" content="https://themayursinha.com/img/paradox.jpeg" />
+  <meta name="twitter:image" content="https://themayursinha.com/img/circuit.png" />
   
 
   <script type="application/ld+json">
@@ -144,20 +148,20 @@
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "Socratic dialogue",
-    "description": "Socratic dialogue",
-    "datePublished": "2021-07-12T00:00:00+02:00",
-    "dateModified": "2021-07-12T00:00:00+02:00",
+    "headline": "Traditional manual code review is no longer sustainable",
+    "description": "Code review is a historical approval gate that simply no longer matches the shape of modern work. Here is why we need to pivot.",
+    "datePublished": "2026-03-02T00:00:00+01:00",
+    "dateModified": "2026-03-02T00:00:00+01:00",
     "author": {
       "@type": "Person",
       "name": "Mayur Sinha"
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://themayursinha.com/posts/2021-07-12-Socratic-dialogue/"
+      "@id": "https://themayursinha.com/posts/2026-03-02-manual-code-review-is-unsustainable/"
     },
-    "image": "https://themayursinha.com/img/paradox.jpeg",
-    "keywords": ["philosophy"]
+    "image": "https://themayursinha.com/img/circuit.png",
+    "keywords": ["ai","developer-experience","appsec"]
   }
   </script>
   
@@ -328,11 +332,11 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="post-heading">
-          <h1>Socratic dialogue</h1>
+          <h1>Traditional manual code review is no longer sustainable</h1>
 		  
 		  
 		  
-		  <span class="post-meta">Posted on July 12, 2021</span>
+		  <span class="post-meta">Posted on March 2, 2026</span>
 		  
         </div>
       </div>
@@ -353,59 +357,69 @@
       
 
       <article role="main" class="blog-post">
-        <h2 id="1-what-is-a-socratic-dialogue">1. What is a Socratic Dialogue?</h2>
+        <p>We have officially reached a breaking point in software engineering. Humans already struggled to keep up with code reviews when code was written at human speed, and we’ve all seen pull requests (PRs) sitting idle for days, only to have a reviewer rubber-stamp a 500-line diff just to unblock the pipeline. Today, with 84% of developers aggressively adopting AI coding tools, the gap between the volume of code we generate and what we can actually properly verify is widening at an alarming rate.</p>
 
-<p>Socratic dialogue is a formal method by which a small group (5-15 people), guided by a facilitator, finds a precise answer to a universal question (e.g. “What is happiness?”, “What is integrity?”, “Can conflict be fruitful?”, etc.). Socratic dialogue is not to be confused with the so-called Socratic (or elenchic) method, developed in Plato’s writings, by which Socrates often helped people discover contradictions in their attempted definitions of universals. By contrast, Socratic dialogue helps a group to discover what something is, as opposed to what it isn’t.</p>
+<p>Code review is a historical approval gate that simply no longer fits the shape of modern development workflows. Here’s why traditional, manual line-by-line review is breaking down, and how engineering organizations must pivot to survive the AI era.</p>
 
-<h2 id="2-the-method-of-the-dialogue">2. The Method of the Dialogue</h2>
+<h3 id="the-ai-productivity-paradox">The AI Productivity Paradox</h3>
 
-<p>The method of the Socratic dialogue is as rewarding as its goal. It involves group decision-making by consensus, which is distinctly unlike most other modalities of group function. To begin with, since the Socratic dialogue is neither a debate nor any other kind of competition, there are no winners and losers. While the group as a whole will either succeed or fail to reach the conclusion of the dialogue in the allotted time, every stage in that process is attained by consensus. Thus every relevant question, doubt, insight, observation or objection offered by a participant is considered by the group as a whole, until everyone is satisfied by the deliberation.</p>
+<p>On paper, AI coding assistants look like a massive, unequivocal win. Telemetry from over 10,000 developers reveals a compelling story: teams with high AI adoption complete 21% more tasks and merge approximately 98% more PRs.</p>
 
-<p>The method of decision-making by consensus stands in obvious and sharp contrast to other group modalities, whose failings are clear to all who labor under their imperfections. A debate may serve to exercise quick wit, rhetorical skill and persuasive power, but the debaters are engaged in a contest whose winner may have defended a deleterious position. A ballot-box may serve to measure the opinion of a majority, but the voters rarely touch on the essence of the issues at stake. A hierarchical chain-of-command serves to have orders carried out, but these cannot usually be questioned or discussed. And the bane of academic and political life is surely the committee, a group constituted to make decisions, yet notoriously characterized by divisiveness, acrimony, third-man scenarios, and other unsatisfactory or unwholesome compromises. Small wonder that received methods of group decision-making tend to produce discord rather than accord. They factionalize rather than universalize. Truth is sacrificed to expediency; consensus is dispatched by timekeeping. Such methodologies are flawed, and prone to engender dissatisfaction. By contrast, Socratic dialogue anticipates dissent, and transforms it into consensus.</p>
+<p>But look a little closer at the data and there is a massive catch: PR review times have increased by a staggering 91%.</p>
 
-<p>The method of consensus debars gross imperfections from a Socratic dialogue. The virtues of patience, tolerance, attentiveness, thoughtfulness and civility prevail. There is also time for emotion to ebb and flow, to wax and wane in the context of larger group dynamics. As the participants in a Socratic dialogue engage in its process, they begin to realize that it is neither a debate, nor an election, nor a hierarchy, nor a committee meeting. It is a cooperative search for a universal truth, which will be discovered, if at all, by the group. The closest equivalent to this method is jury deliberation. A jury also strives for consensus, and is free to deliberate at length. Jury members must entertain and overcome any reasonable doubt before expressing a conviction; so too must participants in a Socratic dialogue, before articulating a universal definition. 
-Yet differences are also plain. No person is on trial in a Socratic dialogue; rather, an impersonal truth is the subject of a quest. The participants are bound by wholly different rules – not rules of law, but rules of rational discourse. The group itself will offer evidence, will decide what evidence it wishes to weigh, and will produce and examine all its witnesses from within. In contrast to the jury, which passively submits to a trial then delivers its verdict, the Socratic dialogue actively produces both the equivalent of a trial and a verdict. The Socratic dialogue is entirely self-contained.
-There are three levels (or orders) of discourse in a Socratic dialogue: first, the discourse of the dialogue itself; second, strategic discourse about the direction or shape of the dialogue as it unfolds; third, meta-discourse about the rules governing the dialogue. The facilitator plays no contributory role in the actual first-order discourse; he simply transcribes the proceedings at each stage, according to the prescribed structure (see next section). The facilitator plays a minimal role in second-order strategic discourse; but he may (if asked) offer some suggestions about viable strategies. The facilitator does play a role in third-order meta-dialogue. A meta-dialogue may be requested at any time, by any group member who seeks clarification about a rule or any other matter governing the dialogue as a whole. The facilitator is responsible for answering meta-dialogical questions. The facilitator may also initiate a meta-dialogue at any time, if in his judgment some procedural point requires clarification. Thus the facilitator of a Socratic dialogue is like the conductor of an orchestra: he has no explicit voice in the score, but has a meta-voice in conducting the performance.</p>
+<p>This phenomenon is what I call the <strong>AI Productivity Paradox</strong>. AI dramatically compresses the physical act of typing out syntax, but it massively inflates the cognitive load required to validate and integrate that code into a complex, existing architecture. Reviewers are now faced with much larger PRs, completely unfamiliar code patterns, and extraordinarily subtle logical errors. In fact, reviews for heavily AI-assisted PRs take 26% <em>longer</em> because developers struggle to verify logic they did not organically write or conceptually model in their own heads.</p>
 
-<h2 id="3-the-structure-of-the-dialogue">3. The Structure of the Dialogue</h2>
+<h3 id="why-human-verification-is-failing">Why Human Verification is Failing</h3>
 
-<p>The Socratic dialogue has a very specific symmetric structure, which may be likened to the shape of an hourglass. It is widest at the top and bottom, and narrowest at the waist. One begins at the top, with the universal question under consideration (e.g. “What is integrity”). Each member of the group is then asked to summarize an example from his or her own experience, which purports to embody or otherwise to illustrate the universal in question. The group may freely question each person’s example, to further its understanding of that particular experience. Examples should be first-person accounts, closed in time, not too emotional, and as simple as possible. Even the simplest examples can lead to considerable complexity under dialogical analysis. 
-The group then chooses one of the examples as the focus of the dialogue. The chosen example becomes the principal vehicle for the process. An example having been chosen, the person who offered it then gives as detailed an account as possible, which is subject at each step to questions by the group, which seeks to elaborate and understand the example in as much detail as necessary. The facilitator transcribes, numbers, and displays each step of the example, so that the group has a written “history” that it can continuously consult.
-The group must then determine exactly where in the example the universal is manifest. E.g. If the question is “What is integrity?”, then the group must determine where lies the integrity in this example. At what step or steps does it occur? Between or among which steps does it occur? And so forth.
-Following this, the group must decide on a definition of integrity that adequately describes the thing they have located in the example. The consensual articulation of this definition brings the group to the narrow waist of the hourglass. The universal under consideration has now been particularized. This is the mid-point of the conceptual structure (and roughly the mid-point of the temporal structure) of the dialogue. 
-From here the dialogue begins to broaden. The working definition is re-applied to each of the other examples, which were not elaborated but which have been summarized, transcribed and displayed. If the definition is truly universal, then it will suit each example; if not, then it must be modified accordingly.
-At the final stage, toward the bottom of the hourglass, the group will then offer counter-examples, trying to undermine or falsify their definition. Modifications are again made if necessary; if not, then the group will have succeeded in its quest.</p>
+<p>The cognitive burden on reviewers has become unsustainable. Developers report severe context-switching fatigue, and reviewing complex, AI-generated code requires immense effort just to regain the necessary context.</p>
 
-<h2 id="4-how-to-prepare-for-a-dialogue">4. How to Prepare for a Dialogue</h2>
+<p>Furthermore, expecting a fatigued, overloaded human to catch every flaw is objectively dangerous. Rigorous static analysis of AI-generated code shows that even functionally “correct” outputs consistently harbor subtle defects. Across various Large Language Models (LLMs):</p>
+<ul>
+  <li><strong>90-93%</strong> of generated issues are code smells (which severely degrade long-term maintainability).</li>
+  <li><strong>5-8%</strong> are functional bugs.</li>
+  <li><strong>~2%</strong> are critical security vulnerabilities, such as hardcoded credentials or path-traversal injection flaws.</li>
+</ul>
 
-<p>You need not be a philosopher, nor have philosophical qualifications, to participate in a Socratic dialogue. An appealing presupposition of the dialogue is that universal truths are grounded in our particular experiences. The purpose of the dialogue is to reach the universal from the particular. There is never any reference made, nor need there be any reference made, to philosophical literature. The chosen question is answered not by citing what Plato or Nietzsche thought about it, but by discussing what the members of the group experienced of it. We all have experiences, and we can all think for ourselves. Reference to published works is not admissible in a Socratic dialogue; reference to concrete personal experience is what counts and suffices for the purpose. In the realm of philosophical arts, the synthesis of plural experience can capture more truth – and therefore greater universality – than that of the ruminations of any single intellect, no matter how great in stature. The dialogue is a symphony, not a solo. So the best preparation is an open mind, and a good example (if the question is known beforehand).</p>
+<p>Humans alone simply cannot reliably catch these subtle, non-local vulnerabilities in a massive diff. We aren’t built for it.</p>
 
-<h3 id="the-question">The Question:</h3>
-<p>Questions of the form “What is X?” tend to work best. Thus “What is integrity?”, “What is happiness?”, “What is liberty?”, and “What is justice?” are all good candidates for a Socratic dialogue. The group is encouraged to select its question beforehand if possible, in consultation with the facilitator if need be.</p>
+<h3 id="the-paradigm-shift-reviewing-intent-not-code">The Paradigm Shift: Reviewing Intent, Not Code</h3>
 
-<h3 id="the-examples">The Examples:</h3>
-<p>The question having been chosen, each group member should think of an example from his or her own life which illustrates or embodies the sought-after universal. Again, a viable example will have the following properties. It should be closed in time; that is, its ramifications should have settled. It should not be too emotional – otherwise, reasoned discourse may be imperiled. It should be as brief and simple as possible. It should be a first-person example, about which the exemplar is willing to answer detailed questions from the group. Participants are encouraged to think of their examples beforehand.</p>
+<p>If we cannot out-read the machines, we must out-think them upstream. To scale software delivery safely in this environment, the human checkpoint must move from reviewing <em>code</em> to reviewing <em>intent</em>.</p>
 
-<h3 id="the-general-rules">The General Rules:</h3>
-<p>While the facilitator is responsible for guiding the group through the dialogue, each participant is asked to abide by the following rules, which if followed conduce to a rewarding experience.</p>
+<p>In a tightly defined, spec-driven development paradigm, specifications become the absolute source of truth, and code is merely a deterministic artifact of that spec. Instead of painstakingly analyzing a 500-line diff, senior engineers should spend their cognitive budget reviewing:</p>
 
 <ol>
-  <li>Express your doubts.</li>
-  <li>Be attentive to others.</li>
-  <li>Refrain from monologues.</li>
-  <li>Ask no hypothetical questions.</li>
-  <li>Make no references to published works.</li>
-  <li>Strive for consensus.</li>
+  <li><strong>Specifications and Constraints:</strong> Defining what “correct” actually means and proactively anticipating dangerous edge cases before generation.</li>
+  <li><strong>Acceptance Criteria:</strong> Using Behavior-Driven Development (BDD) to write robust natural language specs that are automatically executed as tests.</li>
 </ol>
 
-<p>Criteria of a Good Example:</p>
+<p>The human-in-the-loop approval shifts fundamentally from asking <em>“Did you write this loop correctly?”</em> to <em>“Are we solving the right problem with the rigorously defined constraints?”</em> The most valuable human judgment happens before the first line of code is ever generated by the LLM.</p>
+
+<h3 id="building-automated-trust-the-verification-era">Building Automated Trust: The Verification Era</h3>
+
+<p>As we deliberately move away from manual line-by-line reviews, we must build systemic trust through automated, layered verification: a “Swiss-cheese model” where multiple imperfect automated filters catch what humans are no longer reviewing.</p>
+
+<ul>
+  <li><strong>Deterministic Guardrails and Static Analysis:</strong> We must rely heavily on tools like SonarQube, Semgrep, or AI-aware linters to automatically flag known anti-patterns, resource leaks, and security vulnerabilities before a PR is even submitted. The AI cannot negotiate with a failing CI pipeline; it either meets the non-negotiable specification or it fails.</li>
+  <li><strong>Adversarial Verification (Red Teaming):</strong> Engineering systems can be architected so that one AI agent writes the implementation code, and an entirely separate, adversarial agent tries specifically to break it. By enforcing this architectural separation, edge cases and failure modes are automatically targeted iteratively on every single atomic change.</li>
+  <li><strong>Scenario Testing and Digital Twins:</strong> Forward-thinking, elite teams are already building internal “Software Factories” operating under the radical rule that code must not be reviewed by humans at all. Instead, they build “Digital Twin Universes” (behavioral clones of complex third-party dependencies) to run thousands of simulated scenarios per hour. Success is measured entirely empirically by whether the software satisfies the simulated user trajectories, completely bypassing the need for manual syntactic inspection.</li>
+</ul>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>The future of software engineering is clear: to ship fast, observe everything meticulously, and revert faster. Trying to manually review every single line of code generated by an LLM is a losing battle that fundamentally leads to delayed releases, hidden architectural tech debt, and massive developer burnout.</p>
+
+<p>It is time to abandon traditional manual code review and embrace a scalable future where humans define and govern the intent, and hardened, automated systems handle the ruthless verification.</p>
+
+<h3 id="references">References</h3>
+
 <ol>
-  <li>Should be a first-person experience.</li>
-  <li>Should be closed in time.</li>
-  <li>Should not be too emotional.</li>
-  <li>Should be brief.</li>
-  <li>Should be simple.</li>
-  <li>Exemplar should be willing to answer questions.”</li>
+  <li><a href="https://survey.stackoverflow.co/2024/ai/">Stack Overflow 2024 Developer Survey</a></li>
+  <li><a href="https://faros.ai/blog/the-ai-productivity-paradox-dora-report">Faros AI Report: The AI Productivity Paradox</a></li>
+  <li><a href="https://medium.com/@byteiota/ai-coding-paradox-why-faster-isnt-always-better-01f22e707e78">ByteIOTA: AI Coding Paradox</a></li>
+  <li><a href="https://devops.com/the-ai-productivity-paradox-more-prs-longer-reviews/">DevOps.com: The AI Productivity Paradox - More PRs, Longer Reviews</a></li>
+  <li><a href="https://pullflow.com/blog/ai-pr-reviews">Pullflow: AI PR Reviews</a></li>
+  <li><a href="https://simonwillison.net/2026/Feb/7/software-factory/">Simon Willison: Software Factory</a></li>
 </ol>
 
       </article>
@@ -415,7 +429,11 @@ At the final stage, toward the bottom of the hourglass, the group will then offe
         Tags:
         
         
-        <a href="/tags#philosophy">philosophy</a>
+        <a href="/tags#ai">ai</a>
+        
+        <a href="/tags#developer-experience">developer-experience</a>
+        
+        <a href="/tags#appsec">appsec</a>
         
         
       </div>
@@ -522,34 +540,12 @@ At the final stage, toward the bottom of the hourglass, the group will then offe
           
           
             
-              
-              
-              
-            
           
             
               
               
               
-            
-          
-            
-              
-              
-              
-            
-          
-            
-              
-              
-              
-            
-          
-            
-              
-              
-              
-                <li><a href="/posts/2024-06-30-Suffering/">Life is cruel</a></li>
+                <li><a href="/posts/2026-02-22-llms-vs-classical-neural-nets-for-vulnerability-detection/">Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks</a></li>
                 
               
             
@@ -558,13 +554,7 @@ At the final stage, toward the bottom of the hourglass, the group will then offe
               
               
               
-            
-          
-            
-              
-              
-              
-                <li><a href="/posts/2023-12-31-Nietzsche-and-Vedanta/">Exploring Philosophical Parallels - Nietzsche and Vedanta</a></li>
+                <li><a href="/posts/2025-10-10-vibe-engineering/">Vibe Engineering</a></li>
                 
               
             
@@ -573,9 +563,17 @@ At the final stage, toward the bottom of the hourglass, the group will then offe
               
               
               
-                <li><a href="/posts/2023-07-23-Epicurean-paradox/">Resolving the Epicurean Paradox - A Perspective from Advaita Vedanta</a></li>
+                <li><a href="/posts/2025-06-29-living-ecosystems-of-agents/">Designing a living ecosystem of AI agents</a></li>
                 
               
+            
+          
+            
+          
+            
+          
+            
+          
             
           
             
@@ -611,15 +609,10 @@ At the final stage, toward the bottom of the hourglass, the group will then offe
       <ul class="pager blog-pager">
         
         <li class="previous">
-          <a href="/posts/2020-04-12-Problem-solving-and-the-art-of-the-convincing-argument/" data-toggle="tooltip"
-            data-placement="top" title="Problem solving and the art of the convincing argument">&larr; Previous Post</a>
+          <a href="/posts/2026-02-22-llms-vs-classical-neural-nets-for-vulnerability-detection/" data-toggle="tooltip"
+            data-placement="top" title="Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks">&larr; Previous Post</a>
         </li>
         
-        
-        <li class="next">
-          <a href="/posts/2021-07-14-How-to-Study/" data-toggle="tooltip"
-            data-placement="top" title="How to study based on how memory works">Next Post &rarr;</a>
-        </li>
         
       </ul>
 
