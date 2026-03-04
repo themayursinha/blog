@@ -5,10 +5,19 @@
   <link href="https://themayursinha.com/atom.xml" rel="self" />
   <link href="https://themayursinha.com" />
   <id>https://themayursinha.com/</id>
-  <updated>2026-03-04T10:32:29+01:00</updated>
+  <updated>2026-03-04T12:58:13+01:00</updated>
   <author>
     <name>Mayur Sinha</name>
   </author>
+  
+  <entry>
+    <title>Threat Modeling Autonomous AI Agents in Production</title>
+    <link href="https://themayursinha.com/posts/2026-03-04-threat-modeling-autonomous-ai-agents-in-production/" />
+    <id>https://themayursinha.com/posts/2026-03-04-threat-modeling-autonomous-ai-agents-in-production/</id>
+    <updated>2026-03-04T00:00:00+01:00</updated>
+    <published>2026-03-04T00:00:00+01:00</published>
+    <summary>A practical framework for threat modeling autonomous AI agents in production, with concrete attack paths, controls, and measurable security SLOs.</summary>
+  </entry>
   
   <entry>
     <title>Traditional manual code review is no longer sustainable</title>
@@ -179,15 +188,6 @@
     <updated>2020-04-12T00:00:00+02:00</updated>
     <published>2020-04-12T00:00:00+02:00</published>
     <summary>Problem solving and the art of the convincing argument</summary>
-  </entry>
-  
-  <entry>
-    <title>Crash Course in x86 - Part I</title>
-    <link href="https://themayursinha.com/posts/2019-04-30-Crash-Course-in-x86/" />
-    <id>https://themayursinha.com/posts/2019-04-30-Crash-Course-in-x86/</id>
-    <updated>2019-04-30T00:00:00+02:00</updated>
-    <published>2019-04-30T00:00:00+02:00</published>
-    <summary>Crash Course in x86</summary>
   </entry>
   
 </feed>

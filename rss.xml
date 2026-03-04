@@ -7,6 +7,17 @@
     <atom:link href="https://themayursinha.com/rss.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Threat Modeling Autonomous AI Agents in Production</title>
+        <description>
+          
+          In a normal SaaS app, most security controls sit on API boundaries. In an autonomous agent system, the boundary is not just an API. It is a decision loop: observe -&amp;gt; plan -&amp;gt; call tools -&amp;gt; mutate state -&amp;gt; update memory If you threat-model only the prompt, you miss the...
+        </description>
+        <pubDate>Wed, 04 Mar 2026 00:00:00 +0100</pubDate>
+        <link>https://themayursinha.com/posts/2026-03-04-threat-modeling-autonomous-ai-agents-in-production/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2026-03-04-threat-modeling-autonomous-ai-agents-in-production/</guid>
+      </item>
+    
+      <item>
         <title>Traditional manual code review is no longer sustainable</title>
         <description>
           
@@ -213,17 +224,6 @@
         <pubDate>Sun, 12 Apr 2020 00:00:00 +0200</pubDate>
         <link>https://themayursinha.com/posts/2020-04-12-Problem-solving-and-the-art-of-the-convincing-argument/</link>
         <guid isPermaLink="true">https://themayursinha.com/posts/2020-04-12-Problem-solving-and-the-art-of-the-convincing-argument/</guid>
-      </item>
-    
-      <item>
-        <title>Crash Course in x86 - Part I</title>
-        <description>
-          
-          Knowledge of x86 is important in security fields like malware analysis, vulnerability research and exploit development. The only prerequisite is to know the basics of C or C based languages like Java. Bits, bytes, words, double words The data “types” in 32 bits assembly are bits, bytes, words, and dwords....
-        </description>
-        <pubDate>Tue, 30 Apr 2019 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/posts/2019-04-30-Crash-Course-in-x86/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2019-04-30-Crash-Course-in-x86/</guid>
       </item>
     
   </channel>
