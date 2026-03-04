@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Mayur Sinha
-subtitle: Where Engineering Meets Philosophy
-description: Security engineer and technical philosopher writing about AI security and LLM security.
-meta-title: Mayur Sinha | AI Security & Philosophy
+subtitle: AI Security Engineer Building Safer Intelligent Systems
+description: Staff AI Security Engineer building secure LLM and agent systems for production environments.
+meta-title: Mayur Sinha | AI Security Engineer
 use-site-title: false
 featured_posts:
   - title: Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks
@@ -28,15 +28,15 @@ featured_projects:
 <section class="home-about-column">
   <h2>About Me</h2>
 
-  <p>I am a technologist trying to understand the universe and the meaning of life. I am drawn to a wide range of questions, from physics and artificial intelligence to why we think and behave the way we do.</p>
+  <p>I am a Staff Security Engineer focused on AI and cloud-native security. I build practical security systems across application security, infrastructure security, and detection engineering.</p>
 
-  <p>I love reading, deep conversations, and learning with curious people. My goal is to get closer to the truth about our world by exploring both science and spirituality.</p>
+  <p>My core focus is AI security: securing LLM and agent workflows, stress-testing systems for prompt injection and data exfiltration risks, and building guardrails teams can run in production.</p>
 
-  <p>By day, I am a staff engineer focused on security. By night, I work with a non-profit researching how to reduce AI risk. I hope for a future where humans and AI can coexist safely and ethically.</p>
+  <p>Over the last 15 years, I have worked across startups and enterprise environments in research, product security, and incident response, from malware reverse engineering to modern DevSecOps programs.</p>
 
-  <p>I believe humanity is moving toward becoming a cybernetic species, with AI as a core force in that transformation. I want to be an active participant in what may become one of the most significant evolutionary shifts in human history.</p>
+  <p>I also collaborate with a non-profit on long-horizon AI risk research and write about AI security, engineering systems, and the deeper philosophy of intelligence and safety.</p>
 
-  <p>If you are exploring similar questions, I would love to connect and learn together.</p>
+  <p>If you are building secure AI systems or exploring similar questions, I would love to connect.</p>
 
 </section>
 
