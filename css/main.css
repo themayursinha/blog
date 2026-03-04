@@ -1141,7 +1141,6 @@ body.dark-theme {
 }
 
 /* --- Post engagement --- */
-.author-box,
 .related-posts {
   margin-top: 28px;
   padding: 18px;
@@ -1161,12 +1160,10 @@ body.dark-theme {
   margin: 0;
 }
 
-.author-box h3,
 .related-posts h3 {
   margin-top: 0;
 }
 
-.author-box-links,
 .related-posts ul {
   margin-bottom: 0;
   padding-left: 18px;
