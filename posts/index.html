@@ -301,6 +301,11 @@
         <div class="page-heading">
           <h1>Posts</h1>
 		  
+		    
+            <hr class="small">
+            <span class="page-subheading">Essays, technical writing, and research notes across security, AI, and philosophy.</span>
+			
+		  
 		  
 		  
         </div>
@@ -318,334 +323,494 @@
 <div class="container" role="main">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <p>Browse all writing and filter by topic.</p>
+      
 
-<!-- Tag filter -->
-<div id="tag-filter" style="margin-bottom: 1.5em;">
-  <strong>Filter by tag:</strong>
-  <a href="/posts/" onclick="filterPosts(''); return false;">All</a>
-  
-  
-    <a href="#agents" onclick="filterPosts('agents'); return false;">agents (1)</a>
-  
-    <a href="#ai" onclick="filterPosts('ai'); return false;">ai (5)</a>
-  
-    <a href="#llms" onclick="filterPosts('llms'); return false;">llms (3)</a>
-  
-    <a href="#maths" onclick="filterPosts('maths'); return false;">maths (1)</a>
-  
-    <a href="#movies" onclick="filterPosts('movies'); return false;">movies (2)</a>
-  
-    <a href="#philosophy" onclick="filterPosts('philosophy'); return false;">philosophy (7)</a>
-  
-    <a href="#science" onclick="filterPosts('science'); return false;">science (2)</a>
-  
-    <a href="#security" onclick="filterPosts('security'); return false;">security (6)</a>
-  
-    <a href="#spirituality" onclick="filterPosts('spirituality'); return false;">spirituality (1)</a>
-  
-    <a href="#technology" onclick="filterPosts('technology'); return false;">technology (2)</a>
-  
+
+
+
+
+<div class="posts-page">
+  <section class="posts-intro-card">
+    <div class="posts-intro-copy">
+      <p class="posts-kicker">Writing archive</p>
+      <p class="posts-lead">Technical essays, security thinking, and long-form notes spanning 2018 to 2026.</p>
+      <p class="posts-intro-text">This archive mixes practical application security, AI systems thinking, and philosophy of technology. Every entry includes a short synopsis so the archive is easier to scan.</p>
+    </div>
+
+    <div class="posts-stats" aria-label="Posts overview">
+      <div class="posts-stat">
+        <span class="posts-stat-value">22</span>
+        <span class="posts-stat-label">Posts</span>
+      </div>
+      <div class="posts-stat">
+        <span class="posts-stat-value">10</span>
+        <span class="posts-stat-label">Topics</span>
+      </div>
+      <div class="posts-stat">
+        <span class="posts-stat-value">14</span>
+        <span class="posts-stat-label">Categories</span>
+      </div>
+      <div class="posts-stat">
+        <span class="posts-stat-value">9</span>
+        <span class="posts-stat-label">Year span</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="posts-section">
+    <div class="posts-section-heading">
+      <div>
+        <p class="posts-section-kicker">Archive</p>
+        <h2>Browse the full archive</h2>
+      </div>
+      <p>For topic-based browsing, use the <a href="/tags/">tags page</a>.</p>
+    </div>
+
+    <div class="posts-grid">
+      
+      
+      
+      
+      <article class="post-archive-card">
+        <div class="post-archive-top">
+          <p class="post-archive-kicker">ai</p>
+          <p class="post-archive-date">Mar 4, 2026</p>
+        </div>
+
+        <h3 class="post-archive-title">
+          <a href="/posts/2026-03-04-threat-modeling-autonomous-ai-agents-in-production/">Threat Modeling Autonomous AI Agents in Production</a>
+        </h3>
+
+        <p class="post-archive-summary">A practical framework for threat modeling autonomous AI agents in production, with concrete attack paths, controls, and measurable security SLOs.</p>
+
+        <p class="post-archive-footer">
+          <a class="post-archive-link" href="/posts/2026-03-04-threat-modeling-autonomous-ai-agents-in-production/">Read post</a>
+        </p>
+      </article>
+      
+      
+      
+      
+      <article class="post-archive-card">
+        <div class="post-archive-top">
+          <p class="post-archive-kicker">software-engineering</p>
+          <p class="post-archive-date">Mar 2, 2026</p>
+        </div>
+
+        <h3 class="post-archive-title">
+          <a href="/posts/2026-03-02-manual-code-review-is-unsustainable/">Traditional manual code review is no longer sustainable</a>
+        </h3>
+
+        <p class="post-archive-summary">Code review is a historical approval gate that simply no longer matches the shape of modern work. Here is why we need to pivot.</p>
+
+        <p class="post-archive-footer">
+          <a class="post-archive-link" href="/posts/2026-03-02-manual-code-review-is-unsustainable/">Read post</a>
+        </p>
+      </article>
+      
+      
+      
+      
+      <article class="post-archive-card">
+        <div class="post-archive-top">
+          <p class="post-archive-kicker">AI</p>
+          <p class="post-archive-date">Feb 22, 2026</p>
+        </div>
+
+        <h3 class="post-archive-title">
+          <a href="/posts/2026-02-22-llms-vs-classical-neural-nets-for-vulnerability-detection/">Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks</a>
+        </h3>
+
+        <p class="post-archive-summary">A technical comparison of classical ANN pipelines and transformer LLMs for vulnerability detection.</p>
+
+        <p class="post-archive-footer">
+          <a class="post-archive-link" href="/posts/2026-02-22-llms-vs-classical-neural-nets-for-vulnerability-detection/">Read post</a>
+        </p>
+      </article>
+      
+      
+      
+      
+      <article class="post-archive-card">
+        <div class="post-archive-top">
+          <p class="post-archive-kicker">AI</p>
+          <p class="post-archive-date">Oct 10, 2025</p>
+        </div>
+
+        <h3 class="post-archive-title">
+          <a href="/posts/2025-10-10-vibe-engineering/">Vibe Engineering</a>
+        </h3>
+
+        <p class="post-archive-summary">Stop Vibe coding: Why true engineers are now doing Vibe engineering</p>
+
+        <p class="post-archive-footer">
+          <a class="post-archive-link" href="/posts/2025-10-10-vibe-engineering/">Read post</a>
+        </p>
+      </article>
+      
+      
+      
+      
+      <article class="post-archive-card">
+        <div class="post-archive-top">
+          <p class="post-archive-kicker">AI</p>
+          <p class="post-archive-date">Jun 29, 2025</p>
+        </div>
+
+        <h3 class="post-archive-title">
+          <a href="/posts/2025-06-29-living-ecosystems-of-agents/">Designing a living ecosystem of AI agents</a>
+        </h3>
+
+        <p class="post-archive-summary">The world of AI is moving fast. Every day, we see amazing new tools like AutoGen and CrewAI that let us build teams of AI agents to get work done. These tools are powerful, but ...</p>
+
+        <p class="post-archive-footer">
+          <a class="post-archive-link" href="/posts/2025-06-29-living-ecosystems-of-agents/">Read post</a>
+        </p>
+      </article>
+      
+      
+      
+      
+      <article class="post-archive-card">
+        <div class="post-archive-top">
+          <p class="post-archive-kicker">philosophy</p>
+          <p class="post-archive-date">Jun 30, 2024</p>
+        </div>
+
+        <h3 class="post-archive-title">
+          <a href="/posts/2024-06-30-Suffering/">Life is cruel</a>
+        </h3>
+
+        <p class="post-archive-summary">Why do we suffer? A look at injustice without a God</p>
+
+        <p class="post-archive-footer">
+          <a class="post-archive-link" href="/posts/2024-06-30-Suffering/">Read post</a>
+        </p>
+      </article>
+      
+      
+      
+      
+      <article class="post-archive-card">
+        <div class="post-archive-top">
+          <p class="post-archive-kicker">technology</p>
+          <p class="post-archive-date">Feb 12, 2024</p>
+        </div>
+
+        <h3 class="post-archive-title">
+          <a href="/posts/2024-02-12-Unabomber-relevance-in-2024/">Revisiting the Unabomber</a>
+        </h3>
+
+        <p class="post-archive-summary">In the shadows of the late 20th century, Ted Kaczynski, infamously known as the Unabomber, embarked on a nationwide bombing campaign that terrorized America for nearly two decad...</p>
+
+        <p class="post-archive-footer">
+          <a class="post-archive-link" href="/posts/2024-02-12-Unabomber-relevance-in-2024/">Read post</a>
+        </p>
+      </article>
+      
+      
+      
+      
+      <article class="post-archive-card">
+        <div class="post-archive-top">
+          <p class="post-archive-kicker">philosophy</p>
+          <p class="post-archive-date">Dec 31, 2023</p>
+        </div>
+
+        <h3 class="post-archive-title">
+          <a href="/posts/2023-12-31-Nietzsche-and-Vedanta/">Exploring Philosophical Parallels - Nietzsche and Vedanta</a>
+        </h3>
+
+        <p class="post-archive-summary">Introduction</p>
+
+        <p class="post-archive-footer">
+          <a class="post-archive-link" href="/posts/2023-12-31-Nietzsche-and-Vedanta/">Read post</a>
+        </p>
+      </article>
+      
+      
+      
+      
+      <article class="post-archive-card">
+        <div class="post-archive-top">
+          <p class="post-archive-kicker">God</p>
+          <p class="post-archive-date">Jul 23, 2023</p>
+        </div>
+
+        <h3 class="post-archive-title">
+          <a href="/posts/2023-07-23-Epicurean-paradox/">Resolving the Epicurean Paradox - A Perspective from Advaita Vedanta</a>
+        </h3>
+
+        <p class="post-archive-summary"></p>
+
+        <p class="post-archive-footer">
+          <a class="post-archive-link" href="/posts/2023-07-23-Epicurean-paradox/">Read post</a>
+        </p>
+      </article>
+      
+      
+      
+      
+      <article class="post-archive-card">
+        <div class="post-archive-top">
+          <p class="post-archive-kicker">AI</p>
+          <p class="post-archive-date">Jul 17, 2023</p>
+        </div>
+
+        <h3 class="post-archive-title">
+          <a href="/posts/2023-07-17-x-ai/">Elon Musk on xAI</a>
+        </h3>
+
+        <p class="post-archive-summary">Introduction</p>
+
+        <p class="post-archive-footer">
+          <a class="post-archive-link" href="/posts/2023-07-17-x-ai/">Read post</a>
+        </p>
+      </article>
+      
+      
+      
+      
+      <article class="post-archive-card">
+        <div class="post-archive-top">
+          <p class="post-archive-kicker">philosophy</p>
+          <p class="post-archive-date">Jul 9, 2023</p>
+        </div>
+
+        <h3 class="post-archive-title">
+          <a href="/posts/2023-07-09-Man-is-a-machine/">Man is a machine</a>
+        </h3>
+
+        <p class="post-archive-summary">Are we just machines?</p>
+
+        <p class="post-archive-footer">
+          <a class="post-archive-link" href="/posts/2023-07-09-Man-is-a-machine/">Read post</a>
+        </p>
+      </article>
+      
+      
+      
+      
+      <article class="post-archive-card">
+        <div class="post-archive-top">
+          <p class="post-archive-kicker">God</p>
+          <p class="post-archive-date">Jul 7, 2023</p>
+        </div>
+
+        <h3 class="post-archive-title">
+          <a href="/posts/2023-07-07-Was-Thanos-Right/">Was Thanos Right?</a>
+        </h3>
+
+        <p class="post-archive-summary">Last week I watched The Avengers: Infinity War again after 5 years and it sparked me why Thanos could be right.</p>
+
+        <p class="post-archive-footer">
+          <a class="post-archive-link" href="/posts/2023-07-07-Was-Thanos-Right/">Read post</a>
+        </p>
+      </article>
+      
+      
+      
+      
+      <article class="post-archive-card">
+        <div class="post-archive-top">
+          <p class="post-archive-kicker">appsec</p>
+          <p class="post-archive-date">Jun 14, 2023</p>
+        </div>
+
+        <h3 class="post-archive-title">
+          <a href="/posts/2023-06-14-Reframing-application-security/">Reframing Application Security</a>
+        </h3>
+
+        <p class="post-archive-summary">In the rapidly evolving digital landscape, most companies are vying for supremacy based on their ability to deliver business value through software and technology. The speed and...</p>
+
+        <p class="post-archive-footer">
+          <a class="post-archive-link" href="/posts/2023-06-14-Reframing-application-security/">Read post</a>
+        </p>
+      </article>
+      
+      
+      
+      
+      <article class="post-archive-card">
+        <div class="post-archive-top">
+          <p class="post-archive-kicker">Brahman</p>
+          <p class="post-archive-date">Jun 7, 2023</p>
+        </div>
+
+        <h3 class="post-archive-title">
+          <a href="/posts/2023-06-07-A-dive-into-advaita-vedanta/">Understanding the Concept of Brahman and Atman</a>
+        </h3>
+
+        <p class="post-archive-summary">Advaita Vedanta, one of the philosophical schools of Hinduism, presents a profound vision of reality that challenges our everyday perceptions and encourages us to explore the de...</p>
+
+        <p class="post-archive-footer">
+          <a class="post-archive-link" href="/posts/2023-06-07-A-dive-into-advaita-vedanta/">Read post</a>
+        </p>
+      </article>
+      
+      
+      
+      
+      <article class="post-archive-card">
+        <div class="post-archive-top">
+          <p class="post-archive-kicker">Tesla</p>
+          <p class="post-archive-date">Feb 27, 2023</p>
+        </div>
+
+        <h3 class="post-archive-title">
+          <a href="/posts/2023-02-27-Man's-greatest-achievement/">Man's greatest achievement</a>
+        </h3>
+
+        <p class="post-archive-summary">In the article “Man’s Greatest Achievement” published in the New York American on July 6, 1930, Nikola Tesla outlines his vision for the future of science and technology, specif...</p>
+
+        <p class="post-archive-footer">
+          <a class="post-archive-link" href="/posts/2023-02-27-Man's-greatest-achievement/">Read post</a>
+        </p>
+      </article>
+      
+      
+      
+      
+      <article class="post-archive-card">
+        <div class="post-archive-top">
+          <p class="post-archive-kicker">Movies</p>
+          <p class="post-archive-date">May 1, 2022</p>
+        </div>
+
+        <h3 class="post-archive-title">
+          <a href="/posts/2022-05-01-The-Batman/">Why The Batman feels so personal</a>
+        </h3>
+
+        <p class="post-archive-summary">“Thursday, October 31st. The city streets are crowded for the holiday. Even with the rain. Hidden in the chaos is the element, waiting to strike like snakes. And I’m there too. ...</p>
+
+        <p class="post-archive-footer">
+          <a class="post-archive-link" href="/posts/2022-05-01-The-Batman/">Read post</a>
+        </p>
+      </article>
+      
+      
+      
+      
+      <article class="post-archive-card">
+        <div class="post-archive-top">
+          <p class="post-archive-kicker">philosophy</p>
+          <p class="post-archive-date">Jul 31, 2021</p>
+        </div>
+
+        <h3 class="post-archive-title">
+          <a href="/posts/2021-07-31-Akashic-field/">The Science of akashic field</a>
+        </h3>
+
+        <p class="post-archive-summary">The Sanskrit word akasha, translated as both “ether” and “space”, refers specifically to the vibratory element that is the subtlest in the material world, the “screen on which t...</p>
+
+        <p class="post-archive-footer">
+          <a class="post-archive-link" href="/posts/2021-07-31-Akashic-field/">Read post</a>
+        </p>
+      </article>
+      
+      
+      
+      
+      <article class="post-archive-card">
+        <div class="post-archive-top">
+          <p class="post-archive-kicker">brain</p>
+          <p class="post-archive-date">Jul 14, 2021</p>
+        </div>
+
+        <h3 class="post-archive-title">
+          <a href="/posts/2021-07-14-How-to-Study/">How to study based on how memory works</a>
+        </h3>
+
+        <p class="post-archive-summary">Memory works (to put it simply) in 3 stages: attention, encoding (storing/associating with other info), and retrieval(remembering).</p>
+
+        <p class="post-archive-footer">
+          <a class="post-archive-link" href="/posts/2021-07-14-How-to-Study/">Read post</a>
+        </p>
+      </article>
+      
+      
+      
+      
+      <article class="post-archive-card">
+        <div class="post-archive-top">
+          <p class="post-archive-kicker">philosophy</p>
+          <p class="post-archive-date">Jul 12, 2021</p>
+        </div>
+
+        <h3 class="post-archive-title">
+          <a href="/posts/2021-07-12-Socratic-dialogue/">Socratic dialogue</a>
+        </h3>
+
+        <p class="post-archive-summary">1. What is a Socratic Dialogue?</p>
+
+        <p class="post-archive-footer">
+          <a class="post-archive-link" href="/posts/2021-07-12-Socratic-dialogue/">Read post</a>
+        </p>
+      </article>
+      
+      
+      
+      
+      <article class="post-archive-card">
+        <div class="post-archive-top">
+          <p class="post-archive-kicker">Maths</p>
+          <p class="post-archive-date">Apr 12, 2020</p>
+        </div>
+
+        <h3 class="post-archive-title">
+          <a href="/posts/2020-04-12-Problem-solving-and-the-art-of-the-convincing-argument/">Problem solving and the art of the convincing argument</a>
+        </h3>
+
+        <p class="post-archive-summary">Introduction</p>
+
+        <p class="post-archive-footer">
+          <a class="post-archive-link" href="/posts/2020-04-12-Problem-solving-and-the-art-of-the-convincing-argument/">Read post</a>
+        </p>
+      </article>
+      
+      
+      
+      
+      <article class="post-archive-card">
+        <div class="post-archive-top">
+          <p class="post-archive-kicker">Exploits</p>
+          <p class="post-archive-date">Apr 30, 2019</p>
+        </div>
+
+        <h3 class="post-archive-title">
+          <a href="/posts/2019-04-30-Crash-Course-in-x86/">Crash Course in x86 - Part I</a>
+        </h3>
+
+        <p class="post-archive-summary">Knowledge of x86 is important in security fields like malware analysis, vulnerability research and exploit development. The only prerequisite is to know the basics of C or C bas...</p>
+
+        <p class="post-archive-footer">
+          <a class="post-archive-link" href="/posts/2019-04-30-Crash-Course-in-x86/">Read post</a>
+        </p>
+      </article>
+      
+      
+      
+      
+      <article class="post-archive-card">
+        <div class="post-archive-top">
+          <p class="post-archive-kicker">Exploits</p>
+          <p class="post-archive-date">Mar 15, 2018</p>
+        </div>
+
+        <h3 class="post-archive-title">
+          <a href="/posts/2018-03-15-exploit-mitigation-techniques/">Memory exploit mitigation techniques</a>
+        </h3>
+
+        <p class="post-archive-summary">Types of memory exploit mitigation techniques</p>
+
+        <p class="post-archive-footer">
+          <a class="post-archive-link" href="/posts/2018-03-15-exploit-mitigation-techniques/">Read post</a>
+        </p>
+      </article>
+      
+    </div>
+  </section>
 </div>
-
-<!-- Posts list -->
-<ul id="posts-list">
-  
-    <li data-tags="ai security llms agents">
-      <a href="/posts/2026-03-04-threat-modeling-autonomous-ai-agents-in-production/">Threat Modeling Autonomous AI Agents in Production</a>
-      <span style="color:#888;">(Mar 4, 2026)</span>
-      
-        <span class="post-tags">
-          
-            <span>#ai</span>
-          
-            <span>#security</span>
-          
-            <span>#llms</span>
-          
-            <span>#agents</span>
-          
-        </span>
-      
-    </li>
-  
-    <li data-tags="ai security llms">
-      <a href="/posts/2026-03-02-manual-code-review-is-unsustainable/">Traditional manual code review is no longer sustainable</a>
-      <span style="color:#888;">(Mar 2, 2026)</span>
-      
-        <span class="post-tags">
-          
-            <span>#ai</span>
-          
-            <span>#security</span>
-          
-            <span>#llms</span>
-          
-        </span>
-      
-    </li>
-  
-    <li data-tags="ai security llms">
-      <a href="/posts/2026-02-22-llms-vs-classical-neural-nets-for-vulnerability-detection/">Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks</a>
-      <span style="color:#888;">(Feb 22, 2026)</span>
-      
-        <span class="post-tags">
-          
-            <span>#ai</span>
-          
-            <span>#security</span>
-          
-            <span>#llms</span>
-          
-        </span>
-      
-    </li>
-  
-    <li data-tags="ai">
-      <a href="/posts/2025-10-10-vibe-engineering/">Vibe Engineering</a>
-      <span style="color:#888;">(Oct 10, 2025)</span>
-      
-        <span class="post-tags">
-          
-            <span>#ai</span>
-          
-        </span>
-      
-    </li>
-  
-    <li data-tags="ai">
-      <a href="/posts/2025-06-29-living-ecosystems-of-agents/">Designing a living ecosystem of AI agents</a>
-      <span style="color:#888;">(Jun 29, 2025)</span>
-      
-        <span class="post-tags">
-          
-            <span>#ai</span>
-          
-        </span>
-      
-    </li>
-  
-    <li data-tags="philosophy">
-      <a href="/posts/2024-06-30-Suffering/">Life is cruel</a>
-      <span style="color:#888;">(Jun 30, 2024)</span>
-      
-        <span class="post-tags">
-          
-            <span>#philosophy</span>
-          
-        </span>
-      
-    </li>
-  
-    <li data-tags="technology">
-      <a href="/posts/2024-02-12-Unabomber-relevance-in-2024/">Revisiting the Unabomber</a>
-      <span style="color:#888;">(Feb 12, 2024)</span>
-      
-        <span class="post-tags">
-          
-            <span>#technology</span>
-          
-        </span>
-      
-    </li>
-  
-    <li data-tags="philosophy">
-      <a href="/posts/2023-12-31-Nietzsche-and-Vedanta/">Exploring Philosophical Parallels - Nietzsche and Vedanta</a>
-      <span style="color:#888;">(Dec 31, 2023)</span>
-      
-        <span class="post-tags">
-          
-            <span>#philosophy</span>
-          
-        </span>
-      
-    </li>
-  
-    <li data-tags="philosophy">
-      <a href="/posts/2023-07-23-Epicurean-paradox/">Resolving the Epicurean Paradox - A Perspective from Advaita Vedanta</a>
-      <span style="color:#888;">(Jul 23, 2023)</span>
-      
-        <span class="post-tags">
-          
-            <span>#philosophy</span>
-          
-        </span>
-      
-    </li>
-  
-    <li data-tags="technology">
-      <a href="/posts/2023-07-17-x-ai/">Elon Musk on xAI</a>
-      <span style="color:#888;">(Jul 17, 2023)</span>
-      
-        <span class="post-tags">
-          
-            <span>#technology</span>
-          
-        </span>
-      
-    </li>
-  
-    <li data-tags="philosophy">
-      <a href="/posts/2023-07-09-Man-is-a-machine/">Man is a machine</a>
-      <span style="color:#888;">(Jul 9, 2023)</span>
-      
-        <span class="post-tags">
-          
-            <span>#philosophy</span>
-          
-        </span>
-      
-    </li>
-  
-    <li data-tags="movies">
-      <a href="/posts/2023-07-07-Was-Thanos-Right/">Was Thanos Right?</a>
-      <span style="color:#888;">(Jul 7, 2023)</span>
-      
-        <span class="post-tags">
-          
-            <span>#movies</span>
-          
-        </span>
-      
-    </li>
-  
-    <li data-tags="security">
-      <a href="/posts/2023-06-14-Reframing-application-security/">Reframing Application Security</a>
-      <span style="color:#888;">(Jun 14, 2023)</span>
-      
-        <span class="post-tags">
-          
-            <span>#security</span>
-          
-        </span>
-      
-    </li>
-  
-    <li data-tags="philosophy">
-      <a href="/posts/2023-06-07-A-dive-into-advaita-vedanta/">Understanding the Concept of Brahman and Atman</a>
-      <span style="color:#888;">(Jun 7, 2023)</span>
-      
-        <span class="post-tags">
-          
-            <span>#philosophy</span>
-          
-        </span>
-      
-    </li>
-  
-    <li data-tags="science">
-      <a href="/posts/2023-02-27-Man's-greatest-achievement/">Man's greatest achievement</a>
-      <span style="color:#888;">(Feb 27, 2023)</span>
-      
-        <span class="post-tags">
-          
-            <span>#science</span>
-          
-        </span>
-      
-    </li>
-  
-    <li data-tags="movies">
-      <a href="/posts/2022-05-01-The-Batman/">Why The Batman feels so personal</a>
-      <span style="color:#888;">(May 1, 2022)</span>
-      
-        <span class="post-tags">
-          
-            <span>#movies</span>
-          
-        </span>
-      
-    </li>
-  
-    <li data-tags="philosophy spirituality">
-      <a href="/posts/2021-07-31-Akashic-field/">The Science of akashic field</a>
-      <span style="color:#888;">(Jul 31, 2021)</span>
-      
-        <span class="post-tags">
-          
-            <span>#philosophy</span>
-          
-            <span>#spirituality</span>
-          
-        </span>
-      
-    </li>
-  
-    <li data-tags="science">
-      <a href="/posts/2021-07-14-How-to-Study/">How to study based on how memory works</a>
-      <span style="color:#888;">(Jul 14, 2021)</span>
-      
-        <span class="post-tags">
-          
-            <span>#science</span>
-          
-        </span>
-      
-    </li>
-  
-    <li data-tags="philosophy">
-      <a href="/posts/2021-07-12-Socratic-dialogue/">Socratic dialogue</a>
-      <span style="color:#888;">(Jul 12, 2021)</span>
-      
-        <span class="post-tags">
-          
-            <span>#philosophy</span>
-          
-        </span>
-      
-    </li>
-  
-    <li data-tags="maths">
-      <a href="/posts/2020-04-12-Problem-solving-and-the-art-of-the-convincing-argument/">Problem solving and the art of the convincing argument</a>
-      <span style="color:#888;">(Apr 12, 2020)</span>
-      
-        <span class="post-tags">
-          
-            <span>#maths</span>
-          
-        </span>
-      
-    </li>
-  
-    <li data-tags="security">
-      <a href="/posts/2019-04-30-Crash-Course-in-x86/">Crash Course in x86 - Part I</a>
-      <span style="color:#888;">(Apr 30, 2019)</span>
-      
-        <span class="post-tags">
-          
-            <span>#security</span>
-          
-        </span>
-      
-    </li>
-  
-    <li data-tags="security">
-      <a href="/posts/2018-03-15-exploit-mitigation-techniques/">Memory exploit mitigation techniques</a>
-      <span style="color:#888;">(Mar 15, 2018)</span>
-      
-        <span class="post-tags">
-          
-            <span>#security</span>
-          
-        </span>
-      
-    </li>
-  
-</ul>
-
-<script>
-function filterPosts(tag) {
-  var posts = document.querySelectorAll('#posts-list li');
-  posts.forEach(function(li) {
-    var tags = (li.getAttribute('data-tags') || '').split(' ');
-    if (!tag || tags.indexOf(tag) !== -1) {
-      li.style.display = '';
-    } else {
-      li.style.display = 'none';
-    }
-  });
-}
-</script>
 
 	    
     </div>
