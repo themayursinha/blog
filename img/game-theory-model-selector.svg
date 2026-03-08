@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Which game model fits which security problem</title>
+  <desc id="desc">Diagram showing five common game-theoretic models and the defender questions they answer.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#131a2e"/>
+      <stop offset="100%" stop-color="#1d2442"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="960" height="600" rx="24" fill="url(#bg)"/>
+  <rect x="24" y="24" width="912" height="552" rx="20" fill="none" stroke="#32426f" stroke-width="1.5"/>
+
+  <text x="52" y="62" fill="#f4f7ff" font-family="Georgia, serif" font-size="28" font-weight="700">
+    Which game model fits which defender question?
+  </text>
+  <text x="52" y="88" fill="#aeb8d6" font-family="'Segoe UI', Arial, sans-serif" font-size="15">
+    Choose the model that matches the shape of the threat, not just the one with the cleanest math.
+  </text>
+
+  <g transform="translate(52 122)">
+    <rect width="250" height="156" rx="18" fill="#17203a" stroke="#3a528d" stroke-width="1.5"/>
+    <text x="20" y="34" fill="#7aa2f7" font-family="'Segoe UI', Arial, sans-serif" font-size="14" letter-spacing="1.4">NASH / MIXED STRATEGY</text>
+    <text x="20" y="64" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">How do I avoid becoming</text>
+    <text x="20" y="86" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">predictable?</text>
+    <text x="20" y="114" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">Randomized inspections,</text>
+    <text x="20" y="134" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">control rotation, patrol</text>
+    <text x="20" y="154" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">schedules, deception.</text>
+  </g>
+
+  <g transform="translate(355 122)">
+    <rect width="250" height="156" rx="18" fill="#17203a" stroke="#3a528d" stroke-width="1.5"/>
+    <text x="20" y="34" fill="#7aa2f7" font-family="'Segoe UI', Arial, sans-serif" font-size="14" letter-spacing="1.4">STACKELBERG</text>
+    <text x="20" y="64" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">What does the attacker do</text>
+    <text x="20" y="86" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">after seeing my posture?</text>
+    <text x="20" y="114" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">Resource allocation across</text>
+    <text x="20" y="134" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">targets, patrols, visible</text>
+    <text x="20" y="154" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">deterrence commitments.</text>
+  </g>
+
+  <g transform="translate(658 122)">
+    <rect width="250" height="156" rx="18" fill="#17203a" stroke="#3a528d" stroke-width="1.5"/>
+    <text x="20" y="34" fill="#7aa2f7" font-family="'Segoe UI', Arial, sans-serif" font-size="14" letter-spacing="1.4">MARKOV / STOCHASTIC</text>
+    <text x="20" y="64" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">How does the system evolve</text>
+    <text x="20" y="86" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">over time?</text>
+    <text x="20" y="114" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">Intrusion stages, state</text>
+    <text x="20" y="134" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">transitions, adaptive IDS,</text>
+    <text x="20" y="154" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">response tuning.</text>
+  </g>
+
+  <g transform="translate(186 324)">
+    <rect width="250" height="156" rx="18" fill="#17203a" stroke="#3a528d" stroke-width="1.5"/>
+    <text x="20" y="34" fill="#7aa2f7" font-family="'Segoe UI', Arial, sans-serif" font-size="14" letter-spacing="1.4">FLIPIT / STEALTHY TAKEOVER</text>
+    <text x="20" y="64" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">When do I rotate, audit,</text>
+    <text x="20" y="86" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">or retake control?</text>
+    <text x="20" y="114" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">Key rotation, silent cloud</text>
+    <text x="20" y="134" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">compromise, APT persistence</text>
+    <text x="20" y="154" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">under imperfect visibility.</text>
+  </g>
+
+  <g transform="translate(524 324)">
+    <rect width="250" height="156" rx="18" fill="#17203a" stroke="#3a528d" stroke-width="1.5"/>
+    <text x="20" y="34" fill="#7aa2f7" font-family="'Segoe UI', Arial, sans-serif" font-size="14" letter-spacing="1.4">LLM-DRIVEN SIMULATION</text>
+    <text x="20" y="64" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">What do bounded,</text>
+    <text x="20" y="86" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">human-like attackers do?</text>
+    <text x="20" y="114" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">Scenario generation,</text>
+    <text x="20" y="134" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">exploratory red teaming,</text>
+    <text x="20" y="154" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">behavior stress tests.</text>
+  </g>
+
+  <g fill="#7f8eb5" font-family="'Segoe UI', Arial, sans-serif" font-size="12">
+    <text x="52" y="526">Rule of thumb: if the attacker can adapt over stages, a one-shot model will usually understate the real problem.</text>
+    <text x="52" y="546">Visualization redrawn for this post from the concepts discussed in security-game literature.</text>
+  </g>
+</svg>
