@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" role="img" aria-labelledby="title desc">
+  <title id="title">Breach economics and defensive leverage</title>
+  <desc id="desc">Bar chart comparing IBM 2023 and 2024 average global breach costs with three callouts for operational impact and AI-driven savings.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#131a2e"/>
+      <stop offset="100%" stop-color="#1c2340"/>
+    </linearGradient>
+    <linearGradient id="barA" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#5b7cfa"/>
+      <stop offset="100%" stop-color="#3559da"/>
+    </linearGradient>
+    <linearGradient id="barB" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#7aa2f7"/>
+      <stop offset="100%" stop-color="#4f74df"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="960" height="480" rx="24" fill="url(#bg)"/>
+  <rect x="24" y="24" width="912" height="432" rx="20" fill="none" stroke="#32426f" stroke-width="1.5"/>
+
+  <text x="50" y="62" fill="#f4f7ff" font-family="Georgia, serif" font-size="28" font-weight="700">
+    Breach economics keep getting worse
+  </text>
+  <text x="50" y="88" fill="#aeb8d6" font-family="'Segoe UI', Arial, sans-serif" font-size="15">
+    IBM Cost of a Data Breach Report 2024: global average breach cost rose from USD 4.45M to USD 4.88M.
+  </text>
+
+  <line x1="80" y1="360" x2="420" y2="360" stroke="#55658f" stroke-width="2"/>
+  <line x1="80" y1="140" x2="80" y2="360" stroke="#55658f" stroke-width="2"/>
+
+  <g fill="#8796bc" font-family="'Segoe UI', Arial, sans-serif" font-size="12">
+    <text x="52" y="364">0</text>
+    <text x="44" y="320">1</text>
+    <text x="44" y="276">2</text>
+    <text x="44" y="232">3</text>
+    <text x="44" y="188">4</text>
+    <text x="44" y="144">5</text>
+    <text x="36" y="120">USD</text>
+    <text x="41" y="134">M</text>
+  </g>
+
+  <g stroke="#2a3557" stroke-width="1">
+    <line x1="80" y1="316" x2="420" y2="316"/>
+    <line x1="80" y1="272" x2="420" y2="272"/>
+    <line x1="80" y1="228" x2="420" y2="228"/>
+    <line x1="80" y1="184" x2="420" y2="184"/>
+    <line x1="80" y1="140" x2="420" y2="140"/>
+  </g>
+
+  <rect x="135" y="164.2" width="92" height="195.8" rx="12" fill="url(#barA)"/>
+  <rect x="275" y="145.3" width="92" height="214.7" rx="12" fill="url(#barB)"/>
+
+  <g fill="#f4f7ff" font-family="'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <text x="181" y="154" font-size="24" font-weight="700">4.45</text>
+    <text x="181" y="385" font-size="15">2023</text>
+    <text x="321" y="135" font-size="24" font-weight="700">4.88</text>
+    <text x="321" y="385" font-size="15">2024</text>
+  </g>
+
+  <g transform="translate(495 116)">
+    <rect width="360" height="88" rx="16" fill="#17203a" stroke="#38508b" stroke-width="1.5"/>
+    <text x="24" y="32" fill="#7aa2f7" font-family="'Segoe UI', Arial, sans-serif" font-size="13" letter-spacing="1.4">AI IN PREVENTION</text>
+    <text x="24" y="56" fill="#f4f7ff" font-family="Georgia, serif" font-size="18" font-weight="700">USD 2.2M lower</text>
+    <text x="24" y="78" fill="#f4f7ff" font-family="Georgia, serif" font-size="18" font-weight="700">average breach cost</text>
+  </g>
+
+  <g transform="translate(495 222)">
+    <rect width="360" height="88" rx="16" fill="#17203a" stroke="#38508b" stroke-width="1.5"/>
+    <text x="24" y="32" fill="#7aa2f7" font-family="'Segoe UI', Arial, sans-serif" font-size="13" letter-spacing="1.4">AI AND AUTOMATION</text>
+    <text x="24" y="56" fill="#f4f7ff" font-family="Georgia, serif" font-size="18" font-weight="700">Nearly 100 fewer days</text>
+    <text x="24" y="78" fill="#f4f7ff" font-family="Georgia, serif" font-size="18" font-weight="700">to identify and contain</text>
+  </g>
+
+  <g transform="translate(495 328)">
+    <rect width="360" height="88" rx="16" fill="#17203a" stroke="#38508b" stroke-width="1.5"/>
+    <text x="24" y="32" fill="#7aa2f7" font-family="'Segoe UI', Arial, sans-serif" font-size="13" letter-spacing="1.4">OPERATIONAL IMPACT</text>
+    <text x="24" y="56" fill="#f4f7ff" font-family="Georgia, serif" font-size="18" font-weight="700">70% reported moderate</text>
+    <text x="24" y="78" fill="#f4f7ff" font-family="Georgia, serif" font-size="18" font-weight="700">or major disruption</text>
+  </g>
+
+  <text x="50" y="436" fill="#7f8eb5" font-family="'Segoe UI', Arial, sans-serif" font-size="12">
+    Source: IBM Cost of a Data Breach Report 2024. Visualization redrawn for this post.
+  </text>
+</svg>

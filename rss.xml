@@ -7,6 +7,17 @@
     <atom:link href="https://themayursinha.com/rss.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Game theory for cybersecurity: from reactive defense to strategic resilience</title>
+        <description>
+          
+          Most security programs still operate as if the job is mainly to find issues, patch issues, and repeat. That loop is necessary, but it is not enough. Cybersecurity is not just a vulnerability management problem. It is a strategic conflict between adaptive opponents. Attackers change tactics when defenders harden one...
+        </description>
+        <pubDate>Sun, 08 Mar 2026 00:00:00 +0100</pubDate>
+        <link>https://themayursinha.com/posts/2026-03-08-game-theory-for-cybersecurity/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2026-03-08-game-theory-for-cybersecurity/</guid>
+      </item>
+    
+      <item>
         <title>Threat Modeling Autonomous AI Agents in Production</title>
         <description>
           
@@ -213,17 +224,6 @@
         <pubDate>Mon, 12 Jul 2021 00:00:00 +0200</pubDate>
         <link>https://themayursinha.com/posts/2021-07-12-Socratic-dialogue/</link>
         <guid isPermaLink="true">https://themayursinha.com/posts/2021-07-12-Socratic-dialogue/</guid>
-      </item>
-    
-      <item>
-        <title>Problem solving and the art of the convincing argument</title>
-        <description>
-          
-          Introduction Mathematics is used by engineers to solve problems. This usually involves developing a mathematical model. Just as when building a working model aeroplane we would hope to include all the important features, the same thing applies when building a mathematical model. We would also like to indicate the things...
-        </description>
-        <pubDate>Sun, 12 Apr 2020 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/posts/2020-04-12-Problem-solving-and-the-art-of-the-convincing-argument/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2020-04-12-Problem-solving-and-the-art-of-the-convincing-argument/</guid>
       </item>
     
   </channel>

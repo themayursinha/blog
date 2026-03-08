@@ -5,10 +5,19 @@
   <link href="https://themayursinha.com/atom.xml" rel="self" />
   <link href="https://themayursinha.com" />
   <id>https://themayursinha.com/</id>
-  <updated>2026-03-08T00:50:58+01:00</updated>
+  <updated>2026-03-08T16:15:50+01:00</updated>
   <author>
     <name>Mayur Sinha</name>
   </author>
+  
+  <entry>
+    <title>Game theory for cybersecurity: from reactive defense to strategic resilience</title>
+    <link href="https://themayursinha.com/posts/2026-03-08-game-theory-for-cybersecurity/" />
+    <id>https://themayursinha.com/posts/2026-03-08-game-theory-for-cybersecurity/</id>
+    <updated>2026-03-08T00:00:00+01:00</updated>
+    <published>2026-03-08T00:00:00+01:00</published>
+    <summary>A practical guide to using game theory in cybersecurity, from Nash and Stackelberg models to APT defense, forensic readiness, and LLM-driven simulations.</summary>
+  </entry>
   
   <entry>
     <title>Threat Modeling Autonomous AI Agents in Production</title>
@@ -179,15 +188,6 @@
     <updated>2021-07-12T00:00:00+02:00</updated>
     <published>2021-07-12T00:00:00+02:00</published>
     <summary>Socratic dialogue</summary>
-  </entry>
-  
-  <entry>
-    <title>Problem solving and the art of the convincing argument</title>
-    <link href="https://themayursinha.com/posts/2020-04-12-Problem-solving-and-the-art-of-the-convincing-argument/" />
-    <id>https://themayursinha.com/posts/2020-04-12-Problem-solving-and-the-art-of-the-convincing-argument/</id>
-    <updated>2020-04-12T00:00:00+02:00</updated>
-    <published>2020-04-12T00:00:00+02:00</published>
-    <summary>Problem solving and the art of the convincing argument</summary>
   </entry>
   
 </feed>
