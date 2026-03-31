@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Mayur Sinha
-subtitle: AI Security Engineer Building Safer Intelligent Systems
-description: Staff AI Security Engineer building secure LLM and agent systems for production environments.
-meta-title: Mayur Sinha | AI Security Engineer
+subtitle: Security Engineering Leader in AI, Web3, and Cloud-Native Systems
+description: Security engineering leader with 15+ years of experience across AI security, Web3 security, cloud-native security, product security, and incident response.
+meta-title: Mayur Sinha | Security Engineering Leader
 use-site-title: false
 featured_posts:
   - title: Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks
@@ -28,15 +28,17 @@ featured_projects:
 <section class="home-about-column">
   <h2>About Me</h2>
 
-  <p>I am a Staff Security Engineer focused on AI and cloud-native security. I build practical security systems across application security, infrastructure security, and detection engineering.</p>
+  <p>I am a security engineering leader with 15+ years of experience across AI security, Web3 security, cloud-native security, product security, and incident response. I build practical security systems across application security, infrastructure security, detection engineering, and secure platform design.</p>
 
-  <p>My core focus is AI security: securing LLM and agent workflows, stress-testing systems for prompt injection and data exfiltration risks, and building guardrails teams can run in production.</p>
+  <p>My current focus is AI security: securing LLM and agent workflows, stress-testing systems for prompt injection and data exfiltration risks, and building guardrails teams can run in production.</p>
 
-  <p>Over the last 15 years, I have worked across startups and enterprise environments in research, product security, and incident response, from malware reverse engineering to modern DevSecOps programs.</p>
+  <p>I also work on Web3 and crypto security, helping secure custody systems, cloud-native platforms, and modern financial infrastructure. Earlier in my career, I worked across malware research, reverse engineering, and incident response, which continues to shape my approach to modern defense.</p>
 
-  <p>I also collaborate with a non-profit on long-horizon AI risk research and write about AI security, engineering systems, and the deeper philosophy of intelligence and safety.</p>
+  <p><strong>Worked across:</strong> Finoa, Taxfix, Akamai, Trend Micro.</p>
 
-  <p>If you are building secure AI systems or exploring similar questions, I would love to connect.</p>
+  <p>I also collaborate with a non-profit on long-horizon AI risk research and write about AI security, engineering systems, and the broader questions around intelligence, safety, and technology.</p>
+
+  <p>If you are building secure AI systems, modern platforms, or security programs at scale, I would love to connect.</p>
 
 </section>
 
