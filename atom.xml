@@ -5,10 +5,19 @@
   <link href="https://themayursinha.com/atom.xml" rel="self" />
   <link href="https://themayursinha.com" />
   <id>https://themayursinha.com/</id>
-  <updated>2026-03-31T20:30:25+02:00</updated>
+  <updated>2026-05-03T10:47:20+02:00</updated>
   <author>
     <name>Mayur Sinha</name>
   </author>
+  
+  <entry>
+    <title>The AI Agent Dilemma: Why We Are Outsourcing Our Reality</title>
+    <link href="https://themayursinha.com/posts/2026-05-03-the-ai-agent-dilemma-why-we-are-outsourcing-our-reality/" />
+    <id>https://themayursinha.com/posts/2026-05-03-the-ai-agent-dilemma-why-we-are-outsourcing-our-reality/</id>
+    <updated>2026-05-03T00:00:00+02:00</updated>
+    <published>2026-05-03T00:00:00+02:00</published>
+    <summary>AI agents may not just change how we work. They may weaken our ability to know, verify, and justify what we believe.</summary>
+  </entry>
   
   <entry>
     <title>Game theory for cybersecurity: from reactive defense to strategic resilience</title>
@@ -179,15 +188,6 @@
     <updated>2021-07-14T00:00:00+02:00</updated>
     <published>2021-07-14T00:00:00+02:00</published>
     <summary>How to study based on how memory works</summary>
-  </entry>
-  
-  <entry>
-    <title>Socratic dialogue</title>
-    <link href="https://themayursinha.com/posts/2021-07-12-Socratic-dialogue/" />
-    <id>https://themayursinha.com/posts/2021-07-12-Socratic-dialogue/</id>
-    <updated>2021-07-12T00:00:00+02:00</updated>
-    <published>2021-07-12T00:00:00+02:00</published>
-    <summary>Socratic dialogue</summary>
   </entry>
   
 </feed>

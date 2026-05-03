@@ -7,6 +7,17 @@
     <atom:link href="https://themayursinha.com/rss.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>The AI Agent Dilemma: Why We Are Outsourcing Our Reality</title>
+        <description>
+          
+          Perhaps the most subtle and dangerous risk of AI agents is not what they will do to jobs, markets, or software systems. It is what they will do to the human mind. Philosophers have a useful phrase for this: epistemic degradation. Epistemology is the study of knowledge. It asks a...
+        </description>
+        <pubDate>Sun, 03 May 2026 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/posts/2026-05-03-the-ai-agent-dilemma-why-we-are-outsourcing-our-reality/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2026-05-03-the-ai-agent-dilemma-why-we-are-outsourcing-our-reality/</guid>
+      </item>
+    
+      <item>
         <title>Game theory for cybersecurity: from reactive defense to strategic resilience</title>
         <description>
           
@@ -213,17 +224,6 @@
         <pubDate>Wed, 14 Jul 2021 00:00:00 +0200</pubDate>
         <link>https://themayursinha.com/posts/2021-07-14-How-to-Study/</link>
         <guid isPermaLink="true">https://themayursinha.com/posts/2021-07-14-How-to-Study/</guid>
-      </item>
-    
-      <item>
-        <title>Socratic dialogue</title>
-        <description>
-          
-          1. What is a Socratic Dialogue? Socratic dialogue is a formal method by which a small group (5-15 people), guided by a facilitator, finds a precise answer to a universal question (e.g. “What is happiness?”, “What is integrity?”, “Can conflict be fruitful?”, etc.). Socratic dialogue is not to be confused...
-        </description>
-        <pubDate>Mon, 12 Jul 2021 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/posts/2021-07-12-Socratic-dialogue/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2021-07-12-Socratic-dialogue/</guid>
       </item>
     
   </channel>
