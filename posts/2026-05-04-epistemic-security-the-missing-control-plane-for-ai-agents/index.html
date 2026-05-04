@@ -361,49 +361,25 @@
       
 
       <article role="main" class="blog-post">
-        <p>Most security discussions about AI agents focus on what the agent can do.</p>
-
-<p>Can it call a tool?</p>
-
-<p>Can it read email?</p>
-
-<p>Can it write to production?</p>
-
-<p>Can it touch customer data?</p>
+        <p>Most security discussions about AI agents focus on what the agent can do. Can it call a tool? Can it read email? Can it write to production? Can it touch customer data?</p>
 
 <p>Those questions matter. I have written about them before in the context of <a href="/posts/2026-03-04-threat-modeling-autonomous-ai-agents-in-production/">threat modeling autonomous AI agents in production</a>. Capability is dangerous. Tool access is dangerous. Memory is dangerous. Autonomy is dangerous.</p>
 
-<p>But there is a deeper layer that security teams are still underestimating.</p>
-
-<p>AI agents do not merely execute actions.</p>
-
-<p>They form beliefs.</p>
+<p>But there is a deeper layer that security teams are still underestimating. AI agents do not merely execute actions. They form beliefs.</p>
 
 <p>They decide which sources matter, which claims are credible, which facts belong in memory, which contradictions can be ignored, and which conclusion should be handed to a human as if it were reality.</p>
 
-<p>That means belief formation itself has become part of the attack surface.</p>
-
-<p>This is the domain of <strong>epistemic security</strong>.</p>
+<p>That means belief formation itself has become part of the attack surface. This is the domain of <strong>epistemic security</strong>.</p>
 
 <p>Epistemic security is the discipline of protecting how a system knows what it knows. It is concerned with provenance, evidence, uncertainty, source integrity, memory hygiene, and the human ability to verify important claims.</p>
 
-<p>If AppSec protects application behavior, and cloud security protects infrastructure behavior, epistemic security protects reasoning behavior.</p>
-
-<p>For AI agents, that may become the missing control plane.</p>
+<p>If AppSec protects application behavior, and cloud security protects infrastructure behavior, epistemic security protects reasoning behavior. For AI agents, that may become the missing control plane.</p>
 
 <h2 id="from-information-security-to-knowledge-security">From information security to knowledge security</h2>
 
-<p>Traditional information security is mostly about confidentiality, integrity, and availability.</p>
+<p>Traditional information security is mostly about confidentiality, integrity, and availability. Can unauthorized people read the data? Can attackers change the data? Can the system remain available under pressure?</p>
 
-<p>Can unauthorized people read the data?</p>
-
-<p>Can attackers change the data?</p>
-
-<p>Can the system remain available under pressure?</p>
-
-<p>Those are still the fundamentals. Nothing about AI removes them.</p>
-
-<p>But agents introduce a new question:</p>
+<p>Those are still the fundamentals. Nothing about AI removes them. But agents introduce a new question:</p>
 
 <p>Can the system form justified beliefs from the data it receives?</p>
 
@@ -432,23 +408,15 @@
   <li>when does a human need to inspect the primary source</li>
 </ul>
 
-<p>The modern AI stack needs those questions because agentic systems compress entire research, reasoning, and decision loops into software.</p>
-
-<p>The old trust boundary was around data.</p>
-
-<p>The new trust boundary is around interpretation.</p>
+<p>The modern AI stack needs those questions because agentic systems compress entire research, reasoning, and decision loops into software. The old trust boundary was around data. The new trust boundary is around interpretation.</p>
 
 <h2 id="why-existing-ai-security-frameworks-are-necessary-but-incomplete">Why existing AI security frameworks are necessary but incomplete</h2>
 
-<p>The industry is not starting from zero.</p>
-
-<p><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST AI RMF 1.0</a> gives organizations a language for mapping, measuring, managing, and governing AI risk. The <a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence">NIST Generative AI Profile</a> adds more specific guidance for generative systems. <a href="https://www.cisa.gov/securebydesign">CISA’s Secure by Design</a> work correctly argues that security has to be built into technology from the beginning, not bolted on after adoption.</p>
+<p>The industry is not starting from zero. <a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST AI RMF 1.0</a> gives organizations a language for mapping, measuring, managing, and governing AI risk. The <a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence">NIST Generative AI Profile</a> adds more specific guidance for generative systems. <a href="https://www.cisa.gov/securebydesign">CISA’s Secure by Design</a> work correctly argues that security has to be built into technology from the beginning, not bolted on after adoption.</p>
 
 <p>For LLM applications, <a href="https://genai.owasp.org/llm-top-10/">OWASP Top 10 for LLM Applications 2025</a> is now table stakes. It captures risks like <a href="https://genai.owasp.org/llmrisk/llm01-prompt-injection/">prompt injection</a>, <a href="https://genai.owasp.org/llmrisk/llm042025-data-and-model-poisoning/">data and model poisoning</a>, <a href="https://genai.owasp.org/llmrisk/llm062025-excessive-agency/">excessive agency</a>, <a href="https://genai.owasp.org/llmrisk/llm082025-vector-and-embedding-weaknesses/">vector and embedding weaknesses</a>, and <a href="https://genai.owasp.org/llmrisk/llm092025-misinformation/">misinformation</a>.</p>
 
-<p>These are useful frames.</p>
-
-<p>But most teams still operationalize them as runtime controls:</p>
+<p>These are useful frames. But most teams still operationalize them as runtime controls:</p>
 
 <ul>
   <li>sanitize input</li>
@@ -459,15 +427,11 @@
   <li>add human approval for sensitive operations</li>
 </ul>
 
-<p>All of that is necessary.</p>
-
-<p>It is not sufficient.</p>
+<p>All of that is necessary. It is not sufficient.</p>
 
 <p>An agent can avoid obviously malicious tool calls and still poison an organization’s understanding of reality. It can respect permissions and still carry a false assumption into every future decision. It can cite a source and still launder weak evidence into a confident conclusion.</p>
 
-<p>That is the uncomfortable part.</p>
-
-<p>You can secure the hands of the agent while leaving its belief system exposed.</p>
+<p>That is the uncomfortable part. You can secure the hands of the agent while leaving its belief system exposed.</p>
 
 <h2 id="the-epistemic-attack-surface">The epistemic attack surface</h2>
 
@@ -482,77 +446,47 @@
 
 <h3 id="1-source-selection">1) Source selection</h3>
 
-<p>Agents rarely read the whole world. They search, retrieve, rank, and filter.</p>
-
-<p>That selection process quietly defines reality for the model.</p>
+<p>Agents rarely read the whole world. They search, retrieve, rank, and filter. That selection process quietly defines reality for the model.</p>
 
 <p>If an attacker can influence which documents rank highly, which tickets are retrieved, which internal wiki pages look authoritative, or which external pages are treated as context, they do not need to directly control the final answer.</p>
 
-<p>They only need to control the evidence environment.</p>
-
-<p>This is the epistemic version of supply chain compromise.</p>
+<p>They only need to control the evidence environment. This is the epistemic version of supply chain compromise.</p>
 
 <p>In software supply chain security, projects like <a href="https://slsa.dev/">SLSA</a> push the industry to ask where an artifact came from and how it was built. In agentic systems, we need a similar instinct for claims.</p>
 
-<p>Where did this assertion come from?</p>
-
-<p>What process produced it?</p>
-
-<p>What source chain did it travel through before the model repeated it?</p>
+<p>Where did this assertion come from? What process produced it? What source chain did it travel through before the model repeated it?</p>
 
 <h3 id="2-context-assembly">2) Context assembly</h3>
 
-<p>Most agent systems flatten multiple sources into one prompt.</p>
-
-<p>User instructions, system instructions, retrieved documents, tool outputs, logs, emails, and web pages all end up compressed into the model’s context window.</p>
-
-<p>That is where the clean old boundary between instruction and data begins to collapse.</p>
+<p>Most agent systems flatten multiple sources into one prompt. User instructions, system instructions, retrieved documents, tool outputs, logs, emails, and web pages all end up compressed into the model’s context window. That is where the clean old boundary between instruction and data begins to collapse.</p>
 
 <p>The UK National Cyber Security Centre captured this well in its post <a href="https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection">Prompt injection is not SQL injection</a>. The key point is that current LLMs do not enforce a robust security boundary between instructions and data inside a prompt.</p>
 
-<p>This matters because context assembly is not a passive formatting step.</p>
-
-<p>It is a security-critical transformation.</p>
+<p>This matters because context assembly is not a passive formatting step. It is a security-critical transformation.</p>
 
 <p>If untrusted content is placed next to trusted instructions without strong labels, quoting, isolation, and downstream policy checks, the model may treat hostile text as operational guidance.</p>
 
 <p>Microsoft’s guidance on <a href="https://learn.microsoft.com/en-us/security/zero-trust/sfi/defend-indirect-prompt-injection">defending against indirect prompt injection attacks</a> makes a similar point: enterprise agents process emails, documents, websites, and plugins, and attackers can embed instructions in those third-party sources.</p>
 
-<p>That is not just input validation.</p>
-
-<p>That is epistemic boundary management.</p>
+<p>That is not just input validation. That is epistemic boundary management.</p>
 
 <h3 id="3-summarization">3) Summarization</h3>
 
-<p>Summarization looks harmless because it feels like compression.</p>
-
-<p>It is not harmless.</p>
-
-<p>Summarization chooses what survives.</p>
+<p>Summarization looks harmless because it feels like compression. It is not harmless. Summarization chooses what survives.</p>
 
 <p>An agent can remove caveats, erase disagreement, collapse minority evidence, or turn a speculative claim into a clean bullet point. By the time the human reads the result, the uncertainty has disappeared.</p>
 
 <p>This is one of the most common epistemic failures because it does not look like a failure. The answer is fluent. The structure is clean. The summary may even be mostly correct.</p>
 
-<p>But the missing caveat was the entire point.</p>
-
-<p>In high-stakes work, a summary without uncertainty is not a summary.</p>
-
-<p>It is a confidence laundering machine.</p>
+<p>But the missing caveat was the entire point. In high-stakes work, a summary without uncertainty is not a summary. It is a confidence laundering machine.</p>
 
 <h3 id="4-memory-writes">4) Memory writes</h3>
 
-<p>Memory is where mistakes become durable.</p>
-
-<p>A bad answer is one event.</p>
-
-<p>A bad memory is infrastructure.</p>
+<p>Memory is where mistakes become durable. A bad answer is one event. A bad memory is infrastructure.</p>
 
 <p>If an agent writes a false claim into long-term memory, that claim can be retrieved for future decisions, repeated across workflows, and treated as historical truth. The danger is not only immediate misinformation. It is persistent epistemic drift.</p>
 
-<p>This is why memory needs stronger controls than most teams give it.</p>
-
-<p>Memory writes should not be casual side effects of a conversation. They should be treated more like database writes, audit events, or policy changes.</p>
+<p>This is why memory needs stronger controls than most teams give it. Memory writes should not be casual side effects of a conversation. They should be treated more like database writes, audit events, or policy changes.</p>
 
 <p>For important domains, the system should record:</p>
 
@@ -572,15 +506,11 @@
 
 <h3 id="5-confidence-presentation">5) Confidence presentation</h3>
 
-<p>LLMs are very good at sounding finished.</p>
-
-<p>That is dangerous.</p>
+<p>LLMs are very good at sounding finished. That is dangerous.</p>
 
 <p>Humans often respond more to presentation than probability. A crisp answer with citations feels more trustworthy than a messy answer with uncertainty, even when the messy answer is more honest.</p>
 
-<p>This is why confidence is not just a model behavior problem. It is a product security problem.</p>
-
-<p>If the interface rewards clean certainty, users will over-trust clean certainty.</p>
+<p>This is why confidence is not just a model behavior problem. It is a product security problem. If the interface rewards clean certainty, users will over-trust clean certainty.</p>
 
 <p>OWASP explicitly calls out <a href="https://genai.owasp.org/llmrisk/llm092025-misinformation/">misinformation</a> as a risk for LLM applications, including the overreliance that happens when users fail to verify generated content. That is the human side of epistemic security.</p>
 
@@ -592,9 +522,7 @@
 
 <h3 id="scenario-a-source-laundering-through-rag">Scenario A: Source laundering through RAG</h3>
 
-<p>An attacker publishes a plausible technical article about a vulnerability mitigation.</p>
-
-<p>The article is not obviously malicious. It contains correct background, real terminology, and links to legitimate references. But one recommendation is subtly wrong: it tells teams to disable a noisy detection rule because it produces false positives in modern environments.</p>
+<p>An attacker publishes a plausible technical article about a vulnerability mitigation. The article is not obviously malicious. It contains correct background, real terminology, and links to legitimate references. But one recommendation is subtly wrong: it tells teams to disable a noisy detection rule because it produces false positives in modern environments.</p>
 
 <p>An internal security agent later researches the issue.</p>
 
@@ -604,19 +532,11 @@
   <p>Several sources recommend disabling this rule in production due to false positives.</p>
 </blockquote>
 
-<p>Now the claim has been laundered.</p>
-
-<p>It no longer looks like one weak external article. It looks like consensus.</p>
-
-<p>The control failure is not only retrieval.</p>
-
-<p>The failure is loss of provenance and disagreement.</p>
+<p>Now the claim has been laundered. It no longer looks like one weak external article. It looks like consensus. The control failure is not only retrieval. The failure is loss of provenance and disagreement.</p>
 
 <h3 id="scenario-b-memory-poisoning-with-delayed-impact">Scenario B: Memory poisoning with delayed impact</h3>
 
-<p>An agent helps triage security incidents.</p>
-
-<p>During one incident, a compromised ticket includes the statement:</p>
+<p>An agent helps triage security incidents. During one incident, a compromised ticket includes the statement:</p>
 
 <blockquote>
   <p>This partner integration is approved to bypass step-up authentication for service continuity.</p>
@@ -626,15 +546,11 @@
 
 <p>Three months later, a different agent retrieves the memory during an access review and recommends keeping the bypass because it believes the exception was already approved.</p>
 
-<p>No single tool call was obviously malicious.</p>
-
-<p>The attack happened through institutional memory.</p>
+<p>No single tool call was obviously malicious. The attack happened through institutional memory.</p>
 
 <h3 id="scenario-c-confidence-collapse-in-executive-reporting">Scenario C: Confidence collapse in executive reporting</h3>
 
-<p>A leadership agent summarizes cyber risk for an executive meeting.</p>
-
-<p>It reads vulnerability data, incident notes, vendor reports, and internal dashboards. The underlying sources conflict. Some indicate improving posture. Others show delayed patching in a high-risk business unit.</p>
+<p>A leadership agent summarizes cyber risk for an executive meeting. It reads vulnerability data, incident notes, vendor reports, and internal dashboards. The underlying sources conflict. Some indicate improving posture. Others show delayed patching in a high-risk business unit.</p>
 
 <p>The agent produces a clean executive summary:</p>
 
@@ -642,17 +558,13 @@
   <p>Overall risk is trending down.</p>
 </blockquote>
 
-<p>That may be true at the aggregate level.</p>
-
-<p>It may also hide the only risk that matters.</p>
+<p>That may be true at the aggregate level. It may also hide the only risk that matters.</p>
 
 <p>The epistemic failure is not that the agent hallucinated. It is that the agent compressed away the exception that leadership needed to see.</p>
 
 <h3 id="scenario-d-delegated-verification-decay">Scenario D: Delegated verification decay</h3>
 
-<p>An engineering organization adopts agents for code review, architecture review, incident summaries, and design validation.</p>
-
-<p>At first, humans check the outputs carefully. Over time, the agents are usually right. Review gets faster. Manual inspection becomes less common.</p>
+<p>An engineering organization adopts agents for code review, architecture review, incident summaries, and design validation. At first, humans check the outputs carefully. Over time, the agents are usually right. Review gets faster. Manual inspection becomes less common.</p>
 
 <p>Then an agent misses a subtle authorization bug because the implementation technically matches the written spec, but the spec itself failed to capture a cross-tenant constraint.</p>
 
@@ -663,25 +575,15 @@
   <li>Humans had stopped practicing the skill needed to catch it.</li>
 </ol>
 
-<p>This is the security version of epistemic atrophy.</p>
-
-<p>It is not enough to keep humans in the loop.</p>
-
-<p>Humans need to remain competent enough for the loop to matter.</p>
+<p>This is the security version of epistemic atrophy. It is not enough to keep humans in the loop. Humans need to remain competent enough for the loop to matter.</p>
 
 <h2 id="controls-for-epistemic-security">Controls for epistemic security</h2>
 
-<p>Epistemic security is not solved by asking the model to “be careful.”</p>
-
-<p>It requires system design.</p>
+<p>Epistemic security is not solved by asking the model to “be careful.” It requires system design.</p>
 
 <h3 id="1-evidence-trails-by-default">1) Evidence trails by default</h3>
 
-<p>Every high-impact agent conclusion should carry an evidence trail.</p>
-
-<p>Not just citations at the end.</p>
-
-<p>Actual claim-level provenance.</p>
+<p>Every high-impact agent conclusion should carry an evidence trail. Not just citations at the end. Actual claim-level provenance.</p>
 
 <p>For example:</p>
 
@@ -712,17 +614,11 @@
 
 <p>The concept is not new. The <a href="https://www.w3.org/TR/prov-overview/">W3C PROV</a> work has long provided a vocabulary for provenance across entities, activities, and agents.</p>
 
-<p>The AI version needs to make provenance visible at the level where decisions are made.</p>
-
-<p>A final answer is too coarse.</p>
-
-<p>The claim is the unit that matters.</p>
+<p>The AI version needs to make provenance visible at the level where decisions are made. A final answer is too coarse. The claim is the unit that matters.</p>
 
 <h3 id="2-taint-labels-for-knowledge">2) Taint labels for knowledge</h3>
 
-<p>Agent context should carry trust labels.</p>
-
-<p>Not all text is equal.</p>
+<p>Agent context should carry trust labels. Not all text is equal.</p>
 
 <p>A production runbook, a public web page, a customer email, a GitHub issue, a Slack message, and an agent’s own previous summary should not arrive in the prompt as morally equivalent strings.</p>
 
@@ -739,23 +635,13 @@
   <li>disputed</li>
 </ul>
 
-<p>Then policy should bind those labels to behavior.</p>
+<p>Then policy should bind those labels to behavior. An agent may read untrusted content, but it should not convert untrusted content into durable memory without corroboration. It may summarize public sources, but it should not use them to override an authoritative internal control record. It may use generated summaries for orientation, but not as primary evidence for high-stakes decisions.</p>
 
-<p>An agent may read untrusted content, but it should not convert untrusted content into durable memory without corroboration. It may summarize public sources, but it should not use them to override an authoritative internal control record. It may use generated summaries for orientation, but not as primary evidence for high-stakes decisions.</p>
-
-<p>This is the same instinct as data flow control.</p>
-
-<p>Only now the object is not just data.</p>
-
-<p>It is belief.</p>
+<p>This is the same instinct as data flow control. Only now the object is not just data. It is belief.</p>
 
 <h3 id="3-uncertainty-budgets">3) Uncertainty budgets</h3>
 
-<p>Most systems treat uncertainty as a presentation detail.</p>
-
-<p>That is backwards.</p>
-
-<p>Uncertainty should be a policy input.</p>
+<p>Most systems treat uncertainty as a presentation detail. That is backwards. Uncertainty should be a policy input.</p>
 
 <p>For low-impact tasks, a medium-confidence summary may be acceptable. For security exceptions, legal analysis, financial movement, production access, or incident closure, uncertainty should trigger escalation.</p>
 
@@ -769,17 +655,11 @@
   <li>if the agent cannot explain the reasoning path, block durable memory writes</li>
 </ul>
 
-<p>This is not about pretending confidence scores are perfect.</p>
-
-<p>They are not.</p>
-
-<p>It is about refusing to let uncertainty disappear.</p>
+<p>This is not about pretending confidence scores are perfect. They are not. It is about refusing to let uncertainty disappear.</p>
 
 <h3 id="4-memory-hygiene-and-expiration">4) Memory hygiene and expiration</h3>
 
-<p>Memory should decay unless renewed by evidence.</p>
-
-<p>This feels strange because humans like persistent knowledge. But in organizations, many facts have a shelf life:</p>
+<p>Memory should decay unless renewed by evidence. This feels strange because humans like persistent knowledge. But in organizations, many facts have a shelf life:</p>
 
 <ul>
   <li>exceptions expire</li>
@@ -794,17 +674,11 @@
 
 <p>A memory record should have an expiration policy. Important memories should require source refresh. Disputed memories should be quarantined. Generated memories should be distinguishable from human-approved records.</p>
 
-<p>The worst memory system is one where every past answer becomes an immortal fact.</p>
-
-<p>That is not memory.</p>
-
-<p>That is sediment.</p>
+<p>The worst memory system is one where every past answer becomes an immortal fact. That is not memory. That is sediment.</p>
 
 <h3 id="5-adversarial-epistemic-testing">5) Adversarial epistemic testing</h3>
 
-<p>Security teams already test whether agents can be tricked into bad tool calls.</p>
-
-<p>They should also test whether agents can be tricked into bad beliefs.</p>
+<p>Security teams already test whether agents can be tricked into bad tool calls. They should also test whether agents can be tricked into bad beliefs.</p>
 
 <p>Examples:</p>
 
@@ -817,35 +691,23 @@
   <li>Can a generated answer become evidence for a later generated answer?</li>
 </ul>
 
-<p>This is where AI red teaming has to grow beyond jailbreaks.</p>
+<p>This is where AI red teaming has to grow beyond jailbreaks. Microsoft’s <a href="https://learn.microsoft.com/en-us/security/ai-red-team/">AI Red Team</a> guidance, <a href="https://atlas.mitre.org/">MITRE ATLAS</a>, and OWASP’s LLM work are useful starting points. But for agentic systems, teams need test cases that target reasoning integrity, not only output safety.</p>
 
-<p>Microsoft’s <a href="https://learn.microsoft.com/en-us/security/ai-red-team/">AI Red Team</a> guidance, <a href="https://atlas.mitre.org/">MITRE ATLAS</a>, and OWASP’s LLM work are useful starting points. But for agentic systems, teams need test cases that target reasoning integrity, not only output safety.</p>
+<p>The question is not just: Can we make the model say something bad?</p>
 
-<p>The question is not just:</p>
-
-<p>Can we make the model say something bad?</p>
-
-<p>The better question is:</p>
-
-<p>Can we make the organization believe something false?</p>
+<p>The better question is: Can we make the organization believe something false?</p>
 
 <h3 id="6-human-verification-drills">6) Human verification drills</h3>
 
-<p>This is the most uncomfortable control because it costs time.</p>
-
-<p>Organizations should deliberately practice manual verification for critical domains.</p>
+<p>This is the most uncomfortable control because it costs time. Organizations should deliberately practice manual verification for critical domains.</p>
 
 <p>Security analysts should still inspect raw logs sometimes. Engineers should still read important diffs. Leaders should still ask for primary evidence behind strategic claims. Reviewers should still challenge specs before agents generate implementations.</p>
 
-<p>The point is not nostalgia.</p>
-
-<p>The point is retained competence.</p>
+<p>The point is not nostalgia. The point is retained competence.</p>
 
 <p>In aviation, autopilot does not eliminate the need for pilot training. In security, detection automation should not eliminate the ability to hunt. In software engineering, code agents should not eliminate the human ability to reason about architecture, product constraints, and abuse cases.</p>
 
-<p>An agent-assisted organization that cannot verify without agents is not augmented.</p>
-
-<p>It is dependent.</p>
+<p>An agent-assisted organization that cannot verify without agents is not augmented. It is dependent.</p>
 
 <h2 id="a-practical-epistemic-security-checklist">A practical epistemic security checklist</h2>
 
@@ -864,45 +726,25 @@
   <li>Do red-team tests target belief manipulation, not only prompt injection and tool misuse?</li>
 </ol>
 
-<p>This checklist is not a compliance framework.</p>
-
-<p>It is a survival framework.</p>
-
-<p>Because once agents become embedded in operations, the question “why do we believe this?” becomes a production security question.</p>
+<p>This checklist is not a compliance framework. It is a survival framework. Because once agents become embedded in operations, the question “why do we believe this?” becomes a production security question.</p>
 
 <h2 id="the-new-control-plane">The new control plane</h2>
 
-<p>Every serious agent platform will need a control plane for tools, identity, memory, observability, and policy.</p>
-
-<p>That is obvious now.</p>
-
-<p>What is less obvious is that the same platform needs a control plane for knowledge.</p>
+<p>Every serious agent platform will need a control plane for tools, identity, memory, observability, and policy. That is obvious now. What is less obvious is that the same platform needs a control plane for knowledge.</p>
 
 <p>It needs to track where claims came from, how they changed, what evidence supports them, what contradicts them, which memories are stale, which conclusions were reviewed, and which decisions were made under uncertainty.</p>
 
 <p>Without that, organizations will build agents that are operationally powerful but epistemically fragile.</p>
 
-<p>They will move faster.</p>
-
-<p>They will sound smarter.</p>
-
-<p>They will produce cleaner summaries, better dashboards, faster tickets, and more confident recommendations.</p>
+<p>They will move faster. They will sound smarter. They will produce cleaner summaries, better dashboards, faster tickets, and more confident recommendations.</p>
 
 <p>But if nobody can reconstruct the evidence chain, the organization will not actually understand what it knows.</p>
 
-<p>That is the real risk.</p>
-
-<p>Not that AI agents will occasionally be wrong.</p>
-
-<p>All systems are occasionally wrong.</p>
+<p>That is the real risk. Not that AI agents will occasionally be wrong. All systems are occasionally wrong.</p>
 
 <p>The deeper risk is that agents will make wrongness harder to notice, easier to repeat, and more comfortable to trust.</p>
 
-<p>Epistemic security is how we resist that.</p>
-
-<p>It is how we keep automation from becoming intellectual dependency.</p>
-
-<p>It is how we build agents that extend human judgment instead of quietly replacing the habits that make judgment possible.</p>
+<p>Epistemic security is how we resist that. It is how we keep automation from becoming intellectual dependency. It is how we build agents that extend human judgment instead of quietly replacing the habits that make judgment possible.</p>
 
       </article>
 
