@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Epistemic Security: The Missing Control Plane for AI Agents"
+title: "Epistemic security - The missing control plane for AI agents"
 date: 2026-05-04
 categories: [ai, security]
 tags: [ai, security, agents, epistemology, llms]

@@ -6,15 +6,15 @@ description: Security engineering leader with 15+ years of experience across AI 
 meta-title: Mayur Sinha | Security Engineering Leader
 use-site-title: false
 featured_posts:
+  - title: "Epistemic Security: The Missing Control Plane for AI Agents"
+    card_title: Epistemic Security for AI Agents
+    summary: Why agentic systems need controls for provenance, uncertainty, memory, evidence, and human verification.
+  - title: Threat Modeling Autonomous AI Agents in Production
+    card_title: Threat Modeling AI Agents
+    summary: A practical framework for modeling agent runtime risk, tool abuse, memory poisoning, and production controls.
   - title: Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks
     card_title: LLMs vs Classical Nets for Vulnerability Detection
     summary: A practical comparison of classical ANN pipelines versus transformers for real-world AppSec use.
-  - title: Designing a living ecosystem of AI agents
-    card_title: Designing a Living Ecosystem of AI Agents
-    summary: A blueprint for self-organizing AI agent systems that evolve, specialize, and improve over time.
-  - title: Vibe Engineering
-    card_title: Vibe Engineering
-    summary: A production-minded framework for using coding agents without sacrificing quality or ownership.
 featured_projects:
   - id: mcp-security-evaluator
   - id: adversarial-ml-security-lab
