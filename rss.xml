@@ -7,7 +7,7 @@
     <atom:link href="https://themayursinha.com/rss.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Epistemic Security: The Missing Control Plane for AI Agents</title>
+        <title>Epistemic security - The missing control plane for AI agents</title>
         <description>
           
           Most security discussions about AI agents focus on what the agent can do. Can it call a tool? Can it read email? Can it write to production? Can it touch customer data? Those questions matter. I have written about them before in the context of threat modeling autonomous AI agents...
