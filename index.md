@@ -6,7 +6,7 @@ description: Security engineering leader with 15+ years of experience across AI 
 meta-title: Mayur Sinha | Security Engineering Leader
 use-site-title: false
 featured_posts:
-  - title: "Epistemic Security: The Missing Control Plane for AI Agents"
+  - title: Epistemic security - The missing control plane for AI agents
     card_title: Epistemic Security for AI Agents
     summary: Why agentic systems need controls for provenance, uncertainty, memory, evidence, and human verification.
   - title: Threat Modeling Autonomous AI Agents in Production
