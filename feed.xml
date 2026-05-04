@@ -7,6 +7,17 @@
     <atom:link href="https://themayursinha.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Epistemic Security: The Missing Control Plane for AI Agents</title>
+        <description>
+          
+          Most security discussions about AI agents focus on what the agent can do. Can it call a tool? Can it read email? Can it write to production? Can it touch customer data? Those questions matter. I have written about them before in the context of threat modeling autonomous AI agents...
+        </description>
+        <pubDate>Mon, 04 May 2026 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/posts/2026-05-04-epistemic-security-the-missing-control-plane-for-ai-agents/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2026-05-04-epistemic-security-the-missing-control-plane-for-ai-agents/</guid>
+      </item>
+    
+      <item>
         <title>The AI agent dilemma - Why we are outsourcing our reality</title>
         <description>
           
@@ -213,17 +224,6 @@
         <pubDate>Sat, 31 Jul 2021 00:00:00 +0200</pubDate>
         <link>https://themayursinha.com/posts/2021-07-31-Akashic-field/</link>
         <guid isPermaLink="true">https://themayursinha.com/posts/2021-07-31-Akashic-field/</guid>
-      </item>
-    
-      <item>
-        <title>How to study based on how memory works</title>
-        <description>
-          
-          Memory works (to put it simply) in 3 stages: attention, encoding (storing/associating with other info), and retrieval(remembering). To optimize the final stage, you have to optimize the first two stages. i.e., pay attention to the material, and encode it well. (I’ll explain below.) Also, if you repeat the process, you reinforce it. By retrieving...
-        </description>
-        <pubDate>Wed, 14 Jul 2021 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/posts/2021-07-14-How-to-Study/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2021-07-14-How-to-Study/</guid>
       </item>
     
   </channel>

@@ -5,10 +5,19 @@
   <link href="https://themayursinha.com/atom.xml" rel="self" />
   <link href="https://themayursinha.com" />
   <id>https://themayursinha.com/</id>
-  <updated>2026-05-03T15:55:38+02:00</updated>
+  <updated>2026-05-04T23:43:56+02:00</updated>
   <author>
     <name>Mayur Sinha</name>
   </author>
+  
+  <entry>
+    <title>Epistemic Security: The Missing Control Plane for AI Agents</title>
+    <link href="https://themayursinha.com/posts/2026-05-04-epistemic-security-the-missing-control-plane-for-ai-agents/" />
+    <id>https://themayursinha.com/posts/2026-05-04-epistemic-security-the-missing-control-plane-for-ai-agents/</id>
+    <updated>2026-05-04T00:00:00+02:00</updated>
+    <published>2026-05-04T00:00:00+02:00</published>
+    <summary>AI agents do not only need runtime security. They need epistemic security: controls for provenance, uncertainty, evidence, memory, and human verification.</summary>
+  </entry>
   
   <entry>
     <title>The AI agent dilemma - Why we are outsourcing our reality</title>
@@ -179,15 +188,6 @@
     <updated>2021-07-31T00:00:00+02:00</updated>
     <published>2021-07-31T00:00:00+02:00</published>
     <summary>The Science of akashic field</summary>
-  </entry>
-  
-  <entry>
-    <title>How to study based on how memory works</title>
-    <link href="https://themayursinha.com/posts/2021-07-14-How-to-Study/" />
-    <id>https://themayursinha.com/posts/2021-07-14-How-to-Study/</id>
-    <updated>2021-07-14T00:00:00+02:00</updated>
-    <published>2021-07-14T00:00:00+02:00</published>
-    <summary>How to study based on how memory works</summary>
   </entry>
   
 </feed>
