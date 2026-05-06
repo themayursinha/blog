@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 600" role="img" aria-labelledby="title desc">
+  <title id="title">MCP security control plane</title>
+  <desc id="desc">Diagram showing a layered control plane for securing MCP servers, tools, tokens, execution, and audit trails.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#22304f"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#8eb1ff"/>
+    </marker>
+  </defs>
+
+  <rect width="980" height="600" rx="24" fill="url(#bg)"/>
+  <rect x="24" y="24" width="932" height="552" rx="18" fill="none" stroke="#344979" stroke-width="1.5"/>
+
+  <text x="52" y="62" fill="#f4f7ff" font-family="Georgia, serif" font-size="28" font-weight="700">A practical MCP security control plane</text>
+  <text x="52" y="90" fill="#b8c4e6" font-family="'Segoe UI', Arial, sans-serif" font-size="15">Do not let the agent talk directly to every server. Broker the boundary and make trust visible.</text>
+
+  <g transform="translate(54 138)">
+    <rect width="172" height="90" rx="14" fill="#17203a" stroke="#4d6ec0" stroke-width="1.5"/>
+    <text x="22" y="38" fill="#f4f7ff" font-family="Georgia, serif" font-size="19" font-weight="700">Agent host</text>
+    <text x="22" y="64" fill="#c8d2ee" font-family="'Segoe UI', Arial, sans-serif" font-size="14">planner, model, UI</text>
+  </g>
+
+  <g transform="translate(302 120)">
+    <rect width="360" height="308" rx="18" fill="#10172b" stroke="#6687d7" stroke-width="1.8"/>
+    <text x="24" y="40" fill="#ffcf7a" font-family="'Segoe UI', Arial, sans-serif" font-size="13" letter-spacing="1.2">MCP GATEWAY</text>
+    <text x="24" y="70" fill="#f4f7ff" font-family="Georgia, serif" font-size="22" font-weight="700">Policy before tool use</text>
+
+    <rect x="24" y="100" width="144" height="66" rx="12" fill="#1a2442" stroke="#405f9f"/>
+    <text x="42" y="128" fill="#f4f7ff" font-family="Georgia, serif" font-size="16" font-weight="700">Registry</text>
+    <text x="42" y="150" fill="#c8d2ee" font-family="'Segoe UI', Arial, sans-serif" font-size="13">allowlist, versions</text>
+
+    <rect x="192" y="100" width="144" height="66" rx="12" fill="#1a2442" stroke="#405f9f"/>
+    <text x="210" y="128" fill="#f4f7ff" font-family="Georgia, serif" font-size="16" font-weight="700">Identity</text>
+    <text x="210" y="150" fill="#c8d2ee" font-family="'Segoe UI', Arial, sans-serif" font-size="13">audience, scopes</text>
+
+    <rect x="24" y="190" width="144" height="66" rx="12" fill="#1a2442" stroke="#405f9f"/>
+    <text x="42" y="218" fill="#f4f7ff" font-family="Georgia, serif" font-size="16" font-weight="700">Runtime policy</text>
+    <text x="42" y="240" fill="#c8d2ee" font-family="'Segoe UI', Arial, sans-serif" font-size="13">risk, approval</text>
+
+    <rect x="192" y="190" width="144" height="66" rx="12" fill="#1a2442" stroke="#405f9f"/>
+    <text x="210" y="218" fill="#f4f7ff" font-family="Georgia, serif" font-size="16" font-weight="700">Audit trail</text>
+    <text x="210" y="240" fill="#c8d2ee" font-family="'Segoe UI', Arial, sans-serif" font-size="13">who, what, why</text>
+  </g>
+
+  <g transform="translate(736 138)">
+    <rect width="172" height="90" rx="14" fill="#17203a" stroke="#4d6ec0" stroke-width="1.5"/>
+    <text x="22" y="38" fill="#f4f7ff" font-family="Georgia, serif" font-size="19" font-weight="700">MCP servers</text>
+    <text x="22" y="64" fill="#c8d2ee" font-family="'Segoe UI', Arial, sans-serif" font-size="14">tools, resources</text>
+  </g>
+
+  <line x1="228" y1="183" x2="292" y2="183" stroke="#8eb1ff" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="664" y1="183" x2="728" y2="183" stroke="#8eb1ff" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <g transform="translate(76 472)">
+    <rect width="832" height="74" rx="14" fill="#17203a" stroke="#3a528d" stroke-width="1.5"/>
+    <text x="22" y="32" fill="#f4f7ff" font-family="Georgia, serif" font-size="18" font-weight="700">Minimum bar</text>
+    <text x="160" y="32" fill="#c8d2ee" font-family="'Segoe UI', Arial, sans-serif" font-size="14">pin servers, minimize scopes, sandbox local execution, inspect tool changes, log every call, test poisoned metadata.</text>
+    <text x="160" y="56" fill="#c8d2ee" font-family="'Segoe UI', Arial, sans-serif" font-size="14">The goal is not perfect trust. The goal is bounded blast radius and evidence when something goes wrong.</text>
+  </g>
+</svg>

@@ -7,6 +7,17 @@
     <atom:link href="https://themayursinha.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>MCP security - The new supply chain risk for AI agents</title>
+        <description>
+          
+          AI agents are not very useful if they cannot touch the world. They need files, tickets, databases, calendars, code repositories, cloud APIs, logs, browser sessions, and internal systems. That is why the Model Context Protocol matters. It gives AI applications a common way to connect to external tools, data sources,...
+        </description>
+        <pubDate>Wed, 06 May 2026 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/posts/2026-05-06-mcp-security-the-new-supply-chain-risk-for-ai-agents/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2026-05-06-mcp-security-the-new-supply-chain-risk-for-ai-agents/</guid>
+      </item>
+    
+      <item>
         <title>Epistemic security - The missing control plane for AI agents</title>
         <description>
           
@@ -213,17 +224,6 @@
         <pubDate>Sun, 01 May 2022 00:00:00 +0200</pubDate>
         <link>https://themayursinha.com/posts/2022-05-01-The-Batman/</link>
         <guid isPermaLink="true">https://themayursinha.com/posts/2022-05-01-The-Batman/</guid>
-      </item>
-    
-      <item>
-        <title>The Science of akashic field</title>
-        <description>
-          
-          The Sanskrit word akasha, translated as both “ether” and “space”, refers specifically to the vibratory element that is the subtlest in the material world, the “screen on which the image of the body and all nature is projected.” Ether-permeated space is the boundary line between heaven, or the astral world,...
-        </description>
-        <pubDate>Sat, 31 Jul 2021 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/posts/2021-07-31-Akashic-field/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2021-07-31-Akashic-field/</guid>
       </item>
     
   </channel>
