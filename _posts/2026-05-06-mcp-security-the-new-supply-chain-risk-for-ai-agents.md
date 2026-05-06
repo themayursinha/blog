@@ -16,7 +16,7 @@ AI agents are not very useful if they cannot touch the world.
 
 They need files, tickets, databases, calendars, code repositories, cloud APIs, logs, browser sessions, and internal systems. That is why the [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro) matters. It gives AI applications a common way to connect to external tools, data sources, and workflows. The docs describe it as a kind of USB-C port for AI applications. That is a good metaphor.
 
-It is also the reason security teams should pay attention.
+That convenience is also where the security work starts.
 
 USB-C is convenient because anything can plug in. MCP is powerful for the same reason. An assistant can discover tools, read resources, use prompts, call APIs, and act across systems without every integration being custom-built from scratch. But every new connector is also a new trust boundary. Every server can influence what the agent sees. Some can influence what the agent does.
 
@@ -26,13 +26,13 @@ That makes MCP part of the agent supply chain.
 
 In the [MCP architecture](https://modelcontextprotocol.io/docs/learn/architecture), an MCP host is the AI application. It creates MCP clients, usually one per server. Those clients talk to MCP servers that expose capabilities such as [tools](https://modelcontextprotocol.io/specification/2025-11-25/server/tools), [resources](https://modelcontextprotocol.io/specification/2025-11-25/server/resources), and [prompts](https://modelcontextprotocol.io/specification/2025-11-25/server/prompts). Tools let models perform actions. Resources give models contextual data. Prompts provide reusable interaction templates.
 
-That sounds clean. It is clean, at the protocol level.
+At the protocol level, this is a clean model.
 
 The security problem starts when those protocol objects become part of an agent's reasoning environment. Tool names and descriptions are not inert metadata. Resource contents are not inert data. Tool results are not just return values. They are text and structure that may enter the model context, affect planning, trigger future calls, and get remembered.
 
 In a normal API integration, documentation tells the developer how to call the system. In an agentic integration, tool metadata helps tell the model what the system means.
 
-That is a very different risk.
+That creates a different kind of risk.
 
 ![MCP agent supply chain trust boundary]({{ '/img/mcp-agent-supply-chain.svg' | prepend: site.baseurl | replace: '//', '/' }})
 
@@ -44,13 +44,13 @@ The old model was simple enough: application code called a known API with known 
 
 MCP changes the shape of that boundary. The agent can discover tools dynamically through `tools/list`, call them through `tools/call`, and receive content that may later be used as context. The [tools specification](https://modelcontextprotocol.io/specification/2025-11-25/server/tools) says tools are model-controlled, meaning the model can discover and invoke them automatically based on context. The same page also recommends clear user visibility, confirmation prompts for operations, input validation, access controls, output sanitization, timeouts, and audit logging.
 
-That recommendation is doing a lot of work.
+Those recommendations matter because the tool boundary can carry real authority.
 
-If a tool can delete a file, open a pull request, create a refund, query production data, or post to Slack, then the tool is not a helper. It is delegated authority.
+If a tool can delete a file, open a pull request, create a refund, query production data, or post to Slack, then it has delegated authority. It should not be treated as a simple helper.
 
-If a resource can feed the model a repository file, database schema, ticket body, email, wiki page, or vendor report, then the resource is not just context. It is part of the agent's belief pipeline.
+If a resource can feed the model a repository file, database schema, ticket body, email, wiki page, or vendor report, then it becomes part of the agent's belief pipeline.
 
-If a prompt comes from a server, then it is not just a template. It is an instruction-bearing artifact.
+If a prompt comes from a server, then it is an instruction-bearing artifact that deserves review.
 
 This is why MCP security is not only about secure transport. It is about controlling what the agent is allowed to believe and do after a server enters the room.
 
@@ -69,7 +69,7 @@ The [latest MCP authorization spec](https://modelcontextprotocol.io/specificatio
 
 The local server risk is especially easy to underestimate. Local MCP servers often run as normal user processes. A filesystem server, Git server, browser automation server, or shell-like utility may have access to the same files and credentials as the user. The security best practices page is blunt about this: local servers can create arbitrary code execution, data exfiltration, and data loss risks if sandboxing and consent are weak.
 
-That is not theoretical security drama. That is the reality of running more small executable connectors on developer machines.
+In practice, this means more executable connectors running on developer machines, often close to source code, credentials, and internal systems.
 
 ## The less obvious risk is tool poisoning
 
@@ -83,7 +83,7 @@ Recent research is moving in the same direction. A 2026 paper on [MCP threat mod
 
 The pattern is clear: the tool layer is becoming an instruction layer.
 
-That is the part most teams are not ready for.
+Many teams are still building the operational habits for this.
 
 ## Threat scenarios that matter
 
@@ -103,13 +103,13 @@ An MCP proxy accepts a token from the client and forwards it downstream. It does
 
 Now a stolen or overbroad token can move across trust boundaries. Logs become confusing because downstream systems see calls that do not reflect the real agent, user, or MCP client path. Revocation becomes messy. Incident response becomes guesswork.
 
-This is exactly why MCP authorization guidance cares about audience binding and why token passthrough is forbidden in the security guidance.
+This is why MCP authorization guidance cares about audience binding and why token passthrough is forbidden in the security guidance.
 
 ### Scenario C: Metadata discovery becomes SSRF
 
 An MCP client performs OAuth metadata discovery against a malicious server. That server returns URLs pointing at internal services or cloud metadata endpoints. If the client fetches those URLs without network restrictions, the attacker has turned the client into a network probe.
 
-This is not a new vulnerability class. It is SSRF wearing agent infrastructure clothing. The difference is that the AI integration layer may now be deployed in places where developers did not expect it to behave like a server-side fetcher.
+This is not a new vulnerability class. It is an old one appearing inside agent infrastructure. The difference is that the AI integration layer may now be deployed in places where developers did not expect it to behave like a server-side fetcher.
 
 ### Scenario D: The local server has more power than the agent
 
@@ -117,7 +117,7 @@ A developer installs a local MCP server from a random repository because it prom
 
 The agent does not need to be compromised for this to go wrong. The connector can be the compromise.
 
-This is the uncomfortable thing about MCP adoption: teams may spend months hardening the agent while casually installing the thing that sits next to it with filesystem access.
+The practical concern is straightforward: teams may spend months hardening the agent while giving a local connector broad filesystem access.
 
 ### Scenario E: Tool response injection crosses into high-impact action
 
@@ -129,7 +129,7 @@ This is why Microsoft's guidance on [indirect prompt injection](https://learn.mi
 
 ## MCP needs a security control plane
 
-The answer is not "do not use MCP." That would be lazy.
+Avoiding MCP entirely is not a useful strategy.
 
 The answer is to stop treating MCP servers like harmless plugins. They should be treated like production dependencies with runtime authority. That means install-time review is necessary, but not sufficient. Runtime enforcement matters because tool lists, tool results, resources, prompts, and scopes can change after approval.
 
@@ -189,7 +189,7 @@ Single calls may look fine. Chains reveal intent.
 
 ### 6) Sandboxed local execution
 
-Local MCP servers should run with the least filesystem, network, process, and credential access possible. Containers, app sandboxes, restricted working directories, egress limits, and explicit directory grants are not overkill. They are the minimum bar once local servers can touch source code and secrets.
+Local MCP servers should run with the least filesystem, network, process, and credential access possible. Containers, app sandboxes, restricted working directories, egress limits, and explicit directory grants are reasonable baseline controls once local servers can touch source code and secrets.
 
 This is also a Secure by Design issue. CISA's [Secure by Design](https://www.cisa.gov/securebydesign) guidance argues that security should be a core product requirement, not a feature added later. AI software is still software. MCP servers should be safe by default.
 
@@ -228,26 +228,24 @@ If I were reviewing MCP adoption inside an organization, I would start with this
 13. Are all tool calls logged with enough context for incident response?
 14. Do red-team tests include tool poisoning, metadata drift, malicious resources, and cross-tool exfiltration?
 
-This is not bureaucracy. This is what it looks like to take agent authority seriously.
+This checklist is a way to make agent authority visible enough to manage.
 
 ## The real MCP dilemma
 
-MCP is useful because it makes agents easier to connect to the world. That is exactly why it is risky.
+MCP is useful because it makes agents easier to connect to the world. That same property creates the security work.
 
 The security question is not whether MCP is good or bad. The question is whether organizations will treat it with the seriousness they already apply to packages, browser extensions, CI plugins, OAuth apps, and production APIs.
 
 MCP servers are not passive connectors. They can describe tools, expose data, return instructions, request authorization, run locally, call downstream APIs, and change what an agent believes is possible.
 
-That is not a plugin.
-
-That is part of the runtime.
+In practice, that makes it part of the runtime.
 
 The teams that do this well will build an MCP control plane early. They will pin and review servers. They will minimize scopes. They will sandbox local execution. They will inspect tool-chain behavior. They will log evidence. They will test malicious metadata the same way they test malicious input.
 
-The teams that do this badly will discover the problem later, during an incident, when someone asks a very simple question:
+Teams that leave this unmanaged usually discover the gap later, during an incident, when someone asks a simple question:
 
 Why did the agent do that?
 
 And nobody can reconstruct the answer.
 
-That is the moment MCP stops being an integration convenience and becomes a security program.
+That is when MCP stops being only an integration convenience and becomes part of the security program.

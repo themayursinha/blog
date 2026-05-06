@@ -87,9 +87,9 @@ Then an advanced persistent threat begins a long campaign. Over five years, the 
 
 Nothing dramatic happens at first.
 
-That is the point.
+That quiet normalization is part of the risk.
 
-By the time a catastrophic breach occurs, the damage is not just the compromised infrastructure. The deeper damage is institutional. The human security analysts no longer trust the automated defense system, but they have also lost the habit of manually hunting through raw network logs. The organization outsourced detection so thoroughly that its human capability atrophied.
+By the time a catastrophic breach occurs, the damage is not just the compromised infrastructure. There is also institutional damage. The human security analysts no longer trust the automated defense system, but they have also lost the habit of manually hunting through raw network logs. The organization outsourced detection so thoroughly that its human capability atrophied.
 
 The system became efficient and brittle at the same time.
 
@@ -146,9 +146,7 @@ For AI agents, that means we need practices that preserve epistemic agency:
 5. Treat agent memory and retrieved context as attack surfaces.
 6. Reward people for understanding, not just output velocity.
 
-These practices are slower than pure delegation.
-
-That is exactly why they matter.
+These practices are slower than pure delegation, which is why they need to be preserved deliberately.
 
 ## The real dilemma
 

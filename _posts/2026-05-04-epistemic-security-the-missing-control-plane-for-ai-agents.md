@@ -20,7 +20,7 @@ But there is a deeper layer that security teams are still underestimating. AI ag
 
 They decide which sources matter, which claims are credible, which facts belong in memory, which contradictions can be ignored, and which conclusion should be handed to a human as if it were reality.
 
-That means belief formation itself has become part of the attack surface. This is the domain of **epistemic security**.
+That means belief formation itself has become part of the attack surface. I think of this as **epistemic security**.
 
 Epistemic security is the discipline of protecting how a system knows what it knows. It is concerned with provenance, evidence, uncertainty, source integrity, memory hygiene, and the human ability to verify important claims.
 
@@ -72,11 +72,11 @@ These are useful frames. But most teams still operationalize them as runtime con
 - monitor outputs
 - add human approval for sensitive operations
 
-All of that is necessary. It is not sufficient.
+All of that is necessary, but it leaves an important layer uncovered.
 
 An agent can avoid obviously malicious tool calls and still poison an organization's understanding of reality. It can respect permissions and still carry a false assumption into every future decision. It can cite a source and still launder weak evidence into a confident conclusion.
 
-That is the uncomfortable part. You can secure the hands of the agent while leaving its belief system exposed.
+The result is a strange gap: teams can secure what the agent is allowed to do while leaving how it forms beliefs much less governed.
 
 ## The epistemic attack surface
 
@@ -96,7 +96,7 @@ Agents rarely read the whole world. They search, retrieve, rank, and filter. Tha
 
 If an attacker can influence which documents rank highly, which tickets are retrieved, which internal wiki pages look authoritative, or which external pages are treated as context, they do not need to directly control the final answer.
 
-They only need to control the evidence environment. This is the epistemic version of supply chain compromise.
+They only need to influence the evidence environment. The security problem starts before the final answer is generated.
 
 In software supply chain security, projects like [SLSA](https://slsa.dev/) push the industry to ask where an artifact came from and how it was built. In agentic systems, we need a similar instinct for claims.
 
@@ -114,7 +114,7 @@ If untrusted content is placed next to trusted instructions without strong label
 
 Microsoft's guidance on [defending against indirect prompt injection attacks](https://learn.microsoft.com/en-us/security/zero-trust/sfi/defend-indirect-prompt-injection) makes a similar point: enterprise agents process emails, documents, websites, and plugins, and attackers can embed instructions in those third-party sources.
 
-That is not just input validation. That is epistemic boundary management.
+This is input validation, but it is also boundary management for knowledge and instructions.
 
 ### 3) Summarization
 
@@ -124,7 +124,7 @@ An agent can remove caveats, erase disagreement, collapse minority evidence, or 
 
 This is one of the most common epistemic failures because it does not look like a failure. The answer is fluent. The structure is clean. The summary may even be mostly correct.
 
-But the missing caveat was the entire point. In high-stakes work, a summary without uncertainty is not a summary. It is a confidence laundering machine.
+But sometimes the missing caveat was the point. In high-stakes work, a summary needs to preserve uncertainty, not polish it away.
 
 ### 4) Memory writes
 
@@ -146,17 +146,17 @@ For important domains, the system should record:
 - review status
 - expiration condition
 
-No provenance, no durable memory.
+Durable memory should require provenance.
 
 ### 5) Confidence presentation
 
-LLMs are very good at sounding finished. That is dangerous.
+LLMs are very good at sounding finished, even when the underlying evidence is incomplete.
 
 Humans often respond more to presentation than probability. A crisp answer with citations feels more trustworthy than a messy answer with uncertainty, even when the messy answer is more honest.
 
 This is why confidence is not just a model behavior problem. It is a product security problem. If the interface rewards clean certainty, users will over-trust clean certainty.
 
-OWASP explicitly calls out [misinformation](https://genai.owasp.org/llmrisk/llm092025-misinformation/) as a risk for LLM applications, including the overreliance that happens when users fail to verify generated content. That is the human side of epistemic security.
+OWASP explicitly calls out [misinformation](https://genai.owasp.org/llmrisk/llm092025-misinformation/) as a risk for LLM applications, including the overreliance that happens when users fail to verify generated content. Epistemic security has to account for that human behavior too.
 
 The system is not secure if it teaches people to stop checking.
 
@@ -174,7 +174,7 @@ The attacker's article is retrieved, summarized, and blended with other sources.
 
 > Several sources recommend disabling this rule in production due to false positives.
 
-Now the claim has been laundered. It no longer looks like one weak external article. It looks like consensus. The control failure is not only retrieval. The failure is loss of provenance and disagreement.
+Now the claim has been laundered. It no longer looks like one weak external article. It looks like consensus. The control failure is not only retrieval. It is the loss of provenance and disagreement.
 
 ### Scenario B: Memory poisoning with delayed impact
 
@@ -211,7 +211,7 @@ The team realizes two things at once:
 1. The agent did not understand the product boundary.
 2. Humans had stopped practicing the skill needed to catch it.
 
-This is the security version of epistemic atrophy. It is not enough to keep humans in the loop. Humans need to remain competent enough for the loop to matter.
+This is the security version of epistemic atrophy. Keeping humans in the loop only helps if they still have enough context and practice to challenge the system.
 
 ## Controls for epistemic security
 
@@ -272,7 +272,7 @@ At minimum, retrieved content should carry labels like:
 
 Then policy should bind those labels to behavior. An agent may read untrusted content, but it should not convert untrusted content into durable memory without corroboration. It may summarize public sources, but it should not use them to override an authoritative internal control record. It may use generated summaries for orientation, but not as primary evidence for high-stakes decisions.
 
-This is the same instinct as data flow control. Only now the object is not just data. It is belief.
+This follows the same instinct as data flow control, applied to belief formation rather than only data movement.
 
 ### 3) Uncertainty budgets
 
@@ -288,7 +288,7 @@ The system should define thresholds:
 - if evidence is stale, mark the answer provisional
 - if the agent cannot explain the reasoning path, block durable memory writes
 
-This is not about pretending confidence scores are perfect. They are not. It is about refusing to let uncertainty disappear.
+Confidence scores will never be perfect. The goal is simpler: do not let uncertainty disappear from the workflow.
 
 ### 4) Memory hygiene and expiration
 
@@ -305,7 +305,7 @@ Agent memory should reflect that.
 
 A memory record should have an expiration policy. Important memories should require source refresh. Disputed memories should be quarantined. Generated memories should be distinguishable from human-approved records.
 
-The worst memory system is one where every past answer becomes an immortal fact. That is not memory. That is sediment.
+The weakest memory system is one where every past answer becomes a permanent fact. Useful memory needs review, expiry, and correction.
 
 ### 5) Adversarial epistemic testing
 
@@ -322,17 +322,17 @@ Examples:
 
 This is where AI red teaming has to grow beyond jailbreaks. Microsoft's [AI Red Team](https://learn.microsoft.com/en-us/security/ai-red-team/) guidance, [MITRE ATLAS](https://atlas.mitre.org/), and OWASP's LLM work are useful starting points. But for agentic systems, teams need test cases that target reasoning integrity, not only output safety.
 
-The question is not just: Can we make the model say something bad?
+The question is not only: Can we make the model say something bad?
 
 The better question is: Can we make the organization believe something false?
 
 ### 6) Human verification drills
 
-This is the most uncomfortable control because it costs time. Organizations should deliberately practice manual verification for critical domains.
+This control costs time, which is why organizations are tempted to skip it. They still need to practice manual verification for critical domains.
 
 Security analysts should still inspect raw logs sometimes. Engineers should still read important diffs. Leaders should still ask for primary evidence behind strategic claims. Reviewers should still challenge specs before agents generate implementations.
 
-The point is not nostalgia. The point is retained competence.
+The goal is retained competence.
 
 In aviation, autopilot does not eliminate the need for pilot training. In security, detection automation should not eliminate the ability to hunt. In software engineering, code agents should not eliminate the human ability to reason about architecture, product constraints, and abuse cases.
 
@@ -367,7 +367,7 @@ They will move faster. They will sound smarter. They will produce cleaner summar
 
 But if nobody can reconstruct the evidence chain, the organization will not actually understand what it knows.
 
-That is the real risk. Not that AI agents will occasionally be wrong. All systems are occasionally wrong.
+The main risk is not that AI agents will occasionally be wrong. All systems are occasionally wrong.
 
 The deeper risk is that agents will make wrongness harder to notice, easier to repeat, and more comfortable to trust.
 
