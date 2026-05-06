@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Traditional manual code review is no longer sustainable
-categories: [software-engineering]
+categories: [engineering]
 tags: [ai, security, llms]
 description: Code review is a historical approval gate that simply no longer matches the shape of modern work. Here is why we need to pivot.
 share-img: /img/circuit.png

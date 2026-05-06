@@ -81,12 +81,14 @@
 
 - id: mcp-security-evaluator
   title: MCP security evaluator
-  summary: Tooling to evaluate and harden MCP and LLM integrations.
+  summary: Companion tooling for evaluating MCP server trust boundaries, tool metadata drift, and LLM integration risks.
   role: Builder
   year: 2025
   links:
     - label: GitHub
       url: https://github.com/themayursinha/mcp-llm-security-evaluator
+    - label: Context
+      url: https://themayursinha.com/posts/2026-05-06-mcp-security-the-new-supply-chain-risk-for-ai-agents/
 
 - id: adversarial-ml-security-lab
   title: Adversarial ML security lab

@@ -6,15 +6,15 @@ description: Security engineering leader with 15+ years of experience across AI 
 meta-title: Mayur Sinha | Security Engineering Leader
 use-site-title: false
 featured_posts:
+  - title: MCP security - The new supply chain risk for AI agents
+    card_title: MCP Security for AI Agents
+    summary: Why MCP servers should be treated as executable trust boundaries in the AI agent supply chain.
   - title: Epistemic security - The missing control plane for AI agents
     card_title: Epistemic Security for AI Agents
     summary: Why agentic systems need controls for provenance, uncertainty, memory, evidence, and human verification.
   - title: Threat Modeling Autonomous AI Agents in Production
     card_title: Threat Modeling AI Agents
     summary: A practical framework for modeling agent runtime risk, tool abuse, memory poisoning, and production controls.
-  - title: Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks
-    card_title: LLMs vs Classical Nets for Vulnerability Detection
-    summary: A practical comparison of classical ANN pipelines versus transformers for real-world AppSec use.
 featured_projects:
   - id: mcp-security-evaluator
   - id: adversarial-ml-security-lab
@@ -38,7 +38,7 @@ featured_projects:
 
   <p>I also collaborate with a non-profit on long-horizon AI risk research and write about AI security, engineering systems, and the broader questions around intelligence, safety, and technology.</p>
 
-  <p>If you are building secure AI systems, modern platforms, or security programs at scale, I would love to connect.</p>
+  <p>If you are building secure AI systems, modern platforms, or security programs at scale, I would love to connect. For a deeper professional snapshot, see my <a href="{{ '/resume/' | prepend: site.baseurl | replace: '//', '/' }}">resume-style experience page</a>.</p>
 
 </section>
 

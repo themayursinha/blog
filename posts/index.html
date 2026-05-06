@@ -4,6 +4,19 @@ title: Posts
 subtitle: Essays, technical writing, and research notes across security, AI, and philosophy.
 description: Browse all posts by Mayur Sinha and filter by topic tags.
 permalink: /posts/
+start_here_posts:
+  - title: MCP security - The new supply chain risk for AI agents
+    card_title: MCP Security for AI Agents
+    summary: "Start here for the supply-chain and runtime trust risks that appear when agents depend on MCP servers."
+  - title: Epistemic security - The missing control plane for AI agents
+    card_title: Epistemic Security
+    summary: "The control-plane argument for provenance, uncertainty, source integrity, memory hygiene, and verification."
+  - title: Threat Modeling Autonomous AI Agents in Production
+    card_title: Threat Modeling AI Agents
+    summary: "A practical production model for tool abuse, memory poisoning, delegation storms, eval drift, and security SLOs."
+  - title: The AI agent dilemma - Why we are outsourcing our reality
+    card_title: The AI Agent Dilemma
+    summary: "The philosophical security risk behind agent delegation: losing the ability to justify what we believe."
 ---
 
 {% assign posts_asc = site.posts | sort: "date" %}
@@ -17,7 +30,7 @@ permalink: /posts/
     <div class="posts-intro-copy">
       <p class="posts-kicker">Writing archive</p>
       <p class="posts-lead">Technical essays, security thinking, and long-form notes spanning {{ earliest_year }} to {{ latest_year }}.</p>
-      <p class="posts-intro-text">This archive mixes practical application security, AI systems thinking, and philosophy of technology. Every entry includes a short synopsis so the archive is easier to scan.</p>
+      <p class="posts-intro-text">This archive mixes practical application security, AI systems thinking, and philosophy of technology. The current center of gravity is AI agent security: how autonomous systems see, reason, remember, and act through tools.</p>
     </div>
 
     <div class="posts-stats" aria-label="Posts overview">
@@ -40,6 +53,46 @@ permalink: /posts/
     </div>
   </section>
 
+  <section class="posts-section posts-start-here">
+    <div class="posts-section-heading">
+      <div>
+        <p class="posts-section-kicker">Start here</p>
+        <h2>AI agent security series</h2>
+      </div>
+      <p>A guided path through the strongest thread in the archive: MCP supply-chain risk, epistemic security, production threat modeling, and human verification.</p>
+    </div>
+
+    <div class="posts-grid">
+      {% for featured in page.start_here_posts %}
+      {% assign featured_post = nil %}
+      {% for post in site.posts %}
+        {% if post.title == featured.title %}
+          {% assign featured_post = post %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+      {% if featured_post %}
+      <article class="post-archive-card">
+        <div class="post-archive-top">
+          <p class="post-archive-kicker">Series</p>
+          <p class="post-archive-date">{{ featured_post.date | date: "%b %-d, %Y" }}</p>
+        </div>
+
+        <h3 class="post-archive-title">
+          <a href="{{ featured_post.url | prepend: site.baseurl }}">{{ featured.card_title | default: featured_post.title }}</a>
+        </h3>
+
+        <p class="post-archive-summary">{{ featured.summary | default: featured_post.description | default: featured_post.excerpt | strip_html | strip_newlines | truncate: 180 }}</p>
+
+        <p class="post-archive-footer">
+          <a class="post-archive-link" href="{{ featured_post.url | prepend: site.baseurl }}">Read post</a>
+        </p>
+      </article>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
   <section class="posts-section">
     <div class="posts-section-heading">
       <div>
@@ -55,10 +108,14 @@ permalink: /posts/
       {% if post_summary == post.title or post_summary.size < 36 %}
         {% assign post_summary = post.excerpt | strip_html | strip_newlines | strip %}
       {% endif %}
-      {% assign post_category = post.categories | first %}
+      {% assign post_category = post.categories | first | default: "post" %}
+      {% assign post_category_label = post_category | replace: "-", " " %}
+      {% if post_category == "ai" %}
+        {% assign post_category_label = "AI" %}
+      {% endif %}
       <article class="post-archive-card">
         <div class="post-archive-top">
-          <p class="post-archive-kicker">{{ post_category | default: "Post" }}</p>
+          <p class="post-archive-kicker">{{ post_category_label }}</p>
           <p class="post-archive-date">{{ post.date | date: "%b %-d, %Y" }}</p>
         </div>
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Vibe Engineering
-categories: [AI]
+categories: [ai]
 tags: [ai]
 description: Vibe Engineering
 share-img: /img/matrix.png

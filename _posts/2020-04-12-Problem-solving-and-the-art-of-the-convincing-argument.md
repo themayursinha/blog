@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Problem solving and the art of the convincing argument
-categories: [Maths]
+categories: [math]
 tags: [maths]
 description: Problem solving and the art of the convincing argument
 ---

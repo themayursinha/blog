@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Reframing Application Security
-categories: [appsec]
+categories: [security]
 tags: [security]
 description: Reframing Application Security
 share-img: /img/circuit.png

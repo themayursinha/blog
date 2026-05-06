@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to study based on how memory works
-categories: [brain]
+categories: [science]
 tags: [science]
 description: How to study based on how memory works
 ---
@@ -31,4 +31,4 @@ To optimize the final stage, you have to optimize the first two stages. i.e., pa
 
 ### Another good point I would add is this: 
 
-- Take notes BEFORE class if possible, and add to them whenever necessary. Do this by reading the textbook chapters ahead of time (and take notes) or use material posted online ahead of time. This way, you're not just frantically writing notes in class and you'll be able to more fully pay attention to what the teacher is saying (remember: attention is the first step of the memory process!). You may think you can pay attention to the professor as you're writing, but you are actually dividing your attention and hurting your memory. 
+- Take notes BEFORE class if possible, and add to them whenever necessary. Do this by reading the textbook chapters ahead of time (and take notes) or use material posted online ahead of time. This way, you're not just frantically writing notes in class and you'll be able to more fully pay attention to what the teacher is saying (remember: attention is the first step of the memory process!). You may think you can pay attention to the professor as you're writing, but you are actually dividing your attention and hurting your memory.

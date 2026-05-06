@@ -22,6 +22,8 @@ USB-C is convenient because anything can plug in. MCP is powerful for the same r
 
 That makes MCP part of the agent supply chain.
 
+I am also building this into tooling through the [MCP security evaluator](https://github.com/themayursinha/mcp-llm-security-evaluator), a companion project for testing and hardening MCP and LLM integrations.
+
 ## MCP is not just an integration layer
 
 In the [MCP architecture](https://modelcontextprotocol.io/docs/learn/architecture), an MCP host is the AI application. It creates MCP clients, usually one per server. Those clients talk to MCP servers that expose capabilities such as [tools](https://modelcontextprotocol.io/specification/2025-11-25/server/tools), [resources](https://modelcontextprotocol.io/specification/2025-11-25/server/resources), and [prompts](https://modelcontextprotocol.io/specification/2025-11-25/server/prompts). Tools let models perform actions. Resources give models contextual data. Prompts provide reusable interaction templates.

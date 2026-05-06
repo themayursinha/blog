@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The AI agent dilemma - Why we are outsourcing our reality"
-categories: [AI]
+categories: [ai]
 tags: [ai, agents, epistemology, security]
 description: AI agents may not just change how we work. They may weaken our ability to know, verify, and justify what we believe.
 share-img: /img/matrix.png

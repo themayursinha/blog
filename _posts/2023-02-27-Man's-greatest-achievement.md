@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Man's greatest achievement
-categories: [Tesla]
+categories: [science]
 tags: [science]
 description: Man's greatest achievement
 ---
@@ -17,7 +17,6 @@ Tesla was also interested in the medical applications of electricity and magneti
 There is no clear evidence that Tesla believed that man could become God in a religious or metaphysical sense. However, he did have a high degree of confidence in human potential and the power of scientific knowledge to transform the world. Tesla believed that by mastering the fundamental principles of energy and matter, humanity could achieve remarkable feats of technology and create a utopian society in which poverty, disease, and war were eliminated. In "Man's Greatest Achievement," Tesla wrote, "With the advent of spring we return from the inner world of thought to the outer world of action. The world lies before us like a great eternal riddle. It invites us to explore, to probe, to ascertain the truth of the principles of life and of the universe." These words suggest a deep respect for the mysteries of existence and a desire to uncover its secrets through scientific inquiry. Tesla also believed in the power of the human mind to access knowledge and creativity beyond what is traditionally understood as "normal" or "natural." He was fascinated by the phenomenon of intuition and believed that it was a key element in scientific discovery. In some of his writings, Tesla alludes to the possibility that the human mind could tap into a kind of cosmic consciousness, although he does not provide a detailed explanation of how this might work.
 
 _Can Man control this grandest, most awe-inspiring of all processes in nature? Can he harness her inexhaustible energies to perform all their functions at his bidding, more still - can he so refine his means of control as to put them in operation simply by the force of his will?_
-
 
 
 
