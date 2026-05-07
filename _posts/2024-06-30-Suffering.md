@@ -10,7 +10,7 @@ description: Life is cruel
 
 Why is there so much unfairness, cruelty, and pain in the world? This is one of the deepest and most difficult questions we can ask. It gets even tougher if you don't believe in a god or an afterlife where things might be made right.
 
-In this post, we'll look at how different thinkers have tried to answer this question from a secular viewpoint—one that doesn’t rely on religion. We'll explore reasons that come from science, philosophy, and the way our societies are built.
+In this post, we'll look at how different thinkers have tried to answer this question from a secular viewpoint, one that doesn’t rely on religion. We'll explore reasons that come from science, philosophy, and the way our societies are built.
 
 ### It's just nature
 
@@ -25,7 +25,7 @@ This view doesn't look for a grand, cosmic reason for suffering. Instead, it sug
 
 ### The world doesn't care (And why that's okay)
 
-Existentialist thinkers like [Jean-Paul Sartre](https://en.wikipedia.org/wiki/Jean-Paul_Sartre) and [Albert Camus](https://en.wikipedia.org/wiki/Albert_Camus) had a radical idea: the universe is simply indifferent to us. [Existentialism](https://www.google.com/search?q=https://www.tate.org.uk/art/art-terms/e/existentialism) teaches that because the world doesn't have a built-in meaning, we have to create our own. It sees cruelty and injustice as part of life's "absurdity"—a weird, meaningless reality we have to face.
+Existentialist thinkers like [Jean-Paul Sartre](https://en.wikipedia.org/wiki/Jean-Paul_Sartre) and [Albert Camus](https://en.wikipedia.org/wiki/Albert_Camus) had a radical idea: the universe is simply indifferent to us. [Existentialism](https://www.google.com/search?q=https://www.tate.org.uk/art/art-terms/e/existentialism) teaches that because the world doesn't have a built-in meaning, we have to create our own. It sees cruelty and injustice as part of life's "absurdity", a weird, meaningless reality we have to face.
 
 Camus wrote about the concept of the **[absurd](https://plato.stanford.edu/entries/camus/)**. This is the clash between our human need to find meaning and the silent, meaningless universe we live in. But for Camus, realizing this isn't a reason to give up. Instead, it can make us feel truly free. If there are no cosmic rules, then we are responsible for creating our own values.
 

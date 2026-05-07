@@ -12,7 +12,7 @@ Mathematics is used by engineers to solve problems. This usually involves develo
 
 Some problems are very easy to describe mathematically. For instance: ‘Three people sitting in a room were joined by two others, how many people are there in the room in total?’ This can be described by the sum `3 + 2 =?` and can be solved easily as `3 + 2 = 5`.
 
-The final stage of solving the problem is to translate it back into the original setting – the answer is: ‘there are 5 people in the room in total’.
+The final stage of solving the problem is to translate it back into the original setting, the answer is: ‘there are 5 people in the room in total’.
 
 Assumptions were used to solve this problem. We assumed that noone else came in or left the room in the meantime and we made general assumptions about the stability of the room, for example, the building containing it did not fall down. However, these assumptions are so obvious that they do not need to be listed. In more complex problems it is necessary to list important assumptions as they may have relevance as to the validity of the solution.
 

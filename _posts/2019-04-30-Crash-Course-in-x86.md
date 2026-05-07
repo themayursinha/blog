@@ -41,10 +41,10 @@ Segment registers are used to make segmental distinctions in the binary. We will
 
 #### Status flag registers
 Flags are tiny bit values that are either set (1) or not set (0). Each flag represent a status. For example, if the “signed” flag is set, the value of FF will represent a -1 in decimal notation instead of 255. Flags are all stored in special flag register, were many one bit flags are stored at once. The flags are set whenever an operation resulted in certain state or output. The flags we are most interested in for now are:
-Z – zero flag, set when the result of the last operation is zero
-S – signed flag, set to determine if values should be intercepted as signed or unsigned
-O – overflow flag, set when the result of the last operation switches the most significant bit from either F to 0 or 0 to F.
-C – carry flag, set when the result of the last operation changes the most significant bit
+Z - zero flag, set when the result of the last operation is zero
+S - signed flag, set to determine if values should be intercepted as signed or unsigned
+O - overflow flag, set when the result of the last operation switches the most significant bit from either F to 0 or 0 to F.
+C - carry flag, set when the result of the last operation changes the most significant bit
 
 #### EIP - Extended Instruction Pointer
 The instruction pointer has the same function in a CPU as the needle had in those old gramophones your grandpa used to have. It points to the next instruction to be executed.
@@ -95,7 +95,7 @@ MUL/IMUL, syntax:   mul value
 
 mul/imul (unsigned/signed) multiply either eax with a value, or they multiply two values and put them into a destination register or they multiply a register with a value.
 
-#### Bitwise operations – AND, OR, XOR, NOT
+#### Bitwise operations: AND, OR, XOR, NOT
 AND, syntax:      add dest, src
 OR, syntax:       or dest, src
 XOR, syntax:      xor dest, src
@@ -113,7 +113,7 @@ The XOR is like the OR but with one very important distinction. It will not set 
 The way XOR works brings an interesting feature, any value XOR:ed with itself will become 0. Many compilers are making use of this feature of the XOR operation by XOR:ing a register with itself instead of moving the value 0 into it, as the XOR operation will go faster.
 The NOT operation is different to the other bitwise operations as it only takes one value and inverses every bit. For example the value 11011110 would become 00100001 when NOT’d.
 
-#### Branching – JMP, JE, JLE, JNZ, JZ, JBE, JGE...
+#### Branching: JMP, JE, JLE, JNZ, JZ, JBE, JGE...
 JMP/JE/JLE...etc syntax:    jmp address
 
 In assembly, branching is made through the use of jumps and flags. A jump is just an instruction that under certain circumstances will point the instruction pointer (EIP) to another portion of the code (much like the “goto” keyword in C). Flags are, as mentioned previously, tiny one bit values that can be set (1) or not set (0). Most instructions set one or more flags. Let’s revisit some of the instructions we already looked at and see which flags they set
@@ -128,7 +128,7 @@ At the same time, JBE stands for “Jump Below or Equal”. Which in C would be:
 if(x<=y) {dothis}
 So why these different jumps that looks exactly the same in C, one wonders? The answer is “due to signed and unsigned comparisons”. JLE is used to check the flags after a comparison between signed variables and JBE for unsigned comparisons. This was just an example, unless you memorize them all, you always need to read in the Intel Developer’s Guide to see which flags a jump checks for.
 
-#### Data moving – MOV, MOVS, MOVSB, MOVSW, MOVZX, MOVSX, LEA...
+#### Data moving: MOV, MOVS, MOVSB, MOVSW, MOVZX, MOVSX, LEA...
 MOV, syntax:        mov dest, src
 MOVSB, syntax:      movzx dest, src
 MOVZX, syntax:      movzx dest, src
@@ -143,15 +143,15 @@ b = (int)a;
 
 The instructions work like this
 
-MOVSX) DEST <-- Signextend[SRC]
-MOVZX) DEST <-- Zeroextend[SRC]
+MOVSX) DEST = Signextend[SRC]
+MOVZX) DEST = Zeroextend[SRC]
 
 Where signed means the extension bits will hold the value of one.
 Another instruction that can be used for data moving is the LEA instruction. LEA stands for “Load Effective Address” and the syntax looks like this:
 
 lea eax, dword ptr[ecx+edx] ; This will store ecx+edx in eax
 
-#### Loops – LOOP, REP...
+#### Loops: LOOP, REP...
 Although one can create neat loops using jumps, Intel’s x86 assembly also provides instructions specifically tailored to create iterating sequences of code. Like many of the other instructions we looked at, they come with many flavours depending of the size and sign of the variables they work with. For simplicity reasons, I will only show the easiest cases, LOOP first:
 
 ```

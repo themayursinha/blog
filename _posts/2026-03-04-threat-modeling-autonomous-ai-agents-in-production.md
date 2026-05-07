@@ -8,7 +8,7 @@ share-img: /img/circuit.png
 related_posts:
   - Designing a living ecosystem of AI agents
   - Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks
-  - Reframing Application Security — A Developer Experience Perspective
+  - Reframing Application Security - A Developer Experience Perspective
 ---
 
 In a normal SaaS app, most security controls sit on API boundaries.

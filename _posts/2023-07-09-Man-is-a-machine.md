@@ -8,7 +8,7 @@ description: Man is a machine
 
 ### Are we just machines?
 
-Have you ever looked up at the stars and wondered about your place in the vast universe? Have you ever asked yourself, "Am I just a collection of cells and atoms, a biological machine? Or is there something more—a soul, a spirit, a self?"
+Have you ever looked up at the stars and wondered about your place in the vast universe? Have you ever asked yourself, "Am I just a collection of cells and atoms, a biological machine? Or is there something more: a soul, a spirit, a self?"
 
 These are some of the biggest questions we can ask. For centuries, we've looked to philosophy, religion, and science for answers. Often, it feels like these fields are in conflict. But what if they aren't?
 
@@ -18,7 +18,7 @@ This article explores how science, our inner human experience, and the idea of a
 
 Science gives us an incredible toolkit for understanding the universe. Through disciplines like physicsand biology, we've discovered fundamental laws that govern everything from the orbit of planets to the firing of neurons in our brains.
 
-From this scientific viewpoint, it's helpful to think of the universe as a colossal, intricate machine. This doesn't make the cosmos any less beautiful or mysterious. Instead, it highlights the elegant and precise rules that make it all work. The reliable turning of the seasons, the predictable pull of gravity, the cycle of life and death—these are all like the gears of a cosmic clock, ticking away according to the laws of nature.
+From this scientific viewpoint, it's helpful to think of the universe as a colossal, intricate machine. This doesn't make the cosmos any less beautiful or mysterious. Instead, it highlights the elegant and precise rules that make it all work. The reliable turning of the seasons, the predictable pull of gravity, the cycle of life and death, these are all like the gears of a cosmic clock, ticking away according to the laws of nature.
 
 As inhabitants of this universe, we are part of that machine. Our bodies are marvels of biological engineering. Our hearts pump blood, our lungs draw air, and our genes provide the blueprint for our physical selves. Our senses act as inputs, gathering data from the world, while our brain processes it to create our reality.
 
@@ -26,9 +26,9 @@ But this raises a profound question. If we are complex machines responding to ou
 
 ### What is a "Soul" in the age of science?
 
-For thousands of years, people have believed in a soul or spirit—an immortal, non-physical essence that makes us who we are. It’s the divine spark, the ghost in the machine.
+For thousands of years, people have believed in a soul or spirit, an immortal, non-physical essence that makes us who we are. It’s the divine spark, the ghost in the machine.
 
-How does this ancient idea fit into a modern, scientific worldview? Some thinkers propose a new perspective: the "soul" is not separate from the body, but is an emergent property of it. In this view, your soul or consciousness is the sum total of your body's functions—it is the music that arises from the orchestra of your brain and body working in harmony. It’s the collective experience of thinking, feeling, loving, and being aware.
+How does this ancient idea fit into a modern, scientific worldview? Some thinkers propose a new perspective: the "soul" is not separate from the body, but is an emergent property of it. In this view, your soul or consciousness is the sum total of your body's functions; it is the music that arises from the orchestra of your brain and body working in harmony. It’s the collective experience of thinking, feeling, loving, and being aware.
 
 This perspective has big implications. If the soul is the functioning of the body, then it ceases to exist when the body stops functioning. This idea of the finality of death can be challenging, as it contrasts with many spiritual beliefs in an afterlife.
 
