@@ -38,7 +38,7 @@ featured_projects:
 
   <p>I also collaborate with a non-profit on long-horizon AI risk research and write about AI security, engineering systems, and the broader questions around intelligence, safety, and technology.</p>
 
-  <p>If you are building secure AI systems, modern platforms, or security programs at scale, I would love to connect. For a deeper professional snapshot, see my <a href="{{ '/resume/' | prepend: site.baseurl | replace: '//', '/' }}">resume-style experience page</a>.</p>
+  <p>If you are building secure AI systems, modern platforms, or security programs at scale, I would love to connect. For a deeper professional snapshot, see my <a href="{{ '/resume/' | prepend: site.baseurl | replace: '//', '/' }}">resume style experience page</a>.</p>
 
 </section>
 
