@@ -21,7 +21,7 @@
   <title>Reframing Application Security</title>
 
   <meta name="author" content="Mayur Sinha" />
-  <meta name="description" content="Reframing Application Security">
+  <meta name="description" content="Application security should not be a late-stage interruption. The mature AppSec move is to improve developer feedback loops, reduce cognitive load, and build secure defaults into the engineering system.">
   
   <meta name="robots" content="index, follow, max-image-preview:large">
   
@@ -93,7 +93,7 @@
   
 
   <meta property="og:title" content="Reframing Application Security" />
-  <meta property="og:description" content="Reframing Application Security">
+  <meta property="og:description" content="Application security should not be a late-stage interruption. The mature AppSec move is to improve developer feedback loops, reduce cognitive load, and build secure defaults into the engineering system.">
   
   <meta property="og:type" content="article" />
   
@@ -110,6 +110,12 @@
       
   <meta property="article:tag" content="security" />
       
+  <meta property="article:tag" content="appsec" />
+      
+  <meta property="article:tag" content="devex" />
+      
+  <meta property="article:tag" content="secure-by-default" />
+      
     
   
 
@@ -120,7 +126,7 @@
   <meta name="twitter:creator" content="@themayursinha" />
   
   <meta name="twitter:title" content="Reframing Application Security" />
-  <meta name="twitter:description" content="Reframing Application Security">
+  <meta name="twitter:description" content="Application security should not be a late-stage interruption. The mature AppSec move is to improve developer feedback loops, reduce cognitive load, and build secure defaults into the engineering system.">
   
   <meta name="twitter:image" content="https://themayursinha.com/img/circuit.png" />
   
@@ -145,7 +151,7 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "Reframing Application Security",
-    "description": "Reframing Application Security",
+    "description": "Application security should not be a late-stage interruption. The mature AppSec move is to improve developer feedback loops, reduce cognitive load, and build secure defaults into the engineering system.",
     "datePublished": "2023-06-14T00:00:00+02:00",
     "dateModified": "2023-06-14T00:00:00+02:00",
     "author": {
@@ -157,7 +163,7 @@
       "@id": "https://themayursinha.com/posts/2023-06-14-Reframing-application-security/"
     },
     "image": "https://themayursinha.com/img/circuit.png",
-    "keywords": ["security"]
+    "keywords": ["security","appsec","devex","secure-by-default"]
   }
   </script>
   
@@ -383,43 +389,226 @@
       
 
       <article role="main" class="blog-post">
-        <p>In the rapidly evolving digital landscape, most companies are vying for supremacy based on their ability to deliver business value through software and technology. The speed and quality of software production directly correlate with the value delivered. It’s a simple equation, and security teams must adapt to this reality to succeed and enable business growth. This article explores the concept of application security (AppSec) through the lens of developer experience (DevEx), presenting a fresh perspective on how AppSec must evolve to remain effective and impactful.</p>
+        <p>Most application security programs still behave as if security is a review function.</p>
 
-<p><strong>The Developer Experience Paradigm</strong></p>
+<p>Engineering builds the system. Security scans it, reviews it, files tickets, blocks a release when the risk looks bad enough, and then waits for developers to make the problem go away. This model can work for a small product with a small team and a slow release cycle. It collapses the moment software delivery becomes fast, distributed, and platform-driven.</p>
 
-<p>DevEx is a multifaceted concept that encapsulates how developers perceive, contemplate, and value their work. Improving DevEx can enhance value delivery and is primarily driven by three dimensions: feedback loops, cognitive load, and flow state.</p>
+<p>The real constraint is not whether security can find more issues. Most organizations already have more SAST findings, dependency alerts, pentest observations, cloud misconfigurations, and threat-model action items than they can reasonably absorb. The harder question is whether AppSec can improve the engineering system so that secure behavior becomes the easiest path.</p>
 
-<p>Feedback loops refer to responses, such as build results, code reviews, and test results, to developer actions that require actioning or decisioning. Cognitive load pertains to the mental processing required to complete a task. Flow state is an immersive work state where the developer is fully focused and involved. At its core, enhancing DevEx involves shortening and streamlining feedback loops, minimizing cognitive load, and maximizing the time developers spend in a flow state.</p>
+<p>That is why application security should be reframed through developer experience.</p>
 
-<p><strong>Traditional AppSec: A DevEx Anti-Pattern</strong></p>
+<h2 id="devex-is-a-security-control">DevEx is a security control</h2>
 
-<p>Despite their best intentions, traditional AppSec teams often work in ways that are fundamentally opposed to DevEx. Consider the common practices: PDFs brimming with unprioritized and unvalidated security findings from static application security testing (SAST), dynamic application security testing (DAST), software composition analysis (SCA), and more. Add to this the vague recommendations, deployment blocks, and the necessity for developers to leave their tools and systems to engage with security teams. These practices not only overstate risk and overfocus on theoretical issues but also necessitate numerous meetings and touchpoints, disrupting the developer’s workflow.</p>
+<p>Developer experience is not just whether developers feel happy using tools. It is the shape of the work environment that determines how quickly engineers can understand a problem, make the right decision, and ship a change without unnecessary friction.</p>
 
-<p><strong>Modernizing AppSec with a DevEx Focus</strong></p>
+<p>For AppSec, three parts matter most:</p>
 
-<p>So, if traditional methods are not aligned with DevEx, what should we be doing? Let’s use the three core dimensions of DevEx as our guide.</p>
+<ul>
+  <li>feedback loops</li>
+  <li>cognitive load</li>
+  <li>flow state</li>
+</ul>
 
-<p><em>Optimize Feedback Loops</em></p>
+<p>Feedback loops are the signals developers get after they act: CI results, tests, linting, code review comments, runtime alerts, deployment checks, and security findings. Cognitive load is the amount of mental effort required to understand the problem and choose the correct fix. Flow state is the uninterrupted focus needed to design, implement, and verify a change.</p>
 
-<p>Minimize or remove blocking actions. Consider whether you need to block builds, commits, deployments, etc., based on security findings. If youdo, ensure your developers understand the rationale beforehand to minimize surprise. Security teams must bear the burden of validating findings. Do not burden your developers with unvalidated vulnerabilities or findings. Also, security teams must use the tools that developers use. Stop forcing developers to use the security team’s tools to gain context, learn about issues, or update findings. Instead, use the issue trackers and other systems that developers use to surface findings and track work.</p>
+<p>Security teams affect all three, whether they mean to or not. A noisy SAST report is a feedback loop. A vague “sanitize input” ticket is cognitive load. A last-minute release blocker is a flow-state interruption. A secure-by-default framework, on the other hand, is also a security control because it removes the need for every developer to rediscover the right pattern under deadline pressure.</p>
 
-<p><em>Minimize Cognitive Load</em></p>
+<p>The practical lesson is simple: AppSec work that damages DevEx usually does not scale. AppSec work that improves DevEx can become part of how software is built.</p>
 
-<p>Build paved roads for security solutions. Don’t leave developers guessing about the right way to do things. Security teams must provide well-supported and opinionated solutions to security problems. To take this a step further - if you don’t have a well-supported solution for a security issue, this is the security team’s problem, not the developer’s.</p>
+<h2 id="traditional-appsec-breaks-the-loop">Traditional AppSec breaks the loop</h2>
 
-<p>Auto-remediate whenever possible. What’s better than notifying a developer of a critical and validated security issue? Fixing it for them. This could be through updating container or VM images or filing PRs for impacted repos.</p>
+<p>The old AppSec operating model has a familiar rhythm.</p>
 
-<p>Build secure by default solutions. As the saying goes, “every decision is the chance to make the wrong decision.” Stop forcing developers to make choices in areas they’re not expert. Build security in and remove inessential choices.</p>
+<p>A scanner runs late in the lifecycle. It produces a long list of findings. Some are real, some are theoretical, some are duplicates, and some require architecture context the scanner cannot know. Security exports the results into a PDF, spreadsheet, or separate vulnerability platform. Developers are asked to triage the list, translate generic guidance into local code changes, and report status back through a tool they do not normally use.</p>
 
-<p><em>Maximize Flow State</em></p>
+<p>This is a DevEx anti-pattern.</p>
 
-<p>Automate much of the interface between security and engineering teams. While the human touch is nice, ask yourself, does that meeting really need to happen? For regular and recurring interfaces between security and engineer, find ways to create systems and APIs to make the interactions more predictable and actionable.</p>
+<p>The feedback is late. The signal is noisy. The work is disconnected from the developer’s normal system of record. The recommendation often describes the vulnerability class, not the actual fix. The security team has moved risk to the engineering team, but not reduced the work needed to eliminate it.</p>
 
-<p>Prefer asynchronous communication methods. For any required meetings, schedule with plenty of time to plan and have well-documented agendas and outcomes.</p>
+<p>The same pattern shows up in design reviews. A product team asks for a threat model before launch. Security joins late, discovers authorization ambiguity, logging gaps, missing abuse controls, and unclear ownership of sensitive data. Everyone agrees these are important, but the schedule is already under pressure. The result is a list of action items, a handful of exceptions, and a fragile promise to “come back to this later.”</p>
 
-<p>Practically, these kinds of changes to your AppSec approach do have some additional requirements. You’ll need to ensure you have engineering talent in your AppSec team, and you’re likely going to need to partner with platform and other central teams to build scalable security solutions for your developers. You also need both a mindset and planning shift - rather than throwing issues and vulnerabilities over the wall to developers you need to think about completing and facilitating the majority of remediation and improvement work within the security team so your developers can benefit from secure by default and intuitive self-service solutions.</p>
+<p>None of this means scanners, reviews, or gates are useless. It means they are incomplete if they are not connected to the engineering system that creates the software.</p>
 
-<p>In conclusion, the future of AppSec lies in aligning with DevEx. By focusing on optimizing feedback loops, minimizing cognitive load, and maximizing flow state, we can create a more secure and productive environment for developers, ultimately driving business value.</p>
+<h2 id="optimize-feedback-loops">Optimize feedback loops</h2>
+
+<p>A good security feedback loop is timely, specific, validated, and close to where the developer is already working.</p>
+
+<p>Bad feedback looks like this:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>High severity: SQL Injection
+File: src/orders/search.ts
+Recommendation: Use parameterized queries.
+</code></pre></div></div>
+
+<p>Better feedback looks like this:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>High severity: SQL injection in order search
+Path: GET /orders/search?q=
+Source: req.query.q
+Sink: db.raw(...)
+Risk: attacker-controlled query text reaches raw SQL
+Fix: replace db.raw with orderRepository.searchByCustomerInput(q), which uses bound parameters
+Owner: platform-data
+Autofix available: yes
+</code></pre></div></div>
+
+<p>The difference is not cosmetic. The second version reduces ambiguity. It tells the developer what is wrong, where it happens, why it matters, and which local pattern should replace it.</p>
+
+<p>Security teams should own finding validation before developer handoff. If a finding cannot be reproduced, tied to reachable code, or explained in product context, it should not be thrown over the wall as urgent engineering work. Developers should not be the false-positive filter for the security program.</p>
+
+<p>The feedback should also arrive in the right place. If developers live in GitHub, put the comment on the pull request. If they plan work in Jira, create the issue there. If the fix is a dependency upgrade, open the PR. If the policy is enforceable in CI, make it a check with a clear failure message. A separate AppSec portal may be useful for security operations, but it should not become the primary interface developers have to babysit.</p>
+
+<p>Blocking should be explicit and rare enough to be trusted. A mature program has a published contract:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Block merges for:
+  - exploitable critical vulnerabilities in reachable code
+  - secrets committed to the repository
+  - internet-exposed auth bypasses
+  - policy violations with known safe alternatives
+
+Warn but do not block for:
+  - low-confidence static analysis results
+  - non-reachable vulnerable dependencies
+  - informational hardening suggestions
+  - new checks still being tuned
+</code></pre></div></div>
+
+<p>That contract matters because surprise is expensive. Developers can work with strict rules when the rules are stable, understandable, and aligned with real risk.</p>
+
+<h2 id="minimize-cognitive-load">Minimize cognitive load</h2>
+
+<p>Developers should not need to become part-time security specialists to make ordinary product changes safely.</p>
+
+<p>If every team has to invent its own authentication middleware, authorization checks, CSRF strategy, input validation pattern, logging schema, secret handling approach, and dependency upgrade workflow, AppSec has already lost. The result will be inconsistent controls, repeated review comments, and a permanent backlog of “educational” findings.</p>
+
+<p>The better pattern is paved roads: supported, opinionated ways to do common security-sensitive work.</p>
+
+<p>For example:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Security need</th>
+      <th>Weak pattern</th>
+      <th>Paved-road pattern</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Object authorization</td>
+      <td>Ask developers to remember checks in every handler</td>
+      <td>Shared authorization middleware with route annotations</td>
+    </tr>
+    <tr>
+      <td>Secrets</td>
+      <td>Tell teams not to hardcode credentials</td>
+      <td>Standard secret manager SDK and CI secret scanning</td>
+    </tr>
+    <tr>
+      <td>Input validation</td>
+      <td>Link to generic validation guidance</td>
+      <td>Generated request schemas and framework-level validators</td>
+    </tr>
+    <tr>
+      <td>Dependency upgrades</td>
+      <td>File tickets for vulnerable packages</td>
+      <td>Automated PRs with tests and rollback notes</td>
+    </tr>
+    <tr>
+      <td>Audit logging</td>
+      <td>Ask each service to log important events</td>
+      <td>Shared event schema and logging helper</td>
+    </tr>
+    <tr>
+      <td>Service-to-service auth</td>
+      <td>Custom headers per team</td>
+      <td>Platform-issued identity and policy enforcement</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This is where AppSec becomes product engineering. If the security team does not provide a usable path, it should not be surprised when teams choose whatever path lets them ship.</p>
+
+<p>The test is whether the secure implementation is easier than the insecure one. A developer adding a new API route should be able to declare the resource type, action, and policy once. A developer storing a secret should have an obvious SDK and examples. A developer exposing customer data should get response-shaping tools that make excessive data exposure harder to introduce.</p>
+
+<p>The best security control is often not a warning. It is a function, template, library, workflow, or platform capability that makes the right thing boring.</p>
+
+<h2 id="maximize-flow-state">Maximize flow state</h2>
+
+<p>Security should interrupt developers when interruption is the correct control, not because the process has no better interface.</p>
+
+<p>Many recurring security interactions can become asynchronous, structured, and API-driven. Threat modeling intake can be a lightweight design record. Security review requests can require architecture diagrams, data flows, authentication assumptions, and rollout plans before a meeting is scheduled. Common questions can be answered by self-service patterns. Exceptions can have expiry dates, compensating controls, and owners without requiring three meetings to rediscover the same facts.</p>
+
+<p>The goal is not to remove humans. The goal is to spend human attention where judgment matters.</p>
+
+<p>A useful AppSec interface looks like this:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Product team submits design record
+  -&gt; automated checks identify data classes, auth paths, and internet exposure
+  -&gt; security reviews only the risky deltas
+  -&gt; agreed controls become tracked engineering work
+  -&gt; reusable patterns are fed back into platform libraries
+</code></pre></div></div>
+
+<p>This is much healthier than a calendar-driven process where every project gets the same meeting regardless of risk. Low-risk changes should move quickly. High-risk changes should get deep review earlier, while the design is still cheap to change.</p>
+
+<p>Flow state also matters during remediation. If a developer has to stop feature work, reverse-engineer a scanner finding, ask security for context, wait two days, then patch something they do not understand, the fix may land, but the system did not improve. If security can open a tested PR, point to the safe pattern, or update the shared base image directly, the organization gets risk reduction with less drag.</p>
+
+<h2 id="move-from-findings-to-systems">Move from findings to systems</h2>
+
+<p>The most important AppSec mindset shift is this:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Finding -&gt; Root cause -&gt; Reusable control -&gt; Automated check -&gt; Adoption metric
+</code></pre></div></div>
+
+<p>If a pentest finds one missing authorization check, fix the endpoint. Then ask why the framework allowed a route to access a sensitive object without declaring an authorization policy. If dependency alerts overwhelm teams every month, do not only file more tickets. Improve ownership metadata, automated upgrade PRs, compatibility testing, and base image governance. If teams keep leaking secrets, do not only send reminders. Make secret scanning block commits and make the secret manager path easier to use.</p>
+
+<p>This is the difference between vulnerability management and security engineering. Vulnerability management tracks the backlog. Security engineering changes the system that creates the backlog.</p>
+
+<h2 id="what-to-measure">What to measure</h2>
+
+<p>AppSec programs often measure activity because activity is easy: findings opened, findings closed, reviews completed, scans run. Those numbers are not useless, but they do not prove the developer experience is improving or that systemic risk is going down.</p>
+
+<p>Better metrics connect security outcomes to engineering workflow:</p>
+
+<ul>
+  <li>percentage of findings validated before developer handoff</li>
+  <li>mean time from code introduction to security feedback</li>
+  <li>percentage of fixes delivered through automated PRs</li>
+  <li>false-positive rate by scanner and rule</li>
+  <li>adoption of secure libraries, templates, and middleware</li>
+  <li>number of recurring findings eliminated by platform controls</li>
+  <li>percentage of high-risk services with threat models and current owners</li>
+  <li>number of release blockers caused by late security involvement</li>
+  <li>time from paved-road release to team adoption</li>
+</ul>
+
+<p>These metrics change the conversation. Instead of asking “how many issues did security find?” leadership can ask “which classes of issues are becoming harder to introduce?”</p>
+
+<h2 id="the-operating-model">The operating model</h2>
+
+<p>Modern AppSec needs engineering talent, product taste, and platform partnerships. The team should be able to write code, design controls, tune scanners, review architecture, build developer tooling, and explain risk in terms product teams can act on. It should work closely with platform engineering because many durable security improvements belong in shared infrastructure, not individual feature teams.</p>
+
+<p>The operating model looks less like a central approval board and more like a product team for secure engineering:</p>
+
+<ul>
+  <li>discover recurring security pain</li>
+  <li>design the paved road</li>
+  <li>ship the library, template, policy, or workflow</li>
+  <li>integrate feedback into developer tools</li>
+  <li>measure adoption and risk reduction</li>
+  <li>keep improving the control until teams prefer it</li>
+</ul>
+
+<p>This does not eliminate enforcement. Some things should block. Secrets in code should block. Known exploitable critical vulnerabilities should block. Auth bypasses should block. But enforcement works best when it sits on top of clear standards and usable alternatives. A gate without a paved road is just a slower way to argue.</p>
+
+<h2 id="final-takeaway">Final takeaway</h2>
+
+<p>The future of AppSec is not more PDFs, more portals, and more late-stage review meetings. It is security work that improves the way software is built.</p>
+
+<p>Good AppSec shortens feedback loops. It reduces cognitive load. It protects developer flow. It turns repeated findings into platform controls. It makes secure defaults easier to adopt than insecure improvisation. Most importantly, it stops treating developers as the remediation engine for every security tool and starts treating the engineering system itself as the thing to secure.</p>
+
+<p>That is the reframing: AppSec is not only about finding vulnerabilities in applications. It is about designing an environment where secure applications are the natural output.</p>
 
       </article>
 
@@ -429,6 +618,12 @@
         
         
         <a href="/tags#security">security</a>
+        
+        <a href="/tags#appsec">appsec</a>
+        
+        <a href="/tags#devex">devex</a>
+        
+        <a href="/tags#secure-by-default">secure-by-default</a>
         
         
       </div>
@@ -444,24 +639,10 @@
             
             
               
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
                 
                 
             
-              <li><a href="/posts/2026-02-22-llms-vs-classical-neural-nets-for-vulnerability-detection/">Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks</a></li>
+              <li><a href="/posts/2026-05-08-stop-fixing-bola-one-endpoint-at-a-time/">Stop Fixing BOLA One Endpoint at a Time: How to Eliminate an Entire Class of API Authorization Bugs</a></li>
             
           
             
@@ -479,14 +660,10 @@
               
             
               
-            
-              
-            
-              
                 
                 
             
-              <li><a href="/posts/2025-10-10-vibe-engineering/">Vibe Engineering</a></li>
+              <li><a href="/posts/2026-03-02-manual-code-review-is-unsustainable/">Traditional manual code review is no longer sustainable</a></li>
             
           
             
@@ -502,50 +679,10 @@
               
             
               
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
                 
                 
             
-              <li><a href="/posts/2019-04-30-Crash-Course-in-x86/">Crash Course in x86 - Part I</a></li>
+              <li><a href="/posts/2026-03-04-threat-modeling-autonomous-ai-agents-in-production/">Threat Modeling Autonomous AI Agents in Production</a></li>
             
           
         </ul>

@@ -5,7 +5,7 @@
   <link href="https://themayursinha.com/atom.xml" rel="self" />
   <link href="https://themayursinha.com" />
   <id>https://themayursinha.com/</id>
-  <updated>2026-05-08T19:31:35+02:00</updated>
+  <updated>2026-05-08T19:57:03+02:00</updated>
   <author>
     <name>Mayur Sinha</name>
   </author>
@@ -169,7 +169,7 @@
     <id>https://themayursinha.com/posts/2023-06-14-Reframing-application-security/</id>
     <updated>2023-06-14T00:00:00+02:00</updated>
     <published>2023-06-14T00:00:00+02:00</published>
-    <summary>Reframing Application Security</summary>
+    <summary>Application security should not be a late-stage interruption. The mature AppSec move is to improve developer feedback loops, reduce cognitive load, and build secure defaults into the engineering system.</summary>
   </entry>
   
   <entry>

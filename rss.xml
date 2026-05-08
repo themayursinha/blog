@@ -197,7 +197,7 @@
         <title>Reframing Application Security</title>
         <description>
           
-          In the rapidly evolving digital landscape, most companies are vying for supremacy based on their ability to deliver business value through software and technology. The speed and quality of software production directly correlate with the value delivered. It’s a simple equation, and security teams must adapt to this reality to...
+          Most application security programs still behave as if security is a review function. Engineering builds the system. Security scans it, reviews it, files tickets, blocks a release when the risk looks bad enough, and then waits for developers to make the problem go away. This model can work for a...
         </description>
         <pubDate>Wed, 14 Jun 2023 00:00:00 +0200</pubDate>
         <link>https://themayursinha.com/posts/2023-06-14-Reframing-application-security/</link>
