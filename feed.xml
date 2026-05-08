@@ -7,6 +7,17 @@
     <atom:link href="https://themayursinha.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Stop Fixing BOLA One Endpoint at a Time: How to Eliminate an Entire Class of API Authorization Bugs</title>
+        <description>
+          
+          Most API security conversations about Broken Object Level Authorization start with a small request. GET /orders/12345 Authorization: Bearer token-for-user-a Then the attacker changes the object ID. GET /orders/67890 Authorization: Bearer token-for-user-a If the API returns another user’s order, we call it Broken Object Level Authorization, or BOLA. In older application...
+        </description>
+        <pubDate>Fri, 08 May 2026 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/posts/2026-05-08-stop-fixing-bola-one-endpoint-at-a-time/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2026-05-08-stop-fixing-bola-one-endpoint-at-a-time/</guid>
+      </item>
+    
+      <item>
         <title>MCP security - The new supply chain risk for AI agents</title>
         <description>
           
@@ -213,17 +224,6 @@
         <pubDate>Mon, 27 Feb 2023 00:00:00 +0100</pubDate>
         <link>https://themayursinha.com/posts/2023-02-27-Man's-greatest-achievement/</link>
         <guid isPermaLink="true">https://themayursinha.com/posts/2023-02-27-Man's-greatest-achievement/</guid>
-      </item>
-    
-      <item>
-        <title>Why The Batman feels so personal</title>
-        <description>
-          
-          “Thursday, October 31st. The city streets are crowded for the holiday. Even with the rain. Hidden in the chaos is the element, waiting to strike like snakes. And I’m there too. Watching. 2 years of nights have turned me into a nocturnal animal. I must choose my targets carefully. It’s...
-        </description>
-        <pubDate>Sun, 01 May 2022 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/posts/2022-05-01-The-Batman/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2022-05-01-The-Batman/</guid>
       </item>
     
   </channel>
