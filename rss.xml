@@ -10,7 +10,7 @@
         <title>Stop Fixing BOLA One Endpoint at a Time: How to Eliminate an Entire Class of API Authorization Bugs</title>
         <description>
           
-          Most API security conversations about Broken Object Level Authorization start with a small request. GET /orders/12345 Authorization: Bearer token-for-user-a Then the attacker changes the object ID. GET /orders/67890 Authorization: Bearer token-for-user-a If the API returns another user’s order, we call it Broken Object Level Authorization, or BOLA. In older application...
+          Most API security conversations about Broken Object Level Authorization start with a tiny request: GET /orders/12345 Authorization: Bearer token-for-user-a Then the attacker changes the ID: GET /orders/67890 Authorization: Bearer token-for-user-a If the API returns another user’s order, we call it Broken Object Level Authorization, or BOLA. In older application security...
         </description>
         <pubDate>Fri, 08 May 2026 00:00:00 +0200</pubDate>
         <link>https://themayursinha.com/posts/2026-05-08-stop-fixing-bola-one-endpoint-at-a-time/</link>
