@@ -6,6 +6,7 @@ vendor
 .bundle
 .ruby-lsp
 AGENTS.md
+BLOG_STYLE.md
 
 # general
 .DS_Store

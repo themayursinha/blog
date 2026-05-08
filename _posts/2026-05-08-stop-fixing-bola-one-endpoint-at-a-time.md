@@ -12,83 +12,43 @@ related_posts:
   - Game theory for cybersecurity: from reactive defense to strategic resilience
 ---
 
-Most API security conversations about Broken Object Level Authorization start with a small request.
+Most API security conversations about Broken Object Level Authorization start with a tiny request:
 
 ```http
 GET /orders/12345
 Authorization: Bearer token-for-user-a
 ```
 
-Then the attacker changes the object ID.
+Then the attacker changes the ID:
 
 ```http
 GET /orders/67890
 Authorization: Bearer token-for-user-a
 ```
 
-If the API returns another user's order, we call it Broken Object Level Authorization, or BOLA. In older application security language, many teams still call this IDOR.
+If the API returns another user's order, we call it Broken Object Level Authorization, or BOLA. In older application security language, many teams still call this IDOR. The standard fix is usually framed as a developer reminder: check authorization before returning the object.
 
-The standard fix is usually framed as a developer reminder:
-
-```text
-Check authorization before returning the object.
-```
-
-That advice is correct. It is also too small.
-
-If the security of the system depends on every developer remembering to add the right authorization check in every controller, every GraphQL resolver, every background job, every internal API, and every new service, the organization will keep finding the same bug in different places.
-
-The better question is not:
-
-```text
-How do we fix this BOLA finding?
-```
-
-The better question is:
-
-```text
-How do we make this bug class difficult to introduce in the first place?
-```
+That advice is correct, but it is too small. If the security of the system depends on every developer remembering to add the right authorization check in every controller, GraphQL resolver, background job, internal API, and new service, the organization will keep finding the same bug in different places. The better question is not "how do we fix this BOLA finding?" The better question is "how do we make this bug class difficult to introduce in the first place?"
 
 That is the difference between fixing vulnerabilities and building secure systems.
 
 ## BOLA is not an authentication problem
 
-Authentication answers:
+Authentication answers who the user is. Authorization answers what the user is allowed to do. Object-level authorization asks the more precise question: is this user allowed to perform this action on this exact object?
 
-```text
-Who is this user?
-```
-
-Authorization answers:
-
-```text
-What is this user allowed to do?
-```
-
-Object-level authorization asks a more specific question:
-
-```text
-Is this user allowed to perform this action on this exact object?
-```
-
-That distinction matters.
-
-A valid access token can prove that the requester is `user_a`. It can even prove that `user_a` has a scope like `orders:read`. But it does not automatically prove that `user_a` can read `order_67890`.
-
-For that, the application has to compare the subject with the resource.
+A valid access token can prove that the requester is `user_a`. It can even prove that `user_a` has a scope like `orders:read`. But it does not automatically prove that `user_a` can read `order_67890`. For that, the application has to compare the subject with the resource:
 
 ```text
 subject.user_id == order.owner_id
 ```
 
-or in a multi-tenant system:
+In a multi-tenant system, the check may be tenant based:
 
 ```text
 subject.tenant_id == order.tenant_id
 ```
 
-or for a privileged access path:
+For a privileged access path, it may combine tenant, role, and scope:
 
 ```text
 subject.tenant_id == order.tenant_id
@@ -98,15 +58,11 @@ AND subject.scopes contains "orders:read"
 
 This is why BOLA survives in mature systems. The authentication layer can be strong while object-level authorization remains inconsistent.
 
-OWASP ranks [Broken Object Level Authorization as API1:2023](https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/). The guidance is direct: attackers exploit APIs by manipulating object IDs in paths, query strings, headers, and request bodies. Every endpoint that receives an object ID and performs an action on that object should validate whether the logged-in user is allowed to perform that action.
-
-That is a simple rule. The hard part is making it real across a growing system.
+OWASP ranks [Broken Object Level Authorization as API1:2023](https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/). The guidance is direct: attackers exploit APIs by manipulating object IDs in paths, query strings, headers, and request bodies. Every endpoint that receives an object ID and performs an action on that object should validate whether the logged-in user is allowed to perform that action. That is a simple rule. The hard part is making it real across a growing system.
 
 ## The root cause is architectural
 
-In many microservice architectures, authorization logic is scattered across services.
-
-One team writes:
+In many microservice architectures, authorization logic is scattered across services. One team writes:
 
 ```typescript
 if (order.userId !== currentUser.id) {
@@ -122,47 +78,17 @@ if (!user.roles.includes("admin")) {
 }
 ```
 
-Another team checks tenant but not ownership.
+Another team checks tenant but not ownership. Another team relies on the frontend hiding buttons. Another team assumes UUIDs are unguessable enough. Another team forgets the check completely.
 
-Another team relies on the frontend hiding buttons.
+Over time, every service develops its own private interpretation of authorization. Some check ownership, some check tenant, some check only role, some check only OAuth scopes, some trust upstream services, and some assume "internal" APIs do not need user-context authorization.
 
-Another team assumes UUIDs are unguessable enough.
-
-Another team forgets the check completely.
-
-Over time, every service develops its own private interpretation of authorization:
-
-- Some check ownership.
-- Some check tenant.
-- Some check only role.
-- Some check only OAuth scopes.
-- Some trust upstream services.
-- Some rely on route naming conventions.
-- Some assume "internal" APIs do not need user-context authorization.
-
-This is how a bug class survives.
-
-The problem is not only a missing `if` statement. The problem is the absence of a standard authorization model.
-
-That is why I think about BOLA less as a single bug and more as an architecture smell. The finding tells you something about how the system was built. It says object access is happening without a consistent policy path.
+This is how a bug class survives. The problem is not only a missing `if` statement. The problem is the absence of a standard authorization model. That is why I think about BOLA less as a single bug and more as an architecture smell. The finding tells you object access is happening without a consistent policy path.
 
 ## Authorization should be a platform capability
 
-To eliminate BOLA as a recurring class of bugs, authorization has to become a reusable platform capability.
+To eliminate BOLA as a recurring class of bugs, authorization has to become a reusable platform capability. Every sensitive object access should go through a standard authorization path that answers one question: can this subject perform this action on this resource in this tenant and context?
 
-The goal is simple:
-
-```text
-Every sensitive object access should go through a standard authorization path.
-```
-
-That path should answer:
-
-```text
-Can this subject perform this action on this resource in this tenant and context?
-```
-
-A good authorization decision has four parts.
+A useful authorization decision has four parts:
 
 ```json
 {
@@ -187,7 +113,7 @@ A good authorization decision has four parts.
 }
 ```
 
-The policy can then be expressed clearly.
+The policy can then be expressed clearly:
 
 ```text
 ALLOW orders:read if:
@@ -199,15 +125,9 @@ ALLOW orders:read if:
   )
 ```
 
-That is the core pattern.
+That is the core pattern. You can implement it with a policy engine, a shared authorization library, a service mesh extension, a local SDK, a centralized policy decision point, or a combination of those. The specific technology matters less than the invariant: object access must have a standard policy path.
 
-You can implement it with a policy engine, a shared authorization library, a service mesh extension, a local SDK, a centralized policy decision point, or a combination of those. The specific technology matters less than the invariant:
-
-```text
-Object access must have a standard policy path.
-```
-
-## The reference architecture
+## A practical reference architecture
 
 A practical architecture looks like this:
 
@@ -244,35 +164,13 @@ Business Logic
 Tenant-scoped Data Access
 ```
 
-Each layer has a job.
+Each layer has a job. The identity provider proves who the user is. The gateway validates tokens and enforces coarse controls. The service-level authorization layer enforces object-level decisions. The data access layer adds defense in depth with tenant and ownership constraints. WAAP, API security, SIEM, and runtime detection systems provide telemetry, anomaly detection, and compensating controls.
 
-The identity provider proves who the user is.
-
-The gateway validates tokens and enforces coarse controls.
-
-The service-level authorization layer enforces object-level decisions.
-
-The data access layer adds defense in depth with tenant and ownership constraints.
-
-WAAP, API security, SIEM, and runtime detection systems provide telemetry, anomaly detection, and compensating controls.
-
-No single layer solves everything.
-
-This aligns with OWASP's [Microservices Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Microservices_Security_Cheat_Sheet.html), which treats authentication and authorization as design-phase requirements for microservice systems. It also separates edge-level authorization from service-level authorization, which is exactly the distinction that matters for BOLA.
+No single layer solves everything. This aligns with OWASP's [Microservices Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Microservices_Security_Cheat_Sheet.html), which treats authentication and authorization as design-phase requirements for microservice systems. It also separates edge-level authorization from service-level authorization, which is exactly the distinction that matters for BOLA.
 
 ## Where identity providers fit
 
-Auth0, Okta, Entra ID, Cognito, or any similar identity provider belongs at the identity layer.
-
-An identity provider can handle:
-
-- authentication
-- SSO
-- MFA
-- OAuth2 and OIDC flows
-- token issuance
-- user identity claims
-- organization, role, permission, or scope claims
+Auth0, Okta, Entra ID, Cognito, or any similar identity provider belongs at the identity layer. It can handle authentication, SSO, MFA, OAuth2/OIDC flows, token issuance, and user, organization, role, permission, or scope claims.
 
 A token may include claims like this:
 
@@ -287,41 +185,13 @@ A token may include claims like this:
 }
 ```
 
-That is useful. It is not enough to prevent BOLA.
+That is useful. It is not enough to prevent BOLA. The token can tell the API that `user_123` is authenticated, has `orders:read`, and belongs to `tenant_abc`. The application still has to decide whether `order_789` belongs to that tenant, whether the user owns it, whether a privileged workflow applies, and whether the resource state allows the action.
 
-The token can tell the API:
+A useful mental model is: identity provider gives trusted subject context, the service gives trusted resource context, and the authorization layer combines both into a decision. BOLA happens when the first part exists but the second and third parts are incomplete.
 
-```text
-This is user_123.
-This token is valid.
-The user has orders:read.
-The user belongs to tenant_abc.
-```
+## Why gateways and WAAP do not solve it alone
 
-The application still has to answer:
-
-```text
-Does order_789 belong to tenant_abc?
-Is user_123 the owner?
-Is user_123 allowed to read this order through this access path?
-Does the resource state allow this action?
-```
-
-A useful mental model is:
-
-```text
-Identity provider -> trusted subject context
-Service -> trusted resource context
-Authorization layer -> decision
-```
-
-BOLA happens when the first part exists but the second and third parts are incomplete.
-
-## Why API gateway authorization is not enough
-
-API gateways are useful. They can validate tokens, enforce scopes, rate-limit traffic, reject malformed requests, and block obviously abusive patterns.
-
-But gateways usually do not know enough about the object being accessed.
+API gateways are useful. They can validate tokens, enforce scopes, rate-limit traffic, reject malformed requests, and block obviously abusive patterns. But gateways usually do not know enough about the object being accessed.
 
 Consider:
 
@@ -330,34 +200,9 @@ GET /orders/order_789
 Authorization: Bearer token-for-user-a
 ```
 
-The gateway can check whether the token is valid. It can check whether the token has `orders:read`. It may even check whether the route is allowed.
+The gateway can check whether the token is valid. It can check whether the token has `orders:read`. It may even check whether the route is allowed. But it usually cannot know whether `order_789` belongs to the requester's tenant, whether the requester owns it, whether the request is a support workflow, or whether the order is in a state that allows the action. That information lives inside the order service and its data store.
 
-But it usually cannot know whether `order_789` belongs to the requester's tenant, whether the requester owns it, whether the request is a support workflow, or whether the order is in a state that allows the action.
-
-That information lives inside the order service and its data store.
-
-So the gateway can enforce coarse authorization. The service must enforce object authorization.
-
-This is also why "we use an API gateway" is not a satisfying answer to a BOLA finding. The question is not whether the request reached an authenticated route. The question is whether the subject was authorized for that specific object.
-
-## Why WAAP is useful but not the source of truth
-
-WAAP and API security platforms can add real value.
-
-They help with:
-
-- API discovery
-- shadow API detection
-- schema validation
-- bot and abuse protection
-- rate limiting
-- injection and protocol attack blocking
-- enumeration detection
-- runtime anomaly detection
-- virtual patching
-- API security telemetry
-
-For BOLA, a WAAP may detect suspicious behavior such as a user trying many object IDs in sequence.
+WAAP and API security platforms are useful for a different reason. They help with API discovery, shadow API detection, schema validation, bot protection, rate limiting, enumeration detection, runtime anomaly detection, virtual patching, and API security telemetry. For BOLA, a WAAP may detect suspicious behavior such as a user trying many object IDs in sequence:
 
 ```text
 GET /orders/1001
@@ -366,30 +211,13 @@ GET /orders/1003
 GET /orders/1004
 ```
 
-That signal is useful.
+That signal is valuable, but BOLA does not always look noisy. An attacker may make one request to one object ID they already know. If the application returns the object, the root cause is still broken authorization logic.
 
-But BOLA does not always look noisy. An attacker may make one request to one object ID they already know. If the application returns the object, the root cause is still broken authorization logic.
-
-A WAAP usually does not know the full relationship between:
-
-```text
-user -> tenant -> role -> resource -> business state -> action
-```
-
-So the right position is:
-
-```text
-WAAP is a valuable compensating and detective layer.
-It is not the authoritative fix for object-level authorization.
-```
-
-The authoritative fix belongs in the application or service authorization layer.
+A WAAP usually does not know the full relationship between `user -> tenant -> role -> resource -> business state -> action`. So the right position is simple: WAAP is a valuable compensating and detective layer, but it is not the authoritative fix for object-level authorization. The authoritative fix belongs in the application or service authorization layer.
 
 ## The service-level AuthZ middleware pattern
 
-The most practical pattern is shared middleware or an SDK used across services.
-
-For example:
+The most practical pattern is shared middleware or an SDK used across services. The developer declares the intended action and resource, and the middleware handles the boring but critical work.
 
 ```typescript
 @authorize({
@@ -403,19 +231,9 @@ async getOrder(req, res) {
 }
 ```
 
-The developer declares the intended action and resource. The middleware handles the rest:
+The middleware should extract the authenticated subject, extract the resource ID, load minimal resource metadata, check the tenant boundary, evaluate policy, log the decision, and deny by default if the decision is unclear.
 
-1. Extract the authenticated subject.
-2. Extract the resource ID.
-3. Load minimal resource metadata.
-4. Check tenant boundary.
-5. Evaluate policy.
-6. Log the decision.
-7. Deny by default if the decision is unclear.
-
-This pattern reduces cognitive load. Developers do not need to rediscover the authorization model every time they add an endpoint. They use a paved road.
-
-The middleware should also make insecure paths visible. For example, a new route that accepts `:orderId` but has no authorization annotation should create a CI warning or failure. A controller that loads an object before authorization should be easy to detect. A service method that accepts object IDs without a subject context should look suspicious in code review.
+This pattern reduces cognitive load. Developers do not need to rediscover the authorization model every time they add an endpoint. They use a paved road. The middleware should also make insecure paths visible: a new route that accepts `:orderId` but has no authorization annotation should create a CI warning or failure; a controller that loads an object before authorization should be easy to detect; a service method that accepts object IDs without a subject context should look suspicious in code review.
 
 This is where authorization becomes developer experience, not just policy.
 
@@ -446,9 +264,7 @@ AND tenant_id = :subject_tenant_id
 AND owner_id = :subject_user_id;
 ```
 
-This gives defense in depth. If someone bypasses middleware or makes a mistake in business logic, the data access layer still reduces blast radius.
-
-For high-risk multi-tenant systems, this should become a standard repository pattern:
+This gives defense in depth. If someone bypasses middleware or makes a mistake in business logic, the data access layer still reduces blast radius. For high-risk multi-tenant systems, this should become a standard repository pattern:
 
 ```typescript
 orderRepository.getByIdForSubject(orderId, subject)
@@ -464,16 +280,7 @@ The method signature itself should make the secure path easier than the insecure
 
 ## Service-to-service authorization
 
-Microservices make BOLA more interesting because requests often move through several services.
-
-A downstream service should know two things:
-
-```text
-Who initiated the request?
-Which service is calling me?
-```
-
-That means preserving both actor and caller context.
+Microservices make BOLA more interesting because requests often move through several services. A downstream service should know who initiated the request and which service is calling it. That means preserving both actor and caller context:
 
 ```json
 {
@@ -488,32 +295,13 @@ That means preserving both actor and caller context.
 }
 ```
 
-The receiving service should verify:
+The receiving service should verify that the calling service is allowed to call the endpoint and that the original user is allowed to access the object. Without actor propagation, internal services become confused deputies. A service may use its own broad privileges to access data the original user should not see.
 
-1. Is this service allowed to call this endpoint?
-2. Is the original user allowed to access this object?
-
-Without actor propagation, internal services become confused deputies. A service may use its own broad privileges to access data the original user should not see.
-
-OWASP's microservices guidance recommends propagating a trusted internal representation of the external entity identity between services, rather than passing untrusted external tokens around casually. That design instinct matters for BOLA because the downstream service needs user context, not just service identity.
-
-The secure default is not:
-
-```text
-Internal traffic is trusted.
-```
-
-The secure default is:
-
-```text
-Internal callers are authenticated, authorized, and still constrained by the initiating actor.
-```
+OWASP's microservices guidance recommends propagating a trusted internal representation of the external entity identity between services, rather than passing untrusted external tokens around casually. That design instinct matters for BOLA because the downstream service needs user context, not just service identity. The secure default is not "internal traffic is trusted." The secure default is "internal callers are authenticated, authorized, and still constrained by the initiating actor."
 
 ## Test the bug class, not only the endpoint
 
-A mature program does not rely only on manual testing or point-in-time pentests.
-
-Create reusable BOLA test fixtures.
+A mature program does not rely only on manual testing or point-in-time pentests. Create reusable BOLA test fixtures:
 
 ```text
 User A in Tenant A owns Object A
@@ -522,7 +310,7 @@ Admin A belongs to Tenant A
 Admin B belongs to Tenant B
 ```
 
-Then test the invariant across resource types.
+Then test the invariant across resource types:
 
 ```text
 User A can access Object A: expect 200
@@ -533,28 +321,11 @@ Tenant admin A cannot access Tenant B objects
 Support access requires explicit policy and audit trail
 ```
 
-Run this pattern across sensitive resources:
-
-- orders
-- carts
-- customers
-- payments
-- promotions
-- inventory
-- admin settings
-- exports
-- invoices
-- support workflows
-
-This is how you turn BOLA from an ad hoc finding into a regression-tested control.
-
-OWASP's BOLA prevention guidance explicitly recommends writing tests for the authorization mechanism and not deploying changes that break those tests. The important move is to make those tests reusable enough that every team does not have to invent them from scratch.
+Run this pattern across sensitive resources: orders, carts, customers, payments, promotions, inventory, admin settings, exports, invoices, and support workflows. This is how you turn BOLA from an ad hoc finding into a regression-tested control. OWASP's BOLA prevention guidance explicitly recommends writing tests for the authorization mechanism and not deploying changes that break those tests. The important move is to make those tests reusable enough that every team does not have to invent them from scratch.
 
 ## CI/CD guardrails
 
-To prevent the bug class from reappearing, add CI checks.
-
-A pull request should warn or fail when:
+To prevent the bug class from reappearing, add CI checks. A pull request should warn or fail when:
 
 - a new API route has no authorization annotation
 - a controller reads an object by ID without AuthZ middleware
@@ -563,13 +334,11 @@ A pull request should warn or fail when:
 - an admin endpoint lacks elevated policy
 - a service-to-service endpoint fails to validate caller identity
 
-The goal is not to make CI noisy. The goal is to catch structural authorization gaps before they reach production.
-
-Start with warnings if the signal is immature. Move to enforcement when the patterns are stable. Security controls that begin as observability often become stronger because teams learn what "good" looks like before blocking deploys.
+The goal is not to make CI noisy. The goal is to catch structural authorization gaps before they reach production. Start with warnings if the signal is immature, then move to enforcement when the patterns are stable. Security controls that begin as observability often become stronger because teams learn what "good" looks like before blocking deploys.
 
 ## Observability and runtime detection
 
-Every important authorization decision should produce structured logs.
+Every important authorization decision should produce structured logs:
 
 ```json
 {
@@ -585,31 +354,15 @@ Every important authorization decision should produce structured logs.
 }
 ```
 
-Useful detections include:
+Useful detections include many denied object accesses from the same user, sequential object ID access, cross-tenant access attempts, sudden spikes in 403 responses, admins accessing unusual customer objects, services calling APIs outside expected patterns, and break-glass access without a ticket or approval record.
 
-- many denied object accesses from the same user
-- sequential object ID access
-- cross-tenant access attempts
-- sudden spikes in 403 responses
-- admins accessing unusual customer objects
-- services calling APIs outside expected patterns
-- break-glass access without a ticket or approval record
-
-This is where WAAP, application logs, SIEM, and service telemetry should work together.
-
-Application authorization logs explain the decision. WAAP and API security tools provide request pattern visibility. SIEM correlation can connect those events to account risk, device risk, service behavior, and incident response workflows.
-
-Detection does not replace prevention. It tells you when prevention is being tested.
+This is where WAAP, application logs, SIEM, and service telemetry should work together. Application authorization logs explain the decision. WAAP and API security tools provide request pattern visibility. SIEM correlation can connect those events to account risk, device risk, service behavior, and incident response workflows. Detection does not replace prevention. It tells you when prevention is being tested.
 
 ## Do not stop at BOLA
 
-BOLA is about access to an object.
+BOLA is about access to an object. Broken Object Property Level Authorization, or BOPLA, is about access to fields inside the object. OWASP separates [Broken Object Property Level Authorization as API3:2023](https://owasp.org/API-Security/editions/2023/en/0xa3-broken-object-property-level-authorization/). This category combines the older themes of excessive data exposure and mass assignment around one root cause: missing or improper authorization at the object property level.
 
-Broken Object Property Level Authorization, or BOPLA, is about access to fields inside the object.
-
-OWASP separates [Broken Object Property Level Authorization as API3:2023](https://owasp.org/API-Security/editions/2023/en/0xa3-broken-object-property-level-authorization/). This category combines the older themes of excessive data exposure and mass assignment around one root cause: missing or improper authorization at the object property level.
-
-A user may be allowed to read a user object without being allowed to see every field on it.
+A user may be allowed to read a user object without being allowed to see every field on it:
 
 ```json
 {
@@ -621,7 +374,7 @@ A user may be allowed to read a user object without being allowed to see every f
 }
 ```
 
-The same applies to writes. Mass assignment happens when a client can send fields they should not control.
+The same applies to writes. Mass assignment happens when a client can send fields they should not control:
 
 ```json
 {
@@ -631,128 +384,41 @@ The same applies to writes. Mass assignment happens when a client can send field
 }
 ```
 
-Prevent this with:
-
-- explicit response DTOs
-- field-level authorization
-- input allowlists
-- separate public and internal models
-- schema validation
-- no blind binding from request bodies to domain models
-
-Solving BOLA without thinking about BOPLA is incomplete. Object-level access answers whether the user can touch the object. Property-level access answers which parts of that object they can see or change.
+Prevent this with explicit response DTOs, field-level authorization, input allowlists, separate public and internal models, schema validation, and no blind binding from request bodies to domain models. Solving BOLA without thinking about BOPLA is incomplete. Object-level access answers whether the user can touch the object. Property-level access answers which parts of that object they can see or change.
 
 ## A practical rollout plan
 
 The right rollout is incremental. Start small, but design for scale.
 
-### Phase 1: Inventory
-
-Identify APIs that accept object IDs and expose sensitive resources. Include REST paths, GraphQL resolvers, async jobs, admin APIs, internal service APIs, exports, and support tooling.
-
-### Phase 2: Classify resources
-
-Define resource types such as order, cart, customer, payment, promotion, inventory, tenant, user, invoice, export, and admin setting.
-
-### Phase 3: Define actions
-
-Standardize actions such as read, create, update, delete, approve, refund, export, impersonate, and manage.
-
-### Phase 4: Create policy templates
-
-Start with common patterns:
-
-- owner access
-- tenant admin access
-- internal service access
-- support access
-- break-glass access
-- read-only analytics access
-
-### Phase 5: Build the middleware
-
-Provide decorators, helper functions, metadata loaders, policy clients, route annotations, and audit logging.
-
-### Phase 6: Start with high-risk APIs
-
-Prioritize customer data, orders, carts, payments, admin APIs, exports, and tenant configuration.
-
-### Phase 7: Monitor first, enforce next
-
-Run in monitor mode to find false positives. Move to enforcement once policies are stable and teams trust the control.
-
-### Phase 8: Add tests and CI checks
-
-Prevent regressions through automated BOLA tests, route-level checks, and data-access guardrails.
-
-### Phase 9: Add runtime detection
-
-Feed authorization decisions into SIEM and WAAP telemetry. Build detections around enumeration, cross-tenant attempts, unusual admin access, and confused-deputy patterns.
-
-### Phase 10: Measure adoption
-
-Track:
-
-- percentage of sensitive endpoints using standard AuthZ
-- percentage of APIs covered by BOLA test fixtures
-- authorization bypass findings over time
-- critical AuthZ findings from pentests and bug bounty
-- false positive rate of enforcement
-- mean time to remediate authorization issues
+1. Inventory APIs that accept object IDs and expose sensitive resources. Include REST paths, GraphQL resolvers, async jobs, admin APIs, internal service APIs, exports, and support tooling.
+2. Classify resource types such as order, cart, customer, payment, promotion, inventory, tenant, user, invoice, export, and admin setting.
+3. Define standard actions such as read, create, update, delete, approve, refund, export, impersonate, and manage.
+4. Create policy templates for owner access, tenant admin access, internal service access, support access, break-glass access, and read-only analytics access.
+5. Build the middleware with decorators, helper functions, metadata loaders, policy clients, route annotations, and audit logging.
+6. Start with high-risk APIs: customer data, orders, carts, payments, admin APIs, exports, and tenant configuration.
+7. Monitor first, enforce next. Use monitor mode to find false positives, then enforce once policies are stable and teams trust the control.
+8. Add tests and CI checks to prevent regressions through automated BOLA tests, route-level checks, and data-access guardrails.
+9. Add runtime detection by feeding authorization decisions into SIEM and WAAP telemetry. Build detections around enumeration, cross-tenant attempts, unusual admin access, and confused-deputy patterns.
+10. Measure adoption through endpoint coverage, BOLA test coverage, bypass findings over time, critical AuthZ findings from pentests and bug bounty, false positive rate, and mean time to remediate.
 
 Security work gets funded when it can show risk reduction. A platform approach gives you something measurable.
 
 ## The leadership lesson
 
-Many security programs get stuck in vulnerability-by-vulnerability mode.
+Many security programs get stuck in vulnerability-by-vulnerability mode. A pentest finds BOLA in one endpoint, so the team fixes that endpoint. A bug bounty report finds another IDOR in another service, so the team fixes that service. A customer asks about tenant isolation, so security writes a document. But the class of bug remains alive.
 
-A pentest finds BOLA in one endpoint. The team fixes that endpoint.
-
-A bug bounty report finds another IDOR in another service. The team fixes that service.
-
-A customer asks about tenant isolation. Security writes a document.
-
-But the class of bug remains alive.
-
-The mature approach is different.
+The mature approach is different:
 
 ```text
 Finding -> Pattern -> Platform control -> Test -> Telemetry -> Adoption metric
 ```
 
-That is how security engineering moves from reactive fixing to systemic risk reduction.
-
-It also changes the relationship between security and engineering. Instead of telling developers to remember more rules, security builds a paved road:
-
-- a standard authorization vocabulary
-- a reusable service middleware
-- safe repository patterns
-- test fixtures
-- CI feedback
-- runtime telemetry
-- policy templates that match real product workflows
+That is how security engineering moves from reactive fixing to systemic risk reduction. It also changes the relationship between security and engineering. Instead of telling developers to remember more rules, security builds a paved road: a standard authorization vocabulary, reusable service middleware, safe repository patterns, test fixtures, CI feedback, runtime telemetry, and policy templates that match real product workflows.
 
 This is the Principal Product Security Engineer move: solve the bug class, not just the bug.
 
 ## Final takeaway
 
-If you want to solve BOLA properly, do not start with a one-time pentest fix or a WAAP purchase.
+If you want to solve BOLA properly, do not start with a one-time pentest fix or a WAAP purchase. Start with the authorization model, then build the platform capability around it: trusted identity from your identity provider, coarse controls at the gateway, service-level object authorization, tenant-scoped data access, service-to-service actor propagation, automated BOLA tests, CI/CD guardrails, WAAP for runtime detection, SIEM telemetry, and adoption metrics that show whether the control is actually spreading.
 
-Start with the authorization model.
-
-Then build the platform capability around it:
-
-- trusted identity from your identity provider
-- coarse controls at the gateway
-- service-level object authorization
-- tenant-scoped data access
-- service-to-service actor propagation
-- automated BOLA tests
-- CI/CD guardrails
-- WAAP for runtime detection and abuse protection
-- SIEM telemetry for suspicious access patterns
-- adoption metrics that show whether the control is actually spreading
-
-The goal is not to fix one endpoint.
-
-The goal is to make an entire class of authorization bugs harder to create, easier to detect, and faster to eliminate.
+The goal is not to fix one endpoint. The goal is to make an entire class of authorization bugs harder to create, easier to detect, and faster to eliminate.
