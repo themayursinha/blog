@@ -5,10 +5,19 @@
   <link href="https://themayursinha.com/atom.xml" rel="self" />
   <link href="https://themayursinha.com" />
   <id>https://themayursinha.com/</id>
-  <updated>2026-05-08T19:57:03+02:00</updated>
+  <updated>2026-05-09T13:55:27+02:00</updated>
   <author>
     <name>Mayur Sinha</name>
   </author>
+  
+  <entry>
+    <title>Privilege Escalation in the Payoff Matrix: Why Grinding is a Self-Inflicted DDoS</title>
+    <link href="https://themayursinha.com/posts/2026-05-09-privilege-escalation-in-the-payoff-matrix/" />
+    <id>https://themayursinha.com/posts/2026-05-09-privilege-escalation-in-the-payoff-matrix/</id>
+    <updated>2026-05-09T00:00:00+02:00</updated>
+    <published>2026-05-09T00:00:00+02:00</published>
+    <summary>Grinding inside an extractive system does not change the payoff matrix. It only increases throughput for someone else&apos;s infrastructure.</summary>
+  </entry>
   
   <entry>
     <title>Stop Fixing BOLA One Endpoint at a Time: How to Eliminate an Entire Class of API Authorization Bugs</title>
@@ -179,15 +188,6 @@
     <updated>2023-06-07T00:00:00+02:00</updated>
     <published>2023-06-07T00:00:00+02:00</published>
     <summary>A Dive into Advaita Vedanta</summary>
-  </entry>
-  
-  <entry>
-    <title>Man&apos;s greatest achievement</title>
-    <link href="https://themayursinha.com/posts/2023-02-27-Man's-greatest-achievement/" />
-    <id>https://themayursinha.com/posts/2023-02-27-Man's-greatest-achievement/</id>
-    <updated>2023-02-27T00:00:00+01:00</updated>
-    <published>2023-02-27T00:00:00+01:00</published>
-    <summary>Man&apos;s greatest achievement</summary>
   </entry>
   
 </feed>

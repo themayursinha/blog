@@ -7,6 +7,17 @@
     <atom:link href="https://themayursinha.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Privilege Escalation in the Payoff Matrix: Why Grinding is a Self-Inflicted DDoS</title>
+        <description>
+          
+          We constantly diagnose the corporate and economic systems around us as broken. We see the friction, the inefficiencies, the extraction of the middle class, the promotion of incompetence, and the strange persistence of obviously bad processes. The natural conclusion is that the infrastructure is failing. From a systems engineering perspective,...
+        </description>
+        <pubDate>Sat, 09 May 2026 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/posts/2026-05-09-privilege-escalation-in-the-payoff-matrix/</link>
+        <guid isPermaLink="true">https://themayursinha.com/posts/2026-05-09-privilege-escalation-in-the-payoff-matrix/</guid>
+      </item>
+    
+      <item>
         <title>Stop Fixing BOLA One Endpoint at a Time: How to Eliminate an Entire Class of API Authorization Bugs</title>
         <description>
           
@@ -213,17 +224,6 @@
         <pubDate>Wed, 07 Jun 2023 00:00:00 +0200</pubDate>
         <link>https://themayursinha.com/posts/2023-06-07-A-dive-into-advaita-vedanta/</link>
         <guid isPermaLink="true">https://themayursinha.com/posts/2023-06-07-A-dive-into-advaita-vedanta/</guid>
-      </item>
-    
-      <item>
-        <title>Man&apos;s greatest achievement</title>
-        <description>
-          
-          In the article “Man’s Greatest Achievement” published in the New York American on July 6, 1930, Nikola Tesla outlines his vision for the future of science and technology, specifically regarding the harnessing of energy and its potential for transforming human society.Tesla begins by describing the fundamental principles of energy and...
-        </description>
-        <pubDate>Mon, 27 Feb 2023 00:00:00 +0100</pubDate>
-        <link>https://themayursinha.com/posts/2023-02-27-Man's-greatest-achievement/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2023-02-27-Man's-greatest-achievement/</guid>
       </item>
     
   </channel>
