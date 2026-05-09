@@ -7,7 +7,7 @@
     <atom:link href="https://themayursinha.com/rss.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Privilege Escalation in the Payoff Matrix: Why Grinding is a Self-Inflicted DDoS</title>
+        <title>Why grinding is a self-inflicted DDoS</title>
         <description>
           
           We constantly diagnose the corporate and economic systems around us as broken. We see the friction, the inefficiencies, the extraction of the middle class, the promotion of incompetence, and the strange persistence of obviously bad processes. The natural conclusion is that the infrastructure is failing. From a systems engineering perspective,...
@@ -18,7 +18,7 @@
       </item>
     
       <item>
-        <title>Stop Fixing BOLA One Endpoint at a Time: How to Eliminate an Entire Class of API Authorization Bugs</title>
+        <title>How to eliminate an entire class of API authorization bugs</title>
         <description>
           
           Most API security conversations about Broken Object Level Authorization start with a tiny request: GET /orders/12345 Authorization: Bearer token-for-user-a Then the attacker changes the ID: GET /orders/67890 Authorization: Bearer token-for-user-a If the API returns another user’s order, we call it Broken Object Level Authorization, or BOLA. In older application security...
