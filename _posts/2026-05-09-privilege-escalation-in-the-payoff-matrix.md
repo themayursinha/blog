@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Privilege Escalation in the Payoff Matrix: Why Grinding is a Self-Inflicted DDoS"
+title: "Why grinding is a self-inflicted DDoS"
 date: 2026-05-09
 categories: [engineering]
 tags: [game-theory, career, systems-thinking, leverage]

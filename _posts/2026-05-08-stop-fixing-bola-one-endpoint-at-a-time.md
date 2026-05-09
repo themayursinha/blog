@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Stop Fixing BOLA One Endpoint at a Time: How to Eliminate an Entire Class of API Authorization Bugs"
+title: "How to eliminate an entire class of API authorization bugs"
 date: 2026-05-08
 categories: [security]
 tags: [security, appsec, api-security, authorization, bola]
