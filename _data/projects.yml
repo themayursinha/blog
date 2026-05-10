@@ -79,6 +79,17 @@
     - label: Publication
       url: https://www.researchgate.net/publication/378125775_Leveraging_Large_Language_Model_LLMfor_Natural_Language_to_SQL_Query_Generation_in_HR_Analytics_A_Case_Study_on_IBM_Attrition_Dataset
 
+- id: ctem-leader-lab
+  title: CTEM Leader Lab
+  summary: Interactive implementation workbench for security leaders moving from vulnerability management to Continuous Threat Exposure Management.
+  role: Builder
+  year: 2026
+  links:
+    - label: GitHub
+      url: https://github.com/themayursinha/ctem-leader-lab
+    - label: Demo
+      url: https://themayursinha.github.io/ctem-leader-lab/
+
 - id: mcp-security-evaluator
   title: MCP security evaluator
   summary: Companion tooling for evaluating MCP server trust boundaries, tool metadata drift, and LLM integration risks.
