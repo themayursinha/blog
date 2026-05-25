@@ -5,10 +5,19 @@
   <link href="https://themayursinha.com/atom.xml" rel="self" />
   <link href="https://themayursinha.com" />
   <id>https://themayursinha.com/</id>
-  <updated>2026-05-10T18:37:32+02:00</updated>
+  <updated>2026-05-25T06:29:27+02:00</updated>
   <author>
     <name>Mayur Sinha</name>
   </author>
+  
+  <entry>
+    <title>MCP Visor - Runtime policy enforcement for AI agents</title>
+    <link href="https://themayursinha.com/posts/2026-05-25-mcp-visor-runtime-policy-enforcement-for-ai-agents/" />
+    <id>https://themayursinha.com/posts/2026-05-25-mcp-visor-runtime-policy-enforcement-for-ai-agents/</id>
+    <updated>2026-05-25T00:00:00+02:00</updated>
+    <published>2026-05-25T00:00:00+02:00</published>
+    <summary>MCP Visor turns MCP tool execution into a deterministic policy boundary: inspect the tool call, enforce the rule, redact secrets, require approval, and log the decision before the action reaches the server.</summary>
+  </entry>
   
   <entry>
     <title>Why grinding is a self-inflicted DDoS</title>
@@ -179,15 +188,6 @@
     <updated>2023-06-14T00:00:00+02:00</updated>
     <published>2023-06-14T00:00:00+02:00</published>
     <summary>Application security should not be a late-stage interruption. The mature AppSec move is to improve developer feedback loops, reduce cognitive load, and build secure defaults into the engineering system.</summary>
-  </entry>
-  
-  <entry>
-    <title>Understanding the Concept of Brahman and Atman</title>
-    <link href="https://themayursinha.com/posts/2023-06-07-A-dive-into-advaita-vedanta/" />
-    <id>https://themayursinha.com/posts/2023-06-07-A-dive-into-advaita-vedanta/</id>
-    <updated>2023-06-07T00:00:00+02:00</updated>
-    <published>2023-06-07T00:00:00+02:00</published>
-    <summary>A Dive into Advaita Vedanta</summary>
   </entry>
   
 </feed>
