@@ -6,19 +6,19 @@ description: Security engineering leader with 15+ years of experience across AI 
 meta-title: Mayur Sinha | Security Engineering Leader
 use-site-title: false
 featured_posts:
+  - title: MCP Visor - Runtime policy enforcement for AI agents
+    card_title: MCP Visor Runtime Policy
+    summary: How deterministic runtime policy enforcement can govern MCP tool calls before agents reach production systems.
   - title: MCP security - The new supply chain risk for AI agents
     card_title: MCP Security for AI Agents
     summary: Why MCP servers should be treated as executable trust boundaries in the AI agent supply chain.
   - title: Epistemic security - The missing control plane for AI agents
     card_title: Epistemic Security for AI Agents
     summary: Why agentic systems need controls for provenance, uncertainty, memory, evidence, and human verification.
-  - title: Threat Modeling Autonomous AI Agents in Production
-    card_title: Threat Modeling AI Agents
-    summary: A practical framework for modeling agent runtime risk, tool abuse, memory poisoning, and production controls.
 featured_projects:
+  - id: mcp-visor
+  - id: ctem-leader-lab
   - id: mcp-security-evaluator
-  - id: adversarial-ml-security-lab
-  - id: bert-rasp
 ---
 
 <div class="home-main-content" markdown="1">

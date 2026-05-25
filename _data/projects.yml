@@ -90,6 +90,17 @@
     - label: Demo
       url: https://themayursinha.github.io/ctem-leader-lab/
 
+- id: mcp-visor
+  title: MCP Visor
+  summary: Runtime policy enforcement and audit control plane for MCP tool execution.
+  role: Builder
+  year: 2026
+  links:
+    - label: GitHub
+      url: https://github.com/themayursinha/mcp-visor
+    - label: Context
+      url: https://themayursinha.com/posts/2026-05-25-mcp-visor-runtime-policy-enforcement-for-ai-agents/
+
 - id: mcp-security-evaluator
   title: MCP security evaluator
   summary: Companion tooling for evaluating MCP server trust boundaries, tool metadata drift, and LLM integration risks.
