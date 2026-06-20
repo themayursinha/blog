@@ -1,0 +1,171 @@
+direction: down
+
+title: Distributed enforcement for agentic systems {
+  style.font-size: 28
+  style.font-color: "#e0e0e0"
+  near: top-left
+}
+subtitle: Shared trust services produce signed decisions. Authoritative domains enforce them. Runtime containment catches what slips through. {
+  style.font-size: 14
+  style.font-color: "#858c85"
+  near: top-left
+}
+
+# Layer 1
+layer1: {
+  shape: rectangle
+  label: |md
+    **Shared trust services**
+    `Centralized policy decisions, reusable evidence`
+  |
+  style.fill: "#0f120f"
+  style.stroke: "#3c493e"
+  style.font-color: "#e0e0e0"
+  width: 860
+  height: 100
+}
+
+layer1.Identity: {
+  label: |md
+    **Identity**
+    `actor, tenant, sender`
+  |
+  style.fill: "#131713"
+  style.stroke: "#293029"
+  style.font-color: "#e0e0e0"
+  width: 160
+  height: 56
+}
+layer1.Capability: {
+  label: |md
+    **Capability**
+    `scopes, risk tiers`
+  |
+  style.fill: "#131713"
+  style.stroke: "#293029"
+  style.font-color: "#e0e0e0"
+  width: 160
+  height: 56
+}
+layer1.DataPolicy: {
+  label: |md
+    **Data policy**
+    `classify, minimize`
+  |
+  style.fill: "#131713"
+  style.stroke: "#293029"
+  style.font-color: "#e0e0e0"
+  width: 160
+  height: 56
+}
+layer1.Evidence: {
+  label: |md
+    **Evidence**
+    `logs, revocation`
+  |
+  style.fill: "#131713"
+  style.stroke: "#293029"
+  style.font-color: "#e0e0e0"
+  width: 160
+  height: 56
+}
+
+# Layer 2
+layer2: {
+  shape: rectangle
+  label: |md
+    **Authoritative domains**
+    `State validation, object authorization, reconciliation`
+  |
+  style.fill: "#0f120f"
+  style.stroke: "#3c493e"
+  style.font-color: "#e0e0e0"
+  width: 860
+  height: 100
+}
+
+layer2.Validation: {
+  label: |md
+    **State validation**
+    `inventory, price, context`
+  |
+  style.fill: "#131713"
+  style.stroke: "#293029"
+  style.font-color: "#e0e0e0"
+  width: 190
+  height: 56
+}
+layer2.Authz: {
+  label: |md
+    **Object authorization**
+    `idempotency, isolation`
+  |
+  style.fill: "#131713"
+  style.stroke: "#293029"
+  style.font-color: "#e0e0e0"
+  width: 190
+  height: 56
+}
+layer2.Recon: {
+  label: |md
+    **Reconciliation**
+    `exception queue, outcome`
+  |
+  style.fill: "#131713"
+  style.stroke: "#293029"
+  style.font-color: "#e0e0e0"
+  width: 190
+  height: 56
+}
+
+# Layer 3
+layer3: {
+  shape: rectangle
+  label: |md
+    **Runtime containment**
+    `Limiting blast radius`
+  |
+  style.fill: "#0f120f"
+  style.stroke: "#3c493e"
+  style.font-color: "#e0e0e0"
+  width: 860
+  height: 100
+}
+
+layer3.Budgets: {
+  label: |md
+    **Budgets**
+    `per-tenant, per-session`
+  |
+  style.fill: "#131713"
+  style.stroke: "#293029"
+  style.font-color: "#e0e0e0"
+  width: 190
+  height: 56
+}
+layer3.Breakers: {
+  label: |md
+    **Circuit breakers**
+    `anomaly, saturation`
+  |
+  style.fill: "#131713"
+  style.stroke: "#293029"
+  style.font-color: "#e0e0e0"
+  width: 190
+  height: 56
+}
+layer3.Kill: {
+  label: |md
+    **Kill switches**
+    `tenant-wide, per-path`
+  |
+  style.fill: "#131713"
+  style.stroke: "#293029"
+  style.font-color: "#e0e0e0"
+  width: 190
+  height: 56
+}
+
+# Flow arrows
+layer1 -> layer2: signed authorization artifact
+layer2 -> layer3: containment + evidence signals
