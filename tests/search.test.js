@@ -112,7 +112,8 @@ test('base layout includes the search modal and the search trigger', () => {
   assert.match(base, /\/js\/search\.js/, 'base layout must load search.js');
   assert.match(nav, /data-search-open/, 'navbar must expose a search-open trigger');
   assert.match(nav, /aria-label="Open search"/, 'navbar search trigger must remain accessible without visible label');
-  assert.match(nav, /site-nav-search-kbd/, 'navbar search trigger should include keyboard hint');
+  assert.doesNotMatch(nav, /site-nav-search-kbd/, 'navbar search trigger should be icon-only');
+  assert.match(nav, /site-nav-search-icon/, 'navbar search trigger should include a search icon');
 });
 
 test('search.js no longer ships an unprocessed Liquid template URL', () => {
