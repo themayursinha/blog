@@ -115,7 +115,7 @@ test("homepage presents the sovereign AI command deck with concrete controls", (
   const script = readProjectFile("js/home.js");
 
   assert.match(home, /data-home-command/);
-  assert.match(home, /Principal Security Architect/);
+  assert.match(home, /I architect the security primitives for the next computational paradigm/);
   assert.match(home, /Sovereign AI Security \/ Agent Runtime Control \/ Adversarial Systems Engineering/);
   assert.match(home, /observable, interruptible, and unable to exceed its delegated authority/);
   assert.match(home, /My long-term direction is to turn this research into sovereign control infrastructure for AI execution/);
