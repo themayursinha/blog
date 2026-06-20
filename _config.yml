@@ -199,9 +199,6 @@ exclude:
   - LICENSE
   - README.md
   - Vagrantfile
-  - learning.md
-  - learning
-  - css/learning-toolkit.css
   - vendor
 
 # prose.io config
