@@ -757,7 +757,7 @@ th {
   font-weight: 500;
   letter-spacing: 0.16em;
   line-height: 1.4;
-  content: "PRINCIPAL SECURITY ARCHITECT / SYSTEMS SECURITY";
+  content: "SECURITY PRIMITIVES ARCHITECT / NEXT PARADIGM";
 }
 
 .home-role {
@@ -1682,6 +1682,124 @@ th {
   .home-control-readout { grid-template-columns: 1fr; }
   .home-control-readout span + span { border-top: 1px solid var(--border); border-left: 0; }
   .home .home-command-title { font-size: var(--page-hero-title-size); }
+}
+
+/* Mobile fix for 768px and below - prevent text crushing */
+@media (max-width: 768px) {
+  /* Main containers: take nearly full viewport width */
+  .site-header,
+  .site-main,
+  .site-footer {
+    width: 95% !important;
+    max-width: 95vw !important;
+    margin-inline: auto !important;
+  }
+
+  .site-main {
+    padding: 1.25rem 0.6rem !important;
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+
+  /* Force single column for any grids that might be active */
+  .home-command-hero,
+  .home-record-grid,
+  .home-program-grid,
+  .home-depth-grid,
+  .home-signal-strip,
+  .manifesto-hero,
+  .proof-system-grid,
+  .proof-signal-strip,
+  .architecture-featured,
+  .blog-post {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Typography: ensure normal word flow, no breaking into single-word columns */
+  .prose,
+  .prose p,
+  .prose li,
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6,
+  .post-header,
+  .site-nav a:not(.site-mark),
+  .research-readout span,
+  .home-command-copy,
+  .home-section-heading {
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    hyphens: none !important;
+  }
+
+  .prose {
+    max-width: 100% !important;
+  }
+
+  /* Reduce some brutalist borders/padding that eat space on tiny screens */
+  .site-nav li + li {
+    border-left: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Tighter mobile experience - reduce decorative noise and improve readability */
+  .research-readout {
+    font-size: 0.5rem;
+    letter-spacing: 0.08em;
+  }
+  .research-readout span {
+    padding: 0.4rem 0.5rem;
+  }
+
+  .site-nav {
+    gap: 0.75rem;
+    padding-inline: 0.75rem;
+    padding-block: 0.75rem;
+    min-height: auto;
+  }
+  .site-nav a:not(.site-mark) {
+    font-size: 0.6rem;
+    padding: 0.45rem 0.5rem;
+    letter-spacing: 0.08em;
+  }
+  .site-mark {
+    font-size: 0.72rem;
+  }
+  .site-mark span {
+    width: 1.7rem;
+    height: 1.7rem;
+    margin-right: 0.4rem;
+  }
+
+  .site-main {
+    padding: 2.5rem 0.75rem;
+  }
+
+  /* Make tiny control plane labels and status more usable or less intrusive */
+  .home-control-ring > span {
+    font-size: 0.32rem;
+    padding: 0.08rem 0.2rem;
+  }
+  .home-control-status,
+  .home-control-status i {
+    font-size: 0.32rem;
+  }
+  .home-control-core {
+    width: 4rem;
+    height: 4rem;
+  }
+  .home-control-core strong {
+    font-size: 0.85rem;
+  }
+
+  /* Reduce grid background on tiny screens */
+  body {
+    background-size: 42px 42px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2751,6 +2869,14 @@ th {
 
   .site-nav ul {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: none;
+  }
+
+  .site-nav li + li {
+    border-top: 1px solid var(--border);
+    border-left: none;
   }
 
   .site-nav li {

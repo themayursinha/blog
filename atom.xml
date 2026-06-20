@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Mayur Sinha</title>
-  <subtitle>Principal Security Architect building sovereign control infrastructure for AI agents and adversarial systems.</subtitle>
+  <subtitle>I architect the security primitives for the next computational paradigm.</subtitle>
   <link href="https://themayursinha.com/atom.xml" rel="self" />
   <link href="https://themayursinha.com" />
   <id>https://themayursinha.com/</id>
-  <updated>2026-06-20T18:59:19+02:00</updated>
+  <updated>2026-06-20T19:33:15+02:00</updated>
   <author>
     <name>Mayur Sinha</name>
   </author>
