@@ -2,228 +2,228 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mayur Sinha</title>
-    <description>Security engineering leader writing about AI security, Web3 security, cloud-native security, and engineering systems.</description>
+    <description>Principal Security Architect building sovereign control infrastructure for AI agents and adversarial systems.</description>
     <link>https://themayursinha.com</link>
     <atom:link href="https://themayursinha.com/rss.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>MCP Visor - Runtime policy enforcement for AI agents</title>
+        <title>Three Trust Paths for Governing AI Agent Architectures</title>
         <description>
-          
+          Data movement, transaction integrity, and tool execution each need their own controls. - 
+          When I built MCP Visor, I was focused on one boundary: the tool execution call. An agent invokes a tool. Something deterministic needs to say yes or no, log the decision, and prevent the model from being the only thing standing between a confused instruction and a production mutation. That...
+        </description>
+        <pubDate>Mon, 15 Jun 2026 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/architecture/2026/06/15/three-trust-paths-for-governing-ai-agent-architectures/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/06/15/three-trust-paths-for-governing-ai-agent-architectures/</guid>
+      </item>
+    
+      <item>
+        <title>MCP Visor: Runtime Policy Enforcement</title>
+        <description>
+          A deterministic proxy that decides, approves, and audits every MCP tool call. - 
           In my last piece on MCP security, I argued that MCP servers are not harmless plugins. They are executable trust boundaries. They decide what an agent can see, which tools it can reach, which resources enter context, and which external systems are now one model decision away from mutation. That...
         </description>
         <pubDate>Mon, 25 May 2026 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/posts/2026-05-25-mcp-visor-runtime-policy-enforcement-for-ai-agents/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2026-05-25-mcp-visor-runtime-policy-enforcement-for-ai-agents/</guid>
+        <link>https://themayursinha.com/architecture/2026/05/25/mcp-visor-runtime-policy-enforcement-for-ai-agents/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/05/25/mcp-visor-runtime-policy-enforcement-for-ai-agents/</guid>
       </item>
     
       <item>
         <title>Why grinding is a self-inflicted DDoS</title>
         <description>
-          
+          The system is not broken; the incentives are working exactly as designed. - 
           We constantly diagnose the corporate and economic systems around us as broken. We see the friction, the inefficiencies, the extraction of the middle class, the promotion of incompetence, and the strange persistence of obviously bad processes. The natural conclusion is that the infrastructure is failing. From a systems engineering perspective,...
         </description>
         <pubDate>Sat, 09 May 2026 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/posts/2026-05-09-privilege-escalation-in-the-payoff-matrix/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2026-05-09-privilege-escalation-in-the-payoff-matrix/</guid>
+        <link>https://themayursinha.com/architecture/2026/05/09/privilege-escalation-in-the-payoff-matrix/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/05/09/privilege-escalation-in-the-payoff-matrix/</guid>
       </item>
     
       <item>
         <title>How to eliminate an entire class of API authorization bugs</title>
         <description>
-          
+          Broken Object Level Authorization is a systemic failure, not a per-endpoint bug. - 
           Most API security conversations about Broken Object Level Authorization start with a tiny request: GET /orders/12345 Authorization: Bearer token-for-user-a Then the attacker changes the ID: GET /orders/67890 Authorization: Bearer token-for-user-a If the API returns another user’s order, we call it Broken Object Level Authorization, or BOLA. In older application security...
         </description>
         <pubDate>Fri, 08 May 2026 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/posts/2026-05-08-stop-fixing-bola-one-endpoint-at-a-time/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2026-05-08-stop-fixing-bola-one-endpoint-at-a-time/</guid>
+        <link>https://themayursinha.com/architecture/2026/05/08/stop-fixing-bola-one-endpoint-at-a-time/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/05/08/stop-fixing-bola-one-endpoint-at-a-time/</guid>
       </item>
     
       <item>
-        <title>MCP security - The new supply chain risk for AI agents</title>
+        <title>MCP Security Is a Supply Chain Risk</title>
         <description>
-          
+          MCP servers are executable trust boundaries, not harmless plugins. - 
           AI agents are not very useful if they cannot touch the world. They need files, tickets, databases, calendars, code repositories, cloud APIs, logs, browser sessions, and internal systems. That is why the Model Context Protocol matters. It gives AI applications a common way to connect to external tools, data sources,...
         </description>
         <pubDate>Wed, 06 May 2026 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/posts/2026-05-06-mcp-security-the-new-supply-chain-risk-for-ai-agents/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2026-05-06-mcp-security-the-new-supply-chain-risk-for-ai-agents/</guid>
+        <link>https://themayursinha.com/architecture/2026/05/06/mcp-security-the-new-supply-chain-risk-for-ai-agents/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/05/06/mcp-security-the-new-supply-chain-risk-for-ai-agents/</guid>
       </item>
     
       <item>
-        <title>Epistemic security - The missing control plane for AI agents</title>
+        <title>Epistemic Security for AI Agents</title>
         <description>
-          
+          Agents need provenance and trust labels for what enters their context, not just controls on what they can do. - 
           Most security discussions about AI agents focus on what the agent can do. Can it call a tool? Can it read email? Can it write to production? Can it touch customer data? Those questions matter. I have written about them before in the context of threat modeling autonomous AI agents...
         </description>
         <pubDate>Mon, 04 May 2026 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/posts/2026-05-04-epistemic-security-the-missing-control-plane-for-ai-agents/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2026-05-04-epistemic-security-the-missing-control-plane-for-ai-agents/</guid>
+        <link>https://themayursinha.com/architecture/2026/05/04/epistemic-security-the-missing-control-plane-for-ai-agents/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/05/04/epistemic-security-the-missing-control-plane-for-ai-agents/</guid>
       </item>
     
       <item>
-        <title>The AI agent dilemma - Why we are outsourcing our reality</title>
+        <title>The AI Agent Dilemma</title>
         <description>
-          
+          The real risk of AI agents is not what they do to systems, but what they do to human judgment. - 
           Perhaps the most subtle and dangerous risk of AI agents is not what they will do to jobs, markets, or software systems. It is what they will do to the human mind. Philosophers have a useful phrase for this: epistemic degradation. Epistemology is the study of knowledge. It asks a...
         </description>
         <pubDate>Sun, 03 May 2026 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/posts/2026-05-03-the-ai-agent-dilemma-why-we-are-outsourcing-our-reality/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2026-05-03-the-ai-agent-dilemma-why-we-are-outsourcing-our-reality/</guid>
+        <link>https://themayursinha.com/architecture/2026/05/03/the-ai-agent-dilemma-why-we-are-outsourcing-our-reality/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/05/03/the-ai-agent-dilemma-why-we-are-outsourcing-our-reality/</guid>
       </item>
     
       <item>
         <title>Game theory for cybersecurity: from reactive defense to strategic resilience</title>
         <description>
-          
+          Using incentives, equilibria, and attacker-defender models to reason beyond the next patch. - 
           Most security programs still operate as if the job is mainly to find issues, patch issues, and repeat. That loop is necessary, but it is not enough. Cybersecurity is not just a vulnerability management problem. It is a strategic conflict between adaptive opponents. Attackers change tactics when defenders harden one...
         </description>
         <pubDate>Sun, 08 Mar 2026 00:00:00 +0100</pubDate>
-        <link>https://themayursinha.com/posts/2026-03-08-game-theory-for-cybersecurity/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2026-03-08-game-theory-for-cybersecurity/</guid>
+        <link>https://themayursinha.com/architecture/2026/03/08/game-theory-for-cybersecurity/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/03/08/game-theory-for-cybersecurity/</guid>
       </item>
     
       <item>
         <title>Threat Modeling Autonomous AI Agents in Production</title>
         <description>
-          
+          The threat model is no longer an API boundary. It is a decision loop. - 
           In a normal SaaS app, most security controls sit on API boundaries. In an autonomous agent system, the boundary is not just an API. It is a decision loop: observe -&amp;gt; plan -&amp;gt; call tools -&amp;gt; mutate state -&amp;gt; update memory If you threat-model only the prompt, you miss the...
         </description>
         <pubDate>Wed, 04 Mar 2026 00:00:00 +0100</pubDate>
-        <link>https://themayursinha.com/posts/2026-03-04-threat-modeling-autonomous-ai-agents-in-production/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2026-03-04-threat-modeling-autonomous-ai-agents-in-production/</guid>
+        <link>https://themayursinha.com/architecture/2026/03/04/threat-modeling-autonomous-ai-agents-in-production/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/03/04/threat-modeling-autonomous-ai-agents-in-production/</guid>
       </item>
     
       <item>
         <title>Traditional manual code review is no longer sustainable</title>
         <description>
-          
-          We have officially reached a breaking point in software engineering. Humans already struggled to keep up with code reviews when code was written at human speed, and we’ve all seen pull requests (PRs) sitting idle for days, only to have a reviewer rubber-stamp a 500-line diff just to unblock the...
+          The volume of AI-generated code has broken the old review model. Here is what replaces it. - 
+          Code review made sense when humans wrote humans-sized diffs. A reviewer could read the change, understand the intent, and catch most errors. That model is breaking. AI coding assistants let engineers produce more code, faster, in larger chunks, with patterns the reviewer may never have seen before. The result is...
         </description>
         <pubDate>Mon, 02 Mar 2026 00:00:00 +0100</pubDate>
-        <link>https://themayursinha.com/posts/2026-03-02-manual-code-review-is-unsustainable/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2026-03-02-manual-code-review-is-unsustainable/</guid>
+        <link>https://themayursinha.com/architecture/2026/03/02/manual-code-review-is-unsustainable/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/03/02/manual-code-review-is-unsustainable/</guid>
       </item>
     
       <item>
         <title>Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks</title>
         <description>
-          
+          From payload classification to reasoning across code: what changed and why it matters. - 
           I have worked with both worlds. Earlier in my career, including work at Trend Micro, I spent time experimenting with ANN pipelines for shellcode detection. Those systems were useful for bounded classification tasks on network payloads. They were not designed for deep reasoning across large codebases. That difference is the...
         </description>
         <pubDate>Sun, 22 Feb 2026 00:00:00 +0100</pubDate>
-        <link>https://themayursinha.com/posts/2026-02-22-llms-vs-classical-neural-nets-for-vulnerability-detection/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2026-02-22-llms-vs-classical-neural-nets-for-vulnerability-detection/</guid>
+        <link>https://themayursinha.com/architecture/2026/02/22/llms-vs-classical-neural-nets-for-vulnerability-detection/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/02/22/llms-vs-classical-neural-nets-for-vulnerability-detection/</guid>
       </item>
     
       <item>
         <title>Vibe Engineering</title>
         <description>
-          
-          Stop Vibe coding: Why true engineers are now doing Vibe engineering Everyone is talking about using AI to write software. It’s fast, it’s exciting, and it changes how we work. But how you use AI matters a lot. If you use it the wrong way, you create a huge mess....
+          Why intent, taste, and judgment matter more than prompt velocity in AI-assisted engineering. - 
+          There are two ways to use AI for coding. One is fast, loose, and increasingly common. The other is harder, slower in the short term, and the only one that scales. Vibe coding is the first: prompt, generate, ship. It works beautifully in a prototype with no users, no tests,...
         </description>
         <pubDate>Fri, 10 Oct 2025 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/posts/2025-10-10-vibe-engineering/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2025-10-10-vibe-engineering/</guid>
+        <link>https://themayursinha.com/architecture/2025/10/10/vibe-engineering/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2025/10/10/vibe-engineering/</guid>
       </item>
     
       <item>
         <title>Designing a living ecosystem of AI agents</title>
         <description>
-          
-          The world of AI is moving fast. Every day, we see amazing new tools like AutoGen and CrewAI that let us build teams of AI agents to get work done. These tools are powerful, but they share a common limitation: they manage agents like pieces on a chessboard. The agents...
+          From static agent teams to adaptive, self-organizing systems. - 
+          Current agent frameworks — AutoGen, CrewAI, and their successors — let you build teams of AI agents. They are useful, but they manage agents like pieces on a board. Roles are fixed, the plan is predefined, and the orchestrator is the bottleneck. That works for well-understood tasks. It breaks when...
         </description>
         <pubDate>Sun, 29 Jun 2025 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/posts/2025-06-29-living-ecosystems-of-agents/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2025-06-29-living-ecosystems-of-agents/</guid>
+        <link>https://themayursinha.com/architecture/2025/06/29/living-ecosystems-of-agents/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2025/06/29/living-ecosystems-of-agents/</guid>
       </item>
     
       <item>
         <title>Life is cruel</title>
         <description>
-          
-          Why do we suffer? A look at injustice without a God Why is there so much unfairness, cruelty, and pain in the world? This is one of the deepest and most difficult questions we can ask. It gets even tougher if you don’t believe in a god or an afterlife...
+          On injustice, suffering, and meaning in a world without divine guarantees. - 
+          There is no kind way to say it: the world does not balance its own ledger. Children get sick. Tsunamis arrive without warning. Cruel people prosper and kind people are broken. If you are waiting for a cosmic force to set things right, you will wait forever. This is the...
         </description>
         <pubDate>Sun, 30 Jun 2024 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/posts/2024-06-30-Suffering/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2024-06-30-Suffering/</guid>
+        <link>https://themayursinha.com/architecture/2024/06/30/Suffering/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2024/06/30/Suffering/</guid>
       </item>
     
       <item>
         <title>Revisiting the Unabomber</title>
         <description>
-          
-          In the shadows of the late 20th century, Ted Kaczynski, infamously known as the Unabomber, embarked on a nationwide bombing campaign that terrorized America for nearly two decades. A former mathematics professor turned recluse, Kaczynski’s violent legacy culminated in the publication of his manifesto, “Industrial Society and Its Future,” in...
+          A critical reading of Kaczynski&apos;s critique of technology, separated from his violence. - 
+          Ted Kaczynski killed three people and injured dozens more in a bombing campaign that lasted nearly two decades. There is no separating that fact from his manifesto, Industrial Society and Its Future, because the violence was the point. The manifesto was not a philosophical argument that happened to be published...
         </description>
         <pubDate>Mon, 12 Feb 2024 00:00:00 +0100</pubDate>
-        <link>https://themayursinha.com/posts/2024-02-12-Unabomber-relevance-in-2024/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2024-02-12-Unabomber-relevance-in-2024/</guid>
+        <link>https://themayursinha.com/architecture/2024/02/12/Unabomber-relevance-in-2024/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2024/02/12/Unabomber-relevance-in-2024/</guid>
       </item>
     
       <item>
-        <title>Exploring Philosophical Parallels - Nietzsche and Vedanta</title>
+        <title>Nietzsche and Vedanta: Unexpected Parallels</title>
         <description>
-          
-          Introduction Among all world philosophies, few thinkers stand out as much as Friedrich Nietzsche, the German philosopher known for his provocative ideas and aphoristic style, and the ancient, profound Vedanta philosophy, a cornerstone of Hindu thought. At first glance, Nietzsche, a product of the 19th-century European intellectual milieu, and Vedanta,...
+          Unexpected resonances between the will to power and the self beyond the ego. - 
+          Friedrich Nietzsche and Vedanta make an unlikely pair. One is a 19th-century German critic of Christianity and morality, the other a millennia-old Indian inquiry into the nature of the self. Yet they converge on a single idea: the categories we inherit — good and evil, self and world, illusion and...
         </description>
         <pubDate>Sun, 31 Dec 2023 00:00:00 +0100</pubDate>
-        <link>https://themayursinha.com/posts/2023-12-31-Nietzsche-and-Vedanta/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2023-12-31-Nietzsche-and-Vedanta/</guid>
+        <link>https://themayursinha.com/architecture/2023/12/31/Nietzsche-and-Vedanta/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2023/12/31/Nietzsche-and-Vedanta/</guid>
       </item>
     
       <item>
-        <title>Resolving the Epicurean Paradox - A Perspective from Advaita Vedanta</title>
+        <title>The Epicurean Paradox from Advaita Vedanta</title>
         <description>
-          
-          Introduction The Epicurean Paradox, a profound philosophical conundrum, has intrigued thinkers for centuries. Named after the ancient Greek philosopher Epicurus, it presents a compelling challenge to the traditional concept of an omnipotent, omniscient, and omnibenevolent God. The paradox grapples with the existence of evil in a world supposedly governed by...
+          How non-dual philosophy reframes the problem of evil. - 
+          The Epicurean Paradox is a clean piece of logic. If God is willing to prevent evil but not able, he is not omnipotent. If able but not willing, he is malevolent. If both able and willing, whence cometh evil? If neither able nor willing, why call him God? The argument...
         </description>
         <pubDate>Sun, 23 Jul 2023 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/posts/2023-07-23-Epicurean-paradox/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2023-07-23-Epicurean-paradox/</guid>
+        <link>https://themayursinha.com/architecture/2023/07/23/Epicurean-paradox/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2023/07/23/Epicurean-paradox/</guid>
       </item>
     
       <item>
         <title>Elon Musk on xAI</title>
         <description>
-          
-          Introduction In a recent Twitter Space discussion, Elon Musk, the visionary entrepreneur and CEO of SpaceX and Tesla, introduced his latest venture, xAI. The discussion was a deep dive into the goals, philosophy, and potential of this new project. The founding team of xAI, boasting impressive backgrounds from Deep Mind,...
+          Notes on Musk&apos;s vision for understanding the universe through AI. - 
+          Elon Musk’s xAI launch was framed as another AGI moonshot. The stated goal is to build a “maximum curious” artificial general intelligence focused on understanding the universe. The founding team includes alumni from DeepMind, OpenAI, Google, and Tesla. The press coverage focused on the competition with OpenAI and the timeline...
         </description>
         <pubDate>Mon, 17 Jul 2023 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/posts/2023-07-17-x-ai/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2023-07-17-x-ai/</guid>
+        <link>https://themayursinha.com/architecture/2023/07/17/x-ai/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2023/07/17/x-ai/</guid>
       </item>
     
       <item>
         <title>Man is a machine</title>
         <description>
-          
-          Are we just machines? Have you ever looked up at the stars and wondered about your place in the vast universe? Have you ever asked yourself, “Am I just a collection of cells and atoms, a biological machine? Or is there something more: a soul, a spirit, a self?” These...
+          Are we biological machines, or is there something in us that cannot be reduced to mechanism? - 
+          The claim that man is a machine is not absurd. Your heart is a pump. Your lungs are bellows. Your neurons fire in patterns that predict your next move before you are aware of making it. From the outside, the human body looks like an extraordinarily complex mechanism obeying physical...
         </description>
         <pubDate>Sun, 09 Jul 2023 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/posts/2023-07-09-Man-is-a-machine/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2023-07-09-Man-is-a-machine/</guid>
+        <link>https://themayursinha.com/architecture/2023/07/09/Man-is-a-machine/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2023/07/09/Man-is-a-machine/</guid>
       </item>
     
       <item>
         <title>Was Thanos Right?</title>
         <description>
-          
-          Last week I watched The Avengers: Infinity War again after 5 years and it sparked me why Thanos could be right. Thanos, also known as The Mad Titan, is a character from the Marvel Cinematic Universe who is known for his quest to acquire the Infinity Stones, intending to use their limitless...
+          A thought experiment on population, resources, and the ethics of utilitarian extremes. - 
+          Avengers: Infinity War works as more than a superhero film because Thanos is not a nihilist. He has a premise, a method, and a moral justification. That is what makes him frightening. The question is not whether he is evil; the question is whether his reasoning is coherent. Thanos looks...
         </description>
         <pubDate>Fri, 07 Jul 2023 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/posts/2023-07-07-Was-Thanos-Right/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2023-07-07-Was-Thanos-Right/</guid>
-      </item>
-    
-      <item>
-        <title>Reframing Application Security</title>
-        <description>
-          
-          Most application security programs still behave as if security is a review function. Engineering builds the system. Security scans it, reviews it, files tickets, blocks a release when the risk looks bad enough, and then waits for developers to make the problem go away. This model can work for a...
-        </description>
-        <pubDate>Wed, 14 Jun 2023 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/posts/2023-06-14-Reframing-application-security/</link>
-        <guid isPermaLink="true">https://themayursinha.com/posts/2023-06-14-Reframing-application-security/</guid>
+        <link>https://themayursinha.com/architecture/2023/07/07/Was-Thanos-Right/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2023/07/07/Was-Thanos-Right/</guid>
       </item>
     
   </channel>

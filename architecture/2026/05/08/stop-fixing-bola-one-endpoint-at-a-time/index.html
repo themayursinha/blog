@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+
+  
+  
+  
+
+  
+
+  
+  
+
+  
+
+  <title>How to eliminate an entire class of API authorization bugs</title>
+
+  <meta name="author" content="Mayur Sinha" />
+  <meta name="description" content="BOLA is not solved by asking every developer to remember object-level checks. It is solved by making authorization a reusable platform capability.">
+  
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  
+
+  <link rel="canonical" href="https://themayursinha.com/architecture/2026/05/08/stop-fixing-bola-one-endpoint-at-a-time/" />
+  <link rel="alternate" type="application/rss+xml" title="Mayur Sinha - Principal Security Architect building sovereign control infrastructure for AI agents and adversarial systems." href="/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Mayur Sinha RSS" href="/rss.xml" />
+  <link rel="alternate" type="application/atom+xml" title="Mayur Sinha Atom" href="/atom.xml" />
+
+
+  
+
+  
+    
+      <link rel="stylesheet" href="/css/terminal.css" />
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Grotesk:500,600,700|IBM+Plex+Mono:400,500,600" />
+    
+  
+
+  
+
+  
+
+  
+
+  <!-- Facebook OpenGraph tags -->
+  
+
+  <meta property="og:title" content="How to eliminate an entire class of API authorization bugs" />
+  <meta property="og:description" content="BOLA is not solved by asking every developer to remember object-level checks. It is solved by making authorization a reusable platform capability.">
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:url" content="https://themayursinha.com/architecture/2026/05/08/stop-fixing-bola-one-endpoint-at-a-time/" />
+
+  
+  <meta property="og:image" content="https://themayursinha.com/img/circuit.svg" />
+  
+
+  
+  <meta property="article:published_time" content="2026-05-08T00:00:00+02:00" />
+  <meta property="article:author" content="Mayur Sinha" />
+    
+      
+  <meta property="article:tag" content="security" />
+      
+  <meta property="article:tag" content="appsec" />
+      
+  <meta property="article:tag" content="api-security" />
+      
+  <meta property="article:tag" content="authorization" />
+      
+  <meta property="article:tag" content="bola" />
+      
+    
+  
+
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <meta name="twitter:site" content="@themayursinha" />
+  <meta name="twitter:creator" content="@themayursinha" />
+  
+  <meta name="twitter:title" content="How to eliminate an entire class of API authorization bugs" />
+  <meta name="twitter:description" content="BOLA is not solved by asking every developer to remember object-level checks. It is solved by making authorization a reusable platform capability.">
+  
+  <meta name="twitter:image" content="https://themayursinha.com/img/circuit.svg" />
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://themayursinha.com",
+    "name": "Mayur Sinha",
+    "description": "Principal Security Architect building sovereign control infrastructure for AI agents and adversarial systems.",
+    "publisher": {
+      "@type": "Person",
+      "name": "Mayur Sinha"
+    }
+  }
+  </script>
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to eliminate an entire class of API authorization bugs",
+    "description": "BOLA is not solved by asking every developer to remember object-level checks. It is solved by making authorization a reusable platform capability.",
+    "datePublished": "2026-05-08T00:00:00+02:00",
+    "dateModified": "2026-05-08T00:00:00+02:00",
+    "author": {
+      "@type": "Person",
+      "name": "Mayur Sinha"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://themayursinha.com/architecture/2026/05/08/stop-fixing-bola-one-endpoint-at-a-time/"
+    },
+    "image": "https://themayursinha.com/img/circuit.svg",
+    "keywords": ["security","appsec","api-security","authorization","bola"]
+  }
+  </script>
+  
+
+  
+
+  
+
+  
+
+</head>
+
+  <body>
+    <div class="viewport-frame" aria-hidden="true"></div>
+    
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="research-readout" aria-label="Research node status">
+    <span>NODE MS-R01</span>
+    <span>DOMAIN SOVEREIGN AI</span>
+    <span>CONTROL MODEL LEAST AGENCY</span>
+    <span>STATE ACTIVE</span>
+  </div>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a class="site-mark" href="/" aria-label="Mayur Sinha home"><span>MS</span>//RESEARCH</a>
+    <ul>
+      
+        
+        <li>
+          <a href="/">Home</a>
+        </li>
+      
+        
+        <li>
+          <a href="/manifesto/">Manifesto</a>
+        </li>
+      
+        
+        <li>
+          <a href="/architecture/">Architecture</a>
+        </li>
+      
+        
+        <li>
+          <a href="/proof/">Proof</a>
+        </li>
+      
+      <li class="site-nav-search">
+        <button type="button" class="site-nav-search-btn" data-search-open aria-label="Open search" aria-haspopup="dialog" title="Search (Ctrl/Cmd + K)">
+          <svg class="site-nav-search-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
+            <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M8.5 3a5.5 5.5 0 1 1-3.41 9.84l-3.7 3.7a1 1 0 0 1-1.42-1.42l3.7-3.7A5.5 5.5 0 0 1 8.5 3Zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/>
+          </svg>
+          <span class="site-nav-search-kbd" aria-hidden="true">⌘K</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main" id="main-content">
+      <article class="prose blog-post">
+  <header class="post-header">
+    <p class="post-label">ARCHITECTURE LOG</p>
+    <h1>How to eliminate an entire class of API authorization bugs</h1>
+    
+      <p class="page-subtitle">Broken Object Level Authorization is a systemic failure, not a per-endpoint bug.</p>
+    
+    <time datetime="2026-05-08T00:00:00+02:00">2026-05-08</time>
+  </header>
+
+  
+
+  <p>Most API security conversations about Broken Object Level Authorization start with a tiny request:</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">GET /orders/12345
+Authorization: Bearer token-for-user-a
+</span></code></pre></div></div>
+
+<p>Then the attacker changes the ID:</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">GET /orders/67890
+Authorization: Bearer token-for-user-a
+</span></code></pre></div></div>
+
+<p>If the API returns another user’s order, we call it Broken Object Level Authorization, or BOLA. In older application security language, many teams still call this IDOR. The standard fix is usually framed as a developer reminder: check authorization before returning the object.</p>
+
+<p>That advice is correct, but it is too small. If the security of the system depends on every developer remembering to add the right authorization check in every controller, GraphQL resolver, background job, internal API, and new service, the organization will keep finding the same bug in different places. The better question is not “how do we fix this BOLA finding?” The better question is “how do we make this bug class difficult to introduce in the first place?”</p>
+
+<p>That is the difference between fixing vulnerabilities and building secure systems.</p>
+
+<h2 id="bola-is-not-an-authentication-problem">BOLA is not an authentication problem</h2>
+
+<p>Authentication answers who the user is. Authorization answers what the user is allowed to do. Object-level authorization asks the more precise question: is this user allowed to perform this action on this exact object?</p>
+
+<p>A valid access token can prove that the requester is <code class="language-plaintext highlighter-rouge">user_a</code>. It can even prove that <code class="language-plaintext highlighter-rouge">user_a</code> has a scope like <code class="language-plaintext highlighter-rouge">orders:read</code>. But it does not automatically prove that <code class="language-plaintext highlighter-rouge">user_a</code> can read <code class="language-plaintext highlighter-rouge">order_67890</code>. For that, the application has to compare the subject with the resource:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>subject.user_id == order.owner_id
+</code></pre></div></div>
+
+<p>In a multi-tenant system, the check may be tenant based:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>subject.tenant_id == order.tenant_id
+</code></pre></div></div>
+
+<p>For a privileged access path, it may combine tenant, role, and scope:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>subject.tenant_id == order.tenant_id
+AND subject.role == "merchant_admin"
+AND subject.scopes contains "orders:read"
+</code></pre></div></div>
+
+<p>This is why BOLA survives in mature systems. The authentication layer can be strong while object-level authorization remains inconsistent.</p>
+
+<p>OWASP ranks <a href="https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/">Broken Object Level Authorization as API1:2023</a>. The guidance is direct: attackers exploit APIs by manipulating object IDs in paths, query strings, headers, and request bodies. Every endpoint that receives an object ID and performs an action on that object should validate whether the logged-in user is allowed to perform that action. That is a simple rule. The hard part is making it real across a growing system.</p>
+
+<h2 id="the-root-cause-is-architectural">The root cause is architectural</h2>
+
+<p>In many microservice architectures, authorization logic is scattered across services. One team writes:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">order</span><span class="p">.</span><span class="nx">userId</span> <span class="o">!==</span> <span class="nx">currentUser</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">throw</span> <span class="k">new</span> <span class="nx">ForbiddenError</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Another team writes:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">user</span><span class="p">.</span><span class="nx">roles</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="dl">"</span><span class="s2">admin</span><span class="dl">"</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">throw</span> <span class="k">new</span> <span class="nx">ForbiddenError</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Another team checks tenant but not ownership. Another team relies on the frontend hiding buttons. Another team assumes UUIDs are unguessable enough. Another team forgets the check completely.</p>
+
+<p>Over time, every service develops its own private interpretation of authorization. Some check ownership, some check tenant, some check only role, some check only OAuth scopes, some trust upstream services, and some assume “internal” APIs do not need user-context authorization.</p>
+
+<p>This is how a bug class survives. The problem is not only a missing <code class="language-plaintext highlighter-rouge">if</code> statement. The problem is the absence of a standard authorization model. That is why I think about BOLA less as a single bug and more as an architecture smell. The finding tells you object access is happening without a consistent policy path.</p>
+
+<h2 id="authorization-should-be-a-platform-capability">Authorization should be a platform capability</h2>
+
+<p>To eliminate BOLA as a recurring class of bugs, authorization has to become a reusable platform capability. Every sensitive object access should go through a standard authorization path that answers one question: can this subject perform this action on this resource in this tenant and context?</p>
+
+<p>A useful authorization decision has four parts:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tenant_abc"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"merchant_admin"</span><span class="p">],</span><span class="w">
+    </span><span class="nl">"scopes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"orders:read"</span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"orders:read"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order_789"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tenant_abc"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"owner_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_123"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"source_service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"checkout-api"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"req_456"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"access_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer_portal"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The policy can then be expressed clearly:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ALLOW orders:read if:
+  subject.tenant_id == resource.tenant_id
+  AND subject.scopes contains "orders:read"
+  AND (
+    subject.user_id == resource.owner_id
+    OR subject.roles contains "merchant_admin"
+  )
+</code></pre></div></div>
+
+<p>That is the core pattern. You can implement it with a policy engine, a shared authorization library, a service mesh extension, a local SDK, a centralized policy decision point, or a combination of those. The specific technology matters less than the invariant: object access must have a standard policy path.</p>
+
+<h2 id="a-practical-reference-architecture">A practical reference architecture</h2>
+
+<p>A practical architecture looks like this:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Client
+  |
+  v
+Identity Provider
+  - login
+  - MFA
+  - token issuance
+  - user and organization claims
+  |
+  v
+API Gateway or Edge
+  - token validation
+  - coarse scope checks
+  - schema validation
+  - rate limiting
+  |
+  v
+Service AuthZ Middleware
+  - extract subject
+  - extract action
+  - extract resource type and ID
+  - load minimal resource metadata
+  - evaluate object-level policy
+  - emit authorization logs
+  |
+  v
+Business Logic
+  |
+  v
+Tenant-scoped Data Access
+</code></pre></div></div>
+
+<p>Each layer has a job. The identity provider proves who the user is. The gateway validates tokens and enforces coarse controls. The service-level authorization layer enforces object-level decisions. The data access layer adds defense in depth with tenant and ownership constraints. WAAP, API security, SIEM, and runtime detection systems provide telemetry, anomaly detection, and compensating controls.</p>
+
+<p>No single layer solves everything. This aligns with OWASP’s <a href="https://cheatsheetseries.owasp.org/cheatsheets/Microservices_Security_Cheat_Sheet.html">Microservices Security Cheat Sheet</a>, which treats authentication and authorization as design-phase requirements for microservice systems. It also separates edge-level authorization from service-level authorization, which is exactly the distinction that matters for BOLA.</p>
+
+<h2 id="where-identity-providers-fit">Where identity providers fit</h2>
+
+<p>Auth0, Okta, Entra ID, Cognito, or any similar identity provider belongs at the identity layer. It can handle authentication, SSO, MFA, OAuth2/OIDC flows, token issuance, and user, organization, role, permission, or scope claims.</p>
+
+<p>A token may include claims like this:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"sub"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_123"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"aud"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"iss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://idp.example.com/"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"orders:read"</span><span class="p">,</span><span class="w"> </span><span class="s2">"orders:write"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"https://example.com/tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tenant_abc"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"https://example.com/roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"merchant_admin"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>That is useful. It is not enough to prevent BOLA. The token can tell the API that <code class="language-plaintext highlighter-rouge">user_123</code> is authenticated, has <code class="language-plaintext highlighter-rouge">orders:read</code>, and belongs to <code class="language-plaintext highlighter-rouge">tenant_abc</code>. The application still has to decide whether <code class="language-plaintext highlighter-rouge">order_789</code> belongs to that tenant, whether the user owns it, whether a privileged workflow applies, and whether the resource state allows the action.</p>
+
+<p>A useful mental model is: identity provider gives trusted subject context, the service gives trusted resource context, and the authorization layer combines both into a decision. BOLA happens when the first part exists but the second and third parts are incomplete.</p>
+
+<h2 id="why-gateways-and-waap-do-not-solve-it-alone">Why gateways and WAAP do not solve it alone</h2>
+
+<p>API gateways are useful. They can validate tokens, enforce scopes, rate-limit traffic, reject malformed requests, and block obviously abusive patterns. But gateways usually do not know enough about the object being accessed.</p>
+
+<p>Consider:</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">GET /orders/order_789
+Authorization: Bearer token-for-user-a
+</span></code></pre></div></div>
+
+<p>The gateway can check whether the token is valid. It can check whether the token has <code class="language-plaintext highlighter-rouge">orders:read</code>. It may even check whether the route is allowed. But it usually cannot know whether <code class="language-plaintext highlighter-rouge">order_789</code> belongs to the requester’s tenant, whether the requester owns it, whether the request is a support workflow, or whether the order is in a state that allows the action. That information lives inside the order service and its data store.</p>
+
+<p>WAAP and API security platforms are useful for a different reason. They help with API discovery, shadow API detection, schema validation, bot protection, rate limiting, enumeration detection, runtime anomaly detection, virtual patching, and API security telemetry. For BOLA, a WAAP may detect suspicious behavior such as a user trying many object IDs in sequence:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /orders/1001
+GET /orders/1002
+GET /orders/1003
+GET /orders/1004
+</code></pre></div></div>
+
+<p>That signal is valuable, but BOLA does not always look noisy. An attacker may make one request to one object ID they already know. If the application returns the object, the root cause is still broken authorization logic.</p>
+
+<p>A WAAP usually does not know the full relationship between <code class="language-plaintext highlighter-rouge">user -&gt; tenant -&gt; role -&gt; resource -&gt; business state -&gt; action</code>. So the right position is simple: WAAP is a valuable compensating and detective layer, but it is not the authoritative fix for object-level authorization. The authoritative fix belongs in the application or service authorization layer.</p>
+
+<h2 id="the-service-level-authz-middleware-pattern">The service-level AuthZ middleware pattern</h2>
+
+<p>The most practical pattern is shared middleware or an SDK used across services. The developer declares the intended action and resource, and the middleware handles the boring but critical work.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">authorize</span><span class="p">({</span>
+  <span class="na">action</span><span class="p">:</span> <span class="dl">"</span><span class="s2">orders:read</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">resourceType</span><span class="p">:</span> <span class="dl">"</span><span class="s2">order</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">resourceIdParam</span><span class="p">:</span> <span class="dl">"</span><span class="s2">orderId</span><span class="dl">"</span>
+<span class="p">})</span>
+<span class="p">@</span><span class="nd">Get</span><span class="p">(</span><span class="dl">"</span><span class="s2">/orders/:orderId</span><span class="dl">"</span><span class="p">)</span>
+<span class="k">async</span> <span class="nx">getOrder</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">orderService</span><span class="p">.</span><span class="nx">getOrder</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">orderId</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The middleware should extract the authenticated subject, extract the resource ID, load minimal resource metadata, check the tenant boundary, evaluate policy, log the decision, and deny by default if the decision is unclear.</p>
+
+<p>This pattern reduces cognitive load. Developers do not need to rediscover the authorization model every time they add an endpoint. They use a paved road. The middleware should also make insecure paths visible: a new route that accepts <code class="language-plaintext highlighter-rouge">:orderId</code> but has no authorization annotation should create a CI warning or failure; a controller that loads an object before authorization should be easy to detect; a service method that accepts object IDs without a subject context should look suspicious in code review.</p>
+
+<p>This is where authorization becomes developer experience, not just policy.</p>
+
+<h2 id="defense-in-depth-at-the-data-layer">Defense in depth at the data layer</h2>
+
+<p>Middleware is important, but the database query should also enforce tenant or ownership boundaries.</p>
+
+<p>Bad:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">orders</span> <span class="k">WHERE</span> <span class="n">id</span> <span class="o">=</span> <span class="p">:</span><span class="n">order_id</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Better:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">orders</span>
+<span class="k">WHERE</span> <span class="n">id</span> <span class="o">=</span> <span class="p">:</span><span class="n">order_id</span>
+<span class="k">AND</span> <span class="n">tenant_id</span> <span class="o">=</span> <span class="p">:</span><span class="n">subject_tenant_id</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>For user-owned resources:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">orders</span>
+<span class="k">WHERE</span> <span class="n">id</span> <span class="o">=</span> <span class="p">:</span><span class="n">order_id</span>
+<span class="k">AND</span> <span class="n">tenant_id</span> <span class="o">=</span> <span class="p">:</span><span class="n">subject_tenant_id</span>
+<span class="k">AND</span> <span class="n">owner_id</span> <span class="o">=</span> <span class="p">:</span><span class="n">subject_user_id</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>This gives defense in depth. If someone bypasses middleware or makes a mistake in business logic, the data access layer still reduces blast radius. For high-risk multi-tenant systems, this should become a standard repository pattern:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">orderRepository</span><span class="p">.</span><span class="nx">getByIdForSubject</span><span class="p">(</span><span class="nx">orderId</span><span class="p">,</span> <span class="nx">subject</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>not:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">orderRepository</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="nx">orderId</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The method signature itself should make the secure path easier than the insecure path.</p>
+
+<h2 id="service-to-service-authorization">Service-to-service authorization</h2>
+
+<p>Microservices make BOLA more interesting because requests often move through several services. A downstream service should know who initiated the request and which service is calling it. That means preserving both actor and caller context:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"actor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tenant_abc"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"buyer"</span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"caller"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"checkout-service"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The receiving service should verify that the calling service is allowed to call the endpoint and that the original user is allowed to access the object. Without actor propagation, internal services become confused deputies. A service may use its own broad privileges to access data the original user should not see.</p>
+
+<p>OWASP’s microservices guidance recommends propagating a trusted internal representation of the external entity identity between services, rather than passing untrusted external tokens around casually. That design instinct matters for BOLA because the downstream service needs user context, not just service identity. The secure default is not “internal traffic is trusted.” The secure default is “internal callers are authenticated, authorized, and still constrained by the initiating actor.”</p>
+
+<h2 id="test-the-bug-class-not-only-the-endpoint">Test the bug class, not only the endpoint</h2>
+
+<p>A mature program does not rely only on manual testing or point-in-time pentests. Create reusable BOLA test fixtures:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>User A in Tenant A owns Object A
+User B in Tenant B owns Object B
+Admin A belongs to Tenant A
+Admin B belongs to Tenant B
+</code></pre></div></div>
+
+<p>Then test the invariant across resource types:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>User A can access Object A: expect 200
+User A cannot access Object B: expect 403 or 404
+User B cannot access Object A: expect 403 or 404
+Tenant admin A can access only Tenant A objects
+Tenant admin A cannot access Tenant B objects
+Support access requires explicit policy and audit trail
+</code></pre></div></div>
+
+<p>Run this pattern across sensitive resources: orders, carts, customers, payments, promotions, inventory, admin settings, exports, invoices, and support workflows. This is how you turn BOLA from an ad hoc finding into a regression-tested control. OWASP’s BOLA prevention guidance explicitly recommends writing tests for the authorization mechanism and not deploying changes that break those tests. The important move is to make those tests reusable enough that every team does not have to invent them from scratch.</p>
+
+<h2 id="cicd-guardrails">CI/CD guardrails</h2>
+
+<p>To prevent the bug class from reappearing, add CI checks. A pull request should warn or fail when:</p>
+
+<ul>
+  <li>a new API route has no authorization annotation</li>
+  <li>a controller reads an object by ID without AuthZ middleware</li>
+  <li>a database query uses object ID without tenant or owner constraint</li>
+  <li>a sensitive DTO exposes fields without explicit response shaping</li>
+  <li>an admin endpoint lacks elevated policy</li>
+  <li>a service-to-service endpoint fails to validate caller identity</li>
+</ul>
+
+<p>The goal is not to make CI noisy. The goal is to catch structural authorization gaps before they reach production. Start with warnings if the signal is immature, then move to enforcement when the patterns are stable. Security controls that begin as observability often become stronger because teams learn what “good” looks like before blocking deploys.</p>
+
+<h2 id="observability-and-runtime-detection">Observability and runtime detection</h2>
+
+<p>Every important authorization decision should produce structured logs:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"subject_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_123"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tenant_a"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"orders:read"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resource_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order_789"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"decision"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tenant_mismatch"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order-service"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"req_456"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Useful detections include many denied object accesses from the same user, sequential object ID access, cross-tenant access attempts, sudden spikes in 403 responses, admins accessing unusual customer objects, services calling APIs outside expected patterns, and break-glass access without a ticket or approval record.</p>
+
+<p>This is where WAAP, application logs, SIEM, and service telemetry should work together. Application authorization logs explain the decision. WAAP and API security tools provide request pattern visibility. SIEM correlation can connect those events to account risk, device risk, service behavior, and incident response workflows. Detection does not replace prevention. It tells you when prevention is being tested.</p>
+
+<h2 id="do-not-stop-at-bola">Do not stop at BOLA</h2>
+
+<p>BOLA is about access to an object. Broken Object Property Level Authorization, or BOPLA, is about access to fields inside the object. OWASP separates <a href="https://owasp.org/API-Security/editions/2023/en/0xa3-broken-object-property-level-authorization/">Broken Object Property Level Authorization as API3:2023</a>. This category combines the older themes of excessive data exposure and mass assignment around one root cause: missing or improper authorization at the object property level.</p>
+
+<p>A user may be allowed to read a user object without being allowed to see every field on it:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_123"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alice"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"internalRiskScore"</span><span class="p">:</span><span class="w"> </span><span class="s2">"high"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"adminNotes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"manual review required"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The same applies to writes. Mass assignment happens when a client can send fields they should not control:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alice"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"discountRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Prevent this with explicit response DTOs, field-level authorization, input allowlists, separate public and internal models, schema validation, and no blind binding from request bodies to domain models. Solving BOLA without thinking about BOPLA is incomplete. Object-level access answers whether the user can touch the object. Property-level access answers which parts of that object they can see or change.</p>
+
+<h2 id="a-practical-rollout-plan">A practical rollout plan</h2>
+
+<p>The right rollout is incremental. Start small, but design for scale.</p>
+
+<ol>
+  <li>Inventory APIs that accept object IDs and expose sensitive resources. Include REST paths, GraphQL resolvers, async jobs, admin APIs, internal service APIs, exports, and support tooling.</li>
+  <li>Classify resource types such as order, cart, customer, payment, promotion, inventory, tenant, user, invoice, export, and admin setting.</li>
+  <li>Define standard actions such as read, create, update, delete, approve, refund, export, impersonate, and manage.</li>
+  <li>Create policy templates for owner access, tenant admin access, internal service access, support access, break-glass access, and read-only analytics access.</li>
+  <li>Build the middleware with decorators, helper functions, metadata loaders, policy clients, route annotations, and audit logging.</li>
+  <li>Start with high-risk APIs: customer data, orders, carts, payments, admin APIs, exports, and tenant configuration.</li>
+  <li>Monitor first, enforce next. Use monitor mode to find false positives, then enforce once policies are stable and teams trust the control.</li>
+  <li>Add tests and CI checks to prevent regressions through automated BOLA tests, route-level checks, and data-access guardrails.</li>
+  <li>Add runtime detection by feeding authorization decisions into SIEM and WAAP telemetry. Build detections around enumeration, cross-tenant attempts, unusual admin access, and confused-deputy patterns.</li>
+  <li>Measure adoption through endpoint coverage, BOLA test coverage, bypass findings over time, critical AuthZ findings from pentests and bug bounty, false positive rate, and mean time to remediate.</li>
+</ol>
+
+<p>Security work gets funded when it can show risk reduction. A platform approach gives you something measurable.</p>
+
+<h2 id="the-leadership-lesson">The leadership lesson</h2>
+
+<p>Many security programs get stuck in vulnerability-by-vulnerability mode. A pentest finds BOLA in one endpoint, so the team fixes that endpoint. A bug bounty report finds another IDOR in another service, so the team fixes that service. A customer asks about tenant isolation, so security writes a document. But the class of bug remains alive.</p>
+
+<p>The mature approach is different:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Finding -&gt; Pattern -&gt; Platform control -&gt; Test -&gt; Telemetry -&gt; Adoption metric
+</code></pre></div></div>
+
+<p>That is how security engineering moves from reactive fixing to systemic risk reduction. It also changes the relationship between security and engineering. Instead of telling developers to remember more rules, security builds a paved road: a standard authorization vocabulary, reusable service middleware, safe repository patterns, test fixtures, CI feedback, runtime telemetry, and policy templates that match real product workflows.</p>
+
+<p>This is the Principal Product Security Engineer move: solve the bug class, not just the bug.</p>
+
+<h2 id="final-takeaway">Final takeaway</h2>
+
+<p>If you want to solve BOLA properly, do not start with a one-time pentest fix or a WAAP purchase. Start with the authorization model, then build the platform capability around it: trusted identity from your identity provider, coarse controls at the gateway, service-level object authorization, tenant-scoped data access, service-to-service actor propagation, automated BOLA tests, CI/CD guardrails, WAAP for runtime detection, SIEM telemetry, and adoption metrics that show whether the control is actually spreading.</p>
+
+<p>The goal is not to fix one endpoint. The goal is to make an entire class of authorization bugs harder to create, easier to detect, and faster to eliminate.</p>
+
+
+  
+
+  <nav class="post-navigation" aria-label="Adjacent architecture entries">
+    
+      <a href="/architecture/2026/05/06/mcp-security-the-new-supply-chain-risk-for-ai-agents/">&larr; MCP Security Is a Supply Chain Risk</a>
+    
+    
+      <a href="/architecture/2026/05/09/privilege-escalation-in-the-payoff-matrix/">Why grinding is a self-inflicted DDoS &rarr;</a>
+    
+  </nav>
+</article>
+
+<div id="toc" class="toc-sidebar">
+  <div id="toc-content" class="toc-content"></div>
+</div>
+
+<script>
+(function() {
+  function initToc() {
+    const article = document.querySelector('.blog-post');
+    const tocContent = document.getElementById('toc-content');
+    const tocSidebar = document.getElementById('toc');
+    if (!article || !tocContent || !tocSidebar) return;
+
+    const headings = Array.from(article.querySelectorAll('h1, h2, h3, h4, h5, h6'));
+    if (headings.length === 0) { tocSidebar.style.display = 'none'; return; }
+
+    const toc = document.createElement('ul');
+    toc.className = 'toc-list';
+
+    const linkMap = new Map();
+
+    headings.forEach(function(heading, index) {
+      if (!heading.id) heading.id = 'heading-' + index;
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + heading.id;
+      a.textContent = heading.textContent.trim();
+      a.className = 'toc-link';
+      a.dataset.target = heading.id;
+
+      const level = parseInt(heading.tagName.charAt(1));
+      li.className = 'toc-level-' + level;
+
+      li.appendChild(a);
+      toc.appendChild(li);
+      linkMap.set(heading.id, { li: li, a: a });
+    });
+
+    // Header
+    const header = document.createElement('div');
+    header.className = 'toc-header';
+    header.innerHTML = '<span class="toc-header-line" aria-hidden="true"></span><span>On this page</span>';
+    tocContent.appendChild(header);
+    tocContent.appendChild(toc);
+
+    // Reading progress bar
+    const progress = document.createElement('div');
+    progress.className = 'toc-progress';
+    progress.setAttribute('aria-hidden', 'true');
+    tocSidebar.insertBefore(progress, tocContent);
+
+    // Click handling with smooth scroll and sticky offset
+    tocContent.addEventListener('click', function(e) {
+      const link = e.target.closest('.toc-link');
+      if (!link) return;
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (!targetElement) return;
+
+      const navbar = document.querySelector('.navbar-custom');
+      const offset = (navbar ? navbar.offsetHeight : 0) + 24;
+      const targetY = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+
+      window.scrollTo({ top: targetY, left: 0, behavior: 'smooth' });
+      history.replaceState(null, '', '#' + targetId);
+    });
+
+    // Scroll spy with IntersectionObserver
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        const item = linkMap.get(entry.target.id);
+        if (!item) return;
+        if (entry.isIntersecting) {
+          linkMap.forEach(function(val) {
+            val.li.classList.remove('toc-active');
+            val.a.classList.remove('toc-link-active');
+          });
+          item.li.classList.add('toc-active');
+          item.a.classList.add('toc-link-active');
+        }
+      });
+    }, observerOptions);
+
+    headings.forEach(function(heading) { observer.observe(heading); });
+
+    // Reading progress bar
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) : 0;
+      progress.style.transform = 'scaleX(' + Math.min(1, Math.max(0, pct)) + ')';
+    }
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initToc);
+  } else {
+    initToc();
+  }
+})();
+</script>
+
+    </main>
+    <footer class="site-footer">
+  <p class="site-footer-line">Mayur Sinha / RESEARCH NODE MS-R01 / 2026</p>
+  <p class="site-footer-line"><a href="/feed.xml">RSS FEED</a> / END OF TRANSMISSION</p>
+  <nav class="site-footer-social" aria-label="Social links"><a class="social-link" href="mailto:themayursinha@gmail.com" rel="noopener" aria-label="Email">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3 7 9 6 9-6"/></svg>
+      </a><a class="social-link" href="https://github.com/themayursinha" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+      </a><a class="social-link" href="https://x.com/themayursinha" target="_blank" rel="noopener" aria-label="X">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a><a class="social-link" href="https://www.linkedin.com/in/mayursinha" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-5c0-1 .5-2 2-2s2 1 2 2v5"/></svg>
+      </a><a class="social-link" href="https://www.goodreads.com/themayursinha" target="_blank" rel="noopener" aria-label="Goodreads">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.43 1.09c-1.36.18-2.51.6-3.59 1.34-1.7 1.16-2.81 2.74-3.31 4.74-.26 1.05-.3 2.78-.08 3.85.5 2.45 1.84 4.46 3.84 5.78 1.36.91 2.81 1.37 4.43 1.4 1.55.03 2.62-.13 3.85-.6.05 1.05-.19 1.81-.86 2.51-.7.74-1.64 1.1-2.83 1.1-1.7 0-2.92-.6-3.4-1.74l-3.39.45c.62 2.7 3.4 4.51 7.18 4.51 2.05 0 3.74-.45 5.05-1.45 1.27-1 2.05-2.5 2.05-4.21V8.21c0-2.05-.4-3.65-1.27-4.85-1.05-1.4-2.7-2.15-4.9-2.31-.84-.06-2.41-.07-2.77.04zm.74 6.05c1.27 0 2.27.36 2.96 1.07.69.71 1.04 1.74 1.04 3.04v1.05c-.61.4-1.51.6-2.69.6-1.05 0-1.88-.27-2.49-.83-.6-.55-.91-1.34-.91-2.36 0-1.05.31-1.85.91-2.4.61-.55 1.44-.83 2.49-.83.05 0 .11 0 .16.01l-.47 1.65z"/></svg>
+      </a></nav>
+</footer>
+
+    <div class="site-search-modal" data-component="site-search" aria-hidden="true" hidden>
+  <div class="site-search-backdrop" data-search-close></div>
+  <div class="site-search-dialog" role="dialog" aria-modal="true" aria-labelledby="site-search-title" tabindex="-1">
+    <div class="site-search-header">
+      <svg class="site-search-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
+        <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M8.5 3a5.5 5.5 0 1 1-3.41 9.84l-3.7 3.7a1 1 0 0 1-1.42-1.42l3.7-3.7A5.5 5.5 0 0 1 8.5 3Zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/>
+      </svg>
+      <label for="site-search-input" class="visually-hidden">Search the site</label>
+      <input
+        id="site-search-input"
+        class="site-search-input"
+        type="search"
+        name="q"
+        placeholder="Search posts, pages, projects…"
+        aria-label="Search the site"
+        aria-controls="site-search-results"
+        aria-describedby="site-search-status"
+        autocomplete="off"
+        spellcheck="false"
+      >
+      <span class="site-search-hint" id="site-search-title">SEARCH</span>
+      <button type="button" class="site-search-close" data-search-close aria-label="Close search (Esc)">×</button>
+    </div>
+
+    <p id="site-search-status" class="site-search-status" role="status" aria-live="polite">
+      <span id="site-search-loading" class="site-search-loading" hidden>Loading index…</span>
+      <span id="site-search-meta" class="site-search-meta"></span>
+    </p>
+
+    <ol id="site-search-results" class="site-search-results" aria-label="Search results" hidden></ol>
+
+    <div id="site-search-empty" class="site-search-empty" hidden>
+      <p class="site-search-empty-text">Type to search posts, architecture notes, and projects.</p>
+      <p class="site-search-hint-row">
+        <span>Try:</span>
+        <button type="button" class="site-search-suggest" data-q="MCP">MCP</button>
+        <button type="button" class="site-search-suggest" data-q="agent">agent</button>
+        <button type="button" class="site-search-suggest" data-q="kubernetes">kubernetes</button>
+        <button type="button" class="site-search-suggest" data-q="sovereign">sovereign</button>
+      </p>
+    </div>
+
+    <footer class="site-search-footer">
+      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>esc</kbd> close</span>
+    </footer>
+  </div>
+</div>
+
+    <script src="/js/minisearch.min.js" defer></script>
+    <script src="/js/search.js" defer></script>
+    
+  </body>
+</html>

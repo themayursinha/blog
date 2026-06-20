@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+
+  
+  
+  
+
+  
+
+  
+  
+
+  
+
+  <title>MCP Visor: Runtime Policy Enforcement</title>
+
+  <meta name="author" content="Mayur Sinha" />
+  <meta name="description" content="MCP Visor turns MCP tool execution into a deterministic policy boundary: inspect the tool call, enforce the rule, redact secrets, require approval, and log the decision before the action reaches the server.">
+  
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  
+
+  <link rel="canonical" href="https://themayursinha.com/architecture/2026/05/25/mcp-visor-runtime-policy-enforcement-for-ai-agents/" />
+  <link rel="alternate" type="application/rss+xml" title="Mayur Sinha - Principal Security Architect building sovereign control infrastructure for AI agents and adversarial systems." href="/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Mayur Sinha RSS" href="/rss.xml" />
+  <link rel="alternate" type="application/atom+xml" title="Mayur Sinha Atom" href="/atom.xml" />
+
+
+  
+
+  
+    
+      <link rel="stylesheet" href="/css/terminal.css" />
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Grotesk:500,600,700|IBM+Plex+Mono:400,500,600" />
+    
+  
+
+  
+
+  
+
+  
+
+  <!-- Facebook OpenGraph tags -->
+  
+
+  <meta property="og:title" content="MCP Visor: Runtime Policy Enforcement" />
+  <meta property="og:description" content="MCP Visor turns MCP tool execution into a deterministic policy boundary: inspect the tool call, enforce the rule, redact secrets, require approval, and log the decision before the action reaches the server.">
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:url" content="https://themayursinha.com/architecture/2026/05/25/mcp-visor-runtime-policy-enforcement-for-ai-agents/" />
+
+  
+  <meta property="og:image" content="https://themayursinha.com/img/circuit.svg" />
+  
+
+  
+  <meta property="article:published_time" content="2026-05-25T00:00:00+02:00" />
+  <meta property="article:author" content="Mayur Sinha" />
+    
+      
+  <meta property="article:tag" content="ai" />
+      
+  <meta property="article:tag" content="security" />
+      
+  <meta property="article:tag" content="agents" />
+      
+  <meta property="article:tag" content="mcp" />
+      
+  <meta property="article:tag" content="policy" />
+      
+  <meta property="article:tag" content="appsec" />
+      
+    
+  
+
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <meta name="twitter:site" content="@themayursinha" />
+  <meta name="twitter:creator" content="@themayursinha" />
+  
+  <meta name="twitter:title" content="MCP Visor: Runtime Policy Enforcement" />
+  <meta name="twitter:description" content="MCP Visor turns MCP tool execution into a deterministic policy boundary: inspect the tool call, enforce the rule, redact secrets, require approval, and log the decision before the action reaches the server.">
+  
+  <meta name="twitter:image" content="https://themayursinha.com/img/circuit.svg" />
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://themayursinha.com",
+    "name": "Mayur Sinha",
+    "description": "Principal Security Architect building sovereign control infrastructure for AI agents and adversarial systems.",
+    "publisher": {
+      "@type": "Person",
+      "name": "Mayur Sinha"
+    }
+  }
+  </script>
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "MCP Visor: Runtime Policy Enforcement",
+    "description": "MCP Visor turns MCP tool execution into a deterministic policy boundary: inspect the tool call, enforce the rule, redact secrets, require approval, and log the decision before the action reaches the server.",
+    "datePublished": "2026-05-25T00:00:00+02:00",
+    "dateModified": "2026-05-25T00:00:00+02:00",
+    "author": {
+      "@type": "Person",
+      "name": "Mayur Sinha"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://themayursinha.com/architecture/2026/05/25/mcp-visor-runtime-policy-enforcement-for-ai-agents/"
+    },
+    "image": "https://themayursinha.com/img/circuit.svg",
+    "keywords": ["ai","security","agents","mcp","policy","appsec"]
+  }
+  </script>
+  
+
+  
+
+  
+
+  
+
+</head>
+
+  <body>
+    <div class="viewport-frame" aria-hidden="true"></div>
+    
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="research-readout" aria-label="Research node status">
+    <span>NODE MS-R01</span>
+    <span>DOMAIN SOVEREIGN AI</span>
+    <span>CONTROL MODEL LEAST AGENCY</span>
+    <span>STATE ACTIVE</span>
+  </div>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a class="site-mark" href="/" aria-label="Mayur Sinha home"><span>MS</span>//RESEARCH</a>
+    <ul>
+      
+        
+        <li>
+          <a href="/">Home</a>
+        </li>
+      
+        
+        <li>
+          <a href="/manifesto/">Manifesto</a>
+        </li>
+      
+        
+        <li>
+          <a href="/architecture/">Architecture</a>
+        </li>
+      
+        
+        <li>
+          <a href="/proof/">Proof</a>
+        </li>
+      
+      <li class="site-nav-search">
+        <button type="button" class="site-nav-search-btn" data-search-open aria-label="Open search" aria-haspopup="dialog" title="Search (Ctrl/Cmd + K)">
+          <svg class="site-nav-search-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
+            <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M8.5 3a5.5 5.5 0 1 1-3.41 9.84l-3.7 3.7a1 1 0 0 1-1.42-1.42l3.7-3.7A5.5 5.5 0 0 1 8.5 3Zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/>
+          </svg>
+          <span class="site-nav-search-kbd" aria-hidden="true">⌘K</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main" id="main-content">
+      <article class="prose blog-post">
+  <header class="post-header">
+    <p class="post-label">ARCHITECTURE LOG</p>
+    <h1>MCP Visor: Runtime Policy Enforcement</h1>
+    
+      <p class="page-subtitle">A deterministic proxy that decides, approves, and audits every MCP tool call.</p>
+    
+    <time datetime="2026-05-25T00:00:00+02:00">2026-05-25</time>
+  </header>
+
+  
+
+  <p>In my last piece on <a href="/architecture/2026/05/06/mcp-security-the-new-supply-chain-risk-for-ai-agents/">MCP security</a>, I argued that MCP servers are not harmless plugins. They are executable trust boundaries. They decide what an agent can see, which tools it can reach, which resources enter context, and which external systems are now one model decision away from mutation. That argument naturally leads to a practical question: where should enforcement live?</p>
+
+<p>I built <a href="https://github.com/themayursinha/mcp-visor">MCP Visor</a> as one answer to that question. It is a runtime policy enforcement proxy for MCP tool execution. It sits between an MCP client and an MCP server, intercepts every <code class="language-plaintext highlighter-rouge">tools/call</code>, evaluates deterministic policy, redacts secrets, detects dangerous tool chains, gates high-risk calls behind human approval, and writes structured audit logs. The important part is what it does not do: it does not ask another LLM whether a tool call is safe.</p>
+
+<p>That distinction matters because prompt injection is a persuasion attack against the model. A policy engine should not be persuadable.</p>
+
+<h2 id="the-boundary-that-was-missing">The boundary that was missing</h2>
+
+<p>The basic MCP flow is clean: an agent discovers tools, chooses a tool, sends a <code class="language-plaintext highlighter-rouge">tools/call</code>, and receives a result. The problem is that most implementations treat the call as the enforcement boundary. If the model decides to call the tool and the server accepts the request, the action happens. That is not enough once tools can read files, query databases, create pull requests, send Slack messages, execute shell commands, or change cloud infrastructure.</p>
+
+<p>MCP Visor inserts a boring but necessary step before execution:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AI agent -&gt; mcp-visor proxy -&gt; policy decision -&gt; allow / deny / approve / redact -&gt; MCP server
+</code></pre></div></div>
+
+<p>The proxy does not try to infer whether the model “meant well.” It evaluates concrete runtime facts: server name, tool name, arguments, client identity, risk classification, time restrictions, recent tool history, redaction patterns, and approval requirements. That makes the enforcement point closer to application authorization than model alignment. The agent can be confused. The policy path still has to be deterministic.</p>
+
+<h2 id="what-happens-on-every-tool-call">What happens on every tool call</h2>
+
+<p>The proxy starts the MCP server as a child process, performs the normal initialize handshake, and then relays JSON-RPC messages between the client and server. Most messages pass through unchanged. <code class="language-plaintext highlighter-rouge">tools/call</code> is the special case because that is where authority turns into action.</p>
+
+<p>For each intercepted call, Visor runs a small ordered pipeline. It redacts secrets in arguments before forwarding anything downstream. It blocks sensitive file paths such as <code class="language-plaintext highlighter-rouge">.env</code>, private keys, credentials, and <code class="language-plaintext highlighter-rouge">.ssh</code> material. It checks whether the server and tool are registered, whether the default action is deny, whether argument rules pass, whether identity and time restrictions apply, whether the call matches a dangerous chain, and whether approval is required. Only then does it forward the modified request to the MCP server.</p>
+
+<p>Server responses get inspected on the way back too. If output contains configured secret patterns, Visor redacts the result before the agent sees it. This is not a complete prompt-injection defense, and it should not be marketed as one. It is a practical control for keeping obvious secrets out of tool outputs and audit trails.</p>
+
+<h2 id="policy-should-look-like-authorization">Policy should look like authorization</h2>
+
+<p>The policy model is intentionally plain YAML. A useful policy should be readable by the person who owns the risk, not only by the person who wrote the proxy. The default posture is deny by default, then allow specific servers and tools under specific conditions.</p>
+
+<p>For example, a developer policy can allow <code class="language-plaintext highlighter-rouge">file_read</code> while blocking sensitive paths, allow a narrow set of shell commands, require approval for writes, deny destructive GitHub operations, and prevent read-to-send exfiltration chains:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1.0"</span>
+<span class="na">default_action</span><span class="pi">:</span> <span class="s">deny</span>
+
+<span class="na">servers</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">filesystem"</span>
+    <span class="na">allowed</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">tools</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">file_read"</span>
+        <span class="na">allowed</span><span class="pi">:</span> <span class="no">true</span>
+        <span class="na">risk</span><span class="pi">:</span> <span class="s">medium</span>
+        <span class="na">rules</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">type</span><span class="pi">:</span> <span class="s">deny_path</span>
+            <span class="na">patterns</span><span class="pi">:</span>
+              <span class="pi">-</span> <span class="s2">"</span><span class="s">**/.env"</span>
+              <span class="pi">-</span> <span class="s2">"</span><span class="s">**/*.pem"</span>
+              <span class="pi">-</span> <span class="s2">"</span><span class="s">**/.ssh/**"</span>
+
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">shell"</span>
+    <span class="na">allowed</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">tools</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">shell_exec"</span>
+        <span class="na">allowed</span><span class="pi">:</span> <span class="no">true</span>
+        <span class="na">risk</span><span class="pi">:</span> <span class="s">critical</span>
+        <span class="na">approval_required</span><span class="pi">:</span> <span class="no">true</span>
+        <span class="na">rules</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">type</span><span class="pi">:</span> <span class="s">deny_command_pattern</span>
+            <span class="na">patterns</span><span class="pi">:</span>
+              <span class="pi">-</span> <span class="s2">"</span><span class="s">rm</span><span class="se">\\</span><span class="s">s+-rf</span><span class="se">\\</span><span class="s">s+/"</span>
+              <span class="pi">-</span> <span class="s2">"</span><span class="s">curl.*</span><span class="se">\\</span><span class="s">|.*(bash|sh)"</span>
+              <span class="pi">-</span> <span class="s2">"</span><span class="s">bash</span><span class="se">\\</span><span class="s">s+-i</span><span class="se">\\</span><span class="s">s+&gt;&amp;"</span>
+
+<span class="na">tool_chains</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">prevent_exfiltration_via_slack"</span>
+    <span class="na">sources</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">server</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*"</span>
+        <span class="na">tool_pattern</span><span class="pi">:</span> <span class="s2">"</span><span class="s">(file_read|database_query)"</span>
+    <span class="na">sinks</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">server</span><span class="pi">:</span> <span class="s2">"</span><span class="s">slack"</span>
+        <span class="na">tool_pattern</span><span class="pi">:</span> <span class="s2">"</span><span class="s">slack_send_message"</span>
+    <span class="na">action</span><span class="pi">:</span> <span class="s">deny</span>
+    <span class="na">within_calls</span><span class="pi">:</span> <span class="m">3</span>
+</code></pre></div></div>
+
+<p>This is the MCP version of object-level authorization. A token or model decision is not enough. The system still needs to ask whether this client can use this tool, with these arguments, against this server, in this context, after the previous calls that already happened.</p>
+
+<h2 id="chains-are-where-the-interesting-risk-appears">Chains are where the interesting risk appears</h2>
+
+<p>Single-tool policy is necessary, but it misses an important class of agent behavior. A <code class="language-plaintext highlighter-rouge">file_read</code> can be legitimate. A <code class="language-plaintext highlighter-rouge">slack_send_message</code> can be legitimate. A <code class="language-plaintext highlighter-rouge">database_query</code> can be legitimate. The dangerous behavior may be the sequence, not the isolated call.</p>
+
+<p>That is why Visor keeps session-level call history and evaluates source-to-sink chains. A policy can say: if a read-like tool was used recently, deny a send-like tool within the next few calls. This catches the practical exfiltration pattern where an injected instruction tells the agent to read a file and then post the contents somewhere else. The agent may see two ordinary steps. The enforcement layer sees a flow.</p>
+
+<p>This is also why runtime controls need state. Static review can tell you a tool exists. Runtime history tells you what the agent is doing with it. For AI systems, that difference matters because the plan often emerges step by step inside the interaction.</p>
+
+<h2 id="approval-is-part-of-the-control-plane">Approval is part of the control plane</h2>
+
+<p>Some calls should not be silently allowed just because they match policy. Shell execution, file writes, pull request creation, external messaging, or production data access may be valid in the right workflow and still too risky to run without a human checkpoint.</p>
+
+<p>In v1, Visor uses a simple file-based approval flow. When a high-risk call requires approval, it writes a request file, waits for an approval marker, and fails closed on timeout. That is not fancy, but the security property is the point: approval is enforced by the proxy, not by the agent. A compromised or confused model cannot skip the step because the call never reaches the MCP server until the proxy releases it.</p>
+
+<p>This is the kind of boring primitive I want more agent infrastructure to have. Human-in-the-loop controls are often discussed as product UX. They also need to exist as enforceable runtime gates.</p>
+
+<h2 id="audit-logs-are-not-decoration">Audit logs are not decoration</h2>
+
+<p>If an agent can act through tools, audit logs need to explain more than “something happened.” They should capture which session made the call, which client identity was involved, which server and tool were used, which arguments were passed after redaction, which decision was made, why the decision was made, what risk level was assigned, and whether a chain rule fired.</p>
+
+<p>Visor writes structured JSONL events for session starts, session ends, policy loads, allowed calls, denied calls, approval-required calls, and detected chains. The logger redacts arguments before writing. That matters because audit logs often become the second place secrets leak after the original incident.</p>
+
+<p>The larger lesson is that agent audit trails need to preserve decision context. Security teams will not be able to investigate MCP incidents from raw chat transcripts alone. They need records at the tool boundary.</p>
+
+<h2 id="what-visor-is-not">What Visor is not</h2>
+
+<p>MCP Visor is a control plane primitive, not a complete agent security platform. That distinction is important.</p>
+
+<p>It does not cryptographically attest policy decisions yet. It relies on host filesystem permissions for policy and audit log integrity. v1 supports stdio-oriented local server proxying; remote transports need stronger mutual authentication. Session state is in memory, so chain detection history does not survive restart. Output redaction is not the same thing as robust prompt-injection sanitization. A malicious MCP server can still return persuasive text that causes the model to attempt another dangerous call, although the next call still has to pass policy.</p>
+
+<p>Those limitations are not footnotes. They define the shape of the next layer: signed audit events, policy signing, webhook approvals, mTLS for remote servers, HTTP/SSE transport support, sandboxed execution, and deeper host telemetry. The point of v1 is to make the runtime tool boundary real enough that those controls have somewhere to attach.</p>
+
+<h2 id="the-practical-lesson">The practical lesson</h2>
+
+<p>The more I work on agent security, the more convinced I am that the control plane has to sit close to action. Prompt hardening helps. Better model behavior helps. Safer tool descriptions help. But once an agent can mutate the world, the decisive question is simpler: what code path gets to say no?</p>
+
+<p>For MCP, that code path should not be hidden inside the model. It should be outside the model, deterministic, observable, and boring in the best possible way. The policy engine should not care how convincing the injected webpage sounded. It should care that the agent is trying to run <code class="language-plaintext highlighter-rouge">curl ... | bash</code>, read <code class="language-plaintext highlighter-rouge">.env</code>, or send freshly queried customer data to an external sink.</p>
+
+<p>MCP made it easy to connect agents to tools. The next phase is making those connections governable. MCP Visor is my attempt to turn that idea into a small, inspectable runtime boundary: one proxy, one policy file, one audit trail, and a clear place for security teams to enforce the rules before the tool executes.</p>
+
+
+  
+
+  <nav class="post-navigation" aria-label="Adjacent architecture entries">
+    
+      <a href="/architecture/2026/05/09/privilege-escalation-in-the-payoff-matrix/">&larr; Why grinding is a self-inflicted DDoS</a>
+    
+    
+      <a href="/architecture/2026/06/15/three-trust-paths-for-governing-ai-agent-architectures/">Three Trust Paths for Governing AI Agent Architectures &rarr;</a>
+    
+  </nav>
+</article>
+
+<div id="toc" class="toc-sidebar">
+  <div id="toc-content" class="toc-content"></div>
+</div>
+
+<script>
+(function() {
+  function initToc() {
+    const article = document.querySelector('.blog-post');
+    const tocContent = document.getElementById('toc-content');
+    const tocSidebar = document.getElementById('toc');
+    if (!article || !tocContent || !tocSidebar) return;
+
+    const headings = Array.from(article.querySelectorAll('h1, h2, h3, h4, h5, h6'));
+    if (headings.length === 0) { tocSidebar.style.display = 'none'; return; }
+
+    const toc = document.createElement('ul');
+    toc.className = 'toc-list';
+
+    const linkMap = new Map();
+
+    headings.forEach(function(heading, index) {
+      if (!heading.id) heading.id = 'heading-' + index;
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + heading.id;
+      a.textContent = heading.textContent.trim();
+      a.className = 'toc-link';
+      a.dataset.target = heading.id;
+
+      const level = parseInt(heading.tagName.charAt(1));
+      li.className = 'toc-level-' + level;
+
+      li.appendChild(a);
+      toc.appendChild(li);
+      linkMap.set(heading.id, { li: li, a: a });
+    });
+
+    // Header
+    const header = document.createElement('div');
+    header.className = 'toc-header';
+    header.innerHTML = '<span class="toc-header-line" aria-hidden="true"></span><span>On this page</span>';
+    tocContent.appendChild(header);
+    tocContent.appendChild(toc);
+
+    // Reading progress bar
+    const progress = document.createElement('div');
+    progress.className = 'toc-progress';
+    progress.setAttribute('aria-hidden', 'true');
+    tocSidebar.insertBefore(progress, tocContent);
+
+    // Click handling with smooth scroll and sticky offset
+    tocContent.addEventListener('click', function(e) {
+      const link = e.target.closest('.toc-link');
+      if (!link) return;
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (!targetElement) return;
+
+      const navbar = document.querySelector('.navbar-custom');
+      const offset = (navbar ? navbar.offsetHeight : 0) + 24;
+      const targetY = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+
+      window.scrollTo({ top: targetY, left: 0, behavior: 'smooth' });
+      history.replaceState(null, '', '#' + targetId);
+    });
+
+    // Scroll spy with IntersectionObserver
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        const item = linkMap.get(entry.target.id);
+        if (!item) return;
+        if (entry.isIntersecting) {
+          linkMap.forEach(function(val) {
+            val.li.classList.remove('toc-active');
+            val.a.classList.remove('toc-link-active');
+          });
+          item.li.classList.add('toc-active');
+          item.a.classList.add('toc-link-active');
+        }
+      });
+    }, observerOptions);
+
+    headings.forEach(function(heading) { observer.observe(heading); });
+
+    // Reading progress bar
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) : 0;
+      progress.style.transform = 'scaleX(' + Math.min(1, Math.max(0, pct)) + ')';
+    }
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initToc);
+  } else {
+    initToc();
+  }
+})();
+</script>
+
+    </main>
+    <footer class="site-footer">
+  <p class="site-footer-line">Mayur Sinha / RESEARCH NODE MS-R01 / 2026</p>
+  <p class="site-footer-line"><a href="/feed.xml">RSS FEED</a> / END OF TRANSMISSION</p>
+  <nav class="site-footer-social" aria-label="Social links"><a class="social-link" href="mailto:themayursinha@gmail.com" rel="noopener" aria-label="Email">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3 7 9 6 9-6"/></svg>
+      </a><a class="social-link" href="https://github.com/themayursinha" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+      </a><a class="social-link" href="https://x.com/themayursinha" target="_blank" rel="noopener" aria-label="X">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a><a class="social-link" href="https://www.linkedin.com/in/mayursinha" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-5c0-1 .5-2 2-2s2 1 2 2v5"/></svg>
+      </a><a class="social-link" href="https://www.goodreads.com/themayursinha" target="_blank" rel="noopener" aria-label="Goodreads">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.43 1.09c-1.36.18-2.51.6-3.59 1.34-1.7 1.16-2.81 2.74-3.31 4.74-.26 1.05-.3 2.78-.08 3.85.5 2.45 1.84 4.46 3.84 5.78 1.36.91 2.81 1.37 4.43 1.4 1.55.03 2.62-.13 3.85-.6.05 1.05-.19 1.81-.86 2.51-.7.74-1.64 1.1-2.83 1.1-1.7 0-2.92-.6-3.4-1.74l-3.39.45c.62 2.7 3.4 4.51 7.18 4.51 2.05 0 3.74-.45 5.05-1.45 1.27-1 2.05-2.5 2.05-4.21V8.21c0-2.05-.4-3.65-1.27-4.85-1.05-1.4-2.7-2.15-4.9-2.31-.84-.06-2.41-.07-2.77.04zm.74 6.05c1.27 0 2.27.36 2.96 1.07.69.71 1.04 1.74 1.04 3.04v1.05c-.61.4-1.51.6-2.69.6-1.05 0-1.88-.27-2.49-.83-.6-.55-.91-1.34-.91-2.36 0-1.05.31-1.85.91-2.4.61-.55 1.44-.83 2.49-.83.05 0 .11 0 .16.01l-.47 1.65z"/></svg>
+      </a></nav>
+</footer>
+
+    <div class="site-search-modal" data-component="site-search" aria-hidden="true" hidden>
+  <div class="site-search-backdrop" data-search-close></div>
+  <div class="site-search-dialog" role="dialog" aria-modal="true" aria-labelledby="site-search-title" tabindex="-1">
+    <div class="site-search-header">
+      <svg class="site-search-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
+        <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M8.5 3a5.5 5.5 0 1 1-3.41 9.84l-3.7 3.7a1 1 0 0 1-1.42-1.42l3.7-3.7A5.5 5.5 0 0 1 8.5 3Zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/>
+      </svg>
+      <label for="site-search-input" class="visually-hidden">Search the site</label>
+      <input
+        id="site-search-input"
+        class="site-search-input"
+        type="search"
+        name="q"
+        placeholder="Search posts, pages, projects…"
+        aria-label="Search the site"
+        aria-controls="site-search-results"
+        aria-describedby="site-search-status"
+        autocomplete="off"
+        spellcheck="false"
+      >
+      <span class="site-search-hint" id="site-search-title">SEARCH</span>
+      <button type="button" class="site-search-close" data-search-close aria-label="Close search (Esc)">×</button>
+    </div>
+
+    <p id="site-search-status" class="site-search-status" role="status" aria-live="polite">
+      <span id="site-search-loading" class="site-search-loading" hidden>Loading index…</span>
+      <span id="site-search-meta" class="site-search-meta"></span>
+    </p>
+
+    <ol id="site-search-results" class="site-search-results" aria-label="Search results" hidden></ol>
+
+    <div id="site-search-empty" class="site-search-empty" hidden>
+      <p class="site-search-empty-text">Type to search posts, architecture notes, and projects.</p>
+      <p class="site-search-hint-row">
+        <span>Try:</span>
+        <button type="button" class="site-search-suggest" data-q="MCP">MCP</button>
+        <button type="button" class="site-search-suggest" data-q="agent">agent</button>
+        <button type="button" class="site-search-suggest" data-q="kubernetes">kubernetes</button>
+        <button type="button" class="site-search-suggest" data-q="sovereign">sovereign</button>
+      </p>
+    </div>
+
+    <footer class="site-search-footer">
+      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>esc</kbd> close</span>
+    </footer>
+  </div>
+</div>
+
+    <script src="/js/minisearch.min.js" defer></script>
+    <script src="/js/search.js" defer></script>
+    
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 620" width="1140" height="620" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="ae-title ae-desc">
+  <title id="ae-title">From orchestration to ecosystem</title>
+  <desc id="ae-desc">Static orchestration assigns fixed roles. A living ecosystem lets agents specialize, compete, and reproduce through selection pressure.</desc>
+
+  <defs>
+    <style>
+      @keyframes flow { to { stroke-dashoffset: -24; } }
+      .market-line { stroke: #00ff41; stroke-width: 1.5; stroke-dasharray: 5 4; animation: flow 1.8s linear infinite; }
+      @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+    </style>
+    <linearGradient id="ae-bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#0f120f"/>
+    </linearGradient>
+    <marker id="ae-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#00ff41"/>
+    </marker>
+  </defs>
+
+  <!-- Editorial card frame -->
+  <rect width="1140" height="620" rx="24" fill="url(#ae-bg)"/>
+  <rect x="24" y="24" width="1092" height="572" rx="18" fill="none" stroke="#293029" stroke-width="1.5"/>
+
+  <!-- Title block -->
+  <text x="68" y="80" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700">From Orchestration to Ecosystem</text>
+  <text x="68" y="108" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="15">Static agent teams give way to self-organizing markets and memory.</text>
+  <line x1="68" y1="132" x2="1072" y2="132" stroke="#293029" stroke-width="1"/>
+
+  <!-- Left panel: static orchestration -->
+  <g transform="translate(68, 156)">
+    <rect width="460" height="400" rx="14" fill="#0f120f" stroke="#5a3a3a" stroke-width="1.5"/>
+    <text x="24" y="38" fill="#ff5f57" font-family="'IBM Plex Mono', monospace" font-size="13" font-weight="600" letter-spacing="1.2">STATIC ORCHESTRATION</text>
+    <text x="24" y="66" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">fixed roles · manager assigns · predefined plan</text>
+
+    <!-- Manager box -->
+    <rect x="180" y="100" width="100" height="44" rx="8" fill="#1a0a0a" stroke="#5a3a3a" stroke-width="1.5"/>
+    <text x="230" y="128" fill="#ff5f57" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle" font-weight="600">MANAGER</text>
+
+    <!-- Agent boxes -->
+    <rect x="60" y="200" width="90" height="40" rx="8" fill="#1a0a0a" stroke="#5a3a3a" stroke-width="1"/>
+    <text x="105" y="225" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle">agent A</text>
+    <rect x="185" y="200" width="90" height="40" rx="8" fill="#1a0a0a" stroke="#5a3a3a" stroke-width="1"/>
+    <text x="230" y="225" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle">agent B</text>
+    <rect x="310" y="200" width="90" height="40" rx="8" fill="#1a0a0a" stroke="#5a3a3a" stroke-width="1"/>
+    <text x="355" y="225" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle">agent C</text>
+
+    <!-- Connection lines -->
+    <line x1="230" y1="144" x2="105" y2="200" stroke="#5a3a3a" stroke-width="1.5"/>
+    <line x1="230" y1="144" x2="230" y2="200" stroke="#5a3a3a" stroke-width="1.5"/>
+    <line x1="230" y1="144" x2="355" y2="200" stroke="#5a3a3a" stroke-width="1.5"/>
+
+    <text x="230" y="300" fill="#aeb6ae" font-family="'Space Grotesk', sans-serif" font-size="14" text-anchor="middle">rigid · brittle · hand-crafted</text>
+    <text x="230" y="324" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle">one team, fixed size</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M 540 350 L 580 350" stroke="#00ff41" stroke-width="2.5" fill="none" marker-end="url(#ae-arrow)"/>
+
+  <!-- Right panel: living ecosystem -->
+  <g transform="translate(600, 156)">
+    <rect width="472" height="400" rx="14" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="24" y="38" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="13" font-weight="600" letter-spacing="1.2">LIVING ECOSYSTEM</text>
+    <text x="24" y="66" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">spawn · bid · learn · retire</text>
+
+    <!-- Memory block -->
+    <rect x="160" y="92" width="152" height="34" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="236" y="114" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle">collective memory</text>
+
+    <!-- Market ring -->
+    <circle cx="236" cy="240" r="88" fill="none" stroke="#2a3a2a" stroke-width="1"/>
+
+    <!-- Agents around ring (6 circles) -->
+    <circle cx="236" cy="168" r="18" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="236" y="172" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle" font-weight="600">A1</text>
+    <circle cx="306" cy="204" r="18" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="306" y="208" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle" font-weight="600">A2</text>
+    <circle cx="306" cy="276" r="18" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="306" y="280" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle" font-weight="600">A3</text>
+    <circle cx="236" cy="312" r="18" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="236" y="316" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle" font-weight="600">A4</text>
+    <circle cx="166" cy="276" r="18" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="166" y="280" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle" font-weight="600">A5</text>
+    <circle cx="166" cy="204" r="18" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="166" y="208" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle" font-weight="600">A6</text>
+
+    <!-- Market lines from center to each agent (functional: shows bidding) -->
+    <line x1="236" y1="240" x2="236" y2="186" class="market-line"/>
+    <line x1="236" y1="240" x2="294" y2="216" class="market-line"/>
+    <line x1="236" y1="240" x2="294" y2="264" class="market-line"/>
+    <line x1="236" y1="240" x2="236" y2="294" class="market-line"/>
+    <line x1="236" y1="240" x2="178" y2="264" class="market-line"/>
+    <line x1="236" y1="240" x2="178" y2="216" class="market-line"/>
+
+    <text x="236" y="376" fill="#aeb6ae" font-family="'Space Grotesk', sans-serif" font-size="14" text-anchor="middle">emergent specialization through selection pressure</text>
+  </g>
+
+  <!-- Bottom note -->
+  <text x="540" y="584" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="13" text-anchor="middle">The shift is architectural: from assigned roles to emergent specialization.</text>
+</svg>

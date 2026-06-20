@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 820" width="1000" height="820" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="soc-title soc-desc">
+  <title id="soc-title">The hourglass structure of a Socratic dialogue</title>
+  <desc id="soc-desc">A Socratic dialogue is shaped like an hourglass: broad at the top with personal examples, narrowing through elaboration to a single definition at the waist, then broadening again as the definition is re-applied and tested against counter-examples.</desc>
+
+  <defs>
+    <style>
+      @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+    </style>
+    <linearGradient id="soc-bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#0f120f"/>
+    </linearGradient>
+    <marker id="soc-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L7,3 z" fill="#3c493e"/>
+    </marker>
+  </defs>
+
+  <!-- Editorial card frame -->
+  <rect width="1000" height="820" rx="24" fill="url(#soc-bg)"/>
+  <rect x="24" y="24" width="952" height="772" rx="18" fill="none" stroke="#293029" stroke-width="1.5"/>
+
+  <!-- Title block -->
+  <text x="500" y="80" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="26" font-weight="700" text-anchor="middle">Structure of a Socratic Dialogue</text>
+  <text x="500" y="108" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="13" text-anchor="middle">broad at the top with examples · narrow at the waist with one definition · broad at the bottom with counter-examples</text>
+  <line x1="68" y1="132" x2="932" y2="132" stroke="#293029" stroke-width="1"/>
+
+  <!-- Faint hourglass contour (sells the silhouette behind the boxes) -->
+  <path d="M 120 268 Q 500 472 120 668" fill="none" stroke="#1a241a" stroke-width="1"/>
+  <path d="M 880 268 Q 500 472 880 668" fill="none" stroke="#1a241a" stroke-width="1"/>
+
+  <!-- STAGE 1: Universal question (broad) -->
+  <rect x="300" y="156" width="400" height="60" rx="10" fill="#0f120f" stroke="#3c493e" stroke-width="1.5"/>
+  <text x="500" y="180" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle" letter-spacing="2">STAGE 1 · UNIVERSAL QUESTION</text>
+  <text x="500" y="203" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="600" text-anchor="middle">What is X?</text>
+
+  <!-- Arrow 1 → 2 -->
+  <line x1="500" y1="216" x2="500" y2="244" stroke="#3c493e" stroke-width="1.5" marker-end="url(#soc-arrow)"/>
+
+  <!-- STAGE 2: Personal examples (broadest — 3 boxes) -->
+  <text x="500" y="238" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle" letter-spacing="2">STAGE 2 · WIDENING — PERSONAL EXAMPLES</text>
+  <g font-family="'Space Grotesk', sans-serif">
+    <rect x="120" y="252" width="220" height="58" rx="10" fill="#0f120f" stroke="#3c493e"/>
+    <text x="230" y="278" fill="#e0e0e0" font-size="15" font-weight="600" text-anchor="middle">Example A</text>
+    <text x="230" y="298" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="10" text-anchor="middle">first-person · closed in time</text>
+
+    <rect x="390" y="252" width="220" height="58" rx="10" fill="#0f120f" stroke="#3c493e"/>
+    <text x="500" y="278" fill="#e0e0e0" font-size="15" font-weight="600" text-anchor="middle">Example B</text>
+    <text x="500" y="298" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="10" text-anchor="middle">first-person · closed in time</text>
+
+    <rect x="660" y="252" width="220" height="58" rx="10" fill="#0f120f" stroke="#3c493e"/>
+    <text x="770" y="278" fill="#e0e0e0" font-size="15" font-weight="600" text-anchor="middle">Example N</text>
+    <text x="770" y="298" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="10" text-anchor="middle">first-person · closed in time</text>
+  </g>
+
+  <!-- Converging arrows 2 → 3 -->
+  <line x1="230" y1="310" x2="430" y2="344" stroke="#3c493e" stroke-width="1.5" marker-end="url(#soc-arrow)"/>
+  <line x1="500" y1="310" x2="500" y2="344" stroke="#3c493e" stroke-width="1.5" marker-end="url(#soc-arrow)"/>
+  <line x1="770" y1="310" x2="570" y2="344" stroke="#3c493e" stroke-width="1.5" marker-end="url(#soc-arrow)"/>
+
+  <!-- STAGE 3: Elaborate & locate (medium — narrowing) -->
+  <text x="500" y="338" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle" letter-spacing="2">STAGE 3 · NARROWING</text>
+  <rect x="350" y="352" width="300" height="58" rx="10" fill="#0f120f" stroke="#3c493e" stroke-width="1.5"/>
+  <text x="500" y="378" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="600" text-anchor="middle">Elaborate the chosen example</text>
+  <text x="500" y="398" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="10" text-anchor="middle">locate the universal in it · step by step</text>
+
+  <!-- Arrow 3 → 4 -->
+  <line x1="500" y1="410" x2="500" y2="438" stroke="#3c493e" stroke-width="1.5" marker-end="url(#soc-arrow)"/>
+
+  <!-- STAGE 4: Definition (WAIST — narrowest, focal green) -->
+  <rect x="410" y="442" width="180" height="68" rx="10" fill="#0a1a0d" stroke="#00ff41" stroke-width="2.5"/>
+  <text x="500" y="468" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle" letter-spacing="2">STAGE 4 · THE WAIST</text>
+  <text x="500" y="496" fill="#00ff41" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700" text-anchor="middle">Definition</text>
+  <text x="500" y="528" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="10" text-anchor="middle" letter-spacing="1">must satisfy every participant</text>
+
+  <!-- Arrow 4 → 5 -->
+  <line x1="500" y1="540" x2="500" y2="568" stroke="#3c493e" stroke-width="1.5" marker-end="url(#soc-arrow)"/>
+
+  <!-- STAGE 5: Re-apply (medium — widening) -->
+  <rect x="350" y="572" width="300" height="58" rx="10" fill="#0f120f" stroke="#3c493e" stroke-width="1.5"/>
+  <text x="500" y="598" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="600" text-anchor="middle">Re-apply to the other examples</text>
+  <text x="500" y="618" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="10" text-anchor="middle">if it is truly universal, it fits them all</text>
+  <text x="500" y="652" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle" letter-spacing="2">STAGE 5 · WIDENING</text>
+
+  <!-- Diverging arrows 5 → 6 -->
+  <line x1="430" y1="664" x2="230" y2="698" stroke="#3c493e" stroke-width="1.5" marker-end="url(#soc-arrow)"/>
+  <line x1="500" y1="664" x2="500" y2="698" stroke="#3c493e" stroke-width="1.5" marker-end="url(#soc-arrow)"/>
+  <line x1="570" y1="664" x2="770" y2="698" stroke="#3c493e" stroke-width="1.5" marker-end="url(#soc-arrow)"/>
+
+  <!-- STAGE 6: Falsification (broadest — 3 counter-examples) -->
+  <text x="500" y="692" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle" letter-spacing="2">STAGE 6 · FALSIFICATION — WIDENING</text>
+  <g font-family="'Space Grotesk', sans-serif">
+    <rect x="120" y="706" width="220" height="58" rx="10" fill="#0f120f" stroke="#3c493e"/>
+    <text x="230" y="732" fill="#e0e0e0" font-size="15" font-weight="600" text-anchor="middle">Counter A</text>
+    <text x="230" y="752" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="10" text-anchor="middle">try to break it</text>
+
+    <rect x="390" y="706" width="220" height="58" rx="10" fill="#0f120f" stroke="#3c493e"/>
+    <text x="500" y="732" fill="#e0e0e0" font-size="15" font-weight="600" text-anchor="middle">Counter B</text>
+    <text x="500" y="752" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="10" text-anchor="middle">try to break it</text>
+
+    <rect x="660" y="706" width="220" height="58" rx="10" fill="#0f120f" stroke="#3c493e"/>
+    <text x="770" y="732" fill="#e0e0e0" font-size="15" font-weight="600" text-anchor="middle">Counter N</text>
+    <text x="770" y="752" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="10" text-anchor="middle">try to break it</text>
+  </g>
+</svg>

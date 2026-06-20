@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+
+  
+  
+  
+
+  
+
+  
+  
+
+  
+
+  <title>Epistemic Security for AI Agents</title>
+
+  <meta name="author" content="Mayur Sinha" />
+  <meta name="description" content="AI agents do not only need runtime security. They need epistemic security: controls for provenance, uncertainty, evidence, memory, and human verification.">
+  
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  
+
+  <link rel="canonical" href="https://themayursinha.com/architecture/2026/05/04/epistemic-security-the-missing-control-plane-for-ai-agents/" />
+  <link rel="alternate" type="application/rss+xml" title="Mayur Sinha - Principal Security Architect building sovereign control infrastructure for AI agents and adversarial systems." href="/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Mayur Sinha RSS" href="/rss.xml" />
+  <link rel="alternate" type="application/atom+xml" title="Mayur Sinha Atom" href="/atom.xml" />
+
+
+  
+
+  
+    
+      <link rel="stylesheet" href="/css/terminal.css" />
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Grotesk:500,600,700|IBM+Plex+Mono:400,500,600" />
+    
+  
+
+  
+
+  
+
+  
+
+  <!-- Facebook OpenGraph tags -->
+  
+
+  <meta property="og:title" content="Epistemic Security for AI Agents" />
+  <meta property="og:description" content="AI agents do not only need runtime security. They need epistemic security: controls for provenance, uncertainty, evidence, memory, and human verification.">
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:url" content="https://themayursinha.com/architecture/2026/05/04/epistemic-security-the-missing-control-plane-for-ai-agents/" />
+
+  
+  <meta property="og:image" content="https://themayursinha.com/img/matrix.png" />
+  
+
+  
+  <meta property="article:published_time" content="2026-05-04T00:00:00+02:00" />
+  <meta property="article:author" content="Mayur Sinha" />
+    
+      
+  <meta property="article:tag" content="ai" />
+      
+  <meta property="article:tag" content="security" />
+      
+  <meta property="article:tag" content="agents" />
+      
+  <meta property="article:tag" content="epistemology" />
+      
+  <meta property="article:tag" content="llms" />
+      
+    
+  
+
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <meta name="twitter:site" content="@themayursinha" />
+  <meta name="twitter:creator" content="@themayursinha" />
+  
+  <meta name="twitter:title" content="Epistemic Security for AI Agents" />
+  <meta name="twitter:description" content="AI agents do not only need runtime security. They need epistemic security: controls for provenance, uncertainty, evidence, memory, and human verification.">
+  
+  <meta name="twitter:image" content="https://themayursinha.com/img/matrix.png" />
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://themayursinha.com",
+    "name": "Mayur Sinha",
+    "description": "Principal Security Architect building sovereign control infrastructure for AI agents and adversarial systems.",
+    "publisher": {
+      "@type": "Person",
+      "name": "Mayur Sinha"
+    }
+  }
+  </script>
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Epistemic Security for AI Agents",
+    "description": "AI agents do not only need runtime security. They need epistemic security: controls for provenance, uncertainty, evidence, memory, and human verification.",
+    "datePublished": "2026-05-04T00:00:00+02:00",
+    "dateModified": "2026-05-04T00:00:00+02:00",
+    "author": {
+      "@type": "Person",
+      "name": "Mayur Sinha"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://themayursinha.com/architecture/2026/05/04/epistemic-security-the-missing-control-plane-for-ai-agents/"
+    },
+    "image": "https://themayursinha.com/img/matrix.png",
+    "keywords": ["ai","security","agents","epistemology","llms"]
+  }
+  </script>
+  
+
+  
+
+  
+
+  
+
+</head>
+
+  <body>
+    <div class="viewport-frame" aria-hidden="true"></div>
+    
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="research-readout" aria-label="Research node status">
+    <span>NODE MS-R01</span>
+    <span>DOMAIN SOVEREIGN AI</span>
+    <span>CONTROL MODEL LEAST AGENCY</span>
+    <span>STATE ACTIVE</span>
+  </div>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a class="site-mark" href="/" aria-label="Mayur Sinha home"><span>MS</span>//RESEARCH</a>
+    <ul>
+      
+        
+        <li>
+          <a href="/">Home</a>
+        </li>
+      
+        
+        <li>
+          <a href="/manifesto/">Manifesto</a>
+        </li>
+      
+        
+        <li>
+          <a href="/architecture/">Architecture</a>
+        </li>
+      
+        
+        <li>
+          <a href="/proof/">Proof</a>
+        </li>
+      
+      <li class="site-nav-search">
+        <button type="button" class="site-nav-search-btn" data-search-open aria-label="Open search" aria-haspopup="dialog" title="Search (Ctrl/Cmd + K)">
+          <svg class="site-nav-search-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
+            <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M8.5 3a5.5 5.5 0 1 1-3.41 9.84l-3.7 3.7a1 1 0 0 1-1.42-1.42l3.7-3.7A5.5 5.5 0 0 1 8.5 3Zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/>
+          </svg>
+          <span class="site-nav-search-kbd" aria-hidden="true">⌘K</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main" id="main-content">
+      <article class="prose blog-post">
+  <header class="post-header">
+    <p class="post-label">ARCHITECTURE LOG</p>
+    <h1>Epistemic Security for AI Agents</h1>
+    
+      <p class="page-subtitle">Agents need provenance and trust labels for what enters their context, not just controls on what they can do.</p>
+    
+    <time datetime="2026-05-04T00:00:00+02:00">2026-05-04</time>
+  </header>
+
+  
+
+  <p>Most security discussions about AI agents focus on what the agent can do. Can it call a tool? Can it read email? Can it write to production? Can it touch customer data?</p>
+
+<p>Those questions matter. I have written about them before in the context of <a href="/architecture/2026/03/04/threat-modeling-autonomous-ai-agents-in-production/">threat modeling autonomous AI agents in production</a>. Capability is dangerous. Tool access is dangerous. Memory is dangerous. Autonomy is dangerous.</p>
+
+<p>But there is a deeper layer that security teams are still underestimating. AI agents do not merely execute actions. They form beliefs.</p>
+
+<p>They decide which sources matter, which claims are credible, which facts belong in memory, which contradictions can be ignored, and which conclusion should be handed to a human as if it were reality.</p>
+
+<p>That means belief formation itself has become part of the attack surface. I think of this as <strong>epistemic security</strong>.</p>
+
+<p>Epistemic security is the discipline of protecting how a system knows what it knows. It is concerned with provenance, evidence, uncertainty, source integrity, memory hygiene, and the human ability to verify important claims.</p>
+
+<p>If AppSec protects application behavior, and cloud security protects infrastructure behavior, epistemic security protects reasoning behavior. For AI agents, that may become the missing control plane.</p>
+
+<h2 id="from-information-security-to-knowledge-security">From information security to knowledge security</h2>
+
+<p>Traditional information security is mostly about confidentiality, integrity, and availability. Can unauthorized people read the data? Can attackers change the data? Can the system remain available under pressure?</p>
+
+<p>Those are still the fundamentals. Nothing about AI removes them. But agents introduce a new question:</p>
+
+<p>Can the system form justified beliefs from the data it receives?</p>
+
+<p>That is not the same thing as data integrity.</p>
+
+<p>A document can be authentic and still misleading. A source can be real and still incomplete. A retrieved passage can be accurate in isolation but wrong when detached from context. A summary can contain no obvious hallucination and still hide the uncertainty that should have changed the decision.</p>
+
+<p>This is why epistemic security is different from ordinary content validation.</p>
+
+<p>It is not only asking:</p>
+
+<ul>
+  <li>is this input malicious</li>
+  <li>is this output well-formed</li>
+  <li>is this tool call authorized</li>
+</ul>
+
+<p>It is also asking:</p>
+
+<ul>
+  <li>where did this belief come from</li>
+  <li>what evidence supports it</li>
+  <li>what evidence conflicts with it</li>
+  <li>how confident should the system be</li>
+  <li>who is allowed to turn this claim into memory</li>
+  <li>when does a human need to inspect the primary source</li>
+</ul>
+
+<p>The modern AI stack needs those questions because agentic systems compress entire research, reasoning, and decision loops into software. The old trust boundary was around data. The new trust boundary is around interpretation.</p>
+
+<h2 id="why-existing-ai-security-frameworks-are-necessary-but-incomplete">Why existing AI security frameworks are necessary but incomplete</h2>
+
+<p>The industry is not starting from zero. <a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST AI RMF 1.0</a> gives organizations a language for mapping, measuring, managing, and governing AI risk. The <a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence">NIST Generative AI Profile</a> adds more specific guidance for generative systems. <a href="https://www.cisa.gov/securebydesign">CISA’s Secure by Design</a> work correctly argues that security has to be built into technology from the beginning, not bolted on after adoption.</p>
+
+<p>For LLM applications, <a href="https://genai.owasp.org/llm-top-10/">OWASP Top 10 for LLM Applications 2025</a> is now table stakes. It captures risks like <a href="https://genai.owasp.org/llmrisk/llm01-prompt-injection/">prompt injection</a>, <a href="https://genai.owasp.org/llmrisk/llm042025-data-and-model-poisoning/">data and model poisoning</a>, <a href="https://genai.owasp.org/llmrisk/llm062025-excessive-agency/">excessive agency</a>, <a href="https://genai.owasp.org/llmrisk/llm082025-vector-and-embedding-weaknesses/">vector and embedding weaknesses</a>, and <a href="https://genai.owasp.org/llmrisk/llm092025-misinformation/">misinformation</a>.</p>
+
+<p>These are useful frames. But most teams still operationalize them as runtime controls:</p>
+
+<ul>
+  <li>sanitize input</li>
+  <li>isolate tools</li>
+  <li>restrict permissions</li>
+  <li>log actions</li>
+  <li>monitor outputs</li>
+  <li>add human approval for sensitive operations</li>
+</ul>
+
+<p>All of that is necessary, but it leaves an important layer uncovered.</p>
+
+<p>An agent can avoid obviously malicious tool calls and still poison an organization’s understanding of reality. It can respect permissions and still carry a false assumption into every future decision. It can cite a source and still launder weak evidence into a confident conclusion.</p>
+
+<p>The result is a strange gap: teams can secure what the agent is allowed to do while leaving how it forms beliefs much less governed.</p>
+
+<h2 id="the-epistemic-attack-surface">The epistemic attack surface</h2>
+
+<p>In a normal application, the system usually does not decide what is true. It receives input, applies business logic, and writes output.</p>
+
+<p>In an agentic system, the loop is different:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>observe -&gt; retrieve -&gt; summarize -&gt; reason -&gt; decide -&gt; act -&gt; remember
+</code></pre></div></div>
+
+<p>Each stage can corrupt knowledge.</p>
+
+<h3 id="1-source-selection">1) Source selection</h3>
+
+<p>Agents rarely read the whole world. They search, retrieve, rank, and filter. That selection process quietly defines reality for the model.</p>
+
+<p>If an attacker can influence which documents rank highly, which tickets are retrieved, which internal wiki pages look authoritative, or which external pages are treated as context, they do not need to directly control the final answer.</p>
+
+<p>They only need to influence the evidence environment. The security problem starts before the final answer is generated.</p>
+
+<p>In software supply chain security, projects like <a href="https://slsa.dev/">SLSA</a> push the industry to ask where an artifact came from and how it was built. In agentic systems, we need a similar instinct for claims.</p>
+
+<p>Where did this assertion come from? What process produced it? What source chain did it travel through before the model repeated it?</p>
+
+<h3 id="2-context-assembly">2) Context assembly</h3>
+
+<p>Most agent systems flatten multiple sources into one prompt. User instructions, system instructions, retrieved documents, tool outputs, logs, emails, and web pages all end up compressed into the model’s context window. That is where the clean old boundary between instruction and data begins to collapse.</p>
+
+<p>The UK National Cyber Security Centre captured this well in its post <a href="https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection">Prompt injection is not SQL injection</a>. The key point is that current LLMs do not enforce a robust security boundary between instructions and data inside a prompt.</p>
+
+<p>This matters because context assembly is not a passive formatting step. It is a security-critical transformation.</p>
+
+<p>If untrusted content is placed next to trusted instructions without strong labels, quoting, isolation, and downstream policy checks, the model may treat hostile text as operational guidance.</p>
+
+<p>Microsoft’s guidance on <a href="https://learn.microsoft.com/en-us/security/zero-trust/sfi/defend-indirect-prompt-injection">defending against indirect prompt injection attacks</a> makes a similar point: enterprise agents process emails, documents, websites, and plugins, and attackers can embed instructions in those third-party sources.</p>
+
+<p>This is input validation, but it is also boundary management for knowledge and instructions.</p>
+
+<h3 id="3-summarization">3) Summarization</h3>
+
+<p>Summarization looks harmless because it feels like compression. It is not harmless. Summarization chooses what survives.</p>
+
+<p>An agent can remove caveats, erase disagreement, collapse minority evidence, or turn a speculative claim into a clean bullet point. By the time the human reads the result, the uncertainty has disappeared.</p>
+
+<p>This is one of the most common epistemic failures because it does not look like a failure. The answer is fluent. The structure is clean. The summary may even be mostly correct.</p>
+
+<p>But sometimes the missing caveat was the point. In high-stakes work, a summary needs to preserve uncertainty, not polish it away.</p>
+
+<h3 id="4-memory-writes">4) Memory writes</h3>
+
+<p>Memory is where mistakes become durable. A bad answer is one event. A bad memory is infrastructure.</p>
+
+<p>If an agent writes a false claim into long-term memory, that claim can be retrieved for future decisions, repeated across workflows, and treated as historical truth. The danger is not only immediate misinformation. It is persistent epistemic drift.</p>
+
+<p>This is why memory needs stronger controls than most teams give it. Memory writes should not be casual side effects of a conversation. They should be treated more like database writes, audit events, or policy changes.</p>
+
+<p>For important domains, the system should record:</p>
+
+<ul>
+  <li>claim</li>
+  <li>source</li>
+  <li>confidence</li>
+  <li>timestamp</li>
+  <li>authoring agent</li>
+  <li>evidence links</li>
+  <li>contradiction links</li>
+  <li>review status</li>
+  <li>expiration condition</li>
+</ul>
+
+<p>Durable memory should require provenance.</p>
+
+<h3 id="5-confidence-presentation">5) Confidence presentation</h3>
+
+<p>LLMs are very good at sounding finished, even when the underlying evidence is incomplete.</p>
+
+<p>Humans often respond more to presentation than probability. A crisp answer with citations feels more trustworthy than a messy answer with uncertainty, even when the messy answer is more honest.</p>
+
+<p>This is why confidence is not just a model behavior problem. It is a product security problem. If the interface rewards clean certainty, users will over-trust clean certainty.</p>
+
+<p>OWASP explicitly calls out <a href="https://genai.owasp.org/llmrisk/llm092025-misinformation/">misinformation</a> as a risk for LLM applications, including the overreliance that happens when users fail to verify generated content. Epistemic security has to account for that human behavior too.</p>
+
+<p>The system is not secure if it teaches people to stop checking.</p>
+
+<h2 id="threat-scenarios">Threat scenarios</h2>
+
+<p>The easiest way to see epistemic security is through failure modes.</p>
+
+<h3 id="scenario-a-source-laundering-through-rag">Scenario A: Source laundering through RAG</h3>
+
+<p>An attacker publishes a plausible technical article about a vulnerability mitigation. The article is not obviously malicious. It contains correct background, real terminology, and links to legitimate references. But one recommendation is subtly wrong: it tells teams to disable a noisy detection rule because it produces false positives in modern environments.</p>
+
+<p>An internal security agent later researches the issue.</p>
+
+<p>The attacker’s article is retrieved, summarized, and blended with other sources. The agent does not preserve source-level disagreement. It outputs:</p>
+
+<blockquote>
+  <p>Several sources recommend disabling this rule in production due to false positives.</p>
+</blockquote>
+
+<p>Now the claim has been laundered. It no longer looks like one weak external article. It looks like consensus. The control failure is not only retrieval. It is the loss of provenance and disagreement.</p>
+
+<h3 id="scenario-b-memory-poisoning-with-delayed-impact">Scenario B: Memory poisoning with delayed impact</h3>
+
+<p>An agent helps triage security incidents. During one incident, a compromised ticket includes the statement:</p>
+
+<blockquote>
+  <p>This partner integration is approved to bypass step-up authentication for service continuity.</p>
+</blockquote>
+
+<p>The agent stores that as a durable fact because the ticket appears to come from a trusted internal workflow.</p>
+
+<p>Three months later, a different agent retrieves the memory during an access review and recommends keeping the bypass because it believes the exception was already approved.</p>
+
+<p>No single tool call was obviously malicious. The attack happened through institutional memory.</p>
+
+<h3 id="scenario-c-confidence-collapse-in-executive-reporting">Scenario C: Confidence collapse in executive reporting</h3>
+
+<p>A leadership agent summarizes cyber risk for an executive meeting. It reads vulnerability data, incident notes, vendor reports, and internal dashboards. The underlying sources conflict. Some indicate improving posture. Others show delayed patching in a high-risk business unit.</p>
+
+<p>The agent produces a clean executive summary:</p>
+
+<blockquote>
+  <p>Overall risk is trending down.</p>
+</blockquote>
+
+<p>That may be true at the aggregate level. It may also hide the only risk that matters.</p>
+
+<p>The epistemic failure is not that the agent hallucinated. It is that the agent compressed away the exception that leadership needed to see.</p>
+
+<h3 id="scenario-d-delegated-verification-decay">Scenario D: Delegated verification decay</h3>
+
+<p>An engineering organization adopts agents for code review, architecture review, incident summaries, and design validation. At first, humans check the outputs carefully. Over time, the agents are usually right. Review gets faster. Manual inspection becomes less common.</p>
+
+<p>Then an agent misses a subtle authorization bug because the implementation technically matches the written spec, but the spec itself failed to capture a cross-tenant constraint.</p>
+
+<p>The team realizes two things at once:</p>
+
+<ol>
+  <li>The agent did not understand the product boundary.</li>
+  <li>Humans had stopped practicing the skill needed to catch it.</li>
+</ol>
+
+<p>This is the security version of epistemic atrophy. Keeping humans in the loop only helps if they still have enough context and practice to challenge the system.</p>
+
+<h2 id="controls-for-epistemic-security">Controls for epistemic security</h2>
+
+<p>Epistemic security is not solved by asking the model to “be careful.” It requires system design.</p>
+
+<h3 id="1-evidence-trails-by-default">1) Evidence trails by default</h3>
+
+<p>Every high-impact agent conclusion should carry an evidence trail. Not just citations at the end. Actual claim-level provenance.</p>
+
+<p>For example:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"claim"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The partner authentication bypass is approved until Q3."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"confidence"</span><span class="p">:</span><span class="w"> </span><span class="s2">"medium"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"evidence"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INC-48291"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ticket"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trust_level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"internal"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-01-14"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"supports"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"conflicts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IAM policy exception register"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"control_record"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trust_level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"authoritative"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-02-02"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"supports"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"review_required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The concept is not new. The <a href="https://www.w3.org/TR/prov-overview/">W3C PROV</a> work has long provided a vocabulary for provenance across entities, activities, and agents.</p>
+
+<p>The AI version needs to make provenance visible at the level where decisions are made. A final answer is too coarse. The claim is the unit that matters.</p>
+
+<h3 id="2-taint-labels-for-knowledge">2) Taint labels for knowledge</h3>
+
+<p>Agent context should carry trust labels. Not all text is equal.</p>
+
+<p>A production runbook, a public web page, a customer email, a GitHub issue, a Slack message, and an agent’s own previous summary should not arrive in the prompt as morally equivalent strings.</p>
+
+<p>At minimum, retrieved content should carry labels like:</p>
+
+<ul>
+  <li>authoritative</li>
+  <li>internal</li>
+  <li>partner</li>
+  <li>public</li>
+  <li>untrusted</li>
+  <li>generated</li>
+  <li>stale</li>
+  <li>disputed</li>
+</ul>
+
+<p>Then policy should bind those labels to behavior. An agent may read untrusted content, but it should not convert untrusted content into durable memory without corroboration. It may summarize public sources, but it should not use them to override an authoritative internal control record. It may use generated summaries for orientation, but not as primary evidence for high-stakes decisions.</p>
+
+<p>This follows the same instinct as data flow control, applied to belief formation rather than only data movement.</p>
+
+<h3 id="3-uncertainty-budgets">3) Uncertainty budgets</h3>
+
+<p>Most systems treat uncertainty as a presentation detail. That is backwards. Uncertainty should be a policy input.</p>
+
+<p>For low-impact tasks, a medium-confidence summary may be acceptable. For security exceptions, legal analysis, financial movement, production access, or incident closure, uncertainty should trigger escalation.</p>
+
+<p>The system should define thresholds:</p>
+
+<ul>
+  <li>below this confidence, do not act</li>
+  <li>above this impact, require primary-source links</li>
+  <li>if sources conflict, surface the conflict</li>
+  <li>if evidence is stale, mark the answer provisional</li>
+  <li>if the agent cannot explain the reasoning path, block durable memory writes</li>
+</ul>
+
+<p>Confidence scores will never be perfect. The goal is simpler: do not let uncertainty disappear from the workflow.</p>
+
+<h3 id="4-memory-hygiene-and-expiration">4) Memory hygiene and expiration</h3>
+
+<p>Memory should decay unless renewed by evidence. This feels strange because humans like persistent knowledge. But in organizations, many facts have a shelf life:</p>
+
+<ul>
+  <li>exceptions expire</li>
+  <li>ownership changes</li>
+  <li>vendors rotate</li>
+  <li>threat models age</li>
+  <li>compensating controls get removed</li>
+  <li>business processes drift</li>
+</ul>
+
+<p>Agent memory should reflect that.</p>
+
+<p>A memory record should have an expiration policy. Important memories should require source refresh. Disputed memories should be quarantined. Generated memories should be distinguishable from human-approved records.</p>
+
+<p>The weakest memory system is one where every past answer becomes a permanent fact. Useful memory needs review, expiry, and correction.</p>
+
+<h3 id="5-adversarial-epistemic-testing">5) Adversarial epistemic testing</h3>
+
+<p>Security teams already test whether agents can be tricked into bad tool calls. They should also test whether agents can be tricked into bad beliefs.</p>
+
+<p>Examples:</p>
+
+<ul>
+  <li>Can a malicious document become the dominant source in a RAG answer?</li>
+  <li>Can an attacker cause a weak source to look like consensus?</li>
+  <li>Can a false claim get written to memory?</li>
+  <li>Can contradictory evidence be hidden by summarization?</li>
+  <li>Can an old exception be treated as current?</li>
+  <li>Can a generated answer become evidence for a later generated answer?</li>
+</ul>
+
+<p>This is where AI red teaming has to grow beyond jailbreaks. Microsoft’s <a href="https://learn.microsoft.com/en-us/security/ai-red-team/">AI Red Team</a> guidance, <a href="https://atlas.mitre.org/">MITRE ATLAS</a>, and OWASP’s LLM work are useful starting points. But for agentic systems, teams need test cases that target reasoning integrity, not only output safety.</p>
+
+<p>The question is not only: Can we make the model say something bad?</p>
+
+<p>The better question is: Can we make the organization believe something false?</p>
+
+<h3 id="6-human-verification-drills">6) Human verification drills</h3>
+
+<p>This control costs time, which is why organizations are tempted to skip it. They still need to practice manual verification for critical domains.</p>
+
+<p>Security analysts should still inspect raw logs sometimes. Engineers should still read important diffs. Leaders should still ask for primary evidence behind strategic claims. Reviewers should still challenge specs before agents generate implementations.</p>
+
+<p>The goal is retained competence.</p>
+
+<p>In aviation, autopilot does not eliminate the need for pilot training. In security, detection automation should not eliminate the ability to hunt. In software engineering, code agents should not eliminate the human ability to reason about architecture, product constraints, and abuse cases.</p>
+
+<p>An agent-assisted organization that cannot verify without agents is not augmented. It is dependent.</p>
+
+<h2 id="a-practical-epistemic-security-checklist">A practical epistemic security checklist</h2>
+
+<p>If I were reviewing an AI agent system today, I would ask these questions:</p>
+
+<ol>
+  <li>Does every high-impact conclusion preserve claim-level evidence?</li>
+  <li>Are retrieved sources labeled by trust level, freshness, and origin?</li>
+  <li>Can the system show conflicting evidence instead of collapsing it into a single answer?</li>
+  <li>Are memory writes gated by source quality and review status?</li>
+  <li>Do memories expire or require reconfirmation?</li>
+  <li>Can generated summaries be distinguished from primary sources?</li>
+  <li>Are untrusted sources prevented from overriding authoritative records?</li>
+  <li>Does uncertainty affect what the agent is allowed to do?</li>
+  <li>Are humans trained to verify primary evidence for critical workflows?</li>
+  <li>Do red-team tests target belief manipulation, not only prompt injection and tool misuse?</li>
+</ol>
+
+<p>This checklist is not a compliance framework. It is a survival framework. Because once agents become embedded in operations, the question “why do we believe this?” becomes a production security question.</p>
+
+<h2 id="the-new-control-plane">The new control plane</h2>
+
+<p>Every serious agent platform will need a control plane for tools, identity, memory, observability, and policy. That is obvious now. What is less obvious is that the same platform needs a control plane for knowledge.</p>
+
+<p>It needs to track where claims came from, how they changed, what evidence supports them, what contradicts them, which memories are stale, which conclusions were reviewed, and which decisions were made under uncertainty.</p>
+
+<p>Without that, organizations will build agents that are operationally powerful but epistemically fragile.</p>
+
+<p>They will move faster. They will sound smarter. They will produce cleaner summaries, better dashboards, faster tickets, and more confident recommendations.</p>
+
+<p>But if nobody can reconstruct the evidence chain, the organization will not actually understand what it knows.</p>
+
+<p>The main risk is not that AI agents will occasionally be wrong. All systems are occasionally wrong.</p>
+
+<p>The deeper risk is that agents will make wrongness harder to notice, easier to repeat, and more comfortable to trust.</p>
+
+<p>Epistemic security is how we resist that. It is how we keep automation from becoming intellectual dependency. It is how we build agents that extend human judgment instead of quietly replacing the habits that make judgment possible.</p>
+
+
+  
+
+  <nav class="post-navigation" aria-label="Adjacent architecture entries">
+    
+      <a href="/architecture/2026/05/03/the-ai-agent-dilemma-why-we-are-outsourcing-our-reality/">&larr; The AI Agent Dilemma</a>
+    
+    
+      <a href="/architecture/2026/05/06/mcp-security-the-new-supply-chain-risk-for-ai-agents/">MCP Security Is a Supply Chain Risk &rarr;</a>
+    
+  </nav>
+</article>
+
+<div id="toc" class="toc-sidebar">
+  <div id="toc-content" class="toc-content"></div>
+</div>
+
+<script>
+(function() {
+  function initToc() {
+    const article = document.querySelector('.blog-post');
+    const tocContent = document.getElementById('toc-content');
+    const tocSidebar = document.getElementById('toc');
+    if (!article || !tocContent || !tocSidebar) return;
+
+    const headings = Array.from(article.querySelectorAll('h1, h2, h3, h4, h5, h6'));
+    if (headings.length === 0) { tocSidebar.style.display = 'none'; return; }
+
+    const toc = document.createElement('ul');
+    toc.className = 'toc-list';
+
+    const linkMap = new Map();
+
+    headings.forEach(function(heading, index) {
+      if (!heading.id) heading.id = 'heading-' + index;
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + heading.id;
+      a.textContent = heading.textContent.trim();
+      a.className = 'toc-link';
+      a.dataset.target = heading.id;
+
+      const level = parseInt(heading.tagName.charAt(1));
+      li.className = 'toc-level-' + level;
+
+      li.appendChild(a);
+      toc.appendChild(li);
+      linkMap.set(heading.id, { li: li, a: a });
+    });
+
+    // Header
+    const header = document.createElement('div');
+    header.className = 'toc-header';
+    header.innerHTML = '<span class="toc-header-line" aria-hidden="true"></span><span>On this page</span>';
+    tocContent.appendChild(header);
+    tocContent.appendChild(toc);
+
+    // Reading progress bar
+    const progress = document.createElement('div');
+    progress.className = 'toc-progress';
+    progress.setAttribute('aria-hidden', 'true');
+    tocSidebar.insertBefore(progress, tocContent);
+
+    // Click handling with smooth scroll and sticky offset
+    tocContent.addEventListener('click', function(e) {
+      const link = e.target.closest('.toc-link');
+      if (!link) return;
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (!targetElement) return;
+
+      const navbar = document.querySelector('.navbar-custom');
+      const offset = (navbar ? navbar.offsetHeight : 0) + 24;
+      const targetY = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+
+      window.scrollTo({ top: targetY, left: 0, behavior: 'smooth' });
+      history.replaceState(null, '', '#' + targetId);
+    });
+
+    // Scroll spy with IntersectionObserver
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        const item = linkMap.get(entry.target.id);
+        if (!item) return;
+        if (entry.isIntersecting) {
+          linkMap.forEach(function(val) {
+            val.li.classList.remove('toc-active');
+            val.a.classList.remove('toc-link-active');
+          });
+          item.li.classList.add('toc-active');
+          item.a.classList.add('toc-link-active');
+        }
+      });
+    }, observerOptions);
+
+    headings.forEach(function(heading) { observer.observe(heading); });
+
+    // Reading progress bar
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) : 0;
+      progress.style.transform = 'scaleX(' + Math.min(1, Math.max(0, pct)) + ')';
+    }
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initToc);
+  } else {
+    initToc();
+  }
+})();
+</script>
+
+    </main>
+    <footer class="site-footer">
+  <p class="site-footer-line">Mayur Sinha / RESEARCH NODE MS-R01 / 2026</p>
+  <p class="site-footer-line"><a href="/feed.xml">RSS FEED</a> / END OF TRANSMISSION</p>
+  <nav class="site-footer-social" aria-label="Social links"><a class="social-link" href="mailto:themayursinha@gmail.com" rel="noopener" aria-label="Email">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3 7 9 6 9-6"/></svg>
+      </a><a class="social-link" href="https://github.com/themayursinha" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+      </a><a class="social-link" href="https://x.com/themayursinha" target="_blank" rel="noopener" aria-label="X">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a><a class="social-link" href="https://www.linkedin.com/in/mayursinha" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-5c0-1 .5-2 2-2s2 1 2 2v5"/></svg>
+      </a><a class="social-link" href="https://www.goodreads.com/themayursinha" target="_blank" rel="noopener" aria-label="Goodreads">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.43 1.09c-1.36.18-2.51.6-3.59 1.34-1.7 1.16-2.81 2.74-3.31 4.74-.26 1.05-.3 2.78-.08 3.85.5 2.45 1.84 4.46 3.84 5.78 1.36.91 2.81 1.37 4.43 1.4 1.55.03 2.62-.13 3.85-.6.05 1.05-.19 1.81-.86 2.51-.7.74-1.64 1.1-2.83 1.1-1.7 0-2.92-.6-3.4-1.74l-3.39.45c.62 2.7 3.4 4.51 7.18 4.51 2.05 0 3.74-.45 5.05-1.45 1.27-1 2.05-2.5 2.05-4.21V8.21c0-2.05-.4-3.65-1.27-4.85-1.05-1.4-2.7-2.15-4.9-2.31-.84-.06-2.41-.07-2.77.04zm.74 6.05c1.27 0 2.27.36 2.96 1.07.69.71 1.04 1.74 1.04 3.04v1.05c-.61.4-1.51.6-2.69.6-1.05 0-1.88-.27-2.49-.83-.6-.55-.91-1.34-.91-2.36 0-1.05.31-1.85.91-2.4.61-.55 1.44-.83 2.49-.83.05 0 .11 0 .16.01l-.47 1.65z"/></svg>
+      </a></nav>
+</footer>
+
+    <div class="site-search-modal" data-component="site-search" aria-hidden="true" hidden>
+  <div class="site-search-backdrop" data-search-close></div>
+  <div class="site-search-dialog" role="dialog" aria-modal="true" aria-labelledby="site-search-title" tabindex="-1">
+    <div class="site-search-header">
+      <svg class="site-search-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
+        <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M8.5 3a5.5 5.5 0 1 1-3.41 9.84l-3.7 3.7a1 1 0 0 1-1.42-1.42l3.7-3.7A5.5 5.5 0 0 1 8.5 3Zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/>
+      </svg>
+      <label for="site-search-input" class="visually-hidden">Search the site</label>
+      <input
+        id="site-search-input"
+        class="site-search-input"
+        type="search"
+        name="q"
+        placeholder="Search posts, pages, projects…"
+        aria-label="Search the site"
+        aria-controls="site-search-results"
+        aria-describedby="site-search-status"
+        autocomplete="off"
+        spellcheck="false"
+      >
+      <span class="site-search-hint" id="site-search-title">SEARCH</span>
+      <button type="button" class="site-search-close" data-search-close aria-label="Close search (Esc)">×</button>
+    </div>
+
+    <p id="site-search-status" class="site-search-status" role="status" aria-live="polite">
+      <span id="site-search-loading" class="site-search-loading" hidden>Loading index…</span>
+      <span id="site-search-meta" class="site-search-meta"></span>
+    </p>
+
+    <ol id="site-search-results" class="site-search-results" aria-label="Search results" hidden></ol>
+
+    <div id="site-search-empty" class="site-search-empty" hidden>
+      <p class="site-search-empty-text">Type to search posts, architecture notes, and projects.</p>
+      <p class="site-search-hint-row">
+        <span>Try:</span>
+        <button type="button" class="site-search-suggest" data-q="MCP">MCP</button>
+        <button type="button" class="site-search-suggest" data-q="agent">agent</button>
+        <button type="button" class="site-search-suggest" data-q="kubernetes">kubernetes</button>
+        <button type="button" class="site-search-suggest" data-q="sovereign">sovereign</button>
+      </p>
+    </div>
+
+    <footer class="site-search-footer">
+      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>esc</kbd> close</span>
+    </footer>
+  </div>
+</div>
+
+    <script src="/js/minisearch.min.js" defer></script>
+    <script src="/js/search.js" defer></script>
+    
+  </body>
+</html>

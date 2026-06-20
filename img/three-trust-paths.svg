@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 600" width="1140" height="600" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="ttp-title ttp-desc">
+  <title id="ttp-title">Three trust paths for governing AI agent architectures</title>
+  <desc id="ttp-desc">One agent, three distinct trust boundaries — data movement, transaction integrity, and tool execution — each with its own control posture and outcome.</desc>
+
+  <defs>
+    <style>
+      @keyframes flow { to { stroke-dashoffset: -28; } }
+      .flow-line { stroke: #00ff41; stroke-width: 2; fill: none; stroke-dasharray: 7 6; animation: flow 1.6s linear infinite; }
+      @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+    </style>
+    <linearGradient id="ttp-bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#0f120f"/>
+    </linearGradient>
+    <marker id="ttp-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#00ff41"/>
+    </marker>
+  </defs>
+
+  <!-- Editorial card frame -->
+  <rect width="1140" height="600" rx="24" fill="url(#ttp-bg)"/>
+  <rect x="24" y="24" width="1092" height="552" rx="18" fill="none" stroke="#293029" stroke-width="1.5"/>
+
+  <!-- Title block -->
+  <text x="68" y="80" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700">Three Trust Paths</text>
+  <text x="68" y="108" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="15">one agent · three boundaries · three control postures</text>
+  <line x1="68" y1="132" x2="1072" y2="132" stroke="#293029" stroke-width="1"/>
+
+  <!-- Agent core (left focal) -->
+  <g transform="translate(200, 340)">
+    <circle cx="0" cy="0" r="72" fill="#0a1a0d" stroke="#00ff41" stroke-width="2"/>
+    <circle cx="0" cy="0" r="56" fill="none" stroke="#00ff41" stroke-width="1" stroke-opacity="0.4"/>
+    <text x="0" y="-6" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700" text-anchor="middle">AGENT</text>
+    <text x="0" y="14" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">model · client · intent</text>
+  </g>
+
+  <!-- Flow lines from agent to each path -->
+  <path d="M 272 300 C 320 270, 360 220, 400 200" class="flow-line" marker-end="url(#ttp-arrow)"/>
+  <path d="M 272 340 L 400 340" class="flow-line" marker-end="url(#ttp-arrow)"/>
+  <path d="M 272 380 C 320 410, 360 460, 400 480" class="flow-line" marker-end="url(#ttp-arrow)"/>
+
+  <!-- Path 01: Data movement -->
+  <g transform="translate(420, 156)">
+    <rect width="300" height="88" rx="14" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="20" y="28" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="12" letter-spacing="1.2">PATH 01</text>
+    <text x="20" y="54" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700">Data Movement</text>
+    <text x="20" y="74" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="12">classify · minimize · route</text>
+  </g>
+  <line x1="720" y1="200" x2="752" y2="200" stroke="#00ff41" stroke-width="2" marker-end="url(#ttp-arrow)"/>
+  <g transform="translate(760, 156)">
+    <rect width="280" height="88" rx="14" fill="#0f120f" stroke="#3c493e"/>
+    <text x="20" y="28" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" letter-spacing="1.2">OUTCOME</text>
+    <text x="20" y="54" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="17" font-weight="600">Visible, Revocable</text>
+    <text x="20" y="74" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">nothing sensitive leaves without policy</text>
+  </g>
+
+  <!-- Path 02: Transaction integrity -->
+  <g transform="translate(420, 296)">
+    <rect width="300" height="88" rx="14" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="20" y="28" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="12" letter-spacing="1.2">PATH 02</text>
+    <text x="20" y="54" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700">Transaction Integrity</text>
+    <text x="20" y="74" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="12">authenticate · validate · reconcile</text>
+  </g>
+  <line x1="720" y1="340" x2="752" y2="340" stroke="#00ff41" stroke-width="2" marker-end="url(#ttp-arrow)"/>
+  <g transform="translate(760, 296)">
+    <rect width="280" height="88" rx="14" fill="#0f120f" stroke="#3c493e"/>
+    <text x="20" y="28" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" letter-spacing="1.2">OUTCOME</text>
+    <text x="20" y="54" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="17" font-weight="600">Consistent, Reconciled</text>
+    <text x="20" y="74" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">domain authorizes the effect</text>
+  </g>
+
+  <!-- Path 03: Tool execution -->
+  <g transform="translate(420, 436)">
+    <rect width="300" height="88" rx="14" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="20" y="28" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="12" letter-spacing="1.2">PATH 03</text>
+    <text x="20" y="54" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700">Tool Execution</text>
+    <text x="20" y="74" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="12">bind · constrain · budget · contain</text>
+  </g>
+  <line x1="720" y1="480" x2="752" y2="480" stroke="#00ff41" stroke-width="2" marker-end="url(#ttp-arrow)"/>
+  <g transform="translate(760, 436)">
+    <rect width="280" height="88" rx="14" fill="#0f120f" stroke="#3c493e"/>
+    <text x="20" y="28" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" letter-spacing="1.2">OUTCOME</text>
+    <text x="20" y="54" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="17" font-weight="600">Bounded, Auditable</text>
+    <text x="20" y="74" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">no unsafe tool chains escape policy</text>
+  </g>
+
+  <!-- Bottom note -->
+  <text x="540" y="552" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="13" text-anchor="middle">one trust model · three enforcement points</text>
+</svg>

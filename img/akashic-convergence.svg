@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 760" width="1140" height="760" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="ak-title ak-desc">
+  <title id="ak-title">Two traditions, one intuition</title>
+  <desc id="ak-desc">The theosophical and physical traditions arrive at the same structural idea from opposite directions — a non-material substrate that records and informs. The vocabulary differs. The diagram does not.</desc>
+
+  <defs>
+    <style>
+      @keyframes flow { to { stroke-dashoffset: -24; } }
+      .flow-line { stroke-dasharray: 5 5; animation: flow 1.6s linear infinite; }
+      @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+    </style>
+    <linearGradient id="ak-bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#0f120f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Editorial card frame -->
+  <rect width="1140" height="760" rx="24" fill="url(#ak-bg)"/>
+  <rect x="24" y="24" width="1092" height="712" rx="18" fill="none" stroke="#293029" stroke-width="1.5"/>
+
+  <!-- Title block -->
+  <text x="68" y="80" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700">Two Traditions, One Intuition</text>
+  <text x="68" y="108" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="15">Theosophy and physics reach the same structural idea from opposite directions.</text>
+  <line x1="68" y1="132" x2="1072" y2="132" stroke="#293029" stroke-width="1"/>
+
+  <!-- Column headers -->
+  <text x="260" y="164" fill="#febc2e" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle" letter-spacing="2">THEOSOPHICAL LINE</text>
+  <text x="860" y="164" fill="#5fa8ff" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle" letter-spacing="2">PHYSICAL LINE</text>
+
+  <!-- Left column: Theosophical timeline (5 entries) -->
+  <g font-family="'Space Grotesk', sans-serif">
+    <g transform="translate(80, 188)">
+      <rect width="360" height="56" rx="10" fill="#1a1610" stroke="#febc2e" stroke-width="1" stroke-opacity="0.5"/>
+      <text x="20" y="24" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" letter-spacing="1.5">1875</text>
+      <text x="20" y="44" fill="#febc2e" font-size="14" font-weight="600">Blavatsky — akasha enters theosophy</text>
+    </g>
+    <line x1="260" y1="244" x2="260" y2="276" class="flow-line" stroke="#3c493e" stroke-width="1.5"/>
+    <g transform="translate(80, 276)">
+      <rect width="360" height="56" rx="10" fill="#1a1610" stroke="#febc2e" stroke-width="1" stroke-opacity="0.5"/>
+      <text x="20" y="24" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" letter-spacing="1.5">1883</text>
+      <text x="20" y="44" fill="#febc2e" font-size="14" font-weight="600">Sinnett — Esoteric Buddhism</text>
+    </g>
+    <line x1="260" y1="332" x2="260" y2="364" class="flow-line" stroke="#3c493e" stroke-width="1.5"/>
+    <g transform="translate(80, 364)">
+      <rect width="360" height="56" rx="10" fill="#1a1610" stroke="#febc2e" stroke-width="1" stroke-opacity="0.5"/>
+      <text x="20" y="24" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" letter-spacing="1.5">1927</text>
+      <text x="20" y="44" fill="#febc2e" font-size="14" font-weight="600">Bailey — "photographic film"</text>
+    </g>
+    <line x1="260" y1="420" x2="260" y2="452" class="flow-line" stroke="#3c493e" stroke-width="1.5"/>
+    <g transform="translate(80, 452)">
+      <rect width="360" height="56" rx="10" fill="#1a1610" stroke="#febc2e" stroke-width="1" stroke-opacity="0.5"/>
+      <text x="20" y="24" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" letter-spacing="1.5">1904–08</text>
+      <text x="20" y="44" fill="#febc2e" font-size="14" font-weight="600">Steiner — akashic chronicle</text>
+    </g>
+    <line x1="260" y1="508" x2="260" y2="540" class="flow-line" stroke="#3c493e" stroke-width="1.5"/>
+    <g transform="translate(80, 540)">
+      <rect width="360" height="56" rx="10" fill="#1a1610" stroke="#febc2e" stroke-width="1" stroke-opacity="0.5"/>
+      <text x="20" y="24" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" letter-spacing="1.5">1900s–40s</text>
+      <text x="20" y="44" fill="#febc2e" font-size="14" font-weight="600">Cayce — claims direct access</text>
+    </g>
+  </g>
+
+  <!-- Right column: Physical timeline (5 entries) -->
+  <g font-family="'Space Grotesk', sans-serif">
+    <g transform="translate(680, 188)">
+      <rect width="380" height="56" rx="10" fill="#0f1622" stroke="#5fa8ff" stroke-width="1" stroke-opacity="0.5"/>
+      <text x="20" y="24" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" letter-spacing="1.5">1887</text>
+      <text x="20" y="44" fill="#5fa8ff" font-size="14" font-weight="600">Michelson-Morley — ether not found</text>
+    </g>
+    <line x1="870" y1="244" x2="870" y2="276" class="flow-line" stroke="#3c493e" stroke-width="1.5"/>
+    <g transform="translate(680, 276)">
+      <rect width="380" height="56" rx="10" fill="#0f1622" stroke="#5fa8ff" stroke-width="1" stroke-opacity="0.5"/>
+      <text x="20" y="24" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" letter-spacing="1.5">1905</text>
+      <text x="20" y="44" fill="#5fa8ff" font-size="14" font-weight="600">Einstein — ether superfluous</text>
+    </g>
+    <line x1="870" y1="332" x2="870" y2="364" class="flow-line" stroke="#3c493e" stroke-width="1.5"/>
+    <g transform="translate(680, 364)">
+      <rect width="380" height="56" rx="10" fill="#0f1622" stroke="#5fa8ff" stroke-width="1" stroke-opacity="0.5"/>
+      <text x="20" y="24" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" letter-spacing="1.5">1935+</text>
+      <text x="20" y="44" fill="#5fa8ff" font-size="14" font-weight="600">EPR &amp; Bell — nonlocality becomes real</text>
+    </g>
+    <line x1="870" y1="420" x2="870" y2="452" class="flow-line" stroke="#3c493e" stroke-width="1.5"/>
+    <g transform="translate(680, 452)">
+      <rect width="380" height="56" rx="10" fill="#0f1622" stroke="#5fa8ff" stroke-width="1" stroke-opacity="0.5"/>
+      <text x="20" y="24" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" letter-spacing="1.5">1994</text>
+      <text x="20" y="44" fill="#5fa8ff" font-size="14" font-weight="600">Kaku — Hyperspace, the bulk</text>
+    </g>
+    <line x1="870" y1="508" x2="870" y2="540" class="flow-line" stroke="#3c493e" stroke-width="1.5"/>
+    <g transform="translate(680, 540)">
+      <rect width="380" height="56" rx="10" fill="#0f1622" stroke="#5fa8ff" stroke-width="1" stroke-opacity="0.5"/>
+      <text x="20" y="24" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" letter-spacing="1.5">2004</text>
+      <text x="20" y="44" fill="#5fa8ff" font-size="14" font-weight="600">László — the A-field</text>
+    </g>
+  </g>
+
+  <!-- Converging arrows to center bottom -->
+  <path d="M 260 596 Q 260 640 420 660" fill="none" stroke="#febc2e" stroke-width="2" stroke-opacity="0.6" class="flow-line"/>
+  <path d="M 870 596 Q 870 640 710 660" fill="none" stroke="#5fa8ff" stroke-width="2" stroke-opacity="0.6" class="flow-line"/>
+
+  <!-- Central convergence box (focal green) -->
+  <g transform="translate(370, 650)">
+    <rect width="400" height="72" rx="12" fill="#0a1a0d" stroke="#00ff41" stroke-width="2.5"/>
+    <text x="200" y="28" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle" letter-spacing="2">THE CONVERGENCE</text>
+    <text x="200" y="52" fill="#00ff41" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700" text-anchor="middle">A non-material substrate that records and informs</text>
+  </g>
+</svg>

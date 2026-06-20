@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Mayur Sinha</title>
-  <subtitle>Security engineering leader writing about AI security, Web3 security, cloud-native security, and engineering systems.</subtitle>
+  <subtitle>Principal Security Architect building sovereign control infrastructure for AI agents and adversarial systems.</subtitle>
   <link href="https://themayursinha.com/atom.xml" rel="self" />
   <link href="https://themayursinha.com" />
   <id>https://themayursinha.com/</id>
-  <updated>2026-05-25T06:41:03+02:00</updated>
+  <updated>2026-06-20T15:11:15+02:00</updated>
   <author>
     <name>Mayur Sinha</name>
   </author>
   
   <entry>
-    <title>MCP Visor - Runtime policy enforcement for AI agents</title>
-    <link href="https://themayursinha.com/posts/2026-05-25-mcp-visor-runtime-policy-enforcement-for-ai-agents/" />
-    <id>https://themayursinha.com/posts/2026-05-25-mcp-visor-runtime-policy-enforcement-for-ai-agents/</id>
+    <title>Three Trust Paths for Governing AI Agent Architectures</title>
+    <link href="https://themayursinha.com/architecture/2026/06/15/three-trust-paths-for-governing-ai-agent-architectures/" />
+    <id>https://themayursinha.com/architecture/2026/06/15/three-trust-paths-for-governing-ai-agent-architectures/</id>
+    <updated>2026-06-15T00:00:00+02:00</updated>
+    <published>2026-06-15T00:00:00+02:00</published>
+    <summary>Agentic architectures surface three trust paths — data movement, transaction integrity, and tool execution — that share a security model but require different controls, invariants, and failure behavior.</summary>
+  </entry>
+  
+  <entry>
+    <title>MCP Visor: Runtime Policy Enforcement</title>
+    <link href="https://themayursinha.com/architecture/2026/05/25/mcp-visor-runtime-policy-enforcement-for-ai-agents/" />
+    <id>https://themayursinha.com/architecture/2026/05/25/mcp-visor-runtime-policy-enforcement-for-ai-agents/</id>
     <updated>2026-05-25T00:00:00+02:00</updated>
     <published>2026-05-25T00:00:00+02:00</published>
     <summary>MCP Visor turns MCP tool execution into a deterministic policy boundary: inspect the tool call, enforce the rule, redact secrets, require approval, and log the decision before the action reaches the server.</summary>
@@ -21,8 +30,8 @@
   
   <entry>
     <title>Why grinding is a self-inflicted DDoS</title>
-    <link href="https://themayursinha.com/posts/2026-05-09-privilege-escalation-in-the-payoff-matrix/" />
-    <id>https://themayursinha.com/posts/2026-05-09-privilege-escalation-in-the-payoff-matrix/</id>
+    <link href="https://themayursinha.com/architecture/2026/05/09/privilege-escalation-in-the-payoff-matrix/" />
+    <id>https://themayursinha.com/architecture/2026/05/09/privilege-escalation-in-the-payoff-matrix/</id>
     <updated>2026-05-09T00:00:00+02:00</updated>
     <published>2026-05-09T00:00:00+02:00</published>
     <summary>Grinding inside an extractive system does not change the payoff matrix. It only increases throughput for someone else&apos;s infrastructure.</summary>
@@ -30,35 +39,35 @@
   
   <entry>
     <title>How to eliminate an entire class of API authorization bugs</title>
-    <link href="https://themayursinha.com/posts/2026-05-08-stop-fixing-bola-one-endpoint-at-a-time/" />
-    <id>https://themayursinha.com/posts/2026-05-08-stop-fixing-bola-one-endpoint-at-a-time/</id>
+    <link href="https://themayursinha.com/architecture/2026/05/08/stop-fixing-bola-one-endpoint-at-a-time/" />
+    <id>https://themayursinha.com/architecture/2026/05/08/stop-fixing-bola-one-endpoint-at-a-time/</id>
     <updated>2026-05-08T00:00:00+02:00</updated>
     <published>2026-05-08T00:00:00+02:00</published>
     <summary>BOLA is not solved by asking every developer to remember object-level checks. It is solved by making authorization a reusable platform capability.</summary>
   </entry>
   
   <entry>
-    <title>MCP security - The new supply chain risk for AI agents</title>
-    <link href="https://themayursinha.com/posts/2026-05-06-mcp-security-the-new-supply-chain-risk-for-ai-agents/" />
-    <id>https://themayursinha.com/posts/2026-05-06-mcp-security-the-new-supply-chain-risk-for-ai-agents/</id>
+    <title>MCP Security Is a Supply Chain Risk</title>
+    <link href="https://themayursinha.com/architecture/2026/05/06/mcp-security-the-new-supply-chain-risk-for-ai-agents/" />
+    <id>https://themayursinha.com/architecture/2026/05/06/mcp-security-the-new-supply-chain-risk-for-ai-agents/</id>
     <updated>2026-05-06T00:00:00+02:00</updated>
     <published>2026-05-06T00:00:00+02:00</published>
     <summary>MCP servers are not harmless plugins. They are executable trust boundaries that shape what AI agents see, believe, and do.</summary>
   </entry>
   
   <entry>
-    <title>Epistemic security - The missing control plane for AI agents</title>
-    <link href="https://themayursinha.com/posts/2026-05-04-epistemic-security-the-missing-control-plane-for-ai-agents/" />
-    <id>https://themayursinha.com/posts/2026-05-04-epistemic-security-the-missing-control-plane-for-ai-agents/</id>
+    <title>Epistemic Security for AI Agents</title>
+    <link href="https://themayursinha.com/architecture/2026/05/04/epistemic-security-the-missing-control-plane-for-ai-agents/" />
+    <id>https://themayursinha.com/architecture/2026/05/04/epistemic-security-the-missing-control-plane-for-ai-agents/</id>
     <updated>2026-05-04T00:00:00+02:00</updated>
     <published>2026-05-04T00:00:00+02:00</published>
     <summary>AI agents do not only need runtime security. They need epistemic security: controls for provenance, uncertainty, evidence, memory, and human verification.</summary>
   </entry>
   
   <entry>
-    <title>The AI agent dilemma - Why we are outsourcing our reality</title>
-    <link href="https://themayursinha.com/posts/2026-05-03-the-ai-agent-dilemma-why-we-are-outsourcing-our-reality/" />
-    <id>https://themayursinha.com/posts/2026-05-03-the-ai-agent-dilemma-why-we-are-outsourcing-our-reality/</id>
+    <title>The AI Agent Dilemma</title>
+    <link href="https://themayursinha.com/architecture/2026/05/03/the-ai-agent-dilemma-why-we-are-outsourcing-our-reality/" />
+    <id>https://themayursinha.com/architecture/2026/05/03/the-ai-agent-dilemma-why-we-are-outsourcing-our-reality/</id>
     <updated>2026-05-03T00:00:00+02:00</updated>
     <published>2026-05-03T00:00:00+02:00</published>
     <summary>AI agents may not just change how we work. They may weaken our ability to know, verify, and justify what we believe.</summary>
@@ -66,8 +75,8 @@
   
   <entry>
     <title>Game theory for cybersecurity: from reactive defense to strategic resilience</title>
-    <link href="https://themayursinha.com/posts/2026-03-08-game-theory-for-cybersecurity/" />
-    <id>https://themayursinha.com/posts/2026-03-08-game-theory-for-cybersecurity/</id>
+    <link href="https://themayursinha.com/architecture/2026/03/08/game-theory-for-cybersecurity/" />
+    <id>https://themayursinha.com/architecture/2026/03/08/game-theory-for-cybersecurity/</id>
     <updated>2026-03-08T00:00:00+01:00</updated>
     <published>2026-03-08T00:00:00+01:00</published>
     <summary>A practical guide to using game theory in cybersecurity, from Nash and Stackelberg models to APT defense, forensic readiness, and LLM-driven simulations.</summary>
@@ -75,8 +84,8 @@
   
   <entry>
     <title>Threat Modeling Autonomous AI Agents in Production</title>
-    <link href="https://themayursinha.com/posts/2026-03-04-threat-modeling-autonomous-ai-agents-in-production/" />
-    <id>https://themayursinha.com/posts/2026-03-04-threat-modeling-autonomous-ai-agents-in-production/</id>
+    <link href="https://themayursinha.com/architecture/2026/03/04/threat-modeling-autonomous-ai-agents-in-production/" />
+    <id>https://themayursinha.com/architecture/2026/03/04/threat-modeling-autonomous-ai-agents-in-production/</id>
     <updated>2026-03-04T00:00:00+01:00</updated>
     <published>2026-03-04T00:00:00+01:00</published>
     <summary>A practical framework for threat modeling autonomous AI agents in production, with concrete attack paths, controls, and measurable security SLOs.</summary>
@@ -84,17 +93,17 @@
   
   <entry>
     <title>Traditional manual code review is no longer sustainable</title>
-    <link href="https://themayursinha.com/posts/2026-03-02-manual-code-review-is-unsustainable/" />
-    <id>https://themayursinha.com/posts/2026-03-02-manual-code-review-is-unsustainable/</id>
+    <link href="https://themayursinha.com/architecture/2026/03/02/manual-code-review-is-unsustainable/" />
+    <id>https://themayursinha.com/architecture/2026/03/02/manual-code-review-is-unsustainable/</id>
     <updated>2026-03-02T00:00:00+01:00</updated>
     <published>2026-03-02T00:00:00+01:00</published>
-    <summary>Code review is a historical approval gate that simply no longer matches the shape of modern work. Here is why we need to pivot.</summary>
+    <summary>Code review was built for a world where humans wrote most code. In the AI era, the bottleneck moves from verifying syntax to governing intent.</summary>
   </entry>
   
   <entry>
     <title>Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks</title>
-    <link href="https://themayursinha.com/posts/2026-02-22-llms-vs-classical-neural-nets-for-vulnerability-detection/" />
-    <id>https://themayursinha.com/posts/2026-02-22-llms-vs-classical-neural-nets-for-vulnerability-detection/</id>
+    <link href="https://themayursinha.com/architecture/2026/02/22/llms-vs-classical-neural-nets-for-vulnerability-detection/" />
+    <id>https://themayursinha.com/architecture/2026/02/22/llms-vs-classical-neural-nets-for-vulnerability-detection/</id>
     <updated>2026-02-22T00:00:00+01:00</updated>
     <published>2026-02-22T00:00:00+01:00</published>
     <summary>A technical comparison of classical ANN pipelines and transformer LLMs for vulnerability detection.</summary>
@@ -102,92 +111,83 @@
   
   <entry>
     <title>Vibe Engineering</title>
-    <link href="https://themayursinha.com/posts/2025-10-10-vibe-engineering/" />
-    <id>https://themayursinha.com/posts/2025-10-10-vibe-engineering/</id>
+    <link href="https://themayursinha.com/architecture/2025/10/10/vibe-engineering/" />
+    <id>https://themayursinha.com/architecture/2025/10/10/vibe-engineering/</id>
     <updated>2025-10-10T00:00:00+02:00</updated>
     <published>2025-10-10T00:00:00+02:00</published>
-    <summary>Vibe Engineering</summary>
+    <summary>Vibe coding ships fast and breaks things. Vibe engineering keeps the speed but adds the discipline that makes software survive contact with production.</summary>
   </entry>
   
   <entry>
     <title>Designing a living ecosystem of AI agents</title>
-    <link href="https://themayursinha.com/posts/2025-06-29-living-ecosystems-of-agents/" />
-    <id>https://themayursinha.com/posts/2025-06-29-living-ecosystems-of-agents/</id>
+    <link href="https://themayursinha.com/architecture/2025/06/29/living-ecosystems-of-agents/" />
+    <id>https://themayursinha.com/architecture/2025/06/29/living-ecosystems-of-agents/</id>
     <updated>2025-06-29T00:00:00+02:00</updated>
     <published>2025-06-29T00:00:00+02:00</published>
-    <summary>AI agents ecosystem</summary>
+    <summary>The next step past agent orchestration is not bigger orchestrators. It is ecosystems where agents spawn, bid, learn, and retire.</summary>
   </entry>
   
   <entry>
     <title>Life is cruel</title>
-    <link href="https://themayursinha.com/posts/2024-06-30-Suffering/" />
-    <id>https://themayursinha.com/posts/2024-06-30-Suffering/</id>
+    <link href="https://themayursinha.com/architecture/2024/06/30/Suffering/" />
+    <id>https://themayursinha.com/architecture/2024/06/30/Suffering/</id>
     <updated>2024-06-30T00:00:00+02:00</updated>
     <published>2024-06-30T00:00:00+02:00</published>
-    <summary>Life is cruel</summary>
+    <summary>The universe is indifferent to suffering. The only justice available is the justice we build.</summary>
   </entry>
   
   <entry>
     <title>Revisiting the Unabomber</title>
-    <link href="https://themayursinha.com/posts/2024-02-12-Unabomber-relevance-in-2024/" />
-    <id>https://themayursinha.com/posts/2024-02-12-Unabomber-relevance-in-2024/</id>
+    <link href="https://themayursinha.com/architecture/2024/02/12/Unabomber-relevance-in-2024/" />
+    <id>https://themayursinha.com/architecture/2024/02/12/Unabomber-relevance-in-2024/</id>
     <updated>2024-02-12T00:00:00+01:00</updated>
     <published>2024-02-12T00:00:00+01:00</published>
-    <summary>Revisiting the Unabomber</summary>
+    <summary>Kaczynski&apos;s manifesto identified real problems with industrial society. His solution was murder. The honest move is to separate the diagnosis from the cure.</summary>
   </entry>
   
   <entry>
-    <title>Exploring Philosophical Parallels - Nietzsche and Vedanta</title>
-    <link href="https://themayursinha.com/posts/2023-12-31-Nietzsche-and-Vedanta/" />
-    <id>https://themayursinha.com/posts/2023-12-31-Nietzsche-and-Vedanta/</id>
+    <title>Nietzsche and Vedanta: Unexpected Parallels</title>
+    <link href="https://themayursinha.com/architecture/2023/12/31/Nietzsche-and-Vedanta/" />
+    <id>https://themayursinha.com/architecture/2023/12/31/Nietzsche-and-Vedanta/</id>
     <updated>2023-12-31T00:00:00+01:00</updated>
     <published>2023-12-31T00:00:00+01:00</published>
-    <summary>Exploring Philosophical Parallels - Nietzsche and Vedanta</summary>
+    <summary>Nietzsche and Vedanta agree that conventional categories are provisional. They diverge on what to do once those categories collapse.</summary>
   </entry>
   
   <entry>
-    <title>Resolving the Epicurean Paradox - A Perspective from Advaita Vedanta</title>
-    <link href="https://themayursinha.com/posts/2023-07-23-Epicurean-paradox/" />
-    <id>https://themayursinha.com/posts/2023-07-23-Epicurean-paradox/</id>
+    <title>The Epicurean Paradox from Advaita Vedanta</title>
+    <link href="https://themayursinha.com/architecture/2023/07/23/Epicurean-paradox/" />
+    <id>https://themayursinha.com/architecture/2023/07/23/Epicurean-paradox/</id>
     <updated>2023-07-23T00:00:00+02:00</updated>
     <published>2023-07-23T00:00:00+02:00</published>
-    <summary>Resolving the Epicurean Paradox</summary>
+    <summary>Epicurus turns the existence of evil into a logical trap for theism. Advaita Vedanta escapes the trap by denying the duality the trap depends on.</summary>
   </entry>
   
   <entry>
     <title>Elon Musk on xAI</title>
-    <link href="https://themayursinha.com/posts/2023-07-17-x-ai/" />
-    <id>https://themayursinha.com/posts/2023-07-17-x-ai/</id>
+    <link href="https://themayursinha.com/architecture/2023/07/17/x-ai/" />
+    <id>https://themayursinha.com/architecture/2023/07/17/x-ai/</id>
     <updated>2023-07-17T00:00:00+02:00</updated>
     <published>2023-07-17T00:00:00+02:00</published>
-    <summary>Elon Musk on xAI</summary>
+    <summary>xAI&apos;s mission is to build a truth-seeking AGI. The part that stayed with me was not the ambition, but the first-principles habit behind it.</summary>
   </entry>
   
   <entry>
     <title>Man is a machine</title>
-    <link href="https://themayursinha.com/posts/2023-07-09-Man-is-a-machine/" />
-    <id>https://themayursinha.com/posts/2023-07-09-Man-is-a-machine/</id>
+    <link href="https://themayursinha.com/architecture/2023/07/09/Man-is-a-machine/" />
+    <id>https://themayursinha.com/architecture/2023/07/09/Man-is-a-machine/</id>
     <updated>2023-07-09T00:00:00+02:00</updated>
     <published>2023-07-09T00:00:00+02:00</published>
-    <summary>Man is a machine</summary>
+    <summary>We are biological machines and first-person subjects at the same time. The mistake is treating one description as the whole story.</summary>
   </entry>
   
   <entry>
     <title>Was Thanos Right?</title>
-    <link href="https://themayursinha.com/posts/2023-07-07-Was-Thanos-Right/" />
-    <id>https://themayursinha.com/posts/2023-07-07-Was-Thanos-Right/</id>
+    <link href="https://themayursinha.com/architecture/2023/07/07/Was-Thanos-Right/" />
+    <id>https://themayursinha.com/architecture/2023/07/07/Was-Thanos-Right/</id>
     <updated>2023-07-07T00:00:00+02:00</updated>
     <published>2023-07-07T00:00:00+02:00</published>
-    <summary>Was Thanos Right?</summary>
-  </entry>
-  
-  <entry>
-    <title>Reframing Application Security</title>
-    <link href="https://themayursinha.com/posts/2023-06-14-Reframing-application-security/" />
-    <id>https://themayursinha.com/posts/2023-06-14-Reframing-application-security/</id>
-    <updated>2023-06-14T00:00:00+02:00</updated>
-    <published>2023-06-14T00:00:00+02:00</published>
-    <summary>Application security should not be a late-stage interruption. The mature AppSec move is to improve developer feedback loops, reduce cognitive load, and build secure defaults into the engineering system.</summary>
+    <summary>Thanos asks a real question about scarcity and survival, but his answer reveals the danger of treating human lives as variables in a single equation.</summary>
   </entry>
   
 </feed>

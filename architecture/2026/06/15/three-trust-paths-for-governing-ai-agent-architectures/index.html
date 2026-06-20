@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+
+  
+  
+  
+
+  
+
+  
+  
+
+  
+
+  <title>Three Trust Paths for Governing AI Agent Architectures</title>
+
+  <meta name="author" content="Mayur Sinha" />
+  <meta name="description" content="Agentic architectures surface three trust paths — data movement, transaction integrity, and tool execution — that share a security model but require different controls, invariants, and failure behavior.">
+  
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  
+
+  <link rel="canonical" href="https://themayursinha.com/architecture/2026/06/15/three-trust-paths-for-governing-ai-agent-architectures/" />
+  <link rel="alternate" type="application/rss+xml" title="Mayur Sinha - Principal Security Architect building sovereign control infrastructure for AI agents and adversarial systems." href="/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Mayur Sinha RSS" href="/rss.xml" />
+  <link rel="alternate" type="application/atom+xml" title="Mayur Sinha Atom" href="/atom.xml" />
+
+
+  
+
+  
+    
+      <link rel="stylesheet" href="/css/terminal.css" />
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Grotesk:500,600,700|IBM+Plex+Mono:400,500,600" />
+    
+  
+
+  
+
+  
+
+  
+
+  <!-- Facebook OpenGraph tags -->
+  
+
+  <meta property="og:title" content="Three Trust Paths for Governing AI Agent Architectures" />
+  <meta property="og:description" content="Agentic architectures surface three trust paths — data movement, transaction integrity, and tool execution — that share a security model but require different controls, invariants, and failure behavior.">
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:url" content="https://themayursinha.com/architecture/2026/06/15/three-trust-paths-for-governing-ai-agent-architectures/" />
+
+  
+  <meta property="og:image" content="https://themayursinha.com/img/circuit.svg" />
+  
+
+  
+  <meta property="article:published_time" content="2026-06-15T00:00:00+02:00" />
+  <meta property="article:author" content="Mayur Sinha" />
+    
+      
+  <meta property="article:tag" content="ai" />
+      
+  <meta property="article:tag" content="security" />
+      
+  <meta property="article:tag" content="agents" />
+      
+  <meta property="article:tag" content="architecture" />
+      
+  <meta property="article:tag" content="mcp" />
+      
+  <meta property="article:tag" content="threat-modeling" />
+      
+    
+  
+
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <meta name="twitter:site" content="@themayursinha" />
+  <meta name="twitter:creator" content="@themayursinha" />
+  
+  <meta name="twitter:title" content="Three Trust Paths for Governing AI Agent Architectures" />
+  <meta name="twitter:description" content="Agentic architectures surface three trust paths — data movement, transaction integrity, and tool execution — that share a security model but require different controls, invariants, and failure behavior.">
+  
+  <meta name="twitter:image" content="https://themayursinha.com/img/circuit.svg" />
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://themayursinha.com",
+    "name": "Mayur Sinha",
+    "description": "Principal Security Architect building sovereign control infrastructure for AI agents and adversarial systems.",
+    "publisher": {
+      "@type": "Person",
+      "name": "Mayur Sinha"
+    }
+  }
+  </script>
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Three Trust Paths for Governing AI Agent Architectures",
+    "description": "Agentic architectures surface three trust paths — data movement, transaction integrity, and tool execution — that share a security model but require different controls, invariants, and failure behavior.",
+    "datePublished": "2026-06-15T00:00:00+02:00",
+    "dateModified": "2026-06-15T00:00:00+02:00",
+    "author": {
+      "@type": "Person",
+      "name": "Mayur Sinha"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://themayursinha.com/architecture/2026/06/15/three-trust-paths-for-governing-ai-agent-architectures/"
+    },
+    "image": "https://themayursinha.com/img/circuit.svg",
+    "keywords": ["ai","security","agents","architecture","mcp","threat-modeling"]
+  }
+  </script>
+  
+
+  
+
+  
+
+  
+
+</head>
+
+  <body>
+    <div class="viewport-frame" aria-hidden="true"></div>
+    
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="research-readout" aria-label="Research node status">
+    <span>NODE MS-R01</span>
+    <span>DOMAIN SOVEREIGN AI</span>
+    <span>CONTROL MODEL LEAST AGENCY</span>
+    <span>STATE ACTIVE</span>
+  </div>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a class="site-mark" href="/" aria-label="Mayur Sinha home"><span>MS</span>//RESEARCH</a>
+    <ul>
+      
+        
+        <li>
+          <a href="/">Home</a>
+        </li>
+      
+        
+        <li>
+          <a href="/manifesto/">Manifesto</a>
+        </li>
+      
+        
+        <li>
+          <a href="/architecture/">Architecture</a>
+        </li>
+      
+        
+        <li>
+          <a href="/proof/">Proof</a>
+        </li>
+      
+      <li class="site-nav-search">
+        <button type="button" class="site-nav-search-btn" data-search-open aria-label="Open search" aria-haspopup="dialog" title="Search (Ctrl/Cmd + K)">
+          <svg class="site-nav-search-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
+            <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M8.5 3a5.5 5.5 0 1 1-3.41 9.84l-3.7 3.7a1 1 0 0 1-1.42-1.42l3.7-3.7A5.5 5.5 0 0 1 8.5 3Zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/>
+          </svg>
+          <span class="site-nav-search-kbd" aria-hidden="true">⌘K</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main" id="main-content">
+      <article class="prose blog-post">
+  <header class="post-header">
+    <p class="post-label">ARCHITECTURE LOG</p>
+    <h1>Three Trust Paths for Governing AI Agent Architectures</h1>
+    
+      <p class="page-subtitle">Data movement, transaction integrity, and tool execution each need their own controls.</p>
+    
+    <time datetime="2026-06-15T00:00:00+02:00">2026-06-15</time>
+  </header>
+
+  
+
+  <p>When I built <a href="/architecture/2026/05/25/mcp-visor-runtime-policy-enforcement-for-ai-agents/">MCP Visor</a>, I was focused on one boundary: the tool execution call. An agent invokes a tool. Something deterministic needs to say yes or no, log the decision, and prevent the model from being the only thing standing between a confused instruction and a production mutation. That boundary is real and the proxy works.</p>
+
+<p>But working on agent architectures across MCP servers, protocol integrations, and enterprise platforms has made one pattern clear. Tool execution is one trust path among several. Most agentic architectures surface three distinct trust paths that share a security model but require different controls, different invariants, and different failure behavior. Architectural frameworks that collapse all three into a single boundary tend to produce controls that are too permissive on the data path or too restrictive on the execution path.</p>
+
+<p>The three paths are data movement, transaction integrity, and tool execution. This post maps all three, explains why each needs independent governance, and proposes an architecture that separates centralized trust decisions from distributed domain enforcement.</p>
+
+<h2 id="the-three-trust-paths">The three trust paths</h2>
+
+<h3 id="data-movement-what-leaves">Data movement: what leaves</h3>
+
+<p>When an agent shares data with an external system — a vendor API, a third-party channel, an analytics pipeline — the primary risk is not the API call itself. It is the content that leaves. The model cannot unshare data after export. Classification, minimization, and routing need to be deterministic and independent of whatever the model decided to include in the response. If the policy relies on the model remembering to exclude PII, the policy does not exist.</p>
+
+<p>The control posture is minimize, route, observe, revoke. Before data leaves, the system should classify it, minimize it to the necessary subset, route it through approved channels, observe what was exported, and support revocation. The invariant: no sensitive data leaves without tenant policy and deterministic export controls. A single <a href="https://arxiv.org/abs/2005.11401">RAG</a> call can extract, compress, and summarize database records, customer PII, business logic, and internal documentation into one paragraph. The old <a href="https://csrc.nist.gov/glossary/term/data_loss_prevention">DLP</a> boundary was around structured data fields. The new boundary needs to be around what the agent assembled from multiple retrieval sources.</p>
+
+<p>There is also a reverse direction. When external data enters the system — recommendations, lookups, third-party context — the risk flips to <a href="https://genai.owasp.org/llmrisk/llm042025-data-and-model-poisoning/">context poisoning</a>. The agent treats external input as evidence without preserving source trust levels. I covered this in the <a href="/architecture/2026/05/04/epistemic-security-the-missing-control-plane-for-ai-agents/">epistemic security post</a>: retrieved content needs provenance labels because not all text entering context arrives with the same authority.</p>
+
+<h3 id="transaction-integrity-what-changes">Transaction integrity: what changes</h3>
+
+<p>When an external system or protocol can influence state — creating orders, modifying records, triggering workflows — the risks move from data leakage to state corruption. Three patterns repeat across every architecture I have reviewed.</p>
+
+<p>Capability drift happens when a negotiated capability — “this channel can check prices” — drifts into actual behavior — “this channel is submitting orders.” If the protocol negotiates capability at connection time but weakly validates it at execution time, the negotiation was theater. State drift happens when price, quantity, availability, or context changes between the external recommendation and its application. The agent may carry stale state into a fresh transaction. Completion replay happens when a duplicate or stale request is treated as <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-idempotency-key-header">idempotent</a> when domain rules require rejection.</p>
+
+<p>The control posture is authenticate the caller, validate current state, authorize the specific mutation, enforce idempotency, and reconcile the outcome. Each step needs to be the responsibility of the domain that owns the state, not the protocol adapter or the agent. This is what I mean by distributed enforcement: the domain authorizes the effect because the domain owns the invariant.</p>
+
+<h3 id="tool-execution-what-chains">Tool execution: what chains</h3>
+
+<p>This is the trust path MCP Visor was built for. An agent chains tools, and the sequence can produce a cumulative effect that no single call would flag as dangerous. A compromised agent can stay inside individual tool permissions — each <code class="language-plaintext highlighter-rouge">file_read</code>, <code class="language-plaintext highlighter-rouge">database_query</code>, and <code class="language-plaintext highlighter-rouge">slack_send_message</code> looks legitimate — while producing a read-to-exfiltrate pattern, a query-to-mutate pattern, or a fetch-to-deploy pattern. The dangerous behavior is not in any single tool. It is in the sequence.</p>
+
+<p>The control posture is bind identity to actor and tenant, constrain tools through signed manifests and risk tiers, decide policy on intent and scope, enforce in the domain through authorization artifacts, and contain cumulative impact through budgets, loop detection, and kill switches. The key insight from building MCP Visor is that runtime policy needs state. Static review tells you a tool exists. Runtime history tells you what the agent is doing with it across multiple calls.</p>
+
+<figure class="figure">
+  <div class="fig-label">// Fig. 1 · Three Trust Paths</div>
+  <div class="fig-body">
+    <img src="/img/three-trust-paths.svg" alt="Three trust paths for AI agent architectures" loading="lazy" />
+  </div>
+  
+  <figcaption class="fig-caption">Agentic architectures surface three distinct trust paths — data movement, transaction integrity, and tool execution — each with its own control posture, invariants, and failure modes.</figcaption>
+  
+</figure>
+
+<h2 id="why-one-enforcement-boundary-creates-blind-spots">Why one enforcement boundary creates blind spots</h2>
+
+<p>The temptation is to build one control plane that handles all three paths. Identity, authorization, policy, logging — one pipeline, one decision point, one audit trail. The problem is that the invariants differ in ways that matter to the architecture.</p>
+
+<p>Data movement cares about classification, minimization, and provenance. The control should be observable and constrain what leaves, but it should not block low-risk operations with the same friction as financial mutations. Transaction integrity cares about state consistency, domain authorization, and idempotency. The control should fail closed on writes and preserve state on partial failure. Tool execution cares about sequence, budget, and identity binding. The control should evaluate past behavior to judge the next call.</p>
+
+<p>A single boundary that tries to handle all three tends to default to the most conservative posture across the board. That creates friction on data reads and makes the execution path feel sluggish. The more practical architecture is one trust model with three enforcement points, each tailored to the trust path it guards. Shared trust services handle identity, capability policy, data policy, risk decisions, and evidence. The enforcement points apply those decisions in ways that match their path.</p>
+
+<p>In the <a href="/architecture/2026/05/06/mcp-security-the-new-supply-chain-risk-for-ai-agents/">MCP security post</a>, I argued that MCP servers are not harmless plugins. They are executable trust boundaries that shape what agents see, believe, and do. The same instinct applies at the architecture level. Data channels, transaction channels, and tool channels are three different kinds of trust boundary. They need different checks, different evidence, and different failure behavior.</p>
+
+<h2 id="architecture-one-trust-model-distributed-enforcement">Architecture: one trust model, distributed enforcement</h2>
+
+<p>The architecture I keep returning to has three layers. They are not three tiers of the same boundary. They serve different functions and should be allowed to evolve independently.</p>
+
+<p><strong>Shared trust services</strong> handle identity binding, capability policy, data policy, risk decisions, evidence collection, and revocation. They produce a signed, short-lived, sender-bound authorization artifact. The artifact carries a decision: this caller, in this tenant, with this identity, under this policy, may attempt this operation. The artifact never replaces domain validation. It carries context.</p>
+
+<p><strong>Authoritative domains</strong> validate current state, perform final object-level authorization, enforce business invariants, and reconcile outcomes. An artifact that says “caller X may place an order” does not mean the order is valid. It means the caller passed the trust gate. The domain must now validate whether the cart is current, the inventory exists, the price is correct, and the payment method is authorized. No artifact, no matter how cryptographically sound, substitutes for checking that the state the mutation depends on is still current.</p>
+
+<p><strong>Runtime containment</strong> sits outside both layers. Budgets, <a href="https://martinfowler.com/bliki/CircuitBreaker.html">circuit breakers</a>, tenant isolation, replay defense, loop detection, and kill switches catch what policy and domain authorization miss. Containment does not prevent every failure. It limits the blast radius when something gets through.</p>
+
+<p>This layered model directly informed what I built in MCP Visor. The proxy sits at the execution boundary, deciding tool calls against YAML policy, detecting chains, requiring approval, and logging structured evidence. That is the third trust path implemented as a runtime control. The data trust path needs its own equivalent — something that minimizes, classifies, and observes before data leaves. The transaction trust path needs its own equivalent — something that carries authorization artifacts from identity to domain to reconciliation.</p>
+
+<figure class="figure">
+  <div class="fig-label">// Fig. 2 · Distributed Enforcement</div>
+  <div class="fig-body">
+    <img src="/img/agentic-distributed-enforcement.svg" alt="Distributed enforcement for agentic systems" loading="lazy" />
+  </div>
+  
+  <figcaption class="fig-caption">One trust model, distributed enforcement. Shared trust services produce authorization artifacts. Authoritative domains validate state and authorize effects. Runtime containment limits blast radius.</figcaption>
+  
+</figure>
+
+<h2 id="threat-model-distinct-breakpoints-per-path">Threat model: distinct breakpoints per path</h2>
+
+<p>The threat model differs across the three paths, and the breakpoints need to be understood separately.</p>
+
+<p>On the data path, the primary threats are over-sharing and context poisoning. An agent retrieves more data than needed and includes it in a response to an external system. The model decided what to include. The system should have minimized it first. Or an external system returns content containing hidden instructions — the <a href="https://owasp.org/www-community/attacks/MCP_Tool_Poisoning">MCP tool poisoning</a> pattern. The model reads the content as evidence. It should have been labeled as untrusted, and the system should prevent untrusted content from driving high-stakes behavior without corroboration. The breakpoints are classify and minimize before export, route through approved channels, observe what left, support revocation, and label incoming content by trust tier.</p>
+
+<p>On the transaction path, the sequence from external recommendation to incorrect order is predictable and dangerous. A valid external channel produces a recommendation. The capability negotiated at connection time drifts at execution time. State drifts between the recommendation and the order. A duplicate request is replayed. An incorrect order lands against inconsistent state. Customer impact is refunds, support burden, financial loss, and trust erosion. The breakpoints are authenticate the caller, validate current state, authorize the specific mutation, enforce idempotency, and reconcile the outcome against domain invariants. The control that matters most is domain authorization — the final check that the state the mutation depends on is still current before the mutation is applied.</p>
+
+<p>On the execution path, tool chaining and resource exhaustion are the primary risks. A poisoned context steers the agent toward an overbroad tool. Each call passes per-tool policy. The cumulative sequence mutates domain state. The blast radius includes scaled mutations, cost spikes, and operational degradation. The breakpoints are bind identity, constrain tools, budget loops, contain tenant, and prove outcome. The hardest breakpoint to get right is budget — the model can loop, retry, and escalate without ever violating per-call authorization. Rate limiting helps. A hard wallet per tenant or session is stronger.</p>
+
+<h2 id="risk-tiers-permit-constrain-gate-block">Risk tiers: permit, constrain, gate, block</h2>
+
+<p>Across all three paths, I use <a href="https://www.nist.gov/itl/ai-risk-management-framework">four risk tiers</a> that have proven useful in architecture reviews.</p>
+
+<p><strong>Permit</strong> discovery and read operations with minimized data, read scope, and object-level authorization. Trigger approval on bulk reads, sensitive segments, or anomalous routes.</p>
+
+<p><strong>Constrain</strong> reversible updates with scoped writes, state validation, idempotency, and rollback. Gate on new channels, unusual volume, or customer-specific data.</p>
+
+<p><strong>Gate</strong> irreversible mutations — financial movement, customer mutation, credential changes — behind bound authority, domain authorization, and reconciliation. These should fail closed on any uncertainty.</p>
+
+<p><strong>Block</strong> cross-tenant, credential-level, and destructive operations by default. Require formal risk acceptance with expiry and containment proof before enabling.</p>
+
+<p>This tiered model is useful because it lets teams ship reversible value quickly while building controls for irreversible outcomes deliberately. The most common mistake I see is applying the same posture to reads and writes. Reads can be permissive with strong observability. Mutations that change money, state, or customer records need the full chain.</p>
+
+<h2 id="failure-behavior-define-it-before-an-incident-does">Failure behavior: define it before an incident does</h2>
+
+<p>Every architecture works until a dependency fails. The real threat is not availability. It is the system silently switching to <a href="https://owasp.org/www-project-developer-guide/draft/foundations/security_principles/#fail-securely">fail-open</a> semantics because no one defined the failure path.</p>
+
+<p>Policy unavailable: writes fail closed. A bounded cache may serve low-risk reads during the outage, but no mutation proceeds without policy. Domain dependency unreachable: preserve state and degrade to a safe fallback — standard processing without the agent path, not a half-executed transaction. Inconsistent outcome detected: quarantine state into an asynchronous exception queue for human reconciliation. These are launch requirements, not post-incident improvements. I have seen teams define happy-path controls in detail and discover during an incident that the policy engine was unreachable and the system defaulted to allow.</p>
+
+<h2 id="evidence-as-a-side-effect-not-a-separate-pipeline">Evidence as a side effect, not a separate pipeline</h2>
+
+<p>Agent architectures produce identity assertions, policy decisions, tool calls, data exports, transaction records, and reconciliation logs. All of it is evidence. If generated as a normal byproduct of operation — not assembled after the fact — it serves three purposes simultaneously: security investigation, compliance evidence, and customer trust.</p>
+
+<p>A customer who can see why an action happened, who approved it, which policy applied, and how the outcome was reconciled no longer needs to trust the model. They need to trust the controls around it. That is the same argument I made for <a href="/architecture/2026/05/25/mcp-visor-runtime-policy-enforcement-for-ai-agents/">MCP Visor’s audit trail</a>, applied to the full architecture.</p>
+
+<h2 id="the-practical-path">The practical path</h2>
+
+<p>The more agent architectures I work on, the more I return to a simple decomposition. Any agentic system that handles data, transactions, and tools needs three things: a way to control what leaves, a way to validate what changes, and a way to constrain what chains.</p>
+
+<p>MCP Visor addresses the third path. The first two — data movement controls and transaction integrity controls — are the next layers in the stack. My working architecture separates shared trust services from authoritative domains from runtime containment because the trust services should be centralized and consistent while domain authorization should stay close to the state it protects. The authorization artifact carries the decision. The domain enforces the effect. The containment layer limits what survives.</p>
+
+<p>If you are building an agent platform that handles data, state, or tool execution, start with the invariants. What are you willing to let leave? What state are you willing to let change? What tool sequences are you willing to let run? The controls follow the invariants. The architecture follows the controls.</p>
+
+
+  
+
+  <nav class="post-navigation" aria-label="Adjacent architecture entries">
+    
+      <a href="/architecture/2026/05/25/mcp-visor-runtime-policy-enforcement-for-ai-agents/">&larr; MCP Visor: Runtime Policy Enforcement</a>
+    
+    
+  </nav>
+</article>
+
+<div id="toc" class="toc-sidebar">
+  <div id="toc-content" class="toc-content"></div>
+</div>
+
+<script>
+(function() {
+  function initToc() {
+    const article = document.querySelector('.blog-post');
+    const tocContent = document.getElementById('toc-content');
+    const tocSidebar = document.getElementById('toc');
+    if (!article || !tocContent || !tocSidebar) return;
+
+    const headings = Array.from(article.querySelectorAll('h1, h2, h3, h4, h5, h6'));
+    if (headings.length === 0) { tocSidebar.style.display = 'none'; return; }
+
+    const toc = document.createElement('ul');
+    toc.className = 'toc-list';
+
+    const linkMap = new Map();
+
+    headings.forEach(function(heading, index) {
+      if (!heading.id) heading.id = 'heading-' + index;
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + heading.id;
+      a.textContent = heading.textContent.trim();
+      a.className = 'toc-link';
+      a.dataset.target = heading.id;
+
+      const level = parseInt(heading.tagName.charAt(1));
+      li.className = 'toc-level-' + level;
+
+      li.appendChild(a);
+      toc.appendChild(li);
+      linkMap.set(heading.id, { li: li, a: a });
+    });
+
+    // Header
+    const header = document.createElement('div');
+    header.className = 'toc-header';
+    header.innerHTML = '<span class="toc-header-line" aria-hidden="true"></span><span>On this page</span>';
+    tocContent.appendChild(header);
+    tocContent.appendChild(toc);
+
+    // Reading progress bar
+    const progress = document.createElement('div');
+    progress.className = 'toc-progress';
+    progress.setAttribute('aria-hidden', 'true');
+    tocSidebar.insertBefore(progress, tocContent);
+
+    // Click handling with smooth scroll and sticky offset
+    tocContent.addEventListener('click', function(e) {
+      const link = e.target.closest('.toc-link');
+      if (!link) return;
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (!targetElement) return;
+
+      const navbar = document.querySelector('.navbar-custom');
+      const offset = (navbar ? navbar.offsetHeight : 0) + 24;
+      const targetY = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+
+      window.scrollTo({ top: targetY, left: 0, behavior: 'smooth' });
+      history.replaceState(null, '', '#' + targetId);
+    });
+
+    // Scroll spy with IntersectionObserver
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        const item = linkMap.get(entry.target.id);
+        if (!item) return;
+        if (entry.isIntersecting) {
+          linkMap.forEach(function(val) {
+            val.li.classList.remove('toc-active');
+            val.a.classList.remove('toc-link-active');
+          });
+          item.li.classList.add('toc-active');
+          item.a.classList.add('toc-link-active');
+        }
+      });
+    }, observerOptions);
+
+    headings.forEach(function(heading) { observer.observe(heading); });
+
+    // Reading progress bar
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) : 0;
+      progress.style.transform = 'scaleX(' + Math.min(1, Math.max(0, pct)) + ')';
+    }
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initToc);
+  } else {
+    initToc();
+  }
+})();
+</script>
+
+    </main>
+    <footer class="site-footer">
+  <p class="site-footer-line">Mayur Sinha / RESEARCH NODE MS-R01 / 2026</p>
+  <p class="site-footer-line"><a href="/feed.xml">RSS FEED</a> / END OF TRANSMISSION</p>
+  <nav class="site-footer-social" aria-label="Social links"><a class="social-link" href="mailto:themayursinha@gmail.com" rel="noopener" aria-label="Email">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3 7 9 6 9-6"/></svg>
+      </a><a class="social-link" href="https://github.com/themayursinha" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+      </a><a class="social-link" href="https://x.com/themayursinha" target="_blank" rel="noopener" aria-label="X">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a><a class="social-link" href="https://www.linkedin.com/in/mayursinha" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-5c0-1 .5-2 2-2s2 1 2 2v5"/></svg>
+      </a><a class="social-link" href="https://www.goodreads.com/themayursinha" target="_blank" rel="noopener" aria-label="Goodreads">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.43 1.09c-1.36.18-2.51.6-3.59 1.34-1.7 1.16-2.81 2.74-3.31 4.74-.26 1.05-.3 2.78-.08 3.85.5 2.45 1.84 4.46 3.84 5.78 1.36.91 2.81 1.37 4.43 1.4 1.55.03 2.62-.13 3.85-.6.05 1.05-.19 1.81-.86 2.51-.7.74-1.64 1.1-2.83 1.1-1.7 0-2.92-.6-3.4-1.74l-3.39.45c.62 2.7 3.4 4.51 7.18 4.51 2.05 0 3.74-.45 5.05-1.45 1.27-1 2.05-2.5 2.05-4.21V8.21c0-2.05-.4-3.65-1.27-4.85-1.05-1.4-2.7-2.15-4.9-2.31-.84-.06-2.41-.07-2.77.04zm.74 6.05c1.27 0 2.27.36 2.96 1.07.69.71 1.04 1.74 1.04 3.04v1.05c-.61.4-1.51.6-2.69.6-1.05 0-1.88-.27-2.49-.83-.6-.55-.91-1.34-.91-2.36 0-1.05.31-1.85.91-2.4.61-.55 1.44-.83 2.49-.83.05 0 .11 0 .16.01l-.47 1.65z"/></svg>
+      </a></nav>
+</footer>
+
+    <div class="site-search-modal" data-component="site-search" aria-hidden="true" hidden>
+  <div class="site-search-backdrop" data-search-close></div>
+  <div class="site-search-dialog" role="dialog" aria-modal="true" aria-labelledby="site-search-title" tabindex="-1">
+    <div class="site-search-header">
+      <svg class="site-search-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
+        <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M8.5 3a5.5 5.5 0 1 1-3.41 9.84l-3.7 3.7a1 1 0 0 1-1.42-1.42l3.7-3.7A5.5 5.5 0 0 1 8.5 3Zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/>
+      </svg>
+      <label for="site-search-input" class="visually-hidden">Search the site</label>
+      <input
+        id="site-search-input"
+        class="site-search-input"
+        type="search"
+        name="q"
+        placeholder="Search posts, pages, projects…"
+        aria-label="Search the site"
+        aria-controls="site-search-results"
+        aria-describedby="site-search-status"
+        autocomplete="off"
+        spellcheck="false"
+      >
+      <span class="site-search-hint" id="site-search-title">SEARCH</span>
+      <button type="button" class="site-search-close" data-search-close aria-label="Close search (Esc)">×</button>
+    </div>
+
+    <p id="site-search-status" class="site-search-status" role="status" aria-live="polite">
+      <span id="site-search-loading" class="site-search-loading" hidden>Loading index…</span>
+      <span id="site-search-meta" class="site-search-meta"></span>
+    </p>
+
+    <ol id="site-search-results" class="site-search-results" aria-label="Search results" hidden></ol>
+
+    <div id="site-search-empty" class="site-search-empty" hidden>
+      <p class="site-search-empty-text">Type to search posts, architecture notes, and projects.</p>
+      <p class="site-search-hint-row">
+        <span>Try:</span>
+        <button type="button" class="site-search-suggest" data-q="MCP">MCP</button>
+        <button type="button" class="site-search-suggest" data-q="agent">agent</button>
+        <button type="button" class="site-search-suggest" data-q="kubernetes">kubernetes</button>
+        <button type="button" class="site-search-suggest" data-q="sovereign">sovereign</button>
+      </p>
+    </div>
+
+    <footer class="site-search-footer">
+      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>esc</kbd> close</span>
+    </footer>
+  </div>
+</div>
+
+    <script src="/js/minisearch.min.js" defer></script>
+    <script src="/js/search.js" defer></script>
+    
+  </body>
+</html>

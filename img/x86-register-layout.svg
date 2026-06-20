@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 720" width="1140" height="720" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="x86-title x86-desc">
+  <title id="x86-title">x86 general-purpose register layout</title>
+  <desc id="x86-desc">Eight 32-bit general-purpose registers, their 16-bit sub-registers, and the four that also split into 8-bit halves. Color groups: green for arithmetic/data, yellow for string/pointer, red for stack frame management.</desc>
+
+  <defs>
+    <linearGradient id="x86-bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#0f120f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Editorial card frame -->
+  <rect width="1140" height="720" rx="24" fill="url(#x86-bg)"/>
+  <rect x="24" y="24" width="1092" height="672" rx="18" fill="none" stroke="#293029" stroke-width="1.5"/>
+
+  <!-- Title block -->
+  <text x="68" y="80" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700">x86 General-Purpose Register Layout</text>
+  <text x="68" y="108" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="15">32-bit registers, 16-bit sub-registers, 8-bit sub-sub-registers.</text>
+  <line x1="68" y1="132" x2="1072" y2="132" stroke="#293029" stroke-width="1"/>
+
+  <!-- Column headers -->
+  <text x="220" y="168" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle" letter-spacing="2">32-BIT REGISTER</text>
+  <text x="540" y="168" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle" letter-spacing="2">16-BIT SUB-REGISTER</text>
+  <text x="860" y="168" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle" letter-spacing="2">8-BIT SUB-REGISTERS</text>
+  <line x1="68" y1="180" x2="1072" y2="180" stroke="#293029" stroke-width="1"/>
+
+  <!-- Register rows. 8 rows, 56px each, starting y=196 -->
+  <!-- Row 1: EAX (green — arithmetic/data) -->
+  <g font-family="'IBM Plex Mono', monospace">
+    <rect x="100" y="196" width="240" height="44" rx="8" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="220" y="224" fill="#00ff41" font-size="16" font-weight="700" text-anchor="middle">EAX</text>
+    <rect x="420" y="196" width="240" height="44" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="540" y="224" fill="#e0e0e0" font-size="15" text-anchor="middle">AX</text>
+    <rect x="740" y="196" width="120" height="44" rx="8" fill="#0a1a0d" stroke="#00ff41" stroke-width="1" stroke-opacity="0.7"/>
+    <text x="800" y="224" fill="#00ff41" font-size="14" font-weight="600" text-anchor="middle">AH</text>
+    <rect x="860" y="196" width="120" height="44" rx="8" fill="#0a1a0d" stroke="#00ff41" stroke-width="1" stroke-opacity="0.7"/>
+    <text x="920" y="224" fill="#00ff41" font-size="14" font-weight="600" text-anchor="middle">AL</text>
+
+    <!-- Row 2: EBX -->
+    <rect x="100" y="252" width="240" height="44" rx="8" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="220" y="280" fill="#00ff41" font-size="16" font-weight="700" text-anchor="middle">EBX</text>
+    <rect x="420" y="252" width="240" height="44" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="540" y="280" fill="#e0e0e0" font-size="15" text-anchor="middle">BX</text>
+    <rect x="740" y="252" width="120" height="44" rx="8" fill="#0a1a0d" stroke="#00ff41" stroke-width="1" stroke-opacity="0.7"/>
+    <text x="800" y="280" fill="#00ff41" font-size="14" font-weight="600" text-anchor="middle">BH</text>
+    <rect x="860" y="252" width="120" height="44" rx="8" fill="#0a1a0d" stroke="#00ff41" stroke-width="1" stroke-opacity="0.7"/>
+    <text x="920" y="280" fill="#00ff41" font-size="14" font-weight="600" text-anchor="middle">BL</text>
+
+    <!-- Row 3: ECX -->
+    <rect x="100" y="308" width="240" height="44" rx="8" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="220" y="336" fill="#00ff41" font-size="16" font-weight="700" text-anchor="middle">ECX</text>
+    <rect x="420" y="308" width="240" height="44" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="540" y="336" fill="#e0e0e0" font-size="15" text-anchor="middle">CX</text>
+    <rect x="740" y="308" width="120" height="44" rx="8" fill="#0a1a0d" stroke="#00ff41" stroke-width="1" stroke-opacity="0.7"/>
+    <text x="800" y="336" fill="#00ff41" font-size="14" font-weight="600" text-anchor="middle">CH</text>
+    <rect x="860" y="308" width="120" height="44" rx="8" fill="#0a1a0d" stroke="#00ff41" stroke-width="1" stroke-opacity="0.7"/>
+    <text x="920" y="336" fill="#00ff41" font-size="14" font-weight="600" text-anchor="middle">CL</text>
+
+    <!-- Row 4: EDX -->
+    <rect x="100" y="364" width="240" height="44" rx="8" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="220" y="392" fill="#00ff41" font-size="16" font-weight="700" text-anchor="middle">EDX</text>
+    <rect x="420" y="364" width="240" height="44" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="540" y="392" fill="#e0e0e0" font-size="15" text-anchor="middle">DX</text>
+    <rect x="740" y="364" width="120" height="44" rx="8" fill="#0a1a0d" stroke="#00ff41" stroke-width="1" stroke-opacity="0.7"/>
+    <text x="800" y="392" fill="#00ff41" font-size="14" font-weight="600" text-anchor="middle">DH</text>
+    <rect x="860" y="364" width="120" height="44" rx="8" fill="#0a1a0d" stroke="#00ff41" stroke-width="1" stroke-opacity="0.7"/>
+    <text x="920" y="392" fill="#00ff41" font-size="14" font-weight="600" text-anchor="middle">DL</text>
+
+    <!-- Row 5: ESI (yellow — string/pointer) -->
+    <rect x="100" y="420" width="240" height="44" rx="8" fill="#1a1610" stroke="#febc2e" stroke-width="1.5"/>
+    <text x="220" y="448" fill="#febc2e" font-size="16" font-weight="700" text-anchor="middle">ESI</text>
+    <rect x="420" y="420" width="240" height="44" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="540" y="448" fill="#e0e0e0" font-size="15" text-anchor="middle">SI</text>
+    <rect x="740" y="420" width="240" height="44" rx="8" fill="#1a1610" stroke="#febc2e" stroke-width="1" stroke-opacity="0.4"/>
+    <text x="860" y="448" fill="#858c85" font-size="12" text-anchor="middle">no 8-bit form</text>
+
+    <!-- Row 6: EDI (yellow) -->
+    <rect x="100" y="476" width="240" height="44" rx="8" fill="#1a1610" stroke="#febc2e" stroke-width="1.5"/>
+    <text x="220" y="504" fill="#febc2e" font-size="16" font-weight="700" text-anchor="middle">EDI</text>
+    <rect x="420" y="476" width="240" height="44" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="540" y="504" fill="#e0e0e0" font-size="15" text-anchor="middle">DI</text>
+    <rect x="740" y="476" width="240" height="44" rx="8" fill="#1a1610" stroke="#febc2e" stroke-width="1" stroke-opacity="0.4"/>
+    <text x="860" y="504" fill="#858c85" font-size="12" text-anchor="middle">no 8-bit form</text>
+
+    <!-- Row 7: EBP (red — stack frame) -->
+    <rect x="100" y="532" width="240" height="44" rx="8" fill="#1a1210" stroke="#ff5f57" stroke-width="1.5"/>
+    <text x="220" y="560" fill="#ff5f57" font-size="16" font-weight="700" text-anchor="middle">EBP</text>
+    <rect x="420" y="532" width="240" height="44" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="540" y="560" fill="#e0e0e0" font-size="15" text-anchor="middle">BP</text>
+    <rect x="740" y="532" width="240" height="44" rx="8" fill="#1a1210" stroke="#ff5f57" stroke-width="1" stroke-opacity="0.4"/>
+    <text x="860" y="560" fill="#858c85" font-size="12" text-anchor="middle">no 8-bit form</text>
+
+    <!-- Row 8: ESP (red) -->
+    <rect x="100" y="588" width="240" height="44" rx="8" fill="#1a1210" stroke="#ff5f57" stroke-width="1.5"/>
+    <text x="220" y="616" fill="#ff5f57" font-size="16" font-weight="700" text-anchor="middle">ESP</text>
+    <rect x="420" y="588" width="240" height="44" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="540" y="616" fill="#e0e0e0" font-size="15" text-anchor="middle">SP</text>
+    <rect x="740" y="588" width="240" height="44" rx="8" fill="#1a1210" stroke="#ff5f57" stroke-width="1" stroke-opacity="0.4"/>
+    <text x="860" y="616" fill="#858c85" font-size="12" text-anchor="middle">no 8-bit form</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(68, 656)">
+    <rect width="14" height="14" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="22" y="12" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">arithmetic &amp; data</text>
+    <rect x="200" y="0" width="14" height="14" fill="#1a1610" stroke="#febc2e" stroke-width="1.5"/>
+    <text x="222" y="12" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">string &amp; pointer</text>
+    <rect x="400" y="0" width="14" height="14" fill="#1a1210" stroke="#ff5f57" stroke-width="1.5"/>
+    <text x="422" y="12" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">stack frame management</text>
+  </g>
+</svg>

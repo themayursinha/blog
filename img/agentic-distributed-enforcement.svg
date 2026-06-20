@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 880" width="1140" height="880" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="ade-title ade-desc">
+  <title id="ade-title">Distributed enforcement: one trust model, three layers</title>
+  <desc id="ade-desc">Shared trust services produce a signed authorization artifact that travels into authoritative domains, which validate state and authorize effects. A runtime containment layer wraps both and limits blast radius through budgets, circuit breakers, tenant isolation, replay defense, loop detection, and kill switches.</desc>
+
+  <defs>
+    <style>
+      @keyframes flow { to { stroke-dashoffset: -28; } }
+      .flow-line { stroke: #00ff41; stroke-width: 2; fill: none; stroke-dasharray: 7 6; animation: flow 1.6s linear infinite; }
+      @media (prefers-reduced-motion: reduce) {
+        * { animation: none !important; }
+      }
+    </style>
+    <linearGradient id="ade-bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#0f120f"/>
+    </linearGradient>
+    <marker id="ade-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#00ff41"/>
+    </marker>
+  </defs>
+
+  <!-- Editorial card frame -->
+  <rect width="1140" height="880" rx="24" fill="url(#ade-bg)"/>
+  <rect x="24" y="24" width="1092" height="832" rx="18" fill="none" stroke="#293029" stroke-width="1.5"/>
+
+  <!-- Title block -->
+  <text x="68" y="84" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700">Distributed Enforcement</text>
+  <text x="68" y="112" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="15">one trust model · shared decisions, domain enforcement, runtime containment</text>
+  <line x1="68" y1="136" x2="1072" y2="136" stroke="#293029" stroke-width="1"/>
+
+  <!-- RUNTIME CONTAINMENT (outer dashed wrapper — "sits outside both layers") -->
+  <rect x="68" y="158" width="1004" height="660" rx="20" fill="none" stroke="#3c493e" stroke-width="1.5" stroke-dasharray="8 6"/>
+  <rect x="84" y="148" width="330" height="22" rx="11" fill="#0a0a0a"/>
+  <text x="100" y="164" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="11" letter-spacing="1.2">RUNTIME CONTAINMENT · SITS OUTSIDE BOTH LAYERS</text>
+
+  <!-- LAYER 01: Shared Trust Services (focal, solid green, centralized band) -->
+  <rect x="92" y="200" width="956" height="172" rx="14" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+  <text x="112" y="226" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="12" letter-spacing="1.4">LAYER 01 · CENTRALIZED</text>
+  <text x="112" y="256" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700">Shared Trust Services</text>
+
+  <!-- 6 trust service chips, 2 rows of 3 -->
+  <g font-family="'IBM Plex Mono', monospace" font-size="12" fill="#aeb6ae">
+    <rect x="112" y="274" width="296" height="34" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="132" y="296">Identity binding</text>
+    <rect x="420" y="274" width="296" height="34" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="440" y="296">Capability policy</text>
+    <rect x="728" y="274" width="296" height="34" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="748" y="296">Data policy</text>
+    <rect x="112" y="316" width="296" height="34" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="132" y="338">Risk decisions</text>
+    <rect x="420" y="316" width="296" height="34" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="440" y="338">Evidence collection</text>
+    <rect x="728" y="316" width="296" height="34" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="748" y="338">Revocation</text>
+  </g>
+  <text x="540" y="366" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle">produce a signed, short-lived, sender-bound authorization artifact</text>
+
+  <!-- Authorization artifact token (focal pill) -->
+  <rect x="430" y="396" width="280" height="48" rx="24" fill="#061206" stroke="#00ff41" stroke-width="2"/>
+  <text x="570" y="418" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="600" letter-spacing="1.4" text-anchor="middle">AUTHORIZATION ARTIFACT</text>
+  <text x="570" y="435" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="9" text-anchor="middle">caller · tenant · identity · policy · operation</text>
+
+  <!-- Flow lines: artifact travels into each authoritative domain (functional motion) -->
+  <path d="M 510 444 L 240 488" class="flow-line" marker-end="url(#ade-arrow)"/>
+  <path d="M 570 444 L 570 488" class="flow-line" marker-end="url(#ade-arrow)"/>
+  <path d="M 630 444 L 900 488" class="flow-line" marker-end="url(#ade-arrow)"/>
+
+  <!-- LAYER 02: Authoritative Domains (3 separate boxes — distributed, close to state) -->
+  <text x="112" y="476" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="12" letter-spacing="1.4">LAYER 02 · DISTRIBUTED · OWNS THE INVARIANT</text>
+
+  <g font-family="'IBM Plex Mono', monospace">
+    <!-- Domain 1: Orders -->
+    <rect x="92" y="488" width="296" height="180" rx="14" fill="#0f120f" stroke="#3c493e" stroke-width="1.5"/>
+    <text x="112" y="516" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700">Orders</text>
+    <text x="112" y="544" fill="#aeb6ae" font-size="12">Validate current state</text>
+    <text x="112" y="566" fill="#aeb6ae" font-size="12">Object-level authorization</text>
+    <text x="112" y="588" fill="#aeb6ae" font-size="12">Enforce business invariants</text>
+    <text x="112" y="610" fill="#aeb6ae" font-size="12">Reconcile outcome</text>
+    <text x="112" y="644" fill="#858c85" font-size="11" font-style="italic">cart · inventory · price</text>
+
+    <!-- Domain 2: Inventory -->
+    <rect x="422" y="488" width="296" height="180" rx="14" fill="#0f120f" stroke="#3c493e" stroke-width="1.5"/>
+    <text x="442" y="516" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700">Inventory</text>
+    <text x="442" y="544" fill="#aeb6ae" font-size="12">Validate current state</text>
+    <text x="442" y="566" fill="#aeb6ae" font-size="12">Object-level authorization</text>
+    <text x="442" y="588" fill="#aeb6ae" font-size="12">Enforce business invariants</text>
+    <text x="442" y="610" fill="#aeb6ae" font-size="12">Reconcile outcome</text>
+    <text x="442" y="644" fill="#858c85" font-size="11" font-style="italic">stock · reservation · hold</text>
+
+    <!-- Domain 3: Payments -->
+    <rect x="752" y="488" width="296" height="180" rx="14" fill="#0f120f" stroke="#3c493e" stroke-width="1.5"/>
+    <text x="772" y="516" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700">Payments</text>
+    <text x="772" y="544" fill="#aeb6ae" font-size="12">Validate current state</text>
+    <text x="772" y="566" fill="#aeb6ae" font-size="12">Object-level authorization</text>
+    <text x="772" y="588" fill="#aeb6ae" font-size="12">Enforce business invariants</text>
+    <text x="772" y="610" fill="#aeb6ae" font-size="12">Reconcile outcome</text>
+    <text x="772" y="644" fill="#858c85" font-size="11" font-style="italic">method · auth · capture</text>
+  </g>
+
+  <text x="540" y="692" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle">the artifact carries the decision · the domain enforces the effect</text>
+
+  <!-- Containment controls row (the 6 instruments of the outer frame) -->
+  <g font-family="'IBM Plex Mono', monospace" font-size="11" fill="#00ff41">
+    <rect x="92" y="712" width="150" height="34" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="167" y="734" text-anchor="middle">Budgets</text>
+    <rect x="253" y="712" width="150" height="34" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="328" y="734" text-anchor="middle">Circuit breakers</text>
+    <rect x="414" y="712" width="150" height="34" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="489" y="734" text-anchor="middle">Tenant isolation</text>
+    <rect x="575" y="712" width="150" height="34" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="650" y="734" text-anchor="middle">Replay defense</text>
+    <rect x="736" y="712" width="150" height="34" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="811" y="734" text-anchor="middle">Loop detection</text>
+    <rect x="897" y="712" width="150" height="34" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="972" y="734" text-anchor="middle">Kill switches</text>
+  </g>
+  <text x="540" y="772" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle">containment does not prevent every failure · it limits the blast radius when something gets through</text>
+
+  <!-- Bottom note -->
+  <text x="68" y="844" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">They are not three tiers of the same boundary. They serve different functions and evolve independently.</text>
+</svg>

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 560" width="1140" height="560" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="fp-title fp-desc">
+  <title id="fp-title">First-principles reasoning</title>
+  <desc id="fp-desc">Strip away analogy, deconstruct to fundamental truths, then rebuild. Reasoning by analogy copies the form; first principles rebuild from what cannot be removed.</desc>
+
+  <defs>
+    <style>
+      @keyframes flow { to { stroke-dashoffset: -24; } }
+      .flow-line { stroke: #00ff41; stroke-width: 2; fill: none; stroke-dasharray: 5 4; animation: flow 1.5s linear infinite; }
+      @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+    </style>
+    <linearGradient id="fp-bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#0f120f"/>
+    </linearGradient>
+    <marker id="fp-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#00ff41"/>
+    </marker>
+  </defs>
+
+  <!-- Editorial card frame -->
+  <rect width="1140" height="560" rx="24" fill="url(#fp-bg)"/>
+  <rect x="24" y="24" width="1092" height="512" rx="18" fill="none" stroke="#293029" stroke-width="1.5"/>
+
+  <!-- Title block -->
+  <text x="68" y="80" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700">First-Principles Reasoning</text>
+  <text x="68" y="108" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="15">Strip away analogy. Rebuild from what cannot be removed.</text>
+  <line x1="68" y1="132" x2="1072" y2="132" stroke="#293029" stroke-width="1"/>
+
+  <!-- Left panel: reasoning by analogy -->
+  <g transform="translate(68, 156)">
+    <rect width="320" height="360" rx="14" fill="#0f120f" stroke="#5a3a3a" stroke-width="1.5"/>
+    <text x="24" y="38" fill="#ff5f57" font-family="'IBM Plex Mono', monospace" font-size="13" font-weight="600" letter-spacing="1.2">REASONING BY ANALOGY</text>
+    <text x="24" y="66" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">copy the form</text>
+
+    <rect x="48" y="96" width="224" height="40" rx="8" fill="#1a0a0a" stroke="#5a3a3a" stroke-width="1.5"/>
+    <text x="160" y="121" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="13" text-anchor="middle">existing solution</text>
+    <rect x="48" y="148" width="224" height="40" rx="8" fill="#1a0a0a" stroke="#5a3a3a" stroke-width="1.5"/>
+    <text x="160" y="173" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="13" text-anchor="middle">existing solution</text>
+    <rect x="48" y="200" width="224" height="40" rx="8" fill="#1a0a0a" stroke="#5a3a3a" stroke-width="1.5"/>
+    <text x="160" y="225" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="13" text-anchor="middle">existing solution</text>
+
+    <text x="160" y="280" fill="#aeb6ae" font-family="'Space Grotesk', sans-serif" font-size="14" text-anchor="middle">incremental change</text>
+    <text x="160" y="302" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle">local optimum</text>
+    <text x="160" y="324" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle">cargo-cult risk</text>
+  </g>
+
+  <!-- Center: deconstruct node -->
+  <g transform="translate(570, 330)">
+    <text x="0" y="-70" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle">ask: what do we know</text>
+    <text x="0" y="-52" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle">is actually true?</text>
+
+    <!-- Flow in from left -->
+    <path d="M -180 -30 L -50 0" class="flow-line" marker-end="url(#fp-arrow)"/>
+    <!-- Solid out to right -->
+    <path d="M 50 0 L 220 -30" stroke="#00ff41" stroke-width="2" fill="none" marker-end="url(#fp-arrow)"/>
+
+    <circle cx="0" cy="0" r="52" fill="#0a1a0d" stroke="#00ff41" stroke-width="2"/>
+    <text x="0" y="5" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="600" text-anchor="middle">DECONSTRUCT</text>
+  </g>
+
+  <!-- Right panel: first principles -->
+  <g transform="translate(752, 156)">
+    <rect width="320" height="360" rx="14" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="24" y="38" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="13" font-weight="600" letter-spacing="1.2">FIRST PRINCIPLES</text>
+    <text x="24" y="66" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">rebuild from truth</text>
+
+    <!-- Core truths circle -->
+    <circle cx="160" cy="130" r="48" fill="#0a1a0d" stroke="#00ff41" stroke-width="2"/>
+    <text x="160" y="120" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="600" text-anchor="middle">TRUTH_01</text>
+    <text x="160" y="138" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="600" text-anchor="middle">TRUTH_02</text>
+    <text x="160" y="156" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="600" text-anchor="middle">TRUTH_N</text>
+
+    <!-- Build up boxes -->
+    <rect x="48" y="200" width="224" height="40" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="160" y="225" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="13" text-anchor="middle">new architecture</text>
+    <rect x="48" y="252" width="224" height="40" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="160" y="277" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="13" text-anchor="middle">new solution</text>
+
+    <text x="160" y="312" fill="#aeb6ae" font-family="'Space Grotesk', sans-serif" font-size="14" text-anchor="middle">non-obvious answer</text>
+    <text x="160" y="334" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle">global optimum</text>
+  </g>
+
+  <!-- Bottom note -->
+  <text x="540" y="528" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="13" text-anchor="middle">It is expensive. It is also the only way to escape inherited assumptions.</text>
+</svg>
