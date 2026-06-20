@@ -1,13 +1,14 @@
 ---
 layout: post
-title: "Epistemic security - The missing control plane for AI agents"
+title: "Epistemic Security for AI Agents"
+subtitle: "Agents need provenance and trust labels for what enters their context, not just controls on what they can do."
 date: 2026-05-04
 categories: [ai, security]
 tags: [ai, security, agents, epistemology, llms]
 description: "AI agents do not only need runtime security. They need epistemic security: controls for provenance, uncertainty, evidence, memory, and human verification."
 share-img: /img/matrix.png
 related_posts:
-  - The AI agent dilemma - Why we are outsourcing our reality
+  - The AI Agent Dilemma
   - Threat Modeling Autonomous AI Agents in Production
   - Traditional manual code review is no longer sustainable
 ---

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 560" width="1140" height="560" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="ea-title ea-desc">
+  <title id="ea-title">The paradox and the rope</title>
+  <desc id="ea-desc">Epicurus builds a contradiction inside theism. Advaita dissolves the contradiction by denying the duality of God and world, good and evil.</desc>
+
+  <defs>
+    <linearGradient id="ea-bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#0f120f"/>
+    </linearGradient>
+    <radialGradient id="ea-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00ff41" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#00ff41" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="ea-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#00ff41"/>
+    </marker>
+  </defs>
+
+  <!-- Editorial card frame -->
+  <rect width="1140" height="560" rx="24" fill="url(#ea-bg)"/>
+  <rect x="24" y="24" width="1092" height="512" rx="18" fill="none" stroke="#293029" stroke-width="1.5"/>
+
+  <!-- Title block -->
+  <text x="68" y="80" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700">The Paradox and the Rope</text>
+  <text x="68" y="108" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="15">Epicurus frames a contradiction. Advaita denies the premise.</text>
+  <line x1="68" y1="132" x2="1072" y2="132" stroke="#293029" stroke-width="1"/>
+
+  <!-- Left panel: the Epicurean trilemma -->
+  <g transform="translate(68, 156)">
+    <rect width="460" height="360" rx="14" fill="#0f120f" stroke="#5a3a3a" stroke-width="1.5"/>
+    <text x="24" y="38" fill="#ff5f57" font-family="'IBM Plex Mono', monospace" font-size="13" font-weight="600" letter-spacing="1.2">THE EPICUREAN TRILEMMA</text>
+    <text x="24" y="66" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">omnipotent, omniscient, and benevolent?</text>
+
+    <!-- Four option boxes (2×2) -->
+    <rect x="24" y="88" width="196" height="62" rx="8" fill="#1a0a0a" stroke="#5a3a3a"/>
+    <text x="122" y="114" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">willing, not able</text>
+    <text x="122" y="134" fill="#ff5f57" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle" font-weight="600">not omnipotent</text>
+
+    <rect x="240" y="88" width="196" height="62" rx="8" fill="#1a0a0a" stroke="#5a3a3a"/>
+    <text x="338" y="114" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">able, not willing</text>
+    <text x="338" y="134" fill="#ff5f57" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle" font-weight="600">malevolent</text>
+
+    <rect x="24" y="166" width="196" height="62" rx="8" fill="#1a0a0a" stroke="#5a3a3a"/>
+    <text x="122" y="192" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">able and willing</text>
+    <text x="122" y="212" fill="#ff5f57" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle" font-weight="600">whence evil?</text>
+
+    <rect x="240" y="166" width="196" height="62" rx="8" fill="#1a0a0a" stroke="#5a3a3a"/>
+    <text x="338" y="192" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">neither able nor willing</text>
+    <text x="338" y="212" fill="#ff5f57" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle" font-weight="600">not god</text>
+
+    <!-- Rope/snake illustration -->
+    <path d="M 150 280 Q 200 258 230 280 Q 260 302 290 280" fill="none" stroke="#5a4a3a" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="288" cy="277" r="8" fill="#5a3a3a"/>
+    <circle cx="285" cy="274" r="2" fill="#ff5f57"/>
+    <text x="230" y="324" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">the rope appears as a snake in dim light</text>
+  </g>
+
+  <!-- Arrow: reframe -->
+  <path d="M 540 330 L 580 330" stroke="#00ff41" stroke-width="2.5" fill="none" marker-end="url(#ea-arrow)"/>
+  <text x="560" y="318" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">reframe</text>
+
+  <!-- Right panel: the Advaita reframe -->
+  <g transform="translate(600, 156)">
+    <rect width="472" height="360" rx="14" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="24" y="38" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="13" font-weight="600" letter-spacing="1.2">THE ADVAITA REFRAME</text>
+    <text x="24" y="66" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">Brahman is beyond the duality of good and evil</text>
+
+    <!-- Central truth circle -->
+    <circle cx="236" cy="210" r="80" fill="url(#ea-glow)"/>
+    <circle cx="236" cy="210" r="64" fill="#0a1a0d" stroke="#00ff41" stroke-width="2"/>
+    <text x="236" y="200" fill="#00ff41" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="700" text-anchor="middle">BRAHMAN</text>
+    <text x="236" y="220" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">no god / no world</text>
+    <text x="236" y="238" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">no good / no evil</text>
+
+    <!-- Maya label -->
+    <g transform="translate(380, 130)">
+      <rect x="-40" y="-14" width="80" height="28" rx="6" fill="#0f120f" stroke="#3c493e"/>
+      <text x="0" y="4" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle" font-weight="600">MAYA</text>
+    </g>
+  </g>
+
+  <!-- Bottom note -->
+  <text x="570" y="540" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="13" text-anchor="middle">The paradox dissolves when the separation between God, world, good, and evil is seen as apparent.</text>
+</svg>

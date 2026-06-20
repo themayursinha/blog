@@ -1,10 +1,11 @@
 ---
 layout: post
 title: Threat Modeling Autonomous AI Agents in Production
+subtitle: "The threat model is no longer an API boundary. It is a decision loop."
 categories: [ai, security]
 tags: [ai, security, llms, agents]
 description: A practical framework for threat modeling autonomous AI agents in production, with concrete attack paths, controls, and measurable security SLOs.
-share-img: /img/circuit.png
+share-img: /img/circuit.svg
 related_posts:
   - Designing a living ecosystem of AI agents
   - Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks

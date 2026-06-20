@@ -2,7 +2,6 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
-  <script src="{{ "/js/theme-init.js" | prepend: site.baseurl | replace: '//', '/' }}"></script>
 
   {% assign seo_title = page["meta-title"] | default: page.title | default: site.title %}
   {% assign seo_raw_description = page["meta-description"] | default: page.description | default: page.subtitle %}
@@ -33,26 +32,6 @@
 
   {% if page.share-img %}
     {% assign seo_image = page.share-img | absolute_url %}
-  {% elsif page.image %}
-    {% assign seo_image = page.image | absolute_url %}
-  {% elsif page.collection == "posts" %}
-    {% if page.tags contains "security" %}
-      {% assign seo_image = "/img/circuit.png" | absolute_url %}
-    {% elsif page.tags contains "ai" or page.tags contains "llms" %}
-      {% assign seo_image = "/img/matrix.png" | absolute_url %}
-    {% elsif page.tags contains "philosophy" or page.tags contains "spirituality" %}
-      {% assign seo_image = "/img/paradox.jpeg" | absolute_url %}
-    {% elsif page.tags contains "science" or page.tags contains "maths" %}
-      {% assign seo_image = "/img/hello_world.jpeg" | absolute_url %}
-    {% elsif page.tags contains "movies" %}
-      {% assign seo_image = "/img/path.jpg" | absolute_url %}
-    {% elsif page.tags contains "technology" %}
-      {% assign seo_image = "/img/reg.png" | absolute_url %}
-    {% elsif site.avatar %}
-      {% assign seo_image = site.avatar | absolute_url %}
-    {% endif %}
-  {% elsif site.avatar %}
-    {% assign seo_image = site.avatar | absolute_url %}
   {% endif %}
 
   <title>{% if page.use-site-title %}{{ site.title }} {{ site.title-separator }} {{ site.description }}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
@@ -70,9 +49,6 @@
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }} RSS" href="{{ site.baseurl }}/rss.xml" />
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }} Atom" href="{{ site.baseurl }}/atom.xml" />
 
-  {% include gtag.html %}
-  {% include gtm_head.html %}
-  {% include google_analytics.html %}
 
   {% if layout.common-ext-css %}
     {% for css in layout.common-ext-css %}
@@ -196,6 +172,8 @@
   <link rel="stylesheet" href="{{ "/css/staticman.css" | prepend: site.baseurl }}" />
   {% endif %}
 
+  {% if page.mathjax %}
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha384-Wuix6BuhrWbjDBs24bXrjf4ZQ5aFeFWBuKkFekO2t8xFU0iNaLQfp2K6/1Nxveei" crossorigin="anonymous"></script>
+  {% endif %}
 
 </head>

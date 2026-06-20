@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 560" width="1140" height="560" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="uc-title uc-desc">
+  <title id="uc-title">Separating the diagnosis from the cure</title>
+  <desc id="uc-desc">Kaczynski identified real problems with industrial society: technological dependence, environmental degradation, meaningless work, surveillance. His proposed solution — a bombing campaign — was evil and must be rejected.</desc>
+
+  <defs>
+    <linearGradient id="uc-bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#0f120f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Editorial card frame -->
+  <rect width="1140" height="560" rx="24" fill="url(#uc-bg)"/>
+  <rect x="24" y="24" width="1092" height="512" rx="18" fill="none" stroke="#293029" stroke-width="1.5"/>
+
+  <!-- Title block -->
+  <text x="68" y="80" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700">Separating the Diagnosis from the Cure</text>
+  <text x="68" y="108" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="15">Kaczynski saw some real problems. His solution was evil.</text>
+  <line x1="68" y1="132" x2="1072" y2="132" stroke="#293029" stroke-width="1"/>
+
+  <!-- Left panel: valid critique -->
+  <g transform="translate(68, 156)">
+    <rect width="460" height="360" rx="14" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="24" y="38" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="13" font-weight="600" letter-spacing="1.2">VALID CRITIQUE</text>
+    <text x="24" y="66" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">separate, evaluate, keep</text>
+
+    <rect x="24" y="88" width="412" height="56" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="230" y="112" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="600" text-anchor="middle">technological dependence</text>
+    <text x="230" y="132" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">autonomy eroded by systems we did not choose</text>
+
+    <rect x="24" y="158" width="412" height="56" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="230" y="182" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="600" text-anchor="middle">environmental degradation</text>
+    <text x="230" y="202" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">growth without limits consumes the substrate</text>
+
+    <rect x="24" y="228" width="412" height="56" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="230" y="252" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="600" text-anchor="middle">meaningless work</text>
+    <text x="230" y="272" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">the power process is interrupted</text>
+
+    <rect x="24" y="298" width="412" height="46" rx="8" fill="#0f120f" stroke="#3c493e"/>
+    <text x="230" y="320" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="600" text-anchor="middle">surveillance and manipulation</text>
+    <text x="230" y="336" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">infrastructure of control</text>
+  </g>
+
+  <!-- Right panel: rejected cure -->
+  <g transform="translate(600, 156)">
+    <rect width="472" height="360" rx="14" fill="#0f120f" stroke="#ff5f57" stroke-width="1.5"/>
+    <text x="24" y="38" fill="#ff5f57" font-family="'IBM Plex Mono', monospace" font-size="13" font-weight="600" letter-spacing="1.2">REJECTED CURE</text>
+    <text x="24" y="66" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">violence, nihilism, anti-humanism</text>
+
+    <!-- Bombing campaign circle with X -->
+    <g transform="translate(236, 210)">
+      <circle cx="0" cy="0" r="72" fill="#1a0a0a" stroke="#5a3a3a" stroke-width="2"/>
+      <line x1="-50" y1="-50" x2="50" y2="50" stroke="#ff5f57" stroke-width="3"/>
+      <line x1="50" y1="-50" x2="-50" y2="50" stroke="#ff5f57" stroke-width="3"/>
+      <text x="0" y="-2" fill="#ff5f57" font-family="'IBM Plex Mono', monospace" font-size="13" text-anchor="middle" font-weight="700">BOMBING</text>
+      <text x="0" y="18" fill="#ff5f57" font-family="'IBM Plex Mono', monospace" font-size="13" text-anchor="middle" font-weight="700">CAMPAIGN</text>
+    </g>
+
+    <text x="236" y="318" fill="#aeb6ae" font-family="'Space Grotesk', sans-serif" font-size="14" text-anchor="middle">the method discredits the messenger</text>
+    <text x="236" y="340" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle">and poisons every valid point</text>
+  </g>
+
+  <!-- Bottom note -->
+  <text x="570" y="540" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="13" text-anchor="middle">The intellectually honest move is to take the critique seriously and refuse the cure entirely.</text>
+</svg>

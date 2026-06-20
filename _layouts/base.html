@@ -1,39 +1,24 @@
 ---
 common-css:
-  - "/css/bootstrap.min.css"
-  - "/css/main.css"
-  - "/css/nav-enhancements.css"
-common-ext-css:
-  - href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    sri: "sha384-blOohCVdhjmtROpu8+CfTnUWham9nkX7P7OZQMst+RUnhtoY/9qemFAkIKOYxDI3"
-  - href: "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css"
-    sri: "sha384-N7gull5mxE2uLDqZ+kcZolhmuopwLtTcThUsVnUS2LVMQljojN9cfJ9A6fUA63zB"
+  - "/css/terminal.css"
 common-googlefonts:
-  - "Lora:400,700,400italic,700italic"
-  - "Alegreya+Sans+SC:400,500,700,800"
-common-js:
-  - "/js/jquery-3.7.0.min.js"
-  - "/js/bootstrap.min.js"
-  - "/js/main.js"
-  - "/js/nav-enhancements.js"
+  - "Space+Grotesk:500,600,700|IBM+Plex+Mono:400,500,600"
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Beautiful Jekyll | MIT license | Copyright Dean Attali 2016 -->
   {% include head.html %}
-
   <body>
-
+    <div class="viewport-frame" aria-hidden="true"></div>
     {% include gtm_body.html %}
-  
     {% include nav.html %}
-
-    {{ content }}
-
+    <main class="site-main" id="main-content">
+      {{ content }}
+    </main>
     {% include footer.html %}
-  
-    {% include footer-scripts.html %}
-  
+    {% include search-modal.html %}
+    <script src="{{ '/js/minisearch.min.js' | relative_url }}" defer></script>
+    <script src="{{ '/js/search.js' | relative_url }}" defer></script>
+    {% if page.script %}<script src="{{ page.script | relative_url }}" defer></script>{% endif %}
   </body>
 </html>

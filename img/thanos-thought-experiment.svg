@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 560" width="1140" height="560" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="tt-title tt-desc">
+  <title id="tt-title">The Thanos thought experiment</title>
+  <desc id="tt-desc">Thanos identifies a real imbalance between population and resources, then treats mass death as the only available lever. Alternatives exist: technology, distribution, coordination.</desc>
+
+  <defs>
+    <linearGradient id="tt-bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#0f120f"/>
+    </linearGradient>
+    <marker id="tt-arrow-red" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L7,3 z" fill="#ff5f57"/>
+    </marker>
+  </defs>
+
+  <!-- Editorial card frame -->
+  <rect width="1140" height="560" rx="24" fill="url(#tt-bg)"/>
+  <rect x="24" y="24" width="1092" height="512" rx="18" fill="none" stroke="#293029" stroke-width="1.5"/>
+
+  <!-- Title block -->
+  <text x="68" y="80" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700">The Thanos Thought Experiment</text>
+  <text x="68" y="108" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="15">A utilitarian diagnosis paired with a totalitarian cure.</text>
+  <line x1="68" y1="132" x2="1072" y2="132" stroke="#293029" stroke-width="1"/>
+
+  <!-- Labels: diagnosis vs cure -->
+  <text x="240" y="172" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle" letter-spacing="1.5">THANOS' DIAGNOSIS</text>
+  <text x="240" y="190" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">scarcity is real</text>
+  <text x="860" y="172" fill="#ff5f57" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle" letter-spacing="1.5">THANOS' CURE</text>
+  <text x="860" y="190" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">mass murder as policy</text>
+
+  <!-- Balance scale (left-center) -->
+  <g transform="translate(380, 340)">
+    <!-- Base -->
+    <path d="M -12 90 L 12 90 L 8 80 L -8 80 Z" fill="#3c493e"/>
+    <line x1="0" y1="80" x2="0" y2="-40" stroke="#858c85" stroke-width="3"/>
+    <circle cx="0" cy="-40" r="6" fill="#00ff41"/>
+
+    <!-- Tilted arm -->
+    <line x1="-160" y1="10" x2="160" y2="-50" stroke="#e0e0e0" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Left pan: Population (heavy, lower) -->
+    <line x1="-160" y1="10" x2="-178" y2="60" stroke="#858c85" stroke-width="2"/>
+    <line x1="-142" y1="60" x2="-178" y2="60" stroke="#858c85" stroke-width="2"/>
+    <path d="M -182 60 Q -160 82 -138 60" fill="none" stroke="#858c85" stroke-width="2"/>
+    <text x="-160" y="48" fill="#ff5f57" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle" font-weight="600">POPULATION</text>
+    <text x="-160" y="78" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">heavy</text>
+
+    <!-- Right pan: Resources (light, higher) -->
+    <line x1="160" y1="-50" x2="142" y2="0" stroke="#858c85" stroke-width="2"/>
+    <line x1="178" y1="0" x2="142" y2="0" stroke="#858c85" stroke-width="2"/>
+    <path d="M 138 0 Q 160 22 182 0" fill="none" stroke="#858c85" stroke-width="2"/>
+    <text x="160" y="-58" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle" font-weight="600">RESOURCES</text>
+    <text x="160" y="-28" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">light</text>
+  </g>
+
+  <!-- Snap node (red, focal danger) -->
+  <g transform="translate(720, 250)">
+    <circle cx="0" cy="0" r="32" fill="#1a0a0a" stroke="#ff5f57" stroke-width="2"/>
+    <text x="0" y="5" fill="#ff5f57" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle" font-weight="700">SNAP</text>
+  </g>
+  <!-- Arrow from snap to scale (the destructive path) -->
+  <path d="M 688 260 L 540 290" stroke="#ff5f57" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.7" marker-end="url(#tt-arrow-red)"/>
+
+  <!-- Alternatives box (right, green) -->
+  <g transform="translate(820, 300)">
+    <rect width="240" height="170" rx="12" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="120" y="32" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle" font-weight="600" letter-spacing="1.2">ALTERNATIVES</text>
+    <text x="24" y="64" fill="#aeb6ae" font-family="'Space Grotesk', sans-serif" font-size="14">+ technology / innovation</text>
+    <text x="24" y="90" fill="#aeb6ae" font-family="'Space Grotesk', sans-serif" font-size="14">+ distribution / equity</text>
+    <text x="24" y="116" fill="#aeb6ae" font-family="'Space Grotesk', sans-serif" font-size="14">+ coordination / choice</text>
+    <text x="24" y="142" fill="#aeb6ae" font-family="'Space Grotesk', sans-serif" font-size="14">+ create, not destroy</text>
+  </g>
+
+  <!-- Bottom note -->
+  <text x="570" y="520" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="13" text-anchor="middle">The problem is not scarcity. The problem is assuming destruction is the only lever.</text>
+</svg>

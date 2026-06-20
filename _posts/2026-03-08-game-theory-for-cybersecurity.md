@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Game theory for cybersecurity: from reactive defense to strategic resilience"
+subtitle: "Using incentives, equilibria, and attacker-defender models to reason beyond the next patch."
 categories: [security]
 tags: [security, ai, llms]
 description: "A practical guide to using game theory in cybersecurity, from Nash and Stackelberg models to APT defense, forensic readiness, and LLM-driven simulations."
-share-img: /img/circuit.png
+share-img: /img/circuit.svg
 related_posts:
   - Threat Modeling Autonomous AI Agents in Production
   - Reframing Application Security
@@ -37,7 +38,7 @@ The economics alone justify a more strategic approach.
 - Organizations using AI in prevention workflows reduced average breach cost by **USD 2.2 million** and cut identification plus containment time by **nearly 100 days**.
 - MITRE's [Enterprise ATT&CK tactics](https://attack.mitre.org/tactics/enterprise/) still anchor the problem around **14 tactics**, while the [October 2024 ATT&CK update](https://attack.mitre.org/resources/updates/updates-october-2024/) listed **203 techniques** in Enterprise ATT&CK.
 
-![Breach economics and defensive leverage]({{ '/img/game-theory-breach-economics.svg' | prepend: site.baseurl | replace: '//', '/' }})
+{% include figure.html src="/img/game-theory-breach-economics.svg" label="Fig. 1 · Breach Economics and Defensive Leverage" caption="Breach economics, compensation diversity, and asymmetric leverage: a defender optimizes not for zero-loss but for maximum cost imbalance against the attacker." alt="Breach economics and defensive leverage" %}
 
 *Figure: The cost side of the equation is already large enough that better resource allocation and faster containment materially change outcomes.*
 
@@ -187,7 +188,7 @@ Stackelberg reasoning asks: given limited resources, what defensive mix makes th
 
 That framing is one reason these models have been useful in physical security, infrastructure protection, and patrol scheduling. The same logic maps well to cyber environments where full coverage is impossible. The security-games literature explicitly points to deployments such as [ARMOR at LAX and IRIS for the US Federal Air Marshals](https://arxiv.org/abs/1401.3888) as canonical examples of randomized leader-follower defense in practice.
 
-![Which game model fits which defender question]({{ '/img/game-theory-model-selector.svg' | prepend: site.baseurl | replace: '//', '/' }})
+{% include figure.html src="/img/game-theory-model-selector.svg" label="Fig. 2 · Game Model Selector" caption="Which game model fits which defender question: threat actor profiling, insider threat, patch prioritization, and forensic readiness each map to different game structures." alt="Which game model fits which defender question" %}
 
 *Figure: Different game models answer different defender questions. Using the wrong model often means defending the wrong shape of problem.*
 

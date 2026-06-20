@@ -1,13 +1,14 @@
 ---
 layout: post
-title: MCP security - The new supply chain risk for AI agents
+title: MCP Security Is a Supply Chain Risk
+subtitle: "MCP servers are executable trust boundaries, not harmless plugins."
 date: 2026-05-06
 categories: [ai, security]
 tags: [ai, security, agents, mcp, llms]
 description: "MCP servers are not harmless plugins. They are executable trust boundaries that shape what AI agents see, believe, and do."
-share-img: /img/circuit.png
+share-img: /img/circuit.svg
 related_posts:
-  - Epistemic security - The missing control plane for AI agents
+  - Epistemic Security for AI Agents
   - Threat Modeling Autonomous AI Agents in Production
   - Traditional manual code review is no longer sustainable
 ---
@@ -36,7 +37,7 @@ In a normal API integration, documentation tells the developer how to call the s
 
 That creates a different kind of risk.
 
-![MCP agent supply chain trust boundary]({{ '/img/mcp-agent-supply-chain.svg' | prepend: site.baseurl | replace: '//', '/' }})
+{% include figure.html src="/img/mcp-agent-supply-chain.svg" label="Fig. 1 · MCP Supply Chain Trust Boundary" caption="The MCP supply chain introduces a new trust boundary where tool-provided context can carry hidden instructions that reshape agent behavior — a persuasion attack that operates entirely within the model's reasoning loop." alt="MCP agent supply chain trust boundary" %}
 
 *Figure: MCP shifts trust from a narrow API boundary to a wider agent supply chain made of servers, metadata, resources, tool results, tokens, and local execution.*
 
@@ -135,7 +136,7 @@ Avoiding MCP entirely is not a useful strategy.
 
 The answer is to stop treating MCP servers like harmless plugins. They should be treated like production dependencies with runtime authority. That means install-time review is necessary, but not sufficient. Runtime enforcement matters because tool lists, tool results, resources, prompts, and scopes can change after approval.
 
-![MCP security control plane]({{ '/img/mcp-security-control-plane.svg' | prepend: site.baseurl | replace: '//', '/' }})
+{% include figure.html src="/img/mcp-security-control-plane.svg" label="Fig. 2 · MCP Security Control Plane" caption="A deterministic control plane that sits between client and server, inspecting tool metadata and descriptions before they reach the agent's context. The control plane is not an LLM jury — it is a policy engine, a budget manager, and a scope limiter." alt="MCP security control plane" %}
 
 *Figure: A practical MCP security control plane brokers the agent-tool boundary instead of letting every agent talk directly to every server.*
 

@@ -17,21 +17,20 @@ baseurl: ""
 title: "Mayur Sinha"
 
 # Short description of your site
-description: "Security engineering leader writing about AI security, Web3 security, cloud-native security, and engineering systems."
+description: "Principal Security Architect building sovereign control infrastructure for AI agents and adversarial systems."
 
 # --- Navigation bar options --- #
 
 # List of links in the navigation bar
 navbar-links:
-  Home: "https://themayursinha.com"
-  Projects: "projects"
-  Posts: "posts"
-  Resume: "resume"
-  Tags: "tags"
-
-# Image to show in the navigation bar - image must be a square (width = height)
-# Remove this parameter if you don't want an image in the navbar
-avatar: "/img/hacker.jpg"
+  - title: Home
+    url: /
+  - title: Manifesto
+    url: /manifesto/
+  - title: Architecture
+    url: /architecture/
+  - title: Proof
+    url: /proof/
 
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
@@ -165,7 +164,7 @@ title-separator: "-"
 timezone: "Europe/Berlin"
 markdown: kramdown
 highlighter: rouge
-permalink: /posts/:year-:month-:day-:title/
+permalink: /architecture/:year/:month/:day/:title/
 
 kramdown:
   input: GFM
@@ -178,14 +177,14 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      comments: true  # add comments to all blog posts
-      social-share: true # add social media sharing buttons to all blog posts
+      comments: false
+      social-share: false
   -
     scope:
       path: "" # all files
     values:
       layout: "page"
-      show-avatar: true
+      show-avatar: false
 
 # Use tags index page and make tags on each post clickable
 link-tags: true
@@ -200,6 +199,9 @@ exclude:
   - LICENSE
   - README.md
   - Vagrantfile
+  - learning.md
+  - learning
+  - css/learning-toolkit.css
   - vendor
 
 # prose.io config

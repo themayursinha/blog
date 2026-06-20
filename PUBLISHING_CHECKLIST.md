@@ -12,7 +12,7 @@ Use this workflow for every new post so the site stays the SEO source of truth a
    - `node --test tests/*.test.js`
    - `bundle exec jekyll build`
 3. Verify local preview:
-   - `bundle exec jekyll serve --host 0.0.0.0 --port 4000`
+   - `bundle exec jekyll serve --host 100.82.251.122 --port 4000`
 
 ## 2) Publish on Substack
 

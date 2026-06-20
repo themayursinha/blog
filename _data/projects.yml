@@ -99,7 +99,7 @@
     - label: GitHub
       url: https://github.com/themayursinha/mcp-visor
     - label: Context
-      url: https://themayursinha.com/posts/2026-05-25-mcp-visor-runtime-policy-enforcement-for-ai-agents/
+      url: https://themayursinha.com/architecture/2026/05/25/mcp-visor-runtime-policy-enforcement-for-ai-agents/
 
 - id: mcp-security-evaluator
   title: MCP security evaluator
@@ -110,7 +110,7 @@
     - label: GitHub
       url: https://github.com/themayursinha/mcp-llm-security-evaluator
     - label: Context
-      url: https://themayursinha.com/posts/2026-05-06-mcp-security-the-new-supply-chain-risk-for-ai-agents/
+      url: https://themayursinha.com/architecture/2026/05/06/mcp-security-the-new-supply-chain-risk-for-ai-agents/
 
 - id: adversarial-ml-security-lab
   title: Adversarial ML security lab

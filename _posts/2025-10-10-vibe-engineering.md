@@ -1,60 +1,47 @@
 ---
 layout: post
 title: Vibe Engineering
+subtitle: "Why intent, taste, and judgment matter more than prompt velocity in AI-assisted engineering."
 categories: [ai]
-tags: [ai]
-description: Vibe Engineering
-share-img: /img/matrix.png
+tags: [ai, llms, software-engineering, vibe-coding, agentic-coding]
+description: "Vibe coding ships fast and breaks things. Vibe engineering keeps the speed but adds the discipline that makes software survive contact with production."
+share-img: /img/vibe-engineering.svg
 related_posts:
   - Designing a living ecosystem of AI agents
   - Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks
-  - Reframing Application Security - A Developer Experience Perspective
+  - Reframing Application Security
 ---
 
+There are two ways to use AI for coding. One is fast, loose, and increasingly common. The other is harder, slower in the short term, and the only one that scales.
 
-## Stop Vibe coding: Why true engineers are now doing Vibe engineering
+**Vibe coding** is the first: prompt, generate, ship. It works beautifully in a prototype with no users, no tests, and no existing architecture. It falls apart in production, where generated code has to fit a system, respect security boundaries, and keep working under load. The damage is rarely visible on day one. It shows up six months later as an authorization bug, a brittle abstraction, or a feature no one can maintain.
 
-Everyone is talking about using AI to write software. It’s fast, it’s exciting, and it changes how we work. But how you use AI matters a lot. If you use it the wrong way, you create a huge mess.
+**Vibe engineering** is the second. It keeps the generative speed of AI but embeds it in structure, intent, and accountability. The human is still responsible for the result. The AI is an accelerator, not an author.
 
-There are two main ways to work with AI tools like Large Language Models (LLMs) and **coding agents**.
+{% include figure.html src="/img/vibe-engineering.svg" label="Fig. 1 · Vibe Coding vs. Vibe Engineering" caption="Vibe coding ships fast and accumulates debt. Vibe engineering adds constraints before generation so the output fits the system." alt="Comparison of vibe coding and vibe engineering workflows" %}
 
-### The fast, loose way: Vibe coding
+## The difference is curatorship
 
-**Vibe coding** is the name for the widely established, fast, loose, and irresponsible way of building software with AI. It originated as playful experimentation that quickly crept into critical workflows. This approach is entirely prompt-driven and pays no attention to how the code actually works.
+A vibe coder asks the model to write a billing function. A vibe engineer asks the model to extend the existing `processInvoice()` logic to support usage-based tiers, using `formatCurrency()` from utils and applying the same access checks as `subscriptions.ts`. The second prompt is longer because the human has already done the thinking.
 
-It is tempting because of its speed. You drop in a prompt, get runnable code, and ship it quickly. Vibe coding thrives early in a project when there is no existing code, no test suite, and no edge cases to worry about.
+This is the shift. The valuable work moves from typing syntax to defining context. The engineer becomes a curator: choosing constraints, setting standards, and verifying that the output belongs in the codebase.
 
-However, once you are pushing to production, prototyping your way through a sprint can invite regressions, brittle logic, and security gaps. This approach breaks down when correctness, maintainability, and scalability are at stake. What felt like momentum quickly becomes expensive technical debt. Teams are often left cleaning up after code that looked fine but failed under pressure. For example, a generated feature might lack an authorization check, leading to bugs where users access admin-only functionality, especially if no tests were written to catch the issue.
+AI tools amplify expertise. They do not replace it. A senior engineer with a clear model of the system will get far more from an LLM than a junior engineer throwing prompts at it, because the senior knows what to specify, what to reject, and what to test.
 
-### The professional way: Vibe engineering
+## Five practices that make the difference
 
-**Vibe Engineering** is proposed as the approach on the opposite end of the spectrum. This is a different, harder, and more sophisticated way of working with AI tools to build production software.
+1. **Plan before generating.** Iterate on a high-level plan before handing work to the agent. The plan should answer what part of the system must change, what invariants must hold, and what success looks like.
 
-The solution to the failures of vibe coding is not to reject AI, but to evolve how it is used. Vibe engineering involves seasoned professionals accelerating their work with LLMs while staying proudly and confidently **accountable** for the software they produce.
+2. **Codify the rules.** Write down architectural standards, style conventions, abstraction boundaries, and security defaults. Feed them to the agent as context. The AI should write like a member of the team, not a freelancer guessing at your preferences.
 
-This sophisticated approach retains the generative power of AI but embeds it within **structure, intent, and constraint**. The human developer takes on a new role: they define behavior, specify constraints, and orchestrate specialized agents not just to generate code, but to engineer software.
+3. **Tests first.** Generate tests that describe expected behavior before generating implementation. Tests turn vague intent into executable constraints. They also give the agent a feedback loop it can run against.
 
-Instead of vaguely prompting "write a billing function," developers must guide the AI with explicit context, such as: “Extend the existing `processInvoice()` logic to support usage-based tiers. Use `formatCurrency()` from utils. Apply the same access checks used in `subscriptions.ts`”. This ensures the AI operates within boundaries, with context and accountability, rather than "freelancing".
+4. **Manage the agent.** Working with a coding agent is a strange form of delegation. Provide clear instructions, the right context, and specific feedback on output. Treat it like a talented intern who needs direction, not a replacement for judgment.
 
-The result is code that not only works but **fits** the existing system, respects established patterns, includes tests from the start, and assumes secure defaults.
+5. **Direct toward reuse.** Point the agent at clean, current parts of the codebase. Reference existing utilities and patterns. Good vibe engineering produces code that feels like it was written by the team, not imported from a different project.
 
-### How to master Vibe engineering
+## Why this matters now
 
-Working productively with LLMs on non-toy projects is considered *difficult*, and demands that the human participant operate "at the top of your game". AI tools **amplify existing expertise**; the more skills and experience a software engineer has, the faster and better the results they can get from LLMs and coding agents.
+The pressure to ship with AI is real. Competitors are moving faster. Tools are getting better. But the organizations that win will not be the ones that generate the most code. They will be the ones that generate the right code, within boundaries, with tests and accountability.
 
-Here are the key practices central to Vibe engineering:
-
-1.  **Think beyond the task, think about the system**
-    Planning in advance is critical. You should iterate on a high-level plan before handing off the coding task to the agent. Think systemically about what part of the system needs to evolve cleanly and durably to support a change.
-
-2.  **Codify the rules you want AI to follow**
-    Define the architectural standards, style conventions, abstraction boundaries, and naming rules that your AI must follow. This ensures the AI writes like a team member, operating within context and accountability.
-
-3.  **Adopt Test-Driven Development (TDD)**
-    A robust, stable, and comprehensive test suite allows agentic coding tools (like Claude Code and Codex CLI) to "fly" with the work. TDD forces clarity by transforming uncertainty into executable expectations. Prompt the AI to generate tests that describe the feature’s expected behavior *before* writing implementation code; this exposes assumptions and vague logic early.
-
-4.  **Manage and orchestrate agents**
-    Getting good results from a coding agent feels like a "very weird form of management" or collaboration. You must provide clear instructions, ensure the necessary context, and deliver actionable feedback on what they produce. The developer is managing a "growing army of weird digital interns".
-
-5.  **Direct the AI toward reuse and improvement**
-    Guide the AI toward the current and clean parts of your codebase, explicitly referencing reusable components and utility functions. You should encourage the agent to evaluate and proactively improve components if it identifies outdated logic or duplication.
+Vibe coding feels like acceleration. Vibe engineering is acceleration with guardrails. The first gets you a demo. The second gets you a product.

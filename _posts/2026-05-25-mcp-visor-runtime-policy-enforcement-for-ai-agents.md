@@ -1,14 +1,15 @@
 ---
 layout: post
-title: "MCP Visor - Runtime policy enforcement for AI agents"
+title: "MCP Visor: Runtime Policy Enforcement"
+subtitle: "A deterministic proxy that decides, approves, and audits every MCP tool call."
 date: 2026-05-25
 categories: [ai, security]
 tags: [ai, security, agents, mcp, policy, appsec]
 description: "MCP Visor turns MCP tool execution into a deterministic policy boundary: inspect the tool call, enforce the rule, redact secrets, require approval, and log the decision before the action reaches the server."
-share-img: /img/circuit.png
+share-img: /img/circuit.svg
 related_posts:
-  - MCP security - The new supply chain risk for AI agents
-  - Epistemic security - The missing control plane for AI agents
+  - MCP Security Is a Supply Chain Risk
+  - Epistemic Security for AI Agents
   - Threat Modeling Autonomous AI Agents in Production
 ---
 

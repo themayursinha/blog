@@ -1,75 +1,90 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" role="img" aria-labelledby="title desc">
-  <title id="title">MCP agent supply chain trust boundary</title>
-  <desc id="desc">Diagram showing an AI host connected to MCP clients, MCP servers, external systems, and the trust boundaries where attacks can occur.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 620" width="1140" height="620" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="msc-title msc-desc">
+  <title id="msc-title">MCP turns tools into an agent supply chain</title>
+  <desc id="msc-desc">An AI host connects to MCP clients, which connect to untrusted MCP servers, which expose tools, resources, and prompts. The attack surface spans tool metadata, resources, tool results, tokens, and local execution.</desc>
+
   <defs>
-    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#12182b"/>
-      <stop offset="100%" stop-color="#1f2946"/>
+    <linearGradient id="msc-bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#0f120f"/>
     </linearGradient>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L0,6 L8,3 z" fill="#89a7ff"/>
+    <marker id="msc-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#00ff41"/>
     </marker>
   </defs>
 
-  <rect width="980" height="560" rx="24" fill="url(#bg)"/>
-  <rect x="24" y="24" width="932" height="512" rx="18" fill="none" stroke="#344979" stroke-width="1.5"/>
+  <!-- Editorial card frame -->
+  <rect width="1140" height="620" rx="24" fill="url(#msc-bg)"/>
+  <rect x="24" y="24" width="1092" height="572" rx="18" fill="none" stroke="#293029" stroke-width="1.5"/>
 
-  <text x="52" y="62" fill="#f4f7ff" font-family="Georgia, serif" font-size="28" font-weight="700">MCP turns tools into an agent supply chain</text>
-  <text x="52" y="90" fill="#b8c4e6" font-family="'Segoe UI', Arial, sans-serif" font-size="15">The risky part is not just the API call. It is discovery, metadata, context, execution, and memory.</text>
+  <!-- Title block -->
+  <text x="68" y="80" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700">MCP turns tools into an agent supply chain</text>
+  <text x="68" y="108" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="15">The risky part is not just the API call. It is discovery, metadata, context, execution, and memory.</text>
+  <line x1="68" y1="132" x2="1072" y2="132" stroke="#293029" stroke-width="1"/>
 
-  <g transform="translate(52 140)">
-    <rect width="190" height="116" rx="16" fill="#17203a" stroke="#4d6ec0" stroke-width="1.5"/>
-    <text x="20" y="36" fill="#7aa2f7" font-family="'Segoe UI', Arial, sans-serif" font-size="13" letter-spacing="1.2">MCP HOST</text>
-    <text x="20" y="66" fill="#f4f7ff" font-family="Georgia, serif" font-size="20" font-weight="700">AI assistant</text>
-    <text x="20" y="92" fill="#c8d2ee" font-family="'Segoe UI', Arial, sans-serif" font-size="14">LLM + planner + UI</text>
+  <!-- MCP host (left) -->
+  <g transform="translate(68, 168)">
+    <rect width="220" height="140" rx="14" fill="#0f120f" stroke="#3c493e" stroke-width="1.5"/>
+    <text x="24" y="36" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="13" letter-spacing="1.2">MCP HOST</text>
+    <text x="24" y="68" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700">AI assistant</text>
+    <text x="24" y="96" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="13">LLM + planner + UI</text>
+    <text x="24" y="120" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">discovers &amp; invokes tools</text>
   </g>
 
-  <g transform="translate(314 134)">
-    <rect width="190" height="128" rx="16" fill="#17203a" stroke="#4d6ec0" stroke-width="1.5"/>
-    <text x="20" y="36" fill="#7aa2f7" font-family="'Segoe UI', Arial, sans-serif" font-size="13" letter-spacing="1.2">MCP CLIENTS</text>
-    <text x="20" y="66" fill="#f4f7ff" font-family="Georgia, serif" font-size="20" font-weight="700">Per-server</text>
-    <text x="20" y="92" fill="#c8d2ee" font-family="'Segoe UI', Arial, sans-serif" font-size="14">Connections, tokens,</text>
-    <text x="20" y="112" fill="#c8d2ee" font-family="'Segoe UI', Arial, sans-serif" font-size="14">tool registry</text>
+  <!-- MCP clients (middle-left) -->
+  <g transform="translate(332, 168)">
+    <rect width="220" height="140" rx="14" fill="#0f120f" stroke="#3c493e" stroke-width="1.5"/>
+    <text x="24" y="36" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="13" letter-spacing="1.2">MCP CLIENTS</text>
+    <text x="24" y="68" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700">Per-server</text>
+    <text x="24" y="96" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="13">connections, tokens,</text>
+    <text x="24" y="116" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="13">tool registry</text>
   </g>
 
-  <g transform="translate(584 92)">
-    <rect width="330" height="270" rx="18" fill="#10172b" stroke="#526da8" stroke-width="1.5" stroke-dasharray="7 6"/>
-    <text x="20" y="34" fill="#ffcf7a" font-family="'Segoe UI', Arial, sans-serif" font-size="13" letter-spacing="1.2">UNTRUSTED OR SEMI-TRUSTED SERVERS</text>
+  <!-- Untrusted servers (right) -->
+  <g transform="translate(596, 168)">
+    <rect width="476" height="220" rx="14" fill="#0f120f" stroke="#3c493e" stroke-width="1.5" stroke-dasharray="7 6"/>
+    <text x="24" y="36" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="13" letter-spacing="1.2">UNTRUSTED OR SEMI-TRUSTED SERVERS</text>
 
-    <rect x="24" y="56" width="128" height="74" rx="12" fill="#1a2442" stroke="#405f9f"/>
-    <text x="42" y="84" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">Git MCP</text>
-    <text x="42" y="108" fill="#c8d2ee" font-family="'Segoe UI', Arial, sans-serif" font-size="13">repo tools</text>
+    <!-- Server chips 2×2 -->
+    <rect x="32" y="60" width="196" height="64" rx="10" fill="#131713" stroke="#293029"/>
+    <text x="52" y="88" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">Git MCP</text>
+    <text x="52" y="110" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">repo tools</text>
 
-    <rect x="178" y="56" width="128" height="74" rx="12" fill="#1a2442" stroke="#405f9f"/>
-    <text x="196" y="84" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">SaaS MCP</text>
-    <text x="196" y="108" fill="#c8d2ee" font-family="'Segoe UI', Arial, sans-serif" font-size="13">tickets, CRM</text>
+    <rect x="248" y="60" width="196" height="64" rx="10" fill="#131713" stroke="#293029"/>
+    <text x="268" y="88" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">SaaS MCP</text>
+    <text x="268" y="110" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">tickets, CRM</text>
 
-    <rect x="24" y="154" width="128" height="74" rx="12" fill="#1a2442" stroke="#405f9f"/>
-    <text x="42" y="182" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">DB MCP</text>
-    <text x="42" y="206" fill="#c8d2ee" font-family="'Segoe UI', Arial, sans-serif" font-size="13">schema, queries</text>
+    <rect x="32" y="140" width="196" height="64" rx="10" fill="#131713" stroke="#293029"/>
+    <text x="52" y="168" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">DB MCP</text>
+    <text x="52" y="190" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">schema, queries</text>
 
-    <rect x="178" y="154" width="128" height="74" rx="12" fill="#1a2442" stroke="#405f9f"/>
-    <text x="196" y="182" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">Local MCP</text>
-    <text x="196" y="206" fill="#c8d2ee" font-family="'Segoe UI', Arial, sans-serif" font-size="13">files, shell</text>
+    <rect x="248" y="140" width="196" height="64" rx="10" fill="#131713" stroke="#293029"/>
+    <text x="268" y="168" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">Local MCP</text>
+    <text x="268" y="190" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">files, shell</text>
   </g>
 
-  <line x1="244" y1="198" x2="306" y2="198" stroke="#89a7ff" stroke-width="2" marker-end="url(#arrow)"/>
-  <line x1="506" y1="198" x2="574" y2="198" stroke="#89a7ff" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- Flow arrows -->
+  <line x1="290" y1="238" x2="328" y2="238" stroke="#00ff41" stroke-width="2" marker-end="url(#msc-arrow)"/>
+  <line x1="554" y1="238" x2="592" y2="238" stroke="#00ff41" stroke-width="2" marker-end="url(#msc-arrow)"/>
 
-  <g transform="translate(84 330)">
-    <rect width="828" height="126" rx="16" fill="#17203a" stroke="#3a528d" stroke-width="1.5"/>
-    <text x="22" y="36" fill="#ffcf7a" font-family="'Segoe UI', Arial, sans-serif" font-size="13" letter-spacing="1.2">ATTACK SURFACES</text>
-    <text x="22" y="70" fill="#f4f7ff" font-family="Georgia, serif" font-size="18" font-weight="700">Tool metadata</text>
-    <text x="190" y="70" fill="#f4f7ff" font-family="Georgia, serif" font-size="18" font-weight="700">Resources</text>
-    <text x="330" y="70" fill="#f4f7ff" font-family="Georgia, serif" font-size="18" font-weight="700">Tool results</text>
-    <text x="486" y="70" fill="#f4f7ff" font-family="Georgia, serif" font-size="18" font-weight="700">Tokens</text>
-    <text x="600" y="70" fill="#f4f7ff" font-family="Georgia, serif" font-size="18" font-weight="700">Local process</text>
-    <text x="22" y="99" fill="#c8d2ee" font-family="'Segoe UI', Arial, sans-serif" font-size="14">what the model sees</text>
-    <text x="190" y="99" fill="#c8d2ee" font-family="'Segoe UI', Arial, sans-serif" font-size="14">what it reads</text>
-    <text x="330" y="99" fill="#c8d2ee" font-family="'Segoe UI', Arial, sans-serif" font-size="14">what it trusts</text>
-    <text x="486" y="99" fill="#c8d2ee" font-family="'Segoe UI', Arial, sans-serif" font-size="14">what it can reach</text>
-    <text x="600" y="99" fill="#c8d2ee" font-family="'Segoe UI', Arial, sans-serif" font-size="14">what it can execute</text>
+  <!-- Attack surfaces (bottom) -->
+  <g transform="translate(68, 432)">
+    <rect width="1004" height="120" rx="14" fill="#0f120f" stroke="#3c493e" stroke-width="1.5"/>
+    <text x="24" y="36" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="13" letter-spacing="1.2">ATTACK SURFACES</text>
+
+    <!-- 5 attack surface labels across -->
+    <text x="24" y="72" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="700">Tool metadata</text>
+    <text x="220" y="72" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="700">Resources</text>
+    <text x="392" y="72" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="700">Tool results</text>
+    <text x="576" y="72" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="700">Tokens</text>
+    <text x="724" y="72" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="700">Local process</text>
+
+    <text x="24" y="98" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">what the model sees</text>
+    <text x="220" y="98" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">what it reads</text>
+    <text x="392" y="98" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">what it trusts</text>
+    <text x="576" y="98" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">what it can reach</text>
+    <text x="724" y="98" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">what it can execute</text>
   </g>
 
-  <text x="52" y="508" fill="#8fa0c8" font-family="'Segoe UI', Arial, sans-serif" font-size="12">Rule of thumb: if an MCP server can change what the agent sees or does, it belongs in the threat model.</text>
+  <!-- Bottom note -->
+  <text x="540" y="584" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="13" text-anchor="middle">If an MCP server can change what the agent sees or does, it belongs in the threat model.</text>
 </svg>

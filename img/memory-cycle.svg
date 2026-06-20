@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 680" width="1140" height="680" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="mc-title mc-desc">
+  <title id="mc-title">The memory cycle</title>
+  <desc id="mc-desc">Attention, encoding, and retrieval are not three independent steps. Retrieval feeds back into attention, which feeds back into a stronger encoding. The cycle is the learning.</desc>
+
+  <defs>
+    <style>
+      @keyframes flow { to { stroke-dashoffset: -28; } }
+      .flow-line { stroke: #00ff41; stroke-width: 2; fill: none; stroke-dasharray: 6 5; animation: flow 1.6s linear infinite; }
+      .feedback-line { stroke: #febc2e; stroke-width: 2; fill: none; stroke-dasharray: 6 5; animation: flow 1.8s linear infinite; }
+      @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+    </style>
+    <linearGradient id="mc-bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#0f120f"/>
+    </linearGradient>
+    <marker id="mc-arrow-green" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#00ff41"/>
+    </marker>
+    <marker id="mc-arrow-yellow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#febc2e"/>
+    </marker>
+  </defs>
+
+  <!-- Editorial card frame -->
+  <rect width="1140" height="680" rx="24" fill="url(#mc-bg)"/>
+  <rect x="24" y="24" width="1092" height="632" rx="18" fill="none" stroke="#293029" stroke-width="1.5"/>
+
+  <!-- Title block -->
+  <text x="68" y="80" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700">The Memory Cycle</text>
+  <text x="68" y="108" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="15">Three stages. One feedback loop. The cycle is the learning.</text>
+  <line x1="68" y1="132" x2="1072" y2="132" stroke="#293029" stroke-width="1"/>
+
+  <!-- Flow arrows (behind nodes) -->
+  <!-- Attention (570,250) → Encoding (300,440) -->
+  <path d="M 510 300 Q 420 360 366 408" class="flow-line" marker-end="url(#mc-arrow-green)"/>
+  <!-- Encoding (300,440) → Retrieval (840,440) -->
+  <path d="M 380 480 Q 570 530 760 480" class="flow-line" marker-end="url(#mc-arrow-green)"/>
+  <!-- Retrieval (840,440) → Attention (570,250) feedback (yellow) -->
+  <path d="M 880 380 Q 910 290 640 262" class="feedback-line" marker-end="url(#mc-arrow-yellow)"/>
+
+  <!-- Feedback label -->
+  <g transform="translate(880, 320)">
+    <rect x="-44" y="-14" width="88" height="28" rx="6" fill="#0a0a0a" stroke="#febc2e" stroke-width="1" stroke-opacity="0.6"/>
+    <text x="0" y="5" fill="#febc2e" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle" letter-spacing="1.5">FEEDBACK</text>
+  </g>
+
+  <!-- Stage 1: Attention (top center) -->
+  <g transform="translate(490, 170)">
+    <circle cx="80" cy="80" r="80" fill="#0a1a0d" stroke="#00ff41" stroke-width="2.5"/>
+    <text x="80" y="54" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle" letter-spacing="2">STAGE 1</text>
+    <text x="80" y="84" fill="#00ff41" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" text-anchor="middle">Attention</text>
+    <text x="80" y="108" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle">notice it</text>
+  </g>
+
+  <!-- Stage 2: Encoding (bottom left) -->
+  <g transform="translate(220, 360)">
+    <circle cx="80" cy="80" r="80" fill="#0a1a0d" stroke="#00ff41" stroke-width="2.5"/>
+    <text x="80" y="54" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle" letter-spacing="2">STAGE 2</text>
+    <text x="80" y="84" fill="#00ff41" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" text-anchor="middle">Encoding</text>
+    <text x="80" y="108" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle">store &amp; associate</text>
+  </g>
+
+  <!-- Stage 3: Retrieval (bottom right) -->
+  <g transform="translate(760, 360)">
+    <circle cx="80" cy="80" r="80" fill="#0a1a0d" stroke="#00ff41" stroke-width="2.5"/>
+    <text x="80" y="54" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle" letter-spacing="2">STAGE 3</text>
+    <text x="80" y="84" fill="#00ff41" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" text-anchor="middle">Retrieval</text>
+    <text x="80" y="108" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle">recall it</text>
+  </g>
+
+  <!-- Center loop label -->
+  <g transform="translate(486, 348)">
+    <rect width="168" height="60" rx="10" fill="#0a0a0a" stroke="#00ff41" stroke-width="1" stroke-opacity="0.5"/>
+    <text x="84" y="24" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle" letter-spacing="1.5">THE LOOP</text>
+    <text x="84" y="44" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" text-anchor="middle">retrieve to re-encode</text>
+  </g>
+
+  <!-- Bottom takeaway -->
+  <line x1="68" y1="580" x2="1072" y2="580" stroke="#293029" stroke-width="1"/>
+  <text x="570" y="612" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="600" text-anchor="middle">Retrieval practice is not a study technique. It is the mechanism.</text>
+  <text x="570" y="636" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle">Every successful recall strengthens the next encoding. The cycle is the learning.</text>
+</svg>

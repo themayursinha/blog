@@ -1,42 +1,31 @@
-<footer class="beautiful-jekyll-footer">
-  <div style="text-align:center;">
-    <ul class="list-inline text-center footer-links">
-      {%- for link in site.social-network-links -%}
-        {%- assign curkey = link[0] -%}
-        {%- assign element = site.data.SocialNetworks[curkey] -%}
-        <li>
-        {%- if curkey == 'rss' -%}
-          <a href="{{ '/feed.xml' | prepend: site.baseurl }}" title="{{ element.name }}">
-        {%- elsif curkey == 'yelp' -%}
-          <a href="https://{{ site.social-network-links[curkey] }}.yelp.com" title="{{ element.name }}">
-        {%- else -%}
-          <a href="{{element.baseURL}}{{ site.social-network-links[curkey] }}" title="{{ element.name }}">
-        {%- endif -%}
-            <span class="fa-stack fa-lg" aria-hidden="true">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa {{ element.icon }} fa-stack-1x fa-inverse"></i>
-            </span>
-            <span class="sr-only">{{ element.name }}</span>
-          </a>
-        </li>
-      {%- endfor -%}
-    </ul>
-    <p class="copyright text-muted">
-      {{ site.author.name }}
-      &nbsp;&bull;&nbsp;
-      {{ site.time | date: '%Y' }}
-
-      {% if site.url-pretty %}
-      &nbsp;&bull;&nbsp;
-      <a href="{{ site.url }}">{{ site.url-pretty }}</a>
-      {% endif %}
-
-      {% if site.matomo %}
-        {% if site.matomo.opt-out %}
-          &nbsp;&bull;&nbsp;
-          <a href="http://{{- site.matomo.uri -}}/index.php?module=CoreAdminHome&action=optOut" target="_blank" rel="noopener noreferrer" class="text_muted">Do-not-Track</a>
-        {% endif %}
-      {% endif%}
-    </p>
-  </div>
+<footer class="site-footer">
+  <p class="site-footer-line">{{ site.author.name }} / RESEARCH NODE MS-R01 / {{ site.time | date: "%Y" }}</p>
+  <p class="site-footer-line"><a href="{{ '/feed.xml' | relative_url }}">RSS FEED</a> / END OF TRANSMISSION</p>
+  <nav class="site-footer-social" aria-label="Social links">
+    {%- if site.social-network-links.email -%}
+      <a class="social-link" href="mailto:{{ site.social-network-links.email }}" rel="noopener" aria-label="Email">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3 7 9 6 9-6"/></svg>
+      </a>
+    {%- endif -%}
+    {%- if site.social-network-links.github -%}
+      <a class="social-link" href="https://github.com/{{ site.social-network-links.github }}" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+      </a>
+    {%- endif -%}
+    {%- if site.social-network-links.twitter -%}
+      <a class="social-link" href="https://x.com/{{ site.social-network-links.twitter }}" target="_blank" rel="noopener" aria-label="X">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+    {%- endif -%}
+    {%- if site.social-network-links.linkedin -%}
+      <a class="social-link" href="https://www.linkedin.com/in/{{ site.social-network-links.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-5c0-1 .5-2 2-2s2 1 2 2v5"/></svg>
+      </a>
+    {%- endif -%}
+    {%- if site.social-network-links.goodreads -%}
+      <a class="social-link" href="https://www.goodreads.com/{{ site.social-network-links.goodreads }}" target="_blank" rel="noopener" aria-label="Goodreads">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.43 1.09c-1.36.18-2.51.6-3.59 1.34-1.7 1.16-2.81 2.74-3.31 4.74-.26 1.05-.3 2.78-.08 3.85.5 2.45 1.84 4.46 3.84 5.78 1.36.91 2.81 1.37 4.43 1.4 1.55.03 2.62-.13 3.85-.6.05 1.05-.19 1.81-.86 2.51-.7.74-1.64 1.1-2.83 1.1-1.7 0-2.92-.6-3.4-1.74l-3.39.45c.62 2.7 3.4 4.51 7.18 4.51 2.05 0 3.74-.45 5.05-1.45 1.27-1 2.05-2.5 2.05-4.21V8.21c0-2.05-.4-3.65-1.27-4.85-1.05-1.4-2.7-2.15-4.9-2.31-.84-.06-2.41-.07-2.77.04zm.74 6.05c1.27 0 2.27.36 2.96 1.07.69.71 1.04 1.74 1.04 3.04v1.05c-.61.4-1.51.6-2.69.6-1.05 0-1.88-.27-2.49-.83-.6-.55-.91-1.34-.91-2.36 0-1.05.31-1.85.91-2.4.61-.55 1.44-.83 2.49-.83.05 0 .11 0 .16.01l-.47 1.65z"/></svg>
+      </a>
+    {%- endif -%}
+  </nav>
 </footer>

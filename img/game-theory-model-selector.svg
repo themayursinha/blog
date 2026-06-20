@@ -1,75 +1,75 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
-  <title id="title">Which game model fits which security problem</title>
-  <desc id="desc">Diagram showing five common game-theoretic models and the defender questions they answer.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 620" width="1140" height="620" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="gtm-title gtm-desc">
+  <title id="gtm-title">Which game model fits which defender question</title>
+  <desc id="gtm-desc">Five game-theoretic models and the defender questions they answer: Nash, Stackelberg, Markov, FlipIt, and LLM-driven simulation.</desc>
+
   <defs>
-    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#131a2e"/>
-      <stop offset="100%" stop-color="#1d2442"/>
+    <linearGradient id="gtm-bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#0f120f"/>
     </linearGradient>
   </defs>
 
-  <rect width="960" height="600" rx="24" fill="url(#bg)"/>
-  <rect x="24" y="24" width="912" height="552" rx="20" fill="none" stroke="#32426f" stroke-width="1.5"/>
+  <!-- Editorial card frame -->
+  <rect width="1140" height="620" rx="24" fill="url(#gtm-bg)"/>
+  <rect x="24" y="24" width="1092" height="572" rx="18" fill="none" stroke="#293029" stroke-width="1.5"/>
 
-  <text x="52" y="62" fill="#f4f7ff" font-family="Georgia, serif" font-size="28" font-weight="700">
-    Which game model fits which defender question?
-  </text>
-  <text x="52" y="88" fill="#aeb8d6" font-family="'Segoe UI', Arial, sans-serif" font-size="15">
-    Choose the model that matches the shape of the threat, not just the one with the cleanest math.
-  </text>
+  <!-- Title block -->
+  <text x="68" y="80" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700">Which game model fits which defender question?</text>
+  <text x="68" y="108" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="15">Choose the model that matches the shape of the threat, not just the one with the cleanest math.</text>
+  <line x1="68" y1="132" x2="1072" y2="132" stroke="#293029" stroke-width="1"/>
 
-  <g transform="translate(52 122)">
-    <rect width="250" height="156" rx="18" fill="#17203a" stroke="#3a528d" stroke-width="1.5"/>
-    <text x="20" y="34" fill="#7aa2f7" font-family="'Segoe UI', Arial, sans-serif" font-size="14" letter-spacing="1.4">NASH / MIXED STRATEGY</text>
-    <text x="20" y="64" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">How do I avoid becoming</text>
-    <text x="20" y="86" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">predictable?</text>
-    <text x="20" y="114" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">Randomized inspections,</text>
-    <text x="20" y="134" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">control rotation, patrol</text>
-    <text x="20" y="154" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">schedules, deception.</text>
+  <!-- Row 1: 3 cards -->
+  <g transform="translate(68, 156)">
+    <rect width="330" height="190" rx="14" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="24" y="34" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="600" letter-spacing="1.2">NASH / MIXED STRATEGY</text>
+    <text x="24" y="66" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">How do I avoid becoming</text>
+    <text x="24" y="88" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">predictable?</text>
+    <text x="24" y="120" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="12">Randomized inspections,</text>
+    <text x="24" y="140" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="12">control rotation, patrol</text>
+    <text x="24" y="160" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="12">schedules, deception.</text>
   </g>
 
-  <g transform="translate(355 122)">
-    <rect width="250" height="156" rx="18" fill="#17203a" stroke="#3a528d" stroke-width="1.5"/>
-    <text x="20" y="34" fill="#7aa2f7" font-family="'Segoe UI', Arial, sans-serif" font-size="14" letter-spacing="1.4">STACKELBERG</text>
-    <text x="20" y="64" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">What does the attacker do</text>
-    <text x="20" y="86" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">after seeing my posture?</text>
-    <text x="20" y="114" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">Resource allocation across</text>
-    <text x="20" y="134" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">targets, patrols, visible</text>
-    <text x="20" y="154" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">deterrence commitments.</text>
+  <g transform="translate(406, 156)">
+    <rect width="330" height="190" rx="14" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="24" y="34" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="600" letter-spacing="1.2">STACKELBERG</text>
+    <text x="24" y="66" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">What does the attacker do</text>
+    <text x="24" y="88" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">after seeing my posture?</text>
+    <text x="24" y="120" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="12">Resource allocation across</text>
+    <text x="24" y="140" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="12">targets, patrols, visible</text>
+    <text x="24" y="160" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="12">deterrence commitments.</text>
   </g>
 
-  <g transform="translate(658 122)">
-    <rect width="250" height="156" rx="18" fill="#17203a" stroke="#3a528d" stroke-width="1.5"/>
-    <text x="20" y="34" fill="#7aa2f7" font-family="'Segoe UI', Arial, sans-serif" font-size="14" letter-spacing="1.4">MARKOV / STOCHASTIC</text>
-    <text x="20" y="64" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">How does the system evolve</text>
-    <text x="20" y="86" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">over time?</text>
-    <text x="20" y="114" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">Intrusion stages, state</text>
-    <text x="20" y="134" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">transitions, adaptive IDS,</text>
-    <text x="20" y="154" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">response tuning.</text>
+  <g transform="translate(744, 156)">
+    <rect width="328" height="190" rx="14" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="24" y="34" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="600" letter-spacing="1.2">MARKOV / STOCHASTIC</text>
+    <text x="24" y="66" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">How does the system</text>
+    <text x="24" y="88" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">evolve over time?</text>
+    <text x="24" y="120" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="12">Intrusion stages, state</text>
+    <text x="24" y="140" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="12">transitions, adaptive IDS,</text>
+    <text x="24" y="160" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="12">response tuning.</text>
   </g>
 
-  <g transform="translate(186 324)">
-    <rect width="250" height="156" rx="18" fill="#17203a" stroke="#3a528d" stroke-width="1.5"/>
-    <text x="20" y="34" fill="#7aa2f7" font-family="'Segoe UI', Arial, sans-serif" font-size="14" letter-spacing="1.4">FLIPIT / STEALTHY TAKEOVER</text>
-    <text x="20" y="64" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">When do I rotate, audit,</text>
-    <text x="20" y="86" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">or retake control?</text>
-    <text x="20" y="114" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">Key rotation, silent cloud</text>
-    <text x="20" y="134" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">compromise, APT persistence</text>
-    <text x="20" y="154" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">under imperfect visibility.</text>
+  <!-- Row 2: 2 cards centered -->
+  <g transform="translate(237, 366)">
+    <rect width="330" height="190" rx="14" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="24" y="34" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="600" letter-spacing="1.2">FLIPIT / STEALTHY TAKEOVER</text>
+    <text x="24" y="66" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">When do I rotate, audit,</text>
+    <text x="24" y="88" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">or retake control?</text>
+    <text x="24" y="120" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="12">Key rotation, silent cloud</text>
+    <text x="24" y="140" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="12">compromise, APT persistence</text>
+    <text x="24" y="160" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="12">under imperfect visibility.</text>
   </g>
 
-  <g transform="translate(524 324)">
-    <rect width="250" height="156" rx="18" fill="#17203a" stroke="#3a528d" stroke-width="1.5"/>
-    <text x="20" y="34" fill="#7aa2f7" font-family="'Segoe UI', Arial, sans-serif" font-size="14" letter-spacing="1.4">LLM-DRIVEN SIMULATION</text>
-    <text x="20" y="64" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">What do bounded,</text>
-    <text x="20" y="86" fill="#f4f7ff" font-family="Georgia, serif" font-size="17" font-weight="700">human-like attackers do?</text>
-    <text x="20" y="114" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">Scenario generation,</text>
-    <text x="20" y="134" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">exploratory red teaming,</text>
-    <text x="20" y="154" fill="#c2cae3" font-family="'Segoe UI', Arial, sans-serif" font-size="15">behavior stress tests.</text>
+  <g transform="translate(575, 366)">
+    <rect width="330" height="190" rx="14" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="24" y="34" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="600" letter-spacing="1.2">LLM-DRIVEN SIMULATION</text>
+    <text x="24" y="66" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">What do bounded,</text>
+    <text x="24" y="88" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">human-like attackers do?</text>
+    <text x="24" y="120" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="12">Scenario generation,</text>
+    <text x="24" y="140" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="12">exploratory red teaming,</text>
+    <text x="24" y="160" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="12">behavior stress tests.</text>
   </g>
 
-  <g fill="#7f8eb5" font-family="'Segoe UI', Arial, sans-serif" font-size="12">
-    <text x="52" y="526">Rule of thumb: if the attacker can adapt over stages, a one-shot model will usually understate the real problem.</text>
-    <text x="52" y="546">Visualization redrawn for this post from the concepts discussed in security-game literature.</text>
-  </g>
+  <!-- Bottom note -->
+  <text x="540" y="584" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="13" text-anchor="middle">If the attacker can adapt over stages, a one-shot model will usually understate the real problem.</text>
 </svg>

@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 600" width="1140" height="600" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="lv-title lv-desc">
+  <title id="lv-title">From local classifier to context reasoner</title>
+  <desc id="lv-desc">Classical models score local windows. Transformers can attend to source-sink relationships across files.</desc>
+
+  <defs>
+    <style>
+      @keyframes scan { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(150px); } }
+      .beam { fill: url(#lv-beam); animation: scan 3s ease-in-out infinite; }
+      @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+    </style>
+    <linearGradient id="lv-bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#0f120f"/>
+    </linearGradient>
+    <linearGradient id="lv-beam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff5f57" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ff5f57" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ff5f57" stop-opacity="0"/>
+    </linearGradient>
+    <marker id="lv-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#00ff41"/>
+    </marker>
+  </defs>
+
+  <!-- Editorial card frame -->
+  <rect width="1140" height="600" rx="24" fill="url(#lv-bg)"/>
+  <rect x="24" y="24" width="1092" height="552" rx="18" fill="none" stroke="#293029" stroke-width="1.5"/>
+
+  <!-- Title block -->
+  <text x="68" y="80" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700">The Detection Gap</text>
+  <text x="68" y="108" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="15">Local classifiers score windows. Transformers reason across context.</text>
+  <line x1="68" y1="132" x2="1072" y2="132" stroke="#293029" stroke-width="1"/>
+
+  <!-- Left panel: classical ANN -->
+  <g transform="translate(68, 156)">
+    <rect width="460" height="380" rx="14" fill="#0f120f" stroke="#5a3a3a" stroke-width="1.5"/>
+    <text x="24" y="38" fill="#ff5f57" font-family="'IBM Plex Mono', monospace" font-size="13" font-weight="600" letter-spacing="1.2">CLASSICAL ANN</text>
+    <text x="24" y="66" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">narrow window · local score</text>
+
+    <!-- Code stream background -->
+    <rect x="32" y="92" width="396" height="200" rx="10" fill="#0a0e0a" stroke="#1f2a1f"/>
+
+    <!-- Token grid 10 cols × 4 rows -->
+    <g transform="translate(56, 108)">
+      <!-- Row 1 -->
+      <rect x="0" y="0" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="22" y="0" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="44" y="0" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="66" y="0" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="88" y="0" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="110" y="0" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="132" y="0" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="154" y="0" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="176" y="0" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="198" y="0" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="220" y="0" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="242" y="0" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="264" y="0" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="286" y="0" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="308" y="0" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <!-- Row 2 (lit window in middle) -->
+      <rect x="0" y="24" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="22" y="24" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="44" y="24" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="66" y="24" width="14" height="14" rx="2" fill="#ff5f57"/>
+      <rect x="88" y="24" width="14" height="14" rx="2" fill="#ff5f57"/>
+      <rect x="110" y="24" width="14" height="14" rx="2" fill="#ff5f57"/>
+      <rect x="132" y="24" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="154" y="24" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="176" y="24" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="198" y="24" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="220" y="24" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="242" y="24" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="264" y="24" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="286" y="24" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="308" y="24" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <!-- Row 3 -->
+      <rect x="0" y="48" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="22" y="48" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="44" y="48" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="66" y="48" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="88" y="48" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="110" y="48" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="132" y="48" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="154" y="48" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="176" y="48" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="198" y="48" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="220" y="48" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="242" y="48" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="264" y="48" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="286" y="48" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="308" y="48" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <!-- Row 4 -->
+      <rect x="0" y="72" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="22" y="72" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="44" y="72" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="66" y="72" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="88" y="72" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="110" y="72" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="132" y="72" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="154" y="72" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="176" y="72" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="198" y="72" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="220" y="72" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="242" y="72" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="264" y="72" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="286" y="72" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+      <rect x="308" y="72" width="14" height="14" rx="2" fill="#aeb6ae" opacity="0.5"/>
+    </g>
+
+    <!-- Scanning beam over lit window (functional: shows the scan) -->
+    <rect x="100" y="100" width="80" height="200" rx="4" class="beam"/>
+
+    <text x="230" y="328" fill="#aeb6ae" font-family="'Space Grotesk', sans-serif" font-size="14" text-anchor="middle">only the lit window matters</text>
+    <text x="230" y="352" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle">cross-file dependency invisible</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M 540 340 L 580 340" stroke="#00ff41" stroke-width="2.5" fill="none" marker-end="url(#lv-arrow)"/>
+
+  <!-- Right panel: transformer -->
+  <g transform="translate(600, 156)">
+    <rect width="472" height="380" rx="14" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="24" y="38" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="13" font-weight="600" letter-spacing="1.2">TRANSFORMER</text>
+    <text x="24" y="66" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12">full context · pairwise attention</text>
+
+    <!-- Code stream background -->
+    <rect x="32" y="92" width="408" height="200" rx="10" fill="#0a0e0a" stroke="#1f2a1f"/>
+
+    <!-- Token grid with two connected regions -->
+    <g transform="translate(56, 108)">
+      <!-- Row 2: source tokens (green) -->
+      <rect x="66" y="24" width="14" height="14" rx="2" fill="#00ff41"/>
+      <rect x="88" y="24" width="14" height="14" rx="2" fill="#00ff41"/>
+      <rect x="110" y="24" width="14" height="14" rx="2" fill="#00ff41"/>
+      <!-- Row 4: sink tokens (green) — far apart -->
+      <rect x="198" y="72" width="14" height="14" rx="2" fill="#00ff41"/>
+      <rect x="220" y="72" width="14" height="14" rx="2" fill="#00ff41"/>
+      <rect x="242" y="72" width="14" height="14" rx="2" fill="#00ff41"/>
+
+      <!-- Attention links between distant tokens -->
+      <line x1="73" y1="38" x2="205" y2="72" stroke="#00ff41" stroke-width="1" opacity="0.6"/>
+      <line x1="95" y1="38" x2="227" y2="72" stroke="#00ff41" stroke-width="1" opacity="0.6"/>
+      <line x1="117" y1="38" x2="249" y2="72" stroke="#00ff41" stroke-width="1" opacity="0.6"/>
+    </g>
+
+    <text x="236" y="328" fill="#aeb6ae" font-family="'Space Grotesk', sans-serif" font-size="14" text-anchor="middle">source and sink connected</text>
+    <text x="236" y="352" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12" text-anchor="middle">vulnerability becomes visible</text>
+  </g>
+
+  <!-- Bottom note -->
+  <text x="540" y="564" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="13" text-anchor="middle">The bug is not in the tokens. It is in the relationship between them.</text>
+</svg>

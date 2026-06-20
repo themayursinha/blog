@@ -1,29 +1,7 @@
 ---
-common-css:
-  - "/css/bootstrap.min.css"
-  - "/css/main-minimal.css"
-common-googlefonts:
-  - "Lora:400,700,400italic,700italic"
-  - "Alegreya+Sans+SC:400,500,700,800"
-common-js:
-  - "/js/jquery-3.7.0.min.js"
-  - "/js/bootstrap.min.js"
+layout: base
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-
-  {% include head.html %}
-
-  <body>
-
-    <div role="main" class="container main-content">
-      {{ content }}
-    </div>
-
-    {% include footer-minimal.html %}
-
-    {% include footer-scripts.html %}
-
-  </body>
-</html>
+<article class="prose">
+  {{ content }}
+</article>

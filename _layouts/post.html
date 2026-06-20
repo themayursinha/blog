@@ -2,126 +2,145 @@
 layout: base
 ---
 
-{% include header.html type="post" %}
+<article class="prose blog-post">
+  <header class="post-header">
+    <p class="post-label">ARCHITECTURE LOG</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.subtitle %}
+      <p class="page-subtitle">{{ page.subtitle }}</p>
+    {% endif %}
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+  </header>
 
-<div class="container">
-  <div class="row">
-    <!-- Main content column -->
-    <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1">
-      {% if page.gh-repo %}
-      {% assign gh_split = page.gh-repo | split:'/' %}
-      {% assign gh_user = gh_split[0] %}
-      {% assign gh_repo = gh_split[1] %}
-
-      <div id="header-gh-btns">
-        {% if page.gh-badge.size > 0 %}
-        {% for badge in page.gh-badge %}
-        {% case badge %}
-        {% when 'star'%}
-        <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&repo={{ gh_repo }}&type=star&count=true"
-          frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-        {% when 'watch'%}
-        <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&repo={{ gh_repo }}&type=watch&v=2&count=true"
-          frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-        {% when 'fork'%}
-        <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&repo={{ gh_repo }}&type=fork&count=true"
-          frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-        {% when 'follow'%}
-        <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&type=follow&count=true" frameborder="0"
-          scrolling="0" width="220px" height="20px"></iframe>
-        {% endcase %}
-        {% endfor %}
-        {% endif %}
-      </div>
-      {% endif %}
-
-      <article role="main" class="blog-post">
-        {{ content }}
-      </article>
-
-      {% if page.tags.size > 0 %}
-      <div class="blog-tags">
-        Tags:
-        {% if site.link-tags %}
-        {% for tag in page.tags %}
-        <a href="{{ site.baseurl }}/tags#{{- tag -}}">{{- tag -}}</a>
-        {% endfor %}
-        {% else %}
-        {{ page.tags | join: ", " }}
-        {% endif %}
-      </div>
-      {% endif %}
-
-      {% if page.substack_url %}
-      <section class="crosspost-link" aria-label="Substack version">
-        <p>This essay is also available on <a href="{{ page.substack_url }}" target="_blank" rel="noopener">Substack</a>.</p>
-      </section>
-      {% endif %}
-
-      {% if page.related_posts and page.related_posts.size > 0 %}
-      <section class="related-posts" aria-label="Related posts">
-        <h3>Related posts</h3>
-        <ul>
-          {% for related_title in page.related_posts %}
-            {% assign related_post = nil %}
-            {% for post in site.posts %}
-              {% if post.title == related_title and post.url != page.url %}
-                {% assign related_post = post %}
-                {% break %}
-              {% endif %}
-            {% endfor %}
-            {% if related_post %}
-              <li><a href="{{ related_post.url | prepend: site.baseurl | replace: '//', '/' }}">{{ related_post.title }}</a></li>
-            {% endif %}
-          {% endfor %}
-        </ul>
-      </section>
-      {% elsif page.tags and page.tags.size > 0 %}
-      <section class="related-posts" aria-label="Related posts">
-        <h3>Related posts</h3>
-        <ul>
-          {% assign related_count = 0 %}
-          {% for post in site.posts %}
-            {% if related_count < 3 and post.url != page.url %}
-              {% assign shared_tags = 0 %}
-              {% for tag in page.tags %}
-                {% if post.tags contains tag %}
-                  {% assign shared_tags = shared_tags | plus: 1 %}
-                {% endif %}
-              {% endfor %}
-              {% if shared_tags > 0 %}
-                <li><a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{ post.title }}</a></li>
-                {% assign related_count = related_count | plus: 1 %}
-              {% endif %}
-            {% endif %}
-          {% endfor %}
-        </ul>
-      </section>
-      {% endif %}
-
-      <ul class="pager blog-pager">
-        {% if page.previous.url %}
-        <li class="previous">
-          <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip"
-            data-placement="top" title="{{page.previous.title}}">&larr; Previous Post</a>
-        </li>
-        {% endif %}
-        {% if page.next.url %}
-        <li class="next">
-          <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip"
-            data-placement="top" title="{{page.next.title}}">Next Post &rarr;</a>
-        </li>
-        {% endif %}
-      </ul>
-
-      {% if page.comments %}
-      <!-- Comment section removed -->
-      {% endif %}
-    </div>
-
-    <!-- Sidebar column -->
-    <div class="col-lg-3 col-md-12">
-      {% include toc.html %}
-    </div>
+  {% if page.hero-img %}
+  <div class="post-hero">
+    <img src="{{ page.hero-img | relative_url }}" alt="{{ page.title }}" />
   </div>
+  {% endif %}
+
+  {{ content }}
+
+  {% if page.substack_url %}
+    <p class="post-note">Also published on <a href="{{ page.substack_url }}" target="_blank" rel="noopener">Substack</a>.</p>
+  {% endif %}
+
+  <nav class="post-navigation" aria-label="Adjacent architecture entries">
+    {% if page.previous.url %}
+      <a href="{{ page.previous.url | relative_url }}">&larr; {{ page.previous.title }}</a>
+    {% endif %}
+    {% if page.next.url %}
+      <a href="{{ page.next.url | relative_url }}">{{ page.next.title }} &rarr;</a>
+    {% endif %}
+  </nav>
+</article>
+
+<div id="toc" class="toc-sidebar">
+  <div id="toc-content" class="toc-content"></div>
 </div>
+
+<script>
+(function() {
+  function initToc() {
+    const article = document.querySelector('.blog-post');
+    const tocContent = document.getElementById('toc-content');
+    const tocSidebar = document.getElementById('toc');
+    if (!article || !tocContent || !tocSidebar) return;
+
+    const headings = Array.from(article.querySelectorAll('h1, h2, h3, h4, h5, h6'));
+    if (headings.length === 0) { tocSidebar.style.display = 'none'; return; }
+
+    const toc = document.createElement('ul');
+    toc.className = 'toc-list';
+
+    const linkMap = new Map();
+
+    headings.forEach(function(heading, index) {
+      if (!heading.id) heading.id = 'heading-' + index;
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + heading.id;
+      a.textContent = heading.textContent.trim();
+      a.className = 'toc-link';
+      a.dataset.target = heading.id;
+
+      const level = parseInt(heading.tagName.charAt(1));
+      li.className = 'toc-level-' + level;
+
+      li.appendChild(a);
+      toc.appendChild(li);
+      linkMap.set(heading.id, { li: li, a: a });
+    });
+
+    // Header
+    const header = document.createElement('div');
+    header.className = 'toc-header';
+    header.innerHTML = '<span class="toc-header-line" aria-hidden="true"></span><span>On this page</span>';
+    tocContent.appendChild(header);
+    tocContent.appendChild(toc);
+
+    // Reading progress bar
+    const progress = document.createElement('div');
+    progress.className = 'toc-progress';
+    progress.setAttribute('aria-hidden', 'true');
+    tocSidebar.insertBefore(progress, tocContent);
+
+    // Click handling with smooth scroll and sticky offset
+    tocContent.addEventListener('click', function(e) {
+      const link = e.target.closest('.toc-link');
+      if (!link) return;
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (!targetElement) return;
+
+      const navbar = document.querySelector('.navbar-custom');
+      const offset = (navbar ? navbar.offsetHeight : 0) + 24;
+      const targetY = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+
+      window.scrollTo({ top: targetY, left: 0, behavior: 'smooth' });
+      history.replaceState(null, '', '#' + targetId);
+    });
+
+    // Scroll spy with IntersectionObserver
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        const item = linkMap.get(entry.target.id);
+        if (!item) return;
+        if (entry.isIntersecting) {
+          linkMap.forEach(function(val) {
+            val.li.classList.remove('toc-active');
+            val.a.classList.remove('toc-link-active');
+          });
+          item.li.classList.add('toc-active');
+          item.a.classList.add('toc-link-active');
+        }
+      });
+    }, observerOptions);
+
+    headings.forEach(function(heading) { observer.observe(heading); });
+
+    // Reading progress bar
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) : 0;
+      progress.style.transform = 'scaleX(' + Math.min(1, Math.max(0, pct)) + ')';
+    }
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initToc);
+  } else {
+    initToc();
+  }
+})();
+</script>

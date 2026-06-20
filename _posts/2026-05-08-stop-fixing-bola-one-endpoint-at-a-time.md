@@ -1,11 +1,12 @@
 ---
 layout: post
 title: "How to eliminate an entire class of API authorization bugs"
+subtitle: "Broken Object Level Authorization is a systemic failure, not a per-endpoint bug."
 date: 2026-05-08
 categories: [security]
 tags: [security, appsec, api-security, authorization, bola]
 description: "BOLA is not solved by asking every developer to remember object-level checks. It is solved by making authorization a reusable platform capability."
-share-img: /img/circuit.png
+share-img: /img/circuit.svg
 related_posts:
   - Reframing Application Security
   - Traditional manual code review is no longer sustainable

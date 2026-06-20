@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "The AI agent dilemma - Why we are outsourcing our reality"
+title: "The AI Agent Dilemma"
+subtitle: "The real risk of AI agents is not what they do to systems, but what they do to human judgment."
 categories: [ai]
 tags: [ai, agents, epistemology, security]
 description: AI agents may not just change how we work. They may weaken our ability to know, verify, and justify what we believe.

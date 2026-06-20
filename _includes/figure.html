@@ -1,0 +1,9 @@
+<figure class="figure">
+  <div class="fig-label">// {{ include.label }}</div>
+  <div class="fig-body">
+    <img src="{{ include.src | relative_url }}" alt="{{ include.alt }}" loading="lazy" />
+  </div>
+  {% if include.caption %}
+  <figcaption class="fig-caption">{{ include.caption }}</figcaption>
+  {% endif %}
+</figure>

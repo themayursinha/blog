@@ -1,173 +1,117 @@
 ---
 layout: post
-title: Crash Course in x86 - Part I
-categories: [security]
-tags: [security]
-description: Crash Course in x86
+title: "x86 from the Metal Up"
+date: 2019-04-30
+categories: [security, engineering]
+tags: [x86, assembly, security, malware-analysis, exploit-development]
+description: "Everything you need to read an exploit, analyze malware, or understand what a disassembler is telling you — without learning every instruction in the manual."
+share-img: /img/x86-register-layout.svg
+subtitle: "Bits, bytes, registers, flags, and the few instructions that explain 80% of what you will see in any disassembler."
 ---
 
-Knowledge of x86 is important in security fields like malware analysis, vulnerability research and exploit development. The only prerequisite is to know the basics of C or C based languages like Java.
+Every shellcode analysis starts with the same five-minute orientation. Read the registers, read the flags, find the loop, follow the jump. Once you can do that, the rest of x86 is just vocabulary. This is the orientation.
 
-#### Bits, bytes, words, double words
-The data “types” in 32 bits assembly are bits, bytes, words, and dwords.
-The smallest of them is the bit, which can be either 0 or 1.
-A byte is eight bits put together and can be between 0 and 255
-A word is two bytes put together, or sixteen bits, and can have a maximum value of 65535.
-A dword is two words (d in dword stands for double), four bytes or 32 bits. The maximum value is 4294967295.
+The only prerequisite is to know the basics of a C-family language. Everything else — what a register is, what a flag is, why the stack grows backwards — is below. The order matters: each section assumes the one above it.
 
-#### Registers
-A register is a small storage space available as part of the CPU. This also implies that registers are typically addressed by other mechanisms than main memory and are much faster to access. Registers are used to store values for future usage by the CPU and they can be divided into the following classes.
+## The data types
 
-#### General purpose registers
-Used by the CPU during execution. There are eight of them and the original idea of Intel engineers was that most of these registers should be used for certain tasks (their names hint the type of task intended). But during the years and the development of Intel architecture each and every one of these can be used as general purpose register. That is however not recommended. EBP and ESP should be avoided as much as possible, as using them without saving and restoring their original values means the functions stack frame will be messed up and the program will crash.
+x86 deals in four sizes: bits, bytes, words, and double words.
 
-EAX) Extended Accumulator Register
-EBX) Extended Base Register
-ECD) Extended Counter Register
-EDX) Extended Data Register
-ESI) Extended Source Index
-EDI) Extended Destination Index
-EBP) Extended Base Pointer
-ESP) Extended Stack Pointer
+A bit is a 0 or a 1. Eight bits make a byte, which holds 0 to 255. Two bytes make a word, which holds 0 to 65,535. Two words (four bytes, 32 bits) make a dword, which holds 0 to 4,294,967,295. Every register, every memory address, every instruction operand in 32-bit x86 is one of these four sizes. Once you internalize the size table, half the disassembler stops looking like noise.
 
-All the general purpose registers are 32-bit size in Intel’s IA-32 architecture but depending on their origin and intended purpose, a subset of some of them can be referenced in assembly. Below is the complete list.
+## Registers
 
-![reg]({{site.url}}/img/reg.png)
+A register is a tiny storage cell on the CPU itself. Faster than main memory by an order of magnitude, limited in number, addressed by name rather than by address. The 32-bit x86 architecture gives you eight general-purpose registers, and Intel's original engineers had specific uses in mind for each — the names are the hint.
 
-AX to SP are the 16 bit registers used to reference the 16 least significant bits in their equivalent 32 bit registers. The eight bit registers reference the higher and lower eight bits of the 16 bit registers.
+{% include figure.html src="/img/x86-register-layout.svg" label="Fig. 1 · x86 Register Layout" caption="Eight 32-bit general-purpose registers, their 16-bit sub-registers, and the four that also split into 8-bit halves. The colour groups follow the original Intel intent: EAX/EBX/ECX/EDX for arithmetic and data, ESI/EDI for string and pointer operations, EBP/ESP for stack frame management." alt="x86 general purpose register map: EAX, EBX, ECX, EDX, ESI, EDI, EBP, ESP with their 16-bit and 8-bit sub-registers" %}
 
-#### Segment registers
-Segment registers are used to make segmental distinctions in the binary. We will approach segments later but in short, the hexadecimal value 0x90 can either represent an instruction or a data value. The CPU knows which one thanks to segment registers.
+Two of them are special. **EBP** and **ESP** are the base pointer and stack pointer — the two registers that own the function call machinery. Every modern compiler reserves them. You can technically use them as general-purpose registers, but the moment a function forgets to save and restore the original value, the entire stack frame collapses and the program crashes in ways that are nearly impossible to debug. If you ever see someone using EBP or ESP outside compiler-generated code, assume they are writing the kind of assembly that requires a debugger open at all times.
 
-#### Status flag registers
-Flags are tiny bit values that are either set (1) or not set (0). Each flag represent a status. For example, if the “signed” flag is set, the value of FF will represent a -1 in decimal notation instead of 255. Flags are all stored in special flag register, were many one bit flags are stored at once. The flags are set whenever an operation resulted in certain state or output. The flags we are most interested in for now are:
-Z - zero flag, set when the result of the last operation is zero
-S - signed flag, set to determine if values should be intercepted as signed or unsigned
-O - overflow flag, set when the result of the last operation switches the most significant bit from either F to 0 or 0 to F.
-C - carry flag, set when the result of the last operation changes the most significant bit
+The other six are fair game, though the first four still have the strongest conventions. `EAX` is the accumulator — most arithmetic operations place their result there. `ECX` is the counter — `LOOP` decrements it, `REP` chains through it. `EDX` is the data register — the upper half of multiplication and division results. `EBX` is the base register — the only general-purpose register that survived the 16-bit era unchanged. `ESI` and `EDI` are the source and destination index registers — they walk through memory during string and buffer operations.
 
-#### EIP - Extended Instruction Pointer
-The instruction pointer has the same function in a CPU as the needle had in those old gramophones your grandpa used to have. It points to the next instruction to be executed.
+Every 32-bit register is a full 32 bits wide, but the lower 16 bits of each have their own two-letter name (`AX`, `BX`, `CX`, `DX`, `SI`, `DI`, `BP`, `SP`) for backward compatibility with 16-bit code. The first four of those 16-bit registers go one step further: the lower 8 bits are `AL`, `BL`, `CL`, `DL` and the upper 8 bits are `AH`, `BH`, `CH`, `DH`. When a disassembler shows you `mov al, 0x41` instead of `mov eax, 0x41`, the author is being precise about which byte they care about. Watch for it.
 
-#### Segments & offsets
-Every program consists of several different segments. Four segments that each program must have are .text, .data, .stack and .heap. The program code is put in .text and global data is stored in .data. The stack is where, among many things, local variable and function arguments, are stored and the heap is an extendable memory segment that programs can use whenever they need more memory space.
+## Flags
 
-#### The stack
-The stack is the part of memory where a program stores local variables and function arguments (among many things) for later use. It is organized as a “Last In First Out” data structure. When something is added to the stack, it is added on top of it and when something is removed, it is removed from the top. Another very important feature about the stack is that it grows backwards, from the highest memory address to the lowest, more about that in a moment.
-Two registers that are customized to work closely with the stack are the ESP and EBP. The ESP is the stack pointer and always points to the top of the stack. When something is added to the stack, the stack grows. This means the ESP needs to be corrected to point to the new “top” of the stack, which is done by decrementing ESP. Again, this is because the stack grows backwards, from highest address to lowest.
+Beside the eight general-purpose registers, the CPU maintains a single register of one-bit flags. Each flag is a tiny status signal that the most recent operation set or cleared. Most instructions touch at least one. The four that matter for almost every binary you will ever read:
 
-#### Stack frames
-The EBP is the base pointer but what does base mean? Well, every process has at least one thread, and every thread has its own stack. And within the stack of every thread, each function has its own stack frame. The base is the beginning of a stack frame. The main function in every program has its stack, when it calls a function the called function creates its own stack frame which is marked out by the EBP that points to the beginning of the functions stack frame and the ESP that points to the top of the stack. More about this subject later.
+- **Z** — zero flag, set when the result of the last operation is zero
+- **S** — sign flag, set when the result is interpreted as negative
+- **O** — overflow flag, set when the result switches the most significant bit
+- **C** — carry flag, set when the most significant bit is carried out
 
-#### The Heap
-The heap is memory space that can be allocated by a process when it needs more memory. Each process has one heap and it is shared among the different threads. All the threads share the same heap. The heap is a Linked-List data structure, which means each item only knows the position of the immediate items before and after it. When the process does not need the memory anymore, it is custom to “free” the allocated heap. This is done by de-referencing the no longer required portion and allowing other processes to use it.
+The flags exist so that conditional jumps can ask questions. `JE` (jump if equal) checks Z. `JG` (jump if greater) checks S, O, and Z together. `JLE` (jump if less or equal) checks the same three. There are roughly 30 conditional jumps, none of which you have to memorize. The Intel manuals list which flags each one checks. Read the table once, look it up the next 200 times you need it.
 
-#### Instructions
-Intel instructions vary in size from one to fourteen bytes. The opcode (short for operation code) is mandatory for them all and can be combined with other optional or mandatory bytes to create advanced instructions. This is a vast topic and further reading is done at the links below for those who want. If not, the disassembler will do the job for you, but it can be good to know why opcode 83 sometimes is disassembled as an add and other times as an and instruction when you look in your disassembler. Below links will explain that indirectly.
-http://www.swansontec.com/sintel.html
-http://ref.x86asm.net/coder32.html
-Most instructions have two operators (like add eax, ebx), but some have one (not eax) or even three ("imul eax, edx, 64"). Instructions that contain something with "dword ptr [eax]" reference the double word (4 byte) value at memory offset [XXX]. Note that the bytes are saved in reverse order in the memory as Intel uses Little Endian representation. That means the most significant bit of every byte is the most left bit.
+The other register that matters is **EIP**, the extended instruction pointer. It points to the next instruction the CPU will execute, and every `JMP`, `CALL`, and `RET` instruction modifies it. EIP is the needle on a record player — the rest of the registers are the song.
 
-#### Arithmetic operations - ADD , SUB, MUL, IMUL, DIV, IDIV...
-ADD, syntax: add dest, src
-Destination and source can be either a register like eax, a memory reference [esp] (anything surrounded by square brackets is an address reference). The source can also be an immediate number. Noteworthy is that both destination and source cannot be a memory reference at the same time. Both can however be registers.
-add eax, ebx        ; both dest and src are registers
-add [esp], eax      ; dest is a memory reference to the top of the stack, source is the eax register
-add eax, [esp]      ; like the previous example but with the roles reversed
-add eax, 4          ; source is an immediate value
+## Segments and the memory model
 
-The sub instruction works exactly as the add instruction.
-SUB, syntax:  sub dest, src
+Every running program is divided into four memory regions. The **.text** segment holds the program code. The **.data** segment holds global variables. The **.stack** segment holds local variables, function arguments, and return addresses. The **.heap** segment is where dynamic allocations live, shared across all threads in the process.
 
-The division and multiplication instructions are a little different, let’s go through division first.
-DIV/IDIV, syntax: div divisor
+The stack is the part you need to understand. It is a Last In, First Out structure that grows backwards — from the highest memory address toward the lowest. The two registers that own it are `ESP`, which always points to the top of the stack, and `EBP`, which marks the start of the current function's frame. When a function is called, the caller's return address is pushed onto the stack, the callee's local variables are pushed on top of that, and `EBP` is set to point at the new frame. When the function returns, the stack unwinds and `ESP` is restored. The entire mechanism is implemented by two instructions: `CALL` (push return address, jump) and `RET` (pop return address, jump). The prologue and epilogue of every compiled function exist to keep this dance orderly.
 
-The dividend is always eax and that is also were the result of the operation is stored. The rest value is stored in edx.  
-mov eax, 65         ; move the dividend into eax
-mov ecx, 4          ; move the divisor into ecx
-div ecx             ; divide eax by ecx, this will result in eax containing 16 and edx containing the rest, which is 1
+The heap is the opposite — a linked list of free and allocated blocks, managed by `malloc` and `free` (or their C++ and OS equivalents). Exploit writers care about the heap because heap overflows corrupt the linked-list metadata and let attackers redirect execution. Defenders care because heap corruption is the most common class of memory-safety bug in modern software.
 
-IDIV is the same as DIV but signed division.
+## Instructions
 
-MUL/IMUL, syntax:   mul value
-                    mul dest, value, value
-                    mul dest, value
+x86 instructions vary in length from one byte to fourteen bytes. Every instruction begins with an opcode — the operation code that tells the CPU what to do — and may be followed by zero, one, two, or three operands. Most instructions take two operands, like `add eax, ebx`. A few take one, like `not eax`. A few take three, like `imul eax, edx, 64`. The source operand can be a register, a memory address, or an immediate value. The destination can be a register or a memory address. You cannot have two memory addresses in the same instruction — the CPU has no instruction format for that — so any two-operand instruction with a memory reference must use a register as the other operand.
 
-mul/imul (unsigned/signed) multiply either eax with a value, or they multiply two values and put them into a destination register or they multiply a register with a value.
+When a disassembler prints `dword ptr [eax]`, the brackets mean "the double word at the memory address currently in `eax`." The `dword` says it is reading 4 bytes. The `ptr` says it is a pointer dereference. Together, the expression means "fetch the 32-bit value from memory at the address `eax` is holding." The opposite — the address of a memory location, rather than its contents — is what `LEA` (load effective address) computes. `lea eax, [ecx+edx]` puts the *address* `ecx+edx` into `eax` without reading from that address. The arithmetic happens on the address itself, which is why compilers use it as a fast way to add two registers.
 
-#### Bitwise operations: AND, OR, XOR, NOT
-AND, syntax:      add dest, src
-OR, syntax:       or dest, src
-XOR, syntax:      xor dest, src
-NOT, syntax:      not eax
+Bytes in memory are stored in **little-endian** order. The least significant byte of a value is stored first. If you write `mov eax, 0x12345678` and then look at the bytes in memory, you will see `78 56 34 12`, not `12 34 56 78`. This is the single most common source of "the bytes don't match" confusion when reading shellcode. It is not a bug. It is the architecture. Get used to reading hex dumps backward.
 
-Bitwise operations are what their name suggests. Two pieces of data are being compared bit by bit and depending on the operation, the outcome is either a 0 or a 1. Consider below two values:
+## The instructions that matter
 
-value 1:          10011011
-value 2:          11001001
-output:           ????????
+The full x86 manual runs to thousands of pages. The instructions you will see in 90% of disassembly, in order of frequency:
 
-If the operation is AND the output would be 10001001 since only the 1st, 5th and 8th bits in both value 1 and 2 are set. That is what AND means, it checks for equally positioned bits that are both set.
-If the operation would be OR, it would check for any set bites and as long as a bit is set in either value 1 or value 2, it would set the equivalent bit in the output. Hence the result of an OR would be 11011011.
-The XOR is like the OR but with one very important distinction. It will not set bits in the output were both bits are set, instead it will only set bits that are exclusively set in either value 1 but not 2, or the other way around. The above example would give the following output: 01010010.
-The way XOR works brings an interesting feature, any value XOR:ed with itself will become 0. Many compilers are making use of this feature of the XOR operation by XOR:ing a register with itself instead of moving the value 0 into it, as the XOR operation will go faster.
-The NOT operation is different to the other bitwise operations as it only takes one value and inverses every bit. For example the value 11011110 would become 00100001 when NOT’d.
+**Data moving.** `MOV` is the most common instruction in any compiled program — it copies a value from source to destination. `MOVSX` and `MOVZX` extend a smaller value to a larger one, filling the new bits with the sign bit or with zeros respectively.
 
-#### Branching: JMP, JE, JLE, JNZ, JZ, JBE, JGE...
-JMP/JE/JLE...etc syntax:    jmp address
-
-In assembly, branching is made through the use of jumps and flags. A jump is just an instruction that under certain circumstances will point the instruction pointer (EIP) to another portion of the code (much like the “goto” keyword in C). Flags are, as mentioned previously, tiny one bit values that can be set (1) or not set (0). Most instructions set one or more flags. Let’s revisit some of the instructions we already looked at and see which flags they set
-ADD can set all of the Z, S, O, C flags (and some more that are of no interest to us right now) according to the result. Same is true for the SUB instruction.
-The AND instruction however always clears the O and C flags, but sets Z and S flags according to the result.
-Depending on which flags are set, a jump will either happen or not. As you see, there are always only two options in assembly branches and if you think about it, this is also true in all the more complex type of branches that higher level languages offer. A switch statement in C for example will always perform or not perform a case, then move on to the next case and once again decide whether to perform or not perform that case.
-Two notes! First of all, most of the time you will see an instruction called CMP (which stands for compare) being used before a jump. CMP is the ideal pre-branch instruction as it can set all the status flags and is really fast. The syntax for CMP is: cmp dest, src
-This does not mean the other instructions cannot be used before a jump, for example XOR occurs frequently but the most common is the CMP instruction.
-The other important note is about the jump instructions. There are a lot of jump instructions and nobody can memorize them all. Often there are several jumps that look very much alike. For example, JLE stands for “Jump Less or Equal”. In C this would be:
-if (x <= y) { do this }
-At the same time, JBE stands for “Jump Below or Equal”. Which in C would be:
-if(x<=y) {dothis}
-So why these different jumps that looks exactly the same in C, one wonders? The answer is “due to signed and unsigned comparisons”. JLE is used to check the flags after a comparison between signed variables and JBE for unsigned comparisons. This was just an example, unless you memorize them all, you always need to read in the Intel Developer’s Guide to see which flags a jump checks for.
-
-#### Data moving: MOV, MOVS, MOVSB, MOVSW, MOVZX, MOVSX, LEA...
-MOV, syntax:        mov dest, src
-MOVSB, syntax:      movzx dest, src
-MOVZX, syntax:      movzx dest, src
-
-MOV moves data from source into destination. Both source and destination can be register, or one of them register and the other one a memory reference. Both cannot be a memory reference however.
-The mov instructions come in many flavours, just like the jump instructions, and partly for the same reason. MOVS/MOVSB/MOVSW/MOVSD for example copy a byte, word or dword from source to destination.
-The mov instructions that have an X in their name are used for variable extension. In C it would for example be like a typecast from char to integer, like this
-
-char a = ‘h’;
-int b;
-b = (int)a;
-
-The instructions work like this
-
-MOVSX) DEST = Signextend[SRC]
-MOVZX) DEST = Zeroextend[SRC]
-
-Where signed means the extension bits will hold the value of one.
-Another instruction that can be used for data moving is the LEA instruction. LEA stands for “Load Effective Address” and the syntax looks like this:
-
-lea eax, dword ptr[ecx+edx] ; This will store ecx+edx in eax
-
-#### Loops: LOOP, REP...
-Although one can create neat loops using jumps, Intel’s x86 assembly also provides instructions specifically tailored to create iterating sequences of code. Like many of the other instructions we looked at, they come with many flavours depending of the size and sign of the variables they work with. For simplicity reasons, I will only show the easiest cases, LOOP first:
-
+```x86asm
+mov eax, 0x41          ; load the immediate value 0x41 into eax
+mov ebx, [esp]         ; load the dword at the top of the stack into ebx
+movzx eax, byte [esi]  ; load a single byte from [esi], zero-extend into eax
+lea eax, [ecx+edx*4+8] ; compute the address ecx+edx*4+8, store in eax
 ```
-mov ecx, 5 ; remember ecx stands for extended counter register
+
+**Arithmetic.** `ADD` and `SUB` are the obvious ones. `MUL` and `IMUL` multiply, with the result in `EDX:EAX` for the unsigned-without-operand form. `DIV` and `IDIV` divide, with the quotient in `EAX` and the remainder in `EDX`.
+
+```x86asm
+mov eax, 65            ; dividend
+mov ecx, 4             ; divisor
+div ecx                ; eax = 16, edx = 1 (remainder)
+```
+
+**Bitwise.** `AND`, `OR`, `XOR`, `NOT`. Two pieces of data, compared bit by bit. `XOR` is the interesting one — any value XORed with itself becomes 0, which is why compilers zero a register with `xor eax, eax` instead of `mov eax, 0`. The XOR path is one byte shorter and one cycle faster on most CPUs.
+
+```x86asm
+xor eax, eax           ; eax = 0, faster than "mov eax, 0"
+and eax, 0xFF          ; keep only the low byte of eax
+or  eax, 0x100         ; set bit 8 of eax
+not eax                ; flip every bit of eax
+```
+
+**Branching.** `JMP` is unconditional. The conditional jumps check flags set by a previous instruction, almost always `CMP` (compare) or `TEST` (bitwise AND that discards the result, used for checking single bits).
+
+```x86asm
+cmp eax, ebx
+je  .equal             ; jump if eax == ebx
+jg  .greater           ; jump if eax > ebx (signed)
+jbe .not_greater       ; jump if eax <= ebx (unsigned)
+```
+
+**Looping.** The `LOOP` instruction decrements `ECX` and jumps to the target if `ECX` is not zero. It is a relic of the 16-bit era, rarely generated by modern compilers, but it shows up in hand-written assembly and shellcode. The `REP` prefix is more interesting — it repeats the following string operation (`MOVS`, `STOS`, `CMPS`, `SCAS`) `ECX` times.
+
+```x86asm
+mov ecx, 5
 _proc:
-dec ecx ; decrements ecx
-loop _proc ; loops back to _procs, second row
+  dec ecx
+  loop _proc           ; loops 5 times
 ```
 
-REP instructions work like LOOP instructions, but are specifically customized to handle
-strings (this is where IA-32 assembly almost becomes a high level language)
-```
-mov esi, str1
-mov edi, str2
-mov, ecx, 10h
-rep cmps
-```
+## The mental model
 
-What happens here is that the strings to be compared are loaded into ESI and EDI and then a comparison is performed for 16 bytes (hexadecimal value 0x10 = 16 in decimal notation). If at some point the source and destination are not equal, a flag will be set and the operation will be aborted.
+Once the above is internalized, almost every disassembled function follows the same shape. A prologue saves the old `EBP` and sets up a new frame. The body loads arguments, does work, branches based on conditions, and moves results into `EAX` to return. An epilogue restores the old `EBP` and returns.
+
+The exceptions are interesting. Loops and function calls use `ECX` and the stack, not `EAX`. String operations use `ESI` and `EDI` as source and destination. Some compilers will use any register for any purpose, especially with optimization enabled, which is why disassembly without symbols is genuinely hard. But the model holds often enough that it is the right starting point.
+
+The deeper instruction set — `LOOP`, `REP`, `MOVZX`, the floating-point `FPU` stack, the `MMX`/`SSE`/`AVX` vector instructions, the `AES-NI` and `SHA-NI` hardware-accelerated crypto — is for later. None of it changes the mental model. The mental model is: registers are 32-bit scratchpads, flags are tiny status signals, the stack is a LIFO that grows downward, memory is byte-addressed little-endian, and the instruction pointer walks through the program one instruction at a time. Everything else is vocabulary on top of that.
