@@ -1,0 +1,126 @@
+direction: right
+
+title: Three trust paths for AI agent architectures {
+  style.font-size: 28
+  style.font-color: "#e0e0e0"
+  near: top-left
+}
+subtitle: Data movement, transaction integrity, and tool execution each need their own control posture. {
+  style.font-size: 14
+  style.font-color: "#858c85"
+  near: top-left
+}
+
+agent-host: {
+  shape: rectangle
+  label: |md
+    ENTRY
+    **AI platform**
+    client, model
+  |
+  style.fill: "#0f120f"
+  style.stroke: "#293029"
+  style.font-color: "#e0e0e0"
+  width: 170
+  height: 340
+}
+
+# Path 1: Data Movement
+data-path: {
+  shape: rectangle
+  label: |md
+    `TRUST PATH 1`
+    **Data movement**
+    `classify, minimize, route, observe, revoke`
+    `Control: what leaves the system`
+  |
+  style.fill: "#0f120f"
+  style.stroke: "#3c493e"
+  style.font-color: "#e0e0e0"
+  width: 390
+  height: 120
+}
+
+data-outcome: {
+  shape: rectangle
+  label: |md
+    `OUTCOME`
+    **Visible, revocable**
+    `nothing sensitive leaves`
+  |
+  style.fill: "#0f120f"
+  style.stroke: "#3c493e"
+  style.font-color: "#e0e0e0"
+  width: 250
+  height: 120
+}
+
+# Path 2: Transaction Integrity
+txn-path: {
+  shape: rectangle
+  label: |md
+    `TRUST PATH 2`
+    **Transaction integrity**
+    `authenticate, validate, authorize, reconcile`
+    `Control: what changes state`
+  |
+  style.fill: "#0f120f"
+  style.stroke: "#3c493e"
+  style.font-color: "#e0e0e0"
+  width: 390
+  height: 120
+}
+
+txn-outcome: {
+  shape: rectangle
+  label: |md
+    `OUTCOME`
+    **Consistent, reconciled**
+    `domain authorizes the effect`
+  |
+  style.fill: "#0f120f"
+  style.stroke: "#3c493e"
+  style.font-color: "#e0e0e0"
+  width: 250
+  height: 120
+}
+
+# Path 3: Tool Execution (highlighted)
+exec-path: {
+  shape: rectangle
+  label: |md
+    `TRUST PATH 3`
+    **Tool execution**
+    `bind, constrain, budget, contain, evidence`
+    `Control: what chains together`
+  |
+  style.fill: "#0f120f"
+  style.stroke: "#00ff41"
+  style.font-color: "#e0e0e0"
+  width: 390
+  height: 120
+}
+
+exec-outcome: {
+  shape: rectangle
+  label: |md
+    `OUTCOME`
+    **Bounded, auditable**
+    `no unsafe tool chains`
+  |
+  style.fill: "#0f120f"
+  style.stroke: "#00ff41"
+  style.font-color: "#e0e0e0"
+  width: 250
+  height: 120
+}
+
+agent-host -> data-path -> data-outcome
+agent-host -> txn-path -> txn-outcome
+agent-host -> exec-path -> exec-outcome
+
+footnote: One trust model, three enforcement points. The invariants differ — the controls should too. {
+  style.font-size: 12
+  style.font-color: "#586e75"
+  near: bottom-left
+}
