@@ -116,13 +116,15 @@ test("homepage presents the sovereign AI command deck with concrete controls", (
 
   assert.match(home, /data-home-command/);
   assert.match(home, /I architect the security primitives for the next computational paradigm/);
-  assert.match(home, /Sovereign AI Security \/ Agent Runtime Control \/ Adversarial Systems Engineering/);
-  assert.match(home, /observable, interruptible, and unable to exceed its delegated authority/);
-  assert.match(home, /My long-term direction is to turn this research into sovereign control infrastructure for AI execution/);
+  assert.match(home, /Autonomous AI systems demand bounded authority, trustworthy evidence, and fail-closed control/);
+  assert.match(home, /low-level machine execution and autonomous agent governance/);
+  assert.match(home, /control infrastructure for high-stakes autonomous execution/);
+  assert.doesNotMatch(home, /Sovereign AI Security \/ Agent Runtime Control \/ Adversarial Systems Engineering/);
   assert.match(home, /15[+] YEARS/);
   assert.match(home, /First security hire, security function builder, team lead, hands-on architect/);
   assert.equal((home.match(/class="home-program-card/g) || []).length, 3);
-  assert.match(home, /MCP VISOR/);
+  assert.match(home, /RUNTIME POLICY VISOR/);
+  assert.doesNotMatch(home, /MCP guardrails/);
   assert.match(home, /RESEARCH SIGNALS/);
   assert.match(home, /script: \/js\/home\.js/);
   assert.match(css, /\.home-control-plane/);
