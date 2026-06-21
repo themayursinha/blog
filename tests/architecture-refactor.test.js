@@ -160,6 +160,10 @@ test("proof page renders an evidence vault with real systems and research", () =
   assert.match(css, /@keyframes proof-core-pulse/);
   assert.match(css, /prefers-reduced-motion: reduce/);
   assert.doesNotMatch(proof, /Add whitepaper|add link|Add deployed/);
+
+  const projects = readProjectFile("_data/projects.yml");
+  assert.match(projects, /Asymmetric Threat Mitigation via Autonomous UAVs/);
+  assert.match(projects, /Predictive Kinetic Threat Modeling via Deep Neural Networks/);
 });
 
 test("production typography uses Space Grotesk and IBM Plex Mono", () => {

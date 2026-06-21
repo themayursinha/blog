@@ -26,7 +26,7 @@
       url: https://www.researchgate.net/publication/339129540_A_Game-Theoretic_Approach_to_Evaluate_Security_Efficacy_of_Security_Controls_Frameworks
 
 - id: uav-cyber-counterterrorism
-  title: UAVs in cyber counterterrorism
+  title: Asymmetric Threat Mitigation via Autonomous UAVs
   summary: UAV-based cyber counterterrorism use-case exploration.
   role: Researcher
   year: 2020
@@ -35,7 +35,7 @@
       url: https://www.researchgate.net/publication/342397296_Application_of_Unmanned_Aerial_Vehicles_in_Cyber_Counterterrorism
 
 - id: dnn-terrorism-prediction
-  title: Predicting terrorism using DNNs
+  title: Predictive Kinetic Threat Modeling via Deep Neural Networks
   summary: Deep learning approach for forecasting terrorism risk patterns.
   role: Researcher
   year: 2023
