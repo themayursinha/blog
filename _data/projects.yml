@@ -7,15 +7,6 @@
     - label: Publication
       url: https://www.researchgate.net/publication/325478001_Understanding_IoT_botnets
 
-- id: securing-iot
-  title: Securing the Internet of Things
-  summary: Research program on improving IoT device and deployment resilience.
-  role: Researcher
-  year: 2018
-  links:
-    - label: Project
-      url: https://www.researchgate.net/project/Securing-the-Internet-of-Things-2
-
 - id: automated-fuzzing-vuln-analysis
   title: Automated Fuzzing for vulnerability analysis
   summary: Automated fuzzing workflow for memory-safety and validation bug discovery.
