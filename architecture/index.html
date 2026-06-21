@@ -5,8 +5,12 @@ description: Architecture notes on autonomous systems containment, AI security, 
 permalink: /architecture/
 ---
 
-{% assign latest_post = site.posts | first %}
-{% assign archive_count = site.posts | size %}
+{% assign architecture_posts = site.categories.architecture %}
+{% assign philosophy_posts = site.categories.philosophy %}
+{% assign latest_post = architecture_posts | first %}
+{% assign architecture_count = architecture_posts | size %}
+{% assign philosophy_count = philosophy_posts | size %}
+{% assign archive_count = architecture_count | plus: philosophy_count %}
 
 <article class="architecture-page architecture-command">
   <header class="architecture-hero">
@@ -42,12 +46,28 @@ permalink: /architecture/
 
   <section class="architecture-archive-section" aria-labelledby="architecture-log-title">
     <div class="section-heading architecture-section-heading">
-      <p>01 / FULL ARCHIVE</p>
-      <h2 id="architecture-log-title">RESEARCH LOG</h2>
+      <p>01 / RESEARCH LOG</p>
+      <h2 id="architecture-log-title">/// KINETIC INFRASTRUCTURE &amp; AI CONTAINMENT ///</h2>
     </div>
 
     <ol class="architecture-list architecture-command-list">
-      {% for post in site.posts %}
+      {% for post in architecture_posts %}
+        <li>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ol>
+  </section>
+
+  <section class="architecture-archive-section" aria-labelledby="philosophy-log-title">
+    <div class="section-heading architecture-section-heading">
+      <p>02 / STRATEGIC LOG</p>
+      <h2 id="philosophy-log-title">/// STRATEGIC PHILOSOPHY &amp; MACRO-SYSTEMS ///</h2>
+    </div>
+
+    <ol class="architecture-list architecture-command-list">
+      {% for post in philosophy_posts %}
         <li>
           <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
           <a href="{{ post.url | relative_url }}">{{ post.title }}</a>

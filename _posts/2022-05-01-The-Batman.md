@@ -2,8 +2,8 @@
 layout: post
 title: "Why The Batman Feels So Personal"
 date: 2022-05-01
-categories: [culture, film]
-tags: [film, batman, cinematography, matt-reeves, christopher-nolan, noir]
+categories: [philosophy, culture, film]
+tags: [philosophy, macro-systems, film, batman, cinematography, matt-reeves, christopher-nolan, noir]
 description: "Matt Reeves did not make a Batman film. He made a noir film that happens to be about Batman, and the difference is the entire reason it works."
 share-img: /img/circuit.svg
 subtitle: "Reeves did not make a Batman film. He made a noir film that happens to be about Batman, and the difference is the entire reason it works."

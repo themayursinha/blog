@@ -3,8 +3,8 @@ layout: post
 title: "MCP Visor: Runtime Policy Enforcement"
 subtitle: "A deterministic proxy that decides, approves, and audits every MCP tool call."
 date: 2026-05-25
-categories: [ai, security]
-tags: [ai, security, agents, mcp, policy, appsec]
+categories: [ai, security, architecture]
+tags: [ai, security, architecture, agents, mcp, policy, appsec]
 description: "MCP Visor turns MCP tool execution into a deterministic policy boundary: inspect the tool call, enforce the rule, redact secrets, require approval, and log the decision before the action reaches the server."
 share-img: /img/circuit.svg
 related_posts:

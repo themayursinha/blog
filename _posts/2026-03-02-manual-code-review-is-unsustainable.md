@@ -2,8 +2,8 @@
 layout: post
 title: Traditional manual code review is no longer sustainable
 subtitle: "The volume of AI-generated code has broken the old review model. Here is what replaces it."
-categories: [engineering]
-tags: [ai, security, llms, code-review, software-engineering]
+categories: [engineering, architecture]
+tags: [ai, security, architecture, llms, code-review, software-engineering]
 description: "Code review was built for a world where humans wrote most code. In the AI era, the bottleneck moves from verifying syntax to governing intent."
 share-img: /img/code-review-verification.svg
 ---

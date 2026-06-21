@@ -2,8 +2,8 @@
 layout: post
 title: "What Tesla Got Right"
 date: 2023-02-27
-categories: [science, history]
-tags: [science, tesla, history, energy, futurism]
+categories: [philosophy, macro-systems, science, history]
+tags: [philosophy, macro-systems, science, tesla, history, energy, futurism]
 description: "In 1930, Nikola Tesla published an article predicting the future of energy, materials, and medicine. About half of it was prescient. The other half is a window into how great minds err."
 share-img: /img/circuit.svg
 subtitle: "In 1930, Nikola Tesla published an article predicting the future of energy, materials, and medicine. About half of it was prescient. The other half is a window into how great minds err."

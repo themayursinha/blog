@@ -2,8 +2,8 @@
 layout: post
 title: Revisiting the Unabomber
 subtitle: "A critical reading of Kaczynski's critique of technology, separated from his violence."
-categories: [technology]
-tags: [technology, kaczynski, anti-technology, autonomy, surveillance, environmentalism]
+categories: [philosophy, technology]
+tags: [philosophy, macro-systems, technology, kaczynski, anti-technology, autonomy, surveillance, environmentalism]
 description: "Kaczynski's manifesto identified real problems with industrial society. His solution was murder. The honest move is to separate the diagnosis from the cure."
 share-img: /img/unabomber-critique.svg
 related_posts:

@@ -2,8 +2,8 @@
 layout: post
 title: "Game theory for cybersecurity: from reactive defense to strategic resilience"
 subtitle: "Using incentives, equilibria, and attacker-defender models to reason beyond the next patch."
-categories: [security]
-tags: [security, ai, llms]
+categories: [philosophy, macro-systems, security]
+tags: [philosophy, macro-systems, security, ai, llms, game-theory]
 description: "A practical guide to using game theory in cybersecurity, from Nash and Stackelberg models to APT defense, forensic readiness, and LLM-driven simulations."
 share-img: /img/circuit.svg
 related_posts:

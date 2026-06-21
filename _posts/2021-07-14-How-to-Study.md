@@ -2,8 +2,8 @@
 layout: post
 title: "How to Study Based on How Memory Works"
 date: 2021-07-14
-categories: [science, learning]
-tags: [learning, memory, study-methods, cognition]
+categories: [philosophy, macro-systems, science, learning]
+tags: [philosophy, macro-systems, learning, memory, study-methods, cognition]
 description: "Most study advice is folklore. The techniques that actually work come from a small set of principles about how attention, encoding, and retrieval actually behave in the brain."
 share-img: /img/circuit.svg
 subtitle: "Most students study the way their teachers taught them to study. That is rarely the way the brain actually retains information."

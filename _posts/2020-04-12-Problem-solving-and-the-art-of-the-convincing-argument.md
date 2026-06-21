@@ -2,8 +2,8 @@
 layout: post
 title: "The Art of the Convincing Argument"
 date: 2020-04-12
-categories: [engineering, mathematics]
-tags: [mathematics, problem-solving, modeling, engineering]
+categories: [engineering, mathematics, architecture]
+tags: [architecture, mathematics, problem-solving, modeling, engineering]
 description: "Mathematical modelling is not about equations. It is about choosing which details to keep, which to discard, and being honest about what you left out."
 share-img: /img/circuit.svg
 mathjax: true

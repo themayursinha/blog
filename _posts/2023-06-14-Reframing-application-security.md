@@ -2,8 +2,8 @@
 layout: post
 title: Reframing Application Security
 subtitle: "Security as an engineering function, not a review gate."
-categories: [security]
-tags: [security, appsec, devex, secure-by-default]
+categories: [security, architecture]
+tags: [security, architecture, appsec, devex, secure-by-default]
 description: "Application security should not be a late-stage interruption. The mature AppSec move is to improve developer feedback loops, reduce cognitive load, and build secure defaults into the engineering system."
 share-img: /img/circuit.svg
 related_posts:

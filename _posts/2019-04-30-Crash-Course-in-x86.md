@@ -2,8 +2,8 @@
 layout: post
 title: "x86 from the Metal Up"
 date: 2019-04-30
-categories: [security, engineering]
-tags: [x86, assembly, security, malware-analysis, exploit-development]
+categories: [security, engineering, architecture]
+tags: [architecture, x86, assembly, security, malware-analysis, exploit-development]
 description: "Everything you need to read an exploit, analyze malware, or understand what a disassembler is telling you — without learning every instruction in the manual."
 share-img: /img/x86-register-layout.svg
 subtitle: "Bits, bytes, registers, flags, and the few instructions that explain 80% of what you will see in any disassembler."

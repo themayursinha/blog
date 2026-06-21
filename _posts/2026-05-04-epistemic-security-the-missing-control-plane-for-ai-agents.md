@@ -3,8 +3,8 @@ layout: post
 title: "Epistemic Security for AI Agents"
 subtitle: "Agents need provenance and trust labels for what enters their context, not just controls on what they can do."
 date: 2026-05-04
-categories: [ai, security]
-tags: [ai, security, agents, epistemology, llms]
+categories: [ai, security, architecture]
+tags: [ai, security, architecture, agents, epistemology, llms]
 description: "AI agents do not only need runtime security. They need epistemic security: controls for provenance, uncertainty, evidence, memory, and human verification."
 share-img: /img/matrix.png
 related_posts:

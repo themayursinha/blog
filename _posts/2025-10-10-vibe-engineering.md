@@ -2,8 +2,8 @@
 layout: post
 title: Vibe Engineering
 subtitle: "Why intent, taste, and judgment matter more than prompt velocity in AI-assisted engineering."
-categories: [ai]
-tags: [ai, llms, software-engineering, vibe-coding, agentic-coding]
+categories: [ai, architecture]
+tags: [ai, architecture, llms, software-engineering, vibe-coding, agentic-coding]
 description: "Vibe coding ships fast and breaks things. Vibe engineering keeps the speed but adds the discipline that makes software survive contact with production."
 share-img: /img/vibe-engineering.svg
 related_posts:

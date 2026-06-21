@@ -2,8 +2,8 @@
 layout: post
 title: Was Thanos Right?
 subtitle: "A thought experiment on population, resources, and the ethics of utilitarian extremes."
-categories: [culture]
-tags: [ethics, philosophy, utilitarianism, pop-culture, thanos, resource-scarcity]
+categories: [philosophy, culture]
+tags: [philosophy, macro-systems, ethics, utilitarianism, pop-culture, thanos, resource-scarcity]
 description: "Thanos asks a real question about scarcity and survival, but his answer reveals the danger of treating human lives as variables in a single equation."
 share-img: /img/thanos-thought-experiment.svg
 related_posts:

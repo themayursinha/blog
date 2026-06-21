@@ -3,8 +3,8 @@ layout: post
 title: MCP Security Is a Supply Chain Risk
 subtitle: "MCP servers are executable trust boundaries, not harmless plugins."
 date: 2026-05-06
-categories: [ai, security]
-tags: [ai, security, agents, mcp, llms]
+categories: [ai, security, architecture]
+tags: [ai, security, architecture, agents, mcp, llms]
 description: "MCP servers are not harmless plugins. They are executable trust boundaries that shape what AI agents see, believe, and do."
 share-img: /img/circuit.svg
 related_posts:

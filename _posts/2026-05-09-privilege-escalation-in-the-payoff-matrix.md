@@ -3,8 +3,8 @@ layout: post
 title: "Why grinding is a self-inflicted DDoS"
 subtitle: "The system is not broken; the incentives are working exactly as designed."
 date: 2026-05-09
-categories: [engineering]
-tags: [game-theory, career, systems-thinking, leverage]
+categories: [philosophy, macro-systems]
+tags: [philosophy, macro-systems, game-theory, career, systems-thinking, leverage]
 description: "Grinding inside an extractive system does not change the payoff matrix. It only increases throughput for someone else's infrastructure."
 share-img: /img/matrix.png
 related_posts:

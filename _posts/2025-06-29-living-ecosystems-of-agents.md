@@ -2,8 +2,8 @@
 layout: post
 title: Designing a living ecosystem of AI agents
 subtitle: "From static agent teams to adaptive, self-organizing systems."
-categories: [ai]
-tags: [ai, agents, multi-agent-systems, emergence, agent-ecosystem]
+categories: [ai, architecture]
+tags: [ai, architecture, agents, multi-agent-systems, emergence, agent-ecosystem]
 description: "The next step past agent orchestration is not bigger orchestrators. It is ecosystems where agents spawn, bid, learn, and retire."
 share-img: /img/agent-ecosystem.svg
 related_posts:
