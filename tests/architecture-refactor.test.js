@@ -48,6 +48,10 @@ test("architecture archive renders a command archive without noisy entry metadat
   assert.match(archive, /data-text="ARCHITECTURE"/);
   assert.match(archive, /CURRENT TRANSMISSION/);
   assert.match(archive, /RESEARCH LOG/);
+  assert.match(archive, new RegExp("/// KINETIC INFRASTRUCTURE &amp; AI CONTAINMENT ///"));
+  assert.match(archive, new RegExp("/// STRATEGIC PHILOSOPHY &amp; MACRO-SYSTEMS ///"));
+  assert.match(archive, /site\.categories\.architecture/);
+  assert.match(archive, /site\.categories\.philosophy/);
   assert.match(archive, /date:\s+"%Y-%m-%d"/);
   assert.match(archive, /post\.title/);
   assert.match(archive, /architecture-console-core/);

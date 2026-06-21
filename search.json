@@ -15,7 +15,7 @@
   "url": "https://themayursinha.com/architecture/2026/05/25/mcp-visor-runtime-policy-enforcement-for-ai-agents/",
   "date": "2026-05-25",
   "excerpt": "In my last piece on MCP security, I argued that MCP servers are not harmless plugins. They are executable trust boundaries. They decide what an agent can see, which tools it can reach, which resources enter context, and which external systems are now one model decision away from mutation. That argument naturally leads to a practical question: where should enforcement live?I built MCP Visor as one answer to that question. It is a runtime policy enforcement proxy for MCP tool execution. It sits between an MCP client and an MCP server, intercepts every tools/call, evaluates deterministic polic...",
-  "tags": ["ai","security","agents","mcp","policy","appsec"]
+  "tags": ["ai","security","architecture","agents","mcp","policy","appsec"]
 },{
   "id": "/architecture/2026/05/09/privilege-escalation-in-the-payoff-matrix/",
   "type": "post",
@@ -24,7 +24,7 @@
   "url": "https://themayursinha.com/architecture/2026/05/09/privilege-escalation-in-the-payoff-matrix/",
   "date": "2026-05-09",
   "excerpt": "We constantly diagnose the corporate and economic systems around us as broken. We see the friction, the inefficiencies, the extraction of the middle class, the promotion of incompetence, and the strange persistence of obviously bad processes. The natural conclusion is that the infrastructure is failing.From a systems engineering perspective, I think that is the wrong threat model.A system is rarely broken in the way its participants believe it is broken. More often, it is a deterministic state machine executing according to its actual incentive physics. It produces the outcomes its structur...",
-  "tags": ["game-theory","career","systems-thinking","leverage"]
+  "tags": ["philosophy","macro-systems","game-theory","career","systems-thinking","leverage"]
 },{
   "id": "/architecture/2026/05/08/stop-fixing-bola-one-endpoint-at-a-time/",
   "type": "post",
@@ -33,7 +33,7 @@
   "url": "https://themayursinha.com/architecture/2026/05/08/stop-fixing-bola-one-endpoint-at-a-time/",
   "date": "2026-05-08",
   "excerpt": "Most API security conversations about Broken Object Level Authorization start with a tiny request:GET /orders/12345Authorization: Bearer token-for-user-aThen the attacker changes the ID:GET /orders/67890Authorization: Bearer token-for-user-aIf the API returns another user’s order, we call it Broken Object Level Authorization, or BOLA. In older application security language, many teams still call this IDOR. The standard fix is usually framed as a developer reminder: check authorization before returning the object.That advice is correct, but it is too small. If the security of the system depe...",
-  "tags": ["security","appsec","api-security","authorization","bola"]
+  "tags": ["security","architecture","appsec","api-security","authorization","bola"]
 },{
   "id": "/architecture/2026/05/06/mcp-security-the-new-supply-chain-risk-for-ai-agents/",
   "type": "post",
@@ -42,7 +42,7 @@
   "url": "https://themayursinha.com/architecture/2026/05/06/mcp-security-the-new-supply-chain-risk-for-ai-agents/",
   "date": "2026-05-06",
   "excerpt": "AI agents are not very useful if they cannot touch the world.They need files, tickets, databases, calendars, code repositories, cloud APIs, logs, browser sessions, and internal systems. That is why the Model Context Protocol matters. It gives AI applications a common way to connect to external tools, data sources, and workflows. The docs describe it as a kind of USB-C port for AI applications. That is a good metaphor.That convenience is also where the security work starts.USB-C is convenient because anything can plug in. MCP is powerful for the same reason. An assistant can discover tools, ...",
-  "tags": ["ai","security","agents","mcp","llms"]
+  "tags": ["ai","security","architecture","agents","mcp","llms"]
 },{
   "id": "/architecture/2026/05/04/epistemic-security-the-missing-control-plane-for-ai-agents/",
   "type": "post",
@@ -51,7 +51,7 @@
   "url": "https://themayursinha.com/architecture/2026/05/04/epistemic-security-the-missing-control-plane-for-ai-agents/",
   "date": "2026-05-04",
   "excerpt": "Most security discussions about AI agents focus on what the agent can do. Can it call a tool? Can it read email? Can it write to production? Can it touch customer data?Those questions matter. I have written about them before in the context of threat modeling autonomous AI agents in production. Capability is dangerous. Tool access is dangerous. Memory is dangerous. Autonomy is dangerous.But there is a deeper layer that security teams are still underestimating. AI agents do not merely execute actions. They form beliefs.They decide which sources matter, which claims are credible, which facts b...",
-  "tags": ["ai","security","agents","epistemology","llms"]
+  "tags": ["ai","security","architecture","agents","epistemology","llms"]
 },{
   "id": "/architecture/2026/05/03/the-ai-agent-dilemma-why-we-are-outsourcing-our-reality/",
   "type": "post",
@@ -60,7 +60,7 @@
   "url": "https://themayursinha.com/architecture/2026/05/03/the-ai-agent-dilemma-why-we-are-outsourcing-our-reality/",
   "date": "2026-05-03",
   "excerpt": "Perhaps the most subtle and dangerous risk of AI agents is not what they will do to jobs, markets, or software systems.It is what they will do to the human mind.Philosophers have a useful phrase for this: epistemic degradation. Epistemology is the study of knowledge. It asks a basic but brutal question:How do we know that something is true?Traditionally, knowledge requires more than possessing a fact. It requires justified true belief. If you read a complex book about geopolitics, absorb the facts, evaluate the arguments, compare them with opposing views, and form a conclusion, you have don...",
-  "tags": ["ai","agents","epistemology","security"]
+  "tags": ["philosophy","macro-systems","ai","agents","epistemology","security"]
 },{
   "id": "/architecture/2026/03/08/game-theory-for-cybersecurity/",
   "type": "post",
@@ -69,7 +69,7 @@
   "url": "https://themayursinha.com/architecture/2026/03/08/game-theory-for-cybersecurity/",
   "date": "2026-03-08",
   "excerpt": "Most security programs still operate as if the job is mainly to find issues, patch issues, and repeat.That loop is necessary, but it is not enough.Cybersecurity is not just a vulnerability management problem. It is a strategic conflict between adaptive opponents. Attackers change tactics when defenders harden one path. Defenders reallocate controls when attackers shift to another. Costs, uncertainty, timing, and incentives all matter.That is why game theory is useful in security.Game theory gives us a formal way to think about cyber conflict as a system of strategic choices between attacker...",
-  "tags": ["security","ai","llms"]
+  "tags": ["philosophy","macro-systems","security","ai","llms","game-theory"]
 },{
   "id": "/architecture/2026/03/04/threat-modeling-autonomous-ai-agents-in-production/",
   "type": "post",
@@ -78,7 +78,7 @@
   "url": "https://themayursinha.com/architecture/2026/03/04/threat-modeling-autonomous-ai-agents-in-production/",
   "date": "2026-03-04",
   "excerpt": "In a normal SaaS app, most security controls sit on API boundaries.In an autonomous agent system, the boundary is not just an API. It is a decision loop:observe -&gt; plan -&gt; call tools -&gt; mutate state -&gt; update memoryIf you threat-model only the prompt, you miss the real risk. The model is just one component. The dangerous part is authority: what the agent can do when it is wrong, manipulated, or overconfident.This post is a practical blueprint for modeling that risk in production systems.1) Model the runtime, not the promptStart by defining the runtime as a security system:agent ...",
-  "tags": ["ai","security","llms","agents"]
+  "tags": ["ai","security","architecture","llms","agents"]
 },{
   "id": "/architecture/2026/03/02/manual-code-review-is-unsustainable/",
   "type": "post",
@@ -87,7 +87,7 @@
   "url": "https://themayursinha.com/architecture/2026/03/02/manual-code-review-is-unsustainable/",
   "date": "2026-03-02",
   "excerpt": "Code review made sense when humans wrote humans-sized diffs. A reviewer could read the change, understand the intent, and catch most errors. That model is breaking. AI coding assistants let engineers produce more code, faster, in larger chunks, with patterns the reviewer may never have seen before. The result is a widening gap between what gets written and what gets properly understood.This is not a complaint about laziness. It is a structural mismatch. The old review process was designed for a slower, more constrained pipeline. It cannot scale to a world where code generation is cheap and ...",
-  "tags": ["ai","security","llms","code-review","software-engineering"]
+  "tags": ["ai","security","architecture","llms","code-review","software-engineering"]
 },{
   "id": "/architecture/2026/02/22/llms-vs-classical-neural-nets-for-vulnerability-detection/",
   "type": "post",
@@ -96,7 +96,7 @@
   "url": "https://themayursinha.com/architecture/2026/02/22/llms-vs-classical-neural-nets-for-vulnerability-detection/",
   "date": "2026-02-22",
   "excerpt": "I have worked with both worlds.Earlier in my career, including work at Trend Micro, I spent time experimenting with ANN pipelines for shellcode detection. Those systems were useful for bounded classification tasks on network payloads. They were not designed for deep reasoning across large codebases.That difference is the core of this post.  // Fig. 1 · From Local Classifier to Context Reasoner            Classical models score local windows. Transformers can attend to source-sink relationships across files.  The question is not “are LLMs neural networks”. They are. The useful comparison is ...",
-  "tags": ["ai","security","llms"]
+  "tags": ["ai","security","architecture","llms"]
 },{
   "id": "/architecture/2025/10/10/vibe-engineering/",
   "type": "post",
@@ -105,7 +105,7 @@
   "url": "https://themayursinha.com/architecture/2025/10/10/vibe-engineering/",
   "date": "2025-10-10",
   "excerpt": "There are two ways to use AI for coding. One is fast, loose, and increasingly common. The other is harder, slower in the short term, and the only one that scales.Vibe coding is the first: prompt, generate, ship. It works beautifully in a prototype with no users, no tests, and no existing architecture. It falls apart in production, where generated code has to fit a system, respect security boundaries, and keep working under load. The damage is rarely visible on day one. It shows up six months later as an authorization bug, a brittle abstraction, or a feature no one can maintain.Vibe engineer...",
-  "tags": ["ai","llms","software-engineering","vibe-coding","agentic-coding"]
+  "tags": ["ai","architecture","llms","software-engineering","vibe-coding","agentic-coding"]
 },{
   "id": "/architecture/2025/06/29/living-ecosystems-of-agents/",
   "type": "post",
@@ -114,7 +114,7 @@
   "url": "https://themayursinha.com/architecture/2025/06/29/living-ecosystems-of-agents/",
   "date": "2025-06-29",
   "excerpt": "Current agent frameworks — AutoGen, CrewAI, and their successors — let you build teams of AI agents. They are useful, but they manage agents like pieces on a board. Roles are fixed, the plan is predefined, and the orchestrator is the bottleneck. That works for well-understood tasks. It breaks when the environment changes or the task outgrows the original design.The next architecture is not a bigger orchestrator. It is an ecosystem.  // Fig. 1 · From Orchestration to Ecosystem            Static orchestration assigns fixed roles. A living ecosystem lets agents specialize, compete, and reprodu...",
-  "tags": ["ai","agents","multi-agent-systems","emergence","agent-ecosystem"]
+  "tags": ["ai","architecture","agents","multi-agent-systems","emergence","agent-ecosystem"]
 },{
   "id": "/architecture/2024/06/30/Suffering/",
   "type": "post",
@@ -132,7 +132,7 @@
   "url": "https://themayursinha.com/architecture/2024/02/12/Unabomber-relevance-in-2024/",
   "date": "2024-02-12",
   "excerpt": "Ted Kaczynski killed three people and injured dozens more in a bombing campaign that lasted nearly two decades. There is no separating that fact from his manifesto, Industrial Society and Its Future, because the violence was the point. The manifesto was not a philosophical argument that happened to be published by a murderer. It was the justification for murder.That does not mean every observation in it is false. The useful question is whether we can separate the critique from the cure.  // Fig. 1 · Separating the Diagnosis from the Cure            Kaczynski identified real problems with in...",
-  "tags": ["technology","kaczynski","anti-technology","autonomy","surveillance","environmentalism"]
+  "tags": ["philosophy","macro-systems","technology","kaczynski","anti-technology","autonomy","surveillance","environmentalism"]
 },{
   "id": "/architecture/2023/12/31/Nietzsche-and-Vedanta/",
   "type": "post",
@@ -159,7 +159,7 @@
   "url": "https://themayursinha.com/architecture/2023/07/17/x-ai/",
   "date": "2023-07-17",
   "excerpt": "Elon Musk’s xAI launch was framed as another AGI moonshot. The stated goal is to build a “maximum curious” artificial general intelligence focused on understanding the universe. The founding team includes alumni from DeepMind, OpenAI, Google, and Tesla. The press coverage focused on the competition with OpenAI and the timeline predictions.What stayed with me was not the mission statement. It was the reasoning habit underneath it.  // Fig. 1 · First-Principles Reasoning            Strip away analogy, deconstruct to fundamental truths, then rebuild.  The physics instinctMusk talks constantly ...",
-  "tags": ["ai","xai","elon-musk","first-principles","reasoning","agi"]
+  "tags": ["ai","architecture","xai","elon-musk","first-principles","reasoning","agi"]
 },{
   "id": "/architecture/2023/07/09/Man-is-a-machine/",
   "type": "post",
@@ -177,7 +177,7 @@
   "url": "https://themayursinha.com/architecture/2023/07/07/Was-Thanos-Right/",
   "date": "2023-07-07",
   "excerpt": "Avengers: Infinity War works as more than a superhero film because Thanos is not a nihilist. He has a premise, a method, and a moral justification. That is what makes him frightening. The question is not whether he is evil; the question is whether his reasoning is coherent.Thanos looks at the universe and sees finite resources meeting exponential demand. His solution is to eliminate half of all life at random, painlessly, without prejudice. The horror is not in the cruelty. It is in the tidiness.  // Fig. 1 · The Thanos Thought Experiment            Thanos identifies a real imbalance, then ...",
-  "tags": ["ethics","philosophy","utilitarianism","pop-culture","thanos","resource-scarcity"]
+  "tags": ["philosophy","macro-systems","ethics","utilitarianism","pop-culture","thanos","resource-scarcity"]
 },{
   "id": "/architecture/2023/06/14/Reframing-application-security/",
   "type": "post",
@@ -186,7 +186,7 @@
   "url": "https://themayursinha.com/architecture/2023/06/14/Reframing-application-security/",
   "date": "2023-06-14",
   "excerpt": "Most application security programs still behave as if security is a review function.Engineering builds the system. Security scans it, reviews it, files tickets, blocks a release when the risk looks bad enough, and then waits for developers to make the problem go away. This model can work for a small product with a small team and a slow release cycle. It collapses the moment software delivery becomes fast, distributed, and platform-driven.The real constraint is not whether security can find more issues. Most organizations already have more SAST findings, dependency alerts, pentest observatio...",
-  "tags": ["security","appsec","devex","secure-by-default"]
+  "tags": ["security","architecture","appsec","devex","secure-by-default"]
 },{
   "id": "/architecture/2023/06/07/A-dive-into-advaita-vedanta/",
   "type": "post",
@@ -204,7 +204,7 @@
   "url": "https://themayursinha.com/architecture/2023/02/27/Man's-greatest-achievement/",
   "date": "2023-02-27",
   "excerpt": "In July 1930, a 74-year-old man living in a series of New York hotels that he could not afford paid a New York American editor to publish an essay. The man was Nikola Tesla. The essay was called Man’s Greatest Achievement. The framing was grand. The predictions were sweeping. The reception was polite, the way polite was reserved for the once-famous who were no longer quite famous enough to dismiss.Tesla was not yet the Tesla of the internet. He was not the unit of magnetic flux density, the electric car brand, the cult figure of 2010s nerd culture. He was an aging inventor in a hotel room, ...",
-  "tags": ["science","tesla","history","energy","futurism"]
+  "tags": ["philosophy","macro-systems","science","tesla","history","energy","futurism"]
 },{
   "id": "/architecture/2022/05/01/The-Batman/",
   "type": "post",
@@ -213,7 +213,7 @@
   "url": "https://themayursinha.com/architecture/2022/05/01/The-Batman/",
   "date": "2022-05-01",
   "excerpt": "I watched The Dark Knight Rises the day it came out in 2012. No theatre in Jamshedpur was showing it, so I took a train to Kolkata to see it on a bigger screen. I watched it alone. The cinema was nearly empty. Nolan’s trilogy had been the gold standard of the genre for a decade, and that final film ended the saga with the kind of operatic scale you would expect from a closing chapter. I came out thinking the genre had peaked. I did not know what I would see ten years later would make me reconsider what a superhero film could feel like.The Batman (2022) is not, on its face, a stranger film t...",
-  "tags": ["film","batman","cinematography","matt-reeves","christopher-nolan","noir"]
+  "tags": ["philosophy","macro-systems","film","batman","cinematography","matt-reeves","christopher-nolan","noir"]
 },{
   "id": "/architecture/2021/07/31/Akashic-field/",
   "type": "post",
@@ -231,7 +231,7 @@
   "url": "https://themayursinha.com/architecture/2021/07/14/How-to-Study/",
   "date": "2021-07-14",
   "excerpt": "I used to think I was bad at studying. Then I read the cognitive science and realized the problem was not me. It was the methods. Highlighting, rereading, cramming, the casual skim before the exam — almost every popular study technique is a memory trap disguised as a study habit. The methods that actually work are not intuitive, and almost nobody learns them in school.The good news: the entire science of effective studying collapses into a small number of principles. Once you see them, every study habit either aligns with them or fights them. There is no middle ground.The three-stage engine...",
-  "tags": ["learning","memory","study-methods","cognition"]
+  "tags": ["philosophy","macro-systems","learning","memory","study-methods","cognition"]
 },{
   "id": "/architecture/2021/07/12/Socratic-dialogue/",
   "type": "post",
@@ -249,7 +249,7 @@
   "url": "https://themayursinha.com/architecture/2020/04/12/Problem-solving-and-the-art-of-the-convincing-argument/",
   "date": "2020-04-12",
   "excerpt": "Every engineer learns to solve equations. What separates useful solutions from mathematical theatre is not the solving technique. It is what happens before the first variable is written down.Mathematics solves problems by building models. A model is a deliberate simplification: keep the features that matter, document the ones you discarded, and justify why the discarded ones don’t change the answer. The same instinct that makes an engineer ignore air resistance when calculating how far a ball rolls is the instinct that keeps security models from collapsing under their own complexity. If you...",
-  "tags": ["mathematics","problem-solving","modeling","engineering"]
+  "tags": ["architecture","mathematics","problem-solving","modeling","engineering"]
 },{
   "id": "/architecture/2019/04/30/Crash-Course-in-x86/",
   "type": "post",
@@ -258,7 +258,7 @@
   "url": "https://themayursinha.com/architecture/2019/04/30/Crash-Course-in-x86/",
   "date": "2019-04-30",
   "excerpt": "Every shellcode analysis starts with the same five-minute orientation. Read the registers, read the flags, find the loop, follow the jump. Once you can do that, the rest of x86 is just vocabulary. This is the orientation.The only prerequisite is to know the basics of a C-family language. Everything else — what a register is, what a flag is, why the stack grows backwards — is below. The order matters: each section assumes the one above it.The data typesx86 deals in four sizes: bits, bytes, words, and double words.A bit is a 0 or a 1. Eight bits make a byte, which holds 0 to 255. Two bytes ma...",
-  "tags": ["x86","assembly","security","malware-analysis","exploit-development"]
+  "tags": ["architecture","x86","assembly","security","malware-analysis","exploit-development"]
 },{
   "id": "/architecture/2018/03/15/exploit-mitigation-techniques/",
   "type": "post",
@@ -267,7 +267,7 @@
   "url": "https://themayursinha.com/architecture/2018/03/15/exploit-mitigation-techniques/",
   "date": "2018-03-15",
   "excerpt": "The best time to stop an exploit is before it runs. The second-best time is while it is still figuring out where it is.Modern operating systems do not rely on a single wall around the application. They stack independent mitigations so that a typical buffer overflow — the kind that owned machines in the early 2000s — has to survive address randomization, non-executable data regions, exception-handler validation, return-address integrity checks, and heap hardening before it can do anything useful. Each layer is bypassable in theory. Chaining the bypasses together is what separates a proof-of-...",
-  "tags": ["exploit-mitigation","dep","aslr","sehop","rop","memory-safety","windows"]
+  "tags": ["architecture","exploit-mitigation","dep","aslr","sehop","rop","memory-safety","windows"]
 },{
   "id": "/architecture/",
   "type": "page",
@@ -275,7 +275,7 @@
   "subtitle": "",
   "url": "https://themayursinha.com/architecture/",
   "date": "",
-  "excerpt": "            COMMAND ARCHIVE / SYSTEM NOTES      ARCHITECTURE      Notes on autonomous systems containment, AI security, adversarial resilience, and the philosophy of control.              ARCHIVE STATUS      30SIGNALS              Entries30        Latest2026.06.15        ModeACTIVE                        00 / LATEST SIGNAL      CURRENT TRANSMISSION              2026-06-15      Three Trust Paths for Governing AI Agent Architectures      READ /&gt;                  01 / FULL ARCHIVE      RESEARCH LOG                                2026-06-15          Three Trust Paths for Governing AI Agent A...",
+  "excerpt": "            COMMAND ARCHIVE / SYSTEM NOTES      ARCHITECTURE      Notes on autonomous systems containment, AI security, adversarial resilience, and the philosophy of control.              ARCHIVE STATUS      30SIGNALS              Entries30        Latest2026.06.15        ModeACTIVE                        00 / LATEST SIGNAL      CURRENT TRANSMISSION              2026-06-15      Three Trust Paths for Governing AI Agent Architectures      READ /&gt;                  01 / RESEARCH LOG      /// KINETIC INFRASTRUCTURE &amp; AI CONTAINMENT ///                                2026-06-15          Thr...",
   "tags": []
 },{
   "id": "/",
