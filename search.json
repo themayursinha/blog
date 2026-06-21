@@ -332,13 +332,13 @@
   "excerpt": "IoT botnet behavior analysis with practical detection insights.",
   "tags": []
 },{
-  "id": "project-automated-fuzzing-vuln-analysis",
+  "id": "project-entropy-aware-feedback-directed-fuzzing",
   "type": "project",
-  "title": "Automated Fuzzing for vulnerability analysis",
+  "title": "Entropy Aware Feedback Directed Fuzzing for Vulnerability Discovery",
   "subtitle": "Researcher · 2019",
-  "url": "https://www.researchgate.net/publication/330684293_Automated_Fuzzing_for_vulnerability_analysis",
+  "url": "https://www.researchgate.net/publication/330684293_Entropy_Aware_Feedback_Directed_Fuzzing_for_Vulnerability_Discovery",
   "date": "",
-  "excerpt": "Automated fuzzing workflow for memory-safety and validation bug discovery.",
+  "excerpt": "Entropy aware greybox fuzzing strategy for improving structured input exploration and vulnerability discovery.",
   "tags": []
 },{
   "id": "project-game-theoretic-security-controls",
