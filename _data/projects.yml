@@ -7,14 +7,14 @@
     - label: Publication
       url: https://www.researchgate.net/publication/325478001_Understanding_IoT_botnets
 
-- id: automated-fuzzing-vuln-analysis
-  title: Automated Fuzzing for vulnerability analysis
-  summary: Automated fuzzing workflow for memory-safety and validation bug discovery.
+- id: entropy-aware-feedback-directed-fuzzing
+  title: Entropy Aware Feedback Directed Fuzzing for Vulnerability Discovery
+  summary: Entropy aware greybox fuzzing strategy for improving structured input exploration and vulnerability discovery.
   role: Researcher
   year: 2019
   links:
     - label: Publication
-      url: https://www.researchgate.net/publication/330684293_Automated_Fuzzing_for_vulnerability_analysis
+      url: https://www.researchgate.net/publication/330684293_Entropy_Aware_Feedback_Directed_Fuzzing_for_Vulnerability_Discovery
 
 - id: game-theoretic-security-controls
   title: A game-theoretic approach to evaluate security controls
