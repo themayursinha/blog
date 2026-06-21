@@ -302,7 +302,7 @@
   "subtitle": "",
   "url": "https://themayursinha.com/proof/",
   "date": "",
-  "excerpt": "            PUBLIC EVIDENCE VAULT / VERIFIED ARTIFACTS      PROOF      Claims are cheap. This is the public evidence trail: released systems, working code, and published research.      SOURCE INDEX / github.com/themayursinha              EVIDENCE LOCK      13ARTIFACTS              Systems4        Research9        StatusPUBLIC                  CODE Runtime tools and labs    CONTEXT Architecture notes    RESEARCH Published work    MODE Inspectable              01 / RELEASED SYSTEMS      CONTROL INFRASTRUCTURE                                            2026            Builder            PUBLIC...",
+  "excerpt": "            PUBLIC EVIDENCE VAULT / VERIFIED ARTIFACTS      PROOF      Claims are cheap. This is the public evidence trail: released systems, working code, and published research.      SOURCE INDEX / github.com/themayursinha              EVIDENCE LOCK      12ARTIFACTS              Systems4        Research8        StatusPUBLIC                  CODE Runtime tools and labs    CONTEXT Architecture notes    RESEARCH Published work    MODE Inspectable              01 / RELEASED SYSTEMS      CONTROL INFRASTRUCTURE                                            2026            Builder            PUBLIC...",
   "tags": []
 },{
   "id": "/tags/",
@@ -330,15 +330,6 @@
   "url": "https://www.researchgate.net/publication/325478001_Understanding_IoT_botnets",
   "date": "",
   "excerpt": "IoT botnet behavior analysis with practical detection insights.",
-  "tags": []
-},{
-  "id": "project-securing-iot",
-  "type": "project",
-  "title": "Securing the Internet of Things",
-  "subtitle": "Researcher · 2018",
-  "url": "https://www.researchgate.net/project/Securing-the-Internet-of-Things-2",
-  "date": "",
-  "excerpt": "Research program on improving IoT device and deployment resilience.",
   "tags": []
 },{
   "id": "project-automated-fuzzing-vuln-analysis",
