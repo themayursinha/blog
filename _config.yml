@@ -109,10 +109,12 @@ newsletter:
 # --- Web Statistics Section --- #
 
 # Fill in your Google Analytics gtag.js ID to track your website using gtag
-#gtag: ""
+gtag: "G-LP6FZ8DW0P"
 
 # Fill in your Google Analytics ID to track your website using GA
-google_analytics: "UA-136557652-1"
+# (Universal Analytics / analytics.js was retired by Google in July 2024;
+#  use `gtag` above with a GA4 measurement ID instead.)
+#google_analytics: "UA-136557652-1"
 
 # Google Tag Manager ID
 #gtm: ""
