@@ -302,7 +302,7 @@
   "subtitle": "",
   "url": "https://themayursinha.com/proof/",
   "date": "",
-  "excerpt": "            PUBLIC EVIDENCE VAULT / VERIFIED ARTIFACTS      PROOF      Claims are cheap. This is the public evidence trail: released systems, working code, and published research.      SOURCE INDEX / github.com/themayursinha              EVIDENCE LOCK      12ARTIFACTS              Systems4        Research8        StatusPUBLIC                  CODE Runtime tools and labs    CONTEXT Architecture notes    RESEARCH Published work    MODE Inspectable              01 / RELEASED SYSTEMS      CONTROL INFRASTRUCTURE                                            2026            Builder            PUBLIC...",
+  "excerpt": "            PUBLIC EVIDENCE VAULT / VERIFIED ARTIFACTS      PROOF      Claims are cheap. This is the public evidence trail: released systems, working code, and published research.      SOURCE INDEX / github.com/themayursinha              EVIDENCE LOCK      13ARTIFACTS              Systems4        Research9        StatusPUBLIC                  CODE Runtime tools and labs    CONTEXT Architecture notes    RESEARCH Published work    MODE Inspectable              01 / RELEASED SYSTEMS      CONTROL INFRASTRUCTURE                                            2026            Builder            PUBLIC...",
   "tags": []
 },{
   "id": "/tags/",
@@ -393,6 +393,15 @@
   "url": "https://www.researchgate.net/publication/378125775_Leveraging_Large_Language_Model_LLMfor_Natural_Language_to_SQL_Query_Generation_in_HR_Analytics_A_Case_Study_on_IBM_Attrition_Dataset",
   "date": "",
   "excerpt": "LLM-driven natural-language-to-SQL workflow for HR analytics.",
+  "tags": []
+},{
+  "id": "project-mcp-visor-paper",
+  "type": "project",
+  "title": "MCP Visor: Deterministic Runtime Enforcement for Governing Tool-Using AI Agents",
+  "subtitle": "Researcher · 2026",
+  "url": "https://www.researchgate.net/publication/407908047_MCP_Visor_Deterministic_Runtime_Enforcement_for_Governing_Tool-Using_AI_Agents",
+  "date": "",
+  "excerpt": "Deterministic runtime enforcement model for governing tool-using AI agents through policy, auditability, and controlled MCP execution.",
   "tags": []
 },{
   "id": "project-ctem-leader-lab",

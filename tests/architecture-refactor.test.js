@@ -164,6 +164,8 @@ test("proof page renders an evidence vault with real systems and research", () =
   const projects = readProjectFile("_data/projects.yml");
   assert.match(projects, /Asymmetric Threat Mitigation via Autonomous UAVs/);
   assert.match(projects, /Predictive Kinetic Threat Modeling via Deep Neural Networks/);
+  assert.match(projects, /MCP Visor: Deterministic Runtime Enforcement for Governing Tool-Using AI Agents/);
+  assert.match(projects, /407908047_MCP_Visor_Deterministic_Runtime_Enforcement_for_Governing_Tool-Using_AI_Agents/);
 });
 
 test("production typography uses Space Grotesk and IBM Plex Mono", () => {
