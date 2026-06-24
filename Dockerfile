@@ -1,8 +1,14 @@
-FROM jekyll/jekyll
+FROM jekyll/jekyll@sha256:400b8d1569f118bca8a3a09a25f32803b00a55d1ea241feaf5f904d66ca9c625
 
-COPY Gemfile .
-COPY Gemfile.lock .
+WORKDIR /srv/jekyll
 
-RUN bundle install --quiet --clean
+COPY Gemfile Gemfile.lock ./
 
-CMD ["jekyll", "serve"]
+RUN bundle install --quiet --clean \
+    && addgroup -g 1000 -S jekyll \
+    && adduser -u 1000 -S jekyll -G jekyll \
+    && chown -R jekyll:jekyll /srv/jekyll
+
+USER jekyll
+
+CMD ["jekyll", "serve", "--host", "0.0.0.0"]
