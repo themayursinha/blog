@@ -12,6 +12,14 @@ BLOG_STYLE.md
 # Personal / local only (never publish)
 TRANSFORMATION.md
 
+# secrets
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+service-account.json
+
 # general
 .DS_Store
 Thumbs.db
