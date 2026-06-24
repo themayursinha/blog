@@ -70,6 +70,15 @@
     - label: Publication
       url: https://www.researchgate.net/publication/378125775_Leveraging_Large_Language_Model_LLMfor_Natural_Language_to_SQL_Query_Generation_in_HR_Analytics_A_Case_Study_on_IBM_Attrition_Dataset
 
+- id: mcp-visor-paper
+  title: "MCP Visor: Deterministic Runtime Enforcement for Governing Tool-Using AI Agents"
+  summary: Deterministic runtime enforcement model for governing tool-using AI agents through policy, auditability, and controlled MCP execution.
+  role: Researcher
+  year: 2026
+  links:
+    - label: Publication
+      url: https://www.researchgate.net/publication/407908047_MCP_Visor_Deterministic_Runtime_Enforcement_for_Governing_Tool-Using_AI_Agents
+
 - id: ctem-leader-lab
   title: CTEM Leader Lab
   summary: Interactive implementation workbench for security leaders moving from vulnerability management to Continuous Threat Exposure Management.
@@ -91,6 +100,8 @@
       url: https://github.com/themayursinha/mcp-visor
     - label: Context
       url: https://themayursinha.com/architecture/2026/05/25/mcp-visor-runtime-policy-enforcement-for-ai-agents/
+    - label: Paper
+      url: https://www.researchgate.net/publication/407908047_MCP_Visor_Deterministic_Runtime_Enforcement_for_Governing_Tool-Using_AI_Agents
 
 - id: mcp-security-evaluator
   title: MCP security evaluator
