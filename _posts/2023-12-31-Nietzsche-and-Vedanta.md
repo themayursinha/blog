@@ -22,7 +22,7 @@ Where they differ is what to do after the seeing-through. Nietzsche wants creati
 
 Nietzsche's *Beyond Good and Evil* is not a call to immorality. It is a call to stop accepting the moral table we have been handed. He sees good and evil not as features of the universe but as expressions of power: the strong and the weak each invent values that serve their condition. To remain inside those values is to remain inside a resentment you did not choose.
 
-Vedanta makes a similar move at the metaphysical level. [Brahman](https://en.wikipedia.org/wiki/Brahman), the ultimate reality, is beyond all dualities. Good and evil, true and false, self and other — these are products of [Maya](https://en.wikipedia.org/wiki/Maya_(religion)), the power of appearance. They are valid for practical life but not ultimate.
+Vedanta makes a similar move at the metaphysical level. [Brahman](https://en.wikipedia.org/wiki/Brahman), the ultimate reality, is beyond all dualities. Good and evil, true and false, self and other — these are products of [Maya](https://en.wikipedia.org/wiki/Maya_(religion%29)), the power of appearance. They are valid for practical life but not ultimate.
 
 Both philosophies ask us to stop treating conventional distinctions as absolutes. Nietzsche does it to make room for new values. Vedanta does it to reveal the non-dual ground beneath them.
 
@@ -30,7 +30,7 @@ Both philosophies ask us to stop treating conventional distinctions as absolutes
 
 For Nietzsche, the [Übermensch](https://en.wikipedia.org/wiki/%C3%9Cbermensch) is the individual who transcends received morality and creates meaning through will and self-overcoming. The self is not a given; it is a project. You become what you are by affirming your power, accepting suffering, and refusing the comfort of herd values.
 
-For Vedanta, [Atman](https://en.wikipedia.org/wiki/%C4%80tman_(Hinduism)) is the opposite of a project. It is what remains when all projects are dropped. The self is not something to be built. It is something to be discovered, already identical to Brahman. The ego — the anxious, striving, story-telling self — is the obstacle, not the raw material.
+For Vedanta, [Atman](https://en.wikipedia.org/wiki/%C4%80tman_(Hinduism%29)) is the opposite of a project. It is what remains when all projects are dropped. The self is not something to be built. It is something to be discovered, already identical to Brahman. The ego — the anxious, striving, story-telling self — is the obstacle, not the raw material.
 
 This is the central tension. Nietzsche says the self is an artwork in progress. Vedanta says the self is an illusion to be dissolved. Both are forms of liberation, but they point in different directions.
 
@@ -38,7 +38,7 @@ This is the central tension. Nietzsche says the self is an artwork in progress. 
 
 Nietzsche treats society, morality, and religion as illusions in the sense that they are interpretations. They are not lies; they are perspectives. Some perspectives are healthier than others, but none are final. The task is not to discover the one true perspective but to create one strong enough to affirm life.
 
-Vedanta treats the world itself as appearance. [Maya](https://en.wikipedia.org/wiki/Maya_(religion)) is not a lie either; it is the power by which the one appears as many. The task is not to invent a better interpretation but to wake up from interpretation altogether. The rope is not a snake, and the self is not separate from Brahman.
+Vedanta treats the world itself as appearance. [Maya](https://en.wikipedia.org/wiki/Maya_(religion%29)) is not a lie either; it is the power by which the one appears as many. The task is not to invent a better interpretation but to wake up from interpretation altogether. The rope is not a snake, and the self is not separate from Brahman.
 
 Nietzsche would likely find Vedanta too passive, too eager to dissolve the very individuality he spent his life affirming. Vedanta would likely find Nietzsche still trapped in the ego's drama, mistaking self-creation for freedom.
 

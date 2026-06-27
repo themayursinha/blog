@@ -26,7 +26,7 @@ That structure is not universal. It is one way to organize religious experience,
 
 ## Advaita: the rope and the snake
 
-In Advaita, the ultimate reality is [Brahman](https://en.wikipedia.org/wiki/Brahman): not a person, not a creator, not a being with attributes, but the undivided ground of all that is. The world we perceive — with its multiplicity, its suffering, its moral categories — is the play of [Maya](https://en.wikipedia.org/wiki/Maya_(religion)), the power of appearance. The classic metaphor is mistaking a rope for a snake in dim light. The snake is not nothing; it is experienced. But it is not what is really there.
+In Advaita, the ultimate reality is [Brahman](https://en.wikipedia.org/wiki/Brahman): not a person, not a creator, not a being with attributes, but the undivided ground of all that is. The world we perceive — with its multiplicity, its suffering, its moral categories — is the play of [Maya](https://en.wikipedia.org/wiki/Maya_(religion%29)), the power of appearance. The classic metaphor is mistaking a rope for a snake in dim light. The snake is not nothing; it is experienced. But it is not what is really there.
 
 Good and evil, on this view, are not independent realities. They are judgments made from a limited perspective. From the perspective of the rope, there is no snake. From the perspective of Brahman, there is no separate world requiring rescue.
 
@@ -36,7 +36,7 @@ The Epicurean question asks why God permits evil. Advaita answers that the quest
 
 Brahman is beyond good and evil in the same way that the ocean is beyond the distinction between this wave and that wave. The wave may experience itself as separate, threatened, and in competition. The ocean does not. Evil is real at the level of the wave; it is not ultimate at the level of the ocean.
 
-This is not a denial of suffering. Suffering is experienced. The Advaita claim is that suffering depends on the identification of the self with the limited body-mind. [Avidya](https://en.wikipedia.org/wiki/Avidy%C4%81_(Hinduism)), or ignorance of one's true nature as Brahman, is the root. Remove the ignorance and the problem of evil becomes, at the limit, a problem that no longer arises.
+This is not a denial of suffering. Suffering is experienced. The Advaita claim is that suffering depends on the identification of the self with the limited body-mind. [Avidya](https://en.wikipedia.org/wiki/Avidy%C4%81_(Hinduism%29)), or ignorance of one's true nature as Brahman, is the root. Remove the ignorance and the problem of evil becomes, at the limit, a problem that no longer arises.
 
 ## The practical move
 

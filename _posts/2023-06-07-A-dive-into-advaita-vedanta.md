@@ -14,7 +14,7 @@ related_posts:
 
 Most of us live inside a useful fiction: that we are a bounded self looking out at an external world. Advaita Vedanta calls that fiction into question. Its core claim is not mystical in the escapist sense; it is a rigorous argument that the self we take ourselves to be and the ultimate reality we seek are not two different things.
 
-The tradition centers on three concepts: [Brahman](https://en.wikipedia.org/wiki/Brahman), the absolute; [Ātman](https://en.wikipedia.org/wiki/%C4%80tman_(Hinduism)), the innermost self; and [Māyā](https://en.wikipedia.org/wiki/Maya_(religion)), the power by which the one appears as many.
+The tradition centers on three concepts: [Brahman](https://en.wikipedia.org/wiki/Brahman), the absolute; [Ātman](https://en.wikipedia.org/wiki/%C4%80tman_(Hinduism%29)), the innermost self; and [Māyā](https://en.wikipedia.org/wiki/Maya_(religion%29)), the power by which the one appears as many.
 
 {% include figure.html src="/img/advaita-non-dual.svg" label="Fig. 1 · The Non-Dual Structure" caption="Body, mind, and ego are experienced as concentric layers, yet all arise in and as the one conscious center." alt="Concentric rings showing layers of self dissolving into Atman-Brahman" %}
 
