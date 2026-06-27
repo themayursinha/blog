@@ -5,10 +5,19 @@
   <link href="https://themayursinha.com/atom.xml" rel="self" />
   <link href="https://themayursinha.com" />
   <id>https://themayursinha.com/</id>
-  <updated>2026-06-24T19:47:04+02:00</updated>
+  <updated>2026-06-27T15:13:58+02:00</updated>
   <author>
     <name>Mayur Sinha</name>
   </author>
+  
+  <entry>
+    <title>Spec Engineering: The Missing Layer in AI Agent Security</title>
+    <link href="https://themayursinha.com/architecture/2026/06/27/spec-engineering-the-missing-layer-in-ai-agent-security/" />
+    <id>https://themayursinha.com/architecture/2026/06/27/spec-engineering-the-missing-layer-in-ai-agent-security/</id>
+    <updated>2026-06-27T00:00:00+02:00</updated>
+    <published>2026-06-27T00:00:00+02:00</published>
+    <summary>Prompt engineering is a suggestion, not a security control. Spec engineering is the next layer: write a YAML policy, the runtime enforces it deterministically. MCP Visor is the first implementation of this pattern for AI agent tool access.</summary>
+  </entry>
   
   <entry>
     <title>Three Trust Paths for Governing AI Agent Architectures</title>
@@ -179,15 +188,6 @@
     <updated>2023-07-09T00:00:00+02:00</updated>
     <published>2023-07-09T00:00:00+02:00</published>
     <summary>We are biological machines and first-person subjects at the same time. The mistake is treating one description as the whole story.</summary>
-  </entry>
-  
-  <entry>
-    <title>Was Thanos Right?</title>
-    <link href="https://themayursinha.com/architecture/2023/07/07/Was-Thanos-Right/" />
-    <id>https://themayursinha.com/architecture/2023/07/07/Was-Thanos-Right/</id>
-    <updated>2023-07-07T00:00:00+02:00</updated>
-    <published>2023-07-07T00:00:00+02:00</published>
-    <summary>Thanos asks a real question about scarcity and survival, but his answer reveals the danger of treating human lives as variables in a single equation.</summary>
   </entry>
   
 </feed>

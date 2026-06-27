@@ -1,4 +1,13 @@
 [{
+  "id": "/architecture/2026/06/27/spec-engineering-the-missing-layer-in-ai-agent-security/",
+  "type": "post",
+  "title": "Spec Engineering: The Missing Layer in AI Agent Security",
+  "subtitle": "Prompts don't protect. We need deterministic, declarative contracts between agents and tools.",
+  "url": "https://themayursinha.com/architecture/2026/06/27/spec-engineering-the-missing-layer-in-ai-agent-security/",
+  "date": "2026-06-27",
+  "excerpt": "We gave AI agents tools. Then we asked them nicely not to misuse them.“Be careful with the tools.” “Don’t read sensitive files.” “Always ask before executing commands.”That is prompt engineering. And as a security control, it does not work.The Prompts Don’t Protect paper demonstrated this empirically: 0% unauthorized invocation prevention from prompt-based guardrails. Zero. The model reads the instruction, the model processes the instruction, and the model — being probabilistic, persuadable, and fundamentally incapable of distinguishing instructions from data — does what the injected prompt...",
+  "tags": ["ai","security","architecture","agents","mcp","spec-engineering","policy"]
+},{
   "id": "/architecture/2026/06/15/three-trust-paths-for-governing-ai-agent-architectures/",
   "type": "post",
   "title": "Three Trust Paths for Governing AI Agent Architectures",
@@ -275,7 +284,7 @@
   "subtitle": "",
   "url": "https://themayursinha.com/architecture/",
   "date": "",
-  "excerpt": "            COMMAND ARCHIVE / SYSTEM NOTES      ARCHITECTURE      Notes on autonomous systems containment, AI security, adversarial resilience, and the philosophy of control.              ARCHIVE STATUS      30SIGNALS              Entries30        Latest2026.06.15        ModeACTIVE                        00 / LATEST SIGNAL      CURRENT TRANSMISSION              2026-06-15      Three Trust Paths for Governing AI Agent Architectures      READ /&gt;                  01 / RESEARCH LOG      /// KINETIC INFRASTRUCTURE &amp; AI CONTAINMENT ///                                2026-06-15          Thr...",
+  "excerpt": "            COMMAND ARCHIVE / SYSTEM NOTES      ARCHITECTURE      Notes on autonomous systems containment, AI security, adversarial resilience, and the philosophy of control.              ARCHIVE STATUS      31SIGNALS              Entries31        Latest2026.06.27        ModeACTIVE                        00 / LATEST SIGNAL      CURRENT TRANSMISSION              2026-06-27      Spec Engineering: The Missing Layer in AI Agent Security      READ /&gt;                  01 / RESEARCH LOG      /// KINETIC INFRASTRUCTURE &amp; AI CONTAINMENT ///                                2026-06-27          S...",
   "tags": []
 },{
   "id": "/",

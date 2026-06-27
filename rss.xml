@@ -7,6 +7,17 @@
     <atom:link href="https://themayursinha.com/rss.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Spec Engineering: The Missing Layer in AI Agent Security</title>
+        <description>
+          Prompts don&apos;t protect. We need deterministic, declarative contracts between agents and tools. - 
+          We gave AI agents tools. Then we asked them nicely not to misuse them. “Be careful with the tools.” “Don’t read sensitive files.” “Always ask before executing commands.” That is prompt engineering. And as a security control, it does not work. The Prompts Don’t Protect paper demonstrated this empirically: 0%...
+        </description>
+        <pubDate>Sat, 27 Jun 2026 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/architecture/2026/06/27/spec-engineering-the-missing-layer-in-ai-agent-security/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/06/27/spec-engineering-the-missing-layer-in-ai-agent-security/</guid>
+      </item>
+    
+      <item>
         <title>Three Trust Paths for Governing AI Agent Architectures</title>
         <description>
           Data movement, transaction integrity, and tool execution each need their own controls. - 
@@ -213,17 +224,6 @@
         <pubDate>Sun, 09 Jul 2023 00:00:00 +0200</pubDate>
         <link>https://themayursinha.com/architecture/2023/07/09/Man-is-a-machine/</link>
         <guid isPermaLink="true">https://themayursinha.com/architecture/2023/07/09/Man-is-a-machine/</guid>
-      </item>
-    
-      <item>
-        <title>Was Thanos Right?</title>
-        <description>
-          A thought experiment on population, resources, and the ethics of utilitarian extremes. - 
-          Avengers: Infinity War works as more than a superhero film because Thanos is not a nihilist. He has a premise, a method, and a moral justification. That is what makes him frightening. The question is not whether he is evil; the question is whether his reasoning is coherent. Thanos looks...
-        </description>
-        <pubDate>Fri, 07 Jul 2023 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/architecture/2023/07/07/Was-Thanos-Right/</link>
-        <guid isPermaLink="true">https://themayursinha.com/architecture/2023/07/07/Was-Thanos-Right/</guid>
       </item>
     
   </channel>
