@@ -19,7 +19,7 @@ We gave AI agents tools. Then we asked them nicely not to misuse them.
 
 That is prompt engineering. And as a security control, it does not work.
 
-The [Prompts Don't Protect](https://arxiv.org/abs/2604.24658) paper demonstrated this empirically: 0% unauthorized invocation prevention from prompt-based guardrails. Zero. The model reads the instruction, the model processes the instruction, and the model — being probabilistic, persuadable, and fundamentally incapable of distinguishing instructions from data — does what the injected prompt tells it to do.
+The [Prompts Don't Protect](https://arxiv.org/abs/2605.18414) paper demonstrated this empirically: 0% unauthorized invocation prevention from prompt-based guardrails. Zero. The model reads the instruction, the model processes the instruction, and the model — being probabilistic, persuadable, and fundamentally incapable of distinguishing instructions from data — does what the injected prompt tells it to do.
 
 This is not a failure of prompt engineering. It is the wrong category of tool for the problem. You cannot solve deterministic enforcement with probabilistic reasoning.
 
