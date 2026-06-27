@@ -267,7 +267,7 @@
 
 <p>The runtime reads this spec and generates enforcement: an interceptor that evaluates every tool call against the policy, makes a deterministic decision, and writes a structured audit record — all before execution reaches the server.</p>
 
-<p>This is not a new idea. Infrastructure-as-Code has been doing this for a decade. Terraform, Pulumi, and Kubernetes operators all follow the same pattern: write a declarative spec, and the runtime converges the system to that state. Google’s <a href="https://x.com/amihai/status/2069030827007058365">Lightbuild</a> is a YAML-based declarative build system explicitly designed so AI agents can reason about it.</p>
+<p>This is not a new idea. Infrastructure-as-Code has been doing this for a decade. Terraform, Pulumi, and Kubernetes operators all follow the same pattern: write a declarative spec, and the runtime converges the system to that state. Google’s <a href="https://developer.android.com/tools/agents/lightbuild">Lightbuild</a> is a YAML-based declarative build system explicitly designed so AI agents can reason about it.</p>
 
 <p>The difference is that spec engineering for agents does not converge infrastructure. It converges behavior.</p>
 
