@@ -50,7 +50,7 @@ In practice, spec engineering means writing a YAML policy that defines:
 
 The runtime reads this spec and generates enforcement: an interceptor that evaluates every tool call against the policy, makes a deterministic decision, and writes a structured audit record — all before execution reaches the server.
 
-This is not a new idea. Infrastructure-as-Code has been doing this for a decade. Terraform, Pulumi, and Kubernetes operators all follow the same pattern: write a declarative spec, and the runtime converges the system to that state. Google's [Lightbuild](https://x.com/amihai/status/2069030827007058365) is a YAML-based declarative build system explicitly designed so AI agents can reason about it.
+This is not a new idea. Infrastructure-as-Code has been doing this for a decade. Terraform, Pulumi, and Kubernetes operators all follow the same pattern: write a declarative spec, and the runtime converges the system to that state. Google's [Lightbuild](https://developer.android.com/tools/agents/lightbuild) is a YAML-based declarative build system explicitly designed so AI agents can reason about it.
 
 The difference is that spec engineering for agents does not converge infrastructure. It converges behavior.
 
