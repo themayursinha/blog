@@ -121,6 +121,8 @@ None of this uses an LLM to make decisions. Prompt injection cannot persuade it.
 
 I am not writing this to promote a tool. I am writing this because I believe spec engineering is the missing layer in AI agent security, and MCP Visor is one implementation of the pattern. The pattern is larger than any single product.
 
+In June 2026, Google DeepMind published their [AI Control Roadmap](https://deepmind.google/blog/securing-the-future-of-ai-agents/) — a framework built on the same starting assumption: treat internal agents as potentially misaligned, add system-level security that provides assurance even when alignment is imperfect. Their approach uses trusted AI systems as supervisors. The spec engineering approach uses deterministic policy engines instead — no LLM jury, no persuasion surface. Same diagnosis. Different enforcement philosophy.
+
 Here is what the category needs:
 
 1. **Declarative policy formats** — YAML is a start. The long-term answer is domain-specific languages that compile to enforcement rules, with static analysis and formal verification.
