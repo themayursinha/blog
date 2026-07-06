@@ -1,0 +1,11 @@
+title = "blog gitleaks config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Staticman reCAPTCHA public site key in historical config"
+regexTarget = "line"
+regexes = [
+  '''siteKey:\s*"6Lcv8G8UAAAAAEqV1Y-XEPum00C_DxhD6O--qkFo"''',
+]
