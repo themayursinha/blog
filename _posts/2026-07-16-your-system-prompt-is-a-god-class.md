@@ -2,7 +2,7 @@
 layout: post
 title: Your System Prompt Is a God Class
 subtitle: "Merge conflicts on shared instructions are a configuration smell — not an LLM bug."
-date: 2026-06-28
+date: 2026-07-16
 categories: [ai, security, architecture]
 tags: [ai, agents, llms, spec-engineering, mcp, software-engineering, prompt-engineering]
 description: "When every developer edits the same system prompt, Git merge conflicts and reopened tickets are predictable. Compose prompts like code; put non-negotiable tool rules in enforceable policy."
