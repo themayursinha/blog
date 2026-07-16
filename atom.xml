@@ -5,10 +5,19 @@
   <link href="https://themayursinha.com/atom.xml" rel="self" />
   <link href="https://themayursinha.com" />
   <id>https://themayursinha.com/</id>
-  <updated>2026-07-13T14:03:57+02:00</updated>
+  <updated>2026-07-16T21:11:56+02:00</updated>
   <author>
     <name>Mayur Sinha</name>
   </author>
+  
+  <entry>
+    <title>Your System Prompt Is a God Class</title>
+    <link href="https://themayursinha.com/architecture/2026/06/28/your-system-prompt-is-a-god-class/" />
+    <id>https://themayursinha.com/architecture/2026/06/28/your-system-prompt-is-a-god-class/</id>
+    <updated>2026-06-28T00:00:00+02:00</updated>
+    <published>2026-06-28T00:00:00+02:00</published>
+    <summary>When every developer edits the same system prompt, Git merge conflicts and reopened tickets are predictable. Compose prompts like code; put non-negotiable tool rules in enforceable policy.</summary>
+  </entry>
   
   <entry>
     <title>Spec Engineering: The Missing Layer in AI Agent Security</title>
@@ -179,15 +188,6 @@
     <updated>2023-07-17T00:00:00+02:00</updated>
     <published>2023-07-17T00:00:00+02:00</published>
     <summary>xAI&apos;s mission is to build a truth-seeking AGI. The part that stayed with me was not the ambition, but the first-principles habit behind it.</summary>
-  </entry>
-  
-  <entry>
-    <title>Man is a machine</title>
-    <link href="https://themayursinha.com/architecture/2023/07/09/Man-is-a-machine/" />
-    <id>https://themayursinha.com/architecture/2023/07/09/Man-is-a-machine/</id>
-    <updated>2023-07-09T00:00:00+02:00</updated>
-    <published>2023-07-09T00:00:00+02:00</published>
-    <summary>We are biological machines and first-person subjects at the same time. The mistake is treating one description as the whole story.</summary>
   </entry>
   
 </feed>

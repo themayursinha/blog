@@ -7,6 +7,17 @@
     <atom:link href="https://themayursinha.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Your System Prompt Is a God Class</title>
+        <description>
+          Merge conflicts on shared instructions are a configuration smell — not an LLM bug. - 
+          A friend on a platform team described a familiar pain: several developers babysit one shared system prompt. When two people change it on different branches, they spend real time resolving merge conflicts in prose. Worse, the merged result sometimes contradicts itself — and tickets that looked fixed come back. That...
+        </description>
+        <pubDate>Sun, 28 Jun 2026 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/architecture/2026/06/28/your-system-prompt-is-a-god-class/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/06/28/your-system-prompt-is-a-god-class/</guid>
+      </item>
+    
+      <item>
         <title>Spec Engineering: The Missing Layer in AI Agent Security</title>
         <description>
           Prompts don&apos;t protect. We need deterministic, declarative contracts between agents and tools. - 
@@ -213,17 +224,6 @@
         <pubDate>Mon, 17 Jul 2023 00:00:00 +0200</pubDate>
         <link>https://themayursinha.com/architecture/2023/07/17/x-ai/</link>
         <guid isPermaLink="true">https://themayursinha.com/architecture/2023/07/17/x-ai/</guid>
-      </item>
-    
-      <item>
-        <title>Man is a machine</title>
-        <description>
-          Are we biological machines, or is there something in us that cannot be reduced to mechanism? - 
-          The claim that man is a machine is not absurd. Your heart is a pump. Your lungs are bellows. Your neurons fire in patterns that predict your next move before you are aware of making it. From the outside, the human body looks like an extraordinarily complex mechanism obeying physical...
-        </description>
-        <pubDate>Sun, 09 Jul 2023 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/architecture/2023/07/09/Man-is-a-machine/</link>
-        <guid isPermaLink="true">https://themayursinha.com/architecture/2023/07/09/Man-is-a-machine/</guid>
       </item>
     
   </channel>

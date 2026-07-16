@@ -1,4 +1,13 @@
 [{
+  "id": "/architecture/2026/06/28/your-system-prompt-is-a-god-class/",
+  "type": "post",
+  "title": "Your System Prompt Is a God Class",
+  "subtitle": "Merge conflicts on shared instructions are a configuration smell — not an LLM bug.",
+  "url": "https://themayursinha.com/architecture/2026/06/28/your-system-prompt-is-a-god-class/",
+  "date": "2026-06-28",
+  "excerpt": "A friend on a platform team described a familiar pain: several developers babysit one shared system prompt. When two people change it on different branches, they spend real time resolving merge conflicts in prose. Worse, the merged result sometimes contradicts itself — and tickets that looked fixed come back.That is not a model failure. It is the same failure mode as ten engineers editing one giant application.yml with no modules and no owners. The system prompt became a god class: identity, tone, product rules, tool hints, and improvised “security” all live in one blob everyone touches.  /...",
+  "tags": ["ai","agents","llms","spec-engineering","mcp","software-engineering","prompt-engineering"]
+},{
   "id": "/architecture/2026/06/27/spec-engineering-the-missing-layer-in-ai-agent-security/",
   "type": "post",
   "title": "Spec Engineering: The Missing Layer in AI Agent Security",
@@ -284,7 +293,7 @@
   "subtitle": "",
   "url": "https://themayursinha.com/architecture/",
   "date": "",
-  "excerpt": "            COMMAND ARCHIVE / SYSTEM NOTES      ARCHITECTURE      Notes on autonomous systems containment, AI security, adversarial resilience, and the philosophy of control.              ARCHIVE STATUS      31SIGNALS              Entries31        Latest2026.06.27        ModeACTIVE                        00 / LATEST SIGNAL      CURRENT TRANSMISSION              2026-06-27      Spec Engineering: The Missing Layer in AI Agent Security      READ /&gt;                  01 / RESEARCH LOG      /// KINETIC INFRASTRUCTURE &amp; AI CONTAINMENT ///                                2026-06-27          S...",
+  "excerpt": "            COMMAND ARCHIVE / SYSTEM NOTES      ARCHITECTURE      Notes on autonomous systems containment, AI security, adversarial resilience, and the philosophy of control.              ARCHIVE STATUS      32SIGNALS              Entries32        Latest2026.06.28        ModeACTIVE                        00 / LATEST SIGNAL      CURRENT TRANSMISSION              2026-06-28      Your System Prompt Is a God Class      READ /&gt;                  01 / RESEARCH LOG      /// KINETIC INFRASTRUCTURE &amp; AI CONTAINMENT ///                                2026-06-28          Your System Prompt Is a ...",
   "tags": []
 },{
   "id": "/",
