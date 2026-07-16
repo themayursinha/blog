@@ -12,9 +12,9 @@
           Merge conflicts on shared instructions are a configuration smell — not an LLM bug. - 
           A friend on a platform team described a familiar pain: several developers babysit one shared system prompt. When two people change it on different branches, they spend real time resolving merge conflicts in prose. Worse, the merged result sometimes contradicts itself — and tickets that looked fixed come back. That...
         </description>
-        <pubDate>Sun, 28 Jun 2026 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/architecture/2026/06/28/your-system-prompt-is-a-god-class/</link>
-        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/06/28/your-system-prompt-is-a-god-class/</guid>
+        <pubDate>Thu, 16 Jul 2026 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/architecture/2026/07/16/your-system-prompt-is-a-god-class/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/07/16/your-system-prompt-is-a-god-class/</guid>
       </item>
     
       <item>
