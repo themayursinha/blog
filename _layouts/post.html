@@ -32,6 +32,10 @@ layout: base
       <a href="{{ page.next.url | relative_url }}">{{ page.next.title }} &rarr;</a>
     {% endif %}
   </nav>
+
+  {% if page.comments %}
+    {% include giscus.html %}
+  {% endif %}
 </article>
 
 <div id="toc" class="toc-sidebar">

@@ -1,0 +1,27 @@
+{% if site.giscus.repository and site.giscus.repository_id and site.giscus.category and site.giscus.category_id %}
+<section class="post-comments" aria-labelledby="post-comments-title">
+  <div class="post-comments-header">
+    <p class="post-label">DISCUSSION CHANNEL</p>
+    <h2 id="post-comments-title">Comments</h2>
+    <p>Sign in with GitHub to join the discussion.</p>
+  </div>
+  <div class="giscus"></div>
+  <script src="https://giscus.app/client.js"
+          data-repo="{{ site.giscus.repository }}"
+          data-repo-id="{{ site.giscus.repository_id }}"
+          data-category="{{ site.giscus.category }}"
+          data-category-id="{{ site.giscus.category_id }}"
+          data-mapping="pathname"
+          data-strict="1"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="transparent_dark"
+          data-lang="en"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async>
+  </script>
+  <noscript>Enable JavaScript to view and leave comments.</noscript>
+</section>
+{% endif %}
