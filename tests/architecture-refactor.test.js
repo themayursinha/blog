@@ -30,6 +30,25 @@ test("posts use the architecture permalink namespace", () => {
   assert.match(config, /^permalink:\s+\/architecture\/:year\/:month\/:day\/:title\/$/m);
 });
 
+test("architecture posts expose lazy GitHub Discussions comments", () => {
+  const config = readProjectFile("_config.yml");
+  const post = readProjectFile("_layouts/post.html");
+  const comments = readProjectFile("_includes/giscus.html");
+  const css = readProjectFile("css/terminal.css");
+
+  assert.match(config, /repository: "themayursinha\/blog"/);
+  assert.match(config, /category: "Announcements"/);
+  assert.match(config, /comments: true/);
+  assert.match(post, /if page\.comments/);
+  assert.match(post, /include giscus\.html/);
+  assert.match(comments, /https:\/\/giscus\.app\/client\.js/);
+  assert.match(comments, /data-mapping="pathname"/);
+  assert.match(comments, /data-strict="1"/);
+  assert.match(comments, /data-loading="lazy"/);
+  assert.match(comments, /data-theme="transparent_dark"/);
+  assert.match(css, /\.post-comments/);
+});
+
 test("default shell does not load Bootstrap, jQuery, or site animation scripts", () => {
   const base = readProjectFile("_layouts/base.html");
   const head = readProjectFile("_includes/head.html");
