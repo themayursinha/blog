@@ -256,10 +256,10 @@
 
 <span class="na">servers</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">filesystem"</span>
-    <span class="na">allowed</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">allowed</span><span class="pi">:</span> <span class="kc">true</span>
     <span class="na">tools</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">file_read"</span>
-        <span class="na">allowed</span><span class="pi">:</span> <span class="no">true</span>
+        <span class="na">allowed</span><span class="pi">:</span> <span class="kc">true</span>
         <span class="na">risk</span><span class="pi">:</span> <span class="s">medium</span>
         <span class="na">rules</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="na">type</span><span class="pi">:</span> <span class="s">deny_path</span>
@@ -269,12 +269,12 @@
               <span class="pi">-</span> <span class="s2">"</span><span class="s">**/.ssh/**"</span>
 
   <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">shell"</span>
-    <span class="na">allowed</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">allowed</span><span class="pi">:</span> <span class="kc">true</span>
     <span class="na">tools</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">shell_exec"</span>
-        <span class="na">allowed</span><span class="pi">:</span> <span class="no">true</span>
+        <span class="na">allowed</span><span class="pi">:</span> <span class="kc">true</span>
         <span class="na">risk</span><span class="pi">:</span> <span class="s">critical</span>
-        <span class="na">approval_required</span><span class="pi">:</span> <span class="no">true</span>
+        <span class="na">approval_required</span><span class="pi">:</span> <span class="kc">true</span>
         <span class="na">rules</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="na">type</span><span class="pi">:</span> <span class="s">deny_command_pattern</span>
             <span class="na">patterns</span><span class="pi">:</span>

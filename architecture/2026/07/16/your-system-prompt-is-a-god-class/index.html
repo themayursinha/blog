@@ -286,34 +286,34 @@
 <p>Nobody merges the generated blob by hand. CI runs a small renderer:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
-</span><span class="s">"""Render system prompt from manifest — run in CI, commit artifact or inject at deploy."""</span>
-<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">import</span> <span class="nn">hashlib</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">yaml</span>
+</span><span class="sh">"""</span><span class="s">Render system prompt from manifest — run in CI, commit artifact or inject at deploy.</span><span class="sh">"""</span>
+<span class="kn">from</span> <span class="n">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="n">hashlib</span>
+<span class="kn">import</span> <span class="n">json</span>
+<span class="kn">import</span> <span class="n">yaml</span>
 
-<span class="n">ROOT</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">__file__</span><span class="p">).</span><span class="n">resolve</span><span class="p">().</span><span class="n">parent</span><span class="p">.</span><span class="n">parent</span>
+<span class="n">ROOT</span> <span class="o">=</span> <span class="nc">Path</span><span class="p">(</span><span class="n">__file__</span><span class="p">).</span><span class="nf">resolve</span><span class="p">().</span><span class="n">parent</span><span class="p">.</span><span class="n">parent</span>
 
 <span class="k">def</span> <span class="nf">sha256</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">hashlib</span><span class="p">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">path</span><span class="p">.</span><span class="n">read_bytes</span><span class="p">()).</span><span class="n">hexdigest</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">hashlib</span><span class="p">.</span><span class="nf">sha256</span><span class="p">(</span><span class="n">path</span><span class="p">.</span><span class="nf">read_bytes</span><span class="p">()).</span><span class="nf">hexdigest</span><span class="p">()</span>
 
 <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="n">agent</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">env</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="n">manifest</span> <span class="o">=</span> <span class="n">yaml</span><span class="p">.</span><span class="n">safe_load</span><span class="p">((</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s">"prompts/manifest.yaml"</span><span class="p">).</span><span class="n">read_text</span><span class="p">())</span>
-    <span class="n">parts</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s">"agents"</span><span class="p">][</span><span class="n">agent</span><span class="p">][</span><span class="n">env</span><span class="p">][</span><span class="s">"fragments"</span><span class="p">]</span>
+    <span class="n">manifest</span> <span class="o">=</span> <span class="n">yaml</span><span class="p">.</span><span class="nf">safe_load</span><span class="p">((</span><span class="n">ROOT</span> <span class="o">/</span> <span class="sh">"</span><span class="s">prompts/manifest.yaml</span><span class="sh">"</span><span class="p">).</span><span class="nf">read_text</span><span class="p">())</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="sh">"</span><span class="s">agents</span><span class="sh">"</span><span class="p">][</span><span class="n">agent</span><span class="p">][</span><span class="n">env</span><span class="p">][</span><span class="sh">"</span><span class="s">fragments</span><span class="sh">"</span><span class="p">]</span>
     <span class="n">blocks</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">rel</span> <span class="ow">in</span> <span class="n">parts</span><span class="p">:</span>
         <span class="n">p</span> <span class="o">=</span> <span class="n">ROOT</span> <span class="o">/</span> <span class="n">rel</span>
-        <span class="n">blocks</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s">"&lt;!-- fragment: </span><span class="si">{</span><span class="n">rel</span><span class="si">}</span><span class="s"> --&gt;</span><span class="se">\n</span><span class="si">{</span><span class="n">p</span><span class="p">.</span><span class="n">read_text</span><span class="p">().</span><span class="n">strip</span><span class="p">()</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
-    <span class="k">return</span> <span class="s">"</span><span class="se">\n\n</span><span class="s">"</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">blocks</span><span class="p">)</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span>
+        <span class="n">blocks</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">&lt;!-- fragment: </span><span class="si">{</span><span class="n">rel</span><span class="si">}</span><span class="s"> --&gt;</span><span class="se">\n</span><span class="si">{</span><span class="n">p</span><span class="p">.</span><span class="nf">read_text</span><span class="p">().</span><span class="nf">strip</span><span class="p">()</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="sh">"</span><span class="se">\n\n</span><span class="sh">"</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">blocks</span><span class="p">)</span> <span class="o">+</span> <span class="sh">"</span><span class="se">\n</span><span class="sh">"</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">render</span><span class="p">(</span><span class="s">"support"</span><span class="p">,</span> <span class="s">"production"</span><span class="p">)</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">ROOT</span> <span class="o">/</span> <span class="s">"dist/support-production-system.txt"</span>
-    <span class="n">out</span><span class="p">.</span><span class="n">parent</span><span class="p">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">out</span><span class="p">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-    <span class="n">lock</span> <span class="o">=</span> <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">):</span> <span class="n">sha256</span><span class="p">(</span><span class="n">ROOT</span> <span class="o">/</span> <span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">yaml</span><span class="p">.</span><span class="n">safe_load</span><span class="p">((</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s">"prompts/manifest.yaml"</span><span class="p">).</span><span class="n">read_text</span><span class="p">())[</span><span class="s">"agents"</span><span class="p">][</span><span class="s">"support"</span><span class="p">][</span><span class="s">"production"</span><span class="p">][</span><span class="s">"fragments"</span><span class="p">]}</span>
-    <span class="p">(</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s">"dist/support-production.lock.json"</span><span class="p">).</span><span class="n">write_text</span><span class="p">(</span>
-        <span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">lock</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">"</span><span class="s">__main__</span><span class="sh">"</span><span class="p">:</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="nf">render</span><span class="p">(</span><span class="sh">"</span><span class="s">support</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">production</span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">ROOT</span> <span class="o">/</span> <span class="sh">"</span><span class="s">dist/support-production-system.txt</span><span class="sh">"</span>
+    <span class="n">out</span><span class="p">.</span><span class="n">parent</span><span class="p">.</span><span class="nf">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">out</span><span class="p">.</span><span class="nf">write_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">lock</span> <span class="o">=</span> <span class="p">{</span><span class="nf">str</span><span class="p">(</span><span class="n">p</span><span class="p">):</span> <span class="nf">sha256</span><span class="p">(</span><span class="n">ROOT</span> <span class="o">/</span> <span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">yaml</span><span class="p">.</span><span class="nf">safe_load</span><span class="p">((</span><span class="n">ROOT</span> <span class="o">/</span> <span class="sh">"</span><span class="s">prompts/manifest.yaml</span><span class="sh">"</span><span class="p">).</span><span class="nf">read_text</span><span class="p">())[</span><span class="sh">"</span><span class="s">agents</span><span class="sh">"</span><span class="p">][</span><span class="sh">"</span><span class="s">support</span><span class="sh">"</span><span class="p">][</span><span class="sh">"</span><span class="s">production</span><span class="sh">"</span><span class="p">][</span><span class="sh">"</span><span class="s">fragments</span><span class="sh">"</span><span class="p">]}</span>
+    <span class="p">(</span><span class="n">ROOT</span> <span class="o">/</span> <span class="sh">"</span><span class="s">dist/support-production.lock.json</span><span class="sh">"</span><span class="p">).</span><span class="nf">write_text</span><span class="p">(</span>
+        <span class="n">json</span><span class="p">.</span><span class="nf">dumps</span><span class="p">(</span><span class="n">lock</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="o">+</span> <span class="sh">"</span><span class="se">\n</span><span class="sh">"</span>
     <span class="p">)</span>
 </code></pre></div></div>
 
@@ -362,16 +362,16 @@
 
 <span class="na">servers</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">support-api</span>
-    <span class="na">allowed</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">allowed</span><span class="pi">:</span> <span class="kc">true</span>
     <span class="na">tools</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">tickets.get</span>
-        <span class="na">allowed</span><span class="pi">:</span> <span class="no">true</span>
+        <span class="na">allowed</span><span class="pi">:</span> <span class="kc">true</span>
       <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">tickets.update</span>
-        <span class="na">allowed</span><span class="pi">:</span> <span class="no">true</span>
+        <span class="na">allowed</span><span class="pi">:</span> <span class="kc">true</span>
       <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">billing.refund</span>
-        <span class="na">allowed</span><span class="pi">:</span> <span class="no">false</span>
+        <span class="na">allowed</span><span class="pi">:</span> <span class="kc">false</span>
       <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">users.delete</span>
-        <span class="na">allowed</span><span class="pi">:</span> <span class="no">false</span>
+        <span class="na">allowed</span><span class="pi">:</span> <span class="kc">false</span>
 </code></pre></div></div>
 
 <p>Two developers can still argue about tone in <code class="language-plaintext highlighter-rouge">tone.md</code>. They should not be able to merge conflicting “never delete users” paragraphs — the deny entry is structured policy, reviewed by security, and enforced before <code class="language-plaintext highlighter-rouge">tools/call</code> runs.</p>

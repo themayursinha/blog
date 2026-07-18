@@ -265,15 +265,15 @@ AND subject.scopes contains "orders:read"
 
 <p>In many microservice architectures, authorization logic is scattered across services. One team writes:</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">order</span><span class="p">.</span><span class="nx">userId</span> <span class="o">!==</span> <span class="nx">currentUser</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">throw</span> <span class="k">new</span> <span class="nx">ForbiddenError</span><span class="p">();</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if </span><span class="p">(</span><span class="nx">order</span><span class="p">.</span><span class="nx">userId</span> <span class="o">!==</span> <span class="nx">currentUser</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">throw</span> <span class="k">new</span> <span class="nc">ForbiddenError</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <p>Another team writes:</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">user</span><span class="p">.</span><span class="nx">roles</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="dl">"</span><span class="s2">admin</span><span class="dl">"</span><span class="p">))</span> <span class="p">{</span>
-  <span class="k">throw</span> <span class="k">new</span> <span class="nx">ForbiddenError</span><span class="p">();</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">user</span><span class="p">.</span><span class="nx">roles</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="dl">"</span><span class="s2">admin</span><span class="dl">"</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">throw</span> <span class="k">new</span> <span class="nc">ForbiddenError</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -418,8 +418,8 @@ GET /orders/1004
   <span class="na">resourceIdParam</span><span class="p">:</span> <span class="dl">"</span><span class="s2">orderId</span><span class="dl">"</span>
 <span class="p">})</span>
 <span class="p">@</span><span class="nd">Get</span><span class="p">(</span><span class="dl">"</span><span class="s2">/orders/:orderId</span><span class="dl">"</span><span class="p">)</span>
-<span class="k">async</span> <span class="nx">getOrder</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">orderService</span><span class="p">.</span><span class="nx">getOrder</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">orderId</span><span class="p">);</span>
+<span class="k">async</span> <span class="nf">getOrder</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">orderService</span><span class="p">.</span><span class="nf">getOrder</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">orderId</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -455,12 +455,12 @@ GET /orders/1004
 
 <p>This gives defense in depth. If someone bypasses middleware or makes a mistake in business logic, the data access layer still reduces blast radius. For high-risk multi-tenant systems, this should become a standard repository pattern:</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">orderRepository</span><span class="p">.</span><span class="nx">getByIdForSubject</span><span class="p">(</span><span class="nx">orderId</span><span class="p">,</span> <span class="nx">subject</span><span class="p">)</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">orderRepository</span><span class="p">.</span><span class="nf">getByIdForSubject</span><span class="p">(</span><span class="nx">orderId</span><span class="p">,</span> <span class="nx">subject</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>not:</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">orderRepository</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="nx">orderId</span><span class="p">)</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">orderRepository</span><span class="p">.</span><span class="nf">getById</span><span class="p">(</span><span class="nx">orderId</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>The method signature itself should make the secure path easier than the insecure path.</p>
