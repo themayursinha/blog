@@ -3,7 +3,7 @@ layout: post
 title: "The Engineers Didn't Finish the Job"
 subtitle: "A designer's intent is not a control. We inherit systems through their behaviour, not their promises."
 date: 2026-08-02
-categories: [philosophy, architecture]
+categories: [philosophy]
 tags: [philosophy, problem-of-evil, design, engineering, security, ai-agents, enforcement, architecture]
 description: "Whether a system comes from evolution, an alien engineer, or a platform team, its creator's intent cannot protect us. Safe systems need scoped authority, enforced boundaries, and evidence."
 share-img: /img/engineers-didnt-finish.svg
