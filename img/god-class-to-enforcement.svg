@@ -1,0 +1,286 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1600 900"
+     preserveAspectRatio="xMidYMid meet"
+     shape-rendering="geometricPrecision"
+     text-rendering="optimizeLegibility"
+     role="img"
+     aria-labelledby="diagram-title diagram-desc">
+  <title id="diagram-title">Intent is not enforcement</title>
+  <desc id="diagram-desc">A system prompt guides an agent to propose a request. Scoped resources and deterministic rules constrain authority at an enforcement boundary before any tool or destination is reached. Allow and deny outcomes are recorded in an evidence path.</desc>
+
+  <defs>
+    <pattern id="technical-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" class="grid-line"/>
+    </pattern>
+
+    <marker id="arrow-slate" viewBox="0 0 12 12" refX="11" refY="6"
+            markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L11 6L1 11Z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 12 12" refX="11" refY="6"
+            markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L11 6L1 11Z" fill="#00ff41"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 12 12" refX="11" refY="6"
+            markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L11 6L1 11Z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrow-teal" viewBox="0 0 12 12" refX="11" refY="6"
+            markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L11 6L1 11Z" fill="#14b8a6"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 12 12" refX="11" refY="6"
+            markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L11 6L1 11Z" fill="#ef4444"/>
+    </marker>
+    <marker id="arrow-evidence" viewBox="0 0 12 12" refX="11" refY="6"
+            markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L11 6L1 11Z" fill="#94a3b8"/>
+    </marker>
+
+    <symbol id="icon-prompt" viewBox="0 0 48 48">
+      <path d="M8 7H40A4 4 0 0 1 44 11V31A4 4 0 0 1 40 35H27L18 43V35H8A4 4 0 0 1 4 31V11A4 4 0 0 1 8 7Z"/>
+      <path d="M13 17H35M13 24H31"/>
+    </symbol>
+    <symbol id="icon-agent" viewBox="0 0 48 48">
+      <circle cx="24" cy="14" r="9"/>
+      <path d="M8 43V38C8 30 14 26 24 26S40 30 40 38V43Z"/>
+    </symbol>
+    <symbol id="icon-shield" viewBox="0 0 48 48">
+      <path d="M24 4L41 12V23C41 34 34 41 24 45C14 41 7 34 7 23V12Z"/>
+      <path d="M16 24L22 30L33 18"/>
+    </symbol>
+    <symbol id="icon-terminal" viewBox="0 0 48 48">
+      <rect x="4" y="7" width="40" height="34" rx="5"/>
+      <path d="M13 17L20 24L13 31M25 32H36"/>
+    </symbol>
+    <symbol id="icon-lock" viewBox="0 0 48 48">
+      <rect x="8" y="20" width="32" height="24" rx="5"/>
+      <path d="M15 20V14A9 9 0 0 1 33 14V20M24 29V36"/>
+      <circle cx="24" cy="29" r="2" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="icon-rules" viewBox="0 0 48 48">
+      <path d="M24 6V42M10 12H38M24 12L13 31M24 12L35 31M8 31H18M30 31H40M15 42H33"/>
+      <path d="M8 31C8 36 18 36 18 31M30 31C30 36 40 36 40 31"/>
+    </symbol>
+    <symbol id="icon-deny" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="19"/>
+      <path d="M11 11L37 37"/>
+    </symbol>
+    <symbol id="icon-evidence" viewBox="0 0 48 48">
+      <path d="M14 8H9A4 4 0 0 0 5 12V43H43V12A4 4 0 0 0 39 8H34"/>
+      <rect x="14" y="4" width="20" height="10" rx="4"/>
+      <path d="M14 23H34M14 31H34M14 39H29"/>
+    </symbol>
+
+    <style>
+      .frame,
+      .divider,
+      .card,
+      .connector,
+      .icon {
+        vector-effect: non-scaling-stroke;
+      }
+      .frame {
+        fill: none;
+        stroke: #293029;
+        stroke-width: 1.5;
+      }
+      .grid-line {
+        fill: none;
+        stroke: #1e293b;
+        stroke-width: 0.75;
+        stroke-opacity: 0.12;
+        vector-effect: non-scaling-stroke;
+      }
+      .divider {
+        stroke: #293029;
+        stroke-width: 1.5;
+      }
+      .card {
+        stroke-width: 2.25;
+      }
+      .guidance-card { fill: #0d1115; stroke: #64748b; }
+      .proposer-card { fill: #101510; stroke: #72806a; }
+      .authority-card { fill: #18140b; stroke: #f59e0b; }
+      .policy-card { fill: #0a1715; stroke: #14b8a6; }
+      .enforcement-card { fill: #08170c; stroke: #00ff41; stroke-width: 3; }
+      .effect-card { fill: #0d1115; stroke: #64748b; }
+      .deny-card { fill: #1a1012; stroke: #ef4444; }
+      .evidence-card { fill: #0d1115; stroke: #94a3b8; }
+
+      .connector {
+        fill: none;
+        stroke-width: 3;
+        stroke-linecap: square;
+        stroke-linejoin: round;
+      }
+      .guides-line { stroke: #94a3b8; stroke-dasharray: 9 8; }
+      .request-line { stroke: #00ff41; }
+      .allow-line { stroke: #00ff41; stroke-width: 4; }
+      .authority-line { stroke: #f59e0b; }
+      .policy-line { stroke: #14b8a6; }
+      .deny-line { stroke: #ef4444; stroke-width: 4; }
+      .evidence-line { stroke: #94a3b8; stroke-width: 2.5; stroke-dasharray: 9 8; }
+
+      .sans {
+        font-family: "Noto Sans", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      }
+      .mono {
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      }
+      .title-text { fill: #f2f2f2; font-size: 60px; font-weight: 700; letter-spacing: -1px; }
+      .subtitle-text { fill: #c4c8c4; font-size: 19px; font-weight: 400; }
+      .section-label { font-size: 17px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+      .card-heading { fill: #f2f2f2; font-size: 26px; font-weight: 700; }
+      .card-heading-wide { fill: #f2f2f2; font-size: 24px; font-weight: 700; }
+      .body-text { fill: #d1d5d1; font-size: 18px; font-weight: 400; }
+      .emphasis-text { font-size: 17px; font-weight: 500; font-style: italic; }
+      .connector-label { font-size: 15px; font-weight: 650; }
+      .evidence-text { fill: #f2f2f2; font-size: 23px; font-weight: 700; letter-spacing: 0.3px; }
+      .footer-text { fill: #aeb6ae; font-size: 16px; font-weight: 400; }
+
+      .slate { color: #94a3b8; fill: #94a3b8; }
+      .olive { color: #72806a; fill: #72806a; }
+      .amber { color: #f59e0b; fill: #f59e0b; }
+      .teal { color: #14b8a6; fill: #14b8a6; }
+      .green { color: #00ff41; fill: #00ff41; }
+      .red { color: #ef4444; fill: #ef4444; }
+      .muted { fill: #858c85; }
+      .icon {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2.6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="#080808"/>
+  <rect width="1600" height="900" fill="url(#technical-grid)"/>
+  <rect x="24" y="20" width="1552" height="860" rx="22" class="frame"/>
+
+  <g id="header">
+    <text x="64" y="96" class="sans title-text">Intent is not enforcement</text>
+    <text x="64" y="140" class="sans subtitle-text">Prompts express intent. Scoped policy constrains authority before execution, and the evidence path records both the decision and the resulting effect.</text>
+  </g>
+
+  <!-- Primary execution path. The agent can only request; it cannot reach the tool directly. -->
+  <g id="primary-connectors" aria-hidden="true">
+    <line x1="350" y1="314" x2="410" y2="314"
+          class="connector guides-line" marker-end="url(#arrow-slate)"/>
+    <line x1="660" y1="314" x2="740" y2="314"
+          class="connector request-line" marker-end="url(#arrow-green)"/>
+    <line x1="1150" y1="314" x2="1220" y2="314"
+          class="connector allow-line" marker-end="url(#arrow-green)"/>
+
+    <text x="380" y="290" text-anchor="middle" class="mono connector-label slate">guides</text>
+    <text x="700" y="290" text-anchor="middle" class="mono connector-label green">request</text>
+    <text x="1185" y="290" text-anchor="middle" class="mono connector-label green">allow</text>
+  </g>
+
+  <!-- Declared authority and deterministic rules are explicit decision inputs. -->
+  <g id="decision-inputs" aria-hidden="true">
+    <path d="M560 520V458H820V406"
+          class="connector authority-line" marker-end="url(#arrow-amber)"/>
+    <path d="M850 520V458H950V406"
+          class="connector policy-line" marker-end="url(#arrow-teal)"/>
+  </g>
+
+  <!-- Deny terminates separately and never reaches the side-effect card. -->
+  <g id="deny-path" aria-hidden="true">
+    <path d="M1100 406V470H1325V535"
+          class="connector deny-line" marker-end="url(#arrow-red)"/>
+  </g>
+
+  <!-- Request, authority, decision and both observable outcomes feed evidence. -->
+  <g id="evidence-connectors" aria-hidden="true">
+    <path d="M400 675V710H500V746"
+          class="connector evidence-line" marker-end="url(#arrow-evidence)"/>
+    <path d="M850 675V746"
+          class="connector evidence-line" marker-end="url(#arrow-evidence)"/>
+    <path d="M1080 406V746"
+          class="connector evidence-line" marker-end="url(#arrow-evidence)"/>
+    <path d="M1325 655V710H1150V746"
+          class="connector evidence-line" marker-end="url(#arrow-evidence)"/>
+    <path d="M1380 392H1540V790H1230"
+          class="connector evidence-line" marker-end="url(#arrow-evidence)"/>
+  </g>
+
+  <g id="guidance">
+    <text x="205" y="218" text-anchor="middle" class="mono section-label slate">Guidance</text>
+    <rect x="60" y="234" width="290" height="158" rx="14" class="card guidance-card"/>
+    <use href="#icon-prompt" x="82" y="275" width="46" height="46" class="icon slate"/>
+    <text x="142" y="286" class="sans card-heading">System prompt</text>
+    <text x="142" y="326" class="sans body-text">role · task · context</text>
+    <text x="142" y="366" class="sans emphasis-text slate">expresses intent</text>
+  </g>
+
+  <g id="proposer">
+    <text x="535" y="218" text-anchor="middle" class="mono section-label olive">Proposer</text>
+    <rect x="410" y="234" width="250" height="158" rx="14" class="card proposer-card"/>
+    <use href="#icon-agent" x="430" y="274" width="48" height="48" class="icon olive"/>
+    <text x="492" y="286" class="sans card-heading">Agent</text>
+    <text x="492" y="326" class="sans body-text">plans an action</text>
+    <text x="492" y="366" class="sans emphasis-text olive">does not authorize it</text>
+  </g>
+
+  <g id="enforcement-boundary">
+    <text x="945" y="204" text-anchor="middle" class="mono section-label green">Enforcement boundary</text>
+    <rect x="740" y="220" width="410" height="186" rx="14" class="card enforcement-card"/>
+    <use href="#icon-shield" x="766" y="265" width="50" height="50" class="icon green"/>
+    <text x="834" y="278" class="sans card-heading">Deterministic decision</text>
+    <text x="834" y="320" class="sans body-text">identity + request + declared scope</text>
+    <text x="834" y="354" class="sans body-text">allow or deny before execution</text>
+    <text x="834" y="390" class="sans emphasis-text green">no LLM vote in authorization</text>
+  </g>
+
+  <g id="side-effect">
+    <text x="1380" y="218" text-anchor="middle" class="mono section-label slate">Side effect</text>
+    <rect x="1220" y="234" width="320" height="158" rx="14" class="card effect-card"/>
+    <use href="#icon-terminal" x="1244" y="275" width="46" height="46" class="icon slate"/>
+    <text x="1306" y="286" class="sans card-heading-wide">Tool / destination</text>
+    <text x="1306" y="326" class="sans body-text">file · API · command</text>
+    <text x="1306" y="366" class="sans emphasis-text slate">reachable only after allow</text>
+  </g>
+
+  <g id="declared-authority">
+    <text x="220" y="504" class="mono section-label amber">Declared authority</text>
+    <rect x="220" y="520" width="360" height="155" rx="14" class="card authority-card"/>
+    <use href="#icon-lock" x="246" y="560" width="50" height="50" class="icon amber"/>
+    <text x="314" y="570" class="sans card-heading">Scoped resources</text>
+    <text x="314" y="610" class="sans body-text">tools · servers · credentials</text>
+    <text x="314" y="646" class="sans body-text">destinations · task boundary</text>
+  </g>
+
+  <g id="policy">
+    <text x="660" y="504" class="mono section-label teal">Policy</text>
+    <rect x="660" y="520" width="380" height="155" rx="14" class="card policy-card"/>
+    <use href="#icon-rules" x="686" y="560" width="50" height="50" class="icon teal"/>
+    <text x="754" y="570" class="sans card-heading">Rules</text>
+    <text x="754" y="610" class="sans body-text">default deny · conditions</text>
+    <text x="754" y="646" class="sans body-text">approval · redaction · limits</text>
+  </g>
+
+  <g id="denial">
+    <text x="1180" y="519" class="mono section-label red">Denial</text>
+    <rect x="1180" y="535" width="290" height="120" rx="14" class="card deny-card"/>
+    <use href="#icon-deny" x="1206" y="571" width="48" height="48" class="icon red"/>
+    <text x="1280" y="586" class="sans card-heading red">DENY</text>
+    <text x="1280" y="624" class="sans body-text">no side effect</text>
+  </g>
+
+  <g id="evidence-path">
+    <text x="800" y="730" text-anchor="middle" class="mono section-label slate">Evidence path</text>
+    <rect x="370" y="746" width="860" height="84" rx="14" class="card evidence-card"/>
+    <use href="#icon-evidence" x="398" y="764" width="48" height="48" class="icon slate"/>
+    <text x="478" y="800" class="sans evidence-text">request + authority + decision + observable effect</text>
+  </g>
+
+  <g id="footer">
+    <line x1="60" y1="858" x2="500" y2="858" class="divider"/>
+    <text x="800" y="864" text-anchor="middle" class="sans footer-text">The prompt can be wrong. The boundary still has to hold.</text>
+    <line x1="1100" y1="858" x2="1540" y2="858" class="divider"/>
+  </g>
+</svg>
