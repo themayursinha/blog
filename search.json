@@ -1,4 +1,13 @@
 [{
+  "id": "/architecture/2026/08/02/the-engineers-didnt-finish-the-job/",
+  "type": "post",
+  "title": "The Engineers Didn't Finish the Job",
+  "subtitle": "A designer's intent is not a control. We inherit systems through their behaviour, not their promises.",
+  "url": "https://themayursinha.com/architecture/2026/08/02/the-engineers-didnt-finish-the-job/",
+  "date": "2026-08-02",
+  "excerpt": "Ridley Scott’s Prometheus gives us creators without providence. The Engineers are advanced enough to seed life, but they are not wise custodians of what they create. They leave behind powerful systems, ambiguous instructions, dangerous remnants, and no reliable help when those systems fail.I am not arguing that aliens engineered humanity, or that software architecture proves anything about God. The analogy is narrower. We inherit systems whose creators are absent, fallible, constrained, or indifferent to our particular failure modes. Their intentions cannot protect us. We have to examine wh...",
+  "tags": ["philosophy","problem-of-evil","design","engineering","security","ai-agents","enforcement","architecture"]
+},{
   "id": "/architecture/2026/07/16/your-system-prompt-is-a-god-class/",
   "type": "post",
   "title": "Your System Prompt Is a God Class",
@@ -293,7 +302,7 @@
   "subtitle": "",
   "url": "https://themayursinha.com/architecture/",
   "date": "",
-  "excerpt": "            COMMAND ARCHIVE / SYSTEM NOTES      ARCHITECTURE      Notes on autonomous systems containment, AI security, adversarial resilience, and the philosophy of control.              ARCHIVE STATUS      32SIGNALS              Entries32        Latest2026.07.16        ModeACTIVE                        00 / LATEST SIGNAL      CURRENT TRANSMISSION              2026-07-16      Your System Prompt Is a God Class      READ /&gt;                  01 / RESEARCH LOG      /// KINETIC INFRASTRUCTURE &amp; AI CONTAINMENT ///                                2026-07-16          Your System Prompt Is a ...",
+  "excerpt": "            COMMAND ARCHIVE / SYSTEM NOTES      ARCHITECTURE      Notes on autonomous systems containment, AI security, adversarial resilience, and the philosophy of control.              ARCHIVE STATUS      34SIGNALS              Entries34        Latest2026.08.02        ModeACTIVE                        00 / LATEST SIGNAL      CURRENT TRANSMISSION              2026-08-02      The Engineers Didn't Finish the Job      READ /&gt;                  01 / RESEARCH LOG      /// KINETIC INFRASTRUCTURE &amp; AI CONTAINMENT ///                                2026-08-02          The Engineers Didn't F...",
   "tags": []
 },{
   "id": "/",

@@ -7,6 +7,17 @@
     <atom:link href="https://themayursinha.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>The Engineers Didn&apos;t Finish the Job</title>
+        <description>
+          A designer&apos;s intent is not a control. We inherit systems through their behaviour, not their promises. - 
+          Ridley Scott’s Prometheus gives us creators without providence. The Engineers are advanced enough to seed life, but they are not wise custodians of what they create. They leave behind powerful systems, ambiguous instructions, dangerous remnants, and no reliable help when those systems fail. I am not arguing that aliens engineered...
+        </description>
+        <pubDate>Sun, 02 Aug 2026 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/architecture/2026/08/02/the-engineers-didnt-finish-the-job/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/08/02/the-engineers-didnt-finish-the-job/</guid>
+      </item>
+    
+      <item>
         <title>Your System Prompt Is a God Class</title>
         <description>
           Merge conflicts on shared instructions are a configuration smell — not an LLM bug. - 
@@ -213,17 +224,6 @@
         <pubDate>Sun, 23 Jul 2023 00:00:00 +0200</pubDate>
         <link>https://themayursinha.com/architecture/2023/07/23/Epicurean-paradox/</link>
         <guid isPermaLink="true">https://themayursinha.com/architecture/2023/07/23/Epicurean-paradox/</guid>
-      </item>
-    
-      <item>
-        <title>Elon Musk on xAI</title>
-        <description>
-          Notes on Musk&apos;s vision for understanding the universe through AI. - 
-          Elon Musk’s xAI launch was framed as another AGI moonshot. The stated goal is to build a “maximum curious” artificial general intelligence focused on understanding the universe. The founding team includes alumni from DeepMind, OpenAI, Google, and Tesla. The press coverage focused on the competition with OpenAI and the timeline...
-        </description>
-        <pubDate>Mon, 17 Jul 2023 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/architecture/2023/07/17/x-ai/</link>
-        <guid isPermaLink="true">https://themayursinha.com/architecture/2023/07/17/x-ai/</guid>
       </item>
     
   </channel>

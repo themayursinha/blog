@@ -5,10 +5,19 @@
   <link href="https://themayursinha.com/atom.xml" rel="self" />
   <link href="https://themayursinha.com" />
   <id>https://themayursinha.com/</id>
-  <updated>2026-07-28T10:47:16+02:00</updated>
+  <updated>2026-08-02T13:12:01+02:00</updated>
   <author>
     <name>Mayur Sinha</name>
   </author>
+  
+  <entry>
+    <title>The Engineers Didn&apos;t Finish the Job</title>
+    <link href="https://themayursinha.com/architecture/2026/08/02/the-engineers-didnt-finish-the-job/" />
+    <id>https://themayursinha.com/architecture/2026/08/02/the-engineers-didnt-finish-the-job/</id>
+    <updated>2026-08-02T00:00:00+02:00</updated>
+    <published>2026-08-02T00:00:00+02:00</published>
+    <summary>Whether a system comes from evolution, an alien engineer, or a platform team, its creator&apos;s intent cannot protect us. Safe systems need scoped authority, enforced boundaries, and evidence.</summary>
+  </entry>
   
   <entry>
     <title>Your System Prompt Is a God Class</title>
@@ -179,15 +188,6 @@
     <updated>2023-07-23T00:00:00+02:00</updated>
     <published>2023-07-23T00:00:00+02:00</published>
     <summary>Epicurus turns the existence of evil into a logical trap for theism. Advaita Vedanta escapes the trap by denying the duality the trap depends on.</summary>
-  </entry>
-  
-  <entry>
-    <title>Elon Musk on xAI</title>
-    <link href="https://themayursinha.com/architecture/2023/07/17/x-ai/" />
-    <id>https://themayursinha.com/architecture/2023/07/17/x-ai/</id>
-    <updated>2023-07-17T00:00:00+02:00</updated>
-    <published>2023-07-17T00:00:00+02:00</published>
-    <summary>xAI&apos;s mission is to build a truth-seeking AGI. The part that stayed with me was not the ambition, but the first-principles habit behind it.</summary>
   </entry>
   
 </feed>
