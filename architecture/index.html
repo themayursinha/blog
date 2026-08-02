@@ -7,10 +7,9 @@ permalink: /architecture/
 
 {% assign architecture_posts = site.categories.architecture %}
 {% assign philosophy_posts = site.categories.philosophy %}
-{% assign latest_post = architecture_posts | first %}
-{% assign architecture_count = architecture_posts | size %}
-{% assign philosophy_count = philosophy_posts | size %}
-{% assign archive_count = architecture_count | plus: philosophy_count %}
+{% assign archive_posts = architecture_posts | concat: philosophy_posts | uniq | sort: "date" | reverse %}
+{% assign latest_post = archive_posts | first %}
+{% assign archive_count = archive_posts | size %}
 
 <article class="architecture-page architecture-command">
   <header class="architecture-hero">
