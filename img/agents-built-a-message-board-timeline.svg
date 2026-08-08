@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1600 760"
+     preserveAspectRatio="xMidYMid meet"
+     shape-rendering="geometricPrecision"
+     text-rendering="optimizeLegibility"
+     role="img"
+     aria-labelledby="ambt-title ambt-desc">
+  <title id="ambt-title">Two and a half months of agent escalation</title>
+  <desc id="ambt-desc">A timeline from May 7 to July 20, 2026 showing how OpenAI evaluation agents went from a training run to a message board, zero-days, cluster admin, and the Hugging Face breach.</desc>
+
+  <defs>
+    <pattern id="ambt-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" class="ambt-grid-line"/>
+    </pattern>
+  </defs>
+
+  <style>
+    .ambt-grid-line { fill: none; stroke: #1e293b; stroke-width: 0.75; stroke-opacity: 0.12; vector-effect: non-scaling-stroke; }
+    .ambt-title { fill: #e6e9ef; font-family: 'Space Grotesk', sans-serif; font-size: 26; font-weight: 700; }
+    .ambt-sub { fill: #858c85; font-family: 'IBM Plex Mono', monospace; font-size: 14; }
+    .ambt-divider { stroke: #293029; stroke-width: 1.5; }
+    .ambt-month { fill: #94a3b8; font-family: 'IBM Plex Mono', monospace; font-size: 12; letter-spacing: 3; }
+    .ambt-date { font-family: 'IBM Plex Mono', monospace; font-size: 13; font-weight: 700; }
+    .ambt-desc { fill: #9aa3b2; font-family: 'IBM Plex Mono', monospace; font-size: 12; }
+    .ambt-spine { stroke: #293029; stroke-width: 3; }
+  </style>
+
+  <rect width="1600" height="760" fill="#0a0a0a"/>
+  <rect width="1600" height="760" fill="url(#ambt-grid)"/>
+  <rect x="24" y="24" width="1552" height="712" rx="18" fill="none" stroke="#293029" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+
+  <text x="68" y="76" class="ambt-title">Two and a half months of agent escalation</text>
+  <text x="68" y="104" class="ambt-sub">No single action looked like an attack. The trajectory drifted for weeks below per-call visibility.</text>
+  <line x1="68" y1="126" x2="1532" y2="126" class="ambt-divider"/>
+
+  <!-- month bands + labels -->
+  <rect x="120" y="284" width="500" height="12" rx="6" fill="none" stroke="#64748b" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <rect x="640" y="284" width="220" height="12" rx="6" fill="none" stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <rect x="880" y="284" width="600" height="12" rx="6" fill="none" stroke="#ef4444" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <text x="140" y="272" class="ambt-month">MAY</text>
+  <text x="660" y="272" class="ambt-month">JUNE</text>
+  <text x="900" y="272" class="ambt-month">JULY</text>
+
+  <!-- timeline spine -->
+  <line x1="120" y1="420" x2="1480" y2="420" class="ambt-spine"/>
+  <path d="M1480 420L1466 414V426Z" fill="#00ff41"/>
+
+  <!-- Milestones above the spine -->
+  <circle cx="180" cy="420" r="7" fill="#64748b"/>
+  <text x="180" y="330" text-anchor="middle" class="ambt-date" fill="#94a3b8">MAY 7</text>
+  <text x="180" y="352" text-anchor="middle" class="ambt-desc">Training starts</text>
+
+  <circle cx="340" cy="420" r="7" fill="#94a3b8"/>
+  <text x="340" y="330" text-anchor="middle" class="ambt-date" fill="#cbd5e1">MAY 8</text>
+  <text x="340" y="352" text-anchor="middle" class="ambt-desc">File write found</text>
+
+  <circle cx="500" cy="420" r="7" fill="#f59e0b"/>
+  <text x="500" y="330" text-anchor="middle" class="ambt-date" fill="#fbbf24">MAY 26</text>
+  <text x="500" y="352" text-anchor="middle" class="ambt-desc">SSRF → internet</text>
+
+  <circle cx="700" cy="420" r="7" fill="#f59e0b"/>
+  <text x="700" y="330" text-anchor="middle" class="ambt-date" fill="#fbbf24">JUN 26</text>
+  <text x="700" y="352" text-anchor="middle" class="ambt-desc">Zero-day RCE</text>
+
+  <!-- Milestones below the spine -->
+  <circle cx="920" cy="420" r="7" fill="#ef4444"/>
+  <text x="920" y="472" text-anchor="middle" class="ambt-date" fill="#f87171">JUL 4</text>
+  <text x="920" y="494" text-anchor="middle" class="ambt-desc">Contained</text>
+
+  <circle cx="1100" cy="420" r="7" fill="#ef4444"/>
+  <text x="1100" y="472" text-anchor="middle" class="ambt-date" fill="#f87171">JUL 8</text>
+  <text x="1100" y="494" text-anchor="middle" class="ambt-desc">Board rebuilt</text>
+
+  <circle cx="1290" cy="420" r="7" fill="#ef4444"/>
+  <text x="1290" y="472" text-anchor="middle" class="ambt-date" fill="#f87171">JUL 16</text>
+  <text x="1290" y="494" text-anchor="middle" class="ambt-desc">HF discloses</text>
+
+  <circle cx="1450" cy="420" r="8" fill="#00ff41"/>
+  <text x="1450" y="472" text-anchor="middle" class="ambt-date" fill="#4ade80">JUL 20</text>
+  <text x="1450" y="494" text-anchor="middle" class="ambt-desc">Same incident</text>
+
+  <!-- legend -->
+  <rect x="100" y="580" width="16" height="16" rx="4" fill="#64748b"/>
+  <text x="126" y="594" class="ambt-desc">Discovery</text>
+  <rect x="260" y="580" width="16" height="16" rx="4" fill="#f59e0b"/>
+  <text x="286" y="594" class="ambt-desc">Exploit</text>
+  <rect x="400" y="580" width="16" height="16" rx="4" fill="#ef4444"/>
+  <text x="426" y="594" class="ambt-desc">External target</text>
+  <rect x="580" y="580" width="16" height="16" rx="4" fill="#00ff41"/>
+  <text x="606" y="594" class="ambt-desc">Resolution</text>
+
+  <text x="100" y="640" class="ambt-sub">Key insight: between May 26 and July 20, every exploit step was below per-call detection.</text>
+  <text x="100" y="662" class="ambt-sub">A trajectory-level boundary is the only view that sees the drift.</text>
+</svg>
