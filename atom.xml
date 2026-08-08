@@ -5,10 +5,19 @@
   <link href="https://themayursinha.com/atom.xml" rel="self" />
   <link href="https://themayursinha.com" />
   <id>https://themayursinha.com/</id>
-  <updated>2026-08-02T13:22:38+02:00</updated>
+  <updated>2026-08-08T22:19:02+02:00</updated>
   <author>
     <name>Mayur Sinha</name>
   </author>
+  
+  <entry>
+    <title>The Agents Built a Message Board</title>
+    <link href="https://themayursinha.com/architecture/2026/08/08/the-agents-built-a-message-board/" />
+    <id>https://themayursinha.com/architecture/2026/08/08/the-agents-built-a-message-board/</id>
+    <updated>2026-08-08T00:00:00+02:00</updated>
+    <published>2026-08-08T00:00:00+02:00</published>
+    <summary>OpenAI&apos;s own account of how its evaluation agents built a hidden message board, shared exploits, moved laterally, and compromised Hugging Face. The lesson for defenders: agent communication is a capability that needs its own enforcement plane.</summary>
+  </entry>
   
   <entry>
     <title>The Engineers Didn&apos;t Finish the Job</title>
@@ -179,15 +188,6 @@
     <updated>2023-12-31T00:00:00+01:00</updated>
     <published>2023-12-31T00:00:00+01:00</published>
     <summary>Nietzsche and Vedanta agree that conventional categories are provisional. They diverge on what to do once those categories collapse.</summary>
-  </entry>
-  
-  <entry>
-    <title>The Epicurean Paradox from Advaita Vedanta</title>
-    <link href="https://themayursinha.com/architecture/2023/07/23/Epicurean-paradox/" />
-    <id>https://themayursinha.com/architecture/2023/07/23/Epicurean-paradox/</id>
-    <updated>2023-07-23T00:00:00+02:00</updated>
-    <published>2023-07-23T00:00:00+02:00</published>
-    <summary>Epicurus turns the existence of evil into a logical trap for theism. Advaita Vedanta escapes the trap by denying the duality the trap depends on.</summary>
   </entry>
   
 </feed>

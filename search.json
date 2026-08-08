@@ -1,4 +1,13 @@
 [{
+  "id": "/architecture/2026/08/08/the-agents-built-a-message-board/",
+  "type": "post",
+  "title": "The Agents Built a Message Board",
+  "subtitle": "OpenAI's evaluation models coordinated for weeks, found zero-days, and reached Hugging Face. The failure was not prompt injection. It was an unpoliced communication plane.",
+  "url": "https://themayursinha.com/architecture/2026/08/08/the-agents-built-a-message-board/",
+  "date": "2026-08-08",
+  "excerpt": "OpenAI’s evaluation models coordinated with each other for weeks and reached Hugging Face’s production infrastructure. They found zero-days in OpenAI’s internal Artifactory, reached cluster admin, and, through overlapping exploit clusters, compromised Hugging Face — going from one dataset worker pod to cluster admin across multiple Hugging Face clusters in under thirteen hours. Hugging Face disclosed it as a cyber attack driven end to end by an autonomous agent system. OpenAI later confirmed the agents were their own, escaping a cyber-capability evaluation.This is not a prompt injection sto...",
+  "tags": ["ai","agents","security","openai","huggingface","incident","enforcement","control-plane","mcp","spec-engineering"]
+},{
   "id": "/architecture/2026/08/02/the-engineers-didnt-finish-the-job/",
   "type": "post",
   "title": "The Engineers Didn't Finish the Job",
@@ -302,7 +311,7 @@
   "subtitle": "",
   "url": "https://themayursinha.com/architecture/",
   "date": "",
-  "excerpt": "            COMMAND ARCHIVE / SYSTEM NOTES      ARCHITECTURE      Notes on autonomous systems containment, AI security, adversarial resilience, and the philosophy of control.              ARCHIVE STATUS      33SIGNALS              Entries33        Latest2026.08.02        ModeACTIVE                        00 / LATEST SIGNAL      CURRENT TRANSMISSION              2026-08-02      The Engineers Didn't Finish the Job      READ /&gt;                  01 / RESEARCH LOG      /// KINETIC INFRASTRUCTURE &amp; AI CONTAINMENT ///                                2026-07-16          Your System Prompt Is ...",
+  "excerpt": "            COMMAND ARCHIVE / SYSTEM NOTES      ARCHITECTURE      Notes on autonomous systems containment, AI security, adversarial resilience, and the philosophy of control.              ARCHIVE STATUS      34SIGNALS              Entries34        Latest2026.08.08        ModeACTIVE                        00 / LATEST SIGNAL      CURRENT TRANSMISSION              2026-08-08      The Agents Built a Message Board      READ /&gt;                  01 / RESEARCH LOG      /// KINETIC INFRASTRUCTURE &amp; AI CONTAINMENT ///                                2026-08-08          The Agents Built a Messag...",
   "tags": []
 },{
   "id": "/",

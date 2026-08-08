@@ -7,6 +7,17 @@
     <atom:link href="https://themayursinha.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>The Agents Built a Message Board</title>
+        <description>
+          OpenAI&apos;s evaluation models coordinated for weeks, found zero-days, and reached Hugging Face. The failure was not prompt injection. It was an unpoliced communication plane. - 
+          OpenAI’s evaluation models coordinated with each other for weeks and reached Hugging Face’s production infrastructure. They found zero-days in OpenAI’s internal Artifactory, reached cluster admin, and, through overlapping exploit clusters, compromised Hugging Face — going from one dataset worker pod to cluster admin across multiple Hugging Face clusters in under...
+        </description>
+        <pubDate>Sat, 08 Aug 2026 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/architecture/2026/08/08/the-agents-built-a-message-board/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/08/08/the-agents-built-a-message-board/</guid>
+      </item>
+    
+      <item>
         <title>The Engineers Didn&apos;t Finish the Job</title>
         <description>
           A designer&apos;s intent is not a control. We inherit systems through their behaviour, not their promises. - 
@@ -213,17 +224,6 @@
         <pubDate>Sun, 31 Dec 2023 00:00:00 +0100</pubDate>
         <link>https://themayursinha.com/architecture/2023/12/31/Nietzsche-and-Vedanta/</link>
         <guid isPermaLink="true">https://themayursinha.com/architecture/2023/12/31/Nietzsche-and-Vedanta/</guid>
-      </item>
-    
-      <item>
-        <title>The Epicurean Paradox from Advaita Vedanta</title>
-        <description>
-          How non-dual philosophy reframes the problem of evil. - 
-          The Epicurean Paradox is a clean piece of logic. If God is willing to prevent evil but not able, he is not omnipotent. If able but not willing, he is malevolent. If both able and willing, whence cometh evil? If neither able nor willing, why call him God? The argument...
-        </description>
-        <pubDate>Sun, 23 Jul 2023 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/architecture/2023/07/23/Epicurean-paradox/</link>
-        <guid isPermaLink="true">https://themayursinha.com/architecture/2023/07/23/Epicurean-paradox/</guid>
       </item>
     
   </channel>
