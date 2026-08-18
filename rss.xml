@@ -7,6 +7,17 @@
     <atom:link href="https://themayursinha.com/rss.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Hacking the Auditor</title>
+        <description>
+          I ran PortSwigger&apos;s complete Web LLM attack series. The four scanner labs fell to three techniques that map directly to what agentic security tools need to defend. - 
+          Most AI security writing is about chatbots. Ask the model to ignore its instructions, and a cleverly framed prompt gets it to do something it should not. Chatbot prompt injection is a real class. The deeper problem is when the LLM is not a chat window but an agent with...
+        </description>
+        <pubDate>Tue, 18 Aug 2026 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/architecture/2026/08/18/hacking-the-auditor/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/08/18/hacking-the-auditor/</guid>
+      </item>
+    
+      <item>
         <title>The Agents Built a Message Board</title>
         <description>
           OpenAI&apos;s evaluation models coordinated for weeks, found zero-days, and reached Hugging Face. The failure was not prompt injection. It was an unpoliced communication plane. - 
@@ -213,17 +224,6 @@
         <pubDate>Mon, 12 Feb 2024 00:00:00 +0100</pubDate>
         <link>https://themayursinha.com/architecture/2024/02/12/Unabomber-relevance-in-2024/</link>
         <guid isPermaLink="true">https://themayursinha.com/architecture/2024/02/12/Unabomber-relevance-in-2024/</guid>
-      </item>
-    
-      <item>
-        <title>Nietzsche and Vedanta: Unexpected Parallels</title>
-        <description>
-          Unexpected resonances between the will to power and the self beyond the ego. - 
-          Friedrich Nietzsche and Vedanta make an unlikely pair. One is a 19th-century German critic of Christianity and morality, the other a millennia-old Indian inquiry into the nature of the self. Yet they converge on a single idea: the categories we inherit — good and evil, self and world, illusion and...
-        </description>
-        <pubDate>Sun, 31 Dec 2023 00:00:00 +0100</pubDate>
-        <link>https://themayursinha.com/architecture/2023/12/31/Nietzsche-and-Vedanta/</link>
-        <guid isPermaLink="true">https://themayursinha.com/architecture/2023/12/31/Nietzsche-and-Vedanta/</guid>
       </item>
     
   </channel>

@@ -5,10 +5,19 @@
   <link href="https://themayursinha.com/atom.xml" rel="self" />
   <link href="https://themayursinha.com" />
   <id>https://themayursinha.com/</id>
-  <updated>2026-08-09T11:06:43+02:00</updated>
+  <updated>2026-08-18T22:10:40+02:00</updated>
   <author>
     <name>Mayur Sinha</name>
   </author>
+  
+  <entry>
+    <title>Hacking the Auditor</title>
+    <link href="https://themayursinha.com/architecture/2026/08/18/hacking-the-auditor/" />
+    <id>https://themayursinha.com/architecture/2026/08/18/hacking-the-auditor/</id>
+    <updated>2026-08-18T00:00:00+02:00</updated>
+    <published>2026-08-18T00:00:00+02:00</published>
+    <summary>PortSwigger&apos;s four AI-scanner labs fell to three techniques: framing injections as the agent&apos;s own job, persistence against probabilistic defenses, and a task-relevant reason to touch the privileged surface. Model guardrails were not the boundary.</summary>
+  </entry>
   
   <entry>
     <title>The Agents Built a Message Board</title>
@@ -179,15 +188,6 @@
     <updated>2024-02-12T00:00:00+01:00</updated>
     <published>2024-02-12T00:00:00+01:00</published>
     <summary>Kaczynski&apos;s manifesto identified real problems with industrial society. His solution was murder. The honest move is to separate the diagnosis from the cure.</summary>
-  </entry>
-  
-  <entry>
-    <title>Nietzsche and Vedanta: Unexpected Parallels</title>
-    <link href="https://themayursinha.com/architecture/2023/12/31/Nietzsche-and-Vedanta/" />
-    <id>https://themayursinha.com/architecture/2023/12/31/Nietzsche-and-Vedanta/</id>
-    <updated>2023-12-31T00:00:00+01:00</updated>
-    <published>2023-12-31T00:00:00+01:00</published>
-    <summary>Nietzsche and Vedanta agree that conventional categories are provisional. They diverge on what to do once those categories collapse.</summary>
   </entry>
   
 </feed>

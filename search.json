@@ -1,4 +1,13 @@
 [{
+  "id": "/architecture/2026/08/18/hacking-the-auditor/",
+  "type": "post",
+  "title": "Hacking the Auditor",
+  "subtitle": "I ran PortSwigger's complete Web LLM attack series. The four scanner labs fell to three techniques that map directly to what agentic security tools need to defend.",
+  "url": "https://themayursinha.com/architecture/2026/08/18/hacking-the-auditor/",
+  "date": "2026-08-18",
+  "excerpt": "Most AI security writing is about chatbots. Ask the model to ignore its instructions, and a cleverly framed prompt gets it to do something it should not. Chatbot prompt injection is a real class. The deeper problem is when the LLM is not a chat window but an agent with tools: a scanner that crawls a site, logs in with credentials, sends HTTP requests, and writes results where anyone can read them.I just finished PortSwigger’s Web LLM attacks series on the Web Security Academy — all eight labs. The first four are chatbot-with-tools: excessive agency on a delete API, OS command injection thro...",
+  "tags": ["ai","security","agents","llm","prompt-injection","scanners","pentesting","portswigger","agentic-ai"]
+},{
   "id": "/architecture/2026/08/08/the-agents-built-a-message-board/",
   "type": "post",
   "title": "The Agents Built a Message Board",
@@ -311,7 +320,7 @@
   "subtitle": "",
   "url": "https://themayursinha.com/architecture/",
   "date": "",
-  "excerpt": "            COMMAND ARCHIVE / SYSTEM NOTES      ARCHITECTURE      Notes on autonomous systems containment, AI security, adversarial resilience, and the philosophy of control.              ARCHIVE STATUS      34SIGNALS              Entries34        Latest2026.08.08        ModeACTIVE                        00 / LATEST SIGNAL      CURRENT TRANSMISSION              2026-08-08      The Agents Built a Message Board      READ /&gt;                  01 / RESEARCH LOG      /// KINETIC INFRASTRUCTURE &amp; AI CONTAINMENT ///                                2026-08-08          The Agents Built a Messag...",
+  "excerpt": "            COMMAND ARCHIVE / SYSTEM NOTES      ARCHITECTURE      Notes on autonomous systems containment, AI security, adversarial resilience, and the philosophy of control.              ARCHIVE STATUS      35SIGNALS              Entries35        Latest2026.08.18        ModeACTIVE                        00 / LATEST SIGNAL      CURRENT TRANSMISSION              2026-08-18      Hacking the Auditor      READ /&gt;                  01 / RESEARCH LOG      /// KINETIC INFRASTRUCTURE &amp; AI CONTAINMENT ///                                2026-08-18          Hacking the Auditor                   ...",
   "tags": []
 },{
   "id": "/",
