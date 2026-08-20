@@ -7,6 +7,17 @@
     <atom:link href="https://themayursinha.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>The Blind King&apos;s Court</title>
+        <description>
+          Dhritarashtra&apos;s failure was not ignorance. It was authority that repeatedly yielded to attachment. - 
+          There is a king in the Mahabharata who never raises a hand, and he is the most dangerous man in the epic. Not its villain: its enabling condition. Duryodhana supplies the malice, Shakuni the cunning, Karna the loyalty. Dhritarashtra supplies the throne they stand on, and the silence that lets...
+        </description>
+        <pubDate>Wed, 19 Aug 2026 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/architecture/2026/08/19/the-blind-kings-court/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/08/19/the-blind-kings-court/</guid>
+      </item>
+    
+      <item>
         <title>Hacking the Auditor</title>
         <description>
           I ran PortSwigger&apos;s complete Web LLM attack series. The four scanner labs fell to three techniques that map directly to what agentic security tools need to defend. - 
@@ -213,17 +224,6 @@
         <pubDate>Sun, 30 Jun 2024 00:00:00 +0200</pubDate>
         <link>https://themayursinha.com/architecture/2024/06/30/Suffering/</link>
         <guid isPermaLink="true">https://themayursinha.com/architecture/2024/06/30/Suffering/</guid>
-      </item>
-    
-      <item>
-        <title>Revisiting the Unabomber</title>
-        <description>
-          A critical reading of Kaczynski&apos;s critique of technology, separated from his violence. - 
-          Ted Kaczynski killed three people and injured dozens more in a bombing campaign that lasted nearly two decades. There is no separating that fact from his manifesto, Industrial Society and Its Future, because the violence was the point. The manifesto was not a philosophical argument that happened to be published...
-        </description>
-        <pubDate>Mon, 12 Feb 2024 00:00:00 +0100</pubDate>
-        <link>https://themayursinha.com/architecture/2024/02/12/Unabomber-relevance-in-2024/</link>
-        <guid isPermaLink="true">https://themayursinha.com/architecture/2024/02/12/Unabomber-relevance-in-2024/</guid>
       </item>
     
   </channel>

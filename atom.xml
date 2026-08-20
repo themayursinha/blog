@@ -5,10 +5,19 @@
   <link href="https://themayursinha.com/atom.xml" rel="self" />
   <link href="https://themayursinha.com" />
   <id>https://themayursinha.com/</id>
-  <updated>2026-08-18T22:10:40+02:00</updated>
+  <updated>2026-08-20T18:46:13+02:00</updated>
   <author>
     <name>Mayur Sinha</name>
   </author>
+  
+  <entry>
+    <title>The Blind King&apos;s Court</title>
+    <link href="https://themayursinha.com/architecture/2026/08/19/the-blind-kings-court/" />
+    <id>https://themayursinha.com/architecture/2026/08/19/the-blind-kings-court/</id>
+    <updated>2026-08-19T00:00:00+02:00</updated>
+    <published>2026-08-19T00:00:00+02:00</published>
+    <summary>Dhritarashtra was not the villain of the Mahabharata. He was the condition that made the villains possible: a court that could see everything and prevent nothing. Observation is not control.</summary>
+  </entry>
   
   <entry>
     <title>Hacking the Auditor</title>
@@ -179,15 +188,6 @@
     <updated>2024-06-30T00:00:00+02:00</updated>
     <published>2024-06-30T00:00:00+02:00</published>
     <summary>The universe is indifferent to suffering. The only justice available is the justice we build.</summary>
-  </entry>
-  
-  <entry>
-    <title>Revisiting the Unabomber</title>
-    <link href="https://themayursinha.com/architecture/2024/02/12/Unabomber-relevance-in-2024/" />
-    <id>https://themayursinha.com/architecture/2024/02/12/Unabomber-relevance-in-2024/</id>
-    <updated>2024-02-12T00:00:00+01:00</updated>
-    <published>2024-02-12T00:00:00+01:00</published>
-    <summary>Kaczynski&apos;s manifesto identified real problems with industrial society. His solution was murder. The honest move is to separate the diagnosis from the cure.</summary>
   </entry>
   
 </feed>
