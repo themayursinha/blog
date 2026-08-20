@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 620" width="1140" height="620" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="bkcm-title bkcm-desc">
+  <title id="bkcm-title">The same court</title>
+  <desc id="bkcm-desc">Vidura maps to evals, Sanjaya to telemetry, the king to a human in the loop, and Duryodhana to an agent with tools. Accurate observation is not a veto.</desc>
+
+  <defs>
+    <linearGradient id="bkcm-bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#0f120f"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1140" height="620" rx="24" fill="url(#bkcm-bg)"/>
+  <rect x="24" y="24" width="1092" height="572" rx="18" fill="none" stroke="#293029" stroke-width="1.5"/>
+
+  <text x="68" y="76" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700">The same court</text>
+  <text x="68" y="104" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="15">Every sensing organ. No freeze. Observation is not control.</text>
+  <line x1="68" y1="126" x2="1072" y2="126" stroke="#293029" stroke-width="1"/>
+
+  <text x="92" y="158" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="600" letter-spacing="1.5">THE COURT</text>
+  <text x="400" y="158" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="600" letter-spacing="1.5">LOOKS LIKE A CONTROL</text>
+  <text x="760" y="158" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="600" letter-spacing="1.5">WHAT IT ACTUALLY IS</text>
+
+  <rect x="68" y="176" width="1004" height="78" rx="14" fill="#0a0a0a" stroke="#293029" stroke-width="1.5"/>
+  <rect x="68" y="176" width="8" height="78" rx="4" fill="#00ff41"/>
+  <text x="92" y="208" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700">Vidura</text>
+  <text x="92" y="232" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="13">Krishna, Gandhari, the omens</text>
+  <text x="400" y="222" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="15">Evals, red teams, policy reviews</text>
+  <text x="760" y="222" fill="#86efac" font-family="'IBM Plex Mono', monospace" font-size="15">Accurate. Cannot freeze.</text>
+
+  <rect x="68" y="266" width="1004" height="78" rx="14" fill="#0a0a0a" stroke="#293029" stroke-width="1.5"/>
+  <rect x="68" y="266" width="8" height="78" rx="4" fill="#64748b"/>
+  <text x="92" y="298" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700">Sanjaya</text>
+  <text x="92" y="322" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="13">divine sight, no hand</text>
+  <text x="400" y="312" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="15">Telemetry, monitors, audit logs</text>
+  <text x="760" y="312" fill="#94a3b8" font-family="'IBM Plex Mono', monospace" font-size="15">Perfect narration. No veto.</text>
+
+  <rect x="68" y="356" width="1004" height="78" rx="14" fill="#0a0a0a" stroke="#293029" stroke-width="1.5"/>
+  <rect x="68" y="356" width="8" height="78" rx="4" fill="#f59e0b"/>
+  <text x="92" y="388" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700">The king</text>
+  <text x="92" y="412" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="13">discretion, attachment</text>
+  <text x="400" y="402" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="15">Human in the loop</text>
+  <text x="760" y="402" fill="#fbbf24" font-family="'IBM Plex Mono', monospace" font-size="15">Attachment can mint a yes.</text>
+
+  <rect x="68" y="446" width="1004" height="78" rx="14" fill="#0a0a0a" stroke="#293029" stroke-width="1.5"/>
+  <rect x="68" y="446" width="8" height="78" rx="4" fill="#ef4444"/>
+  <text x="92" y="478" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700">Duryodhana</text>
+  <text x="92" y="502" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="13">the actor who wants</text>
+  <text x="400" y="492" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="15">Agent with tools</text>
+  <text x="760" y="492" fill="#fb7185" font-family="'IBM Plex Mono', monospace" font-size="15">Unconstrained actor.</text>
+
+  <rect x="68" y="536" width="1004" height="36" rx="10" fill="#07150b" stroke="#00ff41" stroke-width="1.5"/>
+  <text x="570" y="559" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="14" text-anchor="middle">WHAT HOLDS  /  prove before the effect  /  deny at the boundary  /  evidence after</text>
+</svg>
