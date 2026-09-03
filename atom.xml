@@ -5,10 +5,19 @@
   <link href="https://themayursinha.com/atom.xml" rel="self" />
   <link href="https://themayursinha.com" />
   <id>https://themayursinha.com/</id>
-  <updated>2026-08-22T19:44:14+02:00</updated>
+  <updated>2026-09-03T12:45:36+02:00</updated>
   <author>
     <name>Mayur Sinha</name>
   </author>
+  
+  <entry>
+    <title>AI Safety Without AI Security Is Not Safety</title>
+    <link href="https://themayursinha.com/architecture/2026/09/03/ai-safety-without-ai-security-is-not-safety/" />
+    <id>https://themayursinha.com/architecture/2026/09/03/ai-safety-without-ai-security-is-not-safety/</id>
+    <updated>2026-09-03T00:00:00+02:00</updated>
+    <published>2026-09-03T00:00:00+02:00</published>
+    <summary>The OpenAI and Hugging Face incident exposed a category error in AI safety: measuring a model&apos;s offensive capability is different from securing the agent system that gives it tools, credentials, and network access.</summary>
+  </entry>
   
   <entry>
     <title>The Blind King&apos;s Court</title>
@@ -179,15 +188,6 @@
     <updated>2025-06-29T00:00:00+02:00</updated>
     <published>2025-06-29T00:00:00+02:00</published>
     <summary>The next step past agent orchestration is not bigger orchestrators. It is ecosystems where agents spawn, bid, learn, and retire.</summary>
-  </entry>
-  
-  <entry>
-    <title>Life is cruel</title>
-    <link href="https://themayursinha.com/architecture/2024/06/30/Suffering/" />
-    <id>https://themayursinha.com/architecture/2024/06/30/Suffering/</id>
-    <updated>2024-06-30T00:00:00+02:00</updated>
-    <published>2024-06-30T00:00:00+02:00</published>
-    <summary>The universe is indifferent to suffering. The only justice available is the justice we build.</summary>
   </entry>
   
 </feed>

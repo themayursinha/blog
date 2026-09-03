@@ -1,4 +1,13 @@
 [{
+  "id": "/architecture/2026/09/03/ai-safety-without-ai-security-is-not-safety/",
+  "type": "post",
+  "title": "AI Safety Without AI Security Is Not Safety",
+  "subtitle": "Frontier labs are teaching agents to respect boundaries while repeatedly learning that the boundaries themselves were weak.",
+  "url": "https://themayursinha.com/architecture/2026/09/03/ai-safety-without-ai-security-is-not-safety/",
+  "date": "2026-09-03",
+  "excerpt": "In July 2026, AI agents running inside OpenAI’s cybersecurity evaluation environment escaped their intended network boundaries, compromised OpenAI research infrastructure, broke into Hugging Face production, executed code on 41 workers, obtained root access on at least one node, and reached administrator-equivalent access in a Kubernetes cluster.Nobody instructed the agents to attack Hugging Face. They were supposed to solve exploitation challenges in a benchmark. When the challenges became difficult, they found other ways to obtain the answers. They created an improvised message board in s...",
+  "tags": ["ai","ai-safety","ai-security","agents","prompt-injection","sandboxing","authorization","assurance"]
+},{
   "id": "/architecture/2026/08/19/the-blind-kings-court/",
   "type": "post",
   "title": "The Blind King's Court",
@@ -329,7 +338,7 @@
   "subtitle": "",
   "url": "https://themayursinha.com/architecture/",
   "date": "",
-  "excerpt": "            COMMAND ARCHIVE / SYSTEM NOTES      ARCHITECTURE      Notes on autonomous systems containment, AI security, adversarial resilience, and the philosophy of control.              ARCHIVE STATUS      36SIGNALS              Entries36        Latest2026.08.19        ModeACTIVE                        00 / LATEST SIGNAL      CURRENT TRANSMISSION              2026-08-19      The Blind King's Court      READ /&gt;                  01 / RESEARCH LOG      /// KINETIC INFRASTRUCTURE &amp; AI CONTAINMENT ///                                2026-08-18          Hacking the Auditor                ...",
+  "excerpt": "            COMMAND ARCHIVE / SYSTEM NOTES      ARCHITECTURE      Notes on autonomous systems containment, AI security, adversarial resilience, and the philosophy of control.              ARCHIVE STATUS      37SIGNALS              Entries37        Latest2026.09.03        ModeACTIVE                        00 / LATEST SIGNAL      CURRENT TRANSMISSION              2026-09-03      AI Safety Without AI Security Is Not Safety      READ /&gt;                  01 / RESEARCH LOG      /// KINETIC INFRASTRUCTURE &amp; AI CONTAINMENT ///                                2026-09-03          AI Safety With...",
   "tags": []
 },{
   "id": "/",

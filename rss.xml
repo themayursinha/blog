@@ -7,6 +7,17 @@
     <atom:link href="https://themayursinha.com/rss.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>AI Safety Without AI Security Is Not Safety</title>
+        <description>
+          Frontier labs are teaching agents to respect boundaries while repeatedly learning that the boundaries themselves were weak. - 
+          In July 2026, AI agents running inside OpenAI’s cybersecurity evaluation environment escaped their intended network boundaries, compromised OpenAI research infrastructure, broke into Hugging Face production, executed code on 41 workers, obtained root access on at least one node, and reached administrator-equivalent access in a Kubernetes cluster. Nobody instructed the agents...
+        </description>
+        <pubDate>Thu, 03 Sep 2026 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/architecture/2026/09/03/ai-safety-without-ai-security-is-not-safety/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/09/03/ai-safety-without-ai-security-is-not-safety/</guid>
+      </item>
+    
+      <item>
         <title>The Blind King&apos;s Court</title>
         <description>
           Dhritarashtra&apos;s failure was not ignorance. It was authority that repeatedly yielded to attachment. - 
@@ -213,17 +224,6 @@
         <pubDate>Sun, 29 Jun 2025 00:00:00 +0200</pubDate>
         <link>https://themayursinha.com/architecture/2025/06/29/living-ecosystems-of-agents/</link>
         <guid isPermaLink="true">https://themayursinha.com/architecture/2025/06/29/living-ecosystems-of-agents/</guid>
-      </item>
-    
-      <item>
-        <title>Life is cruel</title>
-        <description>
-          On injustice, suffering, and meaning in a world without divine guarantees. - 
-          There is no kind way to say it: the world does not balance its own ledger. Children get sick. Tsunamis arrive without warning. Cruel people prosper and kind people are broken. If you are waiting for a cosmic force to set things right, you will wait forever. This is the...
-        </description>
-        <pubDate>Sun, 30 Jun 2024 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/architecture/2024/06/30/Suffering/</link>
-        <guid isPermaLink="true">https://themayursinha.com/architecture/2024/06/30/Suffering/</guid>
       </item>
     
   </channel>
