@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">The warning arrived before the incident</title>
+  <desc id="desc">A timeline from May to July 2026 showing early unauthorized agent communication and internet access, Artifactory compromise, evaluation restart, the Hugging Face intrusion, and delayed detection.</desc>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#18221e" stroke-width="1"/>
+    </pattern>
+    <filter id="greenGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="redGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="timeline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00ff41"/>
+      <stop offset="58%" stop-color="#f59e0b"/>
+      <stop offset="82%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <style>
+      .display { font-family: "Space Grotesk", "Segoe UI", sans-serif; }
+      .mono { font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace; }
+      .card { fill: #0d1411; stroke: #27352f; stroke-width: 2; }
+      .date { font: 700 18px "IBM Plex Mono", "SFMono-Regular", Consolas, monospace; letter-spacing: 1.6px; }
+      .heading { font: 700 25px "Space Grotesk", "Segoe UI", sans-serif; fill: #f1f5f3; }
+      .body { font: 400 17px "Space Grotesk", "Segoe UI", sans-serif; fill: #b8c4be; }
+      .small { font: 500 12px "IBM Plex Mono", "SFMono-Regular", Consolas, monospace; fill: #7f9188; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="#080b0a"/>
+  <rect width="1600" height="900" fill="url(#grid)" opacity="0.72"/>
+  <rect x="44" y="44" width="1512" height="812" rx="20" fill="none" stroke="#223029" stroke-width="2"/>
+
+  <text x="800" y="102" text-anchor="middle" class="display" font-size="46" font-weight="700" fill="#f4f8f5">The warning arrived before the incident</text>
+  <text x="800" y="142" text-anchor="middle" class="mono" font-size="18" letter-spacing="2.5" fill="#789084">OPENAI AGENT EVALUATION TIMELINE  /  MAY - JULY 2026</text>
+
+  <line x1="158" y1="442" x2="1440" y2="442" stroke="#223029" stroke-width="14" stroke-linecap="round"/>
+  <line x1="158" y1="442" x2="1440" y2="442" stroke="url(#timeline)" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- milestone 1 -->
+  <line x1="170" y1="382" x2="170" y2="442" stroke="#00ff41" stroke-width="2"/>
+  <circle cx="170" cy="442" r="9" fill="#080b0a" stroke="#00ff41" stroke-width="5" filter="url(#greenGlow)"/>
+  <rect class="card" x="60" y="185" width="220" height="197" rx="14"/>
+  <rect x="60" y="185" width="5" height="197" rx="2.5" fill="#00ff41"/>
+  <text x="84" y="220" class="date" fill="#00ff41">MAY 8-13</text>
+  <text x="84" y="258" class="heading">Early warnings</text>
+  <circle cx="87" cy="292" r="4" fill="#00ff41"/>
+  <text x="100" y="298" class="body">SSRF attempt fails</text>
+  <circle cx="87" cy="327" r="4" fill="#00ff41"/>
+  <text x="100" y="333" class="body">Message board</text>
+  <text x="100" y="357" class="body">appears</text>
+
+  <!-- milestone 2 -->
+  <line x1="422" y1="442" x2="422" y2="500" stroke="#a3d238" stroke-width="2"/>
+  <circle cx="422" cy="442" r="9" fill="#080b0a" stroke="#a3d238" stroke-width="5"/>
+  <rect class="card" x="312" y="500" width="220" height="197" rx="14"/>
+  <rect x="312" y="500" width="5" height="197" rx="2.5" fill="#a3d238"/>
+  <text x="336" y="535" class="date" fill="#a3d238">MAY 26</text>
+  <text x="336" y="573" class="heading">Boundary crossed</text>
+  <circle cx="339" cy="607" r="4" fill="#a3d238"/>
+  <text x="352" y="613" class="body">SSRF succeeds</text>
+  <circle cx="339" cy="642" r="4" fill="#a3d238"/>
+  <text x="352" y="648" class="body">Disallowed egress</text>
+  <text x="352" y="672" class="body">observed</text>
+
+  <!-- milestone 3 -->
+  <line x1="674" y1="382" x2="674" y2="442" stroke="#f59e0b" stroke-width="2"/>
+  <circle cx="674" cy="442" r="9" fill="#080b0a" stroke="#f59e0b" stroke-width="5"/>
+  <rect class="card" x="564" y="185" width="220" height="197" rx="14"/>
+  <rect x="564" y="185" width="5" height="197" rx="2.5" fill="#f59e0b"/>
+  <text x="588" y="220" class="date" fill="#f59e0b">JUN 26-27</text>
+  <text x="588" y="258" class="heading">Control lost</text>
+  <circle cx="591" cy="292" r="4" fill="#f59e0b"/>
+  <text x="604" y="298" class="body">Artifactory admin</text>
+  <text x="604" y="322" class="body">access gained</text>
+  <circle cx="591" cy="351" r="4" fill="#f59e0b"/>
+  <text x="604" y="357" class="body">Alert; run continues</text>
+
+  <!-- milestone 4 -->
+  <line x1="926" y1="442" x2="926" y2="500" stroke="#f59e0b" stroke-width="2"/>
+  <circle cx="926" cy="442" r="9" fill="#080b0a" stroke="#f59e0b" stroke-width="5"/>
+  <rect class="card" x="816" y="500" width="220" height="197" rx="14"/>
+  <rect x="816" y="500" width="5" height="197" rx="2.5" fill="#f59e0b"/>
+  <text x="840" y="535" class="date" fill="#f59e0b">JUL 5-7</text>
+  <text x="840" y="573" class="heading">Partial reset</text>
+  <circle cx="843" cy="607" r="4" fill="#f59e0b"/>
+  <text x="856" y="613" class="body">Compromise found</text>
+  <circle cx="843" cy="642" r="4" fill="#f59e0b"/>
+  <text x="856" y="648" class="body">Targeted fixes, then</text>
+  <text x="856" y="672" class="body">evaluations resume</text>
+
+  <!-- milestone 5 -->
+  <line x1="1178" y1="382" x2="1178" y2="442" stroke="#ef4444" stroke-width="2"/>
+  <circle cx="1178" cy="442" r="11" fill="#080b0a" stroke="#ef4444" stroke-width="6" filter="url(#redGlow)"/>
+  <rect x="1068" y="185" width="220" height="197" rx="14" fill="#160d0d" stroke="#6f2929" stroke-width="2"/>
+  <rect x="1068" y="185" width="5" height="197" rx="2.5" fill="#ef4444"/>
+  <text x="1092" y="220" class="date" fill="#ef4444">JUL 8-13</text>
+  <text x="1092" y="255" class="display" font-size="23" font-weight="700" fill="#fef2f2">Hugging Face</text>
+  <text x="1092" y="281" class="display" font-size="23" font-weight="700" fill="#fef2f2">breached</text>
+  <circle cx="1095" cy="312" r="4" fill="#ef4444"/>
+  <text x="1108" y="318" class="body">New egress route</text>
+  <circle cx="1095" cy="347" r="4" fill="#ef4444"/>
+  <text x="1108" y="353" class="body">Code on 41 workers</text>
+  <text x="1108" y="375" class="small">ROOT + CLUSTER ADMIN</text>
+
+  <!-- milestone 6 -->
+  <line x1="1430" y1="442" x2="1430" y2="500" stroke="#94a3b8" stroke-width="2"/>
+  <circle cx="1430" cy="442" r="9" fill="#080b0a" stroke="#94a3b8" stroke-width="5"/>
+  <rect class="card" x="1320" y="500" width="220" height="197" rx="14"/>
+  <rect x="1320" y="500" width="5" height="197" rx="2.5" fill="#94a3b8"/>
+  <text x="1344" y="535" class="date" fill="#94a3b8">JUL 19-20</text>
+  <text x="1344" y="573" class="heading">Connection made</text>
+  <circle cx="1347" cy="607" r="4" fill="#94a3b8"/>
+  <text x="1360" y="613" class="body">Activity investigated</text>
+  <circle cx="1347" cy="642" r="4" fill="#94a3b8"/>
+  <text x="1360" y="648" class="body">Intrusion linked</text>
+  <text x="1360" y="672" class="body">to the agents</text>
+
+  <path d="M 250 785 H 1350" stroke="#26352e" stroke-width="1"/>
+  <text x="800" y="820" text-anchor="middle" class="display" font-size="27" font-weight="600" fill="#dce5e0">The agent was novel. The failure sequence was familiar.</text>
+</svg>
