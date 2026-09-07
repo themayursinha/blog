@@ -32,6 +32,9 @@ navbar-links:
   - title: Proof
     url: /proof/
 
+# Default social preview image (Open Graph / Twitter). Not shown on the homepage.
+avatar: "/img/social-preview.jpg"
+
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
 # title-img: /path/to/image
