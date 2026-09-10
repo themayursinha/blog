@@ -188,9 +188,9 @@
 
     <aside class="proof-verification-panel" aria-label="Proof index summary">
       <span class="proof-panel-label">EVIDENCE LOCK</span>
-      <div class="proof-panel-core"><span>13</span><b>ARTIFACTS</b></div>
+      <div class="proof-panel-core"><span>17</span><b>ARTIFACTS</b></div>
       <dl>
-        <div><dt>Systems</dt><dd>4</dd></div>
+        <div><dt>Systems</dt><dd>8</dd></div>
         <div><dt>Research</dt><dd>9</dd></div>
         <div><dt>Status</dt><dd>PUBLIC</dd></div>
       </dl>
@@ -220,7 +220,7 @@
           </div>
           <div class="proof-entry-body">
             <h3>MCP Visor</h3>
-            <p>Runtime policy enforcement and audit control plane for MCP tool execution.</p>
+            <p>Deterministic, non-AI policy engine that intercepts MCP tools/call before execution. Runtime policy enforcement and audit control plane for tool-using AI agents.</p>
             <p class="proof-links">
               
                 <a href="https://github.com/themayursinha/mcp-visor" target="_blank" rel="noopener">GitHub</a>
@@ -228,6 +228,74 @@
                 <a href="https://themayursinha.com/architecture/2026/05/25/mcp-visor-runtime-policy-enforcement-for-ai-agents/" target="_blank" rel="noopener">Context</a>
               
                 <a href="https://www.researchgate.net/publication/407908047_MCP_Visor_Deterministic_Runtime_Enforcement_for_Governing_Tool-Using_AI_Agents" target="_blank" rel="noopener">Paper</a>
+              
+            </p>
+          </div>
+        </article>
+      
+        <article class="proof-entry proof-system-card">
+          <div class="proof-entry-meta">
+            <span>2026</span>
+            <span>Builder</span>
+            <span>PUBLIC ARTIFACT</span>
+          </div>
+          <div class="proof-entry-body">
+            <h3>Agent Identity Plane</h3>
+            <p>Cryptographic identity and actor-chain provenance for AI agents. A self-hosted agent registry, token service, and verifier that issue short-lived single-audience tokens carrying the full user-to-agent-to-tool delegation chain, so downstream systems can answer who acted, for whom, and through which agents. v1.0.</p>
+            <p class="proof-links">
+              
+                <a href="https://github.com/themayursinha/agent-identity-plane" target="_blank" rel="noopener">GitHub</a>
+              
+            </p>
+          </div>
+        </article>
+      
+        <article class="proof-entry proof-system-card">
+          <div class="proof-entry-meta">
+            <span>2026</span>
+            <span>Builder</span>
+            <span>PUBLIC ARTIFACT</span>
+          </div>
+          <div class="proof-entry-body">
+            <h3>Authority Graph Simulator</h3>
+            <p>Counterfactual authorization for agent actions. Evaluates a proposed capability delegation against a declared authority graph and denies it when the authority an agent could reach would exceed the originating mandate.</p>
+            <p class="proof-links">
+              
+                <a href="https://github.com/themayursinha/authority-graph-simulator" target="_blank" rel="noopener">GitHub</a>
+              
+            </p>
+          </div>
+        </article>
+      
+        <article class="proof-entry proof-system-card">
+          <div class="proof-entry-meta">
+            <span>2026</span>
+            <span>Builder</span>
+            <span>PUBLIC ARTIFACT</span>
+          </div>
+          <div class="proof-entry-body">
+            <h3>Capability Delta Receipts</h3>
+            <p>Hash-linked receipts that record whether each step of an agent trajectory gave it a materially stronger primitive, and pause before the first effect outside the declared envelope.</p>
+            <p class="proof-links">
+              
+                <a href="https://github.com/themayursinha/capability-delta-receipts" target="_blank" rel="noopener">GitHub</a>
+              
+            </p>
+          </div>
+        </article>
+      
+        <article class="proof-entry proof-system-card">
+          <div class="proof-entry-meta">
+            <span>2026</span>
+            <span>Builder</span>
+            <span>PUBLIC ARTIFACT</span>
+          </div>
+          <div class="proof-entry-body">
+            <h3>Vulnerability Research Harness</h3>
+            <p>Deterministic campaign harness for authorized AI-assisted vulnerability research. Pins the target and success condition in a campaign contract, prevents premature agent convergence with an approach registry, and records every hypothesis-to-impact transition in an evidence ledger.</p>
+            <p class="proof-links">
+              
+                <a href="https://github.com/themayursinha/vuln-research-harness" target="_blank" rel="noopener">GitHub</a>
               
             </p>
           </div>
@@ -259,11 +327,13 @@
             <span>PUBLIC ARTIFACT</span>
           </div>
           <div class="proof-entry-body">
-            <h3>Adversarial ML security lab</h3>
-            <p>Hands-on lab for adversarial ML attack and defense experiments.</p>
+            <h3>MCP security evaluator</h3>
+            <p>Companion tooling for evaluating MCP server trust boundaries, tool metadata drift, and LLM integration risks.</p>
             <p class="proof-links">
               
-                <a href="https://github.com/themayursinha/adversarial-ml-lab" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://github.com/themayursinha/mcp-llm-security-evaluator" target="_blank" rel="noopener">GitHub</a>
+              
+                <a href="https://themayursinha.com/architecture/2026/05/06/mcp-security-the-new-supply-chain-risk-for-ai-agents/" target="_blank" rel="noopener">Context</a>
               
             </p>
           </div>
@@ -276,13 +346,11 @@
             <span>PUBLIC ARTIFACT</span>
           </div>
           <div class="proof-entry-body">
-            <h3>MCP security evaluator</h3>
-            <p>Companion tooling for evaluating MCP server trust boundaries, tool metadata drift, and LLM integration risks.</p>
+            <h3>Adversarial ML security lab</h3>
+            <p>Hands-on lab for adversarial ML attack and defense experiments.</p>
             <p class="proof-links">
               
-                <a href="https://github.com/themayursinha/mcp-llm-security-evaluator" target="_blank" rel="noopener">GitHub</a>
-              
-                <a href="https://themayursinha.com/architecture/2026/05/06/mcp-security-the-new-supply-chain-risk-for-ai-agents/" target="_blank" rel="noopener">Context</a>
+                <a href="https://github.com/themayursinha/adversarial-ml-lab" target="_blank" rel="noopener">GitHub</a>
               
             </p>
           </div>

@@ -3887,6 +3887,18 @@ body.site-search-open {
   z-index: 1;
 }
 
+/* Cards in the same grid row share a height. Anchor the link row to the bottom of
+   each card so buttons line up across the row instead of floating under variable
+   description lengths. */
+.proof-system-card .proof-entry-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.proof-system-card .proof-links {
+  margin-top: auto;
+}
+
 .proof-system-card h3 {
   font-size: clamp(1.35rem, 3vw, 2.1rem);
   line-height: 1;

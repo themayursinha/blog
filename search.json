@@ -365,7 +365,7 @@
   "subtitle": "",
   "url": "https://themayursinha.com/proof/",
   "date": "",
-  "excerpt": "            PUBLIC EVIDENCE VAULT / VERIFIED ARTIFACTS      PROOF      Claims are cheap. This is the public evidence trail: released systems, working code, and published research.      SOURCE INDEX / github.com/themayursinha              EVIDENCE LOCK      13ARTIFACTS              Systems4        Research9        StatusPUBLIC                  CODE Runtime tools and labs    CONTEXT Architecture notes    RESEARCH Published work    MODE Inspectable              01 / RELEASED SYSTEMS      CONTROL INFRASTRUCTURE                                            2026            Builder            PUBLIC...",
+  "excerpt": "            PUBLIC EVIDENCE VAULT / VERIFIED ARTIFACTS      PROOF      Claims are cheap. This is the public evidence trail: released systems, working code, and published research.      SOURCE INDEX / github.com/themayursinha              EVIDENCE LOCK      17ARTIFACTS              Systems8        Research9        StatusPUBLIC                  CODE Runtime tools and labs    CONTEXT Architecture notes    RESEARCH Published work    MODE Inspectable              01 / RELEASED SYSTEMS      CONTROL INFRASTRUCTURE                                            2026            Builder            PUBLIC...",
   "tags": []
 },{
   "id": "/tags/",
@@ -467,22 +467,13 @@
   "excerpt": "Deterministic runtime enforcement model for governing tool-using AI agents through policy, auditability, and controlled MCP execution.",
   "tags": []
 },{
-  "id": "project-ctem-leader-lab",
+  "id": "project-adversarial-ml-security-lab",
   "type": "project",
-  "title": "CTEM Leader Lab",
-  "subtitle": "Builder · 2026",
-  "url": "https://github.com/themayursinha/ctem-leader-lab",
+  "title": "Adversarial ML security lab",
+  "subtitle": "Builder · 2025",
+  "url": "https://github.com/themayursinha/adversarial-ml-lab",
   "date": "",
-  "excerpt": "Interactive implementation workbench for security leaders moving from vulnerability management to Continuous Threat Exposure Management.",
-  "tags": []
-},{
-  "id": "project-mcp-visor",
-  "type": "project",
-  "title": "MCP Visor",
-  "subtitle": "Builder · 2026",
-  "url": "https://github.com/themayursinha/mcp-visor",
-  "date": "",
-  "excerpt": "Runtime policy enforcement and audit control plane for MCP tool execution.",
+  "excerpt": "Hands-on lab for adversarial ML attack and defense experiments.",
   "tags": []
 },{
   "id": "project-mcp-security-evaluator",
@@ -494,13 +485,58 @@
   "excerpt": "Companion tooling for evaluating MCP server trust boundaries, tool metadata drift, and LLM integration risks.",
   "tags": []
 },{
-  "id": "project-adversarial-ml-security-lab",
+  "id": "project-ctem-leader-lab",
   "type": "project",
-  "title": "Adversarial ML security lab",
-  "subtitle": "Builder · 2025",
-  "url": "https://github.com/themayursinha/adversarial-ml-lab",
+  "title": "CTEM Leader Lab",
+  "subtitle": "Builder · 2026",
+  "url": "https://github.com/themayursinha/ctem-leader-lab",
   "date": "",
-  "excerpt": "Hands-on lab for adversarial ML attack and defense experiments.",
+  "excerpt": "Interactive implementation workbench for security leaders moving from vulnerability management to Continuous Threat Exposure Management.",
+  "tags": []
+},{
+  "id": "project-vuln-research-harness",
+  "type": "project",
+  "title": "Vulnerability Research Harness",
+  "subtitle": "Builder · 2026",
+  "url": "https://github.com/themayursinha/vuln-research-harness",
+  "date": "",
+  "excerpt": "Deterministic campaign harness for authorized AI-assisted vulnerability research. Pins the target and success condition in a campaign contract, prevents premature agent convergence with an approach registry, and records every hypothesis-to-impact transition in an evidence ledger.",
+  "tags": []
+},{
+  "id": "project-capability-delta-receipts",
+  "type": "project",
+  "title": "Capability Delta Receipts",
+  "subtitle": "Builder · 2026",
+  "url": "https://github.com/themayursinha/capability-delta-receipts",
+  "date": "",
+  "excerpt": "Hash-linked receipts that record whether each step of an agent trajectory gave it a materially stronger primitive, and pause before the first effect outside the declared envelope.",
+  "tags": []
+},{
+  "id": "project-authority-graph-simulator",
+  "type": "project",
+  "title": "Authority Graph Simulator",
+  "subtitle": "Builder · 2026",
+  "url": "https://github.com/themayursinha/authority-graph-simulator",
+  "date": "",
+  "excerpt": "Counterfactual authorization for agent actions. Evaluates a proposed capability delegation against a declared authority graph and denies it when the authority an agent could reach would exceed the originating mandate.",
+  "tags": []
+},{
+  "id": "project-agent-identity-plane",
+  "type": "project",
+  "title": "Agent Identity Plane",
+  "subtitle": "Builder · 2026",
+  "url": "https://github.com/themayursinha/agent-identity-plane",
+  "date": "",
+  "excerpt": "Cryptographic identity and actor-chain provenance for AI agents. A self-hosted agent registry, token service, and verifier that issue short-lived single-audience tokens carrying the full user-to-agent-to-tool delegation chain, so downstream systems can answer who acted, for whom, and through which agents. v1.0.",
+  "tags": []
+},{
+  "id": "project-mcp-visor",
+  "type": "project",
+  "title": "MCP Visor",
+  "subtitle": "Builder · 2026",
+  "url": "https://github.com/themayursinha/mcp-visor",
+  "date": "",
+  "excerpt": "Deterministic, non-AI policy engine that intercepts MCP tools/call before execution. Runtime policy enforcement and audit control plane for tool-using AI agents.",
   "tags": []
 }]
 
