@@ -1,3 +1,6 @@
+# Proof page data. Ordering note: proof.md does `sort: "year"` then `reverse`, so
+# entries render newest-year-first, and WITHIN the same year the rendered order is the
+# REVERSE of file order. Write same-year entries bottom-up in the order you want them shown.
 - id: understanding-iot-botnets
   title: Understanding IoT botnets
   summary: IoT botnet behavior analysis with practical detection insights.
@@ -79,29 +82,16 @@
     - label: Publication
       url: https://www.researchgate.net/publication/407908047_MCP_Visor_Deterministic_Runtime_Enforcement_for_Governing_Tool-Using_AI_Agents
 
-- id: ctem-leader-lab
-  title: CTEM Leader Lab
-  summary: Interactive implementation workbench for security leaders moving from vulnerability management to Continuous Threat Exposure Management.
-  role: Builder
-  year: 2026
-  links:
-    - label: GitHub
-      url: https://github.com/themayursinha/ctem-leader-lab
-    - label: Demo
-      url: https://themayursinha.github.io/ctem-leader-lab/
+# --- Builder entries, 2025 block (renders MCP security evaluator, then Adversarial ML lab) ---
 
-- id: mcp-visor
-  title: MCP Visor
-  summary: Runtime policy enforcement and audit control plane for MCP tool execution.
+- id: adversarial-ml-security-lab
+  title: Adversarial ML security lab
+  summary: Hands-on lab for adversarial ML attack and defense experiments.
   role: Builder
-  year: 2026
+  year: 2025
   links:
     - label: GitHub
-      url: https://github.com/themayursinha/mcp-visor
-    - label: Context
-      url: https://themayursinha.com/architecture/2026/05/25/mcp-visor-runtime-policy-enforcement-for-ai-agents/
-    - label: Paper
-      url: https://www.researchgate.net/publication/407908047_MCP_Visor_Deterministic_Runtime_Enforcement_for_Governing_Tool-Using_AI_Agents
+      url: https://github.com/themayursinha/adversarial-ml-lab
 
 - id: mcp-security-evaluator
   title: MCP security evaluator
@@ -114,11 +104,64 @@
     - label: Context
       url: https://themayursinha.com/architecture/2026/05/06/mcp-security-the-new-supply-chain-risk-for-ai-agents/
 
-- id: adversarial-ml-security-lab
-  title: Adversarial ML security lab
-  summary: Hands-on lab for adversarial ML attack and defense experiments.
+# --- Builder entries, 2026 block (renders Visor, Identity Plane, Authority Graph, Capability Delta, VRH, CTEM) ---
+
+- id: ctem-leader-lab
+  title: CTEM Leader Lab
+  summary: Interactive implementation workbench for security leaders moving from vulnerability management to Continuous Threat Exposure Management.
   role: Builder
-  year: 2025
+  year: 2026
   links:
     - label: GitHub
-      url: https://github.com/themayursinha/adversarial-ml-lab
+      url: https://github.com/themayursinha/ctem-leader-lab
+    - label: Demo
+      url: https://themayursinha.github.io/ctem-leader-lab/
+
+- id: vuln-research-harness
+  title: Vulnerability Research Harness
+  summary: Deterministic campaign harness for authorized AI-assisted vulnerability research. Pins the target and success condition in a campaign contract, prevents premature agent convergence with an approach registry, and records every hypothesis-to-impact transition in an evidence ledger.
+  role: Builder
+  year: 2026
+  links:
+    - label: GitHub
+      url: https://github.com/themayursinha/vuln-research-harness
+
+- id: capability-delta-receipts
+  title: Capability Delta Receipts
+  summary: Hash-linked receipts that record whether each step of an agent trajectory gave it a materially stronger primitive, and pause before the first effect outside the declared envelope.
+  role: Builder
+  year: 2026
+  links:
+    - label: GitHub
+      url: https://github.com/themayursinha/capability-delta-receipts
+
+- id: authority-graph-simulator
+  title: Authority Graph Simulator
+  summary: Counterfactual authorization for agent actions. Evaluates a proposed capability delegation against a declared authority graph and denies it when the authority an agent could reach would exceed the originating mandate.
+  role: Builder
+  year: 2026
+  links:
+    - label: GitHub
+      url: https://github.com/themayursinha/authority-graph-simulator
+
+- id: agent-identity-plane
+  title: Agent Identity Plane
+  summary: Cryptographic identity and actor-chain provenance for AI agents. A self-hosted agent registry, token service, and verifier that issue short-lived single-audience tokens carrying the full user-to-agent-to-tool delegation chain, so downstream systems can answer who acted, for whom, and through which agents. v1.0.
+  role: Builder
+  year: 2026
+  links:
+    - label: GitHub
+      url: https://github.com/themayursinha/agent-identity-plane
+
+- id: mcp-visor
+  title: MCP Visor
+  summary: Deterministic, non-AI policy engine that intercepts MCP tools/call before execution. Runtime policy enforcement and audit control plane for tool-using AI agents.
+  role: Builder
+  year: 2026
+  links:
+    - label: GitHub
+      url: https://github.com/themayursinha/mcp-visor
+    - label: Context
+      url: https://themayursinha.com/architecture/2026/05/25/mcp-visor-runtime-policy-enforcement-for-ai-agents/
+    - label: Paper
+      url: https://www.researchgate.net/publication/407908047_MCP_Visor_Deterministic_Runtime_Enforcement_for_Governing_Tool-Using_AI_Agents
