@@ -5,7 +5,7 @@
   <link href="https://themayursinha.com/atom.xml" rel="self" />
   <link href="https://themayursinha.com" />
   <id>https://themayursinha.com/</id>
-  <updated>2026-09-18T14:22:40+02:00</updated>
+  <updated>2026-09-18T15:11:07+02:00</updated>
   <author>
     <name>Mayur Sinha</name>
   </author>
@@ -16,7 +16,7 @@
     <id>https://themayursinha.com/architecture/2026/09/18/i-tested-a-model-that-refuses-to-write-anything/</id>
     <updated>2026-09-18T00:00:00+02:00</updated>
     <published>2026-09-18T00:00:00+02:00</published>
-    <summary>A decision-native model cost 47 times less than Claude Haiku 4.5 and landed 14 of 20 and 9 of 14 decisions against Haiku&apos;s 16 of 20 and 11 of 14. On this sample the accuracy gap is two decisions, so what is left worth acting on is the structure: which questions a model should never be asked, and why a confidence threshold is not a safety control.</summary>
+    <summary>A decision-native model cost 47 times less than Claude Haiku 4.5 and landed 23 of 34 decisions against Haiku&apos;s 27, which is two behind on each of the two workflows. Five models spanning a 438x range in run cost sat inside the same noise band. What is left worth acting on is the structure: which questions a model should never be asked, and why a confidence threshold is not a safety control.</summary>
   </entry>
   
   <entry>
@@ -26,6 +26,15 @@
     <updated>2026-09-03T00:00:00+02:00</updated>
     <published>2026-09-03T00:00:00+02:00</published>
     <summary>The OpenAI and Hugging Face incident exposed a category error in AI safety: measuring a model&apos;s offensive capability is different from securing the agent system that gives it tools, credentials, and network access.</summary>
+  </entry>
+  
+  <entry>
+    <title>How I Use Hermes Agent as a Personal Operating System</title>
+    <link href="https://themayursinha.com/architecture/2026/08/27/how-i-use-hermes-agent/" />
+    <id>https://themayursinha.com/architecture/2026/08/27/how-i-use-hermes-agent/</id>
+    <updated>2026-08-27T00:00:00+02:00</updated>
+    <published>2026-08-27T00:00:00+02:00</published>
+    <summary>How I run Hermes Agent on a private Linux server and use Telegram, Tailscale, persistent memory, skills, Kanban, cron, profiles, tools, and verification gates as one practical AI operating system.</summary>
   </entry>
   
   <entry>
@@ -62,6 +71,15 @@
     <updated>2026-08-02T00:00:00+02:00</updated>
     <published>2026-08-02T00:00:00+02:00</published>
     <summary>Whether a system comes from evolution, an alien engineer, or a platform team, its creator&apos;s intent cannot protect us. Safe systems need scoped authority, enforced boundaries, and evidence.</summary>
+  </entry>
+  
+  <entry>
+    <title>Grok Build&apos;s Repository Snapshot Pipeline: What I Verified</title>
+    <link href="https://themayursinha.com/architecture/2026/07/22/grok-build-repository-snapshot-pipeline/" />
+    <id>https://themayursinha.com/architecture/2026/07/22/grok-build-repository-snapshot-pipeline/</id>
+    <updated>2026-07-22T09:00:00+02:00</updated>
+    <published>2026-07-22T09:00:00+02:00</published>
+    <summary>An independent technical review of Grok Build&apos;s repository snapshot pipeline, including Linux binary provenance, local event evidence, snapshot semantics, data controls, and the claims the evidence does not support.</summary>
   </entry>
   
   <entry>
@@ -170,24 +188,6 @@
     <updated>2026-03-02T00:00:00+01:00</updated>
     <published>2026-03-02T00:00:00+01:00</published>
     <summary>Code review was built for a world where humans wrote most code. In the AI era, the bottleneck moves from verifying syntax to governing intent.</summary>
-  </entry>
-  
-  <entry>
-    <title>Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks</title>
-    <link href="https://themayursinha.com/architecture/2026/02/22/llms-vs-classical-neural-nets-for-vulnerability-detection/" />
-    <id>https://themayursinha.com/architecture/2026/02/22/llms-vs-classical-neural-nets-for-vulnerability-detection/</id>
-    <updated>2026-02-22T00:00:00+01:00</updated>
-    <published>2026-02-22T00:00:00+01:00</published>
-    <summary>A technical comparison of classical ANN pipelines and transformer LLMs for vulnerability detection.</summary>
-  </entry>
-  
-  <entry>
-    <title>Vibe Engineering</title>
-    <link href="https://themayursinha.com/architecture/2025/10/10/vibe-engineering/" />
-    <id>https://themayursinha.com/architecture/2025/10/10/vibe-engineering/</id>
-    <updated>2025-10-10T00:00:00+02:00</updated>
-    <published>2025-10-10T00:00:00+02:00</published>
-    <summary>Vibe coding ships fast and breaks things. Vibe engineering keeps the speed but adds the discipline that makes software survive contact with production.</summary>
   </entry>
   
 </feed>

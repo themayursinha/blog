@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  
+  
+
+  
+
+  
+  
+
+  
+  
+
+  <title>How I Use Hermes Agent as a Personal Operating System</title>
+
+  <meta name="author" content="Mayur Sinha" />
+  <meta name="description" content="How I run Hermes Agent on a private Linux server and use Telegram, Tailscale, persistent memory, skills, Kanban, cron, profiles, tools, and verification gates as one practical AI operating system.">
+  
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  
+
+  <link rel="canonical" href="https://themayursinha.com/architecture/2026/08/27/how-i-use-hermes-agent/" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png?v=20260907">
+  <link rel="icon" href="/favicon.ico?v=20260907">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260907">
+  <link rel="alternate" type="application/rss+xml" title="Mayur Sinha - I architect the security primitives for the next computational paradigm." href="/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Mayur Sinha RSS" href="/rss.xml" />
+  <link rel="alternate" type="application/atom+xml" title="Mayur Sinha Atom" href="/atom.xml" />
+
+
+  
+
+  
+    
+      <link rel="stylesheet" href="/css/terminal.css" />
+    
+      <link rel="stylesheet" href="/assets/css/code-copy.css" />
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Grotesk:500,600,700|IBM+Plex+Mono:400,500,600" />
+    
+  
+
+  
+
+  
+
+  
+
+  <!-- Facebook OpenGraph tags -->
+  
+
+  <meta property="og:title" content="How I Use Hermes Agent as a Personal Operating System" />
+  <meta property="og:description" content="How I run Hermes Agent on a private Linux server and use Telegram, Tailscale, persistent memory, skills, Kanban, cron, profiles, tools, and verification gates as one practical AI operating system.">
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:url" content="https://themayursinha.com/architecture/2026/08/27/how-i-use-hermes-agent/" />
+
+  
+  <meta property="og:image" content="https://themayursinha.com/img/how-i-use-hermes-agent.svg" />
+  
+  
+
+  
+  <meta property="article:published_time" content="2026-08-27T00:00:00+02:00" />
+  <meta property="article:author" content="Mayur Sinha" />
+    
+      
+  <meta property="article:tag" content="ai" />
+      
+  <meta property="article:tag" content="agents" />
+      
+  <meta property="article:tag" content="hermes-agent" />
+      
+  <meta property="article:tag" content="automation" />
+      
+  <meta property="article:tag" content="kanban" />
+      
+  <meta property="article:tag" content="skills" />
+      
+  <meta property="article:tag" content="memory" />
+      
+  <meta property="article:tag" content="tailscale" />
+      
+  <meta property="article:tag" content="telegram" />
+      
+  <meta property="article:tag" content="obsidian" />
+      
+  <meta property="article:tag" content="security" />
+      
+  <meta property="article:tag" content="infrastructure" />
+      
+    
+  
+
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <meta name="twitter:site" content="@themayursinha" />
+  <meta name="twitter:creator" content="@themayursinha" />
+  
+  <meta name="twitter:title" content="How I Use Hermes Agent as a Personal Operating System" />
+  <meta name="twitter:description" content="How I run Hermes Agent on a private Linux server and use Telegram, Tailscale, persistent memory, skills, Kanban, cron, profiles, tools, and verification gates as one practical AI operating system.">
+  
+  <meta name="twitter:image" content="https://themayursinha.com/img/how-i-use-hermes-agent.svg" />
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://themayursinha.com",
+    "name": "Mayur Sinha",
+    "description": "I architect the security primitives for the next computational paradigm.",
+    "publisher": {
+      "@type": "Person",
+      "name": "Mayur Sinha"
+    }
+  }
+  </script>
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How I Use Hermes Agent as a Personal Operating System",
+    "description": "How I run Hermes Agent on a private Linux server and use Telegram, Tailscale, persistent memory, skills, Kanban, cron, profiles, tools, and verification gates as one practical AI operating system.",
+    "datePublished": "2026-08-27T00:00:00+02:00",
+    "dateModified": "2026-08-27T00:00:00+02:00",
+    "author": {
+      "@type": "Person",
+      "name": "Mayur Sinha"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://themayursinha.com/architecture/2026/08/27/how-i-use-hermes-agent/"
+    },
+    "image": "https://themayursinha.com/img/how-i-use-hermes-agent.svg",
+    "keywords": ["ai","agents","hermes-agent","automation","kanban","skills","memory","tailscale","telegram","obsidian","security","infrastructure"]
+  }
+  </script>
+  
+
+  
+
+  
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LP6FZ8DW0P"></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LP6FZ8DW0P');
+</script>
+
+
+  
+
+  
+
+  
+
+</head>
+
+  <body>
+    <div class="viewport-frame" aria-hidden="true"></div>
+    
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="research-readout" aria-label="Research node status">
+    <span>NODE MS-R01</span>
+    <span>DOMAIN SOVEREIGN AI</span>
+    <span>CONTROL MODEL LEAST AGENCY</span>
+    <span>STATE ACTIVE</span>
+  </div>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a class="site-mark" href="/" aria-label="Mayur Sinha home"><span>MS</span>//RESEARCH</a>
+    <ul>
+      
+        
+        <li>
+          <a href="/">Home</a>
+        </li>
+      
+        
+        <li>
+          <a href="/manifesto/">Manifesto</a>
+        </li>
+      
+        
+        <li>
+          <a href="/architecture/">Architecture</a>
+        </li>
+      
+        
+        <li>
+          <a href="/proof/">Proof</a>
+        </li>
+      
+      <li class="site-nav-search">
+        <button type="button" class="site-nav-search-btn" data-search-open aria-label="Open search" aria-haspopup="dialog" title="Search">
+          <svg class="site-nav-search-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
+            <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M8.5 3a5.5 5.5 0 1 1-3.41 9.84l-3.7 3.7a1 1 0 0 1-1.42-1.42l3.7-3.7A5.5 5.5 0 0 1 8.5 3Zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main" id="main-content">
+      <article class="prose blog-post">
+  <header class="post-header">
+    <p class="post-label">ARCHITECTURE LOG</p>
+    <h1>How I Use Hermes Agent as a Personal Operating System</h1>
+    
+      <p class="page-subtitle">A technical walkthrough of the gateway, context stack, tools, memory, skills, Kanban, cron, profiles, and private infrastructure behind my daily AI workflow.</p>
+    
+    <time datetime="2026-08-27T00:00:00+02:00">2026-08-27</time>
+  </header>
+
+  
+
+  <p>Most AI assistants wait inside a browser tab. I wanted something different: an agent that could receive a request from my phone, inspect the real state of my systems, create durable work, execute it, verify the result, and leave behind evidence I could review later.</p>
+
+<p>That is how I use <a href="https://github.com/NousResearch/hermes-agent">Hermes Agent</a>. It runs continuously on a private Linux host. Telegram is my most common control surface. Tailscale gives me private access to its dashboards. Hermes can work with files, terminals, browsers, APIs, scheduled jobs, specialized profiles, and external tools. More importantly, it can preserve context across sessions and turn successful procedures into reusable skills.</p>
+
+<p>Calling this a chatbot misses the useful part. In my setup, Hermes is an operating layer between intent and execution. The language model reasons about the request, but the surrounding system carries the state: the gateway keeps sessions alive, Kanban tracks work, Git records code, Obsidian preserves knowledge, cron wakes recurring jobs, and verification checks whether an action produced the expected result.</p>
+
+<p>This article explains that architecture, including the parts that work well, the failure modes I have hit, and the security boundaries I use. It is a description of my current system, not a claim that an AI agent should have unrestricted access to every machine or account.</p>
+
+<h2 id="the-architecture-in-one-view">The architecture in one view</h2>
+
+<p>My setup has six layers:</p>
+
+<ol>
+  <li><strong>Control surfaces:</strong> Telegram for daily interaction, plus the CLI, desktop application, and private dashboards when I need more detail.</li>
+  <li><strong>The gateway:</strong> a persistent service that routes messages, restores sessions, runs scheduled jobs, and sends results back to the right conversation.</li>
+  <li><strong>The context stack:</strong> identity, user context, project rules, bounded memory, session recall, and on-demand skills.</li>
+  <li><strong>The execution plane:</strong> terminal commands, file operations, browsers, APIs, MCP servers, computer control, and delegated workers.</li>
+  <li><strong>Durable state:</strong> Hermes Kanban for work, Git for code, Obsidian for knowledge, and SQLite-backed session history for recall.</li>
+  <li><strong>The private boundary:</strong> Private dashboard listeners are reachable through my tailnet, not through a public listener.</li>
+</ol>
+
+<figure class="figure">
+  <div class="fig-label">// Fig. 1 · My Hermes Agent operating architecture</div>
+  <div class="fig-body">
+    <img src="/img/how-i-use-hermes-agent.svg" alt="Architecture diagram showing Telegram, CLI and desktop clients reaching a Hermes gateway on a private Linux server, connected to model routing, context, execution tools, Kanban, Git, Obsidian and private dashboards" loading="lazy" />
+  </div>
+  
+  <figcaption class="fig-caption">Telegram is the daily control surface. The gateway joins model reasoning to a layered context system, real execution tools, and durable systems of record. The dashboard listeners are restricted to Tailscale addresses and tailnet policy.</figcaption>
+  
+</figure>
+
+<p>The important design choice is separation. I do not ask one conversation to remember every fact, hold every task, and preserve every artifact. Conversations are temporary. The systems around them are durable.</p>
+
+<h2 id="the-always-on-execution-host">The always-on execution host</h2>
+
+<p>Hermes can run on a laptop or server. Its terminal and file execution can target local, Docker, SSH, Singularity, Modal, Daytona, and Vercel Sandbox backends. I use a dedicated Linux machine because I want the agent available when my laptop is closed. The host holds the working directories, repositories, local dashboards, automation scripts, model tooling, and the default Hermes profile.</p>
+
+<p>The installation itself is simple:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-fsSL</span> https://hermes-agent.nousresearch.com/install.sh | bash
+hermes setup
+hermes doctor
+</code></pre></div></div>
+
+<p>The <a href="https://hermes-agent.nousresearch.com/docs/getting-started/installation">official installation documentation</a> covers the supported platforms and installation modes. I use the Git-based installation because I sometimes inspect the source and carry a tightly scoped local fix while waiting for an upstream change.</p>
+
+<p>The persistent component is the <a href="https://hermes-agent.nousresearch.com/docs/user-guide/messaging">Hermes messaging gateway</a>. On Linux, I run it as a user systemd service with linger enabled, so it survives logout and returns after reboot:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hermes gateway <span class="nb">install
+</span>hermes gateway start
+hermes gateway status
+</code></pre></div></div>
+
+<p>The gateway does more than connect Telegram. It maps incoming messages to sessions, restores conversation state, runs the cron scheduler, and delivers output back to the originating platform. This means a phone message can start work on the private host without an SSH session or an open terminal on my MacBook.</p>
+
+<p>I still use the CLI for setup, debugging, repository work, and anything where I want a dense stream of tool output. The <a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/web-dashboard">desktop application and web dashboard</a> are useful for session browsing, configuration, and Kanban. Telegram remains the default because it lowers the activation energy. I can capture an idea, approve a safe next step, or ask for a status check while away from my desk.</p>
+
+<h2 id="private-access-through-tailscale">Private access through Tailscale</h2>
+
+<p>I do not expose the Hermes dashboard or my personal dashboards to the public internet. Each service binds to the machine’s Tailscale address. My other devices reach it through the tailnet. <a href="https://tailscale.com/kb/1081/magicdns">MagicDNS</a> lets me use the machine name rather than memorize an address. It is only name resolution. <a href="https://tailscale.com/docs/features/access-control">Tailnet grants or ACLs</a> define which identities can reach a service.</p>
+
+<p>A simplified dashboard command looks like this:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hermes dashboard <span class="se">\</span>
+  <span class="nt">--no-open</span> <span class="se">\</span>
+  <span class="nt">--host</span> &lt;tailscale-ip&gt; <span class="se">\</span>
+  <span class="nt">--port</span> 9119
+</code></pre></div></div>
+
+<p>When a service binds to a non-loopback address, I configure its authentication first. I also verify the listener after every deployment change:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tailscale ip <span class="nt">-4</span>
+ss <span class="nt">-lntp</span> | <span class="nb">grep</span> <span class="s1">':9119'</span>
+curl <span class="nt">-fsS</span> http://&lt;tailscale-ip&gt;:9119/api/status |
+  jq <span class="s1">'{auth_required, auth_providers}'</span>
+</code></pre></div></div>
+
+<p>The expected result is a listener on the specific tailnet address, not <code class="language-plaintext highlighter-rouge">0.0.0.0</code> or <code class="language-plaintext highlighter-rouge">[::]</code>, plus <code class="language-plaintext highlighter-rouge">auth_required: true</code> and at least one configured authentication provider. <code class="language-plaintext highlighter-rouge">/api/status</code> is intentionally public, so tailnet policy must restrict who can reach the port. Tailscale provides encrypted transport. My tailnet policy controls which identities can reach the service, while application authentication protects the dashboard itself.</p>
+
+<p>I use the same pattern for temporary blog previews. Jekyll binds to the current Tailscale address on port 4000. I can review the rendered article from another device without pushing a draft to GitHub Pages:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll serve <span class="se">\</span>
+  <span class="nt">--future</span> <span class="se">\</span>
+  <span class="nt">--host</span> &lt;tailscale-ip&gt; <span class="se">\</span>
+  <span class="nt">--port</span> 4000
+</code></pre></div></div>
+
+<p>The preview server is disposable. I stop it after review or publication. Development servers should not quietly become permanent infrastructure.</p>
+
+<h2 id="telegram-is-an-interface-not-the-system-of-record">Telegram is an interface, not the system of record</h2>
+
+<p>A common failure in agent setups is to treat chat history as the database. That works until the session is reset, compressed, difficult to search, or full of unrelated work.</p>
+
+<p>I use Telegram to express intent and receive results. I use other systems to hold truth:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Information</th>
+      <th>System of record</th>
+      <th>Why</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Work in progress</td>
+      <td>Hermes Kanban</td>
+      <td>Durable status, ownership, dependencies, evidence</td>
+    </tr>
+    <tr>
+      <td>Code and public artifacts</td>
+      <td>Git</td>
+      <td>Reviewable diffs, commits, CI, rollback</td>
+    </tr>
+    <tr>
+      <td>Decisions and long-lived knowledge</td>
+      <td>Obsidian</td>
+      <td>Human-readable notes and linked context</td>
+    </tr>
+    <tr>
+      <td>Conversation history</td>
+      <td>Hermes session store</td>
+      <td>Recall of what was discussed and decided</td>
+    </tr>
+    <tr>
+      <td>Stable preferences and environment facts</td>
+      <td>Hermes memory</td>
+      <td>Small, high-signal context injected into new sessions</td>
+    </tr>
+    <tr>
+      <td>Reusable procedures</td>
+      <td>Hermes skills</td>
+      <td>Operational knowledge loaded only when relevant</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This separation changes how I write requests. I can say, “Turn this into a card, execute it, verify it, and log the decision.” The response is not the final artifact. The response reports what changed in the underlying systems.</p>
+
+<p>My preferred closeout format is deliberately plain:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Changed: the concrete result
+Evidence: the file, URL, test, listener, or commit
+Next action: one thing for me to do
+Logged: Kanban and Obsidian locations
+</code></pre></div></div>
+
+<p>That final line is more important than it looks. It prevents useful work from dying inside a chat transcript.</p>
+
+<h2 id="the-context-stack-identity-rules-memory-and-recall">The context stack: identity, rules, memory, and recall</h2>
+
+<p>A useful agent needs more than a long system prompt. It needs different kinds of context with different lifetimes.</p>
+
+<p>Hermes gives me several layers:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">SOUL.md</code> defines the agent’s identity, voice, operating principles, and stable relationship to me.</li>
+  <li>A durable personal profile contains my longer-term goals, constraints, background, and risk boundaries.</li>
+  <li>Project context files such as <code class="language-plaintext highlighter-rouge">AGENTS.md</code> define repository-specific conventions and commands.</li>
+  <li>Bounded memory stores small, stable facts that should appear in future sessions.</li>
+  <li>Session search retrieves the actual historical conversation when I refer to earlier work.</li>
+  <li>Skills supply detailed procedures for a task only when that procedure is needed.</li>
+</ul>
+
+<p>The <a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/personality">personality documentation</a> makes an important distinction: global identity belongs in <code class="language-plaintext highlighter-rouge">SOUL.md</code>, while project instructions belong in project context. The <a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/context-files">context-file system</a> loads the applicable project context from the Git root to the working directory at session start, then progressively discovers nested context as tools enter subdirectories. The same Hermes instance can therefore follow different rules in a Go security proxy, a Jekyll blog, and a research repository.</p>
+
+<p>I use this separation aggressively. A repository may require boring Go, minimal dependencies, test-first fixes, and a clean public history. My personal operating context contains broader goals and communication preferences. Security research profiles have stricter boundaries and different tools. None of those rules should leak casually into an unrelated project.</p>
+
+<h3 id="why-bounded-memory-is-better-than-a-giant-profile">Why bounded memory is better than a giant profile</h3>
+
+<p>Hermes memory is intentionally small. The <a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/memory">memory system</a> separates agent notes from the user profile and injects a frozen snapshot at session start. That forces prioritization.</p>
+
+<p>I save facts that reduce future steering:</p>
+
+<ul>
+  <li>stable preferences;</li>
+  <li>recurring environment conventions;</li>
+  <li>durable project boundaries;</li>
+  <li>corrections that should not need to be repeated;</li>
+  <li>small facts that change how the agent should act.</li>
+</ul>
+
+<p>I do not save task progress, temporary status, commit hashes, or a dump of everything discussed. Those belong in Kanban, Git, Obsidian, or session history. If a fact will be stale next week, it is usually bad memory.</p>
+
+<p>Session search solves a different problem. If I ask, “Where did we leave the dashboard redesign?”, Hermes can search prior conversations and recover the surrounding messages. Memory supplies the stable rule; session search supplies historical evidence. Mixing the two produces bloated memory and weak recall.</p>
+
+<h2 id="skills-turn-experience-into-reusable-procedure">Skills turn experience into reusable procedure</h2>
+
+<p>The feature that changed my usage most is the <a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/skills">Hermes skills system</a>. A skill is an on-demand knowledge document that defines when to use a procedure, the exact sequence, known pitfalls, and verification steps. Hermes follows the Agent Skills specification and loads skills progressively, so a large library does not have to sit in every prompt.</p>
+
+<p>My skills cover work such as:</p>
+
+<ul>
+  <li>building and previewing this Jekyll site;</li>
+  <li>operating Hermes Kanban safely;</li>
+  <li>reviewing GitHub pull requests;</li>
+  <li>deploying private services on my Linux host;</li>
+  <li>maintaining Obsidian notes;</li>
+  <li>researching AI security and academic papers;</li>
+  <li>handling Germany-related administrative documents;</li>
+  <li>running authorized security research in isolated environments.</li>
+</ul>
+
+<p>The value is not that a skill contains facts I could search for. It contains the mistakes I do not want to repeat. My blog workflow, for example, records that a successful Jekyll build does not prove the article is ready. The image may be missing, a related-post title may not match, the SVG may render badly, or the preview may be bound to every interface. The skill turns those failures into a checklist and a verification script.</p>
+
+<p>This creates a practical learning loop:</p>
+
+<ol>
+  <li>Execute a real task.</li>
+  <li>Notice what failed or required repeated reasoning.</li>
+  <li>Repair the workflow.</li>
+  <li>Save the proven sequence as a skill, or patch an existing skill.</li>
+  <li>Make that procedure available for Hermes to load on demand the next time a similar request arrives.</li>
+</ol>
+
+<p>I promote a procedure only when it is reusable. Task status does not belong in a skill. Neither does a private data dump. Good skills are compact operational knowledge: triggers, exact steps, pitfalls, safety boundaries, and proof of completion.</p>
+
+<h2 id="tools-make-the-agent-useful-and-dangerous">Tools make the agent useful, and dangerous</h2>
+
+<p>Language models can propose actions. Tools let them change the world.</p>
+
+<p>Hermes organizes tools into configurable <a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/tools">toolsets</a>. In my normal profile, the important categories are:</p>
+
+<ul>
+  <li>terminal and process control;</li>
+  <li>file reading, searching, writing, and patching;</li>
+  <li>web search and page extraction;</li>
+  <li>browser and desktop automation;</li>
+  <li>image inspection;</li>
+  <li>GitHub and cloud APIs;</li>
+  <li>memory and session recall;</li>
+  <li>cron and Kanban;</li>
+  <li>delegated subagents;</li>
+  <li>MCP servers for specialized applications.</li>
+</ul>
+
+<p>I prefer tool use over plausible prose. If I ask whether a service is listening, Hermes should run <code class="language-plaintext highlighter-rouge">ss</code>. If I ask whether a build passes, it should run the build. If it edits a file, it should run the relevant test. If it changes an external record, it should read the record back.</p>
+
+<p>This produces a simple rule:</p>
+
+<blockquote>
+  <p>A description of work is not evidence that the work happened.</p>
+</blockquote>
+
+<p>For local files, the file-writing tools verify that bytes landed. For code, tests and linters provide evidence. For a web service, the evidence is a process state, a specific listener, and an HTTP response from the exact address. For a public release, the evidence is not the <code class="language-plaintext highlighter-rouge">git push</code>; it is the deployment workflow plus the live URL.</p>
+
+<h3 id="i-batch-read-only-discovery-before-changing-state">I batch read-only discovery before changing state</h3>
+
+<p>The fastest way to make an agent unreliable is to let it edit the first thing it sees. I use a discovery-first pattern:</p>
+
+<ol>
+  <li>Read the current configuration and repository rules.</li>
+  <li>Inspect existing work and unrelated changes.</li>
+  <li>Check prerequisites and live state.</li>
+  <li>Decide the smallest useful change.</li>
+  <li>Execute the change.</li>
+  <li>Verify the exact result.</li>
+</ol>
+
+<p>Independent reads run in parallel. Dependent actions remain sequential. This keeps the workflow fast without racing writes or making decisions from partial context.</p>
+
+<p>Programmatic tool calling is useful when a task needs several mechanical calls with filtering between them. Instead of sending huge raw outputs back through the model, a small Python function can query several sources, reduce the results, and return only the part that needs judgment. I use that for inventories, link checks, board reconciliation, and evidence parsing.</p>
+
+<h2 id="kanban-is-my-durable-execution-ledger">Kanban is my durable execution ledger</h2>
+
+<p>For work that takes more than a few minutes or must survive a crash, I create a <a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/kanban">Hermes Kanban</a> card before deep execution. This is not ceremony. It is how I prevent the chat from becoming a graveyard of unfinished intentions.</p>
+
+<p>A good card contains:</p>
+
+<ul>
+  <li>the objective;</li>
+  <li>acceptance criteria;</li>
+  <li>safety boundaries;</li>
+  <li>the expected artifact;</li>
+  <li>the evidence required to call it done.</li>
+</ul>
+
+<p>A simplified flow looks like this:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hermes kanban <span class="nt">--board</span> build-code create <span class="se">\</span>
+  <span class="s2">"Write and preview a technical article"</span> <span class="se">\</span>
+  <span class="nt">--body</span> <span class="s2">"Create the post and figure. Build, verify, and serve privately. Do not publish."</span>
+
+hermes kanban <span class="nt">--board</span> build-code claim &lt;card-id&gt; <span class="nt">--ttl</span> 7200
+hermes kanban <span class="nt">--board</span> build-code comment &lt;card-id&gt; <span class="s2">"Starting with repository and source checks."</span>
+</code></pre></div></div>
+
+<p>I use separate boards for long-lived domains such as code, research, career, life administration, and infrastructure. A card is a unit of work, not a note to remember someday. Once work starts, it should move through execution, verification, logging, and completion. If it cannot proceed, it should be blocked with the actual reason.</p>
+
+<p>Kanban becomes more powerful when tasks are assigned to named Hermes profiles. The gateway includes a dispatcher that can claim ready work and start the assigned profile. Each board has durable SQLite state, task events, runs, comments, and workspaces. This gives me an audit trail that survives conversation compression and process restarts.</p>
+
+<h3 id="dependency-graphs-need-real-semantics">Dependency graphs need real semantics</h3>
+
+<p>I learned not to use dependency links as visual grouping. In my board, a child cannot run until its parent is complete. That is a hard gate. Linking a verification task under an unfinished umbrella can deadlock the work if the umbrella itself waits for that verification.</p>
+
+<p>I use dependencies only when one result genuinely blocks another. For grouping, I use board structure, naming, comments, or an executive view. This sounds minor, but it is the difference between a diagram that looks organized and an execution graph that can actually run.</p>
+
+<h2 id="delegation-for-parallel-reasoning-profiles-for-durable-separation">Delegation for parallel reasoning, profiles for durable separation</h2>
+
+<p><a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/delegation">Hermes delegation</a> starts subagents with fresh conversation context and their own terminal sessions. I use it when several independent questions can be researched at the same time: one worker can inspect documentation, another can review a draft, and a third can analyze a repository. The parent remains responsible for combining and verifying their results.</p>
+
+<p>A delegated result is a candidate, not proof. A child can misunderstand the task or claim that an external action succeeded. For file writes, deployments, and publishing, I verify the artifact from the parent context before reporting success.</p>
+
+<p><a href="https://hermes-agent.nousresearch.com/docs/user-guide/profiles">Profiles</a> solve a different problem. A profile has its own Hermes state directory, configuration, skills, memory, sessions, and model route. I use profiles for durable specialization and state separation:</p>
+
+<ul>
+  <li>the default profile handles my general operating context;</li>
+  <li>coding profiles work in repository-scoped environments;</li>
+  <li>reviewer profiles are independent from builders;</li>
+  <li>security-lab profiles are separated from normal personal work;</li>
+  <li>low-cost workers handle bounded collection tasks while stronger models review consequential decisions.</li>
+</ul>
+
+<p>This reduces context and configuration leakage, but it does not create an operating-system security boundary. On the local backend, profiles still run as the same Unix user and can access the same filesystem and user-level CLI credentials unless I add a separate Unix identity, sandbox, remote backend, or equivalent isolation. I configure each profile with only the context and tools its role needs, while using stronger execution isolation where the risk requires it.</p>
+
+<p>I also separate reasoning roles from model brands. Models are replaceable workers. The stable part is the contract: what inputs the role receives, which tools it can use, what evidence it must return, and who verifies it.</p>
+
+<h2 id="model-routing-is-a-runtime-choice">Model routing is a runtime choice</h2>
+
+<p>Hermes is provider-agnostic. I can switch between hosted providers, subscription-backed OAuth routes, and local or OpenAI-compatible endpoints without rebuilding the operating system around the model.</p>
+
+<p>I route by consequence:</p>
+
+<ul>
+  <li>high-stakes writing, architecture, security claims, and final review go to a stronger reasoning model;</li>
+  <li>bounded extraction, inventory, and formatting can go to a cheaper worker;</li>
+  <li>deterministic checks should be scripts, not language-model judgments;</li>
+  <li>local models are useful for low-risk background tasks after tool-call behavior is tested.</li>
+</ul>
+
+<p>The point is not to build a complicated model marketplace. It is to avoid paying frontier-model prices for work a script can do, while refusing to use a weak model as the final judge of a consequential claim.</p>
+
+<p>Configuration is managed through the CLI rather than by casually editing YAML:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hermes model
+hermes config get model.provider
+hermes config get model.default
+hermes fallback list
+</code></pre></div></div>
+
+<p>I treat provider labels as routing information, not as proof of billing, privacy, or entitlement. Those are separate facts that need their own verification.</p>
+
+<h2 id="cron-turns-the-agent-into-a-background-system">Cron turns the agent into a background system</h2>
+
+<p>The <a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/cron">Hermes cron system</a> runs inside the gateway. Jobs execute in fresh sessions and can deliver their results to a messaging platform, save them locally, attach skills, run a script before the agent, or run as script-only checks with no model at all.</p>
+
+<p>I use three types of scheduled work.</p>
+
+<h3 id="deterministic-watchdogs">Deterministic watchdogs</h3>
+
+<p>A watchdog should be silent when healthy. It checks a service, file, source, or timestamp and emits a message only on failure or meaningful change. These jobs do not need an LLM.</p>
+
+<p>Examples include:</p>
+
+<ul>
+  <li>checking whether a private dashboard responds;</li>
+  <li>confirming a generated executive view is fresh;</li>
+  <li>detecting a failed backup or stale feed;</li>
+  <li>checking whether a local model endpoint is reachable.</li>
+</ul>
+
+<p>Script-only jobs are cheaper, easier to test, and less likely to produce a confident but useless health summary.</p>
+
+<h3 id="collection-and-synthesis">Collection and synthesis</h3>
+
+<p>Some jobs collect data with a script, then ask a model to summarize the changed portion. Examples include a weekly research digest or a repository activity review. I keep the collection deterministic and the interpretation bounded.</p>
+
+<h3 id="conversational-briefings">Conversational briefings</h3>
+
+<p>Cron delivery is fire-and-forget by default. For a replyable briefing, I create the job with <code class="language-plaintext highlighter-rouge">attach_to_session: true</code> and use its origin, home-channel fallback, or one explicit platform chat target. Broadcast targets are not continuable. The prompt must still be self-contained because cron runs in a fresh session.</p>
+
+<p>A simple fire-and-forget example is:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hermes cron create <span class="se">\</span>
+  <span class="s2">"every monday 8am"</span> <span class="se">\</span>
+  <span class="s2">"Review the current Kanban commitments and return the three most important outcomes for this week."</span> <span class="se">\</span>
+  <span class="nt">--deliver</span> telegram <span class="se">\</span>
+  <span class="nt">--model</span> &lt;model&gt; <span class="se">\</span>
+  <span class="nt">--provider</span> &lt;provider&gt; <span class="se">\</span>
+  <span class="nt">--name</span> <span class="s2">"Weekly planning brief"</span>
+</code></pre></div></div>
+
+<p>I pin the model and provider when repeatability matters. An unpinned job can still fail closed under Hermes’s default drift guard after the global route changes. When a job should follow the new global route, I explicitly re-baseline its routing snapshot and test it before relying on delivery.</p>
+
+<p>I avoid scheduling a full agent when a five-line script can decide whether anything changed. The scheduler should wake reasoning only when reasoning adds value.</p>
+
+<h2 id="obsidian-is-the-durable-knowledge-layer">Obsidian is the durable knowledge layer</h2>
+
+<p>Kanban tells me what is moving. Obsidian tells me why it matters.</p>
+
+<p>After meaningful work, Hermes updates the relevant project, system, or research note. My vault contains longer-lived decisions, architecture notes, operating procedures, research findings, and links between projects. Generated dashboards can read those canonical notes, but the dashboard is not allowed to become a second manually maintained truth.</p>
+
+<p>The split is intentional:</p>
+
+<ul>
+  <li>Kanban answers, “What must happen next?”</li>
+  <li>Obsidian answers, “What did we learn, decide, or change?”</li>
+  <li>Git answers, “What exact code or content changed?”</li>
+  <li>Telegram answers, “What do I need to know right now?”</li>
+</ul>
+
+<p>This is how I avoid a common automation failure: five surfaces that all look current but disagree with each other. When a summary view is generated, I verify its source timestamp and live content rather than assuming a healthy service means fresh data.</p>
+
+<h2 id="security-boundaries-and-honest-limitations">Security boundaries and honest limitations</h2>
+
+<p>An agent with terminal, browser, and API tools has real authority. A polished personality file does not change that.</p>
+
+<p>Hermes has a <a href="https://hermes-agent.nousresearch.com/docs/user-guide/security">defense-in-depth security model</a> that includes command approvals, hard blocks, messaging authorization, secret redaction, and isolated execution backends. My own operating rules add several boundaries.</p>
+
+<h3 id="secrets-stay-out-of-chat-and-public-artifacts">Secrets stay out of chat and public artifacts</h3>
+
+<p>Credentials belong in the profile’s secret store or environment file, not in prompts, Kanban cards, Git, screenshots, or articles. Secret redaction remains enabled. I never ask the agent to type passwords, payment details, private keys, or API tokens into a GUI.</p>
+
+<h3 id="network-services-bind-narrowly">Network services bind narrowly</h3>
+
+<p>Private dashboards bind to a loopback or Tailscale address. I check the actual listener after changes. I do not use <code class="language-plaintext highlighter-rouge">0.0.0.0</code> merely because it is convenient.</p>
+
+<h3 id="profiles-separate-hermes-state-not-operating-system-authority">Profiles separate Hermes state, not operating-system authority</h3>
+
+<p>Normal personal work, coding, and authorized security research live in different profiles and workspaces. The security lab has its own routing and tools. I do not connect pentesting infrastructure to personal or legal workflows.</p>
+
+<h3 id="human-decisions-remain-human">Human decisions remain human</h3>
+
+<p>Publishing, merging consequential changes, sending external messages, payments, legal decisions, and destructive cleanup require my explicit direction. An agent can prepare and verify the work, but it should not manufacture consent.</p>
+
+<h3 id="prompt-rules-are-not-hard-security-controls">Prompt rules are not hard security controls</h3>
+
+<p>This is the most important limitation. A <code class="language-plaintext highlighter-rouge">SOUL.md</code> rule such as “do not publish without approval” is useful operational policy, but it is still instruction-following. It is not equivalent to an operating-system permission, a network policy, a protected credential boundary, or a deterministic enforcement proxy.</p>
+
+<p>I therefore combine instruction-level rules with harder controls: scoped credentials, narrow network policy, repository protection, separate Unix identities or sandboxed execution where required, and explicit verification. Profiles remain a context and state boundary, not a sandbox. My current setup is a trusted personal operating environment, not a zero-trust multi-tenant platform.</p>
+
+<h2 id="what-a-complete-workflow-looks-like">What a complete workflow looks like</h2>
+
+<p>This article itself is a good example.</p>
+
+<p>I asked Hermes to write a detailed technical post and make it available on my private host through Tailscale for later review. A complete execution is not “produce Markdown.” It is this sequence:</p>
+
+<ol>
+  <li>Load the blog, public-writing, Hermes, Kanban, and private-deployment procedures.</li>
+  <li>Read the durable user profile, blog style guide, and adjacent articles.</li>
+  <li>Inspect the repository status so unrelated drafts remain untouched.</li>
+  <li>Create a Kanban card with the objective, acceptance criteria, privacy boundaries, and required evidence.</li>
+  <li>Check the official Hermes documentation and live non-secret system state.</li>
+  <li>Write the article and a matching SVG architecture figure.</li>
+  <li>Verify related-post titles, local assets, external links, frontmatter, and the absence of prohibited punctuation or private data.</li>
+  <li>Build the site with Jekyll.</li>
+  <li>Render the SVG and page in a real browser, then inspect clipping, overlap, layout, console errors, and mobile behavior.</li>
+  <li>Start Jekyll on the current Tailscale address, verify the exact listener, and request the exact article URL.</li>
+  <li>Log the result in Kanban and Obsidian.</li>
+  <li>Stop before commit or publication. I review the private preview first.</li>
+</ol>
+
+<p>Every step has a different kind of evidence. The Markdown file proves the draft exists. The Jekyll build proves the site generator accepts it. The browser proves it renders. The listener proves the exposure boundary. The HTTP request proves the URL works. Repository status and branch history show the current local state. Remote-branch and live-deployment checks show whether the draft is present on the intended remote or public site at review time. Historical push or publication claims require provider or deployment audit logs.</p>
+
+<p>That is the difference between content generation and an operating workflow.</p>
+
+<h2 id="failure-modes-i-have-learned-to-design-around">Failure modes I have learned to design around</h2>
+
+<p>The system improved because it failed in specific ways.</p>
+
+<p><strong>A green build can hide a broken article.</strong> Jekyll may build even when a related-post title is wrong or a figure looks unreadable. I added asset checks and browser rendering.</p>
+
+<p><strong>A service can be healthy on the wrong interface.</strong> Systemd may report <code class="language-plaintext highlighter-rouge">active</code> while the process listens on every network. Listener verification is a separate gate.</p>
+
+<p><strong>A task board can become storage instead of execution.</strong> Creating cards without claiming, executing, and closing them produces backlog theatre. Card creation now implies a lifecycle.</p>
+
+<p><strong>Dependency links can deadlock work.</strong> I stopped using hard execution edges as visual grouping.</p>
+
+<p><strong>A worker can report success without evidence.</strong> Parent verification now checks the target file, URL, commit, or external record.</p>
+
+<p><strong>Memory can become a stale dump.</strong> I keep it bounded and move progress to systems designed for progress.</p>
+
+<p><strong>Automation can become noisy.</strong> Deterministic, change-only watchdogs replaced many recurring AI summaries.</p>
+
+<p><strong>A model switch can break scheduled work.</strong> Recurring jobs need explicit routing policy or a controlled way to follow the global route. Model configuration is operational state, not decoration.</p>
+
+<p><strong>Generated dashboards can disagree with canonical notes.</strong> I now treat them as read-only views and verify freshness from the source.</p>
+
+<p>These are not exotic AI failures. They are ordinary distributed-systems and operations failures appearing inside an agent workflow: stale state, ambiguous ownership, weak contracts, missing idempotency, poor isolation, and unverifiable success.</p>
+
+<h2 id="what-i-would-copy-first">What I would copy first</h2>
+
+<p>If I were rebuilding this system from scratch, I would not begin with dozens of agents or a large tool catalog. I would build five things in order.</p>
+
+<ol>
+  <li><strong>One always-on gateway</strong> connected to one private messaging surface.</li>
+  <li><strong>One explicit context hierarchy</strong> separating identity, user facts, project rules, memory, and skills.</li>
+  <li><strong>One durable task board</strong> with acceptance criteria and evidence fields.</li>
+  <li><strong>One knowledge store</strong> for decisions and lessons outside chat.</li>
+  <li><strong>One verification discipline</strong> that checks the real target after every state change.</li>
+</ol>
+
+<p>Only after that would I add worker profiles, cron chains, extra MCP servers, model routing, and dashboards. More tools increase the attack surface and the number of states that can drift. They do not automatically increase useful autonomy.</p>
+
+<p>The <a href="https://hermes-agent.nousresearch.com/docs/">Hermes documentation</a> describes the product primitives. I added the operating policy: which system owns each kind of state, which actions require human direction, and what evidence closes a task.</p>
+
+<h2 id="the-operating-principle">The operating principle</h2>
+
+<p>I do not want an agent that sounds intelligent while waiting for me to translate every answer into action. I want one that can take bounded action, prove what happened, remember the right lessons, and leave the system easier to operate next time.</p>
+
+<p>The model is not the operating system. It is one reasoning component inside it. The operating system is the set of boundaries, state stores, procedures, and verification loops around the model.</p>
+
+<p>That is how I use Hermes Agent: not as a browser tab that answers questions, but as a private, evidence-driven execution layer for the work I want to finish.</p>
+
+
+  
+
+  <nav class="post-navigation" aria-label="Adjacent architecture entries">
+    
+      <a href="/architecture/2026/08/19/the-blind-kings-court/">&larr; The Blind King's Court</a>
+    
+    
+      <a href="/architecture/2026/09/03/ai-safety-without-ai-security-is-not-safety/">AI Safety Without AI Security Is Not Safety &rarr;</a>
+    
+  </nav>
+
+  
+    
+<section class="post-comments" aria-labelledby="post-comments-title">
+  <div class="post-comments-header">
+    <p class="post-label">DISCUSSION CHANNEL</p>
+    <h2 id="post-comments-title">Comments</h2>
+    <p>Sign in with GitHub to join the discussion.</p>
+  </div>
+  <div class="giscus"></div>
+  <script src="https://giscus.app/client.js"
+          data-repo="themayursinha/blog"
+          data-repo-id="MDEwOlJlcG9zaXRvcnkxNzYzMzI0OTk="
+          data-category="Announcements"
+          data-category-id="DIC_kwDOCoKe084B-RQJ"
+          data-mapping="pathname"
+          data-strict="1"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="transparent_dark"
+          data-lang="en"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async>
+  </script>
+  <noscript>Enable JavaScript to view and leave comments.</noscript>
+</section>
+
+
+  
+</article>
+
+<div id="toc" class="toc-sidebar">
+  <div id="toc-content" class="toc-content"></div>
+</div>
+
+<script>
+(function() {
+  function initToc() {
+    const article = document.querySelector('.blog-post');
+    const tocContent = document.getElementById('toc-content');
+    const tocSidebar = document.getElementById('toc');
+    if (!article || !tocContent || !tocSidebar) return;
+
+    const headings = Array.from(article.querySelectorAll('h1, h2, h3, h4, h5, h6'));
+    if (headings.length === 0) { tocSidebar.style.display = 'none'; return; }
+
+    const toc = document.createElement('ul');
+    toc.className = 'toc-list';
+
+    const linkMap = new Map();
+
+    headings.forEach(function(heading, index) {
+      if (!heading.id) heading.id = 'heading-' + index;
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + heading.id;
+      a.textContent = heading.textContent.trim();
+      a.className = 'toc-link';
+      a.dataset.target = heading.id;
+
+      const level = parseInt(heading.tagName.charAt(1));
+      li.className = 'toc-level-' + level;
+
+      li.appendChild(a);
+      toc.appendChild(li);
+      linkMap.set(heading.id, { li: li, a: a });
+    });
+
+    // Header
+    const header = document.createElement('div');
+    header.className = 'toc-header';
+    header.innerHTML = '<span class="toc-header-line" aria-hidden="true"></span><span>On this page</span>';
+    tocContent.appendChild(header);
+    tocContent.appendChild(toc);
+
+    // Reading progress bar
+    const progress = document.createElement('div');
+    progress.className = 'toc-progress';
+    progress.setAttribute('aria-hidden', 'true');
+    tocSidebar.insertBefore(progress, tocContent);
+
+    // Click handling with smooth scroll and sticky offset
+    tocContent.addEventListener('click', function(e) {
+      const link = e.target.closest('.toc-link');
+      if (!link) return;
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (!targetElement) return;
+
+      const navbar = document.querySelector('.navbar-custom');
+      const offset = (navbar ? navbar.offsetHeight : 0) + 24;
+      const targetY = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+
+      window.scrollTo({ top: targetY, left: 0, behavior: 'smooth' });
+      history.replaceState(null, '', '#' + targetId);
+    });
+
+    // Scroll spy with IntersectionObserver
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        const item = linkMap.get(entry.target.id);
+        if (!item) return;
+        if (entry.isIntersecting) {
+          linkMap.forEach(function(val) {
+            val.li.classList.remove('toc-active');
+            val.a.classList.remove('toc-link-active');
+          });
+          item.li.classList.add('toc-active');
+          item.a.classList.add('toc-link-active');
+        }
+      });
+    }, observerOptions);
+
+    headings.forEach(function(heading) { observer.observe(heading); });
+
+    // Reading progress bar
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) : 0;
+      progress.style.transform = 'scaleX(' + Math.min(1, Math.max(0, pct)) + ')';
+    }
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initToc);
+  } else {
+    initToc();
+  }
+})();
+
+// --- Copy code blocks ---
+(function() {
+  function addCopyButtons() {
+    document.querySelectorAll('pre.highlight').forEach(function(pre) {
+      if (pre.querySelector('.copy-btn')) return;
+      var btn = document.createElement('button');
+      btn.className = 'copy-btn';
+      btn.textContent = 'copy';
+      btn.addEventListener('click', function() {
+        var code = pre.querySelector('code') || pre;
+        navigator.clipboard.writeText(code.textContent || code.innerText).then(function() {
+          btn.textContent = 'copied!';
+          btn.classList.add('copied');
+          setTimeout(function() { btn.textContent = 'copy'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+      pre.appendChild(btn);
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', addCopyButtons);
+  } else {
+    addCopyButtons();
+  }
+})();
+</script>
+
+    </main>
+    <footer class="site-footer">
+  <p class="site-footer-line">Mayur Sinha / RESEARCH NODE MS-R01 / 2026</p>
+  <p class="site-footer-line"><a href="/feed.xml">RSS FEED</a> / END OF TRANSMISSION</p>
+  <nav class="site-footer-social" aria-label="Social links"><a class="social-link" href="mailto:themayursinha@gmail.com" rel="noopener" aria-label="Email">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3 7 9 6 9-6"/></svg>
+      </a><a class="social-link" href="https://github.com/themayursinha" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+      </a><a class="social-link" href="https://x.com/themayursinha" target="_blank" rel="noopener" aria-label="X">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a><a class="social-link" href="https://www.linkedin.com/in/mayursinha" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-5c0-1 .5-2 2-2s2 1 2 2v5"/></svg>
+      </a><a class="social-link" href="https://www.goodreads.com/themayursinha" target="_blank" rel="noopener" aria-label="Goodreads">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.43 1.09c-1.36.18-2.51.6-3.59 1.34-1.7 1.16-2.81 2.74-3.31 4.74-.26 1.05-.3 2.78-.08 3.85.5 2.45 1.84 4.46 3.84 5.78 1.36.91 2.81 1.37 4.43 1.4 1.55.03 2.62-.13 3.85-.6.05 1.05-.19 1.81-.86 2.51-.7.74-1.64 1.1-2.83 1.1-1.7 0-2.92-.6-3.4-1.74l-3.39.45c.62 2.7 3.4 4.51 7.18 4.51 2.05 0 3.74-.45 5.05-1.45 1.27-1 2.05-2.5 2.05-4.21V8.21c0-2.05-.4-3.65-1.27-4.85-1.05-1.4-2.7-2.15-4.9-2.31-.84-.06-2.41-.07-2.77.04zm.74 6.05c1.27 0 2.27.36 2.96 1.07.69.71 1.04 1.74 1.04 3.04v1.05c-.61.4-1.51.6-2.69.6-1.05 0-1.88-.27-2.49-.83-.6-.55-.91-1.34-.91-2.36 0-1.05.31-1.85.91-2.4.61-.55 1.44-.83 2.49-.83.05 0 .11 0 .16.01l-.47 1.65z"/></svg>
+      </a><a class="social-link" href="https://substack.com/@mayursinha" target="_blank" rel="noopener" aria-label="Substack">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+      </a></nav>
+</footer>
+
+    <div class="site-search-modal" data-component="site-search" aria-hidden="true" hidden>
+  <div class="site-search-backdrop" data-search-close></div>
+  <div class="site-search-dialog" role="dialog" aria-modal="true" aria-labelledby="site-search-title" tabindex="-1">
+    <div class="site-search-header">
+      <svg class="site-search-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
+        <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M8.5 3a5.5 5.5 0 1 1-3.41 9.84l-3.7 3.7a1 1 0 0 1-1.42-1.42l3.7-3.7A5.5 5.5 0 0 1 8.5 3Zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/>
+      </svg>
+      <label for="site-search-input" class="visually-hidden">Search the site</label>
+      <input
+        id="site-search-input"
+        class="site-search-input"
+        type="search"
+        name="q"
+        placeholder="Search posts, pages, projects…"
+        aria-label="Search the site"
+        aria-controls="site-search-results"
+        aria-describedby="site-search-status"
+        autocomplete="off"
+        spellcheck="false"
+      >
+      <span class="site-search-hint" id="site-search-title">SEARCH</span>
+      <button type="button" class="site-search-close" data-search-close aria-label="Close search (Esc)">×</button>
+    </div>
+
+    <p id="site-search-status" class="site-search-status" role="status" aria-live="polite">
+      <span id="site-search-loading" class="site-search-loading" hidden>Loading index…</span>
+      <span id="site-search-meta" class="site-search-meta"></span>
+    </p>
+
+    <ol id="site-search-results" class="site-search-results" aria-label="Search results" hidden></ol>
+
+    <div id="site-search-empty" class="site-search-empty" hidden>
+      <p class="site-search-empty-text">Type to search posts, architecture notes, and projects.</p>
+      <p class="site-search-hint-row">
+        <span>Try:</span>
+        <button type="button" class="site-search-suggest" data-q="MCP">MCP</button>
+        <button type="button" class="site-search-suggest" data-q="agent">agent</button>
+        <button type="button" class="site-search-suggest" data-q="kubernetes">kubernetes</button>
+        <button type="button" class="site-search-suggest" data-q="sovereign">sovereign</button>
+      </p>
+    </div>
+
+    <footer class="site-search-footer">
+      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>esc</kbd> close</span>
+    </footer>
+  </div>
+</div>
+
+    <script src="/js/minisearch.min.js" defer></script>
+    <script src="/js/search.js" defer></script>
+    
+  </body>
+</html>

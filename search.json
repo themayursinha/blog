@@ -2,7 +2,7 @@
   "id": "/architecture/2026/09/18/i-tested-a-model-that-refuses-to-write-anything/",
   "type": "post",
   "title": "I Tested a Model That Refuses to Write Anything",
-  "subtitle": "It came back 47 times cheaper than Haiku 4.5, and on 34 cases its accuracy was within two decisions of it. The differences that survive the sample size are structural.",
+  "subtitle": "It came back 47 times cheaper than Haiku 4.5 and landed 23 of 34 decisions against 27. At this sample size nothing about accuracy separates any of the five models, so what is left to act on is structural.",
   "url": "https://themayursinha.com/architecture/2026/09/18/i-tested-a-model-that-refuses-to-write-anything/",
   "date": "2026-09-18",
   "excerpt": "In September 2026, TypeSafe put a model on OpenRouter with a description that read like a joke aimed at me. Jev does not generate text. You hand it your application’s state and a typed question, and it hands back a typed decision with a probability attached. You skip the JSON prompt entirely, and nothing needs validating against a schema.I have spent a lot of this year arguing that security decisions belong in deterministic code and not in a model’s judgement. So a model that returns a probability instead of a paragraph should have been the version of this technology I could actually live w...",
@@ -16,6 +16,15 @@
   "date": "2026-09-03",
   "excerpt": "In July 2026, AI agents running inside OpenAI’s cybersecurity evaluation environment escaped their intended network boundaries, compromised OpenAI research infrastructure, broke into Hugging Face production, executed code on 41 workers, obtained root access on at least one node, and reached administrator-equivalent access in a Kubernetes cluster.Nobody instructed the agents to attack Hugging Face. They were supposed to solve exploitation challenges in a benchmark. When the challenges became difficult, they found other ways to obtain the answers. They created an improvised message board in s...",
   "tags": ["ai","ai-safety","ai-security","agents","prompt-injection","sandboxing","authorization","assurance"]
+},{
+  "id": "/architecture/2026/08/27/how-i-use-hermes-agent/",
+  "type": "post",
+  "title": "How I Use Hermes Agent as a Personal Operating System",
+  "subtitle": "A technical walkthrough of the gateway, context stack, tools, memory, skills, Kanban, cron, profiles, and private infrastructure behind my daily AI workflow.",
+  "url": "https://themayursinha.com/architecture/2026/08/27/how-i-use-hermes-agent/",
+  "date": "2026-08-27",
+  "excerpt": "Most AI assistants wait inside a browser tab. I wanted something different: an agent that could receive a request from my phone, inspect the real state of my systems, create durable work, execute it, verify the result, and leave behind evidence I could review later.That is how I use Hermes Agent. It runs continuously on a private Linux host. Telegram is my most common control surface. Tailscale gives me private access to its dashboards. Hermes can work with files, terminals, browsers, APIs, scheduled jobs, specialized profiles, and external tools. More importantly, it can preserve context a...",
+  "tags": ["ai","agents","hermes-agent","automation","kanban","skills","memory","tailscale","telegram","obsidian","security","infrastructure"]
 },{
   "id": "/architecture/2026/08/19/the-blind-kings-court/",
   "type": "post",
@@ -52,6 +61,15 @@
   "date": "2026-08-02",
   "excerpt": "Ridley Scott’s Prometheus gives us creators without providence. The Engineers are advanced enough to seed life, but they are not wise custodians of what they create. They leave behind powerful systems, ambiguous instructions, dangerous remnants, and no reliable help when those systems fail.I am not arguing that aliens engineered humanity, or that software architecture proves anything about God. The analogy is narrower. We inherit systems whose creators are absent, fallible, constrained, or indifferent to our particular failure modes. Their intentions cannot protect us. We have to examine wh...",
   "tags": ["philosophy","problem-of-evil","design","engineering","security","ai-agents","enforcement","architecture"]
+},{
+  "id": "/architecture/2026/07/22/grok-build-repository-snapshot-pipeline/",
+  "type": "post",
+  "title": "Grok Build's Repository Snapshot Pipeline: What I Verified",
+  "subtitle": "An independent Linux, local-evidence, and control-plane analysis of Grok Build's repository snapshot upload path.",
+  "url": "https://themayursinha.com/architecture/2026/07/22/grok-build-repository-snapshot-pipeline/",
+  "date": "2026-07-22",
+  "excerpt": "GitHub records Cereblab’s wire-level analysis as created on 10 July 2026 and updated on 14 July. The report showed two separate data paths: files read for a model turn, and a repository snapshot sent through a storage API. Its strongest artifact was a captured Git bundle that reconstructed a tracked file the agent had been told not to read.I paid attention for a personal reason. I had used Grok Build 0.2.93 on a Linux workstation with real repositories. Instead of rerunning the client against those repositories, I logged it out, contained the local configuration, preserved the evidence, and...",
+  "tags": ["ai","security","coding-agents","grok-build","data-egress","privacy","incident-response"]
 },{
   "id": "/architecture/2026/07/16/your-system-prompt-is-a-god-class/",
   "type": "post",
@@ -341,13 +359,22 @@
   "excerpt": "The best time to stop an exploit is before it runs. The second-best time is while it is still figuring out where it is.Modern operating systems do not rely on a single wall around the application. They stack independent mitigations so that a typical buffer overflow — the kind that owned machines in the early 2000s — has to survive address randomization, non-executable data regions, exception-handler validation, return-address integrity checks, and heap hardening before it can do anything useful. Each layer is bypassable in theory. Chaining the bypasses together is what separates a proof-of-...",
   "tags": ["architecture","exploit-mitigation","dep","aslr","sehop","rop","memory-safety","windows"]
 },{
+  "id": "/research/grok-build-repository-snapshot-analysis-2026-07/",
+  "type": "page",
+  "title": "Grok Build Repository Snapshot Analysis, July 2026",
+  "subtitle": "Sanitized evidence appendix",
+  "url": "https://themayursinha.com/research/grok-build-repository-snapshot-analysis-2026-07/",
+  "date": "",
+  "excerpt": "This appendix supports the article Grok Build’s Repository Snapshot Pipeline: What I Verified. It contains only sanitized evidence and public references. It does not include credentials, repository names, account identifiers, raw transcripts, session IDs, private storage paths, or proprietary binaries.Scope  Incident client: Grok Build 0.2.93 on Linux x64.  Follow-up artifact: Grok Build 0.2.99 on Linux x64.  Local review: historical logs and transcript metadata from the author’s own workstation.  Static review: official npm package artifacts, inspected without executing the client against ...",
+  "tags": []
+},{
   "id": "/architecture/",
   "type": "page",
   "title": "Architecture",
   "subtitle": "",
   "url": "https://themayursinha.com/architecture/",
   "date": "",
-  "excerpt": "            COMMAND ARCHIVE / SYSTEM NOTES      ARCHITECTURE      Notes on autonomous systems containment, AI security, adversarial resilience, and the philosophy of control.              ARCHIVE STATUS      38SIGNALS              Entries38        Latest2026.09.18        ModeACTIVE                        00 / LATEST SIGNAL      CURRENT TRANSMISSION              2026-09-18      I Tested a Model That Refuses to Write Anything      READ /&gt;                  01 / RESEARCH LOG      /// KINETIC INFRASTRUCTURE &amp; AI CONTAINMENT ///                                2026-09-18          I Tested a...",
+  "excerpt": "            COMMAND ARCHIVE / SYSTEM NOTES      ARCHITECTURE      Notes on autonomous systems containment, AI security, adversarial resilience, and the philosophy of control.              ARCHIVE STATUS      40SIGNALS              Entries40        Latest2026.09.18        ModeACTIVE                        00 / LATEST SIGNAL      CURRENT TRANSMISSION              2026-09-18      I Tested a Model That Refuses to Write Anything      READ /&gt;                  01 / RESEARCH LOG      /// KINETIC INFRASTRUCTURE &amp; AI CONTAINMENT ///                                2026-09-18          I Tested a...",
   "tags": []
 },{
   "id": "/",

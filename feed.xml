@@ -9,7 +9,7 @@
       <item>
         <title>I Tested a Model That Refuses to Write Anything</title>
         <description>
-          It came back 47 times cheaper than Haiku 4.5, and on 34 cases its accuracy was within two decisions of it. The differences that survive the sample size are structural. - 
+          It came back 47 times cheaper than Haiku 4.5 and landed 23 of 34 decisions against 27. At this sample size nothing about accuracy separates any of the five models, so what is left to act on is structural. - 
           In September 2026, TypeSafe put a model on OpenRouter with a description that read like a joke aimed at me. Jev does not generate text. You hand it your application’s state and a typed question, and it hands back a typed decision with a probability attached. You skip the JSON...
         </description>
         <pubDate>Fri, 18 Sep 2026 00:00:00 +0200</pubDate>
@@ -26,6 +26,17 @@
         <pubDate>Thu, 03 Sep 2026 00:00:00 +0200</pubDate>
         <link>https://themayursinha.com/architecture/2026/09/03/ai-safety-without-ai-security-is-not-safety/</link>
         <guid isPermaLink="true">https://themayursinha.com/architecture/2026/09/03/ai-safety-without-ai-security-is-not-safety/</guid>
+      </item>
+    
+      <item>
+        <title>How I Use Hermes Agent as a Personal Operating System</title>
+        <description>
+          A technical walkthrough of the gateway, context stack, tools, memory, skills, Kanban, cron, profiles, and private infrastructure behind my daily AI workflow. - 
+          Most AI assistants wait inside a browser tab. I wanted something different: an agent that could receive a request from my phone, inspect the real state of my systems, create durable work, execute it, verify the result, and leave behind evidence I could review later. That is how I use...
+        </description>
+        <pubDate>Thu, 27 Aug 2026 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/architecture/2026/08/27/how-i-use-hermes-agent/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/08/27/how-i-use-hermes-agent/</guid>
       </item>
     
       <item>
@@ -70,6 +81,17 @@
         <pubDate>Sun, 02 Aug 2026 00:00:00 +0200</pubDate>
         <link>https://themayursinha.com/architecture/2026/08/02/the-engineers-didnt-finish-the-job/</link>
         <guid isPermaLink="true">https://themayursinha.com/architecture/2026/08/02/the-engineers-didnt-finish-the-job/</guid>
+      </item>
+    
+      <item>
+        <title>Grok Build&apos;s Repository Snapshot Pipeline: What I Verified</title>
+        <description>
+          An independent Linux, local-evidence, and control-plane analysis of Grok Build&apos;s repository snapshot upload path. - 
+          GitHub records Cereblab’s wire-level analysis as created on 10 July 2026 and updated on 14 July. The report showed two separate data paths: files read for a model turn, and a repository snapshot sent through a storage API. Its strongest artifact was a captured Git bundle that reconstructed a tracked...
+        </description>
+        <pubDate>Wed, 22 Jul 2026 09:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/architecture/2026/07/22/grok-build-repository-snapshot-pipeline/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/07/22/grok-build-repository-snapshot-pipeline/</guid>
       </item>
     
       <item>
@@ -202,28 +224,6 @@
         <pubDate>Mon, 02 Mar 2026 00:00:00 +0100</pubDate>
         <link>https://themayursinha.com/architecture/2026/03/02/manual-code-review-is-unsustainable/</link>
         <guid isPermaLink="true">https://themayursinha.com/architecture/2026/03/02/manual-code-review-is-unsustainable/</guid>
-      </item>
-    
-      <item>
-        <title>Why Transformer LLMs are better at finding code vulnerabilities than classical neural networks</title>
-        <description>
-          From payload classification to reasoning across code: what changed and why it matters. - 
-          I have worked with both worlds. Earlier in my career, including work at Trend Micro, I spent time experimenting with ANN pipelines for shellcode detection. Those systems were useful for bounded classification tasks on network payloads. They were not designed for deep reasoning across large codebases. That difference is the...
-        </description>
-        <pubDate>Sun, 22 Feb 2026 00:00:00 +0100</pubDate>
-        <link>https://themayursinha.com/architecture/2026/02/22/llms-vs-classical-neural-nets-for-vulnerability-detection/</link>
-        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/02/22/llms-vs-classical-neural-nets-for-vulnerability-detection/</guid>
-      </item>
-    
-      <item>
-        <title>Vibe Engineering</title>
-        <description>
-          Why intent, taste, and judgment matter more than prompt velocity in AI-assisted engineering. - 
-          There are two ways to use AI for coding. One is fast, loose, and increasingly common. The other is harder, slower in the short term, and the only one that scales. Vibe coding is the first: prompt, generate, ship. It works beautifully in a prototype with no users, no tests,...
-        </description>
-        <pubDate>Fri, 10 Oct 2025 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/architecture/2025/10/10/vibe-engineering/</link>
-        <guid isPermaLink="true">https://themayursinha.com/architecture/2025/10/10/vibe-engineering/</guid>
       </item>
     
   </channel>

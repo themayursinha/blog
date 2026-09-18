@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 600" width="1140" height="600" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="tc-title tc-desc">
+  <title id="tc-title">Observable non-relay oracle for notification-form tools call</title>
+  <desc id="tc-desc">A forbidden notification-form tools call is classified and dropped with no client response and zero downstream executions. A subsequent valid request is authorized and reaches the downstream server.</desc>
+  <defs>
+    <linearGradient id="tc-bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <marker id="tc-green" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#00ff41"/>
+    </marker>
+    <marker id="tc-red" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#ef4444"/>
+    </marker>
+    <marker id="tc-slate" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <rect width="1140" height="600" rx="24" fill="url(#tc-bg)"/>
+  <rect x="24" y="24" width="1092" height="552" rx="18" fill="none" stroke="#293029" stroke-width="1.5"/>
+  <text x="68" y="70" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="27" font-weight="700">A strong oracle observes the downstream boundary</text>
+  <text x="68" y="100" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="14">No response is protocol behavior. Zero execution is the security property.</text>
+  <line x1="68" y1="120" x2="1072" y2="120" stroke="#293029"/>
+
+  <text x="68" y="154" fill="#ef4444" font-family="'IBM Plex Mono', monospace" font-size="10" letter-spacing="2">FORBIDDEN ENVELOPE</text>
+  <g>
+    <rect x="68" y="170" width="270" height="110" rx="13" fill="#1a1210" stroke="#ef4444" stroke-width="1.5"/>
+    <text x="88" y="202" fill="#fb7185" font-family="'IBM Plex Mono', monospace" font-size="11">notification-form tools/call</text>
+    <text x="88" y="230" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="10">method: tools/call</text>
+    <text x="88" y="252" fill="#fbbf24" font-family="'IBM Plex Mono', monospace" font-size="10">id: absent</text>
+    <text x="88" y="270" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="9">attempt: /tmp/bypass-attempt</text>
+  </g>
+
+  <text x="68" y="330" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="10" letter-spacing="2">VALID CONTROL</text>
+  <g>
+    <rect x="68" y="346" width="270" height="92" rx="13" fill="#0a1a0d" stroke="#00ff41" stroke-width="1.5"/>
+    <text x="88" y="378" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="11">request-form tools/call</text>
+    <text x="88" y="405" fill="#aeb6ae" font-family="'IBM Plex Mono', monospace" font-size="10">id: 2 · path: /tmp/allowed</text>
+    <text x="88" y="426" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="9">sent after the rejection</text>
+  </g>
+
+  <g>
+    <rect x="430" y="178" width="260" height="250" rx="15" fill="#0f120f" stroke="#f59e0b" stroke-width="1.6"/>
+    <text x="452" y="210" fill="#fbbf24" font-family="'IBM Plex Mono', monospace" font-size="10" letter-spacing="1">ENFORCEMENT ENTRY</text>
+    <text x="452" y="240" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700">Envelope classifier</text>
+    <text x="452" y="269" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="10">parse shape before relay</text>
+
+    <rect x="452" y="292" width="216" height="48" rx="8" fill="#1a1210" stroke="#ef4444"/>
+    <text x="468" y="315" fill="#ef4444" font-family="'IBM Plex Mono', monospace" font-size="10">notification / batch</text>
+    <text x="468" y="331" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="9">deny before downstream</text>
+
+    <rect x="452" y="354" width="216" height="48" rx="8" fill="#0a1a0d" stroke="#00ff41"/>
+    <text x="468" y="377" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="10">valid request + id</text>
+    <text x="468" y="393" fill="#858c85" font-family="'IBM Plex Mono', monospace" font-size="9">continue to policy engine</text>
+  </g>
+
+  <line x1="338" y1="225" x2="430" y2="225" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#tc-slate)"/>
+  <text x="384" y="208" fill="#64748b" font-family="'IBM Plex Mono', monospace" font-size="9" text-anchor="middle">classify</text>
+  <path d="M338 392 H386 V378 H430" fill="none" stroke="#00ff41" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#tc-green)"/>
+
+  <g>
+    <rect x="806" y="178" width="266" height="250" rx="15" fill="#0f120f" stroke="#3c493e"/>
+    <text x="828" y="210" fill="#94a3b8" font-family="'IBM Plex Mono', monospace" font-size="10" letter-spacing="1">OBSERVABLE SINK</text>
+    <text x="828" y="240" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700">Fake downstream server</text>
+
+    <rect x="828" y="266" width="222" height="58" rx="9" fill="#1a1210" stroke="#ef4444"/>
+    <text x="844" y="290" fill="#fb7185" font-family="'IBM Plex Mono', monospace" font-size="10">forbidden execution count</text>
+    <text x="1030" y="307" fill="#ef4444" font-family="'IBM Plex Mono', monospace" font-size="24" font-weight="700" text-anchor="end">0</text>
+
+    <rect x="828" y="338" width="222" height="58" rx="9" fill="#0a1a0d" stroke="#00ff41"/>
+    <text x="844" y="362" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="10">valid execution count</text>
+    <text x="1030" y="379" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="24" font-weight="700" text-anchor="end">1</text>
+  </g>
+
+  <path d="M690 316 H744" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <line x1="748" y1="294" x2="748" y2="338" stroke="#ef4444" stroke-width="2"/>
+  <text x="719" y="288" fill="#ef4444" font-family="'IBM Plex Mono', monospace" font-size="9" text-anchor="middle">no relay</text>
+
+  <path d="M690 378 H806" fill="none" stroke="#00ff41" stroke-width="1.5" marker-end="url(#tc-green)"/>
+  <text x="748" y="361" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="9" text-anchor="middle">authorized relay</text>
+
+  <g>
+    <rect x="68" y="486" width="300" height="56" rx="10" fill="#0f120f" stroke="#64748b"/>
+    <text x="86" y="510" fill="#94a3b8" font-family="'IBM Plex Mono', monospace" font-size="9">CLIENT RESPONSE</text>
+    <text x="86" y="530" fill="#e0e0e0" font-family="'IBM Plex Mono', monospace" font-size="11">none for notification ✓</text>
+
+    <rect x="420" y="486" width="300" height="56" rx="10" fill="#0f120f" stroke="#ef4444"/>
+    <text x="438" y="510" fill="#fb7185" font-family="'IBM Plex Mono', monospace" font-size="9">SECURITY ORACLE</text>
+    <text x="438" y="530" fill="#e0e0e0" font-family="'IBM Plex Mono', monospace" font-size="11">downstream forbidden calls = 0</text>
+
+    <rect x="772" y="486" width="300" height="56" rx="10" fill="#0f120f" stroke="#00ff41"/>
+    <text x="790" y="510" fill="#00ff41" font-family="'IBM Plex Mono', monospace" font-size="9">SESSION HEALTH</text>
+    <text x="790" y="530" fill="#e0e0e0" font-family="'IBM Plex Mono', monospace" font-size="11">subsequent valid call succeeds</text>
+  </g>
+</svg>

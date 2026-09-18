@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  
+  
+
+  
+
+  
+  
+
+  
+  
+
+  <title>Grok Build's Repository Snapshot Pipeline: What I Verified</title>
+
+  <meta name="author" content="Mayur Sinha" />
+  <meta name="description" content="An independent technical review of Grok Build&apos;s repository snapshot pipeline, including Linux binary provenance, local event evidence, snapshot semantics, data controls, and the claims the evidence does not support.">
+  
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  
+
+  <link rel="canonical" href="https://themayursinha.com/architecture/2026/07/22/grok-build-repository-snapshot-pipeline/" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png?v=20260907">
+  <link rel="icon" href="/favicon.ico?v=20260907">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260907">
+  <link rel="alternate" type="application/rss+xml" title="Mayur Sinha - I architect the security primitives for the next computational paradigm." href="/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Mayur Sinha RSS" href="/rss.xml" />
+  <link rel="alternate" type="application/atom+xml" title="Mayur Sinha Atom" href="/atom.xml" />
+
+
+  
+
+  
+    
+      <link rel="stylesheet" href="/css/terminal.css" />
+    
+      <link rel="stylesheet" href="/assets/css/code-copy.css" />
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Grotesk:500,600,700|IBM+Plex+Mono:400,500,600" />
+    
+  
+
+  
+
+  
+
+  
+
+  <!-- Facebook OpenGraph tags -->
+  
+
+  <meta property="og:title" content="Grok Build&apos;s Repository Snapshot Pipeline: What I Verified" />
+  <meta property="og:description" content="An independent technical review of Grok Build&apos;s repository snapshot pipeline, including Linux binary provenance, local event evidence, snapshot semantics, data controls, and the claims the evidence does not support.">
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:url" content="https://themayursinha.com/architecture/2026/07/22/grok-build-repository-snapshot-pipeline/" />
+
+  
+  <meta property="og:image" content="https://themayursinha.com/img/grok-build-egress-evidence.svg" />
+  
+  
+
+  
+  <meta property="article:published_time" content="2026-07-22T09:00:00+02:00" />
+  <meta property="article:author" content="Mayur Sinha" />
+    
+      
+  <meta property="article:tag" content="ai" />
+      
+  <meta property="article:tag" content="security" />
+      
+  <meta property="article:tag" content="coding-agents" />
+      
+  <meta property="article:tag" content="grok-build" />
+      
+  <meta property="article:tag" content="data-egress" />
+      
+  <meta property="article:tag" content="privacy" />
+      
+  <meta property="article:tag" content="incident-response" />
+      
+    
+  
+
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <meta name="twitter:site" content="@themayursinha" />
+  <meta name="twitter:creator" content="@themayursinha" />
+  
+  <meta name="twitter:title" content="Grok Build&apos;s Repository Snapshot Pipeline: What I Verified" />
+  <meta name="twitter:description" content="An independent technical review of Grok Build&apos;s repository snapshot pipeline, including Linux binary provenance, local event evidence, snapshot semantics, data controls, and the claims the evidence does not support.">
+  
+  <meta name="twitter:image" content="https://themayursinha.com/img/grok-build-egress-evidence.svg" />
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://themayursinha.com",
+    "name": "Mayur Sinha",
+    "description": "I architect the security primitives for the next computational paradigm.",
+    "publisher": {
+      "@type": "Person",
+      "name": "Mayur Sinha"
+    }
+  }
+  </script>
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Grok Build's Repository Snapshot Pipeline: What I Verified",
+    "description": "An independent technical review of Grok Build's repository snapshot pipeline, including Linux binary provenance, local event evidence, snapshot semantics, data controls, and the claims the evidence does not support.",
+    "datePublished": "2026-07-22T09:00:00+02:00",
+    "dateModified": "2026-07-22T09:00:00+02:00",
+    "author": {
+      "@type": "Person",
+      "name": "Mayur Sinha"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://themayursinha.com/architecture/2026/07/22/grok-build-repository-snapshot-pipeline/"
+    },
+    "image": "https://themayursinha.com/img/grok-build-egress-evidence.svg",
+    "keywords": ["ai","security","coding-agents","grok-build","data-egress","privacy","incident-response"]
+  }
+  </script>
+  
+
+  
+
+  
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LP6FZ8DW0P"></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LP6FZ8DW0P');
+</script>
+
+
+  
+
+  
+
+  
+
+</head>
+
+  <body>
+    <div class="viewport-frame" aria-hidden="true"></div>
+    
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="research-readout" aria-label="Research node status">
+    <span>NODE MS-R01</span>
+    <span>DOMAIN SOVEREIGN AI</span>
+    <span>CONTROL MODEL LEAST AGENCY</span>
+    <span>STATE ACTIVE</span>
+  </div>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a class="site-mark" href="/" aria-label="Mayur Sinha home"><span>MS</span>//RESEARCH</a>
+    <ul>
+      
+        
+        <li>
+          <a href="/">Home</a>
+        </li>
+      
+        
+        <li>
+          <a href="/manifesto/">Manifesto</a>
+        </li>
+      
+        
+        <li>
+          <a href="/architecture/">Architecture</a>
+        </li>
+      
+        
+        <li>
+          <a href="/proof/">Proof</a>
+        </li>
+      
+      <li class="site-nav-search">
+        <button type="button" class="site-nav-search-btn" data-search-open aria-label="Open search" aria-haspopup="dialog" title="Search">
+          <svg class="site-nav-search-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
+            <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M8.5 3a5.5 5.5 0 1 1-3.41 9.84l-3.7 3.7a1 1 0 0 1-1.42-1.42l3.7-3.7A5.5 5.5 0 0 1 8.5 3Zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main" id="main-content">
+      <article class="prose blog-post">
+  <header class="post-header">
+    <p class="post-label">ARCHITECTURE LOG</p>
+    <h1>Grok Build's Repository Snapshot Pipeline: What I Verified</h1>
+    
+      <p class="page-subtitle">An independent Linux, local-evidence, and control-plane analysis of Grok Build's repository snapshot upload path.</p>
+    
+    <time datetime="2026-07-22T09:00:00+02:00">2026-07-22</time>
+  </header>
+
+  
+
+  <p>GitHub records <a href="https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547">Cereblab’s wire-level analysis</a> as created on 10 July 2026 and updated on 14 July. The report showed two separate data paths: files read for a model turn, and a repository snapshot sent through a storage API. Its strongest artifact was a captured Git bundle that reconstructed a tracked file the agent had been told not to read.</p>
+
+<p>I paid attention for a personal reason. I had used Grok Build 0.2.93 on a Linux workstation with real repositories. Instead of rerunning the client against those repositories, I logged it out, contained the local configuration, preserved the evidence, and investigated the installed binary and historical logs offline.</p>
+
+<p>This article is the result. It is not a claim of discovering the issue first. Cereblab deserves that credit. My contribution is an independent review of the Linux artifacts, the local impact, the repository serializer, the available controls, and the boundary between what the evidence proves and what it does not.</p>
+
+<p>A technical appendix with package hashes, source links, and a claim matrix is available <a href="/research/grok-build-repository-snapshot-analysis-2026-07/">here</a>.</p>
+
+<h2 id="the-short-version">The short version</h2>
+
+<p>I ended up with four conclusions.</p>
+
+<ol>
+  <li>Grok Build 0.2.93 contained a first-party repository snapshot and upload pipeline. The official Linux binary on my machine matched the decompressed npm artifact exactly.</li>
+  <li>My local logs recorded repository snapshot construction and 84 enqueue events in total across four Git repositories. Enqueue proves local staging and queue acceptance. It does not prove that every transfer completed remotely.</li>
+  <li>The follow-up 0.2.99 Linux binary still contained the archive and upload implementation when inspected. Post-disclosure server flags disabled it for tested accounts, but the code had not been removed.</li>
+  <li>A training opt-out, a file-read deny, and a repository-egress control solve different problems. None should be treated as a substitute for the others.</li>
+</ol>
+
+<p>The incident is serious. Overclaiming would only weaken the parts that are already well supported.</p>
+
+<figure class="figure">
+  <div class="fig-label">// Fig. 1 · Two data paths, five post-capability evidence levels</div>
+  <div class="fig-body">
+    <img src="/img/grok-build-egress-evidence.svg" alt="Diagram of Grok Build model context and repository snapshot data paths with evidence levels" loading="lazy" />
+  </div>
+  
+  <figcaption class="fig-caption">Files explicitly read by the agent can enter the model/session channel. A separate Git-aware snapshot path can package repository state. Collection, enqueue, successful transmission, retention, and training are distinct claims.</figcaption>
+  
+</figure>
+
+<h2 id="two-data-paths-not-one">Two data paths, not one</h2>
+
+<p>Most cloud coding agents must send some code to a remote model. That alone is not surprising. The Grok Build evidence points to a second path: repository-state packaging and upload, separate from files the model reads.</p>
+
+<h3 id="path-1-model-and-session-context">Path 1: model and session context</h3>
+
+<p>When the agent reads a file, its contents can enter the model request and session-state machinery. Cereblab’s controlled test used synthetic canary values and captured them in the model request and a session-state archive.</p>
+
+<p>My historical transcript showed the same class of exposure on a real workstation. One session explicitly read a local environment file and a configuration file. A historical secret value appeared unredacted in the transcript. That value was no longer accepted, and no current credential matched the preserved transcript.</p>
+
+<p>This evidence proves a file was read into the agent’s context. It does not, by itself, prove every server-side retention or downstream-use claim.</p>
+
+<h3 id="path-2-repository-state-snapshots">Path 2: repository-state snapshots</h3>
+
+<p>The repository path is not limited to files the model opens. The client contains a Git-aware serializer and upload coordinator. Embedded source paths and command strings show logic for:</p>
+
+<ul>
+  <li>commits and history;</li>
+  <li>staged and unstaged changes;</li>
+  <li>untracked, non-ignored files;</li>
+  <li>supplemental and content-addressed blobs;</li>
+  <li>before and after codebase phases;</li>
+  <li>queueing and storage under <code class="language-plaintext highlighter-rouge">grok-code-session-traces</code>.</li>
+</ul>
+
+<p>The phrase “it uploads <code class="language-plaintext highlighter-rouge">.git/</code>” is too imprecise. The evidence supports a Git bundle or structured repository-state representation containing Git objects and history. It does not establish a byte-for-byte copy of the <code class="language-plaintext highlighter-rouge">.git</code> directory inside a generic tarball.</p>
+
+<p>The distinction matters in practice. A Git bundle can reconstruct tracked files and history without copying the <code class="language-plaintext highlighter-rouge">.git</code> directory as a filesystem tree.</p>
+
+<h2 id="what-the-local-evidence-showed">What the local evidence showed</h2>
+
+<p>The installed client was Grok Build 0.2.93. The resolved Linux x64 executable had this SHA-256 hash:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4e0738d3b5550f3c842bc0ae69f468815c6329c008a110d0c27a694dc3401135
+</code></pre></div></div>
+
+<p>It matched the decompressed executable from xAI’s official npm package for 0.2.93.</p>
+
+<p>The sanitized historical event counts were:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th style="text-align: right">Count</th>
+      <th>What it proves</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">trace.upload.decision</code></td>
+      <td style="text-align: right">79</td>
+      <td>The client evaluated whether to upload trace data</td>
+    </tr>
+    <tr>
+      <td>Decisions enabling upload</td>
+      <td style="text-align: right">76</td>
+      <td>Upload was enabled for most recorded decisions</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">repo_state.upload.start</code></td>
+      <td style="text-align: right">130</td>
+      <td>Repository collection started</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">repo_state.upload.enqueued</code></td>
+      <td style="text-align: right">84</td>
+      <td>A snapshot entered the local upload queue</td>
+    </tr>
+    <tr>
+      <td>Git repositories with enqueued snapshots</td>
+      <td style="text-align: right">4</td>
+      <td>The behavior affected multiple real repositories</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The enablement source was usually recorded as <code class="language-plaintext highlighter-rouge">remote</code>.</p>
+
+<p>There were also 46 unmatched <code class="language-plaintext highlighter-rouge">upload.start</code> events. They corresponded to non-Git roots and produced no matching enqueue. This matters because one of the early public claims treated a start event against a home directory as proof that the entire home directory had uploaded. My local evidence does not support that conclusion.</p>
+
+<p>A start is not an enqueue. An enqueue is not an HTTP 200. An HTTP 200 is not proof of a particular retention period. Storage is not proof of training.</p>
+
+<h2 id="what-the-public-wire-evidence-adds">What the public wire evidence adds</h2>
+
+<p>Cereblab’s public work bridges evidence levels that my local logs cannot.</p>
+
+<p>The published reproduction contains Git bundles claimed to be exact <code class="language-plaintext highlighter-rouge">/v1/storage</code> request bodies. I verified that the bundles are structurally valid, contain complete Git history, and include a tracked canary file that the transcript says the agent was denied permission to read. Another bundle excluded a never-tracked, ignored <code class="language-plaintext highlighter-rouge">.env</code> file.</p>
+
+<p>That verifies the bundle contents and the difference between model-read permission and Git tracking. The public repository does not include a matching raw mitm flow that cryptographically binds those exact bundle bytes to the HTTP request. The HTTP provenance therefore still depends on the researcher’s capture account.</p>
+
+<p>The accompanying wire report adds transmission-level proof. It records successful storage requests, including a captured Git bundle accepted with HTTP 200. In a larger run, at least 5.10 GiB of <code class="language-plaintext highlighter-rouge">/v1/storage</code> request traffic was captured before the researcher stopped the test mid-stream. This does not prove that the full 12 GB test repository completed. The 12 GB figure was the repository’s size, not a verified aggregate upload limit.</p>
+
+<p>The combined evidence is serious, but each artifact should carry only the claim it can support.</p>
+
+<h2 id="the-capability-remained-in-0299">The capability remained in 0.2.99</h2>
+
+<p>I also inspected the official Linux x64 artifact for Grok Build 0.2.99. Its decompressed SHA-256 was:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>9fccba400d3808ec34a991892096b34c6f5846b2b118d355001601fd5428445c
+</code></pre></div></div>
+
+<p>The binary retained the first-party archive, queue, GCS, and repository-change implementation. This does not mean every account was still uploading. It means the capability remained in the shipped client.</p>
+
+<p>After public disclosure, the same 0.2.93 client received different remote settings in Cereblab’s testing: <code class="language-plaintext highlighter-rouge">trace_upload_enabled</code> became false and <code class="language-plaintext highlighter-rouge">disable_codebase_upload</code> became true. Six same-client retests produced no observed <code class="language-plaintext highlighter-rouge">POST /v1/storage</code> Git-bundle upload. That is evidence of a remote or fleet-level pause for those tests. It is not proof that the feature was removed or permanently disabled for every account.</p>
+
+<p>xAI later <a href="https://x.com/SpaceXAI/status/2076692402442846289">stated publicly</a> that Grok Build users could change data-retention settings through <code class="language-plaintext highlighter-rouge">/privacy</code>, and <a href="https://x.com/SpaceXAI/status/2076696092037833091">said that previously synced data would be deleted</a>. I have requested account-specific access, restriction, deletion, and training opt-out through xAI’s privacy portal. At the time of writing, server-side deletion and its exact scope have not been independently confirmed for my account.</p>
+
+<h2 id="the-controls-were-fragmented">The controls were fragmented</h2>
+
+<p>Three local controls were visible in the client:</p>
+
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[</span><span class="n">features</span><span class="k">]</span>
+<span class="n">telemetry</span> <span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+
+<span class="k">[</span><span class="n">telemetry</span><span class="k">]</span>
+<span class="n">trace_upload</span> <span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+
+<span class="k">[</span><span class="n">harness</span><span class="k">]</span>
+<span class="n">disable_codebase_upload</span> <span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div></div>
+
+<p>The strongest codebase-specific control is <code class="language-plaintext highlighter-rouge">harness.disable_codebase_upload = true</code>. <a href="https://github.com/harbor-framework/harbor/pull/2309">Harbor PR 2309</a>, authored with an xAI-associated identity, documents that the local disable is OR-combined with the remote disable. Under Harbor’s interpretation, local <code class="language-plaintext highlighter-rouge">true</code> cannot be remotely re-enabled for that path. Treat this as third-party implementation guidance unless xAI confirms it in official documentation.</p>
+
+<p>I would still set all three values. They govern different parts of the pipeline, and the public evidence does not establish that <code class="language-plaintext highlighter-rouge">trace_upload = false</code> alone blocks every repository archive path.</p>
+
+<p>When I checked xAI’s public settings reference, these controls were absent. The reference documented <code class="language-plaintext highlighter-rouge">GROK_RESPECT_GITIGNORE</code>, but that setting applied to search and read tools. It was not documented as a repository-upload control.</p>
+
+<p>This is where model-read permissions and repository upload behavior diverged. A permission that stops the model from reading a file does not necessarily stop a system-level serializer from packaging tracked history. A training preference does not necessarily stop operational transmission or storage. An account-side or remote setting is not the same as a locally enforced veto.</p>
+
+<h2 id="what-i-am-not-claiming">What I am not claiming</h2>
+
+<p>This investigation does not prove that:</p>
+
+<ul>
+  <li>xAI trained a model on my repositories or credentials;</li>
+  <li>every one of the 84 local enqueue events completed remotely;</li>
+  <li>an entire home directory was uploaded as one snapshot;</li>
+  <li>a literal <code class="language-plaintext highlighter-rouge">.git</code> directory was copied into every archive;</li>
+  <li>every ignored <code class="language-plaintext highlighter-rouge">.env</code> or secret file was included;</li>
+  <li>current credentials were exposed or abused;</li>
+  <li>the post-disclosure server-side disable is global or permanent;</li>
+  <li>deleting a visible conversation removes every repository blob, replica, backup, or derived dataset.</li>
+</ul>
+
+<p>These are not rhetorical disclaimers. They are the boundary that keeps the report useful.</p>
+
+<h2 id="the-security-control-that-was-missing">The security control that was missing</h2>
+
+<p>Coding-agent permissions are usually presented as model permissions: may the agent read this file, call this tool, or execute this command?</p>
+
+<p>The Grok Build incident shows a wider control problem. A trustworthy coding agent needs separate authority for at least four actions:</p>
+
+<ol>
+  <li>Read a file into model context.</li>
+  <li>Package repository state or history.</li>
+  <li>Send that package to a named destination for a declared purpose.</li>
+  <li>Retain, reuse, or delete the resulting server-side data.</li>
+</ol>
+
+<p>Those decisions should not collapse into one account setting. They need local enforcement, visible scope, destination binding, byte and file-class limits, and an audit record that says what left the machine.</p>
+
+<p>A remote feature flag should never be able to widen local data authority without an explicit local approval. The model may need context to help, but the client still needs a deterministic egress boundary.</p>
+
+<p>Agent security cannot stop at tool-call authorization. It must govern data movement by source, destination, purpose, sensitivity, and history. That gap is what I have been targeting with <a href="https://github.com/themayursinha/mcp-visor">MCP Visor</a> on MCP tool calls; Grok Build shows the same class of problem on repository egress.</p>
+
+<h2 id="what-users-should-do-now">What users should do now</h2>
+
+<p>If Grok Build has touched sensitive repositories, do not infer safety from a training opt-out alone.</p>
+
+<ul>
+  <li>Preserve logs and configuration before changing them.</li>
+  <li>Do not publish raw transcripts or credentials while reporting the issue.</li>
+  <li>Apply a local codebase-upload veto and disable telemetry and trace upload.</li>
+  <li>Use the vendor’s privacy process to request access, deletion, restriction, and confirmation of scope.</li>
+  <li>Rotate a credential only when evidence shows exposure or when its risk justifies the operational cost.</li>
+  <li>Test coding agents against synthetic repositories before allowing them onto trusted workstations.</li>
+</ul>
+
+<p>I have kept the local client logged out. Any future testing will use a disposable environment with synthetic canaries and no real repository or credential mounts.</p>
+
+<h2 id="credit-and-disclosure">Credit and disclosure</h2>
+
+<p>Cereblab performed the original wire-level investigation and published the reproduction artifacts. This article independently reviewed those artifacts, inspected the official Linux packages, and investigated local historical evidence from my own machine.</p>
+
+<p>Before publication, this draft will be provided to xAI for factual correction through its published security contact. The publication version will record the date of that notice and any response that changes the technical record.</p>
+
+<p>Package provenance, the claim matrix, and source links are in the appendix linked near the beginning of this article.</p>
+
+
+  
+
+  <nav class="post-navigation" aria-label="Adjacent architecture entries">
+    
+      <a href="/architecture/2026/07/16/your-system-prompt-is-a-god-class/">&larr; Your System Prompt Is a God Class</a>
+    
+    
+      <a href="/architecture/2026/08/02/the-engineers-didnt-finish-the-job/">The Engineers Didn't Finish the Job &rarr;</a>
+    
+  </nav>
+
+  
+    
+<section class="post-comments" aria-labelledby="post-comments-title">
+  <div class="post-comments-header">
+    <p class="post-label">DISCUSSION CHANNEL</p>
+    <h2 id="post-comments-title">Comments</h2>
+    <p>Sign in with GitHub to join the discussion.</p>
+  </div>
+  <div class="giscus"></div>
+  <script src="https://giscus.app/client.js"
+          data-repo="themayursinha/blog"
+          data-repo-id="MDEwOlJlcG9zaXRvcnkxNzYzMzI0OTk="
+          data-category="Announcements"
+          data-category-id="DIC_kwDOCoKe084B-RQJ"
+          data-mapping="pathname"
+          data-strict="1"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="transparent_dark"
+          data-lang="en"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async>
+  </script>
+  <noscript>Enable JavaScript to view and leave comments.</noscript>
+</section>
+
+
+  
+</article>
+
+<div id="toc" class="toc-sidebar">
+  <div id="toc-content" class="toc-content"></div>
+</div>
+
+<script>
+(function() {
+  function initToc() {
+    const article = document.querySelector('.blog-post');
+    const tocContent = document.getElementById('toc-content');
+    const tocSidebar = document.getElementById('toc');
+    if (!article || !tocContent || !tocSidebar) return;
+
+    const headings = Array.from(article.querySelectorAll('h1, h2, h3, h4, h5, h6'));
+    if (headings.length === 0) { tocSidebar.style.display = 'none'; return; }
+
+    const toc = document.createElement('ul');
+    toc.className = 'toc-list';
+
+    const linkMap = new Map();
+
+    headings.forEach(function(heading, index) {
+      if (!heading.id) heading.id = 'heading-' + index;
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + heading.id;
+      a.textContent = heading.textContent.trim();
+      a.className = 'toc-link';
+      a.dataset.target = heading.id;
+
+      const level = parseInt(heading.tagName.charAt(1));
+      li.className = 'toc-level-' + level;
+
+      li.appendChild(a);
+      toc.appendChild(li);
+      linkMap.set(heading.id, { li: li, a: a });
+    });
+
+    // Header
+    const header = document.createElement('div');
+    header.className = 'toc-header';
+    header.innerHTML = '<span class="toc-header-line" aria-hidden="true"></span><span>On this page</span>';
+    tocContent.appendChild(header);
+    tocContent.appendChild(toc);
+
+    // Reading progress bar
+    const progress = document.createElement('div');
+    progress.className = 'toc-progress';
+    progress.setAttribute('aria-hidden', 'true');
+    tocSidebar.insertBefore(progress, tocContent);
+
+    // Click handling with smooth scroll and sticky offset
+    tocContent.addEventListener('click', function(e) {
+      const link = e.target.closest('.toc-link');
+      if (!link) return;
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (!targetElement) return;
+
+      const navbar = document.querySelector('.navbar-custom');
+      const offset = (navbar ? navbar.offsetHeight : 0) + 24;
+      const targetY = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+
+      window.scrollTo({ top: targetY, left: 0, behavior: 'smooth' });
+      history.replaceState(null, '', '#' + targetId);
+    });
+
+    // Scroll spy with IntersectionObserver
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        const item = linkMap.get(entry.target.id);
+        if (!item) return;
+        if (entry.isIntersecting) {
+          linkMap.forEach(function(val) {
+            val.li.classList.remove('toc-active');
+            val.a.classList.remove('toc-link-active');
+          });
+          item.li.classList.add('toc-active');
+          item.a.classList.add('toc-link-active');
+        }
+      });
+    }, observerOptions);
+
+    headings.forEach(function(heading) { observer.observe(heading); });
+
+    // Reading progress bar
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) : 0;
+      progress.style.transform = 'scaleX(' + Math.min(1, Math.max(0, pct)) + ')';
+    }
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initToc);
+  } else {
+    initToc();
+  }
+})();
+
+// --- Copy code blocks ---
+(function() {
+  function addCopyButtons() {
+    document.querySelectorAll('pre.highlight').forEach(function(pre) {
+      if (pre.querySelector('.copy-btn')) return;
+      var btn = document.createElement('button');
+      btn.className = 'copy-btn';
+      btn.textContent = 'copy';
+      btn.addEventListener('click', function() {
+        var code = pre.querySelector('code') || pre;
+        navigator.clipboard.writeText(code.textContent || code.innerText).then(function() {
+          btn.textContent = 'copied!';
+          btn.classList.add('copied');
+          setTimeout(function() { btn.textContent = 'copy'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+      pre.appendChild(btn);
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', addCopyButtons);
+  } else {
+    addCopyButtons();
+  }
+})();
+</script>
+
+    </main>
+    <footer class="site-footer">
+  <p class="site-footer-line">Mayur Sinha / RESEARCH NODE MS-R01 / 2026</p>
+  <p class="site-footer-line"><a href="/feed.xml">RSS FEED</a> / END OF TRANSMISSION</p>
+  <nav class="site-footer-social" aria-label="Social links"><a class="social-link" href="mailto:themayursinha@gmail.com" rel="noopener" aria-label="Email">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3 7 9 6 9-6"/></svg>
+      </a><a class="social-link" href="https://github.com/themayursinha" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+      </a><a class="social-link" href="https://x.com/themayursinha" target="_blank" rel="noopener" aria-label="X">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a><a class="social-link" href="https://www.linkedin.com/in/mayursinha" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-5c0-1 .5-2 2-2s2 1 2 2v5"/></svg>
+      </a><a class="social-link" href="https://www.goodreads.com/themayursinha" target="_blank" rel="noopener" aria-label="Goodreads">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.43 1.09c-1.36.18-2.51.6-3.59 1.34-1.7 1.16-2.81 2.74-3.31 4.74-.26 1.05-.3 2.78-.08 3.85.5 2.45 1.84 4.46 3.84 5.78 1.36.91 2.81 1.37 4.43 1.4 1.55.03 2.62-.13 3.85-.6.05 1.05-.19 1.81-.86 2.51-.7.74-1.64 1.1-2.83 1.1-1.7 0-2.92-.6-3.4-1.74l-3.39.45c.62 2.7 3.4 4.51 7.18 4.51 2.05 0 3.74-.45 5.05-1.45 1.27-1 2.05-2.5 2.05-4.21V8.21c0-2.05-.4-3.65-1.27-4.85-1.05-1.4-2.7-2.15-4.9-2.31-.84-.06-2.41-.07-2.77.04zm.74 6.05c1.27 0 2.27.36 2.96 1.07.69.71 1.04 1.74 1.04 3.04v1.05c-.61.4-1.51.6-2.69.6-1.05 0-1.88-.27-2.49-.83-.6-.55-.91-1.34-.91-2.36 0-1.05.31-1.85.91-2.4.61-.55 1.44-.83 2.49-.83.05 0 .11 0 .16.01l-.47 1.65z"/></svg>
+      </a><a class="social-link" href="https://substack.com/@mayursinha" target="_blank" rel="noopener" aria-label="Substack">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+      </a></nav>
+</footer>
+
+    <div class="site-search-modal" data-component="site-search" aria-hidden="true" hidden>
+  <div class="site-search-backdrop" data-search-close></div>
+  <div class="site-search-dialog" role="dialog" aria-modal="true" aria-labelledby="site-search-title" tabindex="-1">
+    <div class="site-search-header">
+      <svg class="site-search-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
+        <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M8.5 3a5.5 5.5 0 1 1-3.41 9.84l-3.7 3.7a1 1 0 0 1-1.42-1.42l3.7-3.7A5.5 5.5 0 0 1 8.5 3Zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/>
+      </svg>
+      <label for="site-search-input" class="visually-hidden">Search the site</label>
+      <input
+        id="site-search-input"
+        class="site-search-input"
+        type="search"
+        name="q"
+        placeholder="Search posts, pages, projects…"
+        aria-label="Search the site"
+        aria-controls="site-search-results"
+        aria-describedby="site-search-status"
+        autocomplete="off"
+        spellcheck="false"
+      >
+      <span class="site-search-hint" id="site-search-title">SEARCH</span>
+      <button type="button" class="site-search-close" data-search-close aria-label="Close search (Esc)">×</button>
+    </div>
+
+    <p id="site-search-status" class="site-search-status" role="status" aria-live="polite">
+      <span id="site-search-loading" class="site-search-loading" hidden>Loading index…</span>
+      <span id="site-search-meta" class="site-search-meta"></span>
+    </p>
+
+    <ol id="site-search-results" class="site-search-results" aria-label="Search results" hidden></ol>
+
+    <div id="site-search-empty" class="site-search-empty" hidden>
+      <p class="site-search-empty-text">Type to search posts, architecture notes, and projects.</p>
+      <p class="site-search-hint-row">
+        <span>Try:</span>
+        <button type="button" class="site-search-suggest" data-q="MCP">MCP</button>
+        <button type="button" class="site-search-suggest" data-q="agent">agent</button>
+        <button type="button" class="site-search-suggest" data-q="kubernetes">kubernetes</button>
+        <button type="button" class="site-search-suggest" data-q="sovereign">sovereign</button>
+      </p>
+    </div>
+
+    <footer class="site-search-footer">
+      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>esc</kbd> close</span>
+    </footer>
+  </div>
+</div>
+
+    <script src="/js/minisearch.min.js" defer></script>
+    <script src="/js/search.js" defer></script>
+    
+  </body>
+</html>

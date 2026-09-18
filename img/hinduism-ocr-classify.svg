@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" font-family="'IBM Plex Mono', monospace">
+  <rect width="1200" height="560" fill="#0a0a0a"/>
+  <text x="600" y="48" text-anchor="middle" fill="#00ff41" font-size="24" font-weight="bold">The two-gate classify step</text>
+  <text x="600" y="76" text-anchor="middle" fill="#8a8a8a" font-size="15">227 PDFs: probe the text layer, then audit it before trusting it</text>
+
+  <!-- Input -->
+  <rect x="60" y="160" width="200" height="80" rx="8" fill="#101410" stroke="#00ff41" stroke-width="2"/>
+  <text x="160" y="195" text-anchor="middle" fill="#00ff41" font-size="16" font-weight="bold">PDF corpus</text>
+  <text x="160" y="218" text-anchor="middle" fill="#8a8a8a" font-size="13">227 books</text>
+
+  <!-- Arrow 1 -->
+  <line x1="260" y1="200" x2="360" y2="200" stroke="#00ff41" stroke-width="2"/>
+  <polygon points="360,200 348,194 348,206" fill="#00ff41"/>
+
+  <!-- Gate 1 -->
+  <rect x="360" y="140" width="240" height="120" rx="8" fill="#101410" stroke="#e8c547" stroke-width="2"/>
+  <text x="480" y="168" text-anchor="middle" fill="#e8c547" font-size="15" font-weight="bold">Gate 1: text layer probe</text>
+  <text x="480" y="192" text-anchor="middle" fill="#c9c9c9" font-size="13">pdf-inspector --detect</text>
+  <text x="480" y="212" text-anchor="middle" fill="#8a8a8a" font-size="13">126 "text_based"</text>
+  <text x="480" y="232" text-anchor="middle" fill="#8a8a8a" font-size="13">+ 101 scanned/mixed/image</text>
+  <text x="480" y="250" text-anchor="middle" fill="#8a8a8a" font-size="12">= 227</text>
+
+  <!-- Arrow 2 -->
+  <line x1="600" y1="200" x2="700" y2="200" stroke="#e8c547" stroke-width="2"/>
+  <polygon points="700,200 688,194 688,206" fill="#e8c547"/>
+
+  <!-- Gate 2 -->
+  <rect x="700" y="110" width="280" height="180" rx="8" fill="#101410" stroke="#ff5f56" stroke-width="2"/>
+  <text x="840" y="140" text-anchor="middle" fill="#ff5f56" font-size="15" font-weight="bold">Gate 2: Devanagari audit</text>
+  <text x="840" y="164" text-anchor="middle" fill="#c9c9c9" font-size="13">ratio &lt; 1% OR mangled hits</text>
+  <text x="840" y="186" text-anchor="middle" fill="#8a8a8a" font-size="13">broken ToUnicode = fake layer</text>
+  <text x="840" y="208" text-anchor="middle" fill="#8a8a8a" font-size="13">ईश्वरीय व्यवस्था</text>
+  <text x="840" y="228" text-anchor="middle" fill="#ff5f56" font-size="13">→ bZ'ojh; O;oLFkk</text>
+  <text x="840" y="248" text-anchor="middle" fill="#c9c9c9" font-size="13">~76 routed to OCR anyway</text>
+  <text x="840" y="268" text-anchor="middle" fill="#8a8a8a" font-size="12">(of 126 "text_based", ~76 were mangled)</text>
+
+  <!-- Skip branch (clean) -->
+  <path d="M 700 200 L 640 200 L 640 340 L 700 340" fill="none" stroke="#00ff41" stroke-width="2"/>
+  <rect x="700" y="310" width="280" height="60" rx="8" fill="#0d1a0d" stroke="#00ff41" stroke-width="2"/>
+  <text x="840" y="336" text-anchor="middle" fill="#00ff41" font-size="14" font-weight="bold">77 clean → skip OCR</text>
+  <text x="840" y="356" text-anchor="middle" fill="#8a8a8a" font-size="12">direct to markdown import</text>
+  <text x="655" y="330" text-anchor="middle" fill="#00ff41" font-size="12">clean</text>
+
+  <!-- OCR branch: from gate 2 down to OCR card -->
+  <path d="M 840 280 L 840 310 L 1000 310 L 1000 400" fill="none" stroke="#ff5f56" stroke-width="2"/>
+  <polygon points="1000,400 994,388 1006,388" fill="#ff5f56"/>
+  <rect x="860" y="400" width="280" height="70" rx="8" fill="#1a0d0d" stroke="#ff5f56" stroke-width="2"/>
+  <text x="1000" y="428" text-anchor="middle" fill="#ff5f56" font-size="14" font-weight="bold">146 → Tesseract OCR</text>
+  <text x="1000" y="448" text-anchor="middle" fill="#8a8a8a" font-size="12">hin+eng, 16 workers, 200 DPI</text>
+  <text x="850" y="395" text-anchor="middle" fill="#ff5f56" font-size="12">mangled/scan</text>
+
+  <!-- Final -->
+  <rect x="60" y="310" width="200" height="90" rx="8" fill="#101410" stroke="#00ff41" stroke-width="2"/>
+  <text x="160" y="345" text-anchor="middle" fill="#00ff41" font-size="15" font-weight="bold">227 processed</text>
+  <text x="160" y="368" text-anchor="middle" fill="#8a8a8a" font-size="13">77 + 146 = 223</text>
+  <text x="160" y="388" text-anchor="middle" fill="#8a8a8a" font-size="13">+ 4 skipped = 227</text>
+  <text x="160" y="430" text-anchor="middle" fill="#8a8a8a" font-size="12">227 books in</text>
+  <text x="160" y="448" text-anchor="middle" fill="#8a8a8a" font-size="12">227 searchable out</text>
+
+  <!-- Connector clean -> final -->
+  <path d="M 700 340 L 260 340 L 260 355" fill="none" stroke="#00ff41" stroke-width="2"/>
+  <polygon points="260,355 254,343 266,343" fill="#00ff41"/>
+  <text x="480" y="330" text-anchor="middle" fill="#00ff41" font-size="12">clean 77</text>
+
+  <!-- Connector OCR -> final -->
+  <path d="M 860 435 L 300 435 L 300 400" fill="none" stroke="#ff5f56" stroke-width="2"/>
+  <polygon points="300,400 294,412 306,412" fill="#ff5f56"/>
+  <text x="560" y="425" text-anchor="middle" fill="#ff5f56" font-size="12">OCR 146</text>
+
+  <!-- Clarify the ~76 in Gate 2 -->
+  <text x="840" y="280" text-anchor="middle" fill="#8a8a8a" font-size="12">(of 126 "text_based", ~76 were mangled)</text>
+</svg>
