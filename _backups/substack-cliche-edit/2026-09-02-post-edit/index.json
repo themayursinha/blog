@@ -1,0 +1,35 @@
+{
+  "backed_up_at": "2026-09-02T10:33:04.460Z",
+  "items": [
+    {
+      "id": 212460995,
+      "title": "Taste Is the Last Human Bottleneck",
+      "file": "draft-212460995.json",
+      "draft_body_sha256": "864027dcd823779f1b5fbeb517fd2b3727226553e3a86c0b72ee80ee75d11e88"
+    },
+    {
+      "id": 212460977,
+      "title": "Why Grinding Is a Self-Inflicted DDoS",
+      "file": "draft-212460977.json",
+      "draft_body_sha256": "5829e0caeab9cf5c893b2765aebf1c5364670a09c2a9c714ffe5ea7816113026"
+    },
+    {
+      "id": 212437718,
+      "title": "Man Is a Machine",
+      "file": "draft-212437718.json",
+      "draft_body_sha256": "608852333b82f832271aff240861a2ad678b3eeaf01f68e3cdeaec1b7cd7fbe8"
+    },
+    {
+      "id": 212433500,
+      "title": "Nietzsche and Advaita Vedanta",
+      "file": "draft-212433500.json",
+      "draft_body_sha256": "2a7da22550dfbd0d475a3589e1e03308e3f5693e0bffe11076ffd32e08f593d2"
+    },
+    {
+      "id": 212285921,
+      "title": "The Epicurean Paradox Is Airtight Against the Wrong God",
+      "file": "draft-212285921.json",
+      "draft_body_sha256": "b23856c0a4db9dcf0a032747f83dcbbbf7b8f7f7259aa9c3066aa0459f80f78c"
+    }
+  ]
+}

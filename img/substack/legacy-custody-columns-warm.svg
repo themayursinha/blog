@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet" shape-rendering="geometricPrecision" text-rendering="optimizeLegibility" role="img" aria-labelledby="title desc">
+  <title id="title">The missing dimension is custody</title>
+  <desc id="desc">A warm technical diagram comparing virality, fame, and legacy across decay, where value lives, founder dependence, and custody. Only legacy transfers responsibility to people who can decide, change, and succeed the creator.</desc>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#B9AA96" stroke-width="0.8" opacity="0.24" vector-effect="non-scaling-stroke"/>
+    </pattern>
+    <filter id="shadow" x="-10%" y="-15%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#5E4A32" flood-opacity="0.09"/>
+    </filter>
+    <style>
+      .sans{font-family:Inter,"Noto Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+      .mono{font-family:"IBM Plex Mono","SFMono-Regular",Consolas,"Liberation Mono",monospace}
+      .frame,.card,.rule,.custody-outline{vector-effect:non-scaling-stroke}
+      .frame{fill:none;stroke:#B7A58E;stroke-width:1.5}
+      .rule{stroke:#C8B9A5;stroke-width:1.5}
+      .card{fill:#FBF7EF;stroke:#C8B9A5;stroke-width:1.7}
+      .legacy-card{fill:#F2EBD9;stroke:#7A856B;stroke-width:2.2}
+      .custody-card{fill:#F7E8CB;stroke:#B07A2A;stroke-width:2.2}
+      .custody-outline{fill:none;stroke:#B07A2A;stroke-width:2;stroke-dasharray:8 7}
+      .title{fill:#2D2923;font-size:46px;font-weight:720;letter-spacing:-0.6px}
+      .subtitle{fill:#70675C;font-size:21px;font-weight:430}
+      .col{font-size:18px;font-weight:750;letter-spacing:3px}
+      .row{fill:#3B352D;font-size:20px;font-weight:680}
+      .row-muted{fill:#756A5D;font-size:16px;font-weight:520}
+      .body{fill:#5D554C;font-size:22px;font-weight:450}
+      .body-legacy{fill:#46513F;font-size:22px;font-weight:570}
+      .body-custody{fill:#704B18;font-size:22px;font-weight:620}
+      .footer-label{fill:#A66D20;font-size:15px;font-weight:750;letter-spacing:2.6px}
+      .footer{fill:#3C352C;font-size:20px;font-weight:560}
+      .icon{fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="#F3EBDD"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+  <rect class="frame" x="32" y="32" width="1536" height="836" rx="18"/>
+
+  <text class="sans title" x="72" y="103">The missing dimension is custody</text>
+  <text class="sans subtitle" x="72" y="139">Attention can begin the path. Responsibility keeps the work alive.</text>
+
+  <g transform="translate(272 170)" color="#77838B">
+    <circle class="icon" cx="0" cy="0" r="9"/>
+    <path class="icon" d="M0-18V-13M0 13V18M-18 0H-13M13 0H18M-13-13L-9-9M9 9L13 13M13-13L9-9M-9 9L-13 13"/>
+  </g>
+  <text class="mono col" x="308" y="176" fill="#6F7C84">VIRALITY</text>
+
+  <g transform="translate(686 170)" color="#A46F52">
+    <circle class="icon" cx="0" cy="-4" r="8"/>
+    <path class="icon" d="M-15 17C-15 7-9 2 0 2S15 7 15 17"/>
+  </g>
+  <text class="mono col" x="722" y="176" fill="#966247">FAME</text>
+
+  <g transform="translate(1094 170)" color="#65745A">
+    <circle cx="-12" cy="-8" r="4" fill="currentColor"/>
+    <circle cx="12" cy="-8" r="4" fill="currentColor"/>
+    <circle cx="0" cy="13" r="4" fill="currentColor"/>
+    <path class="icon" d="M-8-6L-2 9M8-6L2 9M-8-8H8"/>
+  </g>
+  <text class="mono col" x="1130" y="176" fill="#58684F">LEGACY</text>
+  <line class="rule" x1="72" y1="204" x2="1528" y2="204"/>
+
+  <text class="sans row" x="218" y="288" text-anchor="end">Decay</text>
+  <rect class="card" x="246" y="226" width="390" height="116" rx="12" filter="url(#shadow)"/>
+  <rect class="card" x="660" y="226" width="390" height="116" rx="12" filter="url(#shadow)"/>
+  <rect class="card legacy-card" x="1074" y="226" width="390" height="116" rx="12" filter="url(#shadow)"/>
+  <text class="sans body" x="270" y="294">Hours to weeks</text>
+  <text class="sans body" x="684" y="294">Years, sometimes a generation</text>
+  <text class="sans body-legacy" x="1098" y="282">Decades, while people keep</text>
+  <text class="sans body-legacy" x="1098" y="308">reading and rebuilding it</text>
+
+  <text class="sans row" x="218" y="409" text-anchor="end">Where value lives</text>
+  <rect class="card" x="246" y="358" width="390" height="116" rx="12" filter="url(#shadow)"/>
+  <rect class="card" x="660" y="358" width="390" height="116" rx="12" filter="url(#shadow)"/>
+  <rect class="card legacy-card" x="1074" y="358" width="390" height="116" rx="12" filter="url(#shadow)"/>
+  <text class="sans body" x="270" y="426">In the reader's reaction</text>
+  <text class="sans body" x="684" y="414">In the standing of a name</text>
+  <text class="sans body" x="684" y="440">that must be continually fed</text>
+  <text class="sans body-legacy" x="1098" y="426">In something other people use</text>
+
+  <text class="sans row" x="218" y="537" text-anchor="end">Founder</text>
+  <text class="sans row" x="218" y="560" text-anchor="end">dependency</text>
+  <rect class="card" x="246" y="490" width="390" height="116" rx="12" filter="url(#shadow)"/>
+  <rect class="card" x="660" y="490" width="390" height="116" rx="12" filter="url(#shadow)"/>
+  <rect class="card legacy-card" x="1074" y="490" width="390" height="116" rx="12" filter="url(#shadow)"/>
+  <text class="sans body" x="270" y="558">Low; it detaches quickly</text>
+  <text class="sans body" x="684" y="558">High; output keeps it alive</text>
+  <text class="sans body-legacy" x="1098" y="546">Reduced only when judgment</text>
+  <text class="sans body-legacy" x="1098" y="572">and authority can move</text>
+
+  <text class="sans row" x="218" y="690" text-anchor="end" fill="#98641E">Custody</text>
+  <text class="sans row-muted" x="218" y="716" text-anchor="end">Who holds it</text>
+  <text class="sans row-muted" x="218" y="737" text-anchor="end">when you stop?</text>
+  <rect class="custody-outline" x="236" y="622" width="1238" height="142" rx="15"/>
+  <rect class="card" x="246" y="632" width="390" height="122" rx="12" filter="url(#shadow)"/>
+  <rect class="card" x="660" y="632" width="390" height="122" rx="12" filter="url(#shadow)"/>
+  <rect class="card custody-card" x="1074" y="632" width="390" height="122" rx="12" filter="url(#shadow)"/>
+  <text class="sans body" x="270" y="704">Nothing durable holds it</text>
+  <text class="sans body" x="684" y="704">The name remains central</text>
+  <text class="sans body-custody" x="1098" y="690">People who can decide, change,</text>
+  <text class="sans body-custody" x="1098" y="716">and eventually succeed you</text>
+
+  <text class="mono footer-label" x="72" y="831">THE CUSTODY TEST</text>
+  <text class="sans footer" x="292" y="831">Can judgment and authority move without the creator?</text>
+</svg>

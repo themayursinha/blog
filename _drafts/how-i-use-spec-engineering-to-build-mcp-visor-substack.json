@@ -1,0 +1,19 @@
+{
+  "title": "How I Use Spec Engineering to Build MCP Visor",
+  "subtitle": "The policy engine governs what agents may do. A second set of specs governs how I change the policy engine itself.",
+  "source_path": "/home/mayur/code/blog/_drafts/how-i-use-spec-engineering-to-build-mcp-visor-substack.md",
+  "source_sha256": "6f7fc4eb797aee1fd6bd4e145f5bea1941bbca5cf87660259b39e8a6bc0522ed",
+  "substack_id": 212730690,
+  "substack_editor_url": "https://mayursinha.substack.com/publish/post/212730690",
+  "substack_state": "draft",
+  "audience": "everyone",
+  "cover_path": "/home/mayur/code/blog/img/substack/spec-engineering-visor-hero.png",
+  "cover_image": "https://substack-post-media.s3.amazonaws.com/public/images/824a6c0f-eeb1-4b1c-9a4e-1a07f447f4fa_1672x941.png",
+  "hero_image_in_body": true,
+  "headings": 10,
+  "links_total": 15,
+  "links_unique": 13,
+  "scheduled": false,
+  "published": false,
+  "verified_at": "2026-08-25T18:06:05.715Z"
+}

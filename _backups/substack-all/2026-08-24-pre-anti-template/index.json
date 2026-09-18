@@ -1,0 +1,226 @@
+{
+  "publication": "https://mayursinha.substack.com",
+  "backed_up_at": "2026-08-24T11:43:16.606Z",
+  "items": [
+    {
+      "kind": "published",
+      "id": 212252221,
+      "title": "The Pile of Hindu Texts I Could Never Read",
+      "slug": "the-pile-of-hindu-texts-i-could-never",
+      "post_date": "2026-08-22T12:44:20.255Z",
+      "trigger_at": null,
+      "file": "published-212252221-the-pile-of-hindu-texts-i-could-never.json",
+      "draft_body_sha256": "ed5bb580e788b84677feb69c04e1480d68e220068a70b607bd1a07f2092dd679"
+    },
+    {
+      "kind": "published",
+      "id": 169933661,
+      "title": "Designing a Living Ecosystem of AI Agents",
+      "slug": "designing-a-living-ecosystem-of-ai",
+      "post_date": "2025-08-02T15:44:30.409Z",
+      "trigger_at": null,
+      "file": "published-169933661-designing-a-living-ecosystem-of-ai.json",
+      "draft_body_sha256": "ac372b0ee341a5c95a6010bb60fd3d4c81f21485d5d88f94f24c281bf90bbad4"
+    },
+    {
+      "kind": "published",
+      "id": 152819726,
+      "title": "The Metamorphosis in the 21st Century",
+      "slug": "the-metamorphosis-in-the-21st-century",
+      "post_date": "2024-12-09T00:44:27.287Z",
+      "trigger_at": null,
+      "file": "published-152819726-the-metamorphosis-in-the-21st-century.json",
+      "draft_body_sha256": "4c1d711e90aa415a4eb4867a00158c4ab17a12311d0f3662218cf8518eacfeef"
+    },
+    {
+      "kind": "published",
+      "id": 141775722,
+      "title": "What Science Cannot Say About Consciousness",
+      "slug": "exploring-the-depths-of-consciousness",
+      "post_date": "2024-02-18T16:37:49.550Z",
+      "trigger_at": null,
+      "file": "published-141775722-exploring-the-depths-of-consciousness.json",
+      "draft_body_sha256": "21c67d9e75a96951259cf79fa3661f29551e934eec1a9de62af136d1dc708da5"
+    },
+    {
+      "kind": "published",
+      "id": 141755605,
+      "title": "Quantum Mechanics and Finance",
+      "slug": "quantum-mechanics-and-finance",
+      "post_date": "2024-02-17T12:25:54.283Z",
+      "trigger_at": null,
+      "file": "published-141755605-quantum-mechanics-and-finance.json",
+      "draft_body_sha256": "ed41c9a2340566eecce039a29a95f5199d8b408337a92a289742e9df87f45bef"
+    },
+    {
+      "kind": "published",
+      "id": 135442420,
+      "title": "The Epicurean Paradox Is Airtight Against the Wrong God",
+      "slug": "resolving-the-epicurean-paradox",
+      "post_date": "2023-07-25T15:41:00.686Z",
+      "trigger_at": null,
+      "file": "published-135442420-resolving-the-epicurean-paradox.json",
+      "draft_body_sha256": "e419e955d41d1e4a91d4d3fee81e39cf2c0afa03e45200e12f994bf39196e637"
+    },
+    {
+      "kind": "published",
+      "id": 135055676,
+      "title": "Can an AI Be “Truth-Seeking”?",
+      "slug": "elon-musks-xai",
+      "post_date": "2023-07-16T22:59:21.239Z",
+      "trigger_at": null,
+      "file": "published-135055676-elon-musks-xai.json",
+      "draft_body_sha256": "bd7d066220f3652c2bf4acc4c655b5d70111156eb913128ff5b2e42038a04f07"
+    },
+    {
+      "kind": "published",
+      "id": 134193812,
+      "title": "Where Science Ends and the Soul Begins",
+      "slug": "the-interplay-of-science-humanity",
+      "post_date": "2023-07-09T22:53:14.003Z",
+      "trigger_at": null,
+      "file": "published-134193812-the-interplay-of-science-humanity.json",
+      "draft_body_sha256": "f1fdc5d4027d25a68d10d22ec0b00b329fcc98f24756405d2f37fa336a7e291c"
+    },
+    {
+      "kind": "published",
+      "id": 107487315,
+      "title": "What Tesla Got Right",
+      "slug": "mans-greatest-achievement",
+      "post_date": "2023-03-09T22:27:15.148Z",
+      "trigger_at": null,
+      "file": "published-107487315-mans-greatest-achievement.json",
+      "draft_body_sha256": "e743357e52aeb31a891a34c650a112a4d9e010f11f0657cf96afe58e5a0728a0"
+    },
+    {
+      "kind": "draft",
+      "id": 212285921,
+      "title": "The Epicurean Paradox Is Airtight Against the Wrong God",
+      "slug": null,
+      "post_date": null,
+      "trigger_at": null,
+      "file": "draft-212285921-the-epicurean-paradox-is-airtight-against-the-wrong-god.json",
+      "draft_body_sha256": "e419e955d41d1e4a91d4d3fee81e39cf2c0afa03e45200e12f994bf39196e637"
+    },
+    {
+      "kind": "draft",
+      "id": 212433500,
+      "title": "Nietzsche and Advaita Vedanta",
+      "slug": null,
+      "post_date": null,
+      "trigger_at": null,
+      "file": "draft-212433500-nietzsche-and-advaita-vedanta.json",
+      "draft_body_sha256": "6b77aaa05e8ab93c347d822bda246e704839a93b9d0c1ba95c24efaff9e374b3"
+    },
+    {
+      "kind": "draft",
+      "id": 212437243,
+      "title": "Epistemic Security for AI Agents",
+      "slug": null,
+      "post_date": null,
+      "trigger_at": null,
+      "file": "draft-212437243-epistemic-security-for-ai-agents.json",
+      "draft_body_sha256": "c12cf95ee472e3249c57e58353c6769ebb02fa143f7fdef81986828449bc1d64"
+    },
+    {
+      "kind": "draft",
+      "id": 212437718,
+      "title": "Man Is a Machine",
+      "slug": null,
+      "post_date": null,
+      "trigger_at": null,
+      "file": "draft-212437718-man-is-a-machine.json",
+      "draft_body_sha256": "3975559784b6d11ede89c9e325c6efba7c5c5c77dbe1dabc4f27859e39e36d57"
+    },
+    {
+      "kind": "draft",
+      "id": 212460995,
+      "title": "Taste Is the Last Human Bottleneck",
+      "slug": null,
+      "post_date": null,
+      "trigger_at": null,
+      "file": "draft-212460995-taste-is-the-last-human-bottleneck.json",
+      "draft_body_sha256": "58e22af80dcb625d16012f2d7010a8be61c7eb1d2ffbe2fe58838d9e44cf8587"
+    },
+    {
+      "kind": "draft",
+      "id": 212460987,
+      "title": "The Moral Failure of Perfect Arithmetic",
+      "slug": null,
+      "post_date": null,
+      "trigger_at": null,
+      "file": "draft-212460987-the-moral-failure-of-perfect-arithmetic.json",
+      "draft_body_sha256": "edf7747623c6301dd61ffd1ab470ae376f5339a961e757ca6288e36a9cc3766f"
+    },
+    {
+      "kind": "draft",
+      "id": 212460980,
+      "title": "The Engineers Didn't Finish the Job",
+      "slug": null,
+      "post_date": null,
+      "trigger_at": null,
+      "file": "draft-212460980-the-engineers-didn-t-finish-the-job.json",
+      "draft_body_sha256": "2c13526a677a0573b73cdd221e3b2b6cc6171ef2df37e50dda60448f42abed98"
+    },
+    {
+      "kind": "draft",
+      "id": 212460977,
+      "title": "Why Grinding Is a Self-Inflicted DDoS",
+      "slug": null,
+      "post_date": null,
+      "trigger_at": null,
+      "file": "draft-212460977-why-grinding-is-a-self-inflicted-ddos.json",
+      "draft_body_sha256": "5f1a85ecd79a0cf039eb0d19c2c68a3badc088e5009ba771bca0f1ee2440ffc6"
+    },
+    {
+      "kind": "draft",
+      "id": 212460970,
+      "title": "Can a Group Think Without Turning It Into a Debate?",
+      "slug": null,
+      "post_date": null,
+      "trigger_at": null,
+      "file": "draft-212460970-can-a-group-think-without-turning-it-into-a-debate.json",
+      "draft_body_sha256": "a02c8ac559d8d9854c7805b3552667e59b2cbbb5573d064d3108c684c5d859fb"
+    },
+    {
+      "kind": "scheduled",
+      "id": 212433944,
+      "title": "The AI Agent Dilemma",
+      "slug": "the-ai-agent-dilemma",
+      "post_date": null,
+      "trigger_at": "2026-08-30T08:00:00.000Z",
+      "file": "scheduled-212433944-the-ai-agent-dilemma.json",
+      "draft_body_sha256": "f0733d03128f584070bd860266d9c08c7f2db1a8ae8094c61124592527156896"
+    },
+    {
+      "kind": "scheduled",
+      "id": 212432521,
+      "title": "The Blind King's Court",
+      "slug": "the-blind-kings-court",
+      "post_date": null,
+      "trigger_at": "2026-09-06T08:00:00.000Z",
+      "file": "scheduled-212432521-the-blind-kings-court.json",
+      "draft_body_sha256": "188688fd15ea2364e346d53df6ce918af36650a95c6910af9e1c9ab671199c2c"
+    },
+    {
+      "kind": "scheduled",
+      "id": 212438151,
+      "title": "How to Study Based on How Memory Works",
+      "slug": "how-to-study-based-on-how-memory",
+      "post_date": null,
+      "trigger_at": "2026-09-13T08:00:00.000Z",
+      "file": "scheduled-212438151-how-to-study-based-on-how-memory.json",
+      "draft_body_sha256": "555fc9de2d5e427daba6d34e80bb7a333a2b6443fb6ee685e13bc3efa76daeb1"
+    },
+    {
+      "kind": "scheduled",
+      "id": 212460991,
+      "title": "What Happens When AI Agents Discover Each Other?",
+      "slug": "what-happens-when-ai-agents-discover",
+      "post_date": null,
+      "trigger_at": "2026-09-20T08:00:00.000Z",
+      "file": "scheduled-212460991-what-happens-when-ai-agents-discover.json",
+      "draft_body_sha256": "a11574fc4df752c5847921fdcadef8c8763ac35bf6c827209aeb2d8bf5861e4a"
+    }
+  ]
+}

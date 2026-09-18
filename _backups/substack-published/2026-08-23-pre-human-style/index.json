@@ -1,0 +1,78 @@
+{
+  "publication": "https://mayursinha.substack.com",
+  "total": 9,
+  "posts": [
+    {
+      "id": 212252221,
+      "title": "The Pile of Hindu Texts I Could Never Read",
+      "slug": "the-pile-of-hindu-texts-i-could-never",
+      "post_date": "2026-08-22T12:44:20.255Z",
+      "backup_file": "212252221-the-pile-of-hindu-texts-i-could-never.json",
+      "draft_body_sha256": "39aa024180a9048781e45ff260726d4409bea8cf07373aaf61849b1ce4f7d126"
+    },
+    {
+      "id": 169933661,
+      "title": "Designing a Living Ecosystem of AI Agents",
+      "slug": "designing-a-living-ecosystem-of-ai",
+      "post_date": "2025-08-02T15:44:30.409Z",
+      "backup_file": "169933661-designing-a-living-ecosystem-of-ai.json",
+      "draft_body_sha256": "9cc3989d74626a7d2c2c4a95acd8e93dd512885de3d931db2af2470f9c77be4b"
+    },
+    {
+      "id": 152819726,
+      "title": "The Metamorphosis in the 21st Century",
+      "slug": "the-metamorphosis-in-the-21st-century",
+      "post_date": "2024-12-09T00:44:27.287Z",
+      "backup_file": "152819726-the-metamorphosis-in-the-21st-century.json",
+      "draft_body_sha256": "8fb73b7f03e684aa0ede88c86238ad8e7e334a5b69b0b0ad71c760fb1d94af11"
+    },
+    {
+      "id": 141775722,
+      "title": "What Science Cannot Say About Consciousness",
+      "slug": "exploring-the-depths-of-consciousness",
+      "post_date": "2024-02-18T16:37:49.550Z",
+      "backup_file": "141775722-exploring-the-depths-of-consciousness.json",
+      "draft_body_sha256": "ae2323f87150db66d972e0b97f131be102d42c123181350432bbd1ee11f9fa73"
+    },
+    {
+      "id": 141755605,
+      "title": "Quantum Mechanics and Finance: A Useful Analogy With Sharp Limits",
+      "slug": "quantum-mechanics-and-finance",
+      "post_date": "2024-02-17T12:25:54.283Z",
+      "backup_file": "141755605-quantum-mechanics-and-finance.json",
+      "draft_body_sha256": "aebf4bb2b2ddad23852f103759d0b3b5ab95b4bb95002594a8dd1270d889c668"
+    },
+    {
+      "id": 135442420,
+      "title": "The Epicurean Paradox Is Airtight Against the Wrong God",
+      "slug": "resolving-the-epicurean-paradox",
+      "post_date": "2023-07-25T15:41:00.686Z",
+      "backup_file": "135442420-resolving-the-epicurean-paradox.json",
+      "draft_body_sha256": "d2ad126b97e3e6a9b4f5338f098aa457f3dd401520ac466d4bf769cfd6a46824"
+    },
+    {
+      "id": 135055676,
+      "title": "Can an AI Be “Truth-Seeking”?",
+      "slug": "elon-musks-xai",
+      "post_date": "2023-07-16T22:59:21.239Z",
+      "backup_file": "135055676-elon-musks-xai.json",
+      "draft_body_sha256": "fc35871afbd9e78b574c1080aabcbb2650582a419bb7e8d667bdf4d1cc4ab0d5"
+    },
+    {
+      "id": 134193812,
+      "title": "Where Science Ends and the Soul Begins",
+      "slug": "the-interplay-of-science-humanity",
+      "post_date": "2023-07-09T22:53:14.003Z",
+      "backup_file": "134193812-the-interplay-of-science-humanity.json",
+      "draft_body_sha256": "772b0d83213b829b6f4ad226168dbf8029643a4d764c1dc954d1669e345cf461"
+    },
+    {
+      "id": 107487315,
+      "title": "What Tesla Got Right",
+      "slug": "mans-greatest-achievement",
+      "post_date": "2023-03-09T22:27:15.148Z",
+      "backup_file": "107487315-mans-greatest-achievement.json",
+      "draft_body_sha256": "4fea5ebebfa02104f8b08ba4bd52334e5eb22df0abf9cd969ba1435e5985bcc7"
+    }
+  ]
+}

@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "I Tested a Model That Refuses to Write Anything"
-subtitle: "It came back 47 times cheaper than Haiku 4.5, and on 34 cases its accuracy was within two decisions of it. The differences that survive the sample size are structural."
+subtitle: "It came back 47 times cheaper than Haiku 4.5 and landed 23 of 34 decisions against 27. At this sample size nothing about accuracy separates any of the five models, so what is left to act on is structural."
 date: 2026-09-18
 categories: [ai, security, architecture]
 tags: [ai, security, agents, detection-engineering, evaluation, calibration]
-description: "A decision-native model cost 47 times less than Claude Haiku 4.5 and landed 14 of 20 and 9 of 14 decisions against Haiku's 16 of 20 and 11 of 14. On this sample the accuracy gap is two decisions, so what is left worth acting on is the structure: which questions a model should never be asked, and why a confidence threshold is not a safety control."
+description: "A decision-native model cost 47 times less than Claude Haiku 4.5 and landed 23 of 34 decisions against Haiku's 27, which is two behind on each of the two workflows. Five models spanning a 438x range in run cost sat inside the same noise band. What is left worth acting on is the structure: which questions a model should never be asked, and why a confidence threshold is not a safety control."
 share-img: /img/decision-model-tradeoff.svg
 related_posts:
   - "AI Safety Without AI Security Is Not Safety"
@@ -15,7 +15,7 @@ related_posts:
 
 In September 2026, TypeSafe put a model on OpenRouter with a description that read like a joke aimed at me. [Jev](https://openrouter.ai/~typesafe/jev-latest) does not generate text. You hand it your application's state and a typed question, and it hands back a typed decision with a probability attached. You skip the JSON prompt entirely, and nothing needs validating against a schema.
 
-I have spent a lot of this year arguing that security decisions belong in deterministic code and not in a model's judgement. So a model that returns a probability instead of a paragraph should have been the version of this technology I could actually live with. I built a small harness, ran it against real hosted Jev on 34 security cases, and got a result that resists the headline I wanted to write. Jev answered in about a quarter of a second for one forty-seventh of the cost of Claude Haiku 4.5, a small cheap model, and it landed two fewer decisions out of 34.
+I have spent a lot of this year arguing that security decisions belong in deterministic code and not in a model's judgement. So a model that returns a probability instead of a paragraph should have been the version of this technology I could actually live with. I built a small harness, ran it against real hosted Jev on 34 security cases, and got a result that resists the headline I wanted to write. Jev answered in about a quarter of a second for one forty-seventh of the cost of Claude Haiku 4.5, a small cheap model, and it landed 23 of the 34 decisions against Haiku's 27.
 
 ## What it actually does
 
@@ -64,11 +64,13 @@ The interface deserves one paragraph of disclosure, because it is where a compar
 
 Real Jev landed 14 of 20 incident decisions and 9 of 14 trace decisions. Haiku 4.5 landed 16 of 20 and 11 of 14. Luna landed 15 of 20 and 8 of 14. Terra landed 18 of 20 and 8 of 14. Opus 5, the most expensive model here at $5 and $25 per million tokens, landed 15 of 20 and 10 of 14.
 
-Read as counts, the story changes. Jev is **two decisions** behind Haiku on each workflow, out of 20 and 14. The 95 percent Wilson intervals are 48.1 to 85.5 percent for Jev against 58.4 to 91.9 for Haiku on incidents, and 38.8 to 83.7 against 52.4 to 92.4 on traces. Those intervals overlap almost completely, and a two-sided Fisher exact test against Jev returns p values from 0.24 to 1.00 across the four comparators. Not one of those differences is significant at this sample size.
+Read as counts, the story changes. Jev is **two decisions** behind Haiku on each workflow, which is four across the pooled 34. The 95 percent Wilson intervals are 48.1 to 85.5 percent for Jev against 58.4 to 91.9 for Haiku on incidents, and 38.8 to 83.7 against 52.4 to 92.4 on traces. Those intervals overlap almost completely, and a two-sided Fisher exact test against Jev returns p values from 0.24 to 1.00 across the four comparators.
+
+That last result is weaker than it sounds, and I want to state it properly. **This study is underpowered to detect a difference of the size I originally claimed.** Fisher will fail to reject at 20 and 14 items for almost any plausible gap, so the right reading is that no difference was demonstrated, not that the models are equivalent. Four decisions pooled is what this data can see and it cannot resolve it. A larger labelled set could easily show a real ten point gap in either direction, and the honest summary is that I do not know which way it would fall.
 
 Terra is what settles the reading. It produced the best incident score in the set and the joint worst trace score. Opus 5, at 438 times Jev's cost, beat it by a single decision on each workflow. Luna, the cheapest model here, finished between Jev and Haiku on incidents and below both on traces. There is no ordering that tracks price, or capability tier, or anything else I can defend at 20 and 14 cases. The earlier version of this post claimed a 10 to 14 point gap between Jev and Haiku, and the counts do not support that.
 
-What does survive is the shape of the trade. Jev costs one forty-seventh of Haiku, one ninety-ninth of Terra and one four-hundred-and-thirty-eighth of Opus 5, and answers about 37 times faster than Opus 5 on incidents, and it produced zero downgrades under adversarial probes while Luna produced nine across the two workflows.
+What does survive is the shape of the trade. Jev costs one forty-seventh of Haiku, one ninety-ninth of Terra and one four-hundred-and-thirty-eighth of Opus 5, and answers about 37 times faster than Opus 5 on incidents, and it produced zero downgrades across 32 adversarial probe executions while Luna produced nine. That last number is a sketch rather than a result, 9 of 32 executions is not a ranking, but the direction is worth keeping.
 
 Then the other axis, which is unambiguous. Jev answered in 0.29 and 0.28 seconds on average, against 2.03 and 2.08 seconds for Haiku and 10.81 and 8.68 seconds for Opus 5. So it is about 7 times faster than the cheap model and about 37 times faster than the expensive one, as well as 47 to 438 times cheaper. The full 34-case run cost $0.00208 for Jev against $0.09765 for Haiku and $0.91134 for Opus 5, and none of those are projections from a price page. They are measured, and the gateway's own billed figure matched the arithmetic to the cent.
 
@@ -80,7 +82,11 @@ Speed and cost matter only after the errors are separated by workflow and by fai
 
 **Choice and score confidence did not order correctness on this workload.** This is the finding that would have burned me in production. Jev reports a confidence value on every choice and score answer, and the docs present it as something an application can threshold. Binned against whether the answer was actually right, the top bin, 0.95 to 1.00, was correct 4 of 15 times on the gateway route and 5 of 15 on the direct route for incidents, while the 0.70 to 0.85 bin managed 1 of 7 and 1 of 6. On agent trace review that same top bin was correct 6 of 7 times.
 
-I want to be careful about what that does and does not say. The number is derived from the shape of the option distribution, so it is not advertised as the probability of being correct, and I am not claiming the metric is miscalibrated as a probability. The claim I can defend is that it failed the one thing an application needs from it, which is ordering correctness well enough to gate on, without calibration against the specific workload. Across these two workflows a 0.95-confident answer was right anywhere between 4 of 15 and 6 of 7, and those are counts small enough that the vendor's own advice to test thresholds on your workload is the correct instruction. The noul probabilities were a different story, at an expected calibration error of 0.05, and the gap between those two numbers is the part worth carrying into a design review.
+TypeSafe make the claim directly, so this is a test of a stated property rather than of something I inferred. Their launch post says Jev's confidence is calibrated, "[higher confidence means higher accuracy](https://typesafe.ai/blog/introducing-system-one-models-and-jev)", and it criticises other models on exactly this ground: it argues that a model which can do a task 95 percent of the time without saying when it is in the unreliable 5 percent cannot be used for automation. That is the right standard, and it is the one I measured against.
+
+On my workload the ordering did not hold for Choice and Score answers. The 0.95 to 1.00 bin was right 4 of 15 times on incidents and 6 of 7 on traces. Same model, same confidence value, two workflows, and the top bin swung from worse than a coin flip to near perfect. The claim held for the noul probabilities, at an expected calibration error of 0.05, and it did not hold for the other two answer types, which is the finding worth carrying into a design review.
+
+The counts are small and I am not claiming the metric is broken everywhere. I am claiming it failed the one thing the vendor says it is for, telling you when to trust an answer, on one of two workflows at 15 cases. Until that is shown otherwise on a larger set, a confidence threshold on a Choice or a Score answer is not a safety control. Gate on something you computed.
 
 **One question should never have been in the set.** `process_reputation` asked the model how much a binary could be trusted, choosing from six provenance options that a hash, a signature and an allowlist could have resolved without a model. Jev got 40 percent and Haiku got 35, and I let it carry the heaviest weight in the risk formula. The neighbouring question, whether that binary is expected on this host, scored 100 percent.
 
@@ -106,13 +112,25 @@ The vendor's own published accuracy is agreement with two other models rather th
 
 I was not the only person who did this, and the other tests matter because two of them are stronger than mine in ways that change the picture.
 
+### A probability threshold that let an SSH key exfiltration through
+
+This is the single most decision-relevant result I found, and I would put it in front of any security team before any accuracy table. [A developer placed a probability gate in front of a coding agent's shell commands](https://dev.to/jomatsu/jev-pi-a-probability-gate-for-my-coding-agents-shell-commands-95d). Two of his conditions were phrased as absence-of-hazard questions. Each carried a threshold, and because the bands were symmetric around 0.5, raising a threshold from 0.97 to 0.99 narrowed the violation band from p <= 0.03 to p <= 0.01. An SSH key exfiltration command scored 0.02. Tightening the safety setting moved that command out of the rejection band and into the unclear band, where it was allowed to run.
+
+The trap lives in the threshold arithmetic rather than in the model, and it is the class of bug a prompt-engineering comparison will never surface. It is also the strongest argument for the deterministic floor, because no amount of prompt tuning would have caught it.
+
+### The vendor's own failure-mode page
+
 TypeSafe's own documentation publishes the failure modes, and the most useful entry is about asking a model something that code can compute exactly. Their [page on adversarial content](https://docs.typesafe.ai/model-jaggedness/jev-1.13) is blunt. State is data, and `jev-1.13` gives it no hostile default, which means an injected instruction, a misleading framing, or text arguing for its own classification can all move the answer. Their recommended mitigation is to write precise criteria and test the integration thoroughly before deploying. I found no injection evaluation in the vendor material or in the independent tests reviewed for this post, so my four probe types are one small data point on a question nobody has answered.
+
+### A poker solver, and a state that changed the answer
 
 The best piece of independent work I found is [a poker evaluation](https://backnotprop.com/blog/jev-poker/). The author solved one flop with a real solver and ran two tests. On 30 sampled spots, Jev matched the solver's top action 63 percent of the time. In a wider 150-spot sweep, on the 55 spots where the solver does something other than check, his four Jev designs scored 33 to 44 percent against 24 to 29 percent for rules containing no model at all, and he warns that the headline figure is inflated because checking is usually the right answer. His conclusion is the same as mine, that you have to evaluate every situation you want to use this in against an answer key you trust. He also found that the answer changes once the state names the opponent's hand instead of listing the cards, which is my code floor finding in another domain. The model responds to a stated conclusion.
 
-The single most decision-relevant result, and the one I would put in front of any security team, comes from [a developer who placed a probability gate in front of a coding agent's shell commands](https://dev.to/jomatsu/jev-pi-a-probability-gate-for-my-coding-agents-shell-commands-95d). Two of his conditions were phrased as absence-of-hazard questions. Each carried a threshold, and because the bands were symmetric around 0.5, raising a threshold from 0.97 to 0.99 narrowed the violation band from p <= 0.03 to p <= 0.01. An SSH key exfiltration command scored 0.02. Tightening the safety setting moved that command out of the rejection band and into the unclear band, where it was allowed to run. The trap lives in the threshold arithmetic rather than in the model, and that is the class of bug a prompt-engineering comparison will never surface.
+### Norwegian documents, and the calibration that matched mine
 
 A [Norwegian engineer ran 24 out-of-distribution government documents](https://lindfors.no/blog/a-first-look-at-typesafes-jev/) through it in Norwegian, using an English question set. It read them at roughly a sixth of the cost of a frontier model on the same task, and got one stance label wrong while reporting 0.62 for the answer it chose. His calibration table is the one result that lines up exactly with mine. Across 192 yes/no judgments the probabilities moved in the right direction at every level, from 0 percent in the lowest bin to 98 percent in the highest. Taken with my own ECE of 0.05 on noul answers, that makes the probabilities promising enough to calibrate on a real workload, and it says nothing about the confidence number beside a choice.
+
+### The 444x cost claim
 
 My measured cost advantage was 47 times against Haiku 4.5. [TypeSafe advertises 444.6 times](https://typesafe.ai/blog/introducing-system-one-models-and-jev) from its own four-workflow evaluation, which its capabilities team built using reference answers from two other vendors' models. Neither multiple should be transferred to another workload without measuring it there, and I think that holds for my own 47 times too.
 

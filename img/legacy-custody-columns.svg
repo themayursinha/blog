@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet" shape-rendering="geometricPrecision" text-rendering="optimizeLegibility" role="img" aria-labelledby="cust-title cust-desc">
+  <title id="cust-title">The missing column: custody</title>
+  <desc id="cust-desc">A three column comparison of virality, fame and legacy across decay, where the value sits, and dependence on the author. A fourth row adds the question of who holds the work when the author stops, answered only in the legacy column by a custodian who can decide, change and succeed the author.</desc>
+  <defs>
+    <pattern id="cust-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#1e293b" stroke-width="0.75" stroke-opacity="0.12" vector-effect="non-scaling-stroke"/>
+    </pattern>
+  </defs>
+  <style>
+    .frame,.card{vector-effect:non-scaling-stroke}
+    .frame{fill:none;stroke:#293029;stroke-width:1.5}
+    .card{stroke-width:2}
+    .neutral{fill:#0d1115;stroke:#64748b}
+    .green{fill:#08170c;stroke:#00ff41}
+    .amber{fill:#18140b;stroke:#f59e0b}
+    .dashed{fill:none;stroke:#f59e0b;stroke-width:2;stroke-dasharray:7 6}
+    .title{fill:#e6e9ef;font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700}
+    .sub{fill:#858c85;font-family:'IBM Plex Mono',monospace;font-size:14px}
+    .label{fill:#00ff41;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2.5px}
+    .label-slate{fill:#94a3b8;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2.5px}
+    .label-amber{fill:#f59e0b;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2.5px}
+    .rowlabel{fill:#e6e9ef;font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700}
+    .rowlabel-dim{fill:#94a3b8;font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700}
+  .rowlabel-amber{fill:#f59e0b;font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700}
+    .text{fill:#9aa3b2;font-family:'IBM Plex Mono',monospace;font-size:13.5px}
+    .text-dim{fill:#4b5563;font-family:'IBM Plex Mono',monospace;font-size:13.5px}
+    .text-green{fill:#d1fadf;font-family:'IBM Plex Mono',monospace;font-size:13.5px}
+    .text-amber{fill:#fde68a;font-family:'IBM Plex Mono',monospace;font-size:13.5px}
+  </style>
+
+  <rect x="0" y="0" width="1600" height="900" fill="#0a0a0a"/>
+  <rect x="0" y="0" width="1600" height="900" fill="url(#cust-grid)"/>
+  <rect class="frame" x="32" y="32" width="1536" height="836" rx="0"/>
+
+  <text class="title" x="70" y="104">The missing dimension is custody</text>
+  <text class="sub" x="70" y="134">The same three artifacts, asked one more question.</text>
+
+  <text class="label-slate" x="230" y="196">VIRALITY</text>
+  <text class="label-slate" x="640" y="196">FAME</text>
+  <text class="label" x="1050" y="196">LEGACY</text>
+  <path d="M70 212H1450" stroke="#293029" stroke-width="1.5"/>
+
+  <!-- Row 1: decay -->
+  <text class="rowlabel" x="210" y="290" text-anchor="end">Decay</text>
+  <rect class="card neutral" x="230" y="228" width="380" height="118" rx="10"/>
+  <rect class="card neutral" x="640" y="228" width="380" height="118" rx="10"/>
+  <rect class="card green" x="1050" y="228" width="380" height="118" rx="10"/>
+  <text class="text" x="252" y="296">hours to weeks</text>
+  <text class="text" x="662" y="296">years, sometimes a generation</text>
+  <text class="text-green" x="1072" y="296">decades, and only while people</text>
+  <text class="text-green" x="1072" y="320">keep reading and rebuilding it</text>
+
+  <!-- Row 2: locus of value -->
+  <text class="rowlabel" x="210" y="424" text-anchor="end">Where the</text>
+  <text class="rowlabel" x="210" y="446" text-anchor="end">value sits</text>
+  <rect class="card neutral" x="230" y="362" width="380" height="118" rx="10"/>
+  <rect class="card neutral" x="640" y="362" width="380" height="118" rx="10"/>
+  <rect class="card green" x="1050" y="362" width="380" height="118" rx="10"/>
+  <text class="text" x="252" y="430">in the reaction of the reader</text>
+  <text class="text" x="662" y="430">in the standing of a name,</text>
+  <text class="text" x="662" y="454">which has to be fed</text>
+  <text class="text-green" x="1072" y="430">in something other people use</text>
+
+  <!-- Row 3: dependence -->
+  <text class="rowlabel" x="210" y="546" text-anchor="end">Depends on</text>
+  <text class="rowlabel" x="210" y="568" text-anchor="end">the author</text>
+  <rect class="card neutral" x="230" y="496" width="380" height="118" rx="10"/>
+  <rect class="card neutral" x="640" y="496" width="380" height="118" rx="10"/>
+  <rect class="card green" x="1050" y="496" width="380" height="118" rx="10"/>
+  <text class="text" x="252" y="564">no, it detaches at once</text>
+  <text class="text" x="662" y="564">yes, output is the fuel</text>
+  <text class="text-green" x="1072" y="564">partly: one maintainer has</text>
+  <text class="text-green" x="1072" y="588">postponed the question</text>
+
+  <!-- Row 4: custody -->
+  <text class="rowlabel-amber" x="210" y="700" text-anchor="end">Custody</text>
+  <text class="text-dim" x="210" y="724" text-anchor="end">who holds it</text>
+  <text class="text-dim" x="210" y="746" text-anchor="end">when you stop</text>
+  <rect class="dashed" x="222" y="622" width="1248" height="150" rx="12"/>
+  <rect class="card neutral" x="230" y="630" width="380" height="134" rx="10"/>
+  <rect class="card neutral" x="640" y="630" width="380" height="134" rx="10"/>
+  <rect class="card amber" x="1050" y="630" width="380" height="134" rx="10"/>
+  <text class="text-dim" x="252" y="704">nothing holds it</text>
+  <text class="text-dim" x="662" y="704">only the name holds it</text>
+  <text class="text-amber" x="1072" y="692">a custodian who can decide,</text>
+  <text class="text-amber" x="1072" y="716">change it, and succeed you</text>
+
+  <text class="label-amber" x="70" y="844">THE QUESTION THE FRAMEWORK LEFT OUT</text>
+  <text class="sub" x="470" y="844">Legacy is what other people can carry without you.</text>
+</svg>

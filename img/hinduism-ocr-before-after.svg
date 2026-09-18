@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" font-family="'IBM Plex Mono', monospace">
+  <rect width="1200" height="460" fill="#0a0a0a"/>
+  <text x="600" y="44" text-anchor="middle" fill="#00ff41" font-size="22" font-weight="bold">Before and after</text>
+  <text x="600" y="70" text-anchor="middle" fill="#8a8a8a" font-size="14">The same scan, extracted two ways. The left looks like a text layer but is garbage.</text>
+
+  <!-- Before -->
+  <rect x="40" y="110" width="520" height="300" rx="10" fill="#121212" stroke="#ff5f56" stroke-width="2"/>
+  <text x="300" y="140" text-anchor="middle" fill="#ff5f56" font-size="15" font-weight="bold">Fake text layer (mangled ToUnicode)</text>
+  <text x="300" y="162" text-anchor="middle" fill="#8a8a8a" font-size="12">pdf-inspector --detect said "text_based"</text>
+  <rect x="70" y="185" width="460" height="195" rx="6" fill="#0d0d0d"/>
+  <text x="90" y="215" fill="#c9c9c9" font-size="13">2८ 220८ 30८ ste sy st</text>
+  <text x="90" y="240" fill="#c9c9c9" font-size="13">Me SSK KK KS ॥४६३८३८+६</text>
+  <text x="90" y="265" fill="#c9c9c9" font-size="13">EMCEE EE ESSE आह ESE SESE SESE</text>
+  <text x="90" y="290" fill="#c9c9c9" font-size="13">SCE तेल NE HEE HE EE es a a i i शेर</text>
+  <text x="90" y="315" fill="#c9c9c9" font-size="13">bZ'ojh; O;oLFkk  (ईश्वरीय व्यवस्था)</text>
+  <text x="90" y="340" fill="#ff5f56" font-size="12">→ Devanagari ratio &lt; 1%, mangled hits &gt; 10</text>
+  <text x="90" y="362" fill="#ff5f56" font-size="12">→ routed to Tesseract anyway</text>
+
+  <!-- Arrow -->
+  <text x="585" y="260" text-anchor="middle" fill="#00ff41" font-size="26" font-weight="bold">→</text>
+
+  <!-- After -->
+  <rect x="640" y="110" width="520" height="300" rx="10" fill="#121212" stroke="#00ff41" stroke-width="2"/>
+  <text x="900" y="140" text-anchor="middle" fill="#00ff41" font-size="15" font-weight="bold">Tesseract OCR, hin+eng</text>
+  <text x="900" y="162" text-anchor="middle" fill="#8a8a8a" font-size="12">same scan, 16 workers, 200 DPI</text>
+  <rect x="670" y="185" width="460" height="195" rx="6" fill="#0d0d0d"/>
+  <text x="690" y="215" fill="#c9c9c9" font-size="13">मूल ग्रन्थको ही ऐसा बोलनेवाला कोई मजहब नहीं हो सकता।</text>
+  <text x="690" y="240" fill="#c9c9c9" font-size="13">यह तो विश्वधर्म है, सम्पूर्ण प्राणियोंके लिए</text>
+  <text x="690" y="265" fill="#c9c9c9" font-size="13">lalkj;ksfu%ldyk loZ'kfäleqn~Hkok</text>
+  <text x="690" y="290" fill="#8a8a8a" font-size="12">(still imperfect: NBSP, broken conjuncts)</text>
+  <text x="690" y="340" fill="#00ff41" font-size="12">→ searchable, quotable, grep-able</text>
+
+  <!-- Caption -->
+  <text x="600" y="440" text-anchor="middle" fill="#8a8a8a" font-size="13">Real output from the corpus: गीता दर्शन-3 page and Bhagavad-gita As It Is</text>
+</svg>

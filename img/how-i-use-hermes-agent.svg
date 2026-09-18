@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid meet" shape-rendering="geometricPrecision" text-rendering="optimizeLegibility" role="img" aria-labelledby="hua-title hua-desc">
+  <title id="hua-title">My Hermes Agent operating architecture</title>
+  <desc id="hua-desc">Telegram reaches the Hermes messaging gateway through its platform adapter, while remote desktop and dashboard access use Tailscale; the CLI may run locally on the host.</desc>
+  <defs>
+    <pattern id="hua-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#1e293b" stroke-width="0.75" stroke-opacity="0.12" vector-effect="non-scaling-stroke"/>
+    </pattern>
+    <marker id="hua-arrow" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L11 6L1 11Z" fill="#94a3b8"/>
+    </marker>
+    <marker id="hua-arrow-green" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1L11 6L1 11Z" fill="#00ff41"/>
+    </marker>
+    <symbol id="hua-chat" viewBox="0 0 48 48">
+      <path d="M7 8H41V34H20L10 42V34H7Z"/><path d="M15 17H33M15 24H29"/>
+    </symbol>
+    <symbol id="hua-gateway" viewBox="0 0 48 48">
+      <rect x="6" y="8" width="36" height="32" rx="6"/><path d="M14 17H34M14 24H34M14 31H26"/><circle cx="35" cy="31" r="2" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="hua-brain" viewBox="0 0 48 48">
+      <path d="M20 7C14 7 10 11 10 17C6 19 5 24 7 28C5 34 10 40 16 40C18 43 22 44 24 41V11C23 9 22 8 20 7ZM28 7C34 7 38 11 38 17C42 19 43 24 41 28C43 34 38 40 32 40C30 43 26 44 24 41V11C25 9 26 8 28 7Z"/><path d="M13 20H19M29 20H35M15 31H21M27 31H33"/>
+    </symbol>
+    <symbol id="hua-tools" viewBox="0 0 48 48">
+      <path d="M31 8A11 11 0 0 0 20 21L8 33A5 5 0 0 0 15 40L27 28A11 11 0 0 0 40 17L33 24L25 22L23 14Z"/>
+    </symbol>
+    <symbol id="hua-state" viewBox="0 0 48 48">
+      <ellipse cx="24" cy="11" rx="16" ry="6"/><path d="M8 11V24C8 27 15 30 24 30S40 27 40 24V11M8 24V37C8 40 15 43 24 43S40 40 40 37V24"/>
+    </symbol>
+    <symbol id="hua-lock" viewBox="0 0 48 48">
+      <rect x="8" y="20" width="32" height="24" rx="5"/><path d="M15 20V14A9 9 0 0 1 33 14V20M24 29V36"/><circle cx="24" cy="29" r="2" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="hua-human" viewBox="0 0 48 48">
+      <circle cx="24" cy="14" r="9"/><path d="M8 43V38C8 30 14 26 24 26S40 30 40 38V43Z"/>
+    </symbol>
+  </defs>
+  <style>
+    .frame,.card,.icon,.line{vector-effect:non-scaling-stroke}
+    .frame{fill:none;stroke:#293029;stroke-width:1.5}
+    .card{stroke-width:2}
+    .neutral{fill:#0d1115;stroke:#64748b}
+    .green{fill:#08170c;stroke:#00ff41}
+    .teal{fill:#0a1715;stroke:#14b8a6}
+    .amber{fill:#18140b;stroke:#f59e0b}
+    .red{fill:#1a1012;stroke:#ef4444}
+    .title{fill:#e6e9ef;font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700}
+    .sub{fill:#858c85;font-family:'IBM Plex Mono',monospace;font-size:14px}
+    .label{fill:#00ff41;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px}
+    .label-slate{fill:#94a3b8;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px}
+    .card-title{fill:#e6e9ef;font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700}
+    .text{fill:#9aa3b2;font-family:'IBM Plex Mono',monospace;font-size:12.5px}
+    .text-light{fill:#cbd5e1;font-family:'IBM Plex Mono',monospace;font-size:12.5px}
+    .line{fill:none;stroke:#94a3b8;stroke-width:2.4}
+    .line-green{fill:none;stroke:#00ff41;stroke-width:2.6;vector-effect:non-scaling-stroke}
+  </style>
+  <rect width="1600" height="1000" fill="#0a0a0a"/>
+  <rect width="1600" height="1000" fill="url(#hua-grid)"/>
+  <rect x="24" y="24" width="1552" height="952" rx="18" class="frame"/>
+  <text x="68" y="76" class="title">My Hermes Agent operating architecture</text>
+  <text x="68" y="104" class="sub">The model reasons. The surrounding system supplies context, authority, durable state, and evidence.</text>
+  <line x1="68" y1="126" x2="1532" y2="126" stroke="#293029" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+
+  <text x="68" y="164" class="label-slate">CONTROL SURFACES</text>
+  <rect x="68" y="180" width="300" height="184" rx="14" class="card neutral"/>
+  <use href="#hua-chat" x="96" y="208" width="36" height="36" fill="none" stroke="#94a3b8" stroke-width="2.4" class="icon"/>
+  <text x="148" y="233" class="card-title">Intent enters here</text>
+  <text x="96" y="270" class="text-light">Telegram for daily control</text>
+  <text x="96" y="292" class="text">CLI for setup and debugging</text>
+  <text x="96" y="314" class="text">Desktop and private dashboards</text>
+  <text x="96" y="340" class="text">One request, routed to one session</text>
+
+  <text x="458" y="164" class="label">PERSISTENT GATEWAY</text>
+  <rect x="458" y="180" width="348" height="184" rx="14" class="card green"/>
+  <use href="#hua-gateway" x="486" y="208" width="36" height="36" fill="none" stroke="#00ff41" stroke-width="2.4" class="icon"/>
+  <text x="538" y="233" class="card-title">Hermes on a private host</text>
+  <text x="486" y="270" class="text-light">Session routing and restoration</text>
+  <text x="486" y="292" class="text">Cron scheduler and delivery</text>
+  <text x="486" y="314" class="text">Kanban dispatcher and profiles</text>
+  <text x="486" y="340" class="text">Always on as a user service</text>
+
+  <text x="896" y="164" class="label-slate">MODEL ROUTING</text>
+  <rect x="896" y="180" width="636" height="184" rx="14" class="card neutral"/>
+  <use href="#hua-brain" x="924" y="208" width="36" height="36" fill="none" stroke="#94a3b8" stroke-width="2.4" class="icon"/>
+  <text x="976" y="233" class="card-title">Replaceable reasoning workers</text>
+  <text x="924" y="270" class="text-light">Strong model for architecture, security, and final review</text>
+  <text x="924" y="292" class="text">Cheaper profiles for bounded collection and formatting</text>
+  <text x="924" y="314" class="text">Scripts for deterministic checks; local workers for low-risk jobs</text>
+  <text x="924" y="340" class="text">Providers change without replacing the operating system</text>
+
+  <path d="M368 272H436" class="line" marker-end="url(#hua-arrow)"/>
+  <path d="M806 272H874" class="line" marker-end="url(#hua-arrow)"/>
+
+  <text x="68" y="420" class="label">CONTEXT PLANE</text>
+  <rect x="68" y="436" width="464" height="244" rx="14" class="card teal"/>
+  <use href="#hua-brain" x="96" y="464" width="36" height="36" fill="none" stroke="#14b8a6" stroke-width="2.4" class="icon"/>
+  <text x="148" y="489" class="card-title">The right context at the right lifetime</text>
+  <text x="96" y="528" class="text-light">SOUL.md: identity and operating principles</text>
+  <text x="96" y="551" class="text">User profile: durable goals and boundaries</text>
+  <text x="96" y="574" class="text">AGENTS.md: repository rules and commands</text>
+  <text x="96" y="597" class="text">Memory: bounded, stable facts</text>
+  <text x="96" y="620" class="text">Session search: historical evidence</text>
+  <text x="96" y="643" class="text">Skills: procedures loaded on demand</text>
+
+  <text x="568" y="420" class="label">EXECUTION PLANE</text>
+  <rect x="568" y="436" width="464" height="244" rx="14" class="card amber"/>
+  <use href="#hua-tools" x="596" y="464" width="36" height="36" fill="none" stroke="#f59e0b" stroke-width="2.4" class="icon"/>
+  <text x="648" y="489" class="card-title">Real tools, real side effects</text>
+  <text x="596" y="528" class="text-light">Terminal, files, Git, tests, and processes</text>
+  <text x="596" y="551" class="text">Web, browser, vision, and computer control</text>
+  <text x="596" y="574" class="text">APIs and specialized MCP servers</text>
+  <text x="596" y="597" class="text">Delegated subagents and named profiles</text>
+  <text x="596" y="620" class="text">Read first, change narrowly, verify target</text>
+  <text x="596" y="643" class="text">Tool output is evidence, not the final claim</text>
+
+  <text x="1068" y="420" class="label">DURABLE STATE</text>
+  <rect x="1068" y="436" width="464" height="244" rx="14" class="card green"/>
+  <use href="#hua-state" x="1096" y="464" width="36" height="36" fill="none" stroke="#00ff41" stroke-width="2.4" class="icon"/>
+  <text x="1148" y="489" class="card-title">Conversation is not the database</text>
+  <text x="1096" y="528" class="text-light">Kanban: work, dependencies, runs, evidence</text>
+  <text x="1096" y="551" class="text">Git: code, content, review, rollback</text>
+  <text x="1096" y="574" class="text">Obsidian: decisions and linked knowledge</text>
+  <text x="1096" y="597" class="text">SQLite: sessions and full-text recall</text>
+  <text x="1096" y="620" class="text">Dashboards: generated read-only views</text>
+  <text x="1096" y="643" class="text">Closeout: changed, evidence, one next action</text>
+
+  <path d="M632 364V400H300V414" class="line" marker-end="url(#hua-arrow)"/>
+  <path d="M632 364V414" class="line-green" marker-end="url(#hua-arrow-green)"/>
+  <path d="M632 364V400H1300V414" class="line" marker-end="url(#hua-arrow)"/>
+
+  <text x="68" y="736" class="label">PRIVATE DASHBOARD BOUNDARY</text>
+  <rect x="68" y="752" width="1004" height="172" rx="14" class="card green"/>
+  <use href="#hua-lock" x="96" y="782" width="36" height="36" fill="none" stroke="#00ff41" stroke-width="2.4" class="icon"/>
+  <text x="148" y="807" class="card-title">Private dashboard listeners stay on the tailnet</text>
+  <text x="96" y="848" class="text-light">Dashboards bind to loopback or one Tailscale address, never every interface by default.</text>
+  <text x="96" y="873" class="text">Profiles separate context and state. Sandboxes or Unix identities isolate authority.</text>
+  <text x="96" y="898" class="text">Listener checks, HTTP probes, tests, and read-back verification close every state change.</text>
+
+  <text x="1108" y="736" class="label-slate">HUMAN DECISION GATE</text>
+  <rect x="1108" y="752" width="424" height="172" rx="14" class="card red"/>
+  <use href="#hua-human" x="1136" y="782" width="36" height="36" fill="none" stroke="#ef4444" stroke-width="2.4" class="icon"/>
+  <text x="1188" y="807" class="card-title">Consent is not inferred</text>
+  <text x="1136" y="848" class="text-light">Publish, merge, send, pay, sign, delete</text>
+  <text x="1136" y="873" class="text">Prepare and verify first.</text>
+  <text x="1136" y="898" class="text">Act only after explicit direction.</text>
+
+  <path d="M800 680V714H570V730" class="line-green" marker-end="url(#hua-arrow-green)"/>
+  <path d="M1032 558H1054" class="line" marker-end="url(#hua-arrow)"/>
+  <path d="M1072 838H1086" class="line" marker-end="url(#hua-arrow)"/>
+</svg>
