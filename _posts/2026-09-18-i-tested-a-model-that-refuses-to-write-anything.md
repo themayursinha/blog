@@ -3,7 +3,7 @@ layout: post
 title: "I Tested a Model That Refuses to Write Anything"
 subtitle: "It came back 47 times cheaper than Haiku 4.5 and 10 to 14 points less accurate on two security workflows. The trade decides where it belongs."
 date: 2026-09-18
-categories: [ai, security]
+categories: [ai, security, architecture]
 tags: [ai, security, agents, detection-engineering, evaluation, calibration]
 description: "A decision-native model scored 70 percent on security alert triage against a cheap frontier model's 80 percent, while costing 47 times less. Here is what that trade is actually worth, and the three rules the measurement produced."
 share-img: /img/decision-model-tradeoff.svg
