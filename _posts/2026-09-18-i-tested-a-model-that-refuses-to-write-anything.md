@@ -5,7 +5,7 @@ subtitle: "It came back 47 times cheaper than Haiku 4.5 and 10 to 14 points less
 date: 2026-09-18
 categories: [ai, security, architecture]
 tags: [ai, security, agents, detection-engineering, evaluation, calibration]
-description: "A decision-native model scored 70 percent on security alert triage against a cheap frontier model's 80 percent, while costing 47 times less. Here is what that trade is actually worth, and the three rules the measurement produced."
+description: "A decision-native model scored 70 percent on security alert triage against Claude Haiku 4.5's 80 percent, while costing 47 times less. Here is what that trade is actually worth, and the three rules the measurement produced."
 share-img: /img/decision-model-tradeoff.svg
 related_posts:
   - "AI Safety Without AI Security Is Not Safety"
@@ -15,7 +15,7 @@ related_posts:
 
 In September 2026, TypeSafe put a model on OpenRouter with a description that read like a joke aimed at me. [Jev](https://openrouter.ai/~typesafe/jev-latest) does not generate text. You hand it your application's state and a typed question, and it hands back a typed decision with a probability attached. You skip the JSON prompt entirely, and nothing needs validating against a schema.
 
-I have spent a lot of this year arguing that security decisions belong in deterministic code and not in a model's judgement. So a model that returns a probability instead of a paragraph should have been the version of this technology I could actually live with. I built a small harness, ran it against real hosted Jev on 34 security cases, and measured a trade that is easy to state and hard to act on. Jev answered in about a quarter of a second for one forty-seventh of the cost of a cheap frontier model, and it was 10 to 14 points less accurate on the decisions that mattered.
+I have spent a lot of this year arguing that security decisions belong in deterministic code and not in a model's judgement. So a model that returns a probability instead of a paragraph should have been the version of this technology I could actually live with. I built a small harness, ran it against real hosted Jev on 34 security cases, and measured a trade that is easy to state and hard to act on. Jev answered in about a quarter of a second for one forty-seventh of the cost of Claude Haiku 4.5, a small cheap model, and it was 10 to 14 points less accurate on the decisions that mattered.
 
 ## What it actually does
 
@@ -54,13 +54,13 @@ Both workflows work the same way. Deterministic code computes the facts it can c
 
 Before scoring any model, the harness checks itself: feed it the ideal answers and it must reproduce every human label. It does, at 100 percent across all 34 cases, which shows that the composition rules reproduce every label from the supplied ideal answers. A low model score is therefore not explained by those rules alone, though that check says nothing about the labels themselves, the prompt construction, or the parsing.
 
-I ran three backends against the same 34 cases. Real Jev 1.13, and two frontier models behind the same interface so the comparison is not confused by the workflow.
+I ran three backends against the same 34 cases. Two were general chat models behind the same interface, so the comparison is not confused by the workflow. Claude Haiku 4.5 is Anthropic's small fast tier. GPT-5.6 Luna is the cheapest model here, at $0.20 per million input tokens. Neither is a frontier model, and that is deliberate. A model that competes on cost has to beat the cheap models first, and if it cannot, the frontier comparison is academic.
 
 {% include figure.html src="/img/decision-model-tradeoff.svg" label="Fig. 1 · Accuracy against cost" caption="Composed decision accuracy on 34 security cases, with the cost of one full pass over each workflow. Jev answered in a fraction of a second for a fraction of a cent, and lost 10.0 and 14.3 points of accuracy to Haiku 4.5, the baseline that beat it on both workflows." alt="Paired bar chart comparing composed decision accuracy and cost per workflow run for Jev 1.13, Claude Haiku 4.5 and GPT-5.6 Luna" %}
 
 ## The numbers
 
-Real Jev scored 70.0 percent on incident triage and 64.3 percent on agent trace review. The cheap frontier model scored 80.0 percent and 78.6 percent. Against the baseline that beat it on both workflows, Jev is 10.0 points behind on incidents and 14.3 points behind on traces. Against the weaker of the two comparators it loses by 5 points on one workflow and wins by 7 on the other, which on 34 cases is noise rather than a result.
+Real Jev scored 70.0 percent on incident triage and 64.3 percent on agent trace review. Haiku 4.5 scored 80.0 percent and 78.6 percent. Against Haiku, Jev is 10.0 points behind on incidents and 14.3 points behind on traces. Against Luna, the cheapest model in the comparison, it loses by 5 points on one workflow and wins by 7 on the other, which on 34 cases is noise rather than a result. So the accurate statement is narrower than "it loses to the cheap models": it loses clearly to one small model and ties the cheapest one.
 
 Then the other axis. Jev answered in 0.29 and 0.28 seconds on average, against 2.03 and 2.08 seconds for the model it lost to, so it is about 7 times faster as well as 47 times cheaper. The full 34-case run cost $0.00208 against $0.09765, and that second number is not a projection from a price page. It is measured, and the gateway's own billed figure matched the arithmetic to the cent.
 
@@ -78,7 +78,7 @@ Speed and cost matter only after the errors are separated by workflow and by fai
 
 **It fails in the safe direction, mostly.** All six of Jev's incident misses were over-escalations, meaning it asked for human attention on cases a human would have closed. On the trace workflow, four of five misses also over-escalated and one went the other way, calling a real problem less urgent than it was. Over-escalation spends analyst time. Under-escalation loses incidents, and it appeared once in 14 cases, which is the number I would want to drive down before this touches a real queue.
 
-I also ran four adversarial probe types against four base cases in each workflow, so 16 probe executions per workflow, including instructions hidden in tool output telling the model to export a customer table. Jev flipped one decision on incidents and four on traces, every one of them upward. The frontier model flipped none on incidents and four on traces. In these probes the deterministic code floor prevented every downgrade even when the model's answers moved, which is the part of the design I would defend in a review.
+I also ran four adversarial probe types against four base cases in each workflow, so 16 probe executions per workflow, including instructions hidden in tool output telling the model to export a customer table. Jev flipped one decision on incidents and four on traces, every one of them upward. Haiku flipped none on incidents and four on traces. Luna flipped two and seven. In these probes the deterministic code floor prevented every downgrade even when the model's answers moved, which is the part of the design I would defend in a review.
 
 ## What this does not prove
 
