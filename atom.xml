@@ -5,10 +5,19 @@
   <link href="https://themayursinha.com/atom.xml" rel="self" />
   <link href="https://themayursinha.com" />
   <id>https://themayursinha.com/</id>
-  <updated>2026-09-10T16:12:39+02:00</updated>
+  <updated>2026-09-18T13:45:05+02:00</updated>
   <author>
     <name>Mayur Sinha</name>
   </author>
+  
+  <entry>
+    <title>I Tested a Model That Refuses to Write Anything</title>
+    <link href="https://themayursinha.com/architecture/2026/09/18/i-tested-a-model-that-refuses-to-write-anything/" />
+    <id>https://themayursinha.com/architecture/2026/09/18/i-tested-a-model-that-refuses-to-write-anything/</id>
+    <updated>2026-09-18T00:00:00+02:00</updated>
+    <published>2026-09-18T00:00:00+02:00</published>
+    <summary>A decision-native model scored 70 percent on security alert triage against a cheap frontier model&apos;s 80 percent, while costing 47 times less. Here is what that trade is actually worth, and the three rules the measurement produced.</summary>
+  </entry>
   
   <entry>
     <title>AI Safety Without AI Security Is Not Safety</title>
@@ -179,15 +188,6 @@
     <updated>2025-10-10T00:00:00+02:00</updated>
     <published>2025-10-10T00:00:00+02:00</published>
     <summary>Vibe coding ships fast and breaks things. Vibe engineering keeps the speed but adds the discipline that makes software survive contact with production.</summary>
-  </entry>
-  
-  <entry>
-    <title>Designing a living ecosystem of AI agents</title>
-    <link href="https://themayursinha.com/architecture/2025/06/29/living-ecosystems-of-agents/" />
-    <id>https://themayursinha.com/architecture/2025/06/29/living-ecosystems-of-agents/</id>
-    <updated>2025-06-29T00:00:00+02:00</updated>
-    <published>2025-06-29T00:00:00+02:00</published>
-    <summary>The next step past agent orchestration is not bigger orchestrators. It is ecosystems where agents spawn, bid, learn, and retire.</summary>
   </entry>
   
 </feed>

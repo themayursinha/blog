@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 580" width="1020" height="580" role="img" aria-label="Accuracy and cost comparison for Jev 1.13, Claude Haiku 4.5 and GPT-5.6 Luna on 34 security cases">
+<rect x="0" y="0" width="1020" height="580" fill="#0f120f"/>
+<text x="74" y="66" fill="#e8f5e9" font-family="Space Grotesk, IBM Plex Mono, ui-monospace, monospace" font-size="17" font-weight="600">Composed decision accuracy</text>
+<text x="74" y="90" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="12">34 cases, labels composed in code</text>
+<line x1="74" y1="452.0" x2="596" y2="452.0" stroke="#243027" stroke-width="1"/>
+<text x="62" y="456.0" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="11" text-anchor="end">0%</text>
+<line x1="74" y1="368.5" x2="596" y2="368.5" stroke="#243027" stroke-width="1"/>
+<text x="62" y="372.5" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="11" text-anchor="end">25%</text>
+<line x1="74" y1="285.0" x2="596" y2="285.0" stroke="#243027" stroke-width="1"/>
+<text x="62" y="289.0" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="11" text-anchor="end">50%</text>
+<line x1="74" y1="201.5" x2="596" y2="201.5" stroke="#243027" stroke-width="1"/>
+<text x="62" y="205.5" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="11" text-anchor="end">75%</text>
+<line x1="74" y1="118.0" x2="596" y2="118.0" stroke="#243027" stroke-width="1"/>
+<text x="62" y="122.0" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="11" text-anchor="end">100%</text>
+<rect x="110.0" y="218.2" width="46" height="233.8" fill="#00ff41" fill-opacity="1.0" rx="2"/>
+<text x="133.0" y="209.2" fill="#e8f5e9" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="13" font-weight="600" text-anchor="middle">70.0%</text>
+<rect x="166.0" y="237.2" width="46" height="214.8" fill="#00ff41" fill-opacity="0.48" rx="2"/>
+<text x="189.0" y="228.2" fill="#e8f5e9" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="13" font-weight="600" text-anchor="middle">64.3%</text>
+<text x="161.0" y="478.0" fill="#e8f5e9" font-family="Space Grotesk, IBM Plex Mono, ui-monospace, monospace" font-size="14" text-anchor="middle">Jev 1.13</text>
+<rect x="284.0" y="184.8" width="46" height="267.2" fill="#14b8a6" fill-opacity="1.0" rx="2"/>
+<text x="307.0" y="175.8" fill="#e8f5e9" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="13" font-weight="600" text-anchor="middle">80.0%</text>
+<rect x="340.0" y="189.5" width="46" height="262.5" fill="#14b8a6" fill-opacity="0.48" rx="2"/>
+<text x="363.0" y="180.5" fill="#e8f5e9" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="13" font-weight="600" text-anchor="middle">78.6%</text>
+<text x="335.0" y="478.0" fill="#e8f5e9" font-family="Space Grotesk, IBM Plex Mono, ui-monospace, monospace" font-size="14" text-anchor="middle">Haiku 4.5</text>
+<rect x="458.0" y="201.5" width="46" height="250.5" fill="#5b6b62" fill-opacity="1.0" rx="2"/>
+<text x="481.0" y="192.5" fill="#e8f5e9" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="13" font-weight="600" text-anchor="middle">75.0%</text>
+<rect x="514.0" y="261.3" width="46" height="190.7" fill="#5b6b62" fill-opacity="0.48" rx="2"/>
+<text x="537.0" y="252.3" fill="#e8f5e9" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="13" font-weight="600" text-anchor="middle">57.1%</text>
+<text x="509.0" y="478.0" fill="#e8f5e9" font-family="Space Grotesk, IBM Plex Mono, ui-monospace, monospace" font-size="14" text-anchor="middle">GPT-5.6 Luna</text>
+<line x1="74" y1="452" x2="596" y2="452" stroke="#8ba396" stroke-width="1.5"/>
+<rect x="74" y="500" width="14" height="14" fill="#00ff41" rx="2"/>
+<text x="96" y="512" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="12">incident triage</text>
+<rect x="234" y="500" width="14" height="14" fill="#00ff41" fill-opacity="0.48" rx="2"/>
+<text x="256" y="512" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="12">agent trace review</text>
+<text x="664" y="66" fill="#e8f5e9" font-family="Space Grotesk, IBM Plex Mono, ui-monospace, monospace" font-size="17" font-weight="600">Cost of one full pass</text>
+<text x="664" y="90" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="12">both workflows, 34 cases, measured</text>
+<line x1="664" y1="452.0" x2="996" y2="452.0" stroke="#243027" stroke-width="1"/>
+<text x="654" y="456.0" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="11" text-anchor="end">0</text>
+<line x1="664" y1="368.5" x2="996" y2="368.5" stroke="#243027" stroke-width="1"/>
+<text x="654" y="372.5" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="11" text-anchor="end">$0.025</text>
+<line x1="664" y1="285.0" x2="996" y2="285.0" stroke="#243027" stroke-width="1"/>
+<text x="654" y="289.0" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="11" text-anchor="end">$0.050</text>
+<line x1="664" y1="201.5" x2="996" y2="201.5" stroke="#243027" stroke-width="1"/>
+<text x="654" y="205.5" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="11" text-anchor="end">$0.075</text>
+<line x1="664" y1="118.0" x2="996" y2="118.0" stroke="#243027" stroke-width="1"/>
+<text x="654" y="122.0" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="11" text-anchor="end">$0.100</text>
+<rect x="688.3" y="445.1" width="62" height="6.9" fill="#00ff41" rx="2"/>
+<text x="719.3" y="435.1" fill="#e8f5e9" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="13" font-weight="600" text-anchor="middle">$0.0021</text>
+<text x="719.3" y="478.0" fill="#e8f5e9" font-family="Space Grotesk, IBM Plex Mono, ui-monospace, monospace" font-size="14" text-anchor="middle">Jev 1.13</text>
+<rect x="799.0" y="125.8" width="62" height="326.2" fill="#14b8a6" rx="2"/>
+<text x="830.0" y="115.8" fill="#e8f5e9" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="13" font-weight="600" text-anchor="middle">$0.0977</text>
+<text x="830.0" y="478.0" fill="#e8f5e9" font-family="Space Grotesk, IBM Plex Mono, ui-monospace, monospace" font-size="14" text-anchor="middle">Haiku 4.5</text>
+<rect x="909.7" y="365.6" width="62" height="86.4" fill="#5b6b62" rx="2"/>
+<text x="940.7" y="355.6" fill="#e8f5e9" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="13" font-weight="600" text-anchor="middle">$0.0259</text>
+<text x="940.7" y="478.0" fill="#e8f5e9" font-family="Space Grotesk, IBM Plex Mono, ui-monospace, monospace" font-size="14" text-anchor="middle">GPT-5.6 Luna</text>
+<line x1="664" y1="452" x2="996" y2="452" stroke="#8ba396" stroke-width="1.5"/>
+<text x="664" y="512" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="12">Jev: 47x cheaper than Haiku, 7.0x to 7.5x faster</text>
+</svg>

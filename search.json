@@ -1,4 +1,13 @@
 [{
+  "id": "/architecture/2026/09/18/i-tested-a-model-that-refuses-to-write-anything/",
+  "type": "post",
+  "title": "I Tested a Model That Refuses to Write Anything",
+  "subtitle": "It came back 47 times cheaper than Haiku 4.5 and 10 to 14 points less accurate on two security workflows. The trade decides where it belongs.",
+  "url": "https://themayursinha.com/architecture/2026/09/18/i-tested-a-model-that-refuses-to-write-anything/",
+  "date": "2026-09-18",
+  "excerpt": "In September 2026, TypeSafe put a model on OpenRouter with a description that read like a joke aimed at me. Jev does not generate text. You hand it your application’s state and a typed question, and it hands back a typed decision with a probability attached. You skip the JSON prompt entirely, and nothing needs validating against a schema.I have spent a lot of this year arguing that security decisions belong in deterministic code and not in a model’s judgement. So a model that returns a probability instead of a paragraph should have been the version of this technology I could actually live w...",
+  "tags": ["ai","security","agents","detection-engineering","evaluation","calibration"]
+},{
   "id": "/architecture/2026/09/03/ai-safety-without-ai-security-is-not-safety/",
   "type": "post",
   "title": "AI Safety Without AI Security Is Not Safety",

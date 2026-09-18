@@ -7,6 +7,17 @@
     <atom:link href="https://themayursinha.com/rss.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>I Tested a Model That Refuses to Write Anything</title>
+        <description>
+          It came back 47 times cheaper than Haiku 4.5 and 10 to 14 points less accurate on two security workflows. The trade decides where it belongs. - 
+          In September 2026, TypeSafe put a model on OpenRouter with a description that read like a joke aimed at me. Jev does not generate text. You hand it your application’s state and a typed question, and it hands back a typed decision with a probability attached. You skip the JSON...
+        </description>
+        <pubDate>Fri, 18 Sep 2026 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/architecture/2026/09/18/i-tested-a-model-that-refuses-to-write-anything/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/09/18/i-tested-a-model-that-refuses-to-write-anything/</guid>
+      </item>
+    
+      <item>
         <title>AI Safety Without AI Security Is Not Safety</title>
         <description>
           Frontier labs are teaching agents to respect boundaries while repeatedly learning that the boundaries themselves were weak. - 
@@ -213,17 +224,6 @@
         <pubDate>Fri, 10 Oct 2025 00:00:00 +0200</pubDate>
         <link>https://themayursinha.com/architecture/2025/10/10/vibe-engineering/</link>
         <guid isPermaLink="true">https://themayursinha.com/architecture/2025/10/10/vibe-engineering/</guid>
-      </item>
-    
-      <item>
-        <title>Designing a living ecosystem of AI agents</title>
-        <description>
-          From static agent teams to adaptive, self-organizing systems. - 
-          Current agent frameworks — AutoGen, CrewAI, and their successors — let you build teams of AI agents. They are useful, but they manage agents like pieces on a board. Roles are fixed, the plan is predefined, and the orchestrator is the bottleneck. That works for well-understood tasks. It breaks when...
-        </description>
-        <pubDate>Sun, 29 Jun 2025 00:00:00 +0200</pubDate>
-        <link>https://themayursinha.com/architecture/2025/06/29/living-ecosystems-of-agents/</link>
-        <guid isPermaLink="true">https://themayursinha.com/architecture/2025/06/29/living-ecosystems-of-agents/</guid>
       </item>
     
   </channel>

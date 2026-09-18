@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  
+  
+
+  
+
+  
+  
+
+  
+  
+
+  <title>I Tested a Model That Refuses to Write Anything</title>
+
+  <meta name="author" content="Mayur Sinha" />
+  <meta name="description" content="A decision-native model scored 70 percent on security alert triage against a cheap frontier model&apos;s 80 percent, while costing 47 times less. Here is what that trade is actually worth, and the three rules the measurement produced.">
+  
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  
+
+  <link rel="canonical" href="https://themayursinha.com/architecture/2026/09/18/i-tested-a-model-that-refuses-to-write-anything/" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png?v=20260907">
+  <link rel="icon" href="/favicon.ico?v=20260907">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260907">
+  <link rel="alternate" type="application/rss+xml" title="Mayur Sinha - I architect the security primitives for the next computational paradigm." href="/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Mayur Sinha RSS" href="/rss.xml" />
+  <link rel="alternate" type="application/atom+xml" title="Mayur Sinha Atom" href="/atom.xml" />
+
+
+  
+
+  
+    
+      <link rel="stylesheet" href="/css/terminal.css" />
+    
+      <link rel="stylesheet" href="/assets/css/code-copy.css" />
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Grotesk:500,600,700|IBM+Plex+Mono:400,500,600" />
+    
+  
+
+  
+
+  
+
+  
+
+  <!-- Facebook OpenGraph tags -->
+  
+
+  <meta property="og:title" content="I Tested a Model That Refuses to Write Anything" />
+  <meta property="og:description" content="A decision-native model scored 70 percent on security alert triage against a cheap frontier model&apos;s 80 percent, while costing 47 times less. Here is what that trade is actually worth, and the three rules the measurement produced.">
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:url" content="https://themayursinha.com/architecture/2026/09/18/i-tested-a-model-that-refuses-to-write-anything/" />
+
+  
+  <meta property="og:image" content="https://themayursinha.com/img/decision-model-tradeoff.svg" />
+  
+  
+
+  
+  <meta property="article:published_time" content="2026-09-18T00:00:00+02:00" />
+  <meta property="article:author" content="Mayur Sinha" />
+    
+      
+  <meta property="article:tag" content="ai" />
+      
+  <meta property="article:tag" content="security" />
+      
+  <meta property="article:tag" content="agents" />
+      
+  <meta property="article:tag" content="detection-engineering" />
+      
+  <meta property="article:tag" content="evaluation" />
+      
+  <meta property="article:tag" content="calibration" />
+      
+    
+  
+
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <meta name="twitter:site" content="@themayursinha" />
+  <meta name="twitter:creator" content="@themayursinha" />
+  
+  <meta name="twitter:title" content="I Tested a Model That Refuses to Write Anything" />
+  <meta name="twitter:description" content="A decision-native model scored 70 percent on security alert triage against a cheap frontier model&apos;s 80 percent, while costing 47 times less. Here is what that trade is actually worth, and the three rules the measurement produced.">
+  
+  <meta name="twitter:image" content="https://themayursinha.com/img/decision-model-tradeoff.svg" />
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://themayursinha.com",
+    "name": "Mayur Sinha",
+    "description": "I architect the security primitives for the next computational paradigm.",
+    "publisher": {
+      "@type": "Person",
+      "name": "Mayur Sinha"
+    }
+  }
+  </script>
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "I Tested a Model That Refuses to Write Anything",
+    "description": "A decision-native model scored 70 percent on security alert triage against a cheap frontier model's 80 percent, while costing 47 times less. Here is what that trade is actually worth, and the three rules the measurement produced.",
+    "datePublished": "2026-09-18T00:00:00+02:00",
+    "dateModified": "2026-09-18T00:00:00+02:00",
+    "author": {
+      "@type": "Person",
+      "name": "Mayur Sinha"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://themayursinha.com/architecture/2026/09/18/i-tested-a-model-that-refuses-to-write-anything/"
+    },
+    "image": "https://themayursinha.com/img/decision-model-tradeoff.svg",
+    "keywords": ["ai","security","agents","detection-engineering","evaluation","calibration"]
+  }
+  </script>
+  
+
+  
+
+  
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LP6FZ8DW0P"></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LP6FZ8DW0P');
+</script>
+
+
+  
+
+  
+
+  
+
+</head>
+
+  <body>
+    <div class="viewport-frame" aria-hidden="true"></div>
+    
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="research-readout" aria-label="Research node status">
+    <span>NODE MS-R01</span>
+    <span>DOMAIN SOVEREIGN AI</span>
+    <span>CONTROL MODEL LEAST AGENCY</span>
+    <span>STATE ACTIVE</span>
+  </div>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a class="site-mark" href="/" aria-label="Mayur Sinha home"><span>MS</span>//RESEARCH</a>
+    <ul>
+      
+        
+        <li>
+          <a href="/">Home</a>
+        </li>
+      
+        
+        <li>
+          <a href="/manifesto/">Manifesto</a>
+        </li>
+      
+        
+        <li>
+          <a href="/architecture/">Architecture</a>
+        </li>
+      
+        
+        <li>
+          <a href="/proof/">Proof</a>
+        </li>
+      
+      <li class="site-nav-search">
+        <button type="button" class="site-nav-search-btn" data-search-open aria-label="Open search" aria-haspopup="dialog" title="Search">
+          <svg class="site-nav-search-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
+            <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M8.5 3a5.5 5.5 0 1 1-3.41 9.84l-3.7 3.7a1 1 0 0 1-1.42-1.42l3.7-3.7A5.5 5.5 0 0 1 8.5 3Zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main" id="main-content">
+      <article class="prose blog-post">
+  <header class="post-header">
+    <p class="post-label">ARCHITECTURE LOG</p>
+    <h1>I Tested a Model That Refuses to Write Anything</h1>
+    
+      <p class="page-subtitle">It came back 47 times cheaper than Haiku 4.5 and 10 to 14 points less accurate on two security workflows. The trade decides where it belongs.</p>
+    
+    <time datetime="2026-09-18T00:00:00+02:00">2026-09-18</time>
+  </header>
+
+  
+
+  <p>In September 2026, TypeSafe put a model on OpenRouter with a description that read like a joke aimed at me. <a href="https://openrouter.ai/~typesafe/jev-latest">Jev</a> does not generate text. You hand it your application’s state and a typed question, and it hands back a typed decision with a probability attached. You skip the JSON prompt entirely, and nothing needs validating against a schema.</p>
+
+<p>I have spent a lot of this year arguing that security decisions belong in deterministic code and not in a model’s judgement. So a model that returns a probability instead of a paragraph should have been the version of this technology I could actually live with. I built a small harness, ran it against real hosted Jev on 34 security cases, and measured a trade that is easy to state and hard to act on. Jev answered in about a quarter of a second for one forty-seventh of the cost of a cheap frontier model, and it was 10 to 14 points less accurate on the decisions that mattered.</p>
+
+<h2 id="what-it-actually-does">What it actually does</h2>
+
+<p>A request carries three things. The <code class="language-plaintext highlighter-rouge">state</code> holds whatever text or structured data the decision depends on, such as an alert payload or an agent’s tool-call trace. You then name a map of typed <code class="language-plaintext highlighter-rouge">questions</code> yourself, and pass the model name alongside them.</p>
+
+<p>Each question is one of three types. A <a href="https://docs.typesafe.ai/primitives"><code class="language-plaintext highlighter-rouge">noul</code></a> question is a yes or no, and the answer is the probability that the answer is yes. A <code class="language-plaintext highlighter-rouge">choice</code> question picks one option from a set you define, and returns the winning option plus the full distribution across every option. A <code class="language-plaintext highlighter-rouge">score</code> question places the state on an ordered rubric and returns a probability-weighted position.</p>
+
+<p>One real question from the harness, trimmed down to a single question.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"questions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"process_reputation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"choice"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How trustworthy is the executing binary `alert.process.path`?"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"criteria"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"system_binary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ships with the operating system from an expected location"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"signed_vendor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Signed by a known commercial vendor and expected in this estate"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"signed_third_party"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Signed, but by a publisher not previously seen in this estate"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"unsigned"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unsigned, or a signature that cannot be verified"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"known_malware"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A name, hash, or signature that is recognised as malicious tooling"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"unknown"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not enough information in the alert to judge provenance"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The difference from prompting an LLM for JSON is not the format. The format is a detail. The difference is that the model cannot answer with anything outside the options you gave it, and every question is evaluated against the same state in parallel inside one request. A later measurement put 20 questions about one alert into a single request for $0.000031, which is where this design starts to change what you are willing to ask.</p>
+
+<h2 id="how-i-tested-it">How I tested it</h2>
+
+<p>The harness runs two workflows, both taken from work I actually care about. The first is security incident triage. Given an alert and the asset it fired on, decide whether to close it, send it to an analyst, or contain immediately. The second is agent trace review. Given a record of what an autonomous agent did with its tools, decide how urgently a human needs to look.</p>
+
+<p>Both workflows work the same way. Deterministic code computes the facts it can compute reliably, such as whether a process executed, which asset it ran on, and what the change ticket says. The model answers the questions that genuinely need judgement. Then code composes those answers into a decision using explicit rules and thresholds.</p>
+
+<p>Before scoring any model, the harness checks itself: feed it the ideal answers and it must reproduce every human label. It does, at 100 percent across all 34 cases, which shows that the composition rules reproduce every label from the supplied ideal answers. A low model score is therefore not explained by those rules alone, though that check says nothing about the labels themselves, the prompt construction, or the parsing.</p>
+
+<p>I ran three backends against the same 34 cases. Real Jev 1.13, and two frontier models behind the same interface so the comparison is not confused by the workflow.</p>
+
+<figure class="figure">
+  <div class="fig-label">// Fig. 1 · Accuracy against cost</div>
+  <div class="fig-body">
+    <img src="/img/decision-model-tradeoff.svg" alt="Paired bar chart comparing composed decision accuracy and cost per workflow run for Jev 1.13, Claude Haiku 4.5 and GPT-5.6 Luna" loading="lazy" />
+  </div>
+  
+  <figcaption class="fig-caption">Composed decision accuracy on 34 security cases, with the cost of one full pass over each workflow. Jev answered in a fraction of a second for a fraction of a cent, and lost 10.0 and 14.3 points of accuracy to Haiku 4.5, the baseline that beat it on both workflows.</figcaption>
+  
+</figure>
+
+<h2 id="the-numbers">The numbers</h2>
+
+<p>Real Jev scored 70.0 percent on incident triage and 64.3 percent on agent trace review. The cheap frontier model scored 80.0 percent and 78.6 percent. Against the baseline that beat it on both workflows, Jev is 10.0 points behind on incidents and 14.3 points behind on traces. Against the weaker of the two comparators it loses by 5 points on one workflow and wins by 7 on the other, which on 34 cases is noise rather than a result.</p>
+
+<p>Then the other axis. Jev answered in 0.29 and 0.28 seconds on average, against 2.03 and 2.08 seconds for the model it lost to, so it is about 7 times faster as well as 47 times cheaper. The full 34-case run cost $0.00208 against $0.09765, and that second number is not a projection from a price page. It is measured, and the gateway’s own billed figure matched the arithmetic to the cent.</p>
+
+<p>I ran the whole 34-case set twice, once against TypeSafe’s own API and once through an API gateway. Both produced the same 34 composed decisions and the same 11 misses, which rules out a decision-level discrepancy between the two routes in this run. Their underlying probabilities were close but not identical, and both routes billed the same amount for the same tokens.</p>
+
+<p>Speed and cost matter only after the errors are separated by workflow and by failure direction, and that is where this gets interesting.</p>
+
+<h2 id="where-the-decision-layer-failed">Where the decision layer failed</h2>
+
+<p><strong>Confidence was a poor gate.</strong> This is the finding that would have burned me in production. Jev reports a confidence value on every choice and score answer. When I binned those values against whether the answer was actually right, the highest confidence bin, 0.95 to 1.00, was correct 26.7 percent of the time on one route and 33.3 percent on the other, while the 0.70 to 0.85 bin sat at 14.3 and 16.7 percent. On agent trace review the same top bin was 85.7 percent accurate. So a 0.95-confident answer was right somewhere between 27 and 86 percent of the time depending on the workflow, which is not a quantity you can route a queue on. The noul probabilities were a different story and behaved sensibly, and the number returned beside a choice or a score is not the same thing.</p>
+
+<p><strong>The question it failed hardest is one a reputation feed answers.</strong> <code class="language-plaintext highlighter-rouge">process_reputation</code> asks the model how trustworthy the executing binary is, choosing between a system binary, a signed vendor, a signed third party, an unsigned binary, known malware, and unknown. Jev scored 40 percent on it and Haiku scored 35, and it carries the heaviest weight in the risk formula. The neighbouring question, whether that binary is expected on this host, scored 100 percent. So the failure is specific rather than general, and it lands exactly where a lookup is available: deciding provenance from an alert payload is a job for a hash and a signature check, and neither model could do it. The vendor’s own <a href="https://docs.typesafe.ai/model-jaggedness/jev-1.13">failure-mode list</a> closes with the instruction to avoid asking the model something code can compute exactly, and my 40 percent is what ignoring that costs.</p>
+
+<p><strong>Cheap changes what you are willing to ask.</strong> Twenty typed questions over one state, in a single request, cost $0.000031, or about $1.56 per million questions. The price scales with the questions you write rather than with the round trips, so decomposition stops being a budget decision. You stop trying to write one clever prompt that does five things badly and start asking twenty narrow questions that code composes properly.</p>
+
+<p><strong>It fails in the safe direction, mostly.</strong> All six of Jev’s incident misses were over-escalations, meaning it asked for human attention on cases a human would have closed. On the trace workflow, four of five misses also over-escalated and one went the other way, calling a real problem less urgent than it was. Over-escalation spends analyst time. Under-escalation loses incidents, and it appeared once in 14 cases, which is the number I would want to drive down before this touches a real queue.</p>
+
+<p>I also ran four adversarial probe types against four base cases in each workflow, so 16 probe executions per workflow, including instructions hidden in tool output telling the model to export a customer table. Jev flipped one decision on incidents and four on traces, every one of them upward. The frontier model flipped none on incidents and four on traces. In these probes the deterministic code floor prevented every downgrade even when the model’s answers moved, which is the part of the design I would defend in a review.</p>
+
+<h2 id="what-this-does-not-prove">What this does not prove</h2>
+
+<p>The labels are mine, on synthetic cases, 34 of them. A single annotator on synthetic data is enough for a paired smoke test, not for a stable model ranking or for any real-world accuracy claim. The runs are single-shot, and in three Haiku repeats on the 14-case trace set accuracy moved by 7.1 points, so differences of that size on a set this small may be run noise.</p>
+
+<p>The endpoint uses a moving alias, so a reproducible evaluation has to record the concrete version returned on every call. These runs resolved to Jev 1.13 on 18 September 2026.</p>
+
+<p>The vendor’s own published accuracy is agreement with two other models rather than ground truth, which matters when reading claims of hallucination-free operation. Constrained output prevents free-form fabrication, not confident error: Jev missed 6 of 20 incident decisions and 5 of 14 trace decisions, and the confidence table above is the post’s own evidence that a wrong answer can arrive looking certain.</p>
+
+<h2 id="what-other-people-found">What other people found</h2>
+
+<p>I was not the only person who did this, and the other tests matter because two of them are stronger than mine in ways that change the picture.</p>
+
+<p>TypeSafe’s own documentation publishes the failure modes, and the most useful entry is about asking a model something that code can compute exactly. Their <a href="https://docs.typesafe.ai/model-jaggedness/jev-1.13">page on adversarial content</a> is blunt. State is data, <code class="language-plaintext highlighter-rouge">jev-1.13</code> does not treat it as hostile by default, and content written to steer the model, whether that is an injected instruction, a misleading framing, or text arguing for its own classification, can move the answer. Their recommended mitigation is to write precise criteria and test the integration thoroughly before deploying. I found no injection evaluation in the vendor material or in the independent tests reviewed for this post, so my four probe types are one small data point on a question nobody has answered.</p>
+
+<p>The best piece of independent work I found is <a href="https://backnotprop.com/blog/jev-poker/">a poker evaluation</a>. The author solved one flop with a real solver and ran two tests. On 30 sampled spots, Jev matched the solver’s top action 63 percent of the time. In a wider 150-spot sweep, on the 55 spots where the solver does something other than check, his four Jev designs scored 33 to 44 percent against 24 to 29 percent for rules containing no model at all, and he warns that the headline figure is inflated because checking is usually the right answer. His conclusion is the same as mine, that you have to evaluate every situation you want to use this in against an answer key you trust. He also found that the answer changes once the state names the opponent’s hand instead of listing the cards, which is my code floor finding in another domain. The model responds to a stated conclusion.</p>
+
+<p>The single most decision-relevant result, and the one I would put in front of any security team, comes from <a href="https://dev.to/jomatsu/jev-pi-a-probability-gate-for-my-coding-agents-shell-commands-95d">a developer who placed a probability gate in front of a coding agent’s shell commands</a>. Two of his conditions were phrased as absence-of-hazard questions. Each carried a threshold, and because the bands were symmetric around 0.5, raising a threshold from 0.97 to 0.99 narrowed the violation band from p &lt;= 0.03 to p &lt;= 0.01. An SSH key exfiltration command scored 0.02. Tightening the safety setting moved that command out of the rejection band and into the unclear band, where it was allowed to run. The trap lives in the threshold arithmetic rather than in the model, and that is the class of bug a prompt-engineering comparison will never surface.</p>
+
+<p>A <a href="https://lindfors.no/blog/a-first-look-at-typesafes-jev/">Norwegian engineer ran 24 out-of-distribution government documents</a> through it in Norwegian, using an English question set. It read them at roughly a sixth of the cost of a frontier model on the same task, and got one stance label wrong while reporting 0.62 for the answer it chose. His calibration table is the one result that lines up exactly with mine. Across 192 yes/no judgments the probabilities moved in the right direction at every level, from 0 percent in the lowest bin to 98 percent in the highest. Taken with my own ECE of 0.05 on noul answers, that makes the probabilities promising enough to calibrate on a real workload, and it says nothing about the confidence number beside a choice.</p>
+
+<p>My measured cost advantage was 47 times against Haiku 4.5. <a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev">TypeSafe advertises 444.6 times</a> from its own four-workflow evaluation, which its capabilities team built using reference answers from two other vendors’ models. Neither multiple should be transferred to another workload without measuring it there, and I think that holds for my own 47 times too.</p>
+
+<h2 id="what-i-would-tell-a-team">What I would tell a team</h2>
+
+<p>The actionable result is the harness. It lets a team test whether a model can be trusted with its own queue before procurement signs a contract, and the whole measurement cost less than one cent because the harness already existed and needed only a new backend.</p>
+
+<p>Three things came out of it that I would hold regardless of which vendor wins this category. I would keep model-reported confidence out of the gate until it has been shown to order accuracy on the team’s own data, per workflow. I would move every question a lookup table can answer into code, because the failing question here was the one with a reputation feed sitting next to it. And I would keep a deterministic floor under every composed decision, since that floor is what stopped an injected instruction from quietly downgrading a real incident.</p>
+
+<p>Jev is fast and cheap, and it has a shape I like. Inputs and outputs are both typed, prose never appears, and free-form fabrication has nowhere to go. It was also less accurate than Haiku 4.5 on both workflows while costing about one forty-seventh as much for the full 34-case run, which is enough to justify a larger workload-specific evaluation and not enough to justify unattended use.</p>
+
+<p>The other people testing it arrived at the same instruction by different routes, and none of them could have known what they found without building the evaluation first. Measure against an answer key you trust, then inspect the threshold arithmetic and the failure direction before any of this reaches a gate.</p>
+
+<p>The next model version can be retested for about a fifth of a cent in API spend. Maintaining the labels and interpreting the failures remain the expensive parts.</p>
+
+
+  
+
+  <nav class="post-navigation" aria-label="Adjacent architecture entries">
+    
+      <a href="/architecture/2026/09/03/ai-safety-without-ai-security-is-not-safety/">&larr; AI Safety Without AI Security Is Not Safety</a>
+    
+    
+  </nav>
+
+  
+    
+<section class="post-comments" aria-labelledby="post-comments-title">
+  <div class="post-comments-header">
+    <p class="post-label">DISCUSSION CHANNEL</p>
+    <h2 id="post-comments-title">Comments</h2>
+    <p>Sign in with GitHub to join the discussion.</p>
+  </div>
+  <div class="giscus"></div>
+  <script src="https://giscus.app/client.js"
+          data-repo="themayursinha/blog"
+          data-repo-id="MDEwOlJlcG9zaXRvcnkxNzYzMzI0OTk="
+          data-category="Announcements"
+          data-category-id="DIC_kwDOCoKe084B-RQJ"
+          data-mapping="pathname"
+          data-strict="1"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="transparent_dark"
+          data-lang="en"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async>
+  </script>
+  <noscript>Enable JavaScript to view and leave comments.</noscript>
+</section>
+
+
+  
+</article>
+
+<div id="toc" class="toc-sidebar">
+  <div id="toc-content" class="toc-content"></div>
+</div>
+
+<script>
+(function() {
+  function initToc() {
+    const article = document.querySelector('.blog-post');
+    const tocContent = document.getElementById('toc-content');
+    const tocSidebar = document.getElementById('toc');
+    if (!article || !tocContent || !tocSidebar) return;
+
+    const headings = Array.from(article.querySelectorAll('h1, h2, h3, h4, h5, h6'));
+    if (headings.length === 0) { tocSidebar.style.display = 'none'; return; }
+
+    const toc = document.createElement('ul');
+    toc.className = 'toc-list';
+
+    const linkMap = new Map();
+
+    headings.forEach(function(heading, index) {
+      if (!heading.id) heading.id = 'heading-' + index;
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + heading.id;
+      a.textContent = heading.textContent.trim();
+      a.className = 'toc-link';
+      a.dataset.target = heading.id;
+
+      const level = parseInt(heading.tagName.charAt(1));
+      li.className = 'toc-level-' + level;
+
+      li.appendChild(a);
+      toc.appendChild(li);
+      linkMap.set(heading.id, { li: li, a: a });
+    });
+
+    // Header
+    const header = document.createElement('div');
+    header.className = 'toc-header';
+    header.innerHTML = '<span class="toc-header-line" aria-hidden="true"></span><span>On this page</span>';
+    tocContent.appendChild(header);
+    tocContent.appendChild(toc);
+
+    // Reading progress bar
+    const progress = document.createElement('div');
+    progress.className = 'toc-progress';
+    progress.setAttribute('aria-hidden', 'true');
+    tocSidebar.insertBefore(progress, tocContent);
+
+    // Click handling with smooth scroll and sticky offset
+    tocContent.addEventListener('click', function(e) {
+      const link = e.target.closest('.toc-link');
+      if (!link) return;
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (!targetElement) return;
+
+      const navbar = document.querySelector('.navbar-custom');
+      const offset = (navbar ? navbar.offsetHeight : 0) + 24;
+      const targetY = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+
+      window.scrollTo({ top: targetY, left: 0, behavior: 'smooth' });
+      history.replaceState(null, '', '#' + targetId);
+    });
+
+    // Scroll spy with IntersectionObserver
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        const item = linkMap.get(entry.target.id);
+        if (!item) return;
+        if (entry.isIntersecting) {
+          linkMap.forEach(function(val) {
+            val.li.classList.remove('toc-active');
+            val.a.classList.remove('toc-link-active');
+          });
+          item.li.classList.add('toc-active');
+          item.a.classList.add('toc-link-active');
+        }
+      });
+    }, observerOptions);
+
+    headings.forEach(function(heading) { observer.observe(heading); });
+
+    // Reading progress bar
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) : 0;
+      progress.style.transform = 'scaleX(' + Math.min(1, Math.max(0, pct)) + ')';
+    }
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initToc);
+  } else {
+    initToc();
+  }
+})();
+
+// --- Copy code blocks ---
+(function() {
+  function addCopyButtons() {
+    document.querySelectorAll('pre.highlight').forEach(function(pre) {
+      if (pre.querySelector('.copy-btn')) return;
+      var btn = document.createElement('button');
+      btn.className = 'copy-btn';
+      btn.textContent = 'copy';
+      btn.addEventListener('click', function() {
+        var code = pre.querySelector('code') || pre;
+        navigator.clipboard.writeText(code.textContent || code.innerText).then(function() {
+          btn.textContent = 'copied!';
+          btn.classList.add('copied');
+          setTimeout(function() { btn.textContent = 'copy'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+      pre.appendChild(btn);
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', addCopyButtons);
+  } else {
+    addCopyButtons();
+  }
+})();
+</script>
+
+    </main>
+    <footer class="site-footer">
+  <p class="site-footer-line">Mayur Sinha / RESEARCH NODE MS-R01 / 2026</p>
+  <p class="site-footer-line"><a href="/feed.xml">RSS FEED</a> / END OF TRANSMISSION</p>
+  <nav class="site-footer-social" aria-label="Social links"><a class="social-link" href="mailto:themayursinha@gmail.com" rel="noopener" aria-label="Email">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3 7 9 6 9-6"/></svg>
+      </a><a class="social-link" href="https://github.com/themayursinha" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+      </a><a class="social-link" href="https://x.com/themayursinha" target="_blank" rel="noopener" aria-label="X">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a><a class="social-link" href="https://www.linkedin.com/in/mayursinha" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-5c0-1 .5-2 2-2s2 1 2 2v5"/></svg>
+      </a><a class="social-link" href="https://www.goodreads.com/themayursinha" target="_blank" rel="noopener" aria-label="Goodreads">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.43 1.09c-1.36.18-2.51.6-3.59 1.34-1.7 1.16-2.81 2.74-3.31 4.74-.26 1.05-.3 2.78-.08 3.85.5 2.45 1.84 4.46 3.84 5.78 1.36.91 2.81 1.37 4.43 1.4 1.55.03 2.62-.13 3.85-.6.05 1.05-.19 1.81-.86 2.51-.7.74-1.64 1.1-2.83 1.1-1.7 0-2.92-.6-3.4-1.74l-3.39.45c.62 2.7 3.4 4.51 7.18 4.51 2.05 0 3.74-.45 5.05-1.45 1.27-1 2.05-2.5 2.05-4.21V8.21c0-2.05-.4-3.65-1.27-4.85-1.05-1.4-2.7-2.15-4.9-2.31-.84-.06-2.41-.07-2.77.04zm.74 6.05c1.27 0 2.27.36 2.96 1.07.69.71 1.04 1.74 1.04 3.04v1.05c-.61.4-1.51.6-2.69.6-1.05 0-1.88-.27-2.49-.83-.6-.55-.91-1.34-.91-2.36 0-1.05.31-1.85.91-2.4.61-.55 1.44-.83 2.49-.83.05 0 .11 0 .16.01l-.47 1.65z"/></svg>
+      </a><a class="social-link" href="https://substack.com/@mayursinha" target="_blank" rel="noopener" aria-label="Substack">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+      </a></nav>
+</footer>
+
+    <div class="site-search-modal" data-component="site-search" aria-hidden="true" hidden>
+  <div class="site-search-backdrop" data-search-close></div>
+  <div class="site-search-dialog" role="dialog" aria-modal="true" aria-labelledby="site-search-title" tabindex="-1">
+    <div class="site-search-header">
+      <svg class="site-search-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
+        <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M8.5 3a5.5 5.5 0 1 1-3.41 9.84l-3.7 3.7a1 1 0 0 1-1.42-1.42l3.7-3.7A5.5 5.5 0 0 1 8.5 3Zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/>
+      </svg>
+      <label for="site-search-input" class="visually-hidden">Search the site</label>
+      <input
+        id="site-search-input"
+        class="site-search-input"
+        type="search"
+        name="q"
+        placeholder="Search posts, pages, projects…"
+        aria-label="Search the site"
+        aria-controls="site-search-results"
+        aria-describedby="site-search-status"
+        autocomplete="off"
+        spellcheck="false"
+      >
+      <span class="site-search-hint" id="site-search-title">SEARCH</span>
+      <button type="button" class="site-search-close" data-search-close aria-label="Close search (Esc)">×</button>
+    </div>
+
+    <p id="site-search-status" class="site-search-status" role="status" aria-live="polite">
+      <span id="site-search-loading" class="site-search-loading" hidden>Loading index…</span>
+      <span id="site-search-meta" class="site-search-meta"></span>
+    </p>
+
+    <ol id="site-search-results" class="site-search-results" aria-label="Search results" hidden></ol>
+
+    <div id="site-search-empty" class="site-search-empty" hidden>
+      <p class="site-search-empty-text">Type to search posts, architecture notes, and projects.</p>
+      <p class="site-search-hint-row">
+        <span>Try:</span>
+        <button type="button" class="site-search-suggest" data-q="MCP">MCP</button>
+        <button type="button" class="site-search-suggest" data-q="agent">agent</button>
+        <button type="button" class="site-search-suggest" data-q="kubernetes">kubernetes</button>
+        <button type="button" class="site-search-suggest" data-q="sovereign">sovereign</button>
+      </p>
+    </div>
+
+    <footer class="site-search-footer">
+      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>esc</kbd> close</span>
+    </footer>
+  </div>
+</div>
+
+    <script src="/js/minisearch.min.js" defer></script>
+    <script src="/js/search.js" defer></script>
+    
+  </body>
+</html>
