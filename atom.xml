@@ -5,7 +5,7 @@
   <link href="https://themayursinha.com/atom.xml" rel="self" />
   <link href="https://themayursinha.com" />
   <id>https://themayursinha.com/</id>
-  <updated>2026-09-18T14:02:42+02:00</updated>
+  <updated>2026-09-18T14:16:39+02:00</updated>
   <author>
     <name>Mayur Sinha</name>
   </author>
@@ -16,7 +16,7 @@
     <id>https://themayursinha.com/architecture/2026/09/18/i-tested-a-model-that-refuses-to-write-anything/</id>
     <updated>2026-09-18T00:00:00+02:00</updated>
     <published>2026-09-18T00:00:00+02:00</published>
-    <summary>A decision-native model scored 70 percent on security alert triage against Claude Haiku 4.5&apos;s 80 percent, while costing 47 times less. Here is what that trade is actually worth, and the three rules the measurement produced.</summary>
+    <summary>A decision-native model cost 47 times less than Claude Haiku 4.5 and landed 14 of 20 and 9 of 14 decisions against Haiku&apos;s 16 of 20 and 11 of 14. On this sample the accuracy gap is two decisions, so what is left worth acting on is the structure: which questions a model should never be asked, and why a confidence threshold is not a safety control.</summary>
   </entry>
   
   <entry>
