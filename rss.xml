@@ -7,6 +7,17 @@
     <atom:link href="https://themayursinha.com/rss.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>The Unverified Context Document</title>
+        <description>
+          A public harness writes down what the code should guarantee before it hunts, then trusts that document across five rounds without checking it. Repeating the hunt nearly doubled recall, from 16.85 percent to 32.6 percent. The unchecked document is the part nobody is measuring. - 
+          A public bug-hunting harness reads Solidity and reports vulnerabilities. Its most useful line is not in either of its prompts. It is one bullet in the harness’s own limitations list: the context document is trusted, not checked. That document is generated before the hunt. A separate model pass reads the...
+        </description>
+        <pubDate>Mon, 21 Sep 2026 00:00:00 +0200</pubDate>
+        <link>https://themayursinha.com/architecture/2026/09/21/the-unverified-context-document/</link>
+        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/09/21/the-unverified-context-document/</guid>
+      </item>
+    
+      <item>
         <title>I Tested a Model That Refuses to Write Anything</title>
         <description>
           It came back 47 times cheaper than Haiku 4.5 and landed 23 of 34 decisions against 27. At this sample size nothing about accuracy separates any of the five models, so what is left to act on is structural. - 
@@ -213,17 +224,6 @@
         <pubDate>Wed, 04 Mar 2026 00:00:00 +0100</pubDate>
         <link>https://themayursinha.com/architecture/2026/03/04/threat-modeling-autonomous-ai-agents-in-production/</link>
         <guid isPermaLink="true">https://themayursinha.com/architecture/2026/03/04/threat-modeling-autonomous-ai-agents-in-production/</guid>
-      </item>
-    
-      <item>
-        <title>Traditional manual code review is no longer sustainable</title>
-        <description>
-          The volume of AI-generated code has broken the old review model. Here is what replaces it. - 
-          Code review made sense when humans wrote humans-sized diffs. A reviewer could read the change, understand the intent, and catch most errors. That model is breaking. AI coding assistants let engineers produce more code, faster, in larger chunks, with patterns the reviewer may never have seen before. The result is...
-        </description>
-        <pubDate>Mon, 02 Mar 2026 00:00:00 +0100</pubDate>
-        <link>https://themayursinha.com/architecture/2026/03/02/manual-code-review-is-unsustainable/</link>
-        <guid isPermaLink="true">https://themayursinha.com/architecture/2026/03/02/manual-code-review-is-unsustainable/</guid>
       </item>
     
   </channel>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 760" width="1160" height="760" role="img" aria-label="Pipeline diagram of a bug-hunting harness: a codebase goes into a single analyst pass that produces a prose intent model marked unverified, then five hunting rounds each trust that document, producing findings. A side panel shows measured recall rising from 16.85 percent for a single context-aware pass to 32.6 percent for the five-round loop, and a second panel lists what was never checked: the intent model is never re-derived, never diffed against the code, and inherited silently by all five rounds.">
+<defs>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#00ff41"/>
+  </marker>
+  <marker id="arrowAmber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#f59e0b"/>
+  </marker>
+</defs>
+<rect x="0" y="0" width="1160" height="760" fill="#0f120f"/>
+<text x="50" y="58" fill="#e8f5e9" font-family="Space Grotesk, IBM Plex Mono, ui-monospace, monospace" font-size="32" font-weight="600">One document, five rounds, no check</text>
+<text x="50" y="92" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="20">The document is trusted. It is never checked.</text>
+<rect x="50" y="120" width="235" height="160" rx="6" fill="#11150f" stroke="#243027" stroke-opacity="1" stroke-width="1.6"/>
+<text x="66" y="154" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="15" letter-spacing="1.2">INPUT</text>
+<text x="66" y="192" fill="#e8f5e9" font-family="Space Grotesk, IBM Plex Mono, ui-monospace, monospace" font-size="24" font-weight="600">Codebase</text>
+<text x="66" y="228" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="17">93,576 chars</text>
+<text x="66" y="252" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="17">one answer key</text>
+<rect x="325" y="120" width="235" height="160" rx="6" fill="#11150f" stroke="#f59e0b" stroke-opacity="0.6" stroke-width="1.6"/>
+<text x="341" y="154" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="15" letter-spacing="1.2">ONE CALL</text>
+<text x="341" y="192" fill="#e8f5e9" font-family="Space Grotesk, IBM Plex Mono, ui-monospace, monospace" font-size="24" font-weight="600">Analyst pass</text>
+<text x="341" y="228" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="17">no schema</text>
+<text x="341" y="252" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="17">26,434 chars</text>
+<rect x="600" y="120" width="235" height="160" rx="6" fill="#11150f" stroke="#243027" stroke-opacity="1" stroke-width="1.6"/>
+<text x="616" y="154" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="15" letter-spacing="1.2">FIVE ROUNDS</text>
+<text x="616" y="192" fill="#e8f5e9" font-family="Space Grotesk, IBM Plex Mono, ui-monospace, monospace" font-size="24" font-weight="600">Hunter loop</text>
+<text x="616" y="228" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="17">same lens</text>
+<text x="616" y="252" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="17">told what it found</text>
+<rect x="875" y="120" width="235" height="160" rx="6" fill="#11150f" stroke="#243027" stroke-opacity="1" stroke-width="1.6"/>
+<text x="891" y="154" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="15" letter-spacing="1.2">OUTPUT</text>
+<text x="891" y="192" fill="#e8f5e9" font-family="Space Grotesk, IBM Plex Mono, ui-monospace, monospace" font-size="24" font-weight="600">Findings</text>
+<text x="891" y="228" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="17">best: 10 of 23</text>
+<text x="891" y="252" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="17">~10% false</text>
+<rect x="432" y="132" width="112" height="26" rx="4" fill="#f59e0b" fill-opacity="0.14" stroke="#f59e0b" stroke-opacity="0.55" stroke-width="1"/>
+<text x="488" y="150" fill="#fbbf24" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="14" letter-spacing="1" text-anchor="middle">UNVERIFIED</text>
+<line x1="289" y1="200" x2="319" y2="200" stroke="#00ff41" stroke-width="2" marker-end="url(#arrowGreen)"/>
+<line x1="564" y1="200" x2="594" y2="200" stroke="#00ff41" stroke-width="2" marker-end="url(#arrowGreen)"/>
+<line x1="839" y1="200" x2="869" y2="200" stroke="#00ff41" stroke-width="2" marker-end="url(#arrowGreen)"/>
+<path d="M 442 280 V 300 H 850 V 317" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#arrowAmber)"/>
+<rect x="50" y="320" width="520" height="420" rx="6" fill="#11150f" stroke="#243027" stroke-width="1"/>
+<text x="75" y="366" fill="#e8f5e9" font-family="Space Grotesk, IBM Plex Mono, ui-monospace, monospace" font-size="26" font-weight="600">What was measured</text>
+<text x="75" y="396" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="17">mean weighted recall</text>
+<text x="75" y="440" fill="#e8f5e9" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="18">single pass, with context</text>
+<rect x="75" y="448" width="168" height="24" rx="2" fill="#00ff41" fill-opacity="0.42"/>
+<text x="85" y="466" fill="#0f120f" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="18" font-weight="600">16.85%</text>
+<text x="75" y="506" fill="#e8f5e9" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="18">five-round loop</text>
+<rect x="75" y="514" width="326" height="24" rx="2" fill="#00ff41"/>
+<text x="85" y="532" fill="#0f120f" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="18" font-weight="600">32.6%</text>
+<line x1="358" y1="550" x2="445" y2="550" stroke="#f59e0b" stroke-width="1.6"/>
+<line x1="358" y1="543" x2="358" y2="557" stroke="#f59e0b" stroke-width="1.6"/>
+<line x1="445" y1="543" x2="445" y2="557" stroke="#f59e0b" stroke-width="1.6"/>
+<text x="402" y="584" fill="#fbbf24" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="17" text-anchor="middle">28.3 to 37.0, five sequences</text>
+<text x="75" y="632" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="17">cold: two High findings missed in all 4 runs</text>
+<text x="75" y="660" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="17">~$0.13 per sequence, gpt-5.6-luna</text>
+<text x="75" y="688" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="17">~10% of output: no bug behind it</text>
+<rect x="590" y="320" width="520" height="420" rx="6" fill="#11150f" stroke="#243027" stroke-width="1"/>
+<text x="615" y="366" fill="#e8f5e9" font-family="Space Grotesk, IBM Plex Mono, ui-monospace, monospace" font-size="26" font-weight="600">What was never checked</text>
+<text x="615" y="396" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="17">trusted by every round</text>
+<circle cx="623" cy="438" r="3.6" fill="#f59e0b"/>
+<text x="641" y="444" fill="#e8f5e9" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="18">never re-derived</text>
+<circle cx="623" cy="474" r="3.6" fill="#f59e0b"/>
+<text x="641" y="480" fill="#e8f5e9" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="18">never diffed against the code</text>
+<circle cx="623" cy="510" r="3.6" fill="#f59e0b"/>
+<text x="641" y="516" fill="#e8f5e9" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="18">never reviewed by anything</text>
+<circle cx="623" cy="546" r="3.6" fill="#f59e0b"/>
+<text x="641" y="552" fill="#e8f5e9" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="18">inherited by all five rounds</text>
+<line x1="615" y1="588" x2="1085" y2="588" stroke="#243027" stroke-width="1"/>
+<text x="615" y="626" fill="#fbbf24" font-family="Space Grotesk, IBM Plex Mono, ui-monospace, monospace" font-size="20" font-weight="600">A fabricated finding fails loudly.</text>
+<text x="615" y="656" fill="#fbbf24" font-family="Space Grotesk, IBM Plex Mono, ui-monospace, monospace" font-size="20" font-weight="600">A missing invariant goes quiet.</text>
+<text x="615" y="694" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="17">It removes a question instead of adding</text>
+<text x="615" y="720" fill="#8ba396" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="17">one, and quiet reads as coverage.</text>
+</svg>

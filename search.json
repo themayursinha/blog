@@ -1,4 +1,13 @@
 [{
+  "id": "/architecture/2026/09/21/the-unverified-context-document/",
+  "type": "post",
+  "title": "The Unverified Context Document",
+  "subtitle": "A public harness writes down what the code should guarantee before it hunts, then trusts that document across five rounds without checking it. Repeating the hunt nearly doubled recall, from 16.85 percent to 32.6 percent. The unchecked document is the part nobody is measuring.",
+  "url": "https://themayursinha.com/architecture/2026/09/21/the-unverified-context-document/",
+  "date": "2026-09-21",
+  "excerpt": "A public bug-hunting harness reads Solidity and reports vulnerabilities. Its most useful line is not in either of its prompts. It is one bullet in the harness’s own limitations list: the context document is trusted, not checked.That document is generated before the hunt. A separate model pass reads the codebase and writes down what each contract is supposed to guarantee: its role, who calls it, what trust level each actor has, and the invariants that have to hold. The document then goes into the hunting call alongside the code.I pulled the repository, read the harness source, opened one of ...",
+  "tags": ["ai","security","agents","code-review","invariants","evaluation","agentic-ai","benchmark-validity"]
+},{
   "id": "/architecture/2026/09/18/i-tested-a-model-that-refuses-to-write-anything/",
   "type": "post",
   "title": "I Tested a Model That Refuses to Write Anything",
@@ -374,7 +383,7 @@
   "subtitle": "",
   "url": "https://themayursinha.com/architecture/",
   "date": "",
-  "excerpt": "            COMMAND ARCHIVE / SYSTEM NOTES      ARCHITECTURE      Notes on autonomous systems containment, AI security, adversarial resilience, and the philosophy of control.              ARCHIVE STATUS      40SIGNALS              Entries40        Latest2026.09.18        ModeACTIVE                        00 / LATEST SIGNAL      CURRENT TRANSMISSION              2026-09-18      I Tested a Model That Refuses to Write Anything      READ /&gt;                  01 / RESEARCH LOG      /// KINETIC INFRASTRUCTURE &amp; AI CONTAINMENT ///                                2026-09-18          I Tested a...",
+  "excerpt": "            COMMAND ARCHIVE / SYSTEM NOTES      ARCHITECTURE      Notes on autonomous systems containment, AI security, adversarial resilience, and the philosophy of control.              ARCHIVE STATUS      41SIGNALS              Entries41        Latest2026.09.21        ModeACTIVE                        00 / LATEST SIGNAL      CURRENT TRANSMISSION              2026-09-21      The Unverified Context Document      READ /&gt;                  01 / RESEARCH LOG      /// KINETIC INFRASTRUCTURE &amp; AI CONTAINMENT ///                                2026-09-21          The Unverified Context Doc...",
   "tags": []
 },{
   "id": "/",
